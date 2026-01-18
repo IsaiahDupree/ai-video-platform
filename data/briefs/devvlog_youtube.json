@@ -1,0 +1,89 @@
+{
+  "id": "devvlog_youtube",
+  "format": "devvlog_v1",
+  "version": "1.0",
+  "created_at": "2026-01-17T13:00:00Z",
+  "settings": {
+    "resolution": { "width": 1920, "height": 1080 },
+    "fps": 30,
+    "duration_sec": 60,
+    "aspect_ratio": "16:9"
+  },
+  "style": {
+    "theme": "light",
+    "primary_color": "#1a1a2e",
+    "secondary_color": "#4a5568",
+    "accent_color": "#22c55e",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "solid",
+    "background_value": "#fefefe"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 0,
+      "content": {
+        "type": "topic",
+        "heading": "Building an AI Video Platform",
+        "body_text": "Hey everyone! Today I'm showing you how I built an AI-powered video generation platform using Remotion, OpenAI, and Google Gemini.",
+        "image_path": "assets/scenes/devvlog_stickman/intro.png"
+      }
+    },
+    {
+      "id": "architecture",
+      "type": "topic",
+      "duration_sec": 12,
+      "start_time_sec": 10,
+      "content": {
+        "type": "topic",
+        "heading": "The Architecture",
+        "body_text": "The platform takes a JSON brief and generates everything automatically - images, voiceover, captions, and the final video.",
+        "image_path": "assets/scenes/devvlog_stickman/architecture.png"
+      }
+    },
+    {
+      "id": "character_consistency",
+      "type": "topic",
+      "duration_sec": 12,
+      "start_time_sec": 22,
+      "content": {
+        "type": "topic",
+        "heading": "Character Consistency",
+        "body_text": "The coolest feature is Nano Banana - Google's image model that keeps characters consistent across every scene. Like me!",
+        "image_path": "assets/scenes/devvlog_stickman/consistency.png"
+      }
+    },
+    {
+      "id": "voice_clone",
+      "type": "topic",
+      "duration_sec": 12,
+      "start_time_sec": 34,
+      "content": {
+        "type": "topic",
+        "heading": "AI Voice Cloning",
+        "body_text": "We use IndexTTS-2 for voice cloning and OpenAI Whisper for word-level timestamps. Every word syncs perfectly with captions.",
+        "image_path": "assets/scenes/devvlog_stickman/voice.png"
+      }
+    },
+    {
+      "id": "outro",
+      "type": "topic",
+      "duration_sec": 14,
+      "start_time_sec": 46,
+      "content": {
+        "type": "topic",
+        "heading": "Try It Yourself!",
+        "body_text": "The whole thing is open source. Clone the repo, add your API keys, and start generating videos. Link in the description!",
+        "image_path": "assets/scenes/devvlog_stickman/outro.png"
+      }
+    }
+  ],
+  "audio": {
+    "voiceover": "assets/audio/devvlog/voiceover.mp3",
+    "volume_music": 0.2,
+    "volume_voice": 1.0
+  }
+}

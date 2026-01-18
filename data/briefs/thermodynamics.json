@@ -1,0 +1,121 @@
+{
+  "id": "thermodynamics_explainer",
+  "format": "explainer_v1",
+  "title": "The Laws of Thermodynamics",
+  "sections": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "content": {
+        "hook_text": "What if I told you that everything in the universe follows just four simple rules?"
+      },
+      "audio": {
+        "voiceover": {
+          "text": "What if I told you that everything in the universe follows just four simple rules?",
+          "emotion": "intrigued"
+        }
+      },
+      "duration_frames": 90
+    },
+    {
+      "id": "intro",
+      "type": "title",
+      "content": {
+        "title": "The Laws of Thermodynamics",
+        "subtitle": "The rules that govern energy in our universe"
+      },
+      "audio": {
+        "voiceover": {
+          "text": "These are the laws of thermodynamics. The rules that govern energy in our universe."
+        }
+      },
+      "duration_frames": 90
+    },
+    {
+      "id": "zeroth_law",
+      "type": "bullet",
+      "content": {
+        "title": "Zeroth Law",
+        "body_text": "If two systems are in thermal equilibrium with a third system, they are in equilibrium with each other. This is the foundation of temperature measurement."
+      },
+      "audio": {
+        "voiceover": {
+          "text": "The zeroth law. If two systems are in thermal equilibrium with a third system, they are in equilibrium with each other. This is how we measure temperature."
+        }
+      },
+      "duration_frames": 150
+    },
+    {
+      "id": "first_law",
+      "type": "bullet",
+      "content": {
+        "title": "First Law",
+        "body_text": "Energy cannot be created or destroyed, only transformed from one form to another. The total energy of an isolated system remains constant."
+      },
+      "audio": {
+        "voiceover": {
+          "text": "The first law. Energy cannot be created or destroyed, only transformed. The total energy of an isolated system always remains constant."
+        }
+      },
+      "duration_frames": 150
+    },
+    {
+      "id": "second_law",
+      "type": "bullet",
+      "content": {
+        "title": "Second Law",
+        "body_text": "Entropy of an isolated system always increases over time. Heat flows naturally from hot to cold, never the reverse without work."
+      },
+      "audio": {
+        "voiceover": {
+          "text": "The second law. Entropy always increases. Heat flows from hot to cold, never the reverse without external work. This is why time moves forward."
+        }
+      },
+      "duration_frames": 150
+    },
+    {
+      "id": "third_law",
+      "type": "bullet",
+      "content": {
+        "title": "Third Law",
+        "body_text": "As temperature approaches absolute zero, entropy approaches a minimum value. You can never reach absolute zero."
+      },
+      "audio": {
+        "voiceover": {
+          "text": "The third law. As temperature approaches absolute zero, entropy approaches a minimum. But you can never actually reach absolute zero."
+        }
+      },
+      "duration_frames": 150
+    },
+    {
+      "id": "outro",
+      "type": "cta",
+      "content": {
+        "title": "Now You Know",
+        "body_text": "These four laws explain everything from why ice melts to why stars shine. Follow for more science!"
+      },
+      "audio": {
+        "voiceover": {
+          "text": "These four laws explain everything from why ice melts to why stars shine. Follow for more science!"
+        }
+      },
+      "duration_frames": 120
+    }
+  ],
+  "style": {
+    "theme": "dark",
+    "backgroundColor": "#0a0a1a",
+    "textColor": "#ffffff",
+    "accentColor": "#ff6b35",
+    "captionStyle": "bouncy"
+  },
+  "audio_settings": {
+    "voice": "onyx",
+    "background_music": false
+  },
+  "metadata": {
+    "topic": "physics",
+    "duration_sec": 30,
+    "aspect_ratio": "9:16"
+  }
+}

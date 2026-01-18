@@ -1,0 +1,192 @@
+{
+  "id": "devvlog_template",
+  "format": "devvlog_v1",
+  "version": "1.0",
+  "metadata": {
+    "title": "I Built X in Y Hours",
+    "description": "GitHub dev vlog showing a coding project",
+    "tags": ["coding", "tutorial", "devlog"],
+    "hook_title": "Built This in 4 Hours 🔥"
+  },
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 75,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "accent_color": "#22c55e",
+    "art_style": "clean dev aesthetic, code editor vibes, modern minimalist",
+    "font_heading": "JetBrains Mono",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0d1117 0%, #161b22 100%)"
+  },
+  "characters": [
+    {
+      "name": "dev",
+      "description": "developer character, casual hoodie, headphones around neck, focused expression",
+      "style": "flat illustration, modern tech aesthetic, clean lines"
+    }
+  ],
+  "voice": {
+    "reference_path": "public/assets/voices/isaiah.wav",
+    "default_emotion": "excited",
+    "provider_priority": ["indextts2", "openai"]
+  },
+  "sections": [
+    {
+      "id": "hook",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "hook_text": "I just built a full-stack app in 4 hours",
+        "title": "Speed Run Dev"
+      },
+      "voiceover": {
+        "text": "I just built a full-stack app in four hours. Here's exactly how I did it.",
+        "emotion": "excited"
+      },
+      "visuals": {
+        "character": "dev",
+        "action": "looking excited at laptop screen, code visible",
+        "background": "dark coding setup with monitors"
+      },
+      "audio": {
+        "sfx_prompts": ["notification ping", "keyboard typing fast"]
+      },
+      "captions": {
+        "enabled": true,
+        "style": "tiktok"
+      }
+    },
+    {
+      "id": "context",
+      "type": "topic",
+      "duration_sec": 12,
+      "start_time_sec": 5,
+      "content": {
+        "type": "topic",
+        "title": "The Problem",
+        "body_text": "I needed a tool that didn't exist, so I built it myself"
+      },
+      "voiceover": {
+        "text": "So I've been frustrated with existing solutions for project management. Everything was either too complex or missing key features. So I decided to build exactly what I needed.",
+        "emotion": "explaining"
+      },
+      "visuals": {
+        "character": "dev",
+        "action": "thinking pose, hand on chin",
+        "broll_queries": ["software interface", "project management app"]
+      },
+      "captions": {
+        "enabled": true,
+        "style": "tiktok"
+      }
+    },
+    {
+      "id": "code_walk_1",
+      "type": "code",
+      "duration_sec": 18,
+      "start_time_sec": 17,
+      "content": {
+        "type": "topic",
+        "title": "Setting Up",
+        "code": {
+          "language": "bash",
+          "snippet": "npx create-next-app@latest my-app\ncd my-app\nnpm install prisma @prisma/client"
+        }
+      },
+      "voiceover": {
+        "text": "First, I spun up a Next.js project. Added Prisma for the database. This gives us a solid foundation with React, server components, and a type-safe ORM out of the box.",
+        "emotion": "explaining"
+      },
+      "visuals": {
+        "background": "vscode editor with terminal"
+      },
+      "captions": {
+        "enabled": true,
+        "style": "tiktok"
+      }
+    },
+    {
+      "id": "code_walk_2",
+      "type": "code",
+      "duration_sec": 18,
+      "start_time_sec": 35,
+      "content": {
+        "type": "topic",
+        "title": "Core Feature",
+        "code": {
+          "language": "typescript",
+          "snippet": "export async function createTask(data: TaskInput) {\n  return prisma.task.create({\n    data: {\n      title: data.title,\n      status: 'pending'\n    }\n  })\n}"
+        }
+      },
+      "voiceover": {
+        "text": "The core feature is this task creation function. It's dead simple - just takes a title and creates a task with pending status. But the magic is in how it integrates with the UI.",
+        "emotion": "excited"
+      },
+      "visuals": {
+        "background": "code editor showing TypeScript"
+      },
+      "captions": {
+        "enabled": true,
+        "style": "tiktok"
+      }
+    },
+    {
+      "id": "result",
+      "type": "topic",
+      "duration_sec": 15,
+      "start_time_sec": 53,
+      "content": {
+        "type": "topic",
+        "title": "The Result",
+        "body_text": "A fully working app in 4 hours"
+      },
+      "voiceover": {
+        "text": "And here's the final result. A clean, fast project management app that does exactly what I need. Drag and drop tasks, keyboard shortcuts, and it syncs across all my devices.",
+        "emotion": "happy"
+      },
+      "visuals": {
+        "character": "dev",
+        "action": "presenting finished app on screen proudly",
+        "broll_queries": ["app demo", "software interface demo"]
+      },
+      "captions": {
+        "enabled": true,
+        "style": "tiktok"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "outro",
+      "duration_sec": 7,
+      "start_time_sec": 68,
+      "content": {
+        "type": "outro",
+        "title": "Follow for More",
+        "call_to_action": "Link in bio for the full tutorial"
+      },
+      "voiceover": {
+        "text": "Drop a follow if you want more speed builds. Full tutorial with code is linked in my bio. See you in the next one!",
+        "emotion": "happy"
+      },
+      "visuals": {
+        "character": "dev",
+        "action": "waving, friendly gesture"
+      },
+      "audio": {
+        "sfx_prompts": ["success chime", "notification"]
+      },
+      "captions": {
+        "enabled": true,
+        "style": "tiktok"
+      }
+    }
+  ]
+}

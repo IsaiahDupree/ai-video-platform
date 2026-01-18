@@ -1,0 +1,103 @@
+{
+  "assets": {
+    "fb8bc160a007": {
+      "type": "icon",
+      "prompt": "glowing rocket ship launching upward",
+      "style": "neon",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, neon glow effect, cyberpunk colors, dark background, glowing rocket ship launching upward",
+      "path": "public/assets/icon/icon_rocket_neon.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:45:37.715403"
+    },
+    "6eb303c319e6": {
+      "type": "icon",
+      "prompt": "human brain with glowing neural connections",
+      "style": "neon",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, neon glow effect, cyberpunk colors, dark background, human brain with glowing neural connections",
+      "path": "public/assets/icon/icon_brain_neon.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:45:49.682440"
+    },
+    "146bd56ced38": {
+      "type": "icon",
+      "prompt": "lightning bolt electric energy",
+      "style": "neon",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, neon glow effect, cyberpunk colors, dark background, lightning bolt electric energy",
+      "path": "public/assets/icon/icon_lightning_neon.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:46:02.905568"
+    },
+    "e54888fc05a8": {
+      "type": "icon",
+      "prompt": "target bullseye with arrow hitting center",
+      "style": "minimal",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, minimalist, simple shapes, limited color palette, target bullseye with arrow hitting center",
+      "path": "public/assets/icon/icon_target.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:46:15.158649"
+    },
+    "a0cd656a2788": {
+      "type": "icon",
+      "prompt": "clock timer countdown",
+      "style": "minimal",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, minimalist, simple shapes, limited color palette, clock timer countdown",
+      "path": "public/assets/icon/icon_clock.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:46:26.131645"
+    },
+    "1659a5536f6a": {
+      "type": "emoji",
+      "prompt": "mind blown explosion head amazed",
+      "style": "",
+      "full_prompt": "3D emoji style, glossy, expressive, single centered object, mind blown explosion head amazed",
+      "path": "public/assets/emoji/emoji_mindblown.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:46:36.404030"
+    },
+    "cb20583ea525": {
+      "type": "emoji",
+      "prompt": "fire flames hot trending",
+      "style": "",
+      "full_prompt": "3D emoji style, glossy, expressive, single centered object, fire flames hot trending",
+      "path": "public/assets/emoji/emoji_fire.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:46:50.073702"
+    },
+    "affc20f6a17b": {
+      "type": "emoji",
+      "prompt": "rocket launching fast speed",
+      "style": "",
+      "full_prompt": "3D emoji style, glossy, expressive, single centered object, rocket launching fast speed",
+      "path": "public/assets/emoji/emoji_rocket.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:47:00.575533"
+    },
+    "916cd2d0d42d": {
+      "type": "prop",
+      "prompt": "modern laptop computer with glowing screen",
+      "style": "",
+      "full_prompt": "3D rendered object, studio lighting, clean background, modern laptop computer with glowing screen",
+      "path": "public/assets/prop/prop_laptop.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:47:15.727853"
+    },
+    "45a93dd25dc2": {
+      "type": "prop",
+      "prompt": "smartphone mobile device floating",
+      "style": "",
+      "full_prompt": "3D rendered object, studio lighting, clean background, smartphone mobile device floating",
+      "path": "public/assets/prop/prop_phone.png",
+      "size": "1024x1024",
+      "generated_at": "2025-12-28T14:47:31.170483"
+    },
+    "9434ca29dbe2": {
+      "type": "background",
+      "prompt": "dark purple blue gradient with floating particles",
+      "style": "neon",
+      "full_prompt": "Abstract background pattern, seamless, neon glow effect, cyberpunk colors, dark background, dark purple blue gradient with floating particles",
+      "path": "public/assets/background/bg_particles_dark.png",
+      "size": "1792x1024",
+      "generated_at": "2025-12-28T14:47:44.306000"
+    }
+  }
+}

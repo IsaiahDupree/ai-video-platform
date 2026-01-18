@@ -1,0 +1,99 @@
+{
+  "id": "style_ufo_dark",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2025-12-28T14:30:00.000Z",
+  "metadata": {
+    "source_style": "Om0d0u1ASJY - UFO Events",
+    "style_notes": "High contrast black/white, bold sans-serif, centered text, quick cuts"
+  },
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 45,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#808080",
+    "accent_color": "#ffffff",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "solid",
+    "background_value": "#000000"
+  },
+  "sections": [
+    {
+      "id": "hook_001",
+      "type": "intro",
+      "duration_sec": 4,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "5 AI Tools",
+        "subtitle": "You're Not Using Yet",
+        "hook_text": "Number 5 will change everything"
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 4,
+      "content": {
+        "type": "topic",
+        "heading": "Claude AI",
+        "body_text": "Best for complex reasoning and analysis tasks",
+        "animation_style": "fade"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 12,
+      "content": {
+        "type": "topic",
+        "heading": "Cursor IDE",
+        "body_text": "AI-powered coding that actually understands context",
+        "animation_style": "fade"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 20,
+      "content": {
+        "type": "topic",
+        "heading": "Perplexity",
+        "body_text": "Research assistant with real-time web access",
+        "animation_style": "fade"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 28,
+      "content": {
+        "type": "topic",
+        "heading": "Midjourney",
+        "body_text": "Create stunning visuals from text descriptions",
+        "animation_style": "fade"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 9,
+      "start_time_sec": 36,
+      "content": {
+        "type": "outro",
+        "title": "Follow for more",
+        "call_to_action": "Which one will you try first?"
+      }
+    }
+  ]
+}

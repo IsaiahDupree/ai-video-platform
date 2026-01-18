@@ -1,0 +1,101 @@
+{
+  "id": "appkit_promo",
+  "format": "promo_v1",
+  "version": "1.0",
+  "created_at": "2026-01-17T21:40:00Z",
+  "settings": {
+    "resolution": { "width": 1920, "height": 1080 },
+    "fps": 30,
+    "duration_sec": 60,
+    "aspect_ratio": "16:9"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#6366f1",
+    "secondary_color": "#8b5cf6",
+    "accent_color": "#22c55e",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f172a 100%)"
+  },
+  "sections": [
+    {
+      "id": "hook",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 0,
+      "content": {
+        "type": "topic",
+        "heading": "Ship Your App in Days, Not Months",
+        "body_text": "Stop rebuilding authentication, payments, and infrastructure from scratch. App-Kit gives you everything you need.",
+        "image_path": "assets/scenes/appkit/hook.png"
+      }
+    },
+    {
+      "id": "problem",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 8,
+      "content": {
+        "type": "topic",
+        "heading": "The Problem",
+        "body_text": "Building a SaaS app means weeks on auth, payments, database setup, and deployment. That's time you could spend on your actual product.",
+        "image_path": "assets/scenes/appkit/problem.png"
+      }
+    },
+    {
+      "id": "solution",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 16,
+      "content": {
+        "type": "topic",
+        "heading": "App-Kit: Your Launchpad",
+        "body_text": "A complete starter kit with Expo, Supabase, Stripe, and RevenueCat. Plus 14 comprehensive guides covering everything from setup to scaling.",
+        "image_path": "assets/scenes/appkit/solution.png"
+      }
+    },
+    {
+      "id": "features",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 26,
+      "content": {
+        "type": "topic",
+        "heading": "What's Included",
+        "body_text": "Authentication flows, payment integration, database schemas, deployment guides, security best practices, and a DevMode overlay showing exactly what to customize.",
+        "image_path": "assets/scenes/appkit/features.png"
+      }
+    },
+    {
+      "id": "guides",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 36,
+      "content": {
+        "type": "topic",
+        "heading": "14 Expert Guides",
+        "body_text": "From getting started to scaling your app. Architecture, backend setup, testing, monetization, analytics - we've documented everything.",
+        "image_path": "assets/scenes/appkit/guides.png"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "topic",
+      "duration_sec": 14,
+      "start_time_sec": 46,
+      "content": {
+        "type": "topic",
+        "heading": "Start Building Today",
+        "body_text": "App-Kit v2 is available now on GitHub. Get the complete package for just 99 dollars. Ship your dream app this week!",
+        "image_path": "assets/scenes/appkit/cta.png"
+      }
+    }
+  ],
+  "audio": {
+    "voiceover": "assets/audio/appkit/voiceover.mp3",
+    "volume_music": 0.15,
+    "volume_voice": 1.0
+  }
+}

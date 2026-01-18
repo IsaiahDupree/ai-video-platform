@@ -1,0 +1,91 @@
+{
+  "id": "solar_panels_explainer",
+  "title": "How Solar Panels Work",
+  "description": "An educational explainer about solar panel technology and how it converts sunlight to electricity",
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "accent_color": "#f59e0b",
+    "art_style": "modern flat illustration, clean vector graphics, vibrant colors, tech-inspired, professional"
+  },
+  "characters": [
+    {
+      "name": "host",
+      "description": "friendly tech expert character, short dark hair, glasses, wearing a casual blue polo shirt",
+      "style": "flat illustration style, clean lines, approachable and professional appearance, consistent facial features"
+    },
+    {
+      "name": "solar_mascot",
+      "description": "cute animated sun character with a friendly face, yellow and orange gradients",
+      "style": "kawaii style, simple rounded shapes, expressive eyes, playful"
+    }
+  ],
+  "voice": {
+    "reference_path": "public/assets/voices/isaiah.wav",
+    "default_emotion": "explaining"
+  },
+  "scenes": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "duration_sec": 6,
+      "voiceover_text": "Ever wondered how sunlight becomes electricity? Let me show you the amazing science behind solar panels.",
+      "visual_prompt": "standing confidently, gesturing toward a large solar panel illustration",
+      "character": "host",
+      "emotion": "excited"
+    },
+    {
+      "id": "topic_1",
+      "type": "topic",
+      "duration_sec": 10,
+      "voiceover_text": "Solar panels are made of photovoltaic cells. When sunlight hits these cells, it knocks electrons loose from their atoms, creating an electrical current.",
+      "visual_prompt": "pointing at a diagram showing photons hitting solar cells, electrons flowing",
+      "character": "host",
+      "emotion": "explaining"
+    },
+    {
+      "id": "topic_2",
+      "type": "topic",
+      "duration_sec": 10,
+      "voiceover_text": "This is called the photovoltaic effect. Each cell produces a small amount of electricity, but when you connect many cells together, you get enough power to run your home!",
+      "visual_prompt": "showing multiple solar cells connected in a grid formation, electricity flowing through wires",
+      "character": "host",
+      "emotion": "excited"
+    },
+    {
+      "id": "topic_3",
+      "type": "topic",
+      "duration_sec": 10,
+      "voiceover_text": "The electricity created is direct current, or DC. An inverter converts it to alternating current, or AC, which is what your appliances use.",
+      "visual_prompt": "standing next to an inverter box illustration, showing DC to AC conversion",
+      "character": "host",
+      "emotion": "explaining"
+    },
+    {
+      "id": "topic_4",
+      "type": "topic",
+      "duration_sec": 8,
+      "voiceover_text": "Modern solar panels are incredibly efficient and can work even on cloudy days. They're a clean, renewable energy source.",
+      "visual_prompt": "gesturing at a house with solar panels on the roof, sun and clouds in background",
+      "character": "host",
+      "emotion": "happy"
+    },
+    {
+      "id": "outro",
+      "type": "outro",
+      "duration_sec": 6,
+      "voiceover_text": "That's how solar panels turn sunlight into electricity! Follow for more science explainers.",
+      "visual_prompt": "waving goodbye, solar panel and sun in background",
+      "character": "host",
+      "emotion": "happy"
+    }
+  ],
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16"
+  }
+}

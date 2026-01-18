@@ -1,0 +1,13 @@
+[
+  {"type": "icon", "prompt": "glowing rocket ship launching upward", "style": "neon", "name": "icon_rocket_neon"},
+  {"type": "icon", "prompt": "human brain with glowing neural connections", "style": "neon", "name": "icon_brain_neon"},
+  {"type": "icon", "prompt": "lightning bolt electric energy", "style": "neon", "name": "icon_lightning_neon"},
+  {"type": "icon", "prompt": "target bullseye with arrow hitting center", "style": "minimal", "name": "icon_target"},
+  {"type": "icon", "prompt": "clock timer countdown", "style": "minimal", "name": "icon_clock"},
+  {"type": "emoji", "prompt": "mind blown explosion head amazed", "name": "emoji_mindblown"},
+  {"type": "emoji", "prompt": "fire flames hot trending", "name": "emoji_fire"},
+  {"type": "emoji", "prompt": "rocket launching fast speed", "name": "emoji_rocket"},
+  {"type": "prop", "prompt": "modern laptop computer with glowing screen", "name": "prop_laptop"},
+  {"type": "prop", "prompt": "smartphone mobile device floating", "name": "prop_phone"},
+  {"type": "background", "prompt": "dark purple blue gradient with floating particles", "style": "neon", "name": "bg_particles_dark"}
+]

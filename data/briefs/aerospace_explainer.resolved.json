@@ -1,0 +1,243 @@
+{
+  "id": "aerospace_explainer",
+  "format": "explainer_v1",
+  "version": "2.0",
+  "created_at": "2025-12-28T15:00:00.000Z",
+  "metadata": {
+    "title": "Why Rockets Need Multiple Stages",
+    "description": "Tech/aerospace explainer with NASA b-roll"
+  },
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 45,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#94a3b8",
+    "accent_color": "#f97316",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(180deg, #0a0a1a 0%, #1a1a2e 50%, #0f172a 100%)"
+  },
+  "animations": {
+    "intro_style": "cinematic",
+    "topic_style": "slide",
+    "show_particles": true,
+    "show_progress": true
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "WHY ROCKETS",
+        "subtitle": "Need Multiple Stages",
+        "hook_text": "The physics that makes space possible"
+      },
+      "assets": {
+        "broll": {
+          "queries": [
+            "rocket launch",
+            "space shuttle launch"
+          ],
+          "provider_order": [
+            "nasa"
+          ],
+          "constraints": {
+            "duration_min": 3,
+            "duration_max": 60
+          }
+        }
+      },
+      "animation": "cinematic"
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 5,
+      "content": {
+        "type": "topic",
+        "number": 1,
+        "heading": "The Tyranny of the Rocket Equation",
+        "body_text": "To go faster, you need more fuel. But more fuel means more weight. More weight needs even MORE fuel."
+      },
+      "assets": {
+        "broll": {
+          "queries": [
+            "rocket engine",
+            "fuel tank"
+          ],
+          "provider_order": [
+            "nasa",
+            "pexels"
+          ],
+          "constraints": {
+            "duration_min": 3
+          }
+        }
+      },
+      "animation": "slide"
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 15,
+      "content": {
+        "type": "topic",
+        "number": 2,
+        "heading": "Dead Weight Problem",
+        "body_text": "Empty fuel tanks are useless weight. Every gram you carry to orbit costs thousands of dollars."
+      },
+      "assets": {
+        "broll": {
+          "queries": [
+            "stage separation",
+            "rocket booster"
+          ],
+          "provider_order": [
+            "nasa"
+          ],
+          "constraints": {
+            "duration_min": 2
+          }
+        }
+      },
+      "animation": "pop"
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 25,
+      "content": {
+        "type": "topic",
+        "number": 3,
+        "heading": "The Solution: Drop It",
+        "body_text": "Staging lets you throw away empty tanks mid-flight. Less weight = more speed = orbit achieved."
+      },
+      "assets": {
+        "broll": {
+          "queries": [
+            "falcon 9 landing",
+            "spacex booster"
+          ],
+          "provider_order": [
+            "nasa",
+            "pexels"
+          ],
+          "constraints": {
+            "duration_min": 3
+          }
+        }
+      },
+      "animation": "bounce"
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 35,
+      "content": {
+        "type": "outro",
+        "title": "Physics > Budget",
+        "call_to_action": "Follow for more aerospace tech"
+      }
+    }
+  ],
+  "resolved_assets": {
+    "intro_001": {
+      "id": "nasa_KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+      "provider": "nasa",
+      "type": "video",
+      "source_url": "https://images.nasa.gov/details/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+      "download_url": "http://images-assets.nasa.gov/video/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130~orig.mp4",
+      "preview_url": "https://images-assets.nasa.gov/video/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130~large.jpg",
+      "creator": "Rocket Lab",
+      "license": "Public Domain (NASA)",
+      "attribution_text": "TROPICS Rocket Launch - NASA",
+      "tags": [
+        "TROPICS",
+        "Rocket Launch",
+        "Rocket",
+        "New Zealand",
+        "Rocket Lab",
+        "NASA"
+      ],
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130.mp4",
+      "downloaded_at": "2025-12-28T20:03:01.996Z"
+    },
+    "topic_001": {
+      "id": "nasa_NHQ_2024_1119_NASA_Rocket_Engine_Fireplace",
+      "provider": "nasa",
+      "type": "video",
+      "source_url": "https://images.nasa.gov/details/NHQ_2024_1119_NASA%20Rocket%20Engine%20Fireplace",
+      "download_url": "http://images-assets.nasa.gov/video/NHQ_2024_1119_NASA Rocket Engine Fireplace/NHQ_2024_1119_NASA Rocket Engine Fireplace~medium.mp4",
+      "preview_url": "https://images-assets.nasa.gov/video/NHQ_2024_1119_NASA Rocket Engine Fireplace/NHQ_2024_1119_NASA Rocket Engine Fireplace~large.jpg",
+      "creator": "NASA",
+      "license": "Public Domain (NASA)",
+      "attribution_text": "NASA Rocket Engine Fireplace - NASA",
+      "tags": [
+        "Rocket",
+        "Fireplace",
+        "Rocket Engine",
+        "Artemis",
+        "RS-25",
+        "Burning"
+      ],
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_NHQ_2024_1119_NASA_Rocket_Engine_Fireplace.mp4",
+      "downloaded_at": "2025-12-28T20:13:39.227Z"
+    },
+    "topic_002": {
+      "id": "nasa_ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A",
+      "provider": "nasa",
+      "type": "video",
+      "source_url": "https://images.nasa.gov/details/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A",
+      "download_url": "http://images-assets.nasa.gov/video/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A~medium.mp4",
+      "preview_url": "https://images-assets.nasa.gov/video/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A~large.jpg",
+      "creator": "NASA",
+      "license": "Public Domain (NASA)",
+      "attribution_text": "Orion Completes Upper Stage Separation Burn - NASA",
+      "tags": [
+        "Artemis I resource reel",
+        "Orion",
+        "Artemis",
+        "Artemis I",
+        "Earth"
+      ],
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A.mp4",
+      "downloaded_at": "2025-12-28T20:13:42.350Z"
+    },
+    "topic_003": {
+      "id": "nasa_KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407",
+      "provider": "nasa",
+      "type": "video",
+      "source_url": "https://images.nasa.gov/details/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407",
+      "download_url": "http://images-assets.nasa.gov/video/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407~medium.mp4",
+      "preview_url": "https://images-assets.nasa.gov/video/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407~large.jpg",
+      "creator": "NASA",
+      "license": "Public Domain (NASA)",
+      "attribution_text": "Kennedy Countdown for Oct. 29, 2021 - NASA",
+      "tags": [
+        "NASA",
+        "KSC",
+        "SpaceX",
+        "Crew-3",
+        "Artemis"
+      ],
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407.mp4",
+      "downloaded_at": "2025-12-28T20:13:44.180Z"
+    }
+  }
+}

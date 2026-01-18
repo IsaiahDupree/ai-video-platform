@@ -1,0 +1,111 @@
+{
+  "id": "style_simracing_vibrant",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2025-12-28T14:30:00.000Z",
+  "metadata": {
+    "source_style": "HSmHYWBy0ss - Sim Racing Drivers",
+    "style_notes": "Vibrant colors, energetic, list format with personality types"
+  },
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 48,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "neon",
+    "primary_color": "#00ff88",
+    "secondary_color": "#00ccff",
+    "accent_color": "#ff00ff",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a1a1a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 4,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "5 Types of Developers",
+        "subtitle": "Which One Are You?",
+        "hook_text": "Be honest with yourself"
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 4,
+      "content": {
+        "type": "list_item",
+        "number": 5,
+        "title": "The Framework Hopper",
+        "description": "Learns a new framework every week, masters none"
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 12,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "The Over-Engineer",
+        "description": "Builds microservices for a todo app"
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 20,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "The Copy-Paster",
+        "description": "Stack Overflow is their IDE"
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 28,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "The Perfectionist",
+        "description": "Refactors code that already works"
+      }
+    },
+    {
+      "id": "item_005",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 36,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "The Shipper",
+        "description": "Gets things done, learns from mistakes"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 4,
+      "start_time_sec": 44,
+      "content": {
+        "type": "outro",
+        "title": "Tag yourself",
+        "call_to_action": "Follow for more dev content"
+      }
+    }
+  ]
+}

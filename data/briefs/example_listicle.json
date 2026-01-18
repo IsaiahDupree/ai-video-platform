@@ -1,0 +1,113 @@
+{
+  "id": "example_listicle_001",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2024-01-15T10:00:00Z",
+
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 45,
+    "aspect_ratio": "9:16"
+  },
+
+  "style": {
+    "theme": "neon",
+    "primary_color": "#00ff88",
+    "secondary_color": "#00ccff",
+    "accent_color": "#ff00ff",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a1a1a 100%)"
+  },
+
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "Top 5 AI Tools",
+        "subtitle": "You Need in 2024",
+        "hook_text": "These tools will 10x your productivity"
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 7,
+      "start_time_sec": 5,
+      "content": {
+        "type": "list_item",
+        "number": 5,
+        "title": "Notion AI",
+        "description": "AI-powered workspace that helps you write, brainstorm, and organize your thoughts."
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 7,
+      "start_time_sec": 12,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "Midjourney",
+        "description": "Create stunning visuals and artwork with simple text prompts."
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 7,
+      "start_time_sec": 19,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "GitHub Copilot",
+        "description": "Your AI pair programmer that helps you write code faster and smarter."
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 7,
+      "start_time_sec": 26,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "Runway ML",
+        "description": "AI-powered video editing that feels like magic."
+      }
+    },
+    {
+      "id": "item_005",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 33,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "Claude AI",
+        "description": "The most helpful AI assistant for complex reasoning and creative tasks."
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 7,
+      "start_time_sec": 38,
+      "content": {
+        "type": "outro",
+        "title": "Which one will you try first?",
+        "call_to_action": "Follow for more AI tips!",
+        "social_handles": [
+          { "platform": "Twitter", "handle": "@aitips" }
+        ]
+      }
+    }
+  ]
+}

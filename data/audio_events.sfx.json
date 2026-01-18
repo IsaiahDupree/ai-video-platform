@@ -1,0 +1,47 @@
+{
+  "fps": 30,
+  "events": [
+    {
+      "type": "sfx",
+      "sfxId": "meme_sfx_pack_iconic",
+      "frame": 2,
+      "volume": 0.7
+    },
+    {
+      "type": "sfx",
+      "sfxId": "meme_sfx_pack_iconic",
+      "frame": 93,
+      "volume": 0.7
+    },
+    {
+      "type": "sfx",
+      "sfxId": "meme_sfx_pack_iconic",
+      "frame": 152,
+      "volume": 0.7
+    },
+    {
+      "type": "sfx",
+      "sfxId": "meme_sfx_pack_iconic",
+      "frame": 211,
+      "volume": 0.7
+    },
+    {
+      "type": "sfx",
+      "sfxId": "meme_sfx_pack_iconic",
+      "frame": 314,
+      "volume": 0.7
+    },
+    {
+      "type": "sfx",
+      "sfxId": "meme_sfx_pack_iconic",
+      "frame": 449,
+      "volume": 0.7
+    },
+    {
+      "type": "sfx",
+      "sfxId": "meme_sfx_pack_iconic",
+      "frame": 507,
+      "volume": 0.7
+    }
+  ]
+}

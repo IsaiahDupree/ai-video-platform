@@ -1,0 +1,38 @@
+[
+  {
+    "asset_id": "nasa_KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+    "provider": "nasa",
+    "source_url": "https://images.nasa.gov/details/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+    "creator": "Rocket Lab",
+    "license": "Public Domain (NASA)",
+    "attribution_text": "TROPICS Rocket Launch - NASA",
+    "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130.mp4"
+  },
+  {
+    "asset_id": "nasa_NHQ_2024_1119_NASA_Rocket_Engine_Fireplace",
+    "provider": "nasa",
+    "source_url": "https://images.nasa.gov/details/NHQ_2024_1119_NASA%20Rocket%20Engine%20Fireplace",
+    "creator": "NASA",
+    "license": "Public Domain (NASA)",
+    "attribution_text": "NASA Rocket Engine Fireplace - NASA",
+    "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_NHQ_2024_1119_NASA_Rocket_Engine_Fireplace.mp4"
+  },
+  {
+    "asset_id": "nasa_ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A",
+    "provider": "nasa",
+    "source_url": "https://images.nasa.gov/details/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A",
+    "creator": "NASA",
+    "license": "Public Domain (NASA)",
+    "attribution_text": "Orion Completes Upper Stage Separation Burn - NASA",
+    "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A.mp4"
+  },
+  {
+    "asset_id": "nasa_KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407",
+    "provider": "nasa",
+    "source_url": "https://images.nasa.gov/details/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407",
+    "creator": "NASA",
+    "license": "Public Domain (NASA)",
+    "attribution_text": "Kennedy Countdown for Oct. 29, 2021 - NASA",
+    "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407.mp4"
+  }
+]

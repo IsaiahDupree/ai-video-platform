@@ -1,0 +1,10 @@
+# YouTube URLs for style analysis
+# One URL per line, comments start with #
+
+https://www.youtube.com/watch?v=Om0d0u1ASJY
+https://www.youtube.com/watch?v=DScr9hwfcas
+https://www.youtube.com/watch?v=HSmHYWBy0ss
+https://www.youtube.com/watch?v=oBYM1bEpGB0
+https://www.youtube.com/watch?v=XOtMZchugyQ
+https://www.youtube.com/watch?v=Dgzb6ojbjWg
+https://www.youtube.com/watch?v=v4LDsaWNjaM

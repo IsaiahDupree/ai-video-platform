@@ -1,0 +1,65 @@
+{
+  "hook": [
+    {
+      "id": "openai_tts_1766980150419",
+      "provider": "openai",
+      "type": "voiceover",
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/audio/voiceover/hook_vo.wav",
+      "text": "What if I told you that everything in the universe follows just four simple rules?"
+    }
+  ],
+  "intro": [
+    {
+      "id": "openai_tts_1766980152784",
+      "provider": "openai",
+      "type": "voiceover",
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/audio/voiceover/intro_vo.wav",
+      "text": "These are the laws of thermodynamics. The rules that govern energy in our universe."
+    }
+  ],
+  "zeroth_law": [
+    {
+      "id": "openai_tts_1766980155581",
+      "provider": "openai",
+      "type": "voiceover",
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/audio/voiceover/zeroth_law_vo.wav",
+      "text": "The zeroth law. If two systems are in thermal equilibrium with a third system, they are in equilibrium with each other. This is how we measure temperature."
+    }
+  ],
+  "first_law": [
+    {
+      "id": "openai_tts_1766980158283",
+      "provider": "openai",
+      "type": "voiceover",
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/audio/voiceover/first_law_vo.wav",
+      "text": "The first law. Energy cannot be created or destroyed, only transformed. The total energy of an isolated system always remains constant."
+    }
+  ],
+  "second_law": [
+    {
+      "id": "openai_tts_1766980161272",
+      "provider": "openai",
+      "type": "voiceover",
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/audio/voiceover/second_law_vo.wav",
+      "text": "The second law. Entropy always increases. Heat flows from hot to cold, never the reverse without external work. This is why time moves forward."
+    }
+  ],
+  "third_law": [
+    {
+      "id": "openai_tts_1766980163852",
+      "provider": "openai",
+      "type": "voiceover",
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/audio/voiceover/third_law_vo.wav",
+      "text": "The third law. As temperature approaches absolute zero, entropy approaches a minimum. But you can never actually reach absolute zero."
+    }
+  ],
+  "outro": [
+    {
+      "id": "openai_tts_1766980165523",
+      "provider": "openai",
+      "type": "voiceover",
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/audio/voiceover/outro_vo.wav",
+      "text": "These four laws explain everything from why ice melts to why stars shine. Follow for more science!"
+    }
+  ]
+}

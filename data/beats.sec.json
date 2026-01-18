@@ -1,0 +1,58 @@
+[
+  {
+    "beatId": "1_i_tried_to_automate_sfx_in_mot",
+    "t": 0,
+    "text": "I tried to automate SFX in Motion Canvas...",
+    "action": "explain",
+    "event": "bullet_1_in",
+    "blockId": "1_i_tried_to_automate_sfx_in_mot"
+  },
+  {
+    "beatId": "2_but_the_timing_kept_drifting",
+    "t": 3.059,
+    "text": "But the timing kept drifting.",
+    "action": "explain",
+    "event": "bullet_2_in",
+    "blockId": "2_but_the_timing_kept_drifting"
+  },
+  {
+    "beatId": "3_build_failed_audio_drift_error",
+    "t": 5.027,
+    "text": "Build failed: audio drift error.",
+    "action": "explain",
+    "event": "bullet_3_in",
+    "blockId": "3_build_failed_audio_drift_error"
+  },
+  {
+    "beatId": "4_the_fix_is_simple_use_one_audi",
+    "t": 6.995,
+    "text": "The fix is simple - use one audio bus.",
+    "action": "explain",
+    "event": "bullet_4_in",
+    "blockId": "4_the_fix_is_simple_use_one_audi"
+  },
+  {
+    "beatId": "5_mix_voice_music_and_sfx_into_o",
+    "t": 10.418,
+    "text": "Mix voice, music, and SFX into one file so timing never drifts.",
+    "action": "explain",
+    "event": "bullet_5_in",
+    "blockId": "5_mix_voice_music_and_sfx_into_o"
+  },
+  {
+    "beatId": "6_now_everything_stays_in_sync",
+    "t": 14.932,
+    "text": "Now everything stays in sync.",
+    "action": "explain",
+    "event": "bullet_6_in",
+    "blockId": "6_now_everything_stays_in_sync"
+  },
+  {
+    "beatId": "7_subscribe_for_more_dev_tips",
+    "t": 16.9,
+    "text": "Subscribe for more dev tips!",
+    "action": "cta",
+    "event": "cta_7_in",
+    "blockId": "7_subscribe_for_more_dev_tips"
+  }
+]

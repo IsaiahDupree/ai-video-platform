@@ -1,0 +1,53 @@
+{
+  "name": "video-studio",
+  "version": "1.0.0",
+  "description": "Standalone Video Generation Studio - Brief-driven video creation with Remotion",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "render": "remotion render",
+    "upgrade": "remotion upgrade",
+    "studio": "npx tsx scripts/preview.ts",
+    "render:brief": "npx tsx scripts/render.ts",
+    "render:input": "npx tsx scripts/render-from-input.ts",
+    "generate:brief": "npx tsx scripts/generate-brief.ts",
+    "validate": "npx tsx scripts/validate-brief.ts",
+    "batch-render": "npx tsx scripts/batch-render.ts",
+    "api": "npx tsx scripts/api-render.ts",
+    "sfx:context": "npx tsx src/audio/sfx-context-pack.ts",
+    "sfx:beats": "npx tsx src/audio/beat-extractor.ts",
+    "sfx:macro": "npx tsx src/sfx/macro-cues.ts",
+    "audio:mix": "npx tsx scripts/build-audio-mix.ts",
+    "qa:timeline": "npx tsx scripts/timeline-gate.ts",
+    "qa:timeline:warn": "QA_MODE=warn npx tsx scripts/timeline-gate.ts",
+    "qa:build": "npx tsx src/audio/timeline-qa.ts",
+    "format:generate": "npx tsx src/format/format-generator.ts",
+    "format:seed-reveals": "npx tsx src/format/visual-reveals.ts",
+    "format:prep": "npm run format:generate -- data/script.txt && npm run format:seed-reveals",
+    "fetch:media": "npx tsx scripts/fetch-media.ts",
+    "generate:audio": "npx tsx scripts/generate-audio.ts",
+    "generate:character": "npx tsx scripts/generate-character.ts",
+    "render:demo": "npx remotion render FullVideoDemo --output output/full_demo.mp4",
+    "generate:explainer": "npx tsx scripts/generate-explainer.ts",
+    "remix:character": "npx tsx scripts/remix-character.ts",
+    "remix:gemini": "npx tsx scripts/remix-character-gemini.ts"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/renderer": "^4.0.0",
+    "remotion": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.0"
+  },
+  "packageManager": "npm@10.0.0"
+}
+

@@ -1,0 +1,102 @@
+{
+  "assets": {
+    "nasa_KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130": {
+      "id": "nasa_KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+      "provider": "nasa",
+      "type": "video",
+      "source_url": "https://images.nasa.gov/details/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+      "download_url": "http://images-assets.nasa.gov/video/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130~orig.mp4",
+      "preview_url": "https://images-assets.nasa.gov/video/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130~large.jpg",
+      "creator": "Rocket Lab",
+      "license": "Public Domain (NASA)",
+      "attribution_text": "TROPICS Rocket Launch - NASA",
+      "tags": [
+        "TROPICS",
+        "Rocket Launch",
+        "Rocket",
+        "New Zealand",
+        "Rocket Lab",
+        "NASA"
+      ],
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130.mp4",
+      "downloaded_at": "2025-12-28T20:03:01.996Z"
+    },
+    "nasa_NHQ_2024_1119_NASA_Rocket_Engine_Fireplace": {
+      "id": "nasa_NHQ_2024_1119_NASA_Rocket_Engine_Fireplace",
+      "provider": "nasa",
+      "type": "video",
+      "source_url": "https://images.nasa.gov/details/NHQ_2024_1119_NASA%20Rocket%20Engine%20Fireplace",
+      "download_url": "http://images-assets.nasa.gov/video/NHQ_2024_1119_NASA Rocket Engine Fireplace/NHQ_2024_1119_NASA Rocket Engine Fireplace~medium.mp4",
+      "preview_url": "https://images-assets.nasa.gov/video/NHQ_2024_1119_NASA Rocket Engine Fireplace/NHQ_2024_1119_NASA Rocket Engine Fireplace~large.jpg",
+      "creator": "NASA",
+      "license": "Public Domain (NASA)",
+      "attribution_text": "NASA Rocket Engine Fireplace - NASA",
+      "tags": [
+        "Rocket",
+        "Fireplace",
+        "Rocket Engine",
+        "Artemis",
+        "RS-25",
+        "Burning"
+      ],
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_NHQ_2024_1119_NASA_Rocket_Engine_Fireplace.mp4",
+      "downloaded_at": "2025-12-28T20:13:39.227Z"
+    },
+    "nasa_ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A": {
+      "id": "nasa_ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A",
+      "provider": "nasa",
+      "type": "video",
+      "source_url": "https://images.nasa.gov/details/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A",
+      "download_url": "http://images-assets.nasa.gov/video/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A~medium.mp4",
+      "preview_url": "https://images-assets.nasa.gov/video/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A/ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A~large.jpg",
+      "creator": "NASA",
+      "license": "Public Domain (NASA)",
+      "attribution_text": "Orion Completes Upper Stage Separation Burn - NASA",
+      "tags": [
+        "Artemis I resource reel",
+        "Orion",
+        "Artemis",
+        "Artemis I",
+        "Earth"
+      ],
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_ART-SAW1_2022_320_0851A_SHARED_art001m1203200851A.mp4",
+      "downloaded_at": "2025-12-28T20:13:42.350Z"
+    },
+    "nasa_KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407": {
+      "id": "nasa_KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407",
+      "provider": "nasa",
+      "type": "video",
+      "source_url": "https://images.nasa.gov/details/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407",
+      "download_url": "http://images-assets.nasa.gov/video/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407~medium.mp4",
+      "preview_url": "https://images-assets.nasa.gov/video/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407/KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407~large.jpg",
+      "creator": "NASA",
+      "license": "Public Domain (NASA)",
+      "attribution_text": "Kennedy Countdown for Oct. 29, 2021 - NASA",
+      "tags": [
+        "NASA",
+        "KSC",
+        "SpaceX",
+        "Crew-3",
+        "Artemis"
+      ],
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/nasa_KSC-20211028-VP-MWC01-002-KENNEDYCOUNTDOWM-3287407.mp4",
+      "downloaded_at": "2025-12-28T20:13:44.180Z"
+    },
+    "pexels_1851190": {
+      "id": "pexels_1851190",
+      "provider": "pexels",
+      "type": "video",
+      "source_url": "https://www.pexels.com/video/the-sun-illuminating-earth-s-surface-1851190/",
+      "download_url": "https://videos.pexels.com/video-files/1851190/1851190-hd_1920_1080_25fps.mp4",
+      "preview_url": "https://images.pexels.com/videos/1851190/free-video-1851190.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+      "creator": "Ingrid",
+      "license": "Pexels License",
+      "attribution_text": "Video by Ingrid from Pexels",
+      "duration": 16,
+      "width": 1920,
+      "height": 1080,
+      "local_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/assets/broll/video/pexels_1851190.mp4",
+      "downloaded_at": "2025-12-28T20:37:44.899Z"
+    }
+  }
+}

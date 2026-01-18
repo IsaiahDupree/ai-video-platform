@@ -1,0 +1,99 @@
+{
+  "id": "style_interrogation_edu",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2025-12-28T14:30:00.000Z",
+  "metadata": {
+    "source_style": "DScr9hwfcas - Interrogation Techniques",
+    "style_notes": "Educational explainer, dark theme, structured breakdown"
+  },
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 50,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#9ca3af",
+    "accent_color": "#ef4444",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "Every Productivity Method",
+        "subtitle": "Explained in 60 Seconds",
+        "hook_text": "Which one actually works?"
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 5,
+      "content": {
+        "type": "topic",
+        "heading": "Pomodoro Technique",
+        "body_text": "25 minutes work, 5 minutes break. Simple but effective for focus.",
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 15,
+      "content": {
+        "type": "topic",
+        "heading": "Time Blocking",
+        "body_text": "Schedule specific tasks for specific hours. No multitasking allowed.",
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 25,
+      "content": {
+        "type": "topic",
+        "heading": "Eat The Frog",
+        "body_text": "Do your hardest task first thing in the morning.",
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 10,
+      "start_time_sec": 35,
+      "content": {
+        "type": "topic",
+        "heading": "Getting Things Done",
+        "body_text": "Capture everything, clarify actions, organize by context.",
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 45,
+      "content": {
+        "type": "outro",
+        "title": "Try one today",
+        "call_to_action": "Follow for more productivity tips"
+      }
+    }
+  ]
+}

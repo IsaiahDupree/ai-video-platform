@@ -1,0 +1,161 @@
+{
+  "id": "video_with_assets",
+  "format": "explainer_v1",
+  "version": "2.0",
+  "created_at": "2025-12-28T15:00:00.000Z",
+  "metadata": {
+    "title": "AI-Powered Video with Generated Assets",
+    "description": "Using DALL-E generated icons, emojis, and props"
+  },
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 50,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#8b5cf6",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0f0a1a 0%, #1a0a2e 50%, #0a1a2e 100%)"
+  },
+  "assets": {
+    "icons": {
+      "rocket": "/assets/icon/icon_rocket_neon.png",
+      "brain": "/assets/icon/icon_brain_neon.png",
+      "lightning": "/assets/icon/icon_lightning_neon.png",
+      "target": "/assets/icon/icon_target.png",
+      "clock": "/assets/icon/icon_clock.png"
+    },
+    "emojis": {
+      "mindblown": "/assets/emoji/emoji_mindblown.png",
+      "fire": "/assets/emoji/emoji_fire.png",
+      "rocket": "/assets/emoji/emoji_rocket.png"
+    },
+    "props": {
+      "laptop": "/assets/prop/prop_laptop.png",
+      "phone": "/assets/prop/prop_phone.png"
+    },
+    "backgrounds": {
+      "particles": "/assets/background/bg_particles_dark.png"
+    }
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "5 AI Tools",
+        "subtitle": "That Will Blow Your Mind",
+        "hook_text": "🚀 Your productivity is about to explode"
+      },
+      "assets": {
+        "icon": "rocket"
+      },
+      "animation": "neon"
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 9,
+      "start_time_sec": 5,
+      "content": {
+        "type": "topic",
+        "number": 1,
+        "heading": "ChatGPT",
+        "body_text": "The AI assistant that can write, code, analyze, and create anything you imagine"
+      },
+      "assets": {
+        "icon": "brain",
+        "emoji": "mindblown"
+      },
+      "animation": "pop"
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 9,
+      "start_time_sec": 14,
+      "content": {
+        "type": "topic",
+        "number": 2,
+        "heading": "Cursor IDE",
+        "body_text": "AI-powered coding that understands your entire codebase"
+      },
+      "assets": {
+        "icon": "lightning",
+        "prop": "laptop"
+      },
+      "animation": "slide"
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 9,
+      "start_time_sec": 23,
+      "content": {
+        "type": "topic",
+        "number": 3,
+        "heading": "Midjourney",
+        "body_text": "Create stunning visuals from simple text descriptions"
+      },
+      "assets": {
+        "icon": "target",
+        "emoji": "fire"
+      },
+      "animation": "bounce"
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 9,
+      "start_time_sec": 32,
+      "content": {
+        "type": "topic",
+        "number": 4,
+        "heading": "Perplexity",
+        "body_text": "Research assistant with real-time web access and citations"
+      },
+      "assets": {
+        "icon": "clock",
+        "prop": "phone"
+      },
+      "animation": "zoom"
+    },
+    {
+      "id": "topic_005",
+      "type": "topic",
+      "duration_sec": 9,
+      "start_time_sec": 41,
+      "content": {
+        "type": "topic",
+        "number": 5,
+        "heading": "Claude",
+        "body_text": "Best for complex reasoning, analysis, and long-form content"
+      },
+      "assets": {
+        "icon": "brain",
+        "emoji": "rocket"
+      },
+      "animation": "pop"
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 50,
+      "content": {
+        "type": "outro",
+        "title": "Start Using AI Today",
+        "call_to_action": "Follow for more AI tips 🔥"
+      }
+    }
+  ]
+}

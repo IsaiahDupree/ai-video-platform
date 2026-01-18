@@ -1,0 +1,23 @@
+{
+  "fps": 30,
+  "events": [
+    {
+      "type": "voiceover",
+      "src": "assets/audio/voiceover/test_vo.mp3",
+      "frame": 0,
+      "volume": 1.0
+    },
+    {
+      "type": "sfx",
+      "sfxId": "fahhh_tiktok",
+      "frame": 90,
+      "volume": 0.8
+    },
+    {
+      "type": "sfx",
+      "sfxId": "meme_sfx_pack_iconic",
+      "frame": 180,
+      "volume": 0.6
+    }
+  ]
+}

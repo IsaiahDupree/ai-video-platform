@@ -1,0 +1,89 @@
+{
+  "id": "remix_demo",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-01-17T12:00:00Z",
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 35,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "type": "topic",
+      "duration_sec": 7,
+      "start_time_sec": 0,
+      "content": {
+        "type": "topic",
+        "heading": "Meet Your AI Friend",
+        "body_text": "I'm here to help you create amazing videos with consistent character animation.",
+        "image_path": "assets/scenes/stickman_greenhat/scene_1.png"
+      }
+    },
+    {
+      "id": "topic_1",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 7,
+      "content": {
+        "type": "topic",
+        "heading": "How It Works",
+        "body_text": "Character remix technology lets me appear in any scene while staying perfectly consistent.",
+        "image_path": "assets/scenes/stickman_greenhat/scene_1.png"
+      }
+    },
+    {
+      "id": "topic_2",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 15,
+      "content": {
+        "type": "topic",
+        "heading": "Smart Generation",
+        "body_text": "AI analyzes my appearance and generates new poses that match your story.",
+        "image_path": "assets/scenes/stickman_greenhat/scene_2.png"
+      }
+    },
+    {
+      "id": "topic_3",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 23,
+      "content": {
+        "type": "topic",
+        "heading": "Endless Possibilities",
+        "body_text": "Excited, thoughtful, or celebrating - I'm ready for any scene!",
+        "image_path": "assets/scenes/stickman_greenhat/scene_3.png"
+      }
+    },
+    {
+      "id": "outro",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 29,
+      "content": {
+        "type": "topic",
+        "heading": "Let's Create!",
+        "body_text": "Try character remix yourself and bring your stories to life.",
+        "image_path": "assets/scenes/stickman_greenhat/scene_3.png"
+      }
+    }
+  ],
+  "audio": {
+    "voiceover": "assets/audio/remix_demo/voiceover.mp3",
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  }
+}

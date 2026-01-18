@@ -1,0 +1,6 @@
+# YouTube Video Style Analyzer Dependencies
+# Install with: pip install -r scripts/requirements-youtube.txt
+
+yt-dlp>=2024.1.0
+openai>=1.0.0
+pillow>=10.0.0

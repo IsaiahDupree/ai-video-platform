@@ -1,0 +1,85 @@
+{
+  "id": "generated_1766931897879",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2025-12-28T14:24:57.878Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 34,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "3 Productivity Hacks",
+        "subtitle": "That Actually Work"
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 5,
+      "content": {
+        "type": "topic",
+        "heading": "Time Blocking",
+        "body_text": "Dedicate specific time slots to tasks",
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 13,
+      "content": {
+        "type": "topic",
+        "heading": "Deep Work",
+        "body_text": "Minimize distractions for focused work",
+        "animation_style": "fade"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 21,
+      "content": {
+        "type": "topic",
+        "heading": "Weekly Reviews",
+        "body_text": "Reflect on what worked",
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 29,
+      "content": {
+        "type": "outro",
+        "title": "Thanks for watching!",
+        "call_to_action": "Follow for more!"
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "generated_1766931973834",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2025-12-28T14:26:13.833Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 50,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "neon",
+    "primary_color": "#00ff88",
+    "secondary_color": "#00ccff",
+    "accent_color": "#ff00ff",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a1a1a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "Top 5 AI Tools",
+        "subtitle": "You Need in 2024"
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 5,
+      "content": {
+        "type": "list_item",
+        "number": 5,
+        "title": "Claude AI",
+        "description": "Best for reasoning and analysis"
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 13,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "ChatGPT",
+        "description": "Great for general tasks"
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 21,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "Midjourney",
+        "description": "Amazing image generation"
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 29,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "GitHub Copilot",
+        "description": "Code faster"
+      }
+    },
+    {
+      "id": "item_005",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 37,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "Notion AI",
+        "description": "Organize everything"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 45,
+      "content": {
+        "type": "outro",
+        "title": "Thanks for watching!",
+        "call_to_action": "Which will you try?"
+      }
+    }
+  ]
+}

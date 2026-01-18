@@ -1,0 +1,116 @@
+{
+  "id": "ugc_approved_001",
+  "format": "ugc_v1",
+  "version": "1.0",
+  "created_at": "2025-12-28T22:30:00Z",
+  "source_media": {
+    "media_id": "e960a544-7d67-46ca-8cca-ccbe2ff3b1bf",
+    "filename": "TABL2182.MOV",
+    "file_path": "/Volumes/My Passport/MediaPoster/workspace1/iphone_import/TABL2182.MOV",
+    "duration_sec": 29,
+    "resolution": "1920x1080"
+  },
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 29,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "background_type": "video",
+    "background_value": "/Volumes/My Passport/MediaPoster/workspace1/iphone_import/TABL2182.MOV"
+  },
+  "content": {
+    "title": "TABL2182",
+    "transcript": "🎵 I'ma take my eyes in my graveyard Honestly my eyes had a pain so I don't see the point in saying no Body has to be made to sing so You the boss, I'm six, you're one, I'm",
+    "topics": ["Personal reflection", "Creative expression", "Emotional struggle"],
+    "tone": "contemplative",
+    "hooks": [
+      "I'ma take my eyes in my graveyard",
+      "Honestly my eyes had a pain",
+      "You the boss, I'm six, you're one"
+    ],
+    "detected_hook": "I'ma take my eyes in my graveyard"
+  },
+  "scene_structure": [
+    {
+      "role": "hook",
+      "emotion": "curiosity",
+      "start_sec": 0,
+      "end_sec": 5,
+      "summary": "Attention-grabbing opening with a metaphorical expression"
+    },
+    {
+      "role": "problem",
+      "emotion": "relatability",
+      "start_sec": 5,
+      "end_sec": 15,
+      "summary": "Introduction to the speaker's emotional struggle"
+    },
+    {
+      "role": "reflection",
+      "emotion": "empathy",
+      "start_sec": 15,
+      "end_sec": 25,
+      "summary": "The speaker reflects on their emotional state"
+    },
+    {
+      "role": "cta",
+      "emotion": "contemplation",
+      "start_sec": 25,
+      "end_sec": 29,
+      "summary": "Implicit call to action"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ugc_main",
+      "type": "ugc_video",
+      "duration_sec": 29,
+      "start_time_sec": 0,
+      "content": {
+        "type": "video_overlay",
+        "video_src": "/Volumes/My Passport/MediaPoster/workspace1/iphone_import/TABL2182.MOV",
+        "captions_enabled": true,
+        "caption_style": "karaoke"
+      }
+    }
+  ],
+  "captions": {
+    "enabled": true,
+    "style": "karaoke",
+    "position": "bottom",
+    "words": [
+      {"word": "I'ma", "start": 0.5, "end": 0.8},
+      {"word": "take", "start": 0.8, "end": 1.0},
+      {"word": "my", "start": 1.0, "end": 1.2},
+      {"word": "eyes", "start": 1.2, "end": 1.5},
+      {"word": "in", "start": 1.5, "end": 1.6},
+      {"word": "my", "start": 1.6, "end": 1.8},
+      {"word": "graveyard", "start": 1.8, "end": 2.5}
+    ]
+  },
+  "visual_analysis": {
+    "short_description": "A relaxed selfie taken during a drive.",
+    "visual_style": "documentary",
+    "content_category": "lifestyle",
+    "main_subjects": ["young man", "car interior"],
+    "aesthetic_tags": ["selfie", "casual", "car", "everyday life", "portrait"]
+  },
+  "music_suggestion": {
+    "mood": "contemplative",
+    "genre": "acoustic",
+    "tempo": "slow",
+    "energy": "low"
+  },
+  "suggested_hashtags": [
+    "#Selfie", "#CarVibes", "#EverydayLife", "#CasualStyle",
+    "#LifestylePhotography", "#Starfella", "#MississippiState"
+  ]
+}
