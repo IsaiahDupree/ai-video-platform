@@ -94,7 +94,7 @@
     }
   ],
   "audio": {
-    "voiceover": "assets/audio/appkit/voiceover.mp3",
+    "voiceover": "assets/audio/appkit/voiceover_cloned.mp3",
     "volume_music": 0.15,
     "volume_voice": 1.0
   }

@@ -1,7 +1,9 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   Sequence,
+  staticFile,
   useVideoConfig,
 } from 'remotion';
 import { ContentBrief, Section, StyleConfig } from '../types';
@@ -65,6 +67,14 @@ export const BriefComposition: React.FC<BriefCompositionProps> = ({ brief: input
         position="bottom"
         height={4}
       />
+
+      {/* Voiceover audio */}
+      {brief.audio?.voiceover && (
+        <Audio
+          src={staticFile(brief.audio.voiceover)}
+          volume={brief.audio.volume_voice ?? 1.0}
+        />
+      )}
     </AbsoluteFill>
   );
 };
