@@ -73,37 +73,45 @@ image = (
 
 
 def download_checkpoints():
-    """Download SadTalker model checkpoints."""
+    """Download SadTalker model checkpoints from GitHub/GDrive."""
     import subprocess
+    import urllib.request
     
     ckpt_dir = f"{CACHE_DIR}/checkpoints"
     os.makedirs(ckpt_dir, exist_ok=True)
     
-    # Download checkpoints using SadTalker's script
-    subprocess.run([
-        "bash", "/root/SadTalker/scripts/download_models.sh"
-    ], cwd="/root/SadTalker", check=False)
+    # Download from public mirrors
+    print("Downloading SadTalker checkpoints...")
     
-    # Also download from HuggingFace as backup
-    from huggingface_hub import hf_hub_download
+    # Use gdown for Google Drive links (SadTalker official)
+    subprocess.run(["pip", "install", "-q", "gdown"], check=True)
     
-    files_to_download = [
-        ("vinthony/SadTalker", "checkpoints/mapping_00109-model.pth.tar"),
-        ("vinthony/SadTalker", "checkpoints/mapping_00229-model.pth.tar"),
-        ("vinthony/SadTalker", "checkpoints/SadTalker_V0.0.2_256.safetensors"),
-        ("vinthony/SadTalker", "checkpoints/SadTalker_V0.0.2_512.safetensors"),
-    ]
+    # Download checkpoints via gdown (official SadTalker links)
+    checkpoint_urls = {
+        # SadTalker V0.0.2 safetensors
+        "SadTalker_V0.0.2_256.safetensors": "1OWfDU67M7cKWAeMKQRWKvgqz9HtOhvhI",
+        "SadTalker_V0.0.2_512.safetensors": "1E4fH0nOB4T_oGphCDHl3KqpXnJNzQvXD",
+    }
     
-    for repo, filename in files_to_download:
-        try:
-            hf_hub_download(
-                repo_id=repo,
-                filename=filename,
-                local_dir=CACHE_DIR,
-            )
-            print(f"Downloaded {filename}")
-        except Exception as e:
-            print(f"Warning: Could not download {filename}: {e}")
+    import gdown
+    for filename, file_id in checkpoint_urls.items():
+        output_path = f"{ckpt_dir}/{filename}"
+        if not os.path.exists(output_path):
+            try:
+                print(f"Downloading {filename}...")
+                gdown.download(id=file_id, output=output_path, quiet=False)
+            except Exception as e:
+                print(f"Warning: Could not download {filename}: {e}")
+    
+    # Download face parsing and other required models
+    face_parsing_url = "https://github.com/OpenTalker/SadTalker/releases/download/v0.0.2/mapping_00109-model.pth.tar"
+    try:
+        output_path = f"{ckpt_dir}/mapping_00109-model.pth.tar"
+        if not os.path.exists(output_path):
+            print("Downloading mapping model...")
+            urllib.request.urlretrieve(face_parsing_url, output_path)
+    except Exception as e:
+        print(f"Warning: Could not download mapping model: {e}")
     
     print("Checkpoint download complete!")
 
