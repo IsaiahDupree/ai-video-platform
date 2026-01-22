@@ -2,7 +2,7 @@
   "project": "AI Video Platform",
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
-  "totalFeatures": 95,
+  "totalFeatures": 78,
   "completedFeatures": 0,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
