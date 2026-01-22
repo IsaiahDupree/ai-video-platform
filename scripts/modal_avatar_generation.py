@@ -75,6 +75,19 @@ image = (
         "decord",
         # Use xformers instead of flash-attn (easier to install)
         "xformers",
+        # Additional LongCat dependencies
+        "loguru",
+        "av",
+        "pydub",
+        "rotary_embedding_torch",
+        "sentencepiece",
+        "protobuf",
+    )
+    .run_commands(
+        # Clone LongCat repo and install its requirements at build time
+        "git clone --single-branch --branch main https://github.com/meituan-longcat/LongCat-Video.git /root/LongCat-Video",
+        "pip install -r /root/LongCat-Video/requirements.txt || true",
+        "pip install -r /root/LongCat-Video/requirements_avatar.txt || true",
     )
     .env({
         "HF_HOME": CACHE_DIR,
@@ -160,14 +173,8 @@ class AvatarGenerator:
         print("Setting up LongCat-Video-Avatar...")
         start = time.time()
         
-        # Clone repo if needed
+        # Repo is pre-cloned during image build
         self.repo_dir = "/root/LongCat-Video"
-        if not os.path.exists(self.repo_dir):
-            subprocess.run([
-                "git", "clone", "--single-branch", "--branch", "main",
-                "https://github.com/meituan-longcat/LongCat-Video.git",
-                self.repo_dir
-            ], check=True)
         
         # Add repo to path
         sys.path.insert(0, self.repo_dir)
