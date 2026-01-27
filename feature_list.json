@@ -1,0 +1,1045 @@
+{
+  "project": "Remotion VideoStudio",
+  "description": "AI-powered video generation platform with voice cloning, talking avatars, SFX system, and static ad generation",
+  "version": "1.0",
+  "totalFeatures": 120,
+  "completedFeatures": 0,
+  "prds": [
+    "PRD.md",
+    "PRD-Video-Generation-Platform.md",
+    "PRD-HeyGen-Alternative.md",
+    "PRD-SFX-System.md",
+    "PRD-Audio-Video-System-v2.md",
+    "PRD-Text-to-Video-Modal.md",
+    "PRD_InfiniteTalk_Video_Generation.md",
+    "PRD_EVERREACH_ADS.md"
+  ],
+  "features": [
+    {
+      "id": "VID-001",
+      "name": "Content Brief Schema",
+      "description": "JSON-based video definition system with settings, style, sections, and audio",
+      "category": "video-core",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "VID-002",
+      "name": "Remotion Project Setup",
+      "description": "Initialize Remotion with BriefComposition and basic scene components",
+      "category": "video-core",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "VID-003",
+      "name": "Scene Templates",
+      "description": "IntroScene, TopicScene, OutroScene components for video structure",
+      "category": "video-core",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "VID-004",
+      "name": "Theme System",
+      "description": "Dark/light themes with configurable colors and typography",
+      "category": "video-core",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "VID-005",
+      "name": "Animation Presets Library",
+      "description": "Entrance, exit, and loop animations (fadeIn, slideUp, bounceIn, glitch, etc.)",
+      "category": "video-core",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "VID-006",
+      "name": "Visual Effects Components",
+      "description": "Particles, glow, overlays, vignette, scanlines, gradient text",
+      "category": "video-core",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "VID-007",
+      "name": "Beat Schema System",
+      "description": "Kinetic text explainer format with beat-driven animations",
+      "category": "video-core",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "VID-008",
+      "name": "Asset Attribution System",
+      "description": "Track media sources, licenses, and attribution metadata",
+      "category": "video-core",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "MEDIA-001",
+      "name": "Pexels API Integration",
+      "description": "Stock video/images from Pexels API with caching",
+      "category": "media-apis",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "MEDIA-002",
+      "name": "Pixabay API Integration",
+      "description": "Stock footage from Pixabay API",
+      "category": "media-apis",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "MEDIA-003",
+      "name": "NASA Images API Integration",
+      "description": "Space/aerospace footage from NASA public domain",
+      "category": "media-apis",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "MEDIA-004",
+      "name": "Tenor/GIPHY GIF Integration",
+      "description": "Reaction GIFs from Tenor and GIPHY APIs",
+      "category": "media-apis",
+      "priority": "P2",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "MEDIA-005",
+      "name": "Freesound SFX Integration",
+      "description": "Sound effects from Freesound API with CC license tracking",
+      "category": "media-apis",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": false
+    },
+    {
+      "id": "AI-001",
+      "name": "DALL-E Image Generation",
+      "description": "AI-generated icons, props, backgrounds via OpenAI DALL-E 3",
+      "category": "ai-generation",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "AI-002",
+      "name": "Character Consistency System",
+      "description": "Maintain consistent characters across scenes with trait anchoring",
+      "category": "ai-generation",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "AI-003",
+      "name": "Script Generation (GPT-4)",
+      "description": "Topic → structured script generation via GPT-4o",
+      "category": "ai-generation",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "AI-004",
+      "name": "Title Summarization",
+      "description": "AI-generated hook titles and metadata",
+      "category": "ai-generation",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "VOICE-001",
+      "name": "OpenAI TTS Integration",
+      "description": "Text-to-speech via OpenAI API (alloy, onyx, nova voices)",
+      "category": "voice",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "VOICE-002",
+      "name": "IndexTTS-2 Voice Cloning",
+      "description": "Voice cloning via Hugging Face IndexTTS-2 with emotion control",
+      "category": "voice",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "VOICE-003",
+      "name": "ElevenLabs Integration",
+      "description": "Premium TTS and SFX generation via ElevenLabs API",
+      "category": "voice",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "VOICE-004",
+      "name": "Voice Reference Management",
+      "description": "Store and manage voice reference files for cloning",
+      "category": "voice",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "VOICE-005",
+      "name": "Emotion Control System",
+      "description": "Happy, sad, angry, calm, explaining emotion presets",
+      "category": "voice",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CAPTION-001",
+      "name": "Whisper Word Timestamps",
+      "description": "Word-level timestamps via OpenAI Whisper API",
+      "category": "captions",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CAPTION-002",
+      "name": "TikTok-Style Captions",
+      "description": "Bold, centered, word-by-word highlight captions",
+      "category": "captions",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CAPTION-003",
+      "name": "YouTube Caption Style",
+      "description": "Bottom bar, sentence-level captions for longform",
+      "category": "captions",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CAPTION-004",
+      "name": "Karaoke Caption Style",
+      "description": "Color wipe on current word for music/lyric videos",
+      "category": "captions",
+      "priority": "P2",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CAPTION-005",
+      "name": "Animated Caption Component",
+      "description": "Remotion AnimatedCaption component with style presets",
+      "category": "captions",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "FORMAT-001",
+      "name": "Explainer Video Format",
+      "description": "Hook → Context → Points → Summary → CTA structure",
+      "category": "formats",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "FORMAT-002",
+      "name": "GitHub Dev Vlog Format",
+      "description": "Code walkthroughs with CodeBlock, TerminalOutput, GitCommit components",
+      "category": "formats",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "FORMAT-003",
+      "name": "Shorts Format",
+      "description": "15-60s TikTok/Reels format with viral hooks",
+      "category": "formats",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "FORMAT-004",
+      "name": "Listicle Format",
+      "description": "Top N lists and countdowns format",
+      "category": "formats",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "FORMAT-005",
+      "name": "Static Ad Compositions",
+      "description": "Multi-size static ad generation (IG, FB, Twitter, LinkedIn)",
+      "category": "formats",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-001",
+      "name": "SFX Library Structure",
+      "description": "Manifest-based SFX library with categories (ui, transitions, impacts)",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-002",
+      "name": "SFX Manifest Schema",
+      "description": "AI-addressable index with tags, descriptions, license info",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-003",
+      "name": "Audio Events Schema",
+      "description": "Engine-agnostic timeline schema (sfx, music, voiceover events)",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-004",
+      "name": "SFX Context Pack",
+      "description": "Compact LLM payload for AI-driven SFX selection",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-005",
+      "name": "Remotion SfxLayer Component",
+      "description": "Map audio_events.json to Remotion Audio sequences",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-006",
+      "name": "FFmpeg Audio Mixer",
+      "description": "Combine voiceover, music, and SFX into single audio file",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-007",
+      "name": "Beat Extractor",
+      "description": "Script → beats with frames and action types",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-008",
+      "name": "Anti-Spam Thinning",
+      "description": "Density limits and cooldowns for SFX placement",
+      "category": "sfx",
+      "priority": "P1",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-009",
+      "name": "Timeline QA Gate",
+      "description": "Fail build on pacing issues (tight gaps, dense zones)",
+      "category": "sfx",
+      "priority": "P1",
+      "prd": "PRD-SFX-System.md",
+      "passes": false
+    },
+    {
+      "id": "SFX-010",
+      "name": "Best Match Finder",
+      "description": "Auto-fix hallucinated SFX IDs using tag/description similarity",
+      "category": "sfx",
+      "priority": "P1",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": false
+    },
+    {
+      "id": "AUDIO-001",
+      "name": "Zod Validation Schemas",
+      "description": "SfxManifestZ, AudioEventsZ validation schemas",
+      "category": "audio",
+      "priority": "P0",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": false
+    },
+    {
+      "id": "AUDIO-002",
+      "name": "Hybrid Format DSL",
+      "description": "FormatBlock types (keyword, bullet, code, error, success, cta)",
+      "category": "audio",
+      "priority": "P1",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": false
+    },
+    {
+      "id": "AUDIO-003",
+      "name": "Visual Reveals System",
+      "description": "Record visual element appearances for SFX sync",
+      "category": "audio",
+      "priority": "P1",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": false
+    },
+    {
+      "id": "AUDIO-004",
+      "name": "Macro Cues & Policy Engine",
+      "description": "Map macro cues to SFX with cooldown and priority rules",
+      "category": "audio",
+      "priority": "P1",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": false
+    },
+    {
+      "id": "AUDIO-005",
+      "name": "Motion Canvas Integration",
+      "description": "Playwright renderer and two-pass pipeline for Motion Canvas",
+      "category": "audio",
+      "priority": "P2",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": false
+    },
+    {
+      "id": "MODAL-001",
+      "name": "Modal GPU Deployment",
+      "description": "Serverless GPU infrastructure setup on Modal",
+      "category": "modal-t2v",
+      "priority": "P0",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": false
+    },
+    {
+      "id": "MODAL-002",
+      "name": "LTX-Video Deployment",
+      "description": "Fast text-to-video generation with LTX-Video 2B model",
+      "category": "modal-t2v",
+      "priority": "P0",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": false
+    },
+    {
+      "id": "MODAL-003",
+      "name": "Text-to-Video API Endpoint",
+      "description": "POST /generate-video with prompt, resolution, duration",
+      "category": "modal-t2v",
+      "priority": "P0",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": false
+    },
+    {
+      "id": "MODAL-004",
+      "name": "Model Volume Caching",
+      "description": "Persistent storage for model weights on Modal volumes",
+      "category": "modal-t2v",
+      "priority": "P0",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": false
+    },
+    {
+      "id": "MODAL-005",
+      "name": "TypeScript Client SDK",
+      "description": "TypeScript client for Modal API calls",
+      "category": "modal-t2v",
+      "priority": "P1",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-001",
+      "name": "Text-to-Video Generation",
+      "description": "Generate video from text prompts using diffusion models",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-002",
+      "name": "Talking Avatar Synthesis",
+      "description": "Audio-driven lip-synced avatar video generation",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-003",
+      "name": "LongCat-Avatar Deployment",
+      "description": "Deploy LongCat-Video-Avatar for talking heads",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-004",
+      "name": "Voice Cloning API",
+      "description": "Clone voice from 10-30s reference audio",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-005",
+      "name": "REST API Gateway",
+      "description": "FastAPI gateway with auth, rate limiting, webhooks",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-006",
+      "name": "Job Queue System",
+      "description": "Redis-based job queue for async processing",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-007",
+      "name": "Webhook Callbacks",
+      "description": "Notify clients on job.queued, job.processing, job.completed",
+      "category": "heygen-alt",
+      "priority": "P1",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-008",
+      "name": "Image-to-Video Generation",
+      "description": "Animate static images into video",
+      "category": "heygen-alt",
+      "priority": "P1",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-009",
+      "name": "Video-to-Video Enhancement",
+      "description": "Style transfer and enhancement on existing video",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-010",
+      "name": "Multi-Language Support",
+      "description": "TTS and lip-sync in multiple languages",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-011",
+      "name": "Template System",
+      "description": "Pre-built templates for product demos, tutorials, ads",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-012",
+      "name": "Wan2.2 High-Quality Model",
+      "description": "Deploy Wan2.2 for high-quality 720p video generation",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-013",
+      "name": "Mochi Photorealistic Model",
+      "description": "Deploy Mochi 10B for photorealistic output",
+      "category": "heygen-alt",
+      "priority": "P3",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-014",
+      "name": "Batch Processing",
+      "description": "Process multiple videos in parallel",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "HEYGEN-015",
+      "name": "Custom Avatar Training",
+      "description": "Train custom avatars from user-provided video",
+      "category": "heygen-alt",
+      "priority": "P3",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-001",
+      "name": "InfiniteTalk Modal Deployment",
+      "description": "Deploy InfiniteTalk 14B on Modal A100-80GB",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-002",
+      "name": "Talking Head API",
+      "description": "POST /generate endpoint with image_b64, audio_b64, profile",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-003",
+      "name": "Quality Profiles",
+      "description": "Fast (8 steps), balanced (20 steps), quality (40 steps) profiles",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-004",
+      "name": "TeaCache Acceleration",
+      "description": "Enable TeaCache for faster inference",
+      "category": "infinitetalk",
+      "priority": "P1",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-005",
+      "name": "FusioniX LoRA Support",
+      "description": "Speed LoRA for improved 8-step quality",
+      "category": "infinitetalk",
+      "priority": "P1",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-006",
+      "name": "Audio Preprocessing Pipeline",
+      "description": "Auto-resample to 16kHz mono with librosa",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-007",
+      "name": "Image Preprocessing",
+      "description": "Auto-resize to 832x480 for model input",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-008",
+      "name": "Health Check Endpoint",
+      "description": "GET /health with model status and GPU info",
+      "category": "infinitetalk",
+      "priority": "P1",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-009",
+      "name": "FP8 Quantization",
+      "description": "8-bit floating point for reduced VRAM",
+      "category": "infinitetalk",
+      "priority": "P2",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "INFINITETALK-010",
+      "name": "Multi-GPU Support",
+      "description": "Distribute model across multiple GPUs for longer videos",
+      "category": "infinitetalk",
+      "priority": "P3",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-001",
+      "name": "EverReach Ad System",
+      "description": "Static ad generation for Meta platforms by awareness level",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-002",
+      "name": "Awareness Pyramid Templates",
+      "description": "Unaware, Problem Aware, Solution Aware, Product Aware, Most Aware templates",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-003",
+      "name": "Belief Cluster Targeting",
+      "description": "Too Busy, Hate CRMs, Feels Cringe, Revenue Loss, Privacy First segments",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-004",
+      "name": "HeadlineAd Template",
+      "description": "Bold headline + subtext + CTA template",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-005",
+      "name": "PainPointAd Template",
+      "description": "Problem statement + solution hint template",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-006",
+      "name": "ListicleAd Template",
+      "description": "Numbered benefits or objections template",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-007",
+      "name": "TestimonialAd Template",
+      "description": "Quote + author + rating template",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-008",
+      "name": "ComparisonAd Template",
+      "description": "Before/After or Us vs Them template",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-009",
+      "name": "Instagram Ad Sizes",
+      "description": "1080x1080 Feed, 1080x1920 Story, 1080x1350 Portrait",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-010",
+      "name": "Facebook Ad Sizes",
+      "description": "1200x630 Feed, 1080x1920 Story, 1200x1200 Marketplace",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-011",
+      "name": "Angle Matrix System",
+      "description": "Testing matrix of awareness x belief x hook combinations",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-012",
+      "name": "Objection Handling Ads",
+      "description": "Visual proof ads for common objections",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-013",
+      "name": "Copy Bank System",
+      "description": "Headlines, CTAs, and copy by awareness level",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "EVERREACH-014",
+      "name": "UTM Tracking Integration",
+      "description": "utm_content with prompt_id, awareness, belief",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": false
+    },
+    {
+      "id": "PIPELINE-001",
+      "name": "Topic-to-Video Pipeline",
+      "description": "Topic → Script → Assets → Audio → Video automated pipeline",
+      "category": "pipeline",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "PIPELINE-002",
+      "name": "Brief Validation",
+      "description": "Validate brief structure against schema",
+      "category": "pipeline",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "PIPELINE-003",
+      "name": "Batch Render Script",
+      "description": "Batch render multiple videos from briefs",
+      "category": "pipeline",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "PIPELINE-004",
+      "name": "Timeline QA Validation",
+      "description": "Verify timeline synchronization and audio sync",
+      "category": "pipeline",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "PIPELINE-005",
+      "name": "Brand Template Package",
+      "description": "Reproducible brand configs with colors, fonts, voices",
+      "category": "pipeline",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CLI-001",
+      "name": "Generate Explainer CLI",
+      "description": "npm run generate:explainer with --topic, --script, --brief options",
+      "category": "cli",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CLI-002",
+      "name": "Generate Audio CLI",
+      "description": "npm run generate:audio with --tts, --sfx, --voice options",
+      "category": "cli",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CLI-003",
+      "name": "Render Brief CLI",
+      "description": "npm run render:brief for video rendering",
+      "category": "cli",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CLI-004",
+      "name": "Static Ads Render CLI",
+      "description": "npm run render:static-ads for batch ad generation",
+      "category": "cli",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "CLI-005",
+      "name": "Word Timestamps Script",
+      "description": "python3 scripts/generate-word-timestamps.py",
+      "category": "cli",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": false
+    },
+    {
+      "id": "TRACK-001",
+      "name": "Tracking SDK Integration",
+      "description": "Integrate user event tracking SDK for analytics",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": false
+    },
+    {
+      "id": "TRACK-002",
+      "name": "Acquisition Event Tracking",
+      "description": "Track landing_view, signup_started, signup_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": false
+    },
+    {
+      "id": "TRACK-003",
+      "name": "Activation Event Tracking",
+      "description": "Track first_video_created, first_render_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": false
+    },
+    {
+      "id": "TRACK-004",
+      "name": "Core Value Event Tracking",
+      "description": "Track video_rendered, batch_completed, export_downloaded events",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": false
+    },
+    {
+      "id": "TRACK-005",
+      "name": "Monetization Event Tracking",
+      "description": "Track checkout_started, purchase_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": false
+    },
+    {
+      "id": "META-001",
+      "name": "Meta Pixel Installation",
+      "description": "Install Meta Pixel base code on all pages",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "prd": "PRD_META_PIXEL.md",
+      "passes": false
+    },
+    {
+      "id": "META-002",
+      "name": "Standard Events Mapping",
+      "description": "Map app events to Meta standard events (Lead, Purchase, etc)",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "prd": "PRD_META_PIXEL.md",
+      "passes": false
+    },
+    {
+      "id": "META-003",
+      "name": "CAPI Server-Side Events",
+      "description": "Send conversion events via Conversions API",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "prd": "PRD_META_PIXEL.md",
+      "passes": false
+    },
+    {
+      "id": "META-004",
+      "name": "Event Deduplication",
+      "description": "Use matching event_id for Pixel and CAPI dedup",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "prd": "PRD_META_PIXEL.md",
+      "passes": false
+    },
+    {
+      "id": "GDP-001",
+      "name": "Growth Data Plane Schema",
+      "description": "Create person, identity_link, event, subscription tables",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "prd": "PRD_GROWTH_DATA_PLANE.md",
+      "passes": false
+    },
+    {
+      "id": "GDP-002",
+      "name": "Unified Events Table",
+      "description": "Normalized events from all sources",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "prd": "PRD_GROWTH_DATA_PLANE.md",
+      "passes": false
+    },
+    {
+      "id": "GDP-003",
+      "name": "Stripe Webhook Integration",
+      "description": "Handle subscription events from Stripe",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "prd": "PRD_GROWTH_DATA_PLANE.md",
+      "passes": false
+    },
+    {
+      "id": "GDP-004",
+      "name": "Segment Engine",
+      "description": "Evaluate segment membership and trigger automations",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "prd": "PRD_GROWTH_DATA_PLANE.md",
+      "passes": false
+    }
+  ]
+}
