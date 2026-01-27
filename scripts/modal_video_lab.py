@@ -519,6 +519,69 @@ class InfiniteTalkService:
             print(f"❌ InfiniteTalk failed: {e}")
             data_vol.commit()
             raise
+    
+    @modal.method()
+    def generate_from_text(
+        self,
+        image_b64: str,
+        text: str,
+        voice: str = "af_heart",  # Kokoro voice: af_heart, af_bella, am_adam, etc.
+        prompt: str = "a person talking, natural head movement",
+        profile: str = "fast",
+        speed: float = 1.0,
+    ) -> Dict[str, Any]:
+        """
+        Generate talking head video from image + text (uses Kokoro TTS).
+        
+        Args:
+            image_b64: Base64-encoded face image
+            text: Text to speak
+            voice: Kokoro voice ID (af_heart, af_bella, am_adam, am_michael, bf_emma, bm_george)
+            prompt: Motion prompt
+            profile: Quality profile
+            speed: Speech speed (0.5-2.0)
+        """
+        import soundfile as sf
+        from misaki import en
+        from kokoro import KPipeline
+        
+        job_id = uuid.uuid4().hex[:8]
+        work_dir = Path(f"/data/jobs/{job_id}")
+        work_dir.mkdir(parents=True, exist_ok=True)
+        
+        print(f"🎤 Generating TTS for: {text[:50]}...")
+        
+        # Generate audio with Kokoro TTS
+        pipeline = KPipeline(lang_code='a')  # 'a' for American English
+        
+        # Generate audio
+        audio_path = work_dir / "tts_output.wav"
+        generator = pipeline(text, voice=voice, speed=speed)
+        
+        # Collect all audio chunks
+        all_audio = []
+        for i, (gs, ps, audio) in enumerate(generator):
+            all_audio.append(audio)
+        
+        # Concatenate and save
+        import numpy as np
+        full_audio = np.concatenate(all_audio)
+        sf.write(str(audio_path), full_audio, 24000)
+        
+        audio_duration = len(full_audio) / 24000
+        print(f"✅ TTS generated: {audio_duration:.1f}s")
+        
+        # Convert to base64 and call generate
+        audio_b64 = file_to_b64(str(audio_path))
+        
+        # Call the main generate method locally (not .remote())
+        return self.generate.local(
+            image_b64=image_b64,
+            audio_b64=audio_b64,
+            prompt=prompt,
+            profile=profile,
+            max_duration_sec=min(audio_duration + 1, 10.0),  # Cap at 10s
+        )
 
 
 # =============================================================================
@@ -674,11 +737,19 @@ def fastapi_app():
     
     class GenerateRequest(BaseModel):
         model: Literal["infinitetalk", "longcat"] = "infinitetalk"
-        profile: Literal["low_vram", "balanced", "quality"] = "low_vram"
+        profile: Literal["fast", "low_vram", "balanced", "quality"] = "fast"
         prompt: str = "a person talking naturally"
         image_b64: str = Field(..., description="Base64-encoded face image")
         audio_b64: str = Field(..., description="Base64-encoded audio")
-        max_duration_sec: float = Field(10.0, description="Max audio duration (InfiniteTalk only)")
+        max_duration_sec: float = Field(5.0, description="Max audio duration (InfiniteTalk only)")
+    
+    class TextToVideoRequest(BaseModel):
+        image_b64: str = Field(..., description="Base64-encoded face image")
+        text: str = Field(..., description="Text to speak")
+        voice: str = Field("af_heart", description="Kokoro voice: af_heart, af_bella, am_adam, am_michael, bf_emma, bm_george")
+        profile: Literal["fast", "low_vram", "balanced", "quality"] = "fast"
+        prompt: str = "a person talking naturally"
+        speed: float = Field(1.0, description="Speech speed (0.5-2.0)")
 
     class GenerateResponse(BaseModel):
         request_id: str
@@ -721,9 +792,34 @@ def fastapi_app():
         except Exception as e:
             raise HTTPException(500, str(e))
 
+    @api.post("/generate-from-text", response_model=GenerateResponse)
+    async def generate_from_text(req: TextToVideoRequest):
+        """Generate talking head video from image + text (uses Kokoro TTS)."""
+        request_id = str(uuid.uuid4())
+        
+        try:
+            result = InfiniteTalkService().generate_from_text.remote(
+                image_b64=req.image_b64,
+                text=req.text,
+                voice=req.voice,
+                prompt=req.prompt,
+                profile=req.profile,
+                speed=req.speed,
+            )
+            
+            return GenerateResponse(
+                request_id=request_id,
+                model="infinitetalk",
+                profile=req.profile,
+                output_mp4_b64=result["output_mp4_b64"],
+                metadata={k: v for k, v in result.items() if k != "output_mp4_b64"},
+            )
+        except Exception as e:
+            raise HTTPException(500, str(e))
+
     @api.get("/health")
     async def health():
-        return {"status": "ok", "models": ["infinitetalk", "longcat"]}
+        return {"status": "ok", "models": ["infinitetalk", "longcat"], "endpoints": ["/generate", "/generate-from-text"]}
     
     return api
 
@@ -736,8 +832,10 @@ def fastapi_app():
 def main(
     model: str = "infinitetalk",
     image: str = "public/assets/images/test_face_hq.jpg",
-    audio: str = "public/assets/audio/test_audio_16k.wav",
-    profile: str = "low_vram",
+    audio: str = "",
+    text: str = "",
+    voice: str = "af_heart",
+    profile: str = "fast",
     output: str = "video_lab_output.mp4",
     download_only: bool = False,
 ):
@@ -745,8 +843,16 @@ def main(
     Test video generation locally.
     
     Examples:
-        modal run scripts/modal_video_lab.py --model infinitetalk --image face.png --audio speech.wav
-        modal run scripts/modal_video_lab.py --model longcat --image face.png --audio speech.wav
+        # With audio file
+        modal run scripts/modal_video_lab.py --image face.png --audio speech.wav
+        
+        # With text (TTS)
+        modal run scripts/modal_video_lab.py --image face.png --text "Hello, this is a test."
+        
+        # With different voice
+        modal run scripts/modal_video_lab.py --image face.png --text "Hello!" --voice am_adam
+        
+        # Download weights only
         modal run scripts/modal_video_lab.py --download-only
     """
     if download_only:
@@ -755,32 +861,49 @@ def main(
         print("Done!")
         return
     
-    # Read inputs
+    # Validate inputs
     if not os.path.exists(image):
         print(f"❌ Image not found: {image}")
         return
-    if not os.path.exists(audio):
+    
+    if not text and not audio:
+        print("❌ Must provide either --text or --audio")
+        return
+    
+    if audio and not os.path.exists(audio):
         print(f"❌ Audio not found: {audio}")
         return
     
     with open(image, "rb") as f:
         image_b64 = base64.b64encode(f.read()).decode("utf-8")
-    with open(audio, "rb") as f:
-        audio_b64 = base64.b64encode(f.read()).decode("utf-8")
     
     print(f"Model: {model}")
     print(f"Profile: {profile}")
     print(f"Image: {image}")
-    print(f"Audio: {audio}")
     
-    # Generate
-    if model == "infinitetalk":
+    # Generate - text-to-video or audio-to-video
+    if text:
+        print(f"Text: {text[:50]}...")
+        print(f"Voice: {voice}")
+        result = InfiniteTalkService().generate_from_text.remote(
+            image_b64=image_b64,
+            text=text,
+            voice=voice,
+            profile=profile,
+        )
+    elif model == "infinitetalk":
+        with open(audio, "rb") as f:
+            audio_b64 = base64.b64encode(f.read()).decode("utf-8")
+        print(f"Audio: {audio}")
         result = InfiniteTalkService().generate.remote(
             image_b64=image_b64,
             audio_b64=audio_b64,
             profile=profile,
         )
     elif model == "longcat":
+        with open(audio, "rb") as f:
+            audio_b64 = base64.b64encode(f.read()).decode("utf-8")
+        print(f"Audio: {audio}")
         result = LongCatAvatarService().generate.remote(
             image_b64=image_b64,
             audio_b64=audio_b64,
