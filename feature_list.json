@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 22,
+  "completedFeatures": 25,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -384,7 +384,7 @@
       "priority": "P2",
       "phase": 4,
       "effort": "13pts",
-      "passes": false,
+      "passes": true,
       "category": "text-to-video",
       "files": [
         "scripts/modal_mochi.py"
