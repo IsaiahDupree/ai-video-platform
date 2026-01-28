@@ -5,6 +5,7 @@ import { AdTemplate, AD_SIZES, AdLayoutType } from '../../../types/adTemplate';
 import { BrandKit } from '../../../types/brandKit';
 import AdEditorForm from './components/AdEditorForm';
 import AdPreview from './components/AdPreview';
+import QAPanel from './components/QAPanel';
 import styles from './editor.module.css';
 
 // Sample templates for selection
@@ -216,6 +217,11 @@ export default function AdEditorPage() {
 
             {/* Editor Form */}
             <AdEditorForm template={template} onUpdate={updateTemplate} />
+
+            {/* QA Panel */}
+            <section className={styles.section}>
+              <QAPanel template={template} autoCheck={true} />
+            </section>
           </div>
         </aside>
 
