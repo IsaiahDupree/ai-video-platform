@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2026-01-28T05:35:00.000Z",
+    "totalVoices": 1
+  },
+  "voices": {
+    "example": {
+      "id": "example",
+      "name": "Example Voice",
+      "description": "This is an example voice reference. Replace with your own voices.",
+      "category": "neutral",
+      "characteristics": {
+        "age": "middle-aged",
+        "accent": "american",
+        "tone": ["professional", "clear"],
+        "pitch": "medium"
+      },
+      "source": {
+        "type": "other",
+        "attribution": "Example voice for demonstration purposes"
+      },
+      "audioFiles": [],
+      "tags": ["example", "demo"],
+      "createdAt": "2026-01-28T05:35:00.000Z",
+      "updatedAt": "2026-01-28T05:35:00.000Z",
+      "stats": {
+        "timesUsed": 0
+      }
+    }
+  }
+}
