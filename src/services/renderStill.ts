@@ -12,6 +12,11 @@ import path from 'path';
 import fs from 'fs';
 import type { AdTemplate } from '../types/adTemplate';
 import { serverTracking } from './trackingServer';
+import {
+  measureRenderPerformance,
+  trackRenderFailed,
+  trackSlowRender,
+} from './errorPerformanceTracking';
 
 // Feature usage tracking
 function trackAdGeneratedServer(
@@ -157,6 +162,13 @@ export async function renderStill(
   compositionId: string,
   options: RenderStillOptions = {}
 ): Promise<RenderStillResult> {
+  // Generate unique render ID for tracking
+  const renderId = `render_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+  // Start performance measurement
+  const completeTracking = measureRenderPerformance(renderId, 'still', compositionId);
+  const startTime = Date.now();
+
   try {
     const {
       outputPath,
@@ -170,7 +182,9 @@ export async function renderStill(
 
     // Validate format
     if (!validateFormat(format)) {
-      throw new Error(`Invalid format: ${format}. Supported formats: png, jpeg, webp`);
+      const error = `Invalid format: ${format}. Supported formats: png, jpeg, webp`;
+      completeTracking(false, 'invalid_composition', error);
+      throw new Error(error);
     }
 
     // Bundle the project
@@ -183,7 +197,9 @@ export async function renderStill(
 
     const composition = compositions.find((c) => c.id === compositionId);
     if (!composition) {
-      throw new Error(`Composition "${compositionId}" not found`);
+      const error = `Composition "${compositionId}" not found`;
+      completeTracking(false, 'invalid_composition', error);
+      throw new Error(error);
     }
 
     // Generate output path
@@ -195,7 +211,9 @@ export async function renderStill(
 
     // Check if file exists and overwrite is false
     if (!overwrite && fs.existsSync(finalOutputPath)) {
-      throw new Error(`File already exists: ${finalOutputPath}`);
+      const error = `File already exists: ${finalOutputPath}`;
+      completeTracking(false, 'invalid_composition', error);
+      throw new Error(error);
     }
 
     // Prepare render options
@@ -240,6 +258,12 @@ export async function renderStill(
       sizeInBytes: stats.size,
     };
 
+    // Calculate render duration
+    const duration = Date.now() - startTime;
+
+    // Track successful render with performance data
+    completeTracking(true);
+
     // Track first_render_completed (TRACK-003)
     serverTracking.track('first_render_completed', {
       compositionId,
@@ -247,6 +271,7 @@ export async function renderStill(
       width: result.width,
       height: result.height,
       sizeInBytes: result.sizeInBytes,
+      duration,
       timestamp: new Date().toISOString(),
     });
 
@@ -264,12 +289,32 @@ export async function renderStill(
       width: result.width,
       height: result.height,
       sizeInBytes: result.sizeInBytes,
+      duration,
       timestamp: new Date().toISOString(),
     });
 
     return result;
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
+
+    // Determine failure reason based on error message
+    let failureReason: 'memory_exceeded' | 'timeout' | 'invalid_composition' | 'missing_asset' | 'codec_error' | 'unknown' = 'unknown';
+
+    if (errorMessage.includes('memory') || errorMessage.includes('Memory')) {
+      failureReason = 'memory_exceeded';
+    } else if (errorMessage.includes('timeout') || errorMessage.includes('Timeout')) {
+      failureReason = 'timeout';
+    } else if (errorMessage.includes('Composition') || errorMessage.includes('format')) {
+      failureReason = 'invalid_composition';
+    } else if (errorMessage.includes('not found') || errorMessage.includes('missing')) {
+      failureReason = 'missing_asset';
+    } else if (errorMessage.includes('codec') || errorMessage.includes('encoding')) {
+      failureReason = 'codec_error';
+    }
+
+    // Track the failure
+    completeTracking(false, failureReason, errorMessage);
+
     return {
       success: false,
       outputPath: '',
