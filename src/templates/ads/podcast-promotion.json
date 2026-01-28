@@ -1,0 +1,48 @@
+{
+  "id": "podcast-promotion-001",
+  "name": "Podcast - Episode Launch",
+  "description": "Modern podcast episode promotion",
+  "layout": "minimal",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080,
+    "name": "Instagram Square",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "New Episode Out Now",
+    "subheadline": "The Future of AI with Dr. Sarah Chen",
+    "body": "Listen on Spotify, Apple Podcasts & YouTube",
+    "cta": "Listen Now",
+    "gradient": {
+      "from": "#6366f1",
+      "to": "#4f46e5",
+      "direction": "to-bottom"
+    },
+    "logoPosition": "top-center",
+    "logoSize": 100
+  },
+  "style": {
+    "primaryColor": "#6366f1",
+    "secondaryColor": "#4f46e5",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#6366f1",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 58,
+    "bodySize": 26,
+    "headlineFontWeight": 800,
+    "bodyFontWeight": 500,
+    "padding": 65,
+    "gap": 26,
+    "borderRadius": 12,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "media",
+    "tags": ["podcast", "episode", "audio", "content"],
+    "version": "1.0",
+    "industry": "media-entertainment"
+  }
+}

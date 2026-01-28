@@ -1,0 +1,47 @@
+{
+  "id": "ecommerce-sale-001",
+  "name": "E-commerce Sale - Split Layout",
+  "description": "Product showcase with pricing and call-to-action",
+  "layout": "split-horizontal",
+  "dimensions": {
+    "width": 1200,
+    "height": 628,
+    "name": "Facebook Feed",
+    "platform": "Facebook"
+  },
+  "content": {
+    "headline": "Summer Sale",
+    "subheadline": "Up to 50% Off",
+    "body": "Limited time only. Shop your favorite products at amazing prices.",
+    "cta": "Shop Now",
+    "productImage": "assets/product-placeholder.png",
+    "backgroundColor": "#ffffff",
+    "logoPosition": "top-left",
+    "logoSize": 50
+  },
+  "style": {
+    "primaryColor": "#ef4444",
+    "secondaryColor": "#dc2626",
+    "textColor": "#1f2937",
+    "ctaBackgroundColor": "#ef4444",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 56,
+    "bodySize": 20,
+    "headlineFontWeight": 800,
+    "bodyFontWeight": 400,
+    "padding": 50,
+    "gap": 20,
+    "borderRadius": 12,
+    "shadow": true,
+    "shadowColor": "rgba(239, 68, 68, 0.3)",
+    "shadowBlur": 30
+  },
+  "metadata": {
+    "category": "e-commerce",
+    "tags": ["sale", "product", "shopping", "discount"],
+    "version": "1.0",
+    "industry": "retail"
+  }
+}

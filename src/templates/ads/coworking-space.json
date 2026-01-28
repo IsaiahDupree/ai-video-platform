@@ -1,0 +1,49 @@
+{
+  "id": "coworking-space-001",
+  "name": "Coworking Space - Modern Workspace",
+  "description": "Professional coworking space promotion",
+  "layout": "split-vertical",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080,
+    "name": "Instagram Square",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "Work Better Together",
+    "subheadline": "Premium Coworking Space",
+    "body": "High-speed WiFi • Private offices • Community events",
+    "cta": "Book a Tour",
+    "productImage": "assets/workspace-placeholder.png",
+    "gradient": {
+      "from": "#374151",
+      "to": "#1f2937",
+      "direction": "to-bottom"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 60
+  },
+  "style": {
+    "primaryColor": "#f59e0b",
+    "secondaryColor": "#d97706",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#f59e0b",
+    "ctaTextColor": "#1f2937",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 52,
+    "bodySize": 22,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 55,
+    "gap": 22,
+    "borderRadius": 10,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "coworking",
+    "tags": ["office", "workspace", "freelance", "remote-work"],
+    "version": "1.0",
+    "industry": "real-estate"
+  }
+}

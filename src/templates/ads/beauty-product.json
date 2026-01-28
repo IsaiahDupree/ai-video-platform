@@ -1,0 +1,49 @@
+{
+  "id": "beauty-product-001",
+  "name": "Beauty Product - Luxurious",
+  "description": "Elegant beauty product promotion",
+  "layout": "product-showcase",
+  "dimensions": {
+    "width": 1000,
+    "height": 1000,
+    "name": "Pinterest Square",
+    "platform": "Pinterest"
+  },
+  "content": {
+    "headline": "Radiance Redefined",
+    "subheadline": "New Signature Collection",
+    "body": "Cruelty-free • Clean ingredients • Dermatologist tested",
+    "cta": "Discover Now",
+    "productImage": "assets/beauty-placeholder.png",
+    "gradient": {
+      "from": "#fdf2f8",
+      "to": "#fce7f3",
+      "direction": "to-bottom"
+    },
+    "logoPosition": "top-center",
+    "logoSize": 70
+  },
+  "style": {
+    "primaryColor": "#db2777",
+    "secondaryColor": "#be185d",
+    "textColor": "#1f2937",
+    "ctaBackgroundColor": "#db2777",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Georgia, serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 48,
+    "bodySize": 20,
+    "headlineFontWeight": 400,
+    "bodyFontWeight": 400,
+    "padding": 60,
+    "gap": 20,
+    "borderRadius": 8,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "beauty",
+    "tags": ["cosmetics", "skincare", "luxury", "wellness"],
+    "version": "1.0",
+    "industry": "beauty-cosmetics"
+  }
+}

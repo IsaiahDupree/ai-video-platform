@@ -1,0 +1,51 @@
+{
+  "id": "automotive-deal-001",
+  "name": "Automotive - Special Offer",
+  "description": "Premium automotive sales promotion",
+  "layout": "split-horizontal",
+  "dimensions": {
+    "width": 1200,
+    "height": 628,
+    "name": "Facebook Feed",
+    "platform": "Facebook"
+  },
+  "content": {
+    "headline": "Drive Your Dream",
+    "subheadline": "0% APR Financing",
+    "body": "Limited time offer • Up to $5,000 cash back • Test drive today",
+    "cta": "Schedule Test Drive",
+    "productImage": "assets/car-placeholder.png",
+    "gradient": {
+      "from": "#18181b",
+      "to": "#3f3f46",
+      "direction": "to-right"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 55
+  },
+  "style": {
+    "primaryColor": "#ef4444",
+    "secondaryColor": "#dc2626",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ef4444",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 54,
+    "bodySize": 22,
+    "headlineFontWeight": 800,
+    "bodyFontWeight": 400,
+    "padding": 50,
+    "gap": 20,
+    "borderRadius": 10,
+    "shadow": true,
+    "shadowColor": "rgba(239, 68, 68, 0.4)",
+    "shadowBlur": 30
+  },
+  "metadata": {
+    "category": "automotive",
+    "tags": ["car", "vehicle", "dealership", "financing"],
+    "version": "1.0",
+    "industry": "automotive"
+  }
+}

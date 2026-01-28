@@ -1,0 +1,48 @@
+{
+  "id": "job-hiring-001",
+  "name": "Job Recruitment - We're Hiring",
+  "description": "Professional job recruitment ad",
+  "layout": "text-only",
+  "dimensions": {
+    "width": 1200,
+    "height": 1200,
+    "name": "LinkedIn Square",
+    "platform": "LinkedIn"
+  },
+  "content": {
+    "headline": "Join Our Team",
+    "subheadline": "Senior Software Engineer",
+    "body": "Remote-first • Competitive salary • Equity • Unlimited PTO",
+    "cta": "Apply Now",
+    "gradient": {
+      "from": "#1e293b",
+      "to": "#334155",
+      "direction": "to-br"
+    },
+    "logoPosition": "top-center",
+    "logoSize": 65
+  },
+  "style": {
+    "primaryColor": "#3b82f6",
+    "secondaryColor": "#2563eb",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#3b82f6",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 56,
+    "bodySize": 24,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 60,
+    "gap": 24,
+    "borderRadius": 8,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "recruitment",
+    "tags": ["hiring", "job", "career", "employment"],
+    "version": "1.0",
+    "industry": "human-resources"
+  }
+}

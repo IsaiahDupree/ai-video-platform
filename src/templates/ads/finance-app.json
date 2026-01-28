@@ -1,0 +1,48 @@
+{
+  "id": "finance-app-001",
+  "name": "Finance App - Trust & Security",
+  "description": "Professional financial services promotion",
+  "layout": "text-only",
+  "dimensions": {
+    "width": 1200,
+    "height": 1200,
+    "name": "LinkedIn Square",
+    "platform": "LinkedIn"
+  },
+  "content": {
+    "headline": "Smart Investing Made Simple",
+    "subheadline": "Join 500K+ investors building wealth",
+    "body": "Bank-level security • Zero commission trades • Expert guidance",
+    "cta": "Open Account",
+    "gradient": {
+      "from": "#065f46",
+      "to": "#047857",
+      "direction": "to-br"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 55
+  },
+  "style": {
+    "primaryColor": "#059669",
+    "secondaryColor": "#047857",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#059669",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 58,
+    "bodySize": 24,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 60,
+    "gap": 24,
+    "borderRadius": 8,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "finance",
+    "tags": ["investing", "banking", "fintech", "security"],
+    "version": "1.0",
+    "industry": "financial-services"
+  }
+}

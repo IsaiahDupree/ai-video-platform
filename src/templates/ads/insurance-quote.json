@@ -1,0 +1,50 @@
+{
+  "id": "insurance-quote-001",
+  "name": "Insurance - Get a Quote",
+  "description": "Trustworthy insurance service promotion",
+  "layout": "minimal",
+  "dimensions": {
+    "width": 1200,
+    "height": 628,
+    "name": "Facebook Feed",
+    "platform": "Facebook"
+  },
+  "content": {
+    "headline": "Protect What Matters",
+    "subheadline": "Get Your Free Quote Today",
+    "body": "Comprehensive coverage • Competitive rates • 24/7 support",
+    "cta": "Get Quote",
+    "gradient": {
+      "from": "#ffffff",
+      "to": "#f0fdf4",
+      "direction": "to-bottom"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 50
+  },
+  "style": {
+    "primaryColor": "#16a34a",
+    "secondaryColor": "#15803d",
+    "textColor": "#0f172a",
+    "ctaBackgroundColor": "#16a34a",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 50,
+    "bodySize": 22,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 50,
+    "gap": 20,
+    "borderRadius": 8,
+    "shadow": true,
+    "shadowColor": "rgba(22, 163, 74, 0.15)",
+    "shadowBlur": 20
+  },
+  "metadata": {
+    "category": "insurance",
+    "tags": ["coverage", "protection", "quote", "financial-services"],
+    "version": "1.0",
+    "industry": "insurance"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "travel-destination-001",
+  "name": "Travel Destination - Wanderlust",
+  "description": "Inspiring travel destination promotion",
+  "layout": "hero-text",
+  "dimensions": {
+    "width": 1000,
+    "height": 1500,
+    "name": "Pinterest Standard",
+    "platform": "Pinterest"
+  },
+  "content": {
+    "headline": "Escape to Paradise",
+    "subheadline": "Discover Bali's Hidden Gems",
+    "body": "All-inclusive packages from $1,299",
+    "cta": "Book Your Trip",
+    "gradient": {
+      "from": "#0ea5e9",
+      "to": "#06b6d4",
+      "direction": "to-bottom"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 70
+  },
+  "style": {
+    "primaryColor": "#0ea5e9",
+    "secondaryColor": "#06b6d4",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#0ea5e9",
+    "headlineFont": "Georgia, serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 64,
+    "bodySize": 28,
+    "headlineFontWeight": 600,
+    "bodyFontWeight": 500,
+    "padding": 70,
+    "gap": 28,
+    "borderRadius": 12,
+    "shadow": true,
+    "shadowColor": "rgba(14, 165, 233, 0.4)",
+    "shadowBlur": 40
+  },
+  "metadata": {
+    "category": "travel",
+    "tags": ["vacation", "destination", "tourism", "adventure"],
+    "version": "1.0",
+    "industry": "travel-hospitality"
+  }
+}

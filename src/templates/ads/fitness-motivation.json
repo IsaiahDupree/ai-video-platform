@@ -1,0 +1,49 @@
+{
+  "id": "fitness-motivation-001",
+  "name": "Fitness Motivation - Dynamic",
+  "description": "Energetic fitness promotion with bold typography",
+  "layout": "hero-text",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "name": "Instagram Story",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "Transform Your Body",
+    "subheadline": "Join 10,000+ members achieving their fitness goals",
+    "cta": "Start 7-Day Trial",
+    "gradient": {
+      "from": "#f97316",
+      "to": "#dc2626",
+      "direction": "to-br"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 70
+  },
+  "style": {
+    "primaryColor": "#f97316",
+    "secondaryColor": "#dc2626",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#f97316",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 82,
+    "bodySize": 30,
+    "headlineFontWeight": 900,
+    "bodyFontWeight": 600,
+    "padding": 70,
+    "gap": 28,
+    "borderRadius": 16,
+    "shadow": true,
+    "shadowColor": "rgba(220, 38, 38, 0.5)",
+    "shadowBlur": 40
+  },
+  "metadata": {
+    "category": "fitness",
+    "tags": ["health", "workout", "motivation", "gym"],
+    "version": "1.0",
+    "industry": "health-fitness"
+  }
+}

@@ -152,6 +152,7 @@ export interface AdTemplate {
 export interface AdMetadata {
   category?: string;
   tags?: string[];
+  industry?: string;
   createdAt?: string;
   updatedAt?: string;
   author?: string;

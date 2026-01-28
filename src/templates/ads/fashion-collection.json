@@ -1,0 +1,45 @@
+{
+  "id": "fashion-collection-001",
+  "name": "Fashion - New Collection",
+  "description": "Elegant fashion collection launch",
+  "layout": "product-showcase",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080,
+    "name": "Instagram Square",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "Spring Collection 2024",
+    "subheadline": "New Arrivals",
+    "body": "Elegance meets comfort in our latest designs",
+    "cta": "Shop Collection",
+    "productImage": "assets/fashion-placeholder.png",
+    "backgroundColor": "#fef2f2",
+    "logoPosition": "top-center",
+    "logoSize": 65
+  },
+  "style": {
+    "primaryColor": "#be123c",
+    "secondaryColor": "#9f1239",
+    "textColor": "#1f2937",
+    "ctaBackgroundColor": "#be123c",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Georgia, serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 50,
+    "bodySize": 22,
+    "headlineFontWeight": 400,
+    "bodyFontWeight": 400,
+    "padding": 55,
+    "gap": 20,
+    "borderRadius": 0,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "fashion",
+    "tags": ["clothing", "style", "collection", "boutique"],
+    "version": "1.0",
+    "industry": "fashion-retail"
+  }
+}

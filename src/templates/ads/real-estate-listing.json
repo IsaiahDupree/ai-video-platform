@@ -1,0 +1,47 @@
+{
+  "id": "real-estate-listing-001",
+  "name": "Real Estate - Property Showcase",
+  "description": "Professional property listing with details",
+  "layout": "product-showcase",
+  "dimensions": {
+    "width": 1200,
+    "height": 628,
+    "name": "Facebook Feed",
+    "platform": "Facebook"
+  },
+  "content": {
+    "headline": "Dream Home Available",
+    "subheadline": "$2,450,000",
+    "body": "4 bed • 3 bath • 3,200 sq ft • Prime Location",
+    "cta": "Schedule Viewing",
+    "productImage": "assets/property-placeholder.png",
+    "backgroundColor": "#ffffff",
+    "logoPosition": "top-left",
+    "logoSize": 55
+  },
+  "style": {
+    "primaryColor": "#0891b2",
+    "secondaryColor": "#0e7490",
+    "textColor": "#0f172a",
+    "ctaBackgroundColor": "#0891b2",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Georgia, serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 48,
+    "bodySize": 22,
+    "headlineFontWeight": 600,
+    "bodyFontWeight": 400,
+    "padding": 50,
+    "gap": 18,
+    "borderRadius": 8,
+    "shadow": true,
+    "shadowColor": "rgba(8, 145, 178, 0.2)",
+    "shadowBlur": 25
+  },
+  "metadata": {
+    "category": "real-estate",
+    "tags": ["property", "listing", "home", "luxury"],
+    "version": "1.0",
+    "industry": "real-estate"
+  }
+}

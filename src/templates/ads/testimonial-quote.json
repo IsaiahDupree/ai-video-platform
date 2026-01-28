@@ -1,0 +1,47 @@
+{
+  "id": "testimonial-quote-001",
+  "name": "Customer Testimonial - Quote Style",
+  "description": "Social proof with customer quote and attribution",
+  "layout": "quote",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080,
+    "name": "Instagram Square",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "This product changed everything for our team",
+    "body": "The results speak for themselves. We've increased productivity by 3x and our team loves using it every day.",
+    "subheadline": "Sarah Johnson, CEO @ TechCorp",
+    "gradient": {
+      "from": "#fef3c7",
+      "to": "#fde68a",
+      "direction": "to-br"
+    },
+    "logoPosition": "bottom-center",
+    "logoSize": 50
+  },
+  "style": {
+    "primaryColor": "#f59e0b",
+    "secondaryColor": "#d97706",
+    "textColor": "#78350f",
+    "ctaBackgroundColor": "#f59e0b",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Georgia, serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 42,
+    "bodySize": 22,
+    "headlineFontWeight": 400,
+    "bodyFontWeight": 400,
+    "padding": 60,
+    "gap": 30,
+    "borderRadius": 0,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "testimonial",
+    "tags": ["quote", "social-proof", "customer", "trust"],
+    "version": "1.0",
+    "industry": "general"
+  }
+}

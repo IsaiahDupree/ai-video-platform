@@ -1,0 +1,48 @@
+{
+  "id": "saas-pricing-001",
+  "name": "SaaS Pricing - Clean Minimal",
+  "description": "Professional SaaS pricing announcement",
+  "layout": "minimal",
+  "dimensions": {
+    "width": 1200,
+    "height": 1200,
+    "name": "LinkedIn Square",
+    "platform": "LinkedIn"
+  },
+  "content": {
+    "headline": "Simple, Transparent Pricing",
+    "subheadline": "Starting at $29/month",
+    "body": "No hidden fees. Cancel anytime.",
+    "cta": "Start Free Trial",
+    "gradient": {
+      "from": "#f8fafc",
+      "to": "#e2e8f0",
+      "direction": "to-bottom"
+    },
+    "logoPosition": "top-center",
+    "logoSize": 60
+  },
+  "style": {
+    "primaryColor": "#0f172a",
+    "secondaryColor": "#475569",
+    "textColor": "#0f172a",
+    "ctaBackgroundColor": "#0f172a",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 54,
+    "bodySize": 24,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 70,
+    "gap": 24,
+    "borderRadius": 8,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "saas",
+    "tags": ["pricing", "subscription", "b2b", "professional"],
+    "version": "1.0",
+    "industry": "software"
+  }
+}

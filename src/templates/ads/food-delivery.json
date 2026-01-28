@@ -1,0 +1,51 @@
+{
+  "id": "food-delivery-001",
+  "name": "Food Delivery - Appetizing",
+  "description": "Mouth-watering food promotion with special offer",
+  "layout": "split-vertical",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080,
+    "name": "Instagram Square",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "Fresh. Fast. Delicious.",
+    "subheadline": "20% Off Your First Order",
+    "body": "Quality meals delivered to your door in 30 minutes",
+    "cta": "Order Now",
+    "productImage": "assets/food-placeholder.png",
+    "gradient": {
+      "from": "#fbbf24",
+      "to": "#f59e0b",
+      "direction": "to-br"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 60
+  },
+  "style": {
+    "primaryColor": "#ea580c",
+    "secondaryColor": "#c2410c",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#ea580c",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 56,
+    "bodySize": 24,
+    "headlineFontWeight": 800,
+    "bodyFontWeight": 500,
+    "padding": 55,
+    "gap": 22,
+    "borderRadius": 14,
+    "shadow": true,
+    "shadowColor": "rgba(234, 88, 12, 0.4)",
+    "shadowBlur": 35
+  },
+  "metadata": {
+    "category": "food-beverage",
+    "tags": ["delivery", "restaurant", "food", "discount"],
+    "version": "1.0",
+    "industry": "food-beverage"
+  }
+}

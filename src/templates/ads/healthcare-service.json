@@ -1,0 +1,50 @@
+{
+  "id": "healthcare-service-001",
+  "name": "Healthcare - Professional Service",
+  "description": "Trustworthy healthcare service promotion",
+  "layout": "minimal",
+  "dimensions": {
+    "width": 1200,
+    "height": 628,
+    "name": "Facebook Feed",
+    "platform": "Facebook"
+  },
+  "content": {
+    "headline": "Your Health, Our Priority",
+    "subheadline": "24/7 Telemedicine Consultations",
+    "body": "Connect with licensed doctors from home • Insurance accepted",
+    "cta": "Book Appointment",
+    "gradient": {
+      "from": "#ffffff",
+      "to": "#f0f9ff",
+      "direction": "to-bottom"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 50
+  },
+  "style": {
+    "primaryColor": "#0284c7",
+    "secondaryColor": "#0369a1",
+    "textColor": "#0f172a",
+    "ctaBackgroundColor": "#0284c7",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 48,
+    "bodySize": 22,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 50,
+    "gap": 20,
+    "borderRadius": 8,
+    "shadow": true,
+    "shadowColor": "rgba(2, 132, 199, 0.15)",
+    "shadowBlur": 20
+  },
+  "metadata": {
+    "category": "healthcare",
+    "tags": ["medical", "telemedicine", "health", "wellness"],
+    "version": "1.0",
+    "industry": "healthcare"
+  }
+}

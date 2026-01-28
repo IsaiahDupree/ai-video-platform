@@ -1,0 +1,48 @@
+{
+  "id": "nonprofit-cause-001",
+  "name": "Nonprofit - Cause Awareness",
+  "description": "Impactful nonprofit campaign",
+  "layout": "quote",
+  "dimensions": {
+    "width": 1200,
+    "height": 675,
+    "name": "Twitter Post",
+    "platform": "Twitter"
+  },
+  "content": {
+    "headline": "Every donation makes a difference",
+    "body": "Your support provides clean water to communities in need. Join us in making an impact.",
+    "subheadline": "Together We Can Change Lives",
+    "cta": "Donate Now",
+    "gradient": {
+      "from": "#10b981",
+      "to": "#059669",
+      "direction": "to-right"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 50
+  },
+  "style": {
+    "primaryColor": "#10b981",
+    "secondaryColor": "#059669",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#10b981",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 46,
+    "bodySize": 22,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 50,
+    "gap": 24,
+    "borderRadius": 8,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "nonprofit",
+    "tags": ["charity", "donation", "cause", "social-impact"],
+    "version": "1.0",
+    "industry": "nonprofit"
+  }
+}

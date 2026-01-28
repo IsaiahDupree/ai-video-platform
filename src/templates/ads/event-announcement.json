@@ -1,0 +1,51 @@
+{
+  "id": "event-announcement-001",
+  "name": "Event Announcement - Bold Text",
+  "description": "Eye-catching event promotion with date and location",
+  "layout": "text-only",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "name": "Instagram Story",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "Join Us Live",
+    "subheadline": "Product Launch Webinar",
+    "body": "March 15, 2024 • 2:00 PM EST • Online Event",
+    "cta": "Register Free",
+    "gradient": {
+      "from": "#ec4899",
+      "to": "#8b5cf6",
+      "direction": "to-bottom"
+    },
+    "overlayOpacity": 0,
+    "logoPosition": "top-center",
+    "logoSize": 80
+  },
+  "style": {
+    "primaryColor": "#ec4899",
+    "secondaryColor": "#8b5cf6",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#ec4899",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 78,
+    "bodySize": 32,
+    "headlineFontWeight": 900,
+    "bodyFontWeight": 500,
+    "padding": 80,
+    "gap": 32,
+    "borderRadius": 20,
+    "shadow": true,
+    "shadowColor": "rgba(0, 0, 0, 0.5)",
+    "shadowBlur": 50
+  },
+  "metadata": {
+    "category": "event",
+    "tags": ["webinar", "launch", "registration", "live"],
+    "version": "1.0",
+    "industry": "events"
+  }
+}

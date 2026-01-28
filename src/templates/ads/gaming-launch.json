@@ -1,0 +1,49 @@
+{
+  "id": "gaming-launch-001",
+  "name": "Gaming - Epic Launch",
+  "description": "High-energy game launch announcement",
+  "layout": "hero-text",
+  "dimensions": {
+    "width": 1200,
+    "height": 675,
+    "name": "Twitter Post",
+    "platform": "Twitter"
+  },
+  "content": {
+    "headline": "Epic Battles Await",
+    "subheadline": "New Season Drops Tomorrow",
+    "cta": "Play Now",
+    "gradient": {
+      "from": "#7c3aed",
+      "to": "#5b21b6",
+      "direction": "to-br"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 60
+  },
+  "style": {
+    "primaryColor": "#7c3aed",
+    "secondaryColor": "#5b21b6",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#fbbf24",
+    "ctaTextColor": "#1f2937",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 68,
+    "bodySize": 30,
+    "headlineFontWeight": 900,
+    "bodyFontWeight": 700,
+    "padding": 50,
+    "gap": 24,
+    "borderRadius": 12,
+    "shadow": true,
+    "shadowColor": "rgba(124, 58, 237, 0.6)",
+    "shadowBlur": 50
+  },
+  "metadata": {
+    "category": "gaming",
+    "tags": ["game", "launch", "esports", "entertainment"],
+    "version": "1.0",
+    "industry": "gaming"
+  }
+}

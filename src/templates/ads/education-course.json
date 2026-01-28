@@ -1,0 +1,50 @@
+{
+  "id": "education-course-001",
+  "name": "Online Course - Educational",
+  "description": "Professional course promotion with enrollment details",
+  "layout": "split-horizontal",
+  "dimensions": {
+    "width": 1200,
+    "height": 627,
+    "name": "LinkedIn Horizontal",
+    "platform": "LinkedIn"
+  },
+  "content": {
+    "headline": "Master Digital Marketing",
+    "subheadline": "8-Week Intensive Program",
+    "body": "Learn from industry experts • Practical projects • Certificate upon completion",
+    "cta": "Enroll Now",
+    "gradient": {
+      "from": "#3b82f6",
+      "to": "#1d4ed8",
+      "direction": "to-right"
+    },
+    "logoPosition": "top-left",
+    "logoSize": 50
+  },
+  "style": {
+    "primaryColor": "#3b82f6",
+    "secondaryColor": "#1d4ed8",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#3b82f6",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 52,
+    "bodySize": 20,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 50,
+    "gap": 20,
+    "borderRadius": 10,
+    "shadow": true,
+    "shadowColor": "rgba(59, 130, 246, 0.3)",
+    "shadowBlur": 30
+  },
+  "metadata": {
+    "category": "education",
+    "tags": ["course", "learning", "training", "certification"],
+    "version": "1.0",
+    "industry": "education"
+  }
+}
