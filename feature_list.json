@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 82,
+  "completedFeatures": 83,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1477,7 +1477,22 @@
       "description": "Track checkout_started, purchase_completed events",
       "category": "tracking",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "phase": 7,
+      "effort": "8pts",
+      "files": [
+        "src/app/pricing/page.tsx",
+        "src/app/pricing/pricing.module.css",
+        "src/app/checkout/page.tsx",
+        "src/app/checkout/checkout.module.css",
+        "src/app/checkout/success/page.tsx",
+        "src/app/checkout/success/success.module.css",
+        "scripts/test-monetization-tracking.ts",
+        "docs/TRACK-005-MONETIZATION-EVENT-TRACKING.md"
+      ],
+      "dependencies": [
+        "TRACK-001"
+      ]
     },
     {
       "id": "TRACK-006",

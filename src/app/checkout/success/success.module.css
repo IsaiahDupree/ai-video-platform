@@ -1,0 +1,203 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.iconContainer {
+  width: 80px;
+  height: 80px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.successIcon {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.details {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.detailRow:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.detailValue {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.nextSteps {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.nextStepsTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.step:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.stepNumber {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.stepDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.primaryButton {
+  flex: 1;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.secondaryButton {
+  flex: 1;
+  padding: 1rem;
+  background: #f3f4f6;
+  color: #667eea;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 2px solid #667eea;
+}
+
+.secondaryButton:hover {
+  background: #667eea;
+  color: white;
+}
+
+.trialNote {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
