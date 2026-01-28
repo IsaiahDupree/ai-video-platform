@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "title": "Theme System Test - Light",
+  "description": "Testing the light theme with VID-004",
+  "settings": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "codec": "h264"
+  },
+  "style": {
+    "theme": "light",
+    "typography": {
+      "headingSize": 56,
+      "bodySize": 28
+    }
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "durationInFrames": 90,
+      "heading": "Light Theme Test",
+      "body": "This video tests the light theme system with default colors"
+    },
+    {
+      "id": "topic1",
+      "type": "topic",
+      "durationInFrames": 120,
+      "heading": "Clean Design",
+      "body": "Light theme provides a clean, modern look perfect for corporate presentations"
+    }
+  ],
+  "metadata": {
+    "author": "Claude",
+    "createdAt": "2026-01-28",
+    "tags": ["test", "theme", "light"]
+  }
+}

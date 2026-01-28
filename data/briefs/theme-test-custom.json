@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "title": "Theme System Test - Custom",
+  "description": "Testing custom theme overrides with VID-004",
+  "settings": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "codec": "h264"
+  },
+  "style": {
+    "theme": "dark",
+    "colors": {
+      "primary": "#10b981",
+      "secondary": "#14b8a6",
+      "background": "#064e3b",
+      "text": "#ecfdf5",
+      "accent": "#34d399"
+    },
+    "typography": {
+      "headingFont": "Inter, sans-serif",
+      "bodyFont": "Inter, sans-serif",
+      "headingSize": 64,
+      "bodySize": 32
+    }
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "durationInFrames": 90,
+      "heading": "Custom Theme Test",
+      "body": "This video uses a custom emerald/forest color scheme"
+    },
+    {
+      "id": "topic1",
+      "type": "topic",
+      "durationInFrames": 120,
+      "heading": "Theme Flexibility",
+      "body": "The theme system allows complete customization of colors and typography"
+    }
+  ],
+  "metadata": {
+    "author": "Claude",
+    "createdAt": "2026-01-28",
+    "tags": ["test", "theme", "custom"]
+  }
+}

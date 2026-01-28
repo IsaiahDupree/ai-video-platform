@@ -1,6 +1,7 @@
 /**
  * TopicScene - Reusable scene for heading, body text, and image display
  * VID-003: Topic Scene Component
+ * VID-004: Theme System integration
  */
 
 import React from 'react';
@@ -13,27 +14,18 @@ import {
   useVideoConfig,
 } from 'remotion';
 import type { Section, ImageConfig } from '../types/brief';
+import type { Theme } from '../styles/theme';
+import { getGradientOverlay } from '../styles/theme';
 
 export interface TopicSceneProps {
   section: Section;
-  colors?: {
-    background?: string;
-    text?: string;
-    accent?: string;
-  };
-  typography?: {
-    headingFont?: string;
-    headingSize?: number;
-    bodyFont?: string;
-    bodySize?: number;
-  };
+  theme: Theme;
   animationDuration?: number;
 }
 
 export const TopicScene: React.FC<TopicSceneProps> = ({
   section,
-  colors = {},
-  typography = {},
+  theme,
   animationDuration = 30,
 }) => {
   const frame = useCurrentFrame();
@@ -85,7 +77,7 @@ export const TopicScene: React.FC<TopicSceneProps> = ({
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: colors.background || '#0f172a',
+        backgroundColor: theme.colors.background,
       }}
     >
       {/* Image Section (Left or Background) */}
@@ -112,8 +104,7 @@ export const TopicScene: React.FC<TopicSceneProps> = ({
           {/* Gradient overlay for text readability */}
           <AbsoluteFill
             style={{
-              background:
-                'linear-gradient(to right, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.4) 100%)',
+              background: getGradientOverlay(theme, 'right'),
             }}
           />
         </AbsoluteFill>
@@ -124,7 +115,7 @@ export const TopicScene: React.FC<TopicSceneProps> = ({
         style={{
           justifyContent: 'center',
           alignItems: imageConfig ? 'flex-start' : 'center',
-          padding: '80px',
+          padding: `${theme.spacing.xl}px`,
           zIndex: 1,
         }}
       >
@@ -138,11 +129,11 @@ export const TopicScene: React.FC<TopicSceneProps> = ({
           {section.heading && (
             <h1
               style={{
-                fontSize: typography.headingSize || 56,
-                fontFamily: typography.headingFont || 'Inter, sans-serif',
-                color: colors.text || '#f1f5f9',
-                marginBottom: '32px',
-                fontWeight: 'bold',
+                fontSize: theme.typography.headingSize,
+                fontFamily: theme.typography.headingFont,
+                color: theme.colors.text,
+                marginBottom: `${theme.spacing.md}px`,
+                fontWeight: theme.typography.headingWeight,
                 lineHeight: 1.2,
                 opacity: headingOpacity,
                 transform: `translateY(${headingTranslateY}px)`,
@@ -156,10 +147,11 @@ export const TopicScene: React.FC<TopicSceneProps> = ({
           {section.body && (
             <p
               style={{
-                fontSize: typography.bodySize || 28,
-                fontFamily: typography.bodyFont || 'Inter, sans-serif',
-                color: colors.text || '#cbd5e1',
-                lineHeight: 1.6,
+                fontSize: theme.typography.bodySize,
+                fontFamily: theme.typography.bodyFont,
+                color: theme.colors.textSecondary,
+                lineHeight: theme.typography.lineHeight,
+                fontWeight: theme.typography.bodyWeight,
                 opacity: bodyOpacity,
                 transform: `translateY(${bodyTranslateY}px)`,
               }}
