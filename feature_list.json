@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 83,
+  "completedFeatures": 84,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1500,7 +1500,21 @@
       "description": "Track return_visit, feature_discovery events",
       "category": "tracking",
       "priority": "P2",
-      "passes": false
+      "passes": true,
+      "phase": 7,
+      "effort": "8pts",
+      "files": [
+        "src/services/retentionTracking.ts",
+        "src/components/TrackingProvider.tsx",
+        "src/app/ads/editor/page.tsx",
+        "src/app/ads/campaign/page.tsx",
+        "src/app/ads/batch/page.tsx",
+        "scripts/test-retention-tracking.ts",
+        "docs/TRACK-006-RETENTION-EVENT-TRACKING.md"
+      ],
+      "dependencies": [
+        "TRACK-001"
+      ]
     },
     {
       "id": "TRACK-007",

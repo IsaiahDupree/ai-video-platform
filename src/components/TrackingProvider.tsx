@@ -3,6 +3,7 @@
 import { useEffect, createContext, useContext, ReactNode } from 'react';
 import { tracking } from '../services/tracking';
 import { ITrackingService } from '../types/tracking';
+import { trackReturnVisit } from '../services/retentionTracking';
 
 const TrackingContext = createContext<ITrackingService>(tracking);
 
@@ -34,6 +35,13 @@ export function TrackingProvider({
         enabled,
       });
     }
+
+    // Track return visit after a short delay (to ensure tracking is initialized)
+    const timer = setTimeout(() => {
+      trackReturnVisit();
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, [apiKey, host, enabled]);
 
   return (

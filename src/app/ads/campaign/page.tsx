@@ -18,6 +18,7 @@ import {
   AdSize,
   AdPlatform,
 } from '../../../config/adSizes';
+import { trackFeatureDiscovery } from '../../../services/retentionTracking';
 import styles from './campaign.module.css';
 
 // Sample templates
@@ -41,6 +42,11 @@ export default function CampaignPackGeneratorPage() {
   useEffect(() => {
     loadTemplateAndCreateCampaign(selectedTemplate);
   }, [selectedTemplate]);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('campaign_generator');
+  }, []);
 
   const loadTemplateAndCreateCampaign = async (templateId: string) => {
     try {

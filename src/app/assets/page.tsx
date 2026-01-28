@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useEffect } from 'react';
+import { trackFeatureDiscovery } from '../../services/retentionTracking';
 import type {
   Asset,
   AppInfo,
@@ -20,23 +21,93 @@ import styles from './assets.module.css';
 
 export default function AssetLibraryPage() {
   const [apps, setApps] = useState<AppInfo[]>([]);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [selectedApp, setSelectedApp] = useState<string | null>(null);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [assets, setAssets] = useState<Asset[]>([]);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [statistics, setStatistics] = useState<AssetStatistics | null>(null);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [loading, setLoading] = useState(true);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [activeTab, setActiveTab] = useState<'apps' | 'assets' | 'upload' | 'stats'>('apps');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
 
   // Search filters
   const [searchText, setSearchText] = useState('');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [filterType, setFilterType] = useState<AssetType | 'all'>('all');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [filterStatus, setFilterStatus] = useState<AssetStatus | 'all'>('all');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [sortBy, setSortBy] = useState<'name' | 'createdAt' | 'updatedAt' | 'size'>('updatedAt');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
 
   // Create app form
   const [showCreateApp, setShowCreateApp] = useState(false);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [newAppName, setNewAppName] = useState('');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [newAppBundleId, setNewAppBundleId] = useState('');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
   const [newAppPlatform, setNewAppPlatform] = useState<'ios' | 'macos' | 'tvos' | 'watchos' | 'visionos'>('ios');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('asset_library');
+  }, []);
 
   useEffect(() => {
     loadApps();

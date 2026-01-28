@@ -5,9 +5,10 @@
  * Upload CSV and map columns to template fields
  */
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { AdTemplate } from '../../../types/adTemplate';
 import { ColumnMapping } from '../../../services/csvImport';
+import { trackFeatureDiscovery } from '../../../services/retentionTracking';
 import styles from './batch.module.css';
 import ColumnMappingForm from './components/ColumnMappingForm';
 import PreviewGrid from './components/PreviewGrid';
@@ -112,6 +113,11 @@ export default function BatchImportPage() {
         error: error instanceof Error ? error.message : 'Failed to parse CSV',
       });
     }
+  }, []);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('csv_import');
   }, []);
 
   // Handle template selection

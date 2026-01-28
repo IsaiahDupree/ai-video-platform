@@ -8,6 +8,7 @@
 'use client';
 
 import React, { useState, useRef, useCallback } from 'react';
+import { trackFeatureDiscovery } from '../../../services/retentionTracking';
 import { DeviceFrame } from '@/components/DeviceFrame';
 import { CaptionOverlay } from '@/components/CaptionOverlay';
 import { DeviceModel, Orientation } from '@/types/deviceFrame';
@@ -30,19 +31,59 @@ interface CaptionLayer {
 export default function ScreenshotEditorPage() {
   // Screenshot state
   const [screenshot, setScreenshot] = useState<string | null>(null);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('screenshot_editor');
+  }, []);
   const [screenshotFile, setScreenshotFile] = useState<File | null>(null);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('screenshot_editor');
+  }, []);
 
   // Device state
   const [selectedDevice, setSelectedDevice] = useState<DeviceModel>('iphone-16-pro-max');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('screenshot_editor');
+  }, []);
   const [orientation, setOrientation] = useState<Orientation>('portrait');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('screenshot_editor');
+  }, []);
 
   // Caption layers
   const [captions, setCaptions] = useState<CaptionLayer[]>([]);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('screenshot_editor');
+  }, []);
   const [selectedCaptionId, setSelectedCaptionId] = useState<string | null>(null);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('screenshot_editor');
+  }, []);
 
   // Editor state
   const [zoom, setZoom] = useState(1);
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('screenshot_editor');
+  }, []);
   const [activeTab, setActiveTab] = useState<'device' | 'captions' | 'export'>('device');
+
+  // Track feature discovery
+  useEffect(() => {
+    trackFeatureDiscovery('screenshot_editor');
+  }, []);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Device lists

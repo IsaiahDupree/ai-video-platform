@@ -2,6 +2,64 @@
 
 ## Session Summary
 
+### Session 62 - January 28, 2026
+**Feature:** TRACK-006: Retention Event Tracking
+**Status:** ✅ Complete
+**Progress:** 84/106 features (79.2% complete)
+
+#### Implemented
+- Comprehensive retention event tracking system
+- return_visit events for tracking user return patterns
+- feature_discovery events for tracking feature adoption
+- Automatic return visit tracking via TrackingProvider
+- Integration with key feature pages
+- Complete test suite (10 tests passing)
+
+#### Components Created
+- `src/services/retentionTracking.ts` (245 lines) - Retention tracking service
+- `scripts/test-retention-tracking.ts` (315 lines) - Comprehensive test suite
+- `docs/TRACK-006-RETENTION-EVENT-TRACKING.md` (480 lines) - Full documentation
+
+#### Components Modified
+- `src/components/TrackingProvider.tsx` - Added automatic return visit tracking
+- `src/app/ads/editor/page.tsx` - Added feature discovery for ad_editor
+- `src/app/ads/campaign/page.tsx` - Added feature discovery for campaign_generator
+- `src/app/ads/batch/page.tsx` - Added feature discovery for csv_import
+
+**Total:** ~1,040 lines of code
+
+#### Key Features
+- **return_visit**: Tracks when users return after time away
+  - Automatically tracked on app load (via TrackingProvider)
+  - 30-minute threshold (prevents duplicate events in same session)
+  - Tracks visitCount, daysSinceFirstVisit, hoursSinceLastVisit
+  - Stores data in localStorage for cross-session persistence
+  - Enables cohort and retention analysis
+
+- **feature_discovery**: Tracks first-time feature usage
+  - Fires once per feature (no duplicates)
+  - Tracks 23 different features across the platform
+  - Captures totalDiscoveredCount for feature adoption metrics
+  - Enables feature sequencing and onboarding analysis
+  - Helps identify feature adoption patterns
+
+#### Discoverable Features
+23 features tracked: ad_editor, template_library, brand_kit, batch_render, campaign_generator, csv_import, screenshot_editor, device_frames, caption_overlay, screenshot_resize, locale_export, asset_library, custom_product_page, ppo_test, app_preview_generator, analytics_dashboard, voice_clone, text_to_video, image_generation, approval_workflow, ai_variants, localization, creative_qa
+
+#### Testing
+- All 10 tests passing
+- Test coverage includes:
+  - First visit initialization
+  - Visit count incrementation
+  - Return visit threshold logic
+  - Feature discovery tracking
+  - Duplicate prevention
+  - Multiple feature tracking
+  - Retention statistics calculation
+  - Data persistence and reset
+
+---
+
 ### Session 61 - January 28, 2026
 **Feature:** TRACK-005: Monetization Event Tracking
 **Status:** ✅ Complete

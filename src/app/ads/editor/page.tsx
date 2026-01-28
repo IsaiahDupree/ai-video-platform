@@ -7,6 +7,7 @@ import AdEditorForm from './components/AdEditorForm';
 import AdPreview from './components/AdPreview';
 import QAPanel from './components/QAPanel';
 import { useTracking } from '../../../components/TrackingProvider';
+import { trackFeatureDiscovery } from '../../../services/retentionTracking';
 import styles from './editor.module.css';
 
 // Sample templates for selection
@@ -33,6 +34,11 @@ export default function AdEditorPage() {
   useEffect(() => {
     loadTemplate(selectedTemplate);
   }, [selectedTemplate]);
+
+  // Track feature discovery on mount
+  useEffect(() => {
+    trackFeatureDiscovery('ad_editor');
+  }, []);
 
   // Load template from JSON
   const loadTemplate = async (templateId: string) => {
