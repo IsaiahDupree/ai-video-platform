@@ -2,6 +2,58 @@
 
 ## Session Summary
 
+### Session 60 - January 28, 2026
+**Feature:** TRACK-004: Core Value Event Tracking
+**Status:** ✅ Complete
+**Progress:** 82/106 features (77.4% complete)
+
+#### Implemented
+- Comprehensive core value event tracking system
+- video_rendered events for all successful renders
+- batch_completed events for multi-item batch jobs
+- export_downloaded events for ZIP and single file downloads
+- Full integration with existing render services
+- Complete test suite (34 tests passing)
+
+#### Components Modified/Created
+- `src/services/renderStill.ts` - Added video_rendered tracking
+- `src/services/renderQueue.ts` - Added batch_completed tracking (totalItems > 1)
+- `src/services/campaignGenerator.ts` - Added campaign batch_completed tracking
+- `src/services/exportZip.ts` - Added export_downloaded tracking for ZIP exports
+- `scripts/test-core-value-tracking.ts` (369 lines) - Comprehensive test suite
+- `docs/TRACK-004-CORE-VALUE-EVENT-TRACKING.md` (501 lines) - Full documentation
+
+#### Key Features
+- **video_rendered**: Tracks every successful render (not just first)
+  - Tracks composition ID, format, dimensions, file size
+  - Fires for all render methods (renderStill, renderQueue, API)
+  - Enables analysis of render frequency and usage patterns
+
+- **batch_completed**: Tracks multi-item batch job completions
+  - Only fires when totalItems > 1 (excludes single renders)
+  - Captures success/fail counts, job metadata
+  - Tracks campaign generations with variant and size counts
+  - Enables power user identification and scale usage analysis
+
+- **export_downloaded**: Tracks file downloads
+  - Tracks both ZIP exports and single file downloads
+  - Captures file count, total size, organization strategy
+  - Tracks manifest inclusion and export formats
+  - Enables workflow completion analysis
+
+#### Testing
+- All 34 tests passing
+- Test coverage includes:
+  - Event structure validation
+  - Multi-render tracking
+  - Batch threshold enforcement (>1 items)
+  - ZIP and single file exports
+  - Campaign batch tracking
+  - Property validation
+  - Timestamp format verification
+
+---
+
 ### Session 57 - January 28, 2026
 **Feature:** APP-024: CPP Analytics Dashboard
 **Status:** ✅ Complete
