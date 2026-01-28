@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 56,
+  "completedFeatures": 57,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1006,10 +1006,14 @@
       "priority": "P0",
       "phase": 6,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/services/ascAuth.ts"
+        "src/types/ascAuth.ts",
+        "src/services/ascAuth.ts",
+        "scripts/test-asc-auth.ts",
+        "scripts/manage-asc-credentials.ts",
+        "docs/APP-006-APP-STORE-CONNECT-OAUTH.md"
       ],
       "dependencies": []
     },

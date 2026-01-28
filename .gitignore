@@ -29,3 +29,6 @@ harness-*.json
 harness-*.log
 *.pyc
 __pycache__/
+
+# App Store Connect credentials (sensitive)
+data/asc-credentials/

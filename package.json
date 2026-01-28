@@ -29,7 +29,9 @@
     "manage-brand-kits": "npx tsx scripts/manage-brand-kits.ts",
     "test-render-queue": "npx tsx scripts/test-render-queue.ts",
     "test-export-zip": "npx tsx scripts/test-export-zip.ts",
-    "test-webhooks": "npx tsx scripts/test-webhooks.ts"
+    "test-webhooks": "npx tsx scripts/test-webhooks.ts",
+    "asc-creds": "npx tsx scripts/manage-asc-credentials.ts",
+    "test:asc-auth": "npx tsx scripts/test-asc-auth.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.975.0",
