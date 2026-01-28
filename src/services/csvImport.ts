@@ -13,6 +13,26 @@ import { AdTemplate } from '../types/adTemplate';
 import { getSizeById } from '../config/adSizes';
 import { renderStill, renderAdTemplate, ImageFormat } from './renderStill';
 import { createZipFromDirectory } from './exportZip';
+import { serverTracking } from './trackingServer';
+
+// Feature usage tracking
+function trackBatchImportServer(
+  importId: string,
+  rowCount: number,
+  columnCount: number,
+  mappedFields: string[],
+  previewGenerated: boolean
+): void {
+  serverTracking.track('batch_import', {
+    importId,
+    rowCount,
+    columnCount,
+    mappedFields,
+    fieldCount: mappedFields.length,
+    previewGenerated,
+    timestamp: new Date().toISOString(),
+  });
+}
 
 /**
  * CSV Import configuration
@@ -410,6 +430,18 @@ export async function importFromCSV(
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
+
+  // Track batch import (TRACK-007)
+  const mappedFields = Object.keys(config.columnMapping).filter(
+    key => config.columnMapping[key as keyof ColumnMapping] !== undefined
+  );
+  trackBatchImportServer(
+    jobId,
+    limitedRows.length,
+    rows.length > 0 ? Object.keys(rows[0]).length : 0,
+    mappedFields,
+    false // Will be updated later when previews are generated
+  );
 
   // Initialize job
   const job: CSVImportJob = {

@@ -13,6 +13,22 @@ import fs from 'fs';
 import type { AdTemplate } from '../types/adTemplate';
 import { serverTracking } from './trackingServer';
 
+// Feature usage tracking
+function trackAdGeneratedServer(
+  adId: string,
+  templateId: string | null,
+  method: 'manual' | 'template' | 'ai_variant' | 'csv_import'
+): void {
+  serverTracking.track('ad_generated', {
+    adId,
+    templateId,
+    method,
+    variantCount: 1,
+    sizeCount: 1,
+    timestamp: new Date().toISOString(),
+  });
+}
+
 /**
  * Supported image formats
  */
@@ -233,6 +249,13 @@ export async function renderStill(
       sizeInBytes: result.sizeInBytes,
       timestamp: new Date().toISOString(),
     });
+
+    // Track ad_generated (TRACK-007)
+    trackAdGeneratedServer(
+      compositionId,
+      compositionId, // Assume compositionId is templateId
+      'manual'
+    );
 
     // Track video_rendered for all renders (TRACK-004)
     serverTracking.track('video_rendered', {

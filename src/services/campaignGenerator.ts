@@ -20,6 +20,24 @@ import { renderStill, RenderStillResult } from './renderStill';
 import { createZipFromDirectory } from './exportZip';
 import { serverTracking } from './trackingServer';
 
+// Feature usage tracking
+function trackCampaignCreatedServer(
+  campaignId: string,
+  campaignName: string,
+  variantCount: number,
+  sizeCount: number,
+  totalAds: number
+): void {
+  serverTracking.track('campaign_created', {
+    campaignId,
+    campaignName,
+    variantCount,
+    sizeCount,
+    totalAds,
+    timestamp: new Date().toISOString(),
+  });
+}
+
 /**
  * Generate all assets for a campaign
  */
@@ -59,6 +77,15 @@ export async function generateCampaign(
   const assets = generateAssetDefinitions(campaign);
   job.assets = assets;
   job.status = 'in-progress';
+
+  // Track campaign creation (TRACK-007)
+  trackCampaignCreatedServer(
+    campaign.id,
+    campaign.name,
+    campaign.variants.length,
+    getTotalAssetCount(campaign) / campaign.variants.length, // size count
+    getTotalAssetCount(campaign)
+  );
 
   // Render each asset
   const startTime = Date.now();

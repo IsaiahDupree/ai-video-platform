@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 84,
+  "completedFeatures": 85,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1522,7 +1522,22 @@
       "description": "Track template_used, voice_cloned, ad_generated events",
       "category": "tracking",
       "priority": "P2",
-      "passes": false
+      "passes": true,
+      "phase": 7,
+      "effort": "8pts",
+      "files": [
+        "src/services/featureUsageTracking.ts",
+        "src/app/ads/editor/page.tsx",
+        "src/services/campaignGenerator.ts",
+        "src/services/renderStill.ts",
+        "src/services/csvImport.ts",
+        "scripts/test-feature-usage-tracking.ts",
+        "scripts/test-feature-usage-manual.ts",
+        "docs/TRACK-007-FEATURE-USAGE-TRACKING.md"
+      ],
+      "dependencies": [
+        "TRACK-001"
+      ]
     },
     {
       "id": "TRACK-008",

@@ -8,6 +8,7 @@ import AdPreview from './components/AdPreview';
 import QAPanel from './components/QAPanel';
 import { useTracking } from '../../../components/TrackingProvider';
 import { trackFeatureDiscovery } from '../../../services/retentionTracking';
+import { trackTemplateUsed, trackBrandKitUsed, incrementFeatureUsage } from '../../../services/featureUsageTracking';
 import styles from './editor.module.css';
 
 // Sample templates for selection
@@ -47,6 +48,15 @@ export default function AdEditorPage() {
       const response = await fetch(`/data/ads/${templateId}.json`);
       const data = await response.json();
       setTemplate(data);
+
+      // Track template usage
+      trackTemplateUsed(
+        data.id,
+        data.layout as any,
+        data.name || templateId,
+        0 // Base level, will increase with customization
+      );
+      incrementFeatureUsage('templates_used');
 
       // Track first_video_created when user first loads/modifies a template
       if (!hasTrackedFirstCreation.current) {
@@ -93,6 +103,23 @@ export default function AdEditorPage() {
     };
 
     setTemplate(updatedTemplate);
+
+    // Track brand kit usage
+    if (template && brandKit) {
+      const elementsApplied: Array<'logo' | 'colors' | 'fonts' | 'spacing'> = [];
+      if (brandKit.colors) elementsApplied.push('colors');
+      if (brandKit.typography) elementsApplied.push('fonts');
+      if (brandKit.spacing) elementsApplied.push('spacing');
+      if (brandKit.logo) elementsApplied.push('logo');
+
+      trackBrandKitUsed(
+        brandKit.id,
+        brandKit.name,
+        elementsApplied,
+        template.id
+      );
+      incrementFeatureUsage('brand_kits_used');
+    }
   };
 
   // Update template field
