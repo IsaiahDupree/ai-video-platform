@@ -332,6 +332,42 @@
   color: #111827;
 }
 
+/* AI Variant Button Styles */
+.inputWithButton {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inputWithButton .input,
+.inputWithButton .textarea {
+  flex: 1;
+}
+
+.aiButton {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.aiButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.aiButton:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 1024px) {
   .editor {
     flex-direction: column;

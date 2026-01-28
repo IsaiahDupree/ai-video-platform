@@ -1,7 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { AdTemplate, AdLayoutType } from '../../../../types/adTemplate';
 import SizeSelector from './SizeSelector';
+import VariantGenerator from './VariantGenerator';
+import { VariantType } from '../../../../services/aiVariants';
 import styles from '../editor.module.css';
 
 interface AdEditorFormProps {
@@ -10,6 +13,35 @@ interface AdEditorFormProps {
 }
 
 export default function AdEditorForm({ template, onUpdate }: AdEditorFormProps) {
+  const [showVariantGenerator, setShowVariantGenerator] = useState(false);
+  const [variantField, setVariantField] = useState<{
+    type: VariantType;
+    path: string[];
+    text: string;
+  } | null>(null);
+
+  // Open variant generator for a field
+  const openVariantGenerator = (type: VariantType, path: string[], text: string) => {
+    if (!text || text.trim().length === 0) {
+      alert(`Please enter a ${type} first before generating variants.`);
+      return;
+    }
+    setVariantField({ type, path, text });
+    setShowVariantGenerator(true);
+  };
+
+  // Apply selected variant
+  const applyVariant = (variant: string) => {
+    if (variantField) {
+      onUpdate(variantField.path, variant);
+    }
+  };
+
+  // Close modal
+  const closeVariantGenerator = () => {
+    setShowVariantGenerator(false);
+    setVariantField(null);
+  };
   return (
     <div>
       {/* Layout Selection */}
@@ -46,35 +78,83 @@ export default function AdEditorForm({ template, onUpdate }: AdEditorFormProps) 
         <h2 className={styles.sectionTitle}>Content</h2>
         <div className={styles.formGroup}>
           <label className={styles.label}>Headline</label>
-          <input
-            type="text"
-            value={template.content.headline || ''}
-            onChange={(e) => onUpdate(['content', 'headline'], e.target.value)}
-            className={styles.input}
-            placeholder="Your headline"
-          />
+          <div className={styles.inputWithButton}>
+            <input
+              type="text"
+              value={template.content.headline || ''}
+              onChange={(e) => onUpdate(['content', 'headline'], e.target.value)}
+              className={styles.input}
+              placeholder="Your headline"
+            />
+            <button
+              type="button"
+              className={styles.aiButton}
+              onClick={() =>
+                openVariantGenerator(
+                  'headline',
+                  ['content', 'headline'],
+                  template.content.headline || ''
+                )
+              }
+              title="Generate AI variants"
+            >
+              ✨ AI
+            </button>
+          </div>
         </div>
 
         <div className={styles.formGroup}>
           <label className={styles.label}>Subheadline</label>
-          <textarea
-            value={template.content.subheadline || ''}
-            onChange={(e) => onUpdate(['content', 'subheadline'], e.target.value)}
-            className={styles.textarea}
-            placeholder="Supporting text"
-          />
+          <div className={styles.inputWithButton}>
+            <textarea
+              value={template.content.subheadline || ''}
+              onChange={(e) => onUpdate(['content', 'subheadline'], e.target.value)}
+              className={styles.textarea}
+              placeholder="Supporting text"
+            />
+            <button
+              type="button"
+              className={styles.aiButton}
+              onClick={() =>
+                openVariantGenerator(
+                  'subheadline',
+                  ['content', 'subheadline'],
+                  template.content.subheadline || ''
+                )
+              }
+              title="Generate AI variants"
+            >
+              ✨ AI
+            </button>
+          </div>
         </div>
 
         {template.layout !== 'quote' && (
           <div className={styles.formGroup}>
             <label className={styles.label}>Call to Action</label>
-            <input
-              type="text"
-              value={template.content.cta || ''}
-              onChange={(e) => onUpdate(['content', 'cta'], e.target.value)}
-              className={styles.input}
-              placeholder="Learn More"
-            />
+            <div className={styles.inputWithButton}>
+              <input
+                type="text"
+                value={template.content.cta || ''}
+                onChange={(e) => onUpdate(['content', 'cta'], e.target.value)}
+                className={styles.input}
+                placeholder="Learn More"
+              />
+              <button
+                type="button"
+                className={styles.aiButton}
+                onClick={() =>
+                  openVariantGenerator(
+                    'cta',
+                    ['content', 'cta'],
+                    template.content.cta || ''
+                  )
+                }
+                title="Generate AI variants"
+              >
+                ✨ AI
+              </button>
+            </div>
           </div>
         )}
 
@@ -308,6 +388,16 @@ export default function AdEditorForm({ template, onUpdate }: AdEditorFormProps) 
           </div>
         )}
       </section>
+
+      {/* AI Variant Generator Modal */}
+      {showVariantGenerator && variantField && (
+        <VariantGenerator
+          originalText={variantField.text}
+          type={variantField.type}
+          onSelectVariant={applyVariant}
+          onClose={closeVariantGenerator}
+        />
+      )}
     </div>
   );
 }

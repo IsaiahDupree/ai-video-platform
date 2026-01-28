@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 46,
+  "completedFeatures": 47,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -787,10 +787,16 @@
       "priority": "P2",
       "phase": 5,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "static-ads",
       "files": [
-        "src/services/aiVariants.ts"
+        "src/services/aiVariants.ts",
+        "src/app/api/ads/generate-variants/route.ts",
+        "src/app/ads/editor/components/VariantGenerator.tsx",
+        "src/app/ads/editor/components/VariantGenerator.module.css",
+        "scripts/test-ai-variants.ts",
+        "scripts/verify-ai-variants.ts",
+        "docs/ADS-015-AI-VARIANT-GENERATOR.md"
       ],
       "dependencies": [
         "ADS-004"
