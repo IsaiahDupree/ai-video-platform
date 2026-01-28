@@ -27,3 +27,5 @@ Thumbs.db
 # Test harness outputs
 harness-*.json
 harness-*.log
+*.pyc
+__pycache__/
