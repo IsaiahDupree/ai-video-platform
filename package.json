@@ -41,7 +41,8 @@
     "test:apple-approval": "npx tsx scripts/test-apple-approval-workflow.ts",
     "test:screenshot-templates": "npx tsx scripts/test-screenshot-templates.ts",
     "test:app-preview": "npx tsx scripts/test-app-preview.ts",
-    "test:cpp-analytics": "npx tsx scripts/test-cpp-analytics.ts"
+    "test:cpp-analytics": "npx tsx scripts/test-cpp-analytics.ts",
+    "test:tracking": "npx tsx scripts/test-tracking.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.975.0",
@@ -62,6 +63,8 @@
     "next": "^16.1.6",
     "node-addon-api": "^8.5.0",
     "openai": "^4.0.0",
+    "posthog-js": "^1.335.5",
+    "posthog-node": "^5.24.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "remotion": "^4.0.0"
