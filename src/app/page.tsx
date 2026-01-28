@@ -1,16 +1,45 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
+import { useTracking } from '@/components/TrackingProvider';
 
 export default function HomePage() {
+  const tracking = useTracking();
+
+  useEffect(() => {
+    // Track landing page view
+    tracking.track('landing_view', {
+      page: 'home',
+      timestamp: new Date().toISOString(),
+    });
+  }, [tracking]);
+
   return (
     <main style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-        AI Video Platform
-      </h1>
-      <p style={{ fontSize: '1.25rem', color: '#666', marginBottom: '2rem' }}>
-        AI-powered video generation with static ad studio
-      </p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+        <div>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+            AI Video Platform
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: '#666' }}>
+            AI-powered video generation with static ad studio
+          </p>
+        </div>
+        <Link
+          href="/signup"
+          style={{
+            padding: '0.75rem 1.5rem',
+            background: '#3b82f6',
+            color: 'white',
+            borderRadius: '6px',
+            textDecoration: 'none',
+            fontWeight: '500',
+          }}
+        >
+          Sign Up
+        </Link>
+      </div>
 
       <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
         <Link
