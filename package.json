@@ -31,7 +31,11 @@
     "test-export-zip": "npx tsx scripts/test-export-zip.ts",
     "test-webhooks": "npx tsx scripts/test-webhooks.ts",
     "asc-creds": "npx tsx scripts/manage-asc-credentials.ts",
-    "test:asc-auth": "npx tsx scripts/test-asc-auth.ts"
+    "test:asc-auth": "npx tsx scripts/test-asc-auth.ts",
+    "test:asc-apps": "npx tsx scripts/test-asc-apps.ts",
+    "test:asc-screenshots": "npx tsx scripts/test-asc-screenshots.ts",
+    "test:asc-previews": "npx tsx scripts/test-asc-previews.ts",
+    "test:asc-cpp": "npx tsx scripts/test-asc-custom-product-pages.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.975.0",

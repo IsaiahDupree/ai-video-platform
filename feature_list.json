@@ -1079,10 +1079,15 @@
       "priority": "P0",
       "phase": 6,
       "effort": "13pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/app/cpp/"
+        "src/types/ascCustomProductPages.ts",
+        "src/services/ascCustomProductPages.ts",
+        "src/app/cpp/page.tsx",
+        "src/app/cpp/cpp.module.css",
+        "scripts/test-asc-custom-product-pages.ts",
+        "docs/APP-010-CUSTOM-PRODUCT-PAGE-CREATOR.md"
       ],
       "dependencies": [
         "APP-006",
