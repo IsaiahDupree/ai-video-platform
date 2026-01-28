@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-28",
+  "categories": [
+    "backgrounds",
+    "characters",
+    "objects",
+    "overlays",
+    "products",
+    "tech",
+    "nature",
+    "abstract"
+  ],
+  "scenes": {
+    "_example": {
+      "path": "backgrounds/example-scene.jpg",
+      "description": "Example scene description",
+      "tags": [
+        "example",
+        "demo"
+      ],
+      "category": "backgrounds",
+      "resolution": "1920x1080",
+      "format": "jpg",
+      "size": "1.2MB",
+      "source": "dall-e-3",
+      "license": "generated",
+      "created": "2024-01-28",
+      "usage_count": 0
+    }
+  },
+  "stats": {
+    "total_images": 0,
+    "by_category": {
+      "backgrounds": 0,
+      "characters": 0,
+      "objects": 0,
+      "overlays": 0,
+      "products": 0,
+      "tech": 0,
+      "nature": 0,
+      "abstract": 0
+    },
+    "total_size": "0 Bytes"
+  }
+}

@@ -17,7 +17,8 @@
     "generate-sfx": "npx tsx scripts/generate-sfx.ts",
     "remix-character": "npx tsx scripts/remix-character.ts",
     "remix-character-gemini": "npx tsx scripts/remix-character-gemini.ts",
-    "generate-stickers": "python3 scripts/generate-stickers.py"
+    "generate-stickers": "python3 scripts/generate-stickers.py",
+    "manage-scenes": "npx tsx scripts/manage-scenes.ts"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
