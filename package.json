@@ -28,7 +28,8 @@
     "test-video-export": "npx tsx scripts/test-video-export.ts",
     "manage-brand-kits": "npx tsx scripts/manage-brand-kits.ts",
     "test-render-queue": "npx tsx scripts/test-render-queue.ts",
-    "test-export-zip": "npx tsx scripts/test-export-zip.ts"
+    "test-export-zip": "npx tsx scripts/test-export-zip.ts",
+    "test-webhooks": "npx tsx scripts/test-webhooks.ts"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
