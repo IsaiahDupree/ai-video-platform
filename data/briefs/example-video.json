@@ -1,0 +1,85 @@
+{
+  "version": "1.0",
+  "title": "Example Product Video",
+  "description": "A sample video demonstrating the content brief schema",
+  "settings": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "codec": "h264"
+  },
+  "style": {
+    "theme": "dark",
+    "colors": {
+      "primary": "#6366f1",
+      "secondary": "#8b5cf6",
+      "background": "#0f172a",
+      "text": "#f1f5f9",
+      "accent": "#f59e0b"
+    },
+    "typography": {
+      "headingFont": "Inter",
+      "bodyFont": "Inter",
+      "headingSize": 48,
+      "bodySize": 24
+    },
+    "animations": {
+      "transition": "fade",
+      "duration": 30
+    }
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "type": "intro",
+      "durationInFrames": 90,
+      "heading": "Welcome to AI Video Platform",
+      "body": "Create stunning videos with AI-powered tools",
+      "voiceover": "Welcome to the AI Video Platform, where creating stunning videos is easier than ever before."
+    },
+    {
+      "id": "topic1",
+      "type": "topic",
+      "durationInFrames": 150,
+      "heading": "Voice Cloning",
+      "body": "Clone any voice with our advanced AI technology",
+      "image": {
+        "src": "/assets/scenes/voice-cloning.png",
+        "fit": "cover"
+      },
+      "voiceover": "Our voice cloning technology allows you to create natural-sounding voiceovers in any voice you choose."
+    },
+    {
+      "id": "topic2",
+      "type": "topic",
+      "durationInFrames": 150,
+      "heading": "Static Ad Studio",
+      "body": "Generate professional ad creatives in minutes",
+      "image": {
+        "src": "/assets/scenes/ad-studio.png",
+        "fit": "cover"
+      },
+      "voiceover": "The Static Ad Studio helps you create professional advertising creatives with just a few clicks."
+    },
+    {
+      "id": "outro",
+      "type": "outro",
+      "durationInFrames": 90,
+      "heading": "Get Started Today",
+      "body": "Join thousands of creators using AI Video Platform",
+      "voiceover": "Ready to transform your video creation workflow? Get started today with AI Video Platform."
+    }
+  ],
+  "audio": {
+    "voiceProvider": "openai",
+    "voice": "alloy",
+    "language": "en-US",
+    "speed": 1.0
+  },
+  "metadata": {
+    "author": "AI Video Platform",
+    "createdAt": "2026-01-27",
+    "tags": ["example", "product", "demo"],
+    "version": "1.0"
+  }
+}

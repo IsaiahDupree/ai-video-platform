@@ -2,8 +2,8 @@
   "project": "AI Video Platform",
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
-  "totalFeatures": 78,
-  "completedFeatures": 0,
+  "totalFeatures": 106,
+  "completedFeatures": 1,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -20,9 +20,12 @@
       "priority": "P0",
       "phase": 1,
       "effort": "5pts",
-      "passes": false,
+      "passes": true,
       "category": "video-core",
-      "files": ["src/types/brief.ts", "data/briefs/"],
+      "files": [
+        "src/types/brief.ts",
+        "data/briefs/"
+      ],
       "dependencies": []
     },
     {
@@ -34,7 +37,10 @@
       "effort": "8pts",
       "passes": false,
       "category": "video-core",
-      "files": ["src/compositions/", "remotion.config.ts"],
+      "files": [
+        "src/compositions/",
+        "remotion.config.ts"
+      ],
       "dependencies": []
     },
     {
@@ -46,8 +52,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "video-core",
-      "files": ["src/scenes/TopicScene.tsx"],
-      "dependencies": ["VID-002"]
+      "files": [
+        "src/scenes/TopicScene.tsx"
+      ],
+      "dependencies": [
+        "VID-002"
+      ]
     },
     {
       "id": "VID-004",
@@ -58,8 +68,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "video-core",
-      "files": ["src/styles/theme.ts"],
-      "dependencies": ["VID-002"]
+      "files": [
+        "src/styles/theme.ts"
+      ],
+      "dependencies": [
+        "VID-002"
+      ]
     },
     {
       "id": "VID-005",
@@ -70,7 +84,9 @@
       "effort": "5pts",
       "passes": false,
       "category": "audio",
-      "files": ["scripts/generate-tts.ts"],
+      "files": [
+        "scripts/generate-tts.ts"
+      ],
       "dependencies": []
     },
     {
@@ -82,8 +98,13 @@
       "effort": "3pts",
       "passes": false,
       "category": "audio",
-      "files": ["src/compositions/BriefComposition.tsx"],
-      "dependencies": ["VID-002", "VID-005"]
+      "files": [
+        "src/compositions/BriefComposition.tsx"
+      ],
+      "dependencies": [
+        "VID-002",
+        "VID-005"
+      ]
     },
     {
       "id": "VID-007",
@@ -94,7 +115,9 @@
       "effort": "5pts",
       "passes": false,
       "category": "image-gen",
-      "files": ["scripts/generate-images.ts"],
+      "files": [
+        "scripts/generate-images.ts"
+      ],
       "dependencies": []
     },
     {
@@ -106,8 +129,13 @@
       "effort": "5pts",
       "passes": false,
       "category": "video-core",
-      "files": ["scripts/render-video.ts"],
-      "dependencies": ["VID-002", "VID-003"]
+      "files": [
+        "scripts/render-video.ts"
+      ],
+      "dependencies": [
+        "VID-002",
+        "VID-003"
+      ]
     },
     {
       "id": "VID-009",
@@ -118,7 +146,9 @@
       "effort": "2pts",
       "passes": false,
       "category": "video-core",
-      "files": ["public/assets/"],
+      "files": [
+        "public/assets/"
+      ],
       "dependencies": []
     },
     {
@@ -130,8 +160,12 @@
       "effort": "3pts",
       "passes": false,
       "category": "video-core",
-      "files": ["src/utils/validateBrief.ts"],
-      "dependencies": ["VID-001"]
+      "files": [
+        "src/utils/validateBrief.ts"
+      ],
+      "dependencies": [
+        "VID-001"
+      ]
     },
     {
       "id": "VC-001",
@@ -142,7 +176,9 @@
       "effort": "8pts",
       "passes": false,
       "category": "voice-clone",
-      "files": ["scripts/modal_voice_clone.py"],
+      "files": [
+        "scripts/modal_voice_clone.py"
+      ],
       "dependencies": []
     },
     {
@@ -154,7 +190,9 @@
       "effort": "5pts",
       "passes": false,
       "category": "voice-clone",
-      "files": ["scripts/generate-voice-with-elevenlabs.ts"],
+      "files": [
+        "scripts/generate-voice-with-elevenlabs.ts"
+      ],
       "dependencies": []
     },
     {
@@ -166,20 +204,30 @@
       "effort": "5pts",
       "passes": false,
       "category": "voice-clone",
-      "files": ["src/services/voiceClone.ts"],
-      "dependencies": ["VC-001"]
+      "files": [
+        "src/services/voiceClone.ts"
+      ],
+      "dependencies": [
+        "VC-001"
+      ]
     },
     {
       "id": "VC-004",
       "name": "Full Voice Pipeline",
-      "description": "End-to-end: ElevenLabs reference → IndexTTS clone → output",
+      "description": "End-to-end: ElevenLabs reference \u2192 IndexTTS clone \u2192 output",
       "priority": "P0",
       "phase": 2,
       "effort": "8pts",
       "passes": false,
       "category": "voice-clone",
-      "files": ["scripts/generate-voice-with-elevenlabs.ts"],
-      "dependencies": ["VC-001", "VC-002", "VC-003"]
+      "files": [
+        "scripts/generate-voice-with-elevenlabs.ts"
+      ],
+      "dependencies": [
+        "VC-001",
+        "VC-002",
+        "VC-003"
+      ]
     },
     {
       "id": "VC-005",
@@ -190,8 +238,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "voice-clone",
-      "files": ["public/assets/voices/"],
-      "dependencies": ["VC-002"]
+      "files": [
+        "public/assets/voices/"
+      ],
+      "dependencies": [
+        "VC-002"
+      ]
     },
     {
       "id": "VC-006",
@@ -202,8 +254,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "voice-clone",
-      "files": ["scripts/generate-appkit-voiceover.ts"],
-      "dependencies": ["VC-004"]
+      "files": [
+        "scripts/generate-appkit-voiceover.ts"
+      ],
+      "dependencies": [
+        "VC-004"
+      ]
     },
     {
       "id": "VC-007",
@@ -214,7 +270,9 @@
       "effort": "5pts",
       "passes": false,
       "category": "audio",
-      "files": ["scripts/generate-sfx.ts"],
+      "files": [
+        "scripts/generate-sfx.ts"
+      ],
       "dependencies": []
     },
     {
@@ -226,8 +284,12 @@
       "effort": "3pts",
       "passes": false,
       "category": "voice-clone",
-      "files": ["scripts/modal-manage.sh"],
-      "dependencies": ["VC-001"]
+      "files": [
+        "scripts/modal-manage.sh"
+      ],
+      "dependencies": [
+        "VC-001"
+      ]
     },
     {
       "id": "IMG-001",
@@ -238,7 +300,9 @@
       "effort": "5pts",
       "passes": false,
       "category": "image-gen",
-      "files": ["scripts/remix-character-gemini.ts"],
+      "files": [
+        "scripts/remix-character-gemini.ts"
+      ],
       "dependencies": []
     },
     {
@@ -250,8 +314,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "image-gen",
-      "files": ["scripts/remix-character.ts"],
-      "dependencies": ["VID-007"]
+      "files": [
+        "scripts/remix-character.ts"
+      ],
+      "dependencies": [
+        "VID-007"
+      ]
     },
     {
       "id": "IMG-003",
@@ -262,7 +330,9 @@
       "effort": "5pts",
       "passes": false,
       "category": "image-gen",
-      "files": ["scripts/generate-stickers.py"],
+      "files": [
+        "scripts/generate-stickers.py"
+      ],
       "dependencies": []
     },
     {
@@ -274,7 +344,9 @@
       "effort": "3pts",
       "passes": false,
       "category": "image-gen",
-      "files": ["public/assets/scenes/"],
+      "files": [
+        "public/assets/scenes/"
+      ],
       "dependencies": []
     },
     {
@@ -286,7 +358,9 @@
       "effort": "3pts",
       "passes": false,
       "category": "image-gen",
-      "files": ["data/prompts/"],
+      "files": [
+        "data/prompts/"
+      ],
       "dependencies": []
     },
     {
@@ -298,7 +372,9 @@
       "effort": "13pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["scripts/modal_ltx_video.py"],
+      "files": [
+        "scripts/modal_ltx_video.py"
+      ],
       "dependencies": []
     },
     {
@@ -310,7 +386,9 @@
       "effort": "13pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["scripts/modal_mochi.py"],
+      "files": [
+        "scripts/modal_mochi.py"
+      ],
       "dependencies": []
     },
     {
@@ -322,7 +400,9 @@
       "effort": "13pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["scripts/modal_hunyuan.py"],
+      "files": [
+        "scripts/modal_hunyuan.py"
+      ],
       "dependencies": []
     },
     {
@@ -334,7 +414,9 @@
       "effort": "13pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["scripts/modal_wan.py"],
+      "files": [
+        "scripts/modal_wan.py"
+      ],
       "dependencies": []
     },
     {
@@ -346,7 +428,9 @@
       "effort": "13pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["scripts/modal_longcat_avatar.py"],
+      "files": [
+        "scripts/modal_longcat_avatar.py"
+      ],
       "dependencies": []
     },
     {
@@ -358,8 +442,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["src/services/textToVideo.ts"],
-      "dependencies": ["T2V-001"]
+      "files": [
+        "src/services/textToVideo.ts"
+      ],
+      "dependencies": [
+        "T2V-001"
+      ]
     },
     {
       "id": "T2V-007",
@@ -370,7 +458,9 @@
       "effort": "5pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["scripts/modal_*.py"],
+      "files": [
+        "scripts/modal_*.py"
+      ],
       "dependencies": []
     },
     {
@@ -382,8 +472,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["scripts/modal_ltx_video.py"],
-      "dependencies": ["T2V-001"]
+      "files": [
+        "scripts/modal_ltx_video.py"
+      ],
+      "dependencies": [
+        "T2V-001"
+      ]
     },
     {
       "id": "T2V-009",
@@ -394,8 +488,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["scripts/generate-t2v.ts"],
-      "dependencies": ["T2V-006"]
+      "files": [
+        "scripts/generate-t2v.ts"
+      ],
+      "dependencies": [
+        "T2V-006"
+      ]
     },
     {
       "id": "T2V-010",
@@ -406,8 +504,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "text-to-video",
-      "files": ["src/utils/videoExport.ts"],
-      "dependencies": ["T2V-001"]
+      "files": [
+        "src/utils/videoExport.ts"
+      ],
+      "dependencies": [
+        "T2V-001"
+      ]
     },
     {
       "id": "ADS-001",
@@ -418,8 +520,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/compositions/ads/"],
-      "dependencies": ["VID-002"]
+      "files": [
+        "src/compositions/ads/"
+      ],
+      "dependencies": [
+        "VID-002"
+      ]
     },
     {
       "id": "ADS-002",
@@ -430,8 +536,12 @@
       "effort": "13pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/templates/"],
-      "dependencies": ["ADS-001"]
+      "files": [
+        "src/templates/"
+      ],
+      "dependencies": [
+        "ADS-001"
+      ]
     },
     {
       "id": "ADS-003",
@@ -442,7 +552,10 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/types/brandKit.ts", "src/services/brandKit.ts"],
+      "files": [
+        "src/types/brandKit.ts",
+        "src/services/brandKit.ts"
+      ],
       "dependencies": []
     },
     {
@@ -454,8 +567,13 @@
       "effort": "13pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/app/ads/editor/"],
-      "dependencies": ["ADS-001", "ADS-003"]
+      "files": [
+        "src/app/ads/editor/"
+      ],
+      "dependencies": [
+        "ADS-001",
+        "ADS-003"
+      ]
     },
     {
       "id": "ADS-005",
@@ -466,8 +584,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/components/AutoFitText.tsx"],
-      "dependencies": ["ADS-001"]
+      "files": [
+        "src/components/AutoFitText.tsx"
+      ],
+      "dependencies": [
+        "ADS-001"
+      ]
     },
     {
       "id": "ADS-006",
@@ -478,8 +600,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/components/AdImage.tsx"],
-      "dependencies": ["ADS-001"]
+      "files": [
+        "src/components/AdImage.tsx"
+      ],
+      "dependencies": [
+        "ADS-001"
+      ]
     },
     {
       "id": "ADS-007",
@@ -490,8 +616,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/renderStill.ts"],
-      "dependencies": ["ADS-001"]
+      "files": [
+        "src/services/renderStill.ts"
+      ],
+      "dependencies": [
+        "ADS-001"
+      ]
     },
     {
       "id": "ADS-008",
@@ -502,7 +632,9 @@
       "effort": "3pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/config/adSizes.ts"],
+      "files": [
+        "src/config/adSizes.ts"
+      ],
       "dependencies": []
     },
     {
@@ -514,8 +646,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/renderQueue.ts"],
-      "dependencies": ["ADS-007"]
+      "files": [
+        "src/services/renderQueue.ts"
+      ],
+      "dependencies": [
+        "ADS-007"
+      ]
     },
     {
       "id": "ADS-010",
@@ -526,8 +662,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/exportZip.ts"],
-      "dependencies": ["ADS-007"]
+      "files": [
+        "src/services/exportZip.ts"
+      ],
+      "dependencies": [
+        "ADS-007"
+      ]
     },
     {
       "id": "ADS-011",
@@ -538,8 +678,13 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/app/ads/campaign/"],
-      "dependencies": ["ADS-007", "ADS-008"]
+      "files": [
+        "src/app/ads/campaign/"
+      ],
+      "dependencies": [
+        "ADS-007",
+        "ADS-008"
+      ]
     },
     {
       "id": "ADS-012",
@@ -550,8 +695,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/csvImport.ts"],
-      "dependencies": ["ADS-007"]
+      "files": [
+        "src/services/csvImport.ts"
+      ],
+      "dependencies": [
+        "ADS-007"
+      ]
     },
     {
       "id": "ADS-013",
@@ -562,8 +711,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/app/ads/batch/"],
-      "dependencies": ["ADS-012"]
+      "files": [
+        "src/app/ads/batch/"
+      ],
+      "dependencies": [
+        "ADS-012"
+      ]
     },
     {
       "id": "ADS-014",
@@ -574,7 +727,9 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/auth.ts"],
+      "files": [
+        "src/services/auth.ts"
+      ],
       "dependencies": []
     },
     {
@@ -586,20 +741,28 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/aiVariants.ts"],
-      "dependencies": ["ADS-004"]
+      "files": [
+        "src/services/aiVariants.ts"
+      ],
+      "dependencies": [
+        "ADS-004"
+      ]
     },
     {
       "id": "ADS-016",
       "name": "Approval Workflow",
-      "description": "Draft → In Review → Approved status with comments",
+      "description": "Draft \u2192 In Review \u2192 Approved status with comments",
       "priority": "P2",
       "phase": 5,
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/app/ads/review/"],
-      "dependencies": ["ADS-014"]
+      "files": [
+        "src/app/ads/review/"
+      ],
+      "dependencies": [
+        "ADS-014"
+      ]
     },
     {
       "id": "ADS-017",
@@ -610,8 +773,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/webhooks.ts"],
-      "dependencies": ["ADS-009"]
+      "files": [
+        "src/services/webhooks.ts"
+      ],
+      "dependencies": [
+        "ADS-009"
+      ]
     },
     {
       "id": "ADS-018",
@@ -622,8 +789,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/storage.ts"],
-      "dependencies": ["ADS-007"]
+      "files": [
+        "src/services/storage.ts"
+      ],
+      "dependencies": [
+        "ADS-007"
+      ]
     },
     {
       "id": "ADS-019",
@@ -634,8 +805,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/creativeQA.ts"],
-      "dependencies": ["ADS-004"]
+      "files": [
+        "src/services/creativeQA.ts"
+      ],
+      "dependencies": [
+        "ADS-004"
+      ]
     },
     {
       "id": "ADS-020",
@@ -646,8 +821,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "static-ads",
-      "files": ["src/services/localization.ts"],
-      "dependencies": ["ADS-004"]
+      "files": [
+        "src/services/localization.ts"
+      ],
+      "dependencies": [
+        "ADS-004"
+      ]
     },
     {
       "id": "APP-001",
@@ -658,7 +837,9 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/components/DeviceFrame.tsx"],
+      "files": [
+        "src/components/DeviceFrame.tsx"
+      ],
       "dependencies": []
     },
     {
@@ -670,8 +851,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/components/CaptionOverlay.tsx"],
-      "dependencies": ["APP-001"]
+      "files": [
+        "src/components/CaptionOverlay.tsx"
+      ],
+      "dependencies": [
+        "APP-001"
+      ]
     },
     {
       "id": "APP-003",
@@ -682,7 +867,9 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/screenshotResize.ts"],
+      "files": [
+        "src/services/screenshotResize.ts"
+      ],
       "dependencies": []
     },
     {
@@ -694,8 +881,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/localeExport.ts"],
-      "dependencies": ["APP-003"]
+      "files": [
+        "src/services/localeExport.ts"
+      ],
+      "dependencies": [
+        "APP-003"
+      ]
     },
     {
       "id": "APP-005",
@@ -706,7 +897,9 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/assets/"],
+      "files": [
+        "src/app/assets/"
+      ],
       "dependencies": []
     },
     {
@@ -718,7 +911,9 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/ascAuth.ts"],
+      "files": [
+        "src/services/ascAuth.ts"
+      ],
       "dependencies": []
     },
     {
@@ -730,8 +925,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/ascApps.ts"],
-      "dependencies": ["APP-006"]
+      "files": [
+        "src/services/ascApps.ts"
+      ],
+      "dependencies": [
+        "APP-006"
+      ]
     },
     {
       "id": "APP-008",
@@ -742,8 +941,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/ascScreenshots.ts"],
-      "dependencies": ["APP-006"]
+      "files": [
+        "src/services/ascScreenshots.ts"
+      ],
+      "dependencies": [
+        "APP-006"
+      ]
     },
     {
       "id": "APP-009",
@@ -754,8 +957,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/ascPreviews.ts"],
-      "dependencies": ["APP-006"]
+      "files": [
+        "src/services/ascPreviews.ts"
+      ],
+      "dependencies": [
+        "APP-006"
+      ]
     },
     {
       "id": "APP-010",
@@ -766,8 +973,13 @@
       "effort": "13pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/cpp/"],
-      "dependencies": ["APP-006", "APP-008"]
+      "files": [
+        "src/app/cpp/"
+      ],
+      "dependencies": [
+        "APP-006",
+        "APP-008"
+      ]
     },
     {
       "id": "APP-011",
@@ -778,8 +990,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/cpp/list/"],
-      "dependencies": ["APP-010"]
+      "files": [
+        "src/app/cpp/list/"
+      ],
+      "dependencies": [
+        "APP-010"
+      ]
     },
     {
       "id": "APP-012",
@@ -790,8 +1006,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/components/DeviceMockup.tsx"],
-      "dependencies": ["APP-001"]
+      "files": [
+        "src/components/DeviceMockup.tsx"
+      ],
+      "dependencies": [
+        "APP-001"
+      ]
     },
     {
       "id": "APP-013",
@@ -802,8 +1022,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/compare/"],
-      "dependencies": ["APP-005"]
+      "files": [
+        "src/app/compare/"
+      ],
+      "dependencies": [
+        "APP-005"
+      ]
     },
     {
       "id": "APP-014",
@@ -814,8 +1038,12 @@
       "effort": "13pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/ppo/"],
-      "dependencies": ["APP-006"]
+      "files": [
+        "src/app/ppo/"
+      ],
+      "dependencies": [
+        "APP-006"
+      ]
     },
     {
       "id": "APP-015",
@@ -826,8 +1054,13 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/ascPPO.ts"],
-      "dependencies": ["APP-006", "APP-014"]
+      "files": [
+        "src/services/ascPPO.ts"
+      ],
+      "dependencies": [
+        "APP-006",
+        "APP-014"
+      ]
     },
     {
       "id": "APP-016",
@@ -838,8 +1071,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/ppo/results/"],
-      "dependencies": ["APP-015"]
+      "files": [
+        "src/app/ppo/results/"
+      ],
+      "dependencies": [
+        "APP-015"
+      ]
     },
     {
       "id": "APP-017",
@@ -850,8 +1087,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/ascPPO.ts"],
-      "dependencies": ["APP-016"]
+      "files": [
+        "src/services/ascPPO.ts"
+      ],
+      "dependencies": [
+        "APP-016"
+      ]
     },
     {
       "id": "APP-018",
@@ -862,7 +1103,9 @@
       "effort": "13pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/figmaImport.ts"],
+      "files": [
+        "src/services/figmaImport.ts"
+      ],
       "dependencies": []
     },
     {
@@ -874,7 +1117,9 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/translations.ts"],
+      "files": [
+        "src/services/translations.ts"
+      ],
       "dependencies": []
     },
     {
@@ -886,8 +1131,12 @@
       "effort": "5pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/services/aiTranslation.ts"],
-      "dependencies": ["APP-019"]
+      "files": [
+        "src/services/aiTranslation.ts"
+      ],
+      "dependencies": [
+        "APP-019"
+      ]
     },
     {
       "id": "APP-021",
@@ -898,7 +1147,9 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/review/"],
+      "files": [
+        "src/app/review/"
+      ],
       "dependencies": []
     },
     {
@@ -910,8 +1161,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/templates/screenshots/"],
-      "dependencies": ["APP-001"]
+      "files": [
+        "src/templates/screenshots/"
+      ],
+      "dependencies": [
+        "APP-001"
+      ]
     },
     {
       "id": "APP-023",
@@ -922,8 +1177,12 @@
       "effort": "13pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/compositions/appPreview/"],
-      "dependencies": ["VID-002"]
+      "files": [
+        "src/compositions/appPreview/"
+      ],
+      "dependencies": [
+        "VID-002"
+      ]
     },
     {
       "id": "APP-024",
@@ -934,8 +1193,12 @@
       "effort": "8pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/analytics/"],
-      "dependencies": ["APP-010"]
+      "files": [
+        "src/app/analytics/"
+      ],
+      "dependencies": [
+        "APP-010"
+      ]
     },
     {
       "id": "APP-025",
@@ -946,8 +1209,237 @@
       "effort": "13pts",
       "passes": false,
       "category": "apple-pages",
-      "files": ["src/app/screenshots/editor/"],
-      "dependencies": ["APP-001", "APP-002"]
+      "files": [
+        "src/app/screenshots/editor/"
+      ],
+      "dependencies": [
+        "APP-001",
+        "APP-002"
+      ]
+    },
+    {
+      "id": "TRACK-001",
+      "name": "Tracking SDK Integration",
+      "description": "Integrate user event tracking SDK for analytics",
+      "category": "tracking",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "TRACK-002",
+      "name": "Acquisition Event Tracking",
+      "description": "Track landing_view, signup_started, signup_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "TRACK-003",
+      "name": "Activation Event Tracking",
+      "description": "Track first_video_created, first_render_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "TRACK-004",
+      "name": "Core Value Event Tracking",
+      "description": "Track video_rendered, batch_completed, export_downloaded events",
+      "category": "tracking",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "TRACK-005",
+      "name": "Monetization Event Tracking",
+      "description": "Track checkout_started, purchase_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "TRACK-006",
+      "name": "Retention Event Tracking",
+      "description": "Track return_visit, feature_discovery events",
+      "category": "tracking",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "TRACK-007",
+      "name": "Feature Usage Tracking",
+      "description": "Track template_used, voice_cloned, ad_generated events",
+      "category": "tracking",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "TRACK-008",
+      "name": "Error & Performance Tracking",
+      "description": "Track render_failed, api_error, slow_render events",
+      "category": "tracking",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "META-001",
+      "name": "Meta Pixel Installation",
+      "description": "Install Meta Pixel base code on all pages",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "META-002",
+      "name": "PageView Tracking",
+      "description": "Track PageView on all page loads",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "META-003",
+      "name": "Standard Events Mapping",
+      "description": "Map app events to Meta standard events (Lead, Purchase, etc)",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "META-004",
+      "name": "CAPI Server-Side Events",
+      "description": "Send conversion events via Conversions API",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "META-005",
+      "name": "Event Deduplication",
+      "description": "Use matching event_id for Pixel and CAPI dedup",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "META-006",
+      "name": "User Data Hashing",
+      "description": "SHA256 hash PII for CAPI events",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "META-007",
+      "name": "Custom Audiences Setup",
+      "description": "Configure custom audiences based on events",
+      "category": "meta-pixel",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "META-008",
+      "name": "Conversion Optimization",
+      "description": "Optimize for video render and purchase events",
+      "category": "meta-pixel",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "GDP-001",
+      "name": "Supabase Schema Setup",
+      "description": "Create person, identity_link, event, subscription tables",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "passes": false
+    },
+    {
+      "id": "GDP-002",
+      "name": "Person & Identity Tables",
+      "description": "Canonical person table with identity links",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "passes": false
+    },
+    {
+      "id": "GDP-003",
+      "name": "Unified Events Table",
+      "description": "Normalized events from all sources",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "passes": false
+    },
+    {
+      "id": "GDP-004",
+      "name": "Resend Webhook Edge Function",
+      "description": "Verify and store email events from Resend webhooks",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "passes": false
+    },
+    {
+      "id": "GDP-005",
+      "name": "Email Event Tracking",
+      "description": "Track delivered/opened/clicked events",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "passes": false
+    },
+    {
+      "id": "GDP-006",
+      "name": "Click Redirect Tracker",
+      "description": "Attribution spine for email \u2192 click \u2192 conversion",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "GDP-007",
+      "name": "Stripe Webhook Integration",
+      "description": "Handle subscription events from Stripe",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "GDP-008",
+      "name": "Subscription Snapshot",
+      "description": "Store subscription status and MRR",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "GDP-009",
+      "name": "PostHog Identity Stitching",
+      "description": "Call posthog.identify on login/signup",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "GDP-010",
+      "name": "Meta Pixel + CAPI Dedup",
+      "description": "Match Pixel eventID with CAPI event_id",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "GDP-011",
+      "name": "Person Features Computation",
+      "description": "Compute active_days, renders, pricing_views from events",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "GDP-012",
+      "name": "Segment Engine",
+      "description": "Evaluate segment membership and trigger automations",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "passes": false
     }
   ]
 }
