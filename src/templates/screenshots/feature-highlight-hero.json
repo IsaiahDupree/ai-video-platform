@@ -1,0 +1,58 @@
+{
+  "id": "feature-highlight-hero",
+  "name": "Feature Highlight - Hero",
+  "description": "Bold hero caption at the top to highlight a single key feature. Perfect for showcasing your app's main value proposition.",
+  "deviceConfig": {
+    "device": "iphone-16-pro-max",
+    "orientation": "portrait",
+    "style": {
+      "frameColor": "#1d1d1f",
+      "shadow": true,
+      "shadowBlur": 40,
+      "shadowColor": "rgba(0, 0, 0, 0.3)",
+      "shadowX": 0,
+      "shadowY": 20
+    }
+  },
+  "captionLayers": [
+    {
+      "id": "hero-caption",
+      "text": "Your Feature Headline Here",
+      "positioning": {
+        "preset": "top-center",
+        "margin": {
+          "top": 80,
+          "left": 40,
+          "right": 40
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+          "size": 56,
+          "weight": 700,
+          "lineHeight": 1.1
+        },
+        "color": "#ffffff",
+        "textAlign": "center",
+        "textShadow": "0 2px 20px rgba(0, 0, 0, 0.4)"
+      },
+      "metadata": {
+        "layer": "hero"
+      }
+    }
+  ],
+  "layoutType": "hero",
+  "backgroundColor": "#007AFF",
+  "metadata": {
+    "category": "feature-showcase",
+    "tags": ["hero", "bold", "feature", "headline"],
+    "supportedDeviceTypes": ["iphone", "ipad"],
+    "themes": ["dark"],
+    "useCase": "Showcase your app's primary feature with a bold, attention-grabbing headline at the top of the screen.",
+    "industry": ["technology", "productivity", "social", "entertainment"],
+    "version": "1.0",
+    "featured": true,
+    "popularity": 0
+  }
+}

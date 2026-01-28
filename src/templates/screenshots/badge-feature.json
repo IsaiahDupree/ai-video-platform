@@ -1,0 +1,60 @@
+{
+  "id": "badge-feature",
+  "name": "Feature Badge - Highlight",
+  "description": "Small badge-style caption to highlight a specific feature or new addition. Great for drawing attention to details.",
+  "deviceConfig": {
+    "device": "iphone-16-pro-max",
+    "orientation": "portrait",
+    "style": {
+      "frameColor": "#f5f5f7",
+      "shadow": true,
+      "shadowBlur": 28,
+      "shadowColor": "rgba(0, 0, 0, 0.18)"
+    }
+  },
+  "captionLayers": [
+    {
+      "id": "badge",
+      "text": "NEW",
+      "positioning": {
+        "preset": "top-right",
+        "margin": {
+          "top": 90,
+          "right": 50
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+          "size": 18,
+          "weight": 700,
+          "letterSpacing": 1
+        },
+        "color": "#ffffff",
+        "textAlign": "center",
+        "backgroundColor": "#ff3b30",
+        "padding": {
+          "top": 8,
+          "bottom": 8,
+          "left": 16,
+          "right": 16
+        },
+        "borderRadius": 8,
+        "boxShadow": "0 3px 8px rgba(255, 59, 48, 0.35)"
+      }
+    }
+  ],
+  "layoutType": "single-caption",
+  "backgroundColor": "#ffffff",
+  "metadata": {
+    "category": "feature-showcase",
+    "tags": ["badge", "new", "highlight", "accent", "small"],
+    "supportedDeviceTypes": ["iphone", "ipad"],
+    "themes": ["light"],
+    "useCase": "Add small badge labels to highlight new features, updates, or special elements in your screenshots.",
+    "industry": ["all"],
+    "version": "1.0",
+    "featured": false,
+    "popularity": 0
+  }
+}

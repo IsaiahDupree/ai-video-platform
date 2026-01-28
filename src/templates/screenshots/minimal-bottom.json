@@ -1,0 +1,53 @@
+{
+  "id": "minimal-bottom",
+  "name": "Minimal - Bottom Caption",
+  "description": "Clean, minimal design with a subtle caption at the bottom. Perfect for letting your app UI shine.",
+  "deviceConfig": {
+    "device": "iphone-16-pro-max",
+    "orientation": "portrait",
+    "style": {
+      "frameColor": "#1d1d1f",
+      "shadow": true,
+      "shadowBlur": 25,
+      "shadowColor": "rgba(0, 0, 0, 0.15)"
+    }
+  },
+  "captionLayers": [
+    {
+      "id": "bottom-caption",
+      "text": "Experience the difference",
+      "positioning": {
+        "preset": "bottom-center",
+        "margin": {
+          "bottom": 60,
+          "left": 60,
+          "right": 60
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
+          "size": 24,
+          "weight": 500,
+          "letterSpacing": -0.5
+        },
+        "color": "#ffffff",
+        "textAlign": "center",
+        "opacity": 0.9
+      }
+    }
+  ],
+  "layoutType": "minimal",
+  "backgroundColor": "#000000",
+  "metadata": {
+    "category": "minimal",
+    "tags": ["minimal", "clean", "subtle", "bottom"],
+    "supportedDeviceTypes": ["iphone", "ipad"],
+    "themes": ["dark"],
+    "useCase": "Showcase your app interface with minimal text overlay. Ideal when the UI speaks for itself.",
+    "industry": ["design", "photography", "art", "lifestyle"],
+    "version": "1.0",
+    "featured": false,
+    "popularity": 0
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "technical-specs",
+  "name": "Technical - Specifications",
+  "description": "Clean technical specifications or metrics display. Perfect for showing performance data or technical details.",
+  "deviceConfig": {
+    "device": "iphone-16-pro-max",
+    "orientation": "portrait",
+    "style": {
+      "frameColor": "#1d1d1f",
+      "shadow": true,
+      "shadowBlur": 32,
+      "shadowColor": "rgba(0, 0, 0, 0.22)"
+    }
+  },
+  "captionLayers": [
+    {
+      "id": "spec-label",
+      "text": "Technical Specs",
+      "positioning": {
+        "preset": "top-center",
+        "margin": {
+          "top": 80,
+          "left": 50,
+          "right": 50
+        }
+      },
+      "style": {
+        "font": {
+          "family": "'SF Mono', 'Monaco', 'Courier New', monospace",
+          "size": 20,
+          "weight": 500,
+          "letterSpacing": 2
+        },
+        "color": "#007AFF",
+        "textAlign": "center",
+        "textTransform": "uppercase"
+      }
+    },
+    {
+      "id": "spec-value",
+      "text": "99.9% uptime • 2ms latency • 256-bit encryption",
+      "positioning": {
+        "preset": "top-center",
+        "margin": {
+          "top": 140,
+          "left": 50,
+          "right": 50
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
+          "size": 18,
+          "weight": 400,
+          "lineHeight": 1.5
+        },
+        "color": "#ffffff",
+        "textAlign": "center",
+        "backgroundColor": "rgba(255, 255, 255, 0.1)",
+        "padding": {
+          "top": 16,
+          "bottom": 16,
+          "left": 20,
+          "right": 20
+        },
+        "borderRadius": 12,
+        "backdropFilter": "blur(10px)"
+      }
+    }
+  ],
+  "layoutType": "single-caption",
+  "backgroundColor": "#000000",
+  "metadata": {
+    "category": "technical",
+    "tags": ["technical", "specs", "performance", "metrics", "data"],
+    "supportedDeviceTypes": ["iphone", "ipad"],
+    "themes": ["dark"],
+    "useCase": "Display technical specifications, performance metrics, or data-driven features in a clean, professional format.",
+    "industry": ["technology", "developer-tools", "business", "productivity"],
+    "version": "1.0",
+    "featured": false,
+    "popularity": 0
+  }
+}

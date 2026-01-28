@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 75,
+  "completedFeatures": 76,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1313,10 +1313,17 @@
       "priority": "P2",
       "phase": 6,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/templates/screenshots/"
+        "src/types/screenshotTemplate.ts",
+        "src/templates/screenshots/index.ts",
+        "src/templates/screenshots/README.md",
+        "src/templates/screenshots/*.json",
+        "src/app/screenshots/templates/page.tsx",
+        "src/app/screenshots/templates/templates.module.css",
+        "scripts/test-screenshot-templates.ts",
+        "docs/APP-022-SCREENSHOT-TEMPLATE-LIBRARY.md"
       ],
       "dependencies": [
         "APP-001"

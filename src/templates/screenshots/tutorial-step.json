@@ -1,0 +1,90 @@
+{
+  "id": "tutorial-step",
+  "name": "Tutorial - Step Number",
+  "description": "Tutorial step with numbered badge and instruction. Great for onboarding flows and how-to guides.",
+  "deviceConfig": {
+    "device": "iphone-16-pro-max",
+    "orientation": "portrait",
+    "style": {
+      "frameColor": "#1d1d1f",
+      "shadow": true,
+      "shadowBlur": 30,
+      "shadowColor": "rgba(0, 0, 0, 0.2)"
+    }
+  },
+  "captionLayers": [
+    {
+      "id": "step-number",
+      "text": "1",
+      "positioning": {
+        "preset": "top-left",
+        "margin": {
+          "top": 80,
+          "left": 50
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+          "size": 40,
+          "weight": 700
+        },
+        "color": "#ffffff",
+        "textAlign": "center",
+        "backgroundColor": "#007AFF",
+        "padding": {
+          "top": 16,
+          "bottom": 16,
+          "left": 24,
+          "right": 24
+        },
+        "borderRadius": 999,
+        "boxShadow": "0 4px 16px rgba(0, 122, 255, 0.4)"
+      }
+    },
+    {
+      "id": "step-instruction",
+      "text": "Tap to get started",
+      "positioning": {
+        "preset": "top-center",
+        "margin": {
+          "top": 200,
+          "left": 50,
+          "right": 50
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+          "size": 32,
+          "weight": 600,
+          "lineHeight": 1.3
+        },
+        "color": "#ffffff",
+        "textAlign": "center",
+        "backgroundColor": "rgba(0, 0, 0, 0.7)",
+        "padding": {
+          "top": 16,
+          "bottom": 16,
+          "left": 24,
+          "right": 24
+        },
+        "borderRadius": 16,
+        "backdropFilter": "blur(10px)"
+      }
+    }
+  ],
+  "layoutType": "tutorial",
+  "backgroundColor": "#1d1d1f",
+  "metadata": {
+    "category": "tutorial",
+    "tags": ["tutorial", "onboarding", "step", "instruction", "guide"],
+    "supportedDeviceTypes": ["iphone", "ipad"],
+    "themes": ["dark"],
+    "useCase": "Create step-by-step tutorials or onboarding flows with numbered steps and clear instructions.",
+    "industry": ["technology", "productivity", "education", "fitness"],
+    "version": "1.0",
+    "featured": false,
+    "popularity": 0
+  }
+}

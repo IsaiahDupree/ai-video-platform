@@ -1,0 +1,113 @@
+{
+  "id": "feature-list-multi",
+  "name": "Feature List - Multi Caption",
+  "description": "Multiple captions highlighting different features. Great for showcasing several app capabilities in one screenshot.",
+  "deviceConfig": {
+    "device": "iphone-16-pro-max",
+    "orientation": "portrait",
+    "style": {
+      "frameColor": "#f5f5f7",
+      "shadow": true,
+      "shadowBlur": 30,
+      "shadowColor": "rgba(0, 0, 0, 0.2)"
+    }
+  },
+  "captionLayers": [
+    {
+      "id": "feature-1",
+      "text": "Fast & Efficient",
+      "positioning": {
+        "preset": "top-left",
+        "margin": {
+          "top": 120,
+          "left": 40
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+          "size": 32,
+          "weight": 600
+        },
+        "color": "#1d1d1f",
+        "backgroundColor": "rgba(255, 255, 255, 0.95)",
+        "padding": {
+          "top": 12,
+          "bottom": 12,
+          "left": 20,
+          "right": 20
+        },
+        "borderRadius": 16,
+        "boxShadow": "0 4px 12px rgba(0, 0, 0, 0.1)"
+      }
+    },
+    {
+      "id": "feature-2",
+      "text": "Easy to Use",
+      "positioning": {
+        "preset": "center-left",
+        "margin": {
+          "left": 40
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+          "size": 32,
+          "weight": 600
+        },
+        "color": "#1d1d1f",
+        "backgroundColor": "rgba(255, 255, 255, 0.95)",
+        "padding": {
+          "top": 12,
+          "bottom": 12,
+          "left": 20,
+          "right": 20
+        },
+        "borderRadius": 16,
+        "boxShadow": "0 4px 12px rgba(0, 0, 0, 0.1)"
+      }
+    },
+    {
+      "id": "feature-3",
+      "text": "Powerful Results",
+      "positioning": {
+        "preset": "bottom-left",
+        "margin": {
+          "bottom": 120,
+          "left": 40
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+          "size": 32,
+          "weight": 600
+        },
+        "color": "#1d1d1f",
+        "backgroundColor": "rgba(255, 255, 255, 0.95)",
+        "padding": {
+          "top": 12,
+          "bottom": 12,
+          "left": 20,
+          "right": 20
+        },
+        "borderRadius": 16,
+        "boxShadow": "0 4px 12px rgba(0, 0, 0, 0.1)"
+      }
+    }
+  ],
+  "layoutType": "multi-caption",
+  "backgroundColor": "#f5f5f7",
+  "metadata": {
+    "category": "feature-showcase",
+    "tags": ["multi-feature", "list", "benefits", "highlights"],
+    "supportedDeviceTypes": ["iphone", "ipad"],
+    "themes": ["light"],
+    "useCase": "Display multiple app features or benefits in a clean, organized layout with separate captions.",
+    "industry": ["technology", "productivity", "business", "education"],
+    "version": "1.0",
+    "featured": true,
+    "popularity": 0
+  }
+}

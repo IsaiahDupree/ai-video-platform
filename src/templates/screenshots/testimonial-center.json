@@ -1,0 +1,82 @@
+{
+  "id": "testimonial-center",
+  "name": "Testimonial - Centered Quote",
+  "description": "Centered testimonial or quote with attribution. Perfect for showcasing user reviews and social proof.",
+  "deviceConfig": {
+    "device": "iphone-16-pro-max",
+    "orientation": "portrait",
+    "style": {
+      "frameColor": "#f5f5f7",
+      "shadow": true,
+      "shadowBlur": 35,
+      "shadowColor": "rgba(0, 0, 0, 0.25)"
+    }
+  },
+  "captionLayers": [
+    {
+      "id": "quote",
+      "text": "\"This app changed everything for me. Absolutely love it!\"",
+      "positioning": {
+        "preset": "center",
+        "margin": {
+          "left": 50,
+          "right": 50
+        }
+      },
+      "style": {
+        "font": {
+          "family": "Georgia, 'Times New Roman', serif",
+          "size": 36,
+          "weight": 400,
+          "lineHeight": 1.4,
+          "style": "italic"
+        },
+        "color": "#1d1d1f",
+        "textAlign": "center",
+        "backgroundColor": "rgba(255, 255, 255, 0.98)",
+        "padding": {
+          "top": 30,
+          "bottom": 30,
+          "left": 30,
+          "right": 30
+        },
+        "borderRadius": 20,
+        "boxShadow": "0 8px 24px rgba(0, 0, 0, 0.12)"
+      }
+    },
+    {
+      "id": "attribution",
+      "text": "— Sarah M., User",
+      "positioning": {
+        "preset": "center",
+        "margin": {
+          "top": 200,
+          "left": 50,
+          "right": 50
+        }
+      },
+      "style": {
+        "font": {
+          "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
+          "size": 20,
+          "weight": 500
+        },
+        "color": "#6e6e73",
+        "textAlign": "center"
+      }
+    }
+  ],
+  "layoutType": "testimonial",
+  "backgroundColor": "#f5f5f7",
+  "metadata": {
+    "category": "testimonial",
+    "tags": ["testimonial", "quote", "review", "social-proof"],
+    "supportedDeviceTypes": ["iphone", "ipad"],
+    "themes": ["light"],
+    "useCase": "Display customer testimonials, reviews, or quotes to build trust and showcase user satisfaction.",
+    "industry": ["all"],
+    "version": "1.0",
+    "featured": true,
+    "popularity": 0
+  }
+}
