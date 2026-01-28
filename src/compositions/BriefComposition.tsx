@@ -2,10 +2,11 @@
  * BriefComposition - Main video composition from content brief
  * VID-002: Remotion Project Setup
  * VID-003: Topic Scene Component integration
+ * VID-006: Audio Component Integration
  */
 
 import React from 'react';
-import { AbsoluteFill, Sequence, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Audio, Sequence, useVideoConfig, staticFile } from 'remotion';
 import type { ContentBrief } from '../types/brief';
 import { TopicScene } from '../scenes/TopicScene';
 
@@ -25,6 +26,16 @@ const defaultBrief: ContentBrief = {
 export const BriefComposition: React.FC<BriefCompositionProps> = ({ brief = defaultBrief }) => {
   const { fps } = useVideoConfig();
 
+  /**
+   * Generate audio file path for a section
+   * Expects audio files in format: public/assets/audio/{brief-title}-{section-id}.mp3
+   */
+  const getAudioPath = (sectionId: string): string | null => {
+    const briefTitle = brief.title.toLowerCase().replace(/\s+/g, '-');
+    const audioPath = `assets/audio/${briefTitle}-${sectionId}.mp3`;
+    return audioPath;
+  };
+
   return (
     <AbsoluteFill
       style={{
@@ -38,12 +49,23 @@ export const BriefComposition: React.FC<BriefCompositionProps> = ({ brief = defa
           .slice(0, index)
           .reduce((acc, s) => acc + s.durationInFrames, 0);
 
+        // Get audio path for this section
+        const audioPath = section.voiceover ? getAudioPath(section.id) : null;
+
         return (
           <Sequence
             key={section.id}
             from={startFrame}
             durationInFrames={section.durationInFrames}
           >
+            {/* Audio for this section (if voiceover exists) */}
+            {audioPath && (
+              <Audio
+                src={staticFile(audioPath)}
+                volume={brief.audio?.musicVolume !== undefined ? 1 - brief.audio.musicVolume : 1}
+              />
+            )}
+
             {section.type === 'topic' ? (
               <TopicScene
                 section={section}
