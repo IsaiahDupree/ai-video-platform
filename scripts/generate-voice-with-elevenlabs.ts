@@ -1,21 +1,28 @@
 /**
  * ElevenLabs Reference Generation - VC-002
- * Generate voice reference audio using ElevenLabs TTS
+ * Full Voice Pipeline - VC-004
  *
- * This script uses ElevenLabs TTS to generate high-quality reference audio
- * that can be used for voice cloning with IndexTTS or other models.
+ * Generate voice reference audio using ElevenLabs TTS and optionally
+ * clone voices using the Modal IndexTTS service.
+ *
+ * This script supports:
+ * 1. Generating reference audio with ElevenLabs (VC-002)
+ * 2. Full pipeline: ElevenLabs reference → IndexTTS clone → output (VC-004)
  *
  * Usage:
- *   ts-node scripts/generate-voice-with-elevenlabs.ts --text "Your text" --voice rachel --output reference.mp3
+ *   ts-node scripts/generate-voice-with-elevenlabs.ts generate --text "Your text" --voice rachel --output audio.mp3
+ *   ts-node scripts/generate-voice-with-elevenlabs.ts clone --text "Clone this" --voice rachel --output cloned.wav
  *
  * Environment variables:
  *   ELEVENLABS_API_KEY: Your ElevenLabs API key
+ *   MODAL_VOICE_CLONE_URL: Modal voice clone endpoint URL (for clone command)
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
 import * as dotenv from 'dotenv';
+import { VoiceCloneClient } from '../src/services/voiceClone';
 
 dotenv.config();
 
@@ -234,6 +241,104 @@ const DEFAULT_REFERENCE_TEXTS = [
 ];
 
 /**
+ * Full voice cloning pipeline - VC-004
+ *
+ * This function implements the complete pipeline:
+ * 1. Generate reference audio using ElevenLabs TTS
+ * 2. Use that reference to clone a voice via Modal IndexTTS
+ * 3. Output the final cloned audio
+ *
+ * @param text - Text to synthesize with cloned voice
+ * @param voiceName - ElevenLabs voice name or ID
+ * @param outputPath - Path for final cloned audio
+ * @param options - Additional options
+ */
+export async function fullVoicePipeline(
+  text: string,
+  voiceName: string,
+  outputPath: string,
+  options: {
+    referenceText?: string;
+    speed?: number;
+    temperature?: number;
+    keepReference?: boolean;
+  } = {}
+): Promise<string> {
+  const {
+    referenceText = 'The quick brown fox jumps over the lazy dog near the riverbank.',
+    speed = 1.0,
+    temperature = 0.7,
+    keepReference = false,
+  } = options;
+
+  console.log('Full Voice Cloning Pipeline - VC-004');
+  console.log('=====================================\n');
+
+  // Step 1: Generate reference audio with ElevenLabs
+  console.log('Step 1: Generating reference audio with ElevenLabs...');
+  const voiceId = VOICE_PRESETS[voiceName.toLowerCase()] || voiceName;
+
+  const referenceBuffer = await generateSpeech({
+    text: referenceText,
+    voiceId,
+    stability: 0.6,
+    similarityBoost: 0.8,
+  });
+
+  // Save reference audio temporarily
+  const tempDir = path.join(__dirname, '../public/assets/temp');
+  if (!fs.existsSync(tempDir)) {
+    fs.mkdirSync(tempDir, { recursive: true });
+  }
+
+  const referencePath = path.join(tempDir, `reference-${Date.now()}.mp3`);
+  fs.writeFileSync(referencePath, referenceBuffer);
+  console.log(`✓ Reference audio saved: ${referencePath}`);
+  console.log(`  Size: ${(referenceBuffer.length / 1024).toFixed(2)} KB\n`);
+
+  // Step 2: Clone voice using Modal IndexTTS
+  console.log('Step 2: Cloning voice with IndexTTS (Modal)...');
+  console.log(`  Target text: "${text.substring(0, 50)}${text.length > 50 ? '...' : ''}"`);
+
+  const client = new VoiceCloneClient();
+
+  try {
+    await client.cloneVoiceToFile(
+      {
+        text,
+        referenceAudio: referencePath,
+        speakerName: voiceName,
+        speed,
+        temperature,
+      },
+      outputPath
+    );
+
+    console.log(`✓ Voice cloned successfully!`);
+    console.log(`  Output: ${outputPath}\n`);
+
+    // Clean up reference file unless keeping it
+    if (!keepReference) {
+      fs.unlinkSync(referencePath);
+      console.log('✓ Cleaned up temporary reference file');
+    } else {
+      console.log(`✓ Reference file kept at: ${referencePath}`);
+    }
+
+    console.log('\n=====================================');
+    console.log('Pipeline complete!');
+
+    return outputPath;
+  } catch (error) {
+    // Clean up on error
+    if (fs.existsSync(referencePath)) {
+      fs.unlinkSync(referencePath);
+    }
+    throw error;
+  }
+}
+
+/**
  * CLI entry point
  */
 async function main() {
@@ -300,21 +405,67 @@ async function main() {
     console.log('\n✓ Reference audio generation complete!');
     console.log(`Generated ${paths.length} files in: ${outputDir}`);
     console.log('\nThese files can now be used as reference audio for voice cloning.');
+  } else if (command === 'clone') {
+    // Full voice pipeline: ElevenLabs → IndexTTS → Output
+    const textIndex = args.indexOf('--text');
+    const voiceIndex = args.indexOf('--voice');
+    const outputIndex = args.indexOf('--output');
+    const refTextIndex = args.indexOf('--reference-text');
+    const speedIndex = args.indexOf('--speed');
+    const keepRefIndex = args.indexOf('--keep-reference');
+
+    if (textIndex === -1 || voiceIndex === -1 || outputIndex === -1) {
+      console.error(
+        'Usage: clone --text "Text to clone" --voice rachel --output cloned.wav [--reference-text "Text"] [--speed 1.0] [--keep-reference]'
+      );
+      process.exit(1);
+    }
+
+    const text = args[textIndex + 1];
+    const voiceName = args[voiceIndex + 1];
+    const outputPath = args[outputIndex + 1];
+    const referenceText = refTextIndex !== -1 ? args[refTextIndex + 1] : undefined;
+    const speed = speedIndex !== -1 ? parseFloat(args[speedIndex + 1]) : undefined;
+    const keepReference = keepRefIndex !== -1;
+
+    await fullVoicePipeline(text, voiceName, outputPath, {
+      referenceText,
+      speed,
+      keepReference,
+    });
   } else {
-    console.log('ElevenLabs Voice Generation - VC-002');
+    console.log('ElevenLabs Voice Generation & Full Voice Pipeline');
+    console.log('VC-002: ElevenLabs Reference Generation');
+    console.log('VC-004: Full Voice Pipeline');
     console.log('');
     console.log('Commands:');
     console.log('  list-voices              List all available voices');
-    console.log('  generate                 Generate single audio file');
+    console.log('  generate                 Generate single audio file with ElevenLabs');
     console.log('  generate-reference       Generate reference audio for voice cloning');
+    console.log('  clone                    Full pipeline: ElevenLabs → IndexTTS clone → output');
     console.log('');
     console.log('Examples:');
+    console.log('  # List voices');
     console.log('  ts-node scripts/generate-voice-with-elevenlabs.ts list-voices');
+    console.log('');
+    console.log('  # Generate with ElevenLabs only');
     console.log(
       '  ts-node scripts/generate-voice-with-elevenlabs.ts generate --text "Hello world" --voice rachel --output audio.mp3'
     );
+    console.log('');
+    console.log('  # Generate reference audio');
     console.log(
       '  ts-node scripts/generate-voice-with-elevenlabs.ts generate-reference --voice rachel'
+    );
+    console.log('');
+    console.log('  # Full pipeline (ElevenLabs + IndexTTS)');
+    console.log(
+      '  ts-node scripts/generate-voice-with-elevenlabs.ts clone --text "Your text here" --voice rachel --output cloned.wav'
+    );
+    console.log('');
+    console.log('  # Full pipeline with custom reference text and speed');
+    console.log(
+      '  ts-node scripts/generate-voice-with-elevenlabs.ts clone --text "Target text" --voice josh --reference-text "Reference phrase" --speed 1.2 --output cloned.wav'
     );
   }
 }
