@@ -370,7 +370,7 @@
       "priority": "P1",
       "phase": 4,
       "effort": "13pts",
-      "passes": false,
+      "passes": true,
       "category": "text-to-video",
       "files": [
         "scripts/modal_ltx_video.py"
