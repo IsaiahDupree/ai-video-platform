@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 47,
+  "completedFeatures": 48,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -214,7 +214,7 @@
     {
       "id": "VC-004",
       "name": "Full Voice Pipeline",
-      "description": "End-to-end: ElevenLabs reference \u2192 IndexTTS clone \u2192 output",
+      "description": "End-to-end: ElevenLabs reference → IndexTTS clone → output",
       "priority": "P0",
       "phase": 2,
       "effort": "8pts",
@@ -805,14 +805,18 @@
     {
       "id": "ADS-016",
       "name": "Approval Workflow",
-      "description": "Draft \u2192 In Review \u2192 Approved status with comments",
+      "description": "Draft → In Review → Approved status with comments",
       "priority": "P2",
       "phase": 5,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "static-ads",
       "files": [
-        "src/app/ads/review/"
+        "src/app/ads/review/",
+        "src/types/approval.ts",
+        "src/services/approvalService.ts",
+        "scripts/test-approval-workflow.ts",
+        "docs/ADS-016-APPROVAL-WORKFLOW.md"
       ],
       "dependencies": [
         "ADS-014"
@@ -1442,7 +1446,7 @@
     {
       "id": "GDP-006",
       "name": "Click Redirect Tracker",
-      "description": "Attribution spine for email \u2192 click \u2192 conversion",
+      "description": "Attribution spine for email → click → conversion",
       "category": "growth-data-plane",
       "priority": "P1",
       "passes": false
