@@ -50,9 +50,10 @@ export async function createCustomProductPage(
   options: CreateCustomProductPageOptions,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPage> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  const response = await makeRequest<AppCustomProductPageResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageResponse>(creds, {
     method: 'POST',
     path: '/v1/appCustomProductPages',
     body: {
@@ -88,9 +89,10 @@ export async function getCustomProductPage(
   customProductPageId: string,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPage> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  const response = await makeRequest<AppCustomProductPageResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageResponse>(creds, {
     method: 'GET',
     path: `/v1/appCustomProductPages/${customProductPageId}`,
     query: {
@@ -112,7 +114,8 @@ export async function listCustomProductPages(
   options: ListCustomProductPagesOptions = {},
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPagesResponse> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
   const query: Record<string, string | number | string[]> = {};
 
@@ -132,7 +135,7 @@ export async function listCustomProductPages(
     query.limit = options.limit;
   }
 
-  const response = await makeRequest<AppCustomProductPagesResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPagesResponse>(creds, {
     method: 'GET',
     path: '/v1/appCustomProductPages',
     query,
@@ -152,7 +155,8 @@ export async function updateCustomProductPage(
   options: UpdateCustomProductPageOptions,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPage> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
   const attributes: Record<string, any> = {};
 
@@ -164,7 +168,7 @@ export async function updateCustomProductPage(
     attributes.visible = options.visible;
   }
 
-  const response = await makeRequest<AppCustomProductPageResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageResponse>(creds, {
     method: 'PATCH',
     path: `/v1/appCustomProductPages/${options.customProductPageId}`,
     body: {
@@ -189,9 +193,10 @@ export async function deleteCustomProductPage(
   options: DeleteCustomProductPageOptions,
   credentials?: ASCCredentials
 ): Promise<void> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  await makeRequest(credentials, {
+  await makeRequest(creds, {
     method: 'DELETE',
     path: `/v1/appCustomProductPages/${options.customProductPageId}`,
   });
@@ -214,9 +219,10 @@ export async function createCustomProductPageVersion(
   options: CreateCustomProductPageVersionOptions,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPageVersion> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  const response = await makeRequest<AppCustomProductPageVersionResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageVersionResponse>(creds, {
     method: 'POST',
     path: '/v1/appCustomProductPageVersions',
     body: {
@@ -248,9 +254,10 @@ export async function getCustomProductPageVersion(
   versionId: string,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPageVersion> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  const response = await makeRequest<AppCustomProductPageVersionResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageVersionResponse>(creds, {
     method: 'GET',
     path: `/v1/appCustomProductPageVersions/${versionId}`,
     query: {
@@ -272,7 +279,8 @@ export async function listCustomProductPageVersions(
   options: ListCustomProductPageVersionsOptions = {},
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPageVersionsResponse> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
   const query: Record<string, string | number | string[]> = {};
 
@@ -292,7 +300,7 @@ export async function listCustomProductPageVersions(
     query.limit = options.limit;
   }
 
-  const response = await makeRequest<AppCustomProductPageVersionsResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageVersionsResponse>(creds, {
     method: 'GET',
     path: '/v1/appCustomProductPageVersions',
     query,
@@ -312,9 +320,10 @@ export async function updateCustomProductPageVersion(
   options: UpdateCustomProductPageVersionOptions,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPageVersion> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  const response = await makeRequest<AppCustomProductPageVersionResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageVersionResponse>(creds, {
     method: 'PATCH',
     path: `/v1/appCustomProductPageVersions/${options.versionId}`,
     body: {
@@ -341,9 +350,10 @@ export async function deleteCustomProductPageVersion(
   options: DeleteCustomProductPageVersionOptions,
   credentials?: ASCCredentials
 ): Promise<void> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  await makeRequest(credentials, {
+  await makeRequest(creds, {
     method: 'DELETE',
     path: `/v1/appCustomProductPageVersions/${options.versionId}`,
   });
@@ -366,9 +376,10 @@ export async function createCustomProductPageLocalization(
   options: CreateCustomProductPageLocalizationOptions,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPageLocalization> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  const response = await makeRequest<AppCustomProductPageLocalizationResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageLocalizationResponse>(creds, {
     method: 'POST',
     path: '/v1/appCustomProductPageLocalizations',
     body: {
@@ -404,9 +415,10 @@ export async function getCustomProductPageLocalization(
   localizationId: string,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPageLocalization> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  const response = await makeRequest<AppCustomProductPageLocalizationResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageLocalizationResponse>(creds, {
     method: 'GET',
     path: `/v1/appCustomProductPageLocalizations/${localizationId}`,
     query: {
@@ -428,7 +440,8 @@ export async function listCustomProductPageLocalizations(
   options: ListCustomProductPageLocalizationsOptions = {},
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPageLocalizationsResponse> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
   const query: Record<string, string | number | string[]> = {};
 
@@ -448,7 +461,7 @@ export async function listCustomProductPageLocalizations(
     query.limit = options.limit;
   }
 
-  const response = await makeRequest<AppCustomProductPageLocalizationsResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageLocalizationsResponse>(creds, {
     method: 'GET',
     path: '/v1/appCustomProductPageLocalizations',
     query,
@@ -468,9 +481,10 @@ export async function updateCustomProductPageLocalization(
   options: UpdateCustomProductPageLocalizationOptions,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPageLocalization> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  const response = await makeRequest<AppCustomProductPageLocalizationResponse>(credentials, {
+  const response = await makeRequest<AppCustomProductPageLocalizationResponse>(creds, {
     method: 'PATCH',
     path: `/v1/appCustomProductPageLocalizations/${options.localizationId}`,
     body: {
@@ -497,9 +511,10 @@ export async function deleteCustomProductPageLocalization(
   options: DeleteCustomProductPageLocalizationOptions,
   credentials?: ASCCredentials
 ): Promise<void> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
-  await makeRequest(credentials, {
+  await makeRequest(creds, {
     method: 'DELETE',
     path: `/v1/appCustomProductPageLocalizations/${options.localizationId}`,
   });
@@ -529,7 +544,8 @@ export async function createCompleteCustomProductPage(
   credentials?: ASCCredentials
 ): Promise<CreateCustomProductPageResult> {
   try {
-    credentials = credentials || (await getDefaultCredentials());
+    const creds = credentials || (await getDefaultCredentials());
+    if (!creds) throw new Error('No ASC credentials found');
 
     // Step 1: Create custom product page
     const customProductPage = await createCustomProductPage(
@@ -538,7 +554,7 @@ export async function createCompleteCustomProductPage(
         name: options.name,
         visible: options.visible,
       },
-      credentials
+      creds
     );
 
     // Step 2: Create version
@@ -546,7 +562,7 @@ export async function createCompleteCustomProductPage(
       {
         customProductPageId: customProductPage.id,
       },
-      credentials
+      creds
     );
 
     // Step 3: Create localization
@@ -556,7 +572,7 @@ export async function createCompleteCustomProductPage(
         locale: options.locale,
         promotionalText: options.promotionalText,
       },
-      credentials
+      creds
     );
 
     return {
@@ -583,10 +599,11 @@ export async function getCompleteCustomProductPage(
   customProductPageId: string,
   credentials?: ASCCredentials
 ): Promise<CompleteCustomProductPage> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
   // Get the custom product page
-  const page = await getCustomProductPage(customProductPageId, credentials);
+  const page = await getCustomProductPage(customProductPageId, creds);
 
   // Get versions
   const versionsResponse = await listCustomProductPageVersions(
@@ -595,7 +612,7 @@ export async function getCompleteCustomProductPage(
       include: ['appCustomProductPageLocalizations'],
       limit: 1,
     },
-    credentials
+    creds
   );
 
   const version = versionsResponse.data[0];
@@ -608,7 +625,7 @@ export async function getCompleteCustomProductPage(
         filterCustomProductPageVersionId: version.id,
         include: ['appScreenshotSets', 'appPreviewSets'],
       },
-      credentials
+      creds
     );
 
     localizations.push(...localizationsResponse.data);
@@ -637,7 +654,8 @@ export async function addLocalizationToCustomProductPage(
   credentials?: ASCCredentials
 ): Promise<CreateCustomProductPageLocalizationResult> {
   try {
-    credentials = credentials || (await getDefaultCredentials());
+    const creds = credentials || (await getDefaultCredentials());
+    if (!creds) throw new Error('No ASC credentials found');
 
     // Get the latest version
     const versionsResponse = await listCustomProductPageVersions(
@@ -645,7 +663,7 @@ export async function addLocalizationToCustomProductPage(
         filterCustomProductPageId: options.customProductPageId,
         limit: 1,
       },
-      credentials
+      creds
     );
 
     if (versionsResponse.data.length === 0) {
@@ -661,7 +679,7 @@ export async function addLocalizationToCustomProductPage(
         locale: options.locale,
         promotionalText: options.promotionalText,
       },
-      credentials
+      creds
     );
 
     return {
@@ -687,14 +705,15 @@ export async function listCustomProductPagesForApp(
   appId: string,
   credentials?: ASCCredentials
 ): Promise<AppCustomProductPage[]> {
-  credentials = credentials || (await getDefaultCredentials());
+  const creds = credentials || (await getDefaultCredentials());
+  if (!creds) throw new Error('No ASC credentials found');
 
   const response = await listCustomProductPages(
     {
       filterAppId: appId,
       include: ['appCustomProductPageVersions'],
     },
-    credentials
+    creds
   );
 
   return response.data;
