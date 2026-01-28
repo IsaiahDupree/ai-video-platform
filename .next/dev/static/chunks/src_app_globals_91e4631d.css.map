@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/isaiahdupree/Documents/Software/ai-video-platform/src/app/globals.css"],"sourcesContent":["* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\nhtml,\nbody {\n  max-width: 100vw;\n  overflow-x: hidden;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n    sans-serif;\n}\n\nbody {\n  color: #333;\n  background: #f9fafb;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\nbutton {\n  font-family: inherit;\n}\n\ninput,\ntextarea,\nselect {\n  font-family: inherit;\n}\n"],"names":[],"mappings":"AAAA;;;;;;AAMA;;;;;;AASA;;;;;AAKA;;;;;AAKA"}}]
+}

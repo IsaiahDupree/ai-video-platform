@@ -1,0 +1,56 @@
+{
+  "id": "app-launch-001",
+  "name": "App Launch - Bold Gradient",
+  "description": "High-impact app launch announcement with bold colors",
+  "layout": "hero-text",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080,
+    "name": "Instagram Square",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "Meet Your New Favorite App",
+    "subheadline": "Download now and transform your daily routine",
+    "cta": "Download Free",
+    "gradient": {
+      "from": "#667eea",
+      "to": "#764ba2",
+      "direction": "to-br"
+    },
+    "overlayOpacity": 0,
+    "logoPosition": "top-left",
+    "logoSize": 70,
+    "logo": "/assets/brands/tech-startup/logo.svg"
+  },
+  "style": {
+    "primaryColor": "#3b82f6",
+    "secondaryColor": "#8b5cf6",
+    "textColor": "#1f2937",
+    "ctaBackgroundColor": "#3b82f6",
+    "ctaTextColor": "#ffffff",
+    "headlineFont": "Inter, system-ui, -apple-system, sans-serif",
+    "bodyFont": "Inter, system-ui, -apple-system, sans-serif",
+    "headlineSize": 36,
+    "bodySize": 18,
+    "headlineFontWeight": 700,
+    "bodyFontWeight": 400,
+    "padding": 32,
+    "gap": 16,
+    "borderRadius": 8,
+    "shadow": true,
+    "shadowColor": "rgba(0, 0, 0, 0.2)",
+    "shadowBlur": 20
+  },
+  "metadata": {
+    "category": "app-launch",
+    "tags": [
+      "mobile-app",
+      "launch",
+      "gradient",
+      "bold"
+    ],
+    "version": "1.0",
+    "industry": "technology"
+  }
+}

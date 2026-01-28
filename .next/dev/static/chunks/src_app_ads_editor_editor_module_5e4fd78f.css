@@ -1,0 +1,230 @@
+/* [project]/src/app/ads/editor/editor.module.css [app-client] (css) */
+.editor-module__I1eW_q__container {
+  background: #f9fafb;
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+}
+
+.editor-module__I1eW_q__loading {
+  color: #6b7280;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.25rem;
+  display: flex;
+}
+
+.editor-module__I1eW_q__header {
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+}
+
+.editor-module__I1eW_q__headerContent {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.editor-module__I1eW_q__title {
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.editor-module__I1eW_q__actions {
+  gap: .75rem;
+  display: flex;
+}
+
+.editor-module__I1eW_q__button {
+  color: #fff;
+  cursor: pointer;
+  background: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.editor-module__I1eW_q__button:hover {
+  background: #2563eb;
+}
+
+.editor-module__I1eW_q__buttonSmall {
+  color: #fff;
+  cursor: pointer;
+  background: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: .5rem;
+  padding: .375rem .75rem;
+  font-size: .75rem;
+  font-weight: 500;
+  transition: background .2s;
+}
+
+.editor-module__I1eW_q__buttonSmall:hover {
+  background: #2563eb;
+}
+
+.editor-module__I1eW_q__editor {
+  flex: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.editor-module__I1eW_q__sidebar {
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  width: 400px;
+  max-height: calc(100vh - 73px);
+  overflow-y: auto;
+}
+
+.editor-module__I1eW_q__sidebarContent {
+  padding: 1.5rem;
+}
+
+.editor-module__I1eW_q__section {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.editor-module__I1eW_q__section:last-child {
+  border-bottom: none;
+}
+
+.editor-module__I1eW_q__sectionTitle {
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: .75rem;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.editor-module__I1eW_q__select {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
+  padding: .5rem;
+  font-size: .875rem;
+}
+
+.editor-module__I1eW_q__select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px #3b82f61a;
+}
+
+.editor-module__I1eW_q__preview {
+  background: #f3f4f6;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  display: flex;
+}
+
+.editor-module__I1eW_q__formGroup {
+  margin-bottom: 1rem;
+}
+
+.editor-module__I1eW_q__label {
+  color: #374151;
+  margin-bottom: .25rem;
+  font-size: .875rem;
+  font-weight: 500;
+  display: block;
+}
+
+.editor-module__I1eW_q__input {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
+  padding: .5rem;
+  font-size: .875rem;
+}
+
+.editor-module__I1eW_q__input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px #3b82f61a;
+}
+
+.editor-module__I1eW_q__textarea {
+  resize: vertical;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
+  min-height: 80px;
+  padding: .5rem;
+  font-size: .875rem;
+}
+
+.editor-module__I1eW_q__textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px #3b82f61a;
+}
+
+.editor-module__I1eW_q__colorInput {
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
+  height: 40px;
+  padding: 2px;
+}
+
+.editor-module__I1eW_q__colorInput:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px #3b82f61a;
+}
+
+.editor-module__I1eW_q__numberInput {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
+  padding: .5rem;
+  font-size: .875rem;
+}
+
+.editor-module__I1eW_q__numberInput:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px #3b82f61a;
+}
+
+@media (max-width: 1024px) {
+  .editor-module__I1eW_q__editor {
+    flex-direction: column;
+  }
+
+  .editor-module__I1eW_q__sidebar {
+    width: 100%;
+    max-height: none;
+  }
+
+  .editor-module__I1eW_q__preview {
+    min-height: 600px;
+  }
+}
+
+/*# sourceMappingURL=src_app_ads_editor_editor_module_5e4fd78f.css.map*/
