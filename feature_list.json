@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 86,
+  "completedFeatures": 87,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1566,7 +1566,18 @@
       "description": "Install Meta Pixel base code on all pages",
       "category": "meta-pixel",
       "priority": "P1",
-      "passes": false
+      "phase": 7,
+      "effort": "5pts",
+      "passes": true,
+      "files": [
+        "src/components/MetaPixel.tsx",
+        "src/app/layout.tsx",
+        ".env.example",
+        "scripts/test-meta-pixel.ts",
+        "scripts/verify-meta-pixel.ts",
+        "docs/META-001-META-PIXEL-INSTALLATION.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "META-002",
