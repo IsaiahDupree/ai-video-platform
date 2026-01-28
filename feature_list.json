@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 30,
+  "completedFeatures": 31,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -475,10 +475,12 @@
       "priority": "P1",
       "phase": 4,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "text-to-video",
       "files": [
-        "scripts/modal_ltx_video.py"
+        "scripts/modal_ltx_video.py",
+        "scripts/test-t2v-web-endpoint.ts",
+        "docs/T2V-008-WEB-ENDPOINT.md"
       ],
       "dependencies": [
         "T2V-001"

@@ -261,8 +261,8 @@ class LTXVideoGenerator:
 @app.function(
     image=image,
 )
-@modal.fastapi_endpoint(method="POST")
-def generate_video_endpoint(
+@modal.web_endpoint(method="POST")
+async def generate_video_endpoint(
     prompt: str,
     negative_prompt: str = "",
     num_frames: int = 24,
@@ -292,30 +292,35 @@ def generate_video_endpoint(
     Returns base64-encoded MP4 video
     """
     import base64
+    from fastapi import HTTPException
 
-    # Generate video
-    generator = LTXVideoGenerator()
-    video_bytes = generator.generate_video.remote(
-        prompt=prompt,
-        negative_prompt=negative_prompt,
-        num_frames=num_frames,
-        fps=fps,
-        width=width,
-        height=height,
-        num_inference_steps=num_inference_steps,
-        guidance_scale=guidance_scale,
-        seed=seed,
-    )
+    try:
+        # Call the generate_video method on the class
+        generator = LTXVideoGenerator()
+        video_bytes = await generator.generate_video.remote.aio(
+            prompt=prompt,
+            negative_prompt=negative_prompt,
+            num_frames=num_frames,
+            fps=fps,
+            width=width,
+            height=height,
+            num_inference_steps=num_inference_steps,
+            guidance_scale=guidance_scale,
+            seed=seed,
+        )
 
-    # Return video with metadata
-    return {
-        "video": base64.b64encode(video_bytes).decode(),
-        "format": "mp4",
-        "num_frames": num_frames,
-        "fps": fps,
-        "width": width,
-        "height": height,
-    }
+        # Return video with metadata
+        return {
+            "video": base64.b64encode(video_bytes).decode(),
+            "format": "mp4",
+            "num_frames": num_frames,
+            "fps": fps,
+            "width": width,
+            "height": height,
+            "prompt": prompt,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Video generation failed: {str(e)}")
 
 
 @app.local_entrypoint()
