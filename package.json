@@ -21,7 +21,8 @@
     "manage-scenes": "npx tsx scripts/manage-scenes.ts",
     "use-template": "npx tsx scripts/use-template.ts",
     "generate-avatar": "npx tsx scripts/generate-avatar.ts",
-    "t2v": "npx tsx scripts/test-t2v-router.ts"
+    "t2v": "npx tsx scripts/test-t2v-router.ts",
+    "test-video-export": "npx tsx scripts/test-video-export.ts"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
