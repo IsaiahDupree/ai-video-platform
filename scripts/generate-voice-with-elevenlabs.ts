@@ -47,7 +47,7 @@ interface GenerateOptions {
  * Popular ElevenLabs voice IDs
  * Get full list at: https://api.elevenlabs.io/v1/voices
  */
-const VOICE_PRESETS: Record<string, string> = {
+export const VOICE_PRESETS: Record<string, string> = {
   rachel: '21m00Tcm4TlvDq8ikWAM',
   domi: 'AZnzlk1XvdvUeBnXmlld',
   bella: 'EXAVITQu4vr4xnSDxMaL',
