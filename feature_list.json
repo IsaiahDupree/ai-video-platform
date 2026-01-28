@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 68,
+  "completedFeatures": 69,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1243,10 +1243,13 @@
       "priority": "P2",
       "phase": 6,
       "effort": "13pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/services/figmaImport.ts"
+        "src/types/figmaImport.ts",
+        "src/services/figmaImport.ts",
+        "scripts/test-figma-import.ts",
+        "docs/APP-018-FIGMA-IMPORT-INTEGRATION.md"
       ],
       "dependencies": []
     },
