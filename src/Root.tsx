@@ -7,8 +7,10 @@ import React from 'react';
 import { Composition, Still, registerRoot } from 'remotion';
 import { BriefComposition } from './compositions/BriefComposition';
 import { AdTemplate } from './compositions/ads/AdTemplate';
+import { AppPreviewComposition } from './compositions/appPreview';
 import type { ContentBrief } from './types/brief';
 import type { AdTemplate as AdTemplateType } from './types/adTemplate';
+import type { AppPreviewConfig } from './types/appPreview';
 
 // Import example brief
 import exampleBrief from '../data/briefs/example-video.json';
@@ -19,10 +21,19 @@ import quoteAd from '../data/ads/example-quote-ad.json';
 import minimalAd from '../data/ads/example-minimal-ad.json';
 import textOnlyAd from '../data/ads/example-text-only-ad.json';
 
+// Import app preview
+import exampleAppPreview from '../data/appPreviews/example-app-preview.json';
+
 export const RemotionRoot: React.FC = () => {
   // Calculate total duration from all sections
   const totalDuration = (exampleBrief as ContentBrief).sections.reduce(
     (acc, section) => acc + section.durationInFrames,
+    0
+  );
+
+  // Calculate app preview duration
+  const appPreviewDuration = (exampleAppPreview as AppPreviewConfig).scenes.reduce(
+    (acc, scene) => acc + scene.durationInFrames,
     0
   );
 
@@ -38,6 +49,19 @@ export const RemotionRoot: React.FC = () => {
         height={exampleBrief.settings.height}
         defaultProps={{
           brief: exampleBrief as ContentBrief,
+        }}
+      />
+
+      {/* App Preview Video (APP-023) */}
+      <Composition
+        id="ExampleAppPreview"
+        component={AppPreviewComposition}
+        durationInFrames={appPreviewDuration}
+        fps={(exampleAppPreview as AppPreviewConfig).fps || 30}
+        width={(exampleAppPreview as AppPreviewConfig).dimensions?.width || 1080}
+        height={(exampleAppPreview as AppPreviewConfig).dimensions?.height || 1920}
+        defaultProps={{
+          config: exampleAppPreview as AppPreviewConfig,
         }}
       />
 

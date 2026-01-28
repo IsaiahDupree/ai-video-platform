@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 76,
+  "completedFeatures": 77,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1336,13 +1336,20 @@
       "priority": "P2",
       "phase": 6,
       "effort": "13pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/compositions/appPreview/"
+        "src/types/appPreview.ts",
+        "src/compositions/appPreview/AppPreviewComposition.tsx",
+        "src/compositions/appPreview/index.ts",
+        "data/appPreviews/example-app-preview.json",
+        "scripts/test-app-preview.ts",
+        "docs/APP-023-APP-PREVIEW-VIDEO-GENERATOR.md"
       ],
       "dependencies": [
-        "VID-002"
+        "VID-002",
+        "APP-001",
+        "APP-002"
       ]
     },
     {
