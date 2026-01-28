@@ -224,8 +224,18 @@ export async function renderStill(
       sizeInBytes: stats.size,
     };
 
-    // Track first_render_completed
+    // Track first_render_completed (TRACK-003)
     serverTracking.track('first_render_completed', {
+      compositionId,
+      format,
+      width: result.width,
+      height: result.height,
+      sizeInBytes: result.sizeInBytes,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Track video_rendered for all renders (TRACK-004)
+    serverTracking.track('video_rendered', {
       compositionId,
       format,
       width: result.width,

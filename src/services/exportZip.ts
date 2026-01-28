@@ -12,6 +12,7 @@ import path from 'path';
 import { RenderStillResult } from './renderStill';
 import type { AdTemplate } from '../types/adTemplate';
 import type { AdSize } from '../config/adSizes';
+import { serverTracking } from './trackingServer';
 
 /**
  * ZIP export options
@@ -212,6 +213,16 @@ export async function createZipExport(
     // Get final ZIP file size
     const stats = fs.statSync(finalOutputPath);
     const compressionRatio = totalSizeBytes > 0 ? stats.size / totalSizeBytes : 0;
+
+    // Track export_downloaded (TRACK-004)
+    serverTracking.track('export_downloaded', {
+      exportType: 'zip',
+      fileCount: files.length,
+      sizeInBytes: stats.size,
+      organizationStrategy: organizeByVariant ? 'variant-first' : organizeBySize ? 'size-first' : 'flat',
+      includesManifest: includeManifest,
+      timestamp: new Date().toISOString(),
+    });
 
     return {
       success: true,

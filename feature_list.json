@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 81,
+  "completedFeatures": 82,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1456,7 +1456,20 @@
       "description": "Track video_rendered, batch_completed, export_downloaded events",
       "category": "tracking",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "phase": 7,
+      "effort": "5pts",
+      "files": [
+        "src/services/renderStill.ts",
+        "src/services/renderQueue.ts",
+        "src/services/exportZip.ts",
+        "src/services/campaignGenerator.ts",
+        "scripts/test-core-value-tracking.ts",
+        "docs/TRACK-004-CORE-VALUE-EVENT-TRACKING.md"
+      ],
+      "dependencies": [
+        "TRACK-001"
+      ]
     },
     {
       "id": "TRACK-005",

@@ -18,6 +18,7 @@ import { AdTemplate } from '../types/adTemplate';
 import { getSizeById } from '../config/adSizes';
 import { renderStill, RenderStillResult } from './renderStill';
 import { createZipFromDirectory } from './exportZip';
+import { serverTracking } from './trackingServer';
 
 /**
  * Generate all assets for a campaign
@@ -129,6 +130,23 @@ export async function generateCampaign(
   // Update job status
   job.status = job.failedCount === 0 ? 'completed' : 'failed';
   job.completedAt = new Date().toISOString();
+
+  // Track batch_completed (TRACK-004)
+  const endTime = Date.now();
+  const duration = endTime - startTime;
+
+  serverTracking.track('batch_completed', {
+    campaignId: campaign.id,
+    jobId: job.id,
+    jobType: 'campaign',
+    totalItems: job.totalCount,
+    successCount: job.completedCount,
+    failCount: job.failedCount,
+    variantCount: campaign.variants.length,
+    sizeCount: enabledSizes.length,
+    duration,
+    timestamp: new Date().toISOString(),
+  });
 
   return job;
 }

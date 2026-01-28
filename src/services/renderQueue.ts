@@ -398,7 +398,7 @@ export class RenderQueue {
     this.worker.on('completed', (job) => {
       console.log(`Job ${job.id} completed successfully`);
 
-      // Track first_render_completed for successful renders
+      // Track first_render_completed for successful renders (TRACK-003)
       if (job.returnvalue && job.returnvalue.success) {
         serverTracking.track('first_render_completed', {
           jobId: job.id,
@@ -407,6 +407,19 @@ export class RenderQueue {
           duration: job.returnvalue.duration,
           timestamp: new Date().toISOString(),
         });
+
+        // Track batch_completed for multi-item batches (TRACK-004)
+        if (job.returnvalue.totalRendered > 1) {
+          serverTracking.track('batch_completed', {
+            jobId: job.id,
+            jobType: job.data.type,
+            totalItems: job.returnvalue.totalRendered,
+            successCount: job.returnvalue.totalRendered - job.returnvalue.totalFailed,
+            failCount: job.returnvalue.totalFailed,
+            duration: job.returnvalue.duration,
+            timestamp: new Date().toISOString(),
+          });
+        }
       }
     });
 
