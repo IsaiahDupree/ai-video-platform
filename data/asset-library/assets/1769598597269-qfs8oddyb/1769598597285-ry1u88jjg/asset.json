@@ -1,0 +1,30 @@
+{
+  "id": "1769598597285-ry1u88jjg",
+  "appId": "1769598597269-qfs8oddyb",
+  "name": "Company Logo",
+  "type": "logo",
+  "status": "review",
+  "filePath": "/Users/isaiahdupree/Documents/Software/ai-video-platform/data/asset-library/assets/1769598597269-qfs8oddyb/1769598597285-ry1u88jjg/v1.png",
+  "fileName": "logo.png",
+  "fileSize": 76800,
+  "mimeType": "image/png",
+  "format": "png",
+  "tags": [
+    "batch-updated"
+  ],
+  "metadata": {},
+  "version": 1,
+  "versionHistory": [
+    {
+      "version": 1,
+      "filePath": "/Users/isaiahdupree/Documents/Software/ai-video-platform/data/asset-library/assets/1769598597269-qfs8oddyb/1769598597285-ry1u88jjg/v1.png",
+      "fileSize": 76800,
+      "checksum": "29ce83e6a9a07559b734a99347c8f586",
+      "changes": "Initial upload",
+      "createdAt": "2026-01-28T11:09:57.286Z"
+    }
+  ],
+  "createdAt": "2026-01-28T11:09:57.286Z",
+  "updatedAt": "2026-01-28T11:09:57.290Z",
+  "updatedBy": "user-admin"
+}

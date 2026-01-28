@@ -1,0 +1,27 @@
+{
+  "id": "1769598597284-n796wl2xl",
+  "appId": "1769598597269-qfs8oddyb",
+  "name": "App Icon",
+  "type": "icon",
+  "status": "approved",
+  "filePath": "/Users/isaiahdupree/Documents/Software/ai-video-platform/data/asset-library/assets/1769598597269-qfs8oddyb/1769598597284-n796wl2xl/v1.png",
+  "fileName": "icon.png",
+  "fileSize": 51200,
+  "mimeType": "image/png",
+  "format": "png",
+  "tags": [],
+  "metadata": {},
+  "version": 1,
+  "versionHistory": [
+    {
+      "version": 1,
+      "filePath": "/Users/isaiahdupree/Documents/Software/ai-video-platform/data/asset-library/assets/1769598597269-qfs8oddyb/1769598597284-n796wl2xl/v1.png",
+      "fileSize": 51200,
+      "checksum": "8a51caaab6290cb6740f4d40d0a6442e",
+      "changes": "Initial upload",
+      "createdAt": "2026-01-28T11:09:57.285Z"
+    }
+  ],
+  "createdAt": "2026-01-28T11:09:57.285Z",
+  "updatedAt": "2026-01-28T11:09:57.285Z"
+}

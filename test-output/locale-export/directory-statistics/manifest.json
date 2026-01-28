@@ -1,0 +1,418 @@
+{
+  "metadata": {
+    "exportDate": "2026-01-28T11:01:08.089Z",
+    "totalScreenshots": 24,
+    "locales": [
+      "en-US",
+      "es-ES",
+      "ja"
+    ],
+    "deviceTypes": [
+      "iphone",
+      "ipad"
+    ],
+    "organizationStrategy": "locale-first",
+    "version": "1.0.0"
+  },
+  "screenshots": [
+    {
+      "locale": "en-US",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "en-US-iphone-1.png",
+      "filePath": "en-US/iphone/en-US-iphone-1.png",
+      "displayOrder": 1,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "en-US",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "en-US-iphone-2.png",
+      "filePath": "en-US/iphone/en-US-iphone-2.png",
+      "displayOrder": 2,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "en-US",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "en-US-iphone-3.png",
+      "filePath": "en-US/iphone/en-US-iphone-3.png",
+      "displayOrder": 3,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "en-US",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "en-US-iphone-4.png",
+      "filePath": "en-US/iphone/en-US-iphone-4.png",
+      "displayOrder": 4,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "en-US",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "en-US-iphone-5.png",
+      "filePath": "en-US/iphone/en-US-iphone-5.png",
+      "displayOrder": 5,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "en-US",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "en-US-ipad-1.png",
+      "filePath": "en-US/ipad/en-US-ipad-1.png",
+      "displayOrder": 1,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "en-US",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "en-US-ipad-2.png",
+      "filePath": "en-US/ipad/en-US-ipad-2.png",
+      "displayOrder": 2,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "en-US",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "en-US-ipad-3.png",
+      "filePath": "en-US/ipad/en-US-ipad-3.png",
+      "displayOrder": 3,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "es-ES",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "es-ES-iphone-1.png",
+      "filePath": "es-ES/iphone/es-ES-iphone-1.png",
+      "displayOrder": 1,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "es-ES",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "es-ES-iphone-2.png",
+      "filePath": "es-ES/iphone/es-ES-iphone-2.png",
+      "displayOrder": 2,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "es-ES",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "es-ES-iphone-3.png",
+      "filePath": "es-ES/iphone/es-ES-iphone-3.png",
+      "displayOrder": 3,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "es-ES",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "es-ES-iphone-4.png",
+      "filePath": "es-ES/iphone/es-ES-iphone-4.png",
+      "displayOrder": 4,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "es-ES",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "es-ES-iphone-5.png",
+      "filePath": "es-ES/iphone/es-ES-iphone-5.png",
+      "displayOrder": 5,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "es-ES",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "es-ES-ipad-1.png",
+      "filePath": "es-ES/ipad/es-ES-ipad-1.png",
+      "displayOrder": 1,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "es-ES",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "es-ES-ipad-2.png",
+      "filePath": "es-ES/ipad/es-ES-ipad-2.png",
+      "displayOrder": 2,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "es-ES",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "es-ES-ipad-3.png",
+      "filePath": "es-ES/ipad/es-ES-ipad-3.png",
+      "displayOrder": 3,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "ja",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "ja-iphone-1.png",
+      "filePath": "ja/iphone/ja-iphone-1.png",
+      "displayOrder": 1,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.088Z"
+    },
+    {
+      "locale": "ja",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "ja-iphone-2.png",
+      "filePath": "ja/iphone/ja-iphone-2.png",
+      "displayOrder": 2,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.089Z"
+    },
+    {
+      "locale": "ja",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "ja-iphone-3.png",
+      "filePath": "ja/iphone/ja-iphone-3.png",
+      "displayOrder": 3,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.089Z"
+    },
+    {
+      "locale": "ja",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "ja-iphone-4.png",
+      "filePath": "ja/iphone/ja-iphone-4.png",
+      "displayOrder": 4,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.089Z"
+    },
+    {
+      "locale": "ja",
+      "deviceType": "iphone",
+      "model": "iPhone 17 Pro Max",
+      "orientation": "portrait",
+      "filename": "ja-iphone-5.png",
+      "filePath": "ja/iphone/ja-iphone-5.png",
+      "displayOrder": 5,
+      "dimensions": {
+        "width": 1320,
+        "height": 2868
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.089Z"
+    },
+    {
+      "locale": "ja",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "ja-ipad-1.png",
+      "filePath": "ja/ipad/ja-ipad-1.png",
+      "displayOrder": 1,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.089Z"
+    },
+    {
+      "locale": "ja",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "ja-ipad-2.png",
+      "filePath": "ja/ipad/ja-ipad-2.png",
+      "displayOrder": 2,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.089Z"
+    },
+    {
+      "locale": "ja",
+      "deviceType": "ipad",
+      "model": "iPad Pro 13\" M5",
+      "orientation": "landscape",
+      "filename": "ja-ipad-3.png",
+      "filePath": "ja/ipad/ja-ipad-3.png",
+      "displayOrder": 3,
+      "dimensions": {
+        "width": 2752,
+        "height": 2064
+      },
+      "fileSize": 0,
+      "checksum": "93ca32a536da1698ea979f183679af29",
+      "timestamp": "2026-01-28T11:01:08.089Z"
+    }
+  ],
+  "statistics": {
+    "byLocale": {
+      "en-US": 8,
+      "es-ES": 8,
+      "ja": 8
+    },
+    "byDeviceType": {
+      "iphone": 15,
+      "ipad": 9
+    },
+    "byOrientation": {
+      "portrait": 15,
+      "landscape": 9
+    }
+  }
+}
