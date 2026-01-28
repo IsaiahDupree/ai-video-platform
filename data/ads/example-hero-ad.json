@@ -1,0 +1,50 @@
+{
+  "id": "hero-ad-001",
+  "name": "Hero Ad - Product Launch",
+  "description": "Bold hero ad with gradient background and CTA",
+  "layout": "hero-text",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080,
+    "name": "Instagram Square",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "Transform Your Workflow",
+    "subheadline": "AI-powered video generation in seconds",
+    "cta": "Get Started Free",
+    "gradient": {
+      "from": "#6366f1",
+      "to": "#8b5cf6",
+      "direction": "to-br"
+    },
+    "overlayOpacity": 0,
+    "logo": "assets/logo.png",
+    "logoPosition": "top-left",
+    "logoSize": 60
+  },
+  "style": {
+    "primaryColor": "#6366f1",
+    "secondaryColor": "#8b5cf6",
+    "textColor": "#ffffff",
+    "ctaBackgroundColor": "#ffffff",
+    "ctaTextColor": "#6366f1",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 64,
+    "bodySize": 24,
+    "headlineFontWeight": 800,
+    "bodyFontWeight": 500,
+    "padding": 60,
+    "gap": 24,
+    "borderRadius": 12,
+    "shadow": true,
+    "shadowColor": "rgba(0, 0, 0, 0.3)",
+    "shadowBlur": 30
+  },
+  "metadata": {
+    "category": "product-launch",
+    "tags": ["hero", "gradient", "cta", "instagram"],
+    "version": "1.0"
+  }
+}

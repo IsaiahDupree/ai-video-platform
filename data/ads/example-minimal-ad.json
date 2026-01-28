@@ -1,0 +1,39 @@
+{
+  "id": "minimal-ad-001",
+  "name": "Minimal Ad - Clean & Simple",
+  "description": "Minimalist ad with single headline",
+  "layout": "minimal",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "name": "Instagram Story",
+    "platform": "Instagram"
+  },
+  "content": {
+    "headline": "Create.\nShare.\nGrow.",
+    "backgroundColor": "#fafafa",
+    "logo": "assets/logo.png",
+    "logoPosition": "bottom-center",
+    "logoSize": 70
+  },
+  "style": {
+    "primaryColor": "#18181b",
+    "secondaryColor": "#71717a",
+    "textColor": "#18181b",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 80,
+    "bodySize": 20,
+    "headlineFontWeight": 900,
+    "bodyFontWeight": 400,
+    "padding": 80,
+    "gap": 20,
+    "borderRadius": 0,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "brand",
+    "tags": ["minimal", "story", "instagram"],
+    "version": "1.0"
+  }
+}

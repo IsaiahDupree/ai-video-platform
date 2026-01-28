@@ -1,0 +1,46 @@
+{
+  "id": "text-only-ad-001",
+  "name": "Text Only Ad - Announcement",
+  "description": "Bold text-only ad for announcements",
+  "layout": "text-only",
+  "dimensions": {
+    "width": 1200,
+    "height": 1200,
+    "name": "LinkedIn Square",
+    "platform": "LinkedIn"
+  },
+  "content": {
+    "headline": "We're Hiring!",
+    "body": "Join our team of creative innovators building the future of AI-powered content creation.",
+    "gradient": {
+      "from": "#059669",
+      "to": "#10b981",
+      "direction": "to-br"
+    },
+    "logo": "assets/logo.png",
+    "logoPosition": "top-center",
+    "logoSize": 80
+  },
+  "style": {
+    "primaryColor": "#059669",
+    "secondaryColor": "#10b981",
+    "textColor": "#ffffff",
+    "headlineFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 96,
+    "bodySize": 28,
+    "headlineFontWeight": 900,
+    "bodyFontWeight": 400,
+    "padding": 100,
+    "gap": 32,
+    "borderRadius": 0,
+    "shadow": true,
+    "shadowColor": "rgba(0, 0, 0, 0.2)",
+    "shadowBlur": 20
+  },
+  "metadata": {
+    "category": "hiring",
+    "tags": ["text-only", "announcement", "linkedin"],
+    "version": "1.0"
+  }
+}

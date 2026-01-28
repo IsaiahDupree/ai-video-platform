@@ -1,0 +1,40 @@
+{
+  "id": "quote-ad-001",
+  "name": "Quote Ad - Customer Testimonial",
+  "description": "Elegant quote layout with customer testimonial",
+  "layout": "quote",
+  "dimensions": {
+    "width": 1200,
+    "height": 628,
+    "name": "Facebook Feed",
+    "platform": "Facebook"
+  },
+  "content": {
+    "headline": "This platform completely transformed how we create content. We've cut our production time by 75%.",
+    "subheadline": "Sarah Johnson, Marketing Director",
+    "backgroundColor": "#0f172a",
+    "logo": "assets/logo.png",
+    "logoPosition": "bottom-right",
+    "logoSize": 50
+  },
+  "style": {
+    "primaryColor": "#3b82f6",
+    "secondaryColor": "#60a5fa",
+    "textColor": "#f1f5f9",
+    "headlineFont": "Georgia, serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "headlineSize": 42,
+    "bodySize": 18,
+    "headlineFontWeight": 400,
+    "bodyFontWeight": 600,
+    "padding": 80,
+    "gap": 20,
+    "borderRadius": 0,
+    "shadow": false
+  },
+  "metadata": {
+    "category": "testimonial",
+    "tags": ["quote", "customer", "facebook"],
+    "version": "1.0"
+  }
+}
