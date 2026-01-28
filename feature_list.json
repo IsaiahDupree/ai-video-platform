@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 31,
+  "completedFeatures": 32,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -493,10 +493,11 @@
       "priority": "P1",
       "phase": 4,
       "effort": "5pts",
-      "passes": false,
+      "passes": true,
       "category": "text-to-video",
       "files": [
-        "scripts/generate-t2v.ts"
+        "scripts/generate-t2v.ts",
+        "docs/T2V-009-CLI-INTERFACE.md"
       ],
       "dependencies": [
         "T2V-006"
