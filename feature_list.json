@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 54,
+  "completedFeatures": 55,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -948,10 +948,16 @@
       "priority": "P0",
       "phase": 6,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/services/screenshotResize.ts"
+        "src/types/screenshotResize.ts",
+        "src/config/screenshotSizes.ts",
+        "src/services/screenshotResize.ts",
+        "src/app/screenshots/resize/page.tsx",
+        "src/app/screenshots/resize/resize.module.css",
+        "scripts/test-screenshot-resize.ts",
+        "docs/APP-003-SCREENSHOT-SIZE-GENERATOR.md"
       ],
       "dependencies": []
     },
