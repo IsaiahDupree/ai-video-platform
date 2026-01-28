@@ -1,0 +1,27 @@
+{
+  "job": {
+    "id": "csv-import-1769591287289",
+    "generatedAt": "2026-01-28T09:08:09.398Z",
+    "totalAssets": 6,
+    "completedAssets": 0,
+    "failedAssets": 6,
+    "skippedAssets": 0
+  },
+  "config": {
+    "templateName": "Product Ad Template",
+    "format": "jpeg",
+    "sizes": [],
+    "columnMapping": {
+      "headline": "product_name",
+      "subheadline": "tagline",
+      "body": "description",
+      "cta": "cta_text",
+      "uniqueId": "product_id"
+    }
+  },
+  "assets": [],
+  "stats": {
+    "totalSizeBytes": 0,
+    "generationTimeMs": 2109
+  }
+}

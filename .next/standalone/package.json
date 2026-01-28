@@ -1,0 +1,61 @@
+{
+  "name": "ai-video-platform",
+  "version": "1.0.0",
+  "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
+  "private": true,
+  "remotion": {
+    "entryPoint": "src/Root.tsx"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "dev:remotion": "remotion studio",
+    "build": "next build",
+    "build:tsc": "tsc",
+    "start": "next start",
+    "render": "ts-node scripts/render-video.ts",
+    "generate-tts": "ts-node scripts/generate-tts.ts",
+    "generate-images": "ts-node scripts/generate-images.ts",
+    "generate-voice": "ts-node scripts/generate-voice-with-elevenlabs.ts",
+    "generate-batch-voiceover": "npx tsx scripts/generate-appkit-voiceover.ts",
+    "generate-sfx": "npx tsx scripts/generate-sfx.ts",
+    "remix-character": "npx tsx scripts/remix-character.ts",
+    "remix-character-gemini": "npx tsx scripts/remix-character-gemini.ts",
+    "generate-stickers": "python3 scripts/generate-stickers.py",
+    "manage-scenes": "npx tsx scripts/manage-scenes.ts",
+    "use-template": "npx tsx scripts/use-template.ts",
+    "generate-avatar": "npx tsx scripts/generate-avatar.ts",
+    "t2v": "npx tsx scripts/test-t2v-router.ts",
+    "test-video-export": "npx tsx scripts/test-video-export.ts",
+    "manage-brand-kits": "npx tsx scripts/manage-brand-kits.ts",
+    "test-render-queue": "npx tsx scripts/test-render-queue.ts",
+    "test-export-zip": "npx tsx scripts/test-export-zip.ts",
+    "test-webhooks": "npx tsx scripts/test-webhooks.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.975.0",
+    "@aws-sdk/s3-request-presigner": "^3.975.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/player": "^4.0.410",
+    "@remotion/renderer": "^4.0.0",
+    "@types/adm-zip": "^0.5.7",
+    "@types/archiver": "^7.0.0",
+    "adm-zip": "^0.5.16",
+    "archiver": "^7.0.1",
+    "bullmq": "^5.67.2",
+    "csv-parse": "^6.1.0",
+    "dotenv": "^16.0.3",
+    "extract-zip": "^2.0.1",
+    "ioredis": "^5.9.2",
+    "next": "^16.1.6",
+    "openai": "^4.0.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}

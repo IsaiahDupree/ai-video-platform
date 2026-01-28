@@ -1,0 +1,365 @@
+/* [project]/src/app/ads/editor/components/QAPanel.module.css [app-client] (css) */
+.QAPanel-module__npQQzG__container {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.QAPanel-module__npQQzG__emptyState {
+  text-align: center;
+  color: #6b7280;
+  padding: 40px 20px;
+}
+
+.QAPanel-module__npQQzG__emptyState p {
+  margin-bottom: 16px;
+}
+
+.QAPanel-module__npQQzG__loading {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px;
+}
+
+.QAPanel-module__npQQzG__header {
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  transition: background-color .2s;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__header:hover {
+  background-color: #f9fafb;
+}
+
+.QAPanel-module__npQQzG__headerSuccess {
+  background-color: #f0fdf4;
+  border-left: 4px solid #22c55e;
+}
+
+.QAPanel-module__npQQzG__headerWarning {
+  background-color: #fefce8;
+  border-left: 4px solid #eab308;
+}
+
+.QAPanel-module__npQQzG__headerError {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+}
+
+.QAPanel-module__npQQzG__headerLeft {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__headerRight {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__scoreCircle {
+  color: #fff;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__scoreNumber {
+  font-size: 18px;
+}
+
+.QAPanel-module__npQQzG__headerInfo {
+  flex: 1;
+}
+
+.QAPanel-module__npQQzG__headerTitle {
+  color: #111827;
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.QAPanel-module__npQQzG__headerSubtitle {
+  color: #6b7280;
+  margin: 0;
+  font-size: 14px;
+}
+
+.QAPanel-module__npQQzG__refreshButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  font-size: 20px;
+  transition: transform .2s;
+}
+
+.QAPanel-module__npQQzG__refreshButton:hover:not(:disabled) {
+  transform: rotate(90deg);
+}
+
+.QAPanel-module__npQQzG__refreshButton:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.QAPanel-module__npQQzG__expandIcon {
+  color: #9ca3af;
+  font-size: 12px;
+  transition: transform .2s;
+}
+
+.QAPanel-module__npQQzG__content {
+  border-top: 1px solid #e5e7eb;
+  padding: 20px;
+}
+
+.QAPanel-module__npQQzG__stats {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  display: grid;
+}
+
+.QAPanel-module__npQQzG__stat {
+  background: #f9fafb;
+  border-radius: 6px;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__statLabel {
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.QAPanel-module__npQQzG__statValue {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.QAPanel-module__npQQzG__statError {
+  color: #ef4444;
+}
+
+.QAPanel-module__npQQzG__statWarning {
+  color: #f59e0b;
+}
+
+.QAPanel-module__npQQzG__statInfo {
+  color: #3b82f6;
+}
+
+.QAPanel-module__npQQzG__issues {
+  margin-bottom: 24px;
+}
+
+.QAPanel-module__npQQzG__issuesTitle {
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.QAPanel-module__npQQzG__issueCard {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-left-width: 4px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  transition: all .2s;
+}
+
+.QAPanel-module__npQQzG__issueCard:hover {
+  box-shadow: 0 2px 8px #0000001a;
+}
+
+.QAPanel-module__npQQzG__issueHeader {
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__issueHeaderLeft {
+  flex: 1;
+  gap: 12px;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__issueIcon {
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.QAPanel-module__npQQzG__issueInfo {
+  flex: 1;
+}
+
+.QAPanel-module__npQQzG__issueMessage {
+  color: #111827;
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.QAPanel-module__npQQzG__issueField {
+  color: #6b7280;
+  background: #f3f4f6;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.QAPanel-module__npQQzG__issueExpandIcon {
+  color: #9ca3af;
+  margin-left: 8px;
+  font-size: 10px;
+}
+
+.QAPanel-module__npQQzG__issueDetails {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+.QAPanel-module__npQQzG__issueDetail {
+  color: #4b5563;
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.QAPanel-module__npQQzG__issueDetail strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.QAPanel-module__npQQzG__issueSuggestion {
+  background: #eff6ff;
+  border-radius: 6px;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 12px;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__suggestionIcon {
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.QAPanel-module__npQQzG__issueSuggestion p {
+  color: #1e40af;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.QAPanel-module__npQQzG__noIssues {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.QAPanel-module__npQQzG__successIcon {
+  margin-bottom: 12px;
+  font-size: 48px;
+  display: block;
+}
+
+.QAPanel-module__npQQzG__noIssues p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 14px;
+}
+
+.QAPanel-module__npQQzG__checks {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+}
+
+.QAPanel-module__npQQzG__checksTitle {
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.QAPanel-module__npQQzG__checksList {
+  gap: 8px;
+  display: grid;
+}
+
+.QAPanel-module__npQQzG__checkItem {
+  background: #f9fafb;
+  border-radius: 4px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  display: flex;
+}
+
+.QAPanel-module__npQQzG__checkIcon {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.QAPanel-module__npQQzG__checkName {
+  color: #374151;
+  flex: 1;
+}
+
+.QAPanel-module__npQQzG__checkDuration {
+  color: #9ca3af;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.QAPanel-module__npQQzG__runButton {
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.QAPanel-module__npQQzG__runButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #3b82f666;
+}
+
+.QAPanel-module__npQQzG__runButton:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=src_app_ads_editor_components_QAPanel_module_css_bad6b30c._.single.css.map*/

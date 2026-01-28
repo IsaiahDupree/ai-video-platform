@@ -1,0 +1,672 @@
+/* [project]/src/app/ads/batch/batch.module.css [app-client] (css) */
+.batch-module__XCvZ4W__container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.batch-module__XCvZ4W__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.batch-module__XCvZ4W__title {
+  color: #fff;
+  text-shadow: 0 2px 10px #0003;
+  margin-bottom: .5rem;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.batch-module__XCvZ4W__subtitle {
+  color: #ffffffe6;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.batch-module__XCvZ4W__section {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px #0000001a;
+}
+
+.batch-module__XCvZ4W__sectionHeader {
+  margin-bottom: 1.5rem;
+}
+
+.batch-module__XCvZ4W__sectionTitle {
+  color: #1f2937;
+  align-items: center;
+  gap: .75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+}
+
+.batch-module__XCvZ4W__stepNumber {
+  color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  font-size: 1.125rem;
+  font-weight: 800;
+  display: inline-flex;
+}
+
+.batch-module__XCvZ4W__uploadArea {
+  text-align: center;
+  cursor: pointer;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  transition: all .3s;
+}
+
+.batch-module__XCvZ4W__uploadArea:hover {
+  background: #f8fafc;
+  border-color: #667eea;
+}
+
+.batch-module__XCvZ4W__fileInput {
+  display: none;
+}
+
+.batch-module__XCvZ4W__uploadLabel {
+  cursor: pointer;
+  color: #64748b;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.125rem;
+  display: flex;
+}
+
+.batch-module__XCvZ4W__uploadIcon {
+  font-size: 3rem;
+}
+
+.batch-module__XCvZ4W__fileName {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.batch-module__XCvZ4W__fileSize {
+  color: #94a3b8;
+  font-size: .875rem;
+}
+
+.batch-module__XCvZ4W__error {
+  color: #991b1b;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.batch-module__XCvZ4W__select {
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  width: 100%;
+  padding: .75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.batch-module__XCvZ4W__select:hover {
+  border-color: #cbd5e1;
+}
+
+.batch-module__XCvZ4W__select:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px #667eea1a;
+}
+
+.batch-module__XCvZ4W__actions {
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  display: flex;
+}
+
+.batch-module__XCvZ4W__buttonPrimary {
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: all .3s;
+  box-shadow: 0 4px 15px #667eea66;
+}
+
+.batch-module__XCvZ4W__buttonPrimary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #667eea80;
+}
+
+.batch-module__XCvZ4W__buttonPrimary:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.batch-module__XCvZ4W__buttonSecondary {
+  color: #667eea;
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all .3s;
+}
+
+.batch-module__XCvZ4W__buttonSecondary:hover:not(:disabled) {
+  color: #fff;
+  background: #667eea;
+}
+
+.batch-module__XCvZ4W__buttonSecondary:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.batch-module__XCvZ4W__buttonOutline {
+  color: #64748b;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all .3s;
+}
+
+.batch-module__XCvZ4W__buttonOutline:hover:not(:disabled) {
+  color: #475569;
+  border-color: #94a3b8;
+}
+
+.batch-module__XCvZ4W__buttonOutline:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* [project]/src/app/ads/batch/components/ColumnMappingForm.module.css [app-client] (css) */
+.ColumnMappingForm-module__Mt7egW__container {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__actions {
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__buttonSmall {
+  color: #667eea;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 600;
+  transition: all .2s;
+}
+
+.ColumnMappingForm-module__Mt7egW__buttonSmall:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #667eea;
+}
+
+.ColumnMappingForm-module__Mt7egW__buttonSmall:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.ColumnMappingForm-module__Mt7egW__table {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableHeader {
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: #f1f5f9;
+  grid-template-columns: 2fr 2fr 1fr 1fr auto;
+  font-size: .875rem;
+  font-weight: 700;
+  display: grid;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableHeader.ColumnMappingForm-module__Mt7egW__compact {
+  grid-template-columns: 2fr 2fr auto;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableHeaderCell {
+  border-bottom: 2px solid #e2e8f0;
+  padding: 1rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableBody {
+  flex-direction: column;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableRow {
+  border-bottom: 1px solid #f1f5f9;
+  grid-template-columns: 2fr 2fr 1fr 1fr auto;
+  transition: all .2s;
+  display: grid;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableRow:hover {
+  background: #fafbfc;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableRowMapped {
+  background: #f0fdf4;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableRowMapped:hover {
+  background: #dcfce7;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableCell {
+  color: #1f2937;
+  align-items: center;
+  padding: 1rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__fieldName {
+  color: #1f2937;
+  margin-bottom: .25rem;
+  font-weight: 600;
+}
+
+.ColumnMappingForm-module__Mt7egW__fieldDescription {
+  color: #64748b;
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+.ColumnMappingForm-module__Mt7egW__select {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: .875rem;
+  transition: all .2s;
+}
+
+.ColumnMappingForm-module__Mt7egW__select:hover {
+  border-color: #cbd5e1;
+}
+
+.ColumnMappingForm-module__Mt7egW__select:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px #667eea1a;
+}
+
+.ColumnMappingForm-module__Mt7egW__sampleValue, .ColumnMappingForm-module__Mt7egW__defaultValue {
+  color: #475569;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 150px;
+  font-size: .875rem;
+  overflow: hidden;
+}
+
+.ColumnMappingForm-module__Mt7egW__defaultValue {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.ColumnMappingForm-module__Mt7egW__clearButton {
+  color: #dc2626;
+  cursor: pointer;
+  background: #fee2e2;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  transition: all .2s;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__clearButton:hover:not(:disabled) {
+  background: #fca5a5;
+}
+
+.ColumnMappingForm-module__Mt7egW__clearButton:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.ColumnMappingForm-module__Mt7egW__summary {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__summaryItem {
+  color: #64748b;
+  font-size: .875rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__summaryItem strong {
+  color: #1f2937;
+  margin-right: .5rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__helpText {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__helpText p {
+  color: #1e40af;
+  margin: 0;
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+/* [project]/src/app/ads/batch/components/PreviewGrid.module.css [app-client] (css) */
+.PreviewGrid-module__L5-mUa__loading, .PreviewGrid-module__L5-mUa__empty {
+  text-align: center;
+  color: #64748b;
+  padding: 3rem;
+  font-size: 1.125rem;
+}
+
+.PreviewGrid-module__L5-mUa__grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  display: grid;
+}
+
+.PreviewGrid-module__L5-mUa__card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all .3s;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.PreviewGrid-module__L5-mUa__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px #0000001a;
+}
+
+.PreviewGrid-module__L5-mUa__imageContainer {
+  aspect-ratio: 1;
+  background: #f8fafc;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.PreviewGrid-module__L5-mUa__image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.PreviewGrid-module__L5-mUa__cardFooter {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  display: flex;
+}
+
+.PreviewGrid-module__L5-mUa__rowLabel {
+  color: #475569;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.PreviewGrid-module__L5-mUa__error {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 2rem;
+  display: flex;
+}
+
+.PreviewGrid-module__L5-mUa__errorIcon {
+  color: #dc2626;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.PreviewGrid-module__L5-mUa__errorText {
+  color: #991b1b;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
+.PreviewGrid-module__L5-mUa__errorDetails {
+  color: #64748b;
+  word-wrap: break-word;
+  max-width: 200px;
+  font-size: .75rem;
+}
+
+/* [project]/src/app/ads/batch/components/BatchJobStatus.module.css [app-client] (css) */
+.BatchJobStatus-module__UNPJba__container {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.BatchJobStatus-module__UNPJba__statusBadge {
+  border-radius: 50px;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+  padding: .75rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: inline-flex;
+}
+
+.BatchJobStatus-module__UNPJba__statusDefault {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.BatchJobStatus-module__UNPJba__statusProcessing {
+  color: #1e40af;
+  background: #dbeafe;
+}
+
+.BatchJobStatus-module__UNPJba__statusSuccess {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.BatchJobStatus-module__UNPJba__statusError {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.BatchJobStatus-module__UNPJba__statusIcon {
+  font-size: 1.5rem;
+  animation: 2s linear infinite BatchJobStatus-module__UNPJba__spin;
+}
+
+.BatchJobStatus-module__UNPJba__statusSuccess .BatchJobStatus-module__UNPJba__statusIcon, .BatchJobStatus-module__UNPJba__statusError .BatchJobStatus-module__UNPJba__statusIcon {
+  animation: none;
+}
+
+@keyframes BatchJobStatus-module__UNPJba__spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.BatchJobStatus-module__UNPJba__statusText {
+  font-weight: 700;
+}
+
+.BatchJobStatus-module__UNPJba__progress {
+  margin-bottom: 1.5rem;
+}
+
+.BatchJobStatus-module__UNPJba__progressBar {
+  background: #e2e8f0;
+  border-radius: 12px;
+  width: 100%;
+  height: 24px;
+  margin-bottom: .75rem;
+  overflow: hidden;
+}
+
+.BatchJobStatus-module__UNPJba__progressFill {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  padding-right: 1rem;
+  transition: width .5s;
+  display: flex;
+}
+
+.BatchJobStatus-module__UNPJba__progressText {
+  text-align: center;
+  color: #64748b;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.BatchJobStatus-module__UNPJba__stats {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+}
+
+.BatchJobStatus-module__UNPJba__statItem {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.BatchJobStatus-module__UNPJba__statValue {
+  color: #1f2937;
+  margin-bottom: .25rem;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.BatchJobStatus-module__UNPJba__statError {
+  color: #dc2626;
+}
+
+.BatchJobStatus-module__UNPJba__statLabel {
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.BatchJobStatus-module__UNPJba__error {
+  color: #991b1b;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: .875rem;
+}
+
+.BatchJobStatus-module__UNPJba__actions {
+  gap: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.BatchJobStatus-module__UNPJba__downloadButton, .BatchJobStatus-module__UNPJba__manifestButton {
+  cursor: pointer;
+  border-radius: 8px;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-flex;
+}
+
+.BatchJobStatus-module__UNPJba__downloadButton {
+  color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px #667eea66;
+}
+
+.BatchJobStatus-module__UNPJba__downloadButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #667eea80;
+}
+
+.BatchJobStatus-module__UNPJba__manifestButton {
+  color: #667eea;
+  background: #fff;
+  border: 2px solid #667eea;
+}
+
+.BatchJobStatus-module__UNPJba__manifestButton:hover {
+  background: #f8fafc;
+}
+
+/*# sourceMappingURL=src_app_ads_batch_e543eea1._.css.map*/

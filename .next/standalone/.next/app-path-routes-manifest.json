@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/ads/autofit-demo/page": "/ads/autofit-demo",
+  "/ads/batch/page": "/ads/batch",
+  "/ads/campaign/page": "/ads/campaign",
+  "/ads/editor/page": "/ads/editor",
+  "/ads/image-demo/page": "/ads/image-demo",
+  "/ads/localize/page": "/ads/localize",
+  "/ads/review/page": "/ads/review",
+  "/api/ads/generate-variants/route": "/api/ads/generate-variants",
+  "/page": "/"
+}

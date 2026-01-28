@@ -1,0 +1,14 @@
+{
+  "id": "notif-1769593597391-49qrey2ji",
+  "workspaceId": "test-workspace",
+  "recipientId": "user-1",
+  "recipientEmail": "test@example.com",
+  "resourceId": "ad-1769593597389-4sjao863k",
+  "resourceType": "ad",
+  "resourceName": "Test Ad Campaign",
+  "type": "approved",
+  "title": "Item approved",
+  "message": "Test Ad Campaign has been approved",
+  "actionUrl": "/ads/review/ad-1769593597389-4sjao863k",
+  "createdAt": "2026-01-28T09:46:37.391Z"
+}

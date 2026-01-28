@@ -212,6 +212,126 @@
   box-shadow: 0 0 0 3px #3b82f61a;
 }
 
+.editor-module__I1eW_q__sizeSelector {
+  margin-top: 1rem;
+}
+
+.editor-module__I1eW_q__radioGroup {
+  gap: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.editor-module__I1eW_q__radioLabel {
+  color: #374151;
+  cursor: pointer;
+  align-items: center;
+  gap: .375rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.editor-module__I1eW_q__radioLabel input[type="radio"] {
+  cursor: pointer;
+}
+
+.editor-module__I1eW_q__sizeGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: .75rem;
+  margin-top: 1rem;
+  display: grid;
+}
+
+.editor-module__I1eW_q__sizeCard {
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+  padding: .75rem;
+  transition: all .2s;
+  display: flex;
+}
+
+.editor-module__I1eW_q__sizeCard:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.editor-module__I1eW_q__sizeCardSelected {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+
+.editor-module__I1eW_q__sizeCardAspect {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.editor-module__I1eW_q__sizeCardBox {
+  background: #9ca3af;
+  border: 1px solid #6b7280;
+  border-radius: 2px;
+}
+
+.editor-module__I1eW_q__sizeCardSelected .editor-module__I1eW_q__sizeCardBox {
+  background: #3b82f6;
+  border-color: #2563eb;
+}
+
+.editor-module__I1eW_q__sizeCardInfo {
+  text-align: center;
+  width: 100%;
+}
+
+.editor-module__I1eW_q__sizeCardName {
+  color: #111827;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: .25rem;
+  font-size: .75rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.editor-module__I1eW_q__sizeCardDimensions {
+  color: #6b7280;
+  font-size: .6875rem;
+}
+
+.editor-module__I1eW_q__sizeCardRatio {
+  color: #9ca3af;
+  margin-top: .125rem;
+  font-size: .625rem;
+}
+
+.editor-module__I1eW_q__currentSize {
+  background: #f9fafb;
+  border-radius: 6px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: .75rem;
+  display: flex;
+}
+
+.editor-module__I1eW_q__currentSizeLabel {
+  color: #6b7280;
+  font-size: .75rem;
+  font-weight: 500;
+}
+
+.editor-module__I1eW_q__currentSizeValue {
+  color: #111827;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
 @media (max-width: 1024px) {
   .editor-module__I1eW_q__editor {
     flex-direction: column;

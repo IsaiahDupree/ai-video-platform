@@ -1,0 +1,101 @@
+{
+  "job": {
+    "id": "csv-import-1769591335138",
+    "generatedAt": "2026-01-28T09:08:58.510Z",
+    "totalAssets": 6,
+    "completedAssets": 6,
+    "failedAssets": 0,
+    "skippedAssets": 0
+  },
+  "config": {
+    "templateName": "Product Ad Template",
+    "format": "jpeg",
+    "sizes": [
+      {
+        "id": "instagram-square",
+        "name": "Instagram Square",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "id": "facebook-feed",
+        "name": "Facebook Feed",
+        "width": 1200,
+        "height": 628
+      }
+    ],
+    "columnMapping": {
+      "headline": "product_name",
+      "subheadline": "tagline",
+      "body": "description",
+      "cta": "cta_text",
+      "uniqueId": "product_id"
+    }
+  },
+  "assets": [
+    {
+      "rowIndex": 1,
+      "sizeId": "instagram-square",
+      "sizeName": "Instagram Square",
+      "width": 1080,
+      "height": 1080,
+      "filePath": "PROD-001_Instagram_Square.jpeg",
+      "fileSizeBytes": 37249,
+      "uniqueId": "PROD-001"
+    },
+    {
+      "rowIndex": 1,
+      "sizeId": "facebook-feed",
+      "sizeName": "Facebook Feed",
+      "width": 1200,
+      "height": 628,
+      "filePath": "PROD-001_Facebook_Feed.jpeg",
+      "fileSizeBytes": 38188,
+      "uniqueId": "PROD-001"
+    },
+    {
+      "rowIndex": 2,
+      "sizeId": "instagram-square",
+      "sizeName": "Instagram Square",
+      "width": 1080,
+      "height": 1080,
+      "filePath": "PROD-002_Instagram_Square.jpeg",
+      "fileSizeBytes": 37249,
+      "uniqueId": "PROD-002"
+    },
+    {
+      "rowIndex": 2,
+      "sizeId": "facebook-feed",
+      "sizeName": "Facebook Feed",
+      "width": 1200,
+      "height": 628,
+      "filePath": "PROD-002_Facebook_Feed.jpeg",
+      "fileSizeBytes": 38188,
+      "uniqueId": "PROD-002"
+    },
+    {
+      "rowIndex": 3,
+      "sizeId": "instagram-square",
+      "sizeName": "Instagram Square",
+      "width": 1080,
+      "height": 1080,
+      "filePath": "PROD-003_Instagram_Square.jpeg",
+      "fileSizeBytes": 37249,
+      "uniqueId": "PROD-003"
+    },
+    {
+      "rowIndex": 3,
+      "sizeId": "facebook-feed",
+      "sizeName": "Facebook Feed",
+      "width": 1200,
+      "height": 628,
+      "filePath": "PROD-003_Facebook_Feed.jpeg",
+      "fileSizeBytes": 38188,
+      "uniqueId": "PROD-003"
+    }
+  ],
+  "stats": {
+    "totalSizeBytes": 226311,
+    "generationTimeMs": 3372
+  }
+}

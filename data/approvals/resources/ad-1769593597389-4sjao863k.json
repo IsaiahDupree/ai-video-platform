@@ -1,0 +1,97 @@
+{
+  "workspaceId": "test-workspace",
+  "resourceType": "ad",
+  "name": "Test Ad Campaign",
+  "description": "Test description",
+  "createdBy": "user-1",
+  "createdByName": "Test User",
+  "createdByEmail": "test@example.com",
+  "tags": [
+    "test",
+    "campaign"
+  ],
+  "id": "ad-1769593597389-4sjao863k",
+  "approvalStatus": "approved",
+  "approvalHistory": [
+    {
+      "id": "change-1769593597390-n16qikabj",
+      "resourceId": "ad-1769593597389-4sjao863k",
+      "resourceType": "ad",
+      "fromStatus": "draft",
+      "toStatus": "in_review",
+      "changedBy": "user-1",
+      "changedByName": "User",
+      "changedByEmail": "user@example.com",
+      "changedByRole": "editor",
+      "timestamp": "2026-01-28T09:46:37.390Z"
+    },
+    {
+      "id": "change-1769593597390-7xzfgt7dc",
+      "resourceId": "ad-1769593597389-4sjao863k",
+      "resourceType": "ad",
+      "fromStatus": "in_review",
+      "toStatus": "changes_requested",
+      "changedBy": "admin-1",
+      "changedByName": "User",
+      "changedByEmail": "user@example.com",
+      "changedByRole": "admin",
+      "reason": "Please update the headline copy.",
+      "timestamp": "2026-01-28T09:46:37.390Z"
+    },
+    {
+      "id": "change-1769593597390-b4mtmo92o",
+      "resourceId": "ad-1769593597389-4sjao863k",
+      "resourceType": "ad",
+      "fromStatus": "changes_requested",
+      "toStatus": "draft",
+      "changedBy": "user-1",
+      "changedByName": "User",
+      "changedByEmail": "user@example.com",
+      "changedByRole": "editor",
+      "timestamp": "2026-01-28T09:46:37.390Z"
+    },
+    {
+      "id": "change-1769593597390-tavjlay13",
+      "resourceId": "ad-1769593597389-4sjao863k",
+      "resourceType": "ad",
+      "fromStatus": "draft",
+      "toStatus": "in_review",
+      "changedBy": "user-1",
+      "changedByName": "User",
+      "changedByEmail": "user@example.com",
+      "changedByRole": "editor",
+      "timestamp": "2026-01-28T09:46:37.390Z"
+    },
+    {
+      "id": "change-1769593597391-naq8n15r0",
+      "resourceId": "ad-1769593597389-4sjao863k",
+      "resourceType": "ad",
+      "fromStatus": "in_review",
+      "toStatus": "approved",
+      "changedBy": "admin-1",
+      "changedByName": "User",
+      "changedByEmail": "user@example.com",
+      "changedByRole": "admin",
+      "timestamp": "2026-01-28T09:46:37.391Z"
+    }
+  ],
+  "comments": [
+    {
+      "resourceId": "ad-1769593597389-4sjao863k",
+      "resourceType": "ad",
+      "authorId": "admin-1",
+      "authorName": "User",
+      "authorEmail": "user@example.com",
+      "authorRole": "admin",
+      "content": "Please update the headline copy.",
+      "id": "comment-1769593597390-vjfzeaerz",
+      "createdAt": "2026-01-28T09:46:37.390Z"
+    }
+  ],
+  "createdAt": "2026-01-28T09:46:37.389Z",
+  "updatedAt": "2026-01-28T09:46:37.391Z",
+  "submittedForReviewAt": "2026-01-28T09:46:37.390Z",
+  "submittedForReviewBy": "user-1",
+  "approvedAt": "2026-01-28T09:46:37.391Z",
+  "approvedBy": "admin-1"
+}

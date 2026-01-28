@@ -1,0 +1,24 @@
+[
+  {
+    "resourceId": "ad-1769593597389-4sjao863k",
+    "resourceType": "ad",
+    "authorId": "admin-1",
+    "authorName": "Admin User",
+    "authorEmail": "admin@example.com",
+    "authorRole": "admin",
+    "content": "Looks good, but please adjust the headline.",
+    "id": "comment-1769593597390-pnl1vg70e",
+    "createdAt": "2026-01-28T09:46:37.390Z"
+  },
+  {
+    "resourceId": "ad-1769593597389-4sjao863k",
+    "resourceType": "ad",
+    "authorId": "admin-1",
+    "authorName": "User",
+    "authorEmail": "user@example.com",
+    "authorRole": "admin",
+    "content": "Please update the headline copy.",
+    "id": "comment-1769593597390-vjfzeaerz",
+    "createdAt": "2026-01-28T09:46:37.390Z"
+  }
+]

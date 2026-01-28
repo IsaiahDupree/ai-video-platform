@@ -1,0 +1,11 @@
+{
+  "id": "invite-1769592277013-6a22f31f",
+  "workspaceId": "workspace-1769592277011-43d17f00",
+  "email": "newuser@test.com",
+  "role": "editor",
+  "invitedBy": "user-owner",
+  "invitedAt": "2026-01-28T09:24:37.013Z",
+  "expiresAt": "2026-02-04T09:24:37.013Z",
+  "token": "defa5ff3256957c0ef225f6b489b73fccdafac90b24d21606a9547d89f051334",
+  "status": "accepted"
+}

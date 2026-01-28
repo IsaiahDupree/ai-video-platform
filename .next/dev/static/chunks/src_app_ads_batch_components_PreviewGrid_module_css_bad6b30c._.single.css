@@ -1,0 +1,89 @@
+/* [project]/src/app/ads/batch/components/PreviewGrid.module.css [app-client] (css) */
+.PreviewGrid-module__L5-mUa__loading, .PreviewGrid-module__L5-mUa__empty {
+  text-align: center;
+  color: #64748b;
+  padding: 3rem;
+  font-size: 1.125rem;
+}
+
+.PreviewGrid-module__L5-mUa__grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  display: grid;
+}
+
+.PreviewGrid-module__L5-mUa__card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all .3s;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.PreviewGrid-module__L5-mUa__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px #0000001a;
+}
+
+.PreviewGrid-module__L5-mUa__imageContainer {
+  aspect-ratio: 1;
+  background: #f8fafc;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.PreviewGrid-module__L5-mUa__image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.PreviewGrid-module__L5-mUa__cardFooter {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  display: flex;
+}
+
+.PreviewGrid-module__L5-mUa__rowLabel {
+  color: #475569;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.PreviewGrid-module__L5-mUa__error {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 2rem;
+  display: flex;
+}
+
+.PreviewGrid-module__L5-mUa__errorIcon {
+  color: #dc2626;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.PreviewGrid-module__L5-mUa__errorText {
+  color: #991b1b;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
+.PreviewGrid-module__L5-mUa__errorDetails {
+  color: #64748b;
+  word-wrap: break-word;
+  max-width: 200px;
+  font-size: .75rem;
+}
+
+/*# sourceMappingURL=src_app_ads_batch_components_PreviewGrid_module_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,73 @@
+/* [project]/src/app/ads/review/components/ApprovalStats.module.css [app-client] (css) */
+.ApprovalStats-module__ikRfqG__container {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.ApprovalStats-module__ikRfqG__stat {
+  background: #fff;
+  border-radius: 12px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  box-shadow: 0 1px 3px #0000001a;
+}
+
+.ApprovalStats-module__ikRfqG__stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #00000026;
+}
+
+.ApprovalStats-module__ikRfqG__statIcon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.ApprovalStats-module__ikRfqG__statContent {
+  flex: 1;
+}
+
+.ApprovalStats-module__ikRfqG__statValue {
+  color: #1f2937;
+  margin-bottom: .25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ApprovalStats-module__ikRfqG__statLabel {
+  color: #6b7280;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .ApprovalStats-module__ikRfqG__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ApprovalStats-module__ikRfqG__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: .75rem;
+  }
+
+  .ApprovalStats-module__ikRfqG__stat {
+    padding: 1rem;
+  }
+
+  .ApprovalStats-module__ikRfqG__statIcon, .ApprovalStats-module__ikRfqG__statValue {
+    font-size: 1.5rem;
+  }
+
+  .ApprovalStats-module__ikRfqG__statLabel {
+    font-size: .8125rem;
+  }
+}
+
+/*# sourceMappingURL=src_app_ads_review_components_ApprovalStats_module_css_bad6b30c._.single.css.map*/

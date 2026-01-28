@@ -1,0 +1,19 @@
+{
+  "workspaceId": "test-workspace",
+  "resourceType": "ad",
+  "name": "Test Ad Campaign",
+  "description": "Test description",
+  "createdBy": "user-1",
+  "createdByName": "Test User",
+  "createdByEmail": "test@example.com",
+  "tags": [
+    "test",
+    "campaign"
+  ],
+  "id": "ad-1769593577437-nk6axlsty",
+  "approvalStatus": "draft",
+  "approvalHistory": [],
+  "comments": [],
+  "createdAt": "2026-01-28T09:46:17.437Z",
+  "updatedAt": "2026-01-28T09:46:17.438Z"
+}

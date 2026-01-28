@@ -1,0 +1,113 @@
+/* [project]/src/app/ads/review/components/ReviewFilters.module.css [app-client] (css) */
+.ReviewFilters-module__Z0fMNa__container {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px #0000001a;
+}
+
+.ReviewFilters-module__Z0fMNa__section {
+  margin-bottom: 1.5rem;
+}
+
+.ReviewFilters-module__Z0fMNa__section:last-child {
+  margin-bottom: 0;
+}
+
+.ReviewFilters-module__Z0fMNa__sectionTitle {
+  color: #1f2937;
+  margin: 0 0 .75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ReviewFilters-module__Z0fMNa__statusFilters {
+  flex-wrap: wrap;
+  gap: .5rem;
+  display: flex;
+}
+
+.ReviewFilters-module__Z0fMNa__statusButton {
+  color: #374151;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.ReviewFilters-module__Z0fMNa__statusButton:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.ReviewFilters-module__Z0fMNa__statusButtonActive {
+  color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #0000;
+}
+
+.ReviewFilters-module__Z0fMNa__statusButtonActive:hover {
+  opacity: .9;
+}
+
+.ReviewFilters-module__Z0fMNa__searchInput {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 100%;
+  padding: .625rem .75rem;
+  font-family: inherit;
+  font-size: .9375rem;
+}
+
+.ReviewFilters-module__Z0fMNa__searchInput:focus {
+  ring: 2px;
+  ring-color: #667eea33;
+  border-color: #667eea;
+  outline: none;
+}
+
+.ReviewFilters-module__Z0fMNa__clearSection {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 1rem;
+  padding-top: .5rem;
+}
+
+.ReviewFilters-module__Z0fMNa__clearButton {
+  color: #6b7280;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.ReviewFilters-module__Z0fMNa__clearButton:hover {
+  color: #374151;
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .ReviewFilters-module__Z0fMNa__container {
+    padding: 1rem;
+  }
+
+  .ReviewFilters-module__Z0fMNa__statusFilters {
+    gap: .375rem;
+  }
+
+  .ReviewFilters-module__Z0fMNa__statusButton {
+    padding: .4375rem .875rem;
+    font-size: .8125rem;
+  }
+}
+
+/*# sourceMappingURL=src_app_ads_review_components_ReviewFilters_module_css_bad6b30c._.single.css.map*/

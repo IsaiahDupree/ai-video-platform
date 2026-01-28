@@ -1,0 +1,102 @@
+/* [project]/src/app/ads/review/review.module.css [app-client] (css) */
+.review-module__W8-LxG__container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+  max-width: 1400px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.review-module__W8-LxG__header {
+  margin-bottom: 2rem;
+}
+
+.review-module__W8-LxG__title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 0 0 .5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.review-module__W8-LxG__subtitle {
+  color: #6b7280;
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.review-module__W8-LxG__loading, .review-module__W8-LxG__error {
+  text-align: center;
+  color: #6b7280;
+  padding: 4rem 2rem;
+  font-size: 1.125rem;
+}
+
+.review-module__W8-LxG__error {
+  color: #ef4444;
+}
+
+.review-module__W8-LxG__itemsSection {
+  margin-top: 2rem;
+}
+
+.review-module__W8-LxG__itemsHeader {
+  margin-bottom: 1.5rem;
+}
+
+.review-module__W8-LxG__itemsTitle {
+  color: #1f2937;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.review-module__W8-LxG__itemsGrid {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+  display: grid;
+}
+
+.review-module__W8-LxG__emptyState {
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  box-shadow: 0 1px 3px #0000001a;
+}
+
+.review-module__W8-LxG__emptyIcon {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+}
+
+.review-module__W8-LxG__emptyState h3 {
+  color: #1f2937;
+  margin: 0 0 .5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.review-module__W8-LxG__emptyState p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .review-module__W8-LxG__container {
+    padding: 1rem;
+  }
+
+  .review-module__W8-LxG__title {
+    font-size: 2rem;
+  }
+
+  .review-module__W8-LxG__itemsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_app_ads_review_review_module_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ads/layout,_N_T_/ads/campaign/layout,_N_T_/ads/campaign/page,_N_T_/ads/campaign"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ads/campaign/__PAGE__",
+    "/ads/campaign",
+    "/ads",
+    "/_index",
+    "/_head"
+  ]
+}

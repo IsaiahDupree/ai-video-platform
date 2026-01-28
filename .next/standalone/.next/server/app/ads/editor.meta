@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ads/layout,_N_T_/ads/editor/layout,_N_T_/ads/editor/page,_N_T_/ads/editor"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ads/editor/__PAGE__",
+    "/ads/editor",
+    "/ads",
+    "/_index",
+    "/_head"
+  ]
+}

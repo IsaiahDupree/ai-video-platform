@@ -1,0 +1,110 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/ads/autofit-demo",
+      "regex": "^/ads/autofit\\-demo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ads/autofit\\-demo(?:/)?$"
+    },
+    {
+      "page": "/ads/batch",
+      "regex": "^/ads/batch(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ads/batch(?:/)?$"
+    },
+    {
+      "page": "/ads/campaign",
+      "regex": "^/ads/campaign(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ads/campaign(?:/)?$"
+    },
+    {
+      "page": "/ads/editor",
+      "regex": "^/ads/editor(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ads/editor(?:/)?$"
+    },
+    {
+      "page": "/ads/image-demo",
+      "regex": "^/ads/image\\-demo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ads/image\\-demo(?:/)?$"
+    },
+    {
+      "page": "/ads/localize",
+      "regex": "^/ads/localize(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ads/localize(?:/)?$"
+    },
+    {
+      "page": "/ads/review",
+      "regex": "^/ads/review(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ads/review(?:/)?$"
+    },
+    {
+      "page": "/api/ads/generate-variants",
+      "regex": "^/api/ads/generate\\-variants(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ads/generate\\-variants(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

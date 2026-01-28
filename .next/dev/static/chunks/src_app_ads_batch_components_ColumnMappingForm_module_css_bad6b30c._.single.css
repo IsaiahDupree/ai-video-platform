@@ -1,0 +1,201 @@
+/* [project]/src/app/ads/batch/components/ColumnMappingForm.module.css [app-client] (css) */
+.ColumnMappingForm-module__Mt7egW__container {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__actions {
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__buttonSmall {
+  color: #667eea;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  font-weight: 600;
+  transition: all .2s;
+}
+
+.ColumnMappingForm-module__Mt7egW__buttonSmall:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #667eea;
+}
+
+.ColumnMappingForm-module__Mt7egW__buttonSmall:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.ColumnMappingForm-module__Mt7egW__table {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableHeader {
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: #f1f5f9;
+  grid-template-columns: 2fr 2fr 1fr 1fr auto;
+  font-size: .875rem;
+  font-weight: 700;
+  display: grid;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableHeader.ColumnMappingForm-module__Mt7egW__compact {
+  grid-template-columns: 2fr 2fr auto;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableHeaderCell {
+  border-bottom: 2px solid #e2e8f0;
+  padding: 1rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableBody {
+  flex-direction: column;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableRow {
+  border-bottom: 1px solid #f1f5f9;
+  grid-template-columns: 2fr 2fr 1fr 1fr auto;
+  transition: all .2s;
+  display: grid;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableRow:hover {
+  background: #fafbfc;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableRowMapped {
+  background: #f0fdf4;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableRowMapped:hover {
+  background: #dcfce7;
+}
+
+.ColumnMappingForm-module__Mt7egW__tableCell {
+  color: #1f2937;
+  align-items: center;
+  padding: 1rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__fieldName {
+  color: #1f2937;
+  margin-bottom: .25rem;
+  font-weight: 600;
+}
+
+.ColumnMappingForm-module__Mt7egW__fieldDescription {
+  color: #64748b;
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+.ColumnMappingForm-module__Mt7egW__select {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: .875rem;
+  transition: all .2s;
+}
+
+.ColumnMappingForm-module__Mt7egW__select:hover {
+  border-color: #cbd5e1;
+}
+
+.ColumnMappingForm-module__Mt7egW__select:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px #667eea1a;
+}
+
+.ColumnMappingForm-module__Mt7egW__sampleValue, .ColumnMappingForm-module__Mt7egW__defaultValue {
+  color: #475569;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 150px;
+  font-size: .875rem;
+  overflow: hidden;
+}
+
+.ColumnMappingForm-module__Mt7egW__defaultValue {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.ColumnMappingForm-module__Mt7egW__clearButton {
+  color: #dc2626;
+  cursor: pointer;
+  background: #fee2e2;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  transition: all .2s;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__clearButton:hover:not(:disabled) {
+  background: #fca5a5;
+}
+
+.ColumnMappingForm-module__Mt7egW__clearButton:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.ColumnMappingForm-module__Mt7egW__summary {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.ColumnMappingForm-module__Mt7egW__summaryItem {
+  color: #64748b;
+  font-size: .875rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__summaryItem strong {
+  color: #1f2937;
+  margin-right: .5rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__helpText {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.ColumnMappingForm-module__Mt7egW__helpText p {
+  color: #1e40af;
+  margin: 0;
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+/*# sourceMappingURL=src_app_ads_batch_components_ColumnMappingForm_module_css_bad6b30c._.single.css.map*/
