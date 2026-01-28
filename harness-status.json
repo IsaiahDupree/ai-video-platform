@@ -1,15 +1,16 @@
 {
   "projectId": "ai-video-platform",
   "projectRoot": "/Users/isaiahdupree/Documents/Software/ai-video-platform",
-  "lastUpdated": "2026-01-28T15:52:34.884Z",
-  "sessionType": "CODING",
-  "status": "running",
+  "lastUpdated": "2026-01-28T16:02:04.679Z",
+  "sessionType": "error",
+  "status": "auth_failed",
   "stats": {
     "total": 106,
-    "passing": 86,
-    "pending": 20,
-    "percentComplete": "81.1"
+    "passing": 87,
+    "pending": 19,
+    "percentComplete": "82.1"
   },
   "pid": 24631,
-  "currentSession": 69
+  "message": "Invalid API key - harness stopped",
+  "errorType": "auth_error"
 }

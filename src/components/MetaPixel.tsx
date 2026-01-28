@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 
 declare global {
@@ -20,9 +21,18 @@ interface MetaPixelProps {
  * Loads the Meta Pixel base code on all pages and provides
  * tracking functionality through the window.fbq function.
  *
+ * Features:
+ * - Tracks PageView on initial page load
+ * - Tracks PageView on client-side navigation (route changes)
+ * - Initializes window.fbq for custom event tracking
+ *
  * @param pixelId - Meta Pixel ID from Facebook Ads Manager
  */
 export function MetaPixel({ pixelId }: MetaPixelProps) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Initialize Meta Pixel on mount
   useEffect(() => {
     // Initialize fbq function if not already present
     if (typeof window !== 'undefined' && !window.fbq) {
@@ -46,12 +56,26 @@ export function MetaPixel({ pixelId }: MetaPixelProps) {
       window._fbq = window.fbq;
     }
 
-    // Track PageView when component mounts
+    // Initialize pixel with ID
     if (window.fbq) {
       window.fbq('init', pixelId);
-      window.fbq('track', 'PageView');
     }
   }, [pixelId]);
+
+  // Track PageView on pathname or search params change
+  useEffect(() => {
+    if (window.fbq && pixelId && pixelId !== 'your_meta_pixel_id_here') {
+      // Build full URL for tracking
+      const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+
+      // Track PageView with current URL
+      window.fbq('track', 'PageView');
+
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Meta Pixel PageView tracked:', url);
+      }
+    }
+  }, [pathname, searchParams, pixelId]);
 
   if (!pixelId || pixelId === 'your_meta_pixel_id_here') {
     // Don't load pixel if not configured
@@ -76,7 +100,6 @@ export function MetaPixel({ pixelId }: MetaPixelProps) {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${pixelId}');
-            fbq('track', 'PageView');
           `,
         }}
       />
