@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 45,
+  "completedFeatures": 46,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -768,10 +768,15 @@
       "priority": "P0",
       "phase": 5,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "static-ads",
       "files": [
-        "src/services/auth.ts"
+        "src/types/workspace.ts",
+        "src/services/auth.ts",
+        "src/middleware/authMiddleware.ts",
+        "scripts/manage-workspaces.ts",
+        "scripts/test-workspace-auth.ts",
+        "docs/ADS-014-WORKSPACE-AUTH.md"
       ],
       "dependencies": []
     },
