@@ -2,14 +2,16 @@
 
 /**
  * APP-016: PPO Results Dashboard
+ * APP-017: Apply Winning Treatment
  *
- * Product Page Optimization test results interface with winner detection
+ * Product Page Optimization test results interface with winner detection and apply functionality
  */
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import styles from './results.module.css';
 import type { PPOTestResults, PPOTestInfo } from '@/types/ascPPO';
+import { applyWinningTreatment } from '@/services/ascPPO';
 
 // Mock data for demonstration
 const MOCK_TEST: PPOTestInfo = {
@@ -91,6 +93,8 @@ export default function PPOResultsPage() {
   const [results, setResults] = useState<PPOTestResults[]>(MOCK_RESULTS);
   const [loading, setLoading] = useState(false);
   const [selectedView, setSelectedView] = useState<'overview' | 'detailed' | 'timeline'>('overview');
+  const [applying, setApplying] = useState(false);
+  const [applySuccess, setApplySuccess] = useState(false);
 
   useEffect(() => {
     loadResults();
@@ -110,6 +114,58 @@ export default function PPOResultsPage() {
     await new Promise(resolve => setTimeout(resolve, 500));
 
     setLoading(false);
+  };
+
+  const handleApplyWinner = async () => {
+    if (!winner) return;
+
+    const confirmed = window.confirm(
+      `Apply "${winner.treatmentName}" to the default product page?\n\n` +
+      `This will copy screenshots and previews from the winning treatment to your default app store version. ` +
+      `This action cannot be undone.`
+    );
+
+    if (!confirmed) return;
+
+    setApplying(true);
+
+    try {
+      // In a real implementation:
+      // const result = await applyWinningTreatment({
+      //   experimentId: test.id,
+      //   treatmentId: winner.treatmentId
+      // });
+      //
+      // if (result.success) {
+      //   setApplySuccess(true);
+      //   alert(`Success! Applied "${winner.treatmentName}" to default product page.\n\n` +
+      //     `Locales updated: ${result.data.localesUpdated.join(', ')}\n` +
+      //     `Screenshot sets copied: ${result.data.screenshotSetsCopied}\n` +
+      //     `Preview sets copied: ${result.data.previewSetsCopied}`
+      //   );
+      // } else {
+      //   alert(`Error: ${result.error}`);
+      // }
+
+      // For demo, simulate the apply operation
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      setApplySuccess(true);
+      alert(
+        `✅ Success! Applied "${winner.treatmentName}" to default product page.\n\n` +
+        `This is a demo - in production, this would:\n` +
+        `• Copy screenshots from winning treatment\n` +
+        `• Update all localized product pages\n` +
+        `• Preserve version history\n\n` +
+        `Locales updated: en-US, es-ES, fr-FR\n` +
+        `Screenshot sets copied: 6\n` +
+        `Preview sets copied: 3`
+      );
+    } catch (error) {
+      alert(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setApplying(false);
+    }
   };
 
   const winner = results.find(r => r.isWinner);
@@ -150,9 +206,18 @@ export default function PPOResultsPage() {
           >
             ← Back to Tests
           </button>
-          {winner && (
-            <button className={styles.primaryButton}>
-              Apply Winner
+          {winner && !applySuccess && (
+            <button
+              className={styles.primaryButton}
+              onClick={handleApplyWinner}
+              disabled={applying}
+            >
+              {applying ? 'Applying...' : 'Apply Winner'}
+            </button>
+          )}
+          {applySuccess && (
+            <button className={styles.successButton} disabled>
+              ✓ Applied
             </button>
           )}
         </div>

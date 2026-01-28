@@ -299,3 +299,50 @@ export interface CompletePPOTestResult {
   treatments?: AppStoreVersionExperimentTreatment[];
   error?: string;
 }
+
+/**
+ * APP-017: Apply Winning Treatment
+ *
+ * Result of applying a winning treatment to the default product page
+ */
+export interface ApplyWinningTreatmentResult {
+  success: boolean;
+  data?: {
+    /** Treatment that was applied */
+    treatmentId: string;
+    treatmentName: string;
+    /** Locales that were updated */
+    localesUpdated: string[];
+    /** Screenshot sets that were copied */
+    screenshotSetsCopied: number;
+    /** Preview sets that were copied */
+    previewSetsCopied: number;
+    /** Details of what was copied per locale */
+    details: Array<{
+      locale: string;
+      screenshotSets: number;
+      previewSets: number;
+      success: boolean;
+      error?: string;
+    }>;
+  };
+  error?: string;
+}
+
+/**
+ * Options for applying a winning treatment
+ */
+export interface ApplyWinningTreatmentOptions {
+  /** Experiment ID */
+  experimentId: string;
+  /** Treatment ID to apply (if not provided, auto-detect winner) */
+  treatmentId?: string;
+  /** App Store Version ID to apply to (defaults to control version) */
+  targetVersionId?: string;
+  /** Locales to copy (if not provided, copies all treatment locales) */
+  locales?: string[];
+  /** Whether to replace existing screenshots (default: false, appends instead) */
+  replaceExisting?: boolean;
+  /** Dry run mode - don't actually copy, just show what would be copied */
+  dryRun?: boolean;
+}

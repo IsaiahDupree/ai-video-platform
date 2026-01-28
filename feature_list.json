@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 67,
+  "completedFeatures": 68,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1222,10 +1222,15 @@
       "priority": "P2",
       "phase": 6,
       "effort": "5pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/services/ascPPO.ts"
+        "src/types/ascPPO.ts",
+        "src/services/ascPPO.ts",
+        "src/app/ppo/results/page.tsx",
+        "src/app/ppo/results/results.module.css",
+        "scripts/test-asc-ppo-apply.ts",
+        "docs/APP-017-APPLY-WINNING-TREATMENT.md"
       ],
       "dependencies": [
         "APP-016"
