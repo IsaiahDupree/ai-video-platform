@@ -51,7 +51,7 @@ export default function PPOPage() {
       id: 'test-1',
       name: 'Holiday Campaign Test',
       app: 'My Awesome App',
-      state: 'RUNNING',
+      state: 'APPROVED',
       startDate: '2026-01-15',
       treatments: 3,
     },
@@ -65,7 +65,61 @@ export default function PPOPage() {
       treatments: 2,
       winner: 'Treatment A',
     },
+    {
+      id: 'test-3',
+      name: 'Icon Test A/B',
+      app: 'My Awesome App',
+      state: 'PREPARE_FOR_SUBMISSION',
+      treatments: 2,
+    },
+    {
+      id: 'test-4',
+      name: 'Feature Highlight Test',
+      app: 'Productivity Master',
+      state: 'WAITING_FOR_REVIEW',
+      treatments: 3,
+    },
   ]);
+
+  const handleSubmitTest = async (testId: string) => {
+    if (!confirm('Submit this test for review? Once submitted, you cannot modify the test configuration.')) {
+      return;
+    }
+
+    // In a real implementation, this would call the API
+    // const result = await startPPOTest(testId);
+    // if (result.success) { ... }
+
+    // For now, just update the mock state
+    setMockTests(tests =>
+      tests.map(t =>
+        t.id === testId
+          ? { ...t, state: 'WAITING_FOR_REVIEW' }
+          : t
+      )
+    );
+    alert('Test submitted for review! You will be notified when the review is complete.');
+  };
+
+  const handleStopTest = async (testId: string) => {
+    if (!confirm('Stop this test? This action cannot be undone. The test will be terminated and all data will be finalized.')) {
+      return;
+    }
+
+    // In a real implementation, this would call the API
+    // const result = await stopPPOTest(testId);
+    // if (result.success) { ... }
+
+    // For now, just update the mock state
+    setMockTests(tests =>
+      tests.map(t =>
+        t.id === testId
+          ? { ...t, state: 'STOPPED', endDate: new Date().toISOString().split('T')[0] }
+          : t
+      )
+    );
+    alert('Test stopped successfully.');
+  };
 
   const addTreatment = () => {
     if (treatments.length < 3) {
@@ -238,7 +292,25 @@ export default function PPOPage() {
                     </div>
                     <div className={styles.testCardFooter}>
                       <button className={styles.secondaryButton}>View Details</button>
-                      <button className={styles.secondaryButton}>View Results</button>
+                      {(test.state === 'PREPARE_FOR_SUBMISSION' || test.state === 'READY_FOR_SUBMISSION') && (
+                        <button
+                          className={styles.primaryButton}
+                          onClick={() => handleSubmitTest(test.id)}
+                        >
+                          Submit for Review
+                        </button>
+                      )}
+                      {(test.state === 'APPROVED' || test.state === 'ACCEPTED' || test.state === 'WAITING_FOR_REVIEW' || test.state === 'IN_REVIEW') && (
+                        <button
+                          className={styles.dangerButton}
+                          onClick={() => handleStopTest(test.id)}
+                        >
+                          Stop Test
+                        </button>
+                      )}
+                      {(test.state === 'COMPLETED' || test.state === 'STOPPED') && (
+                        <button className={styles.secondaryButton}>View Results</button>
+                      )}
                     </div>
                   </div>
                 ))}

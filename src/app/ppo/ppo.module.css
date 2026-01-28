@@ -147,6 +147,37 @@
   color: #f57c00;
 }
 
+.stateWAITING_FOR_REVIEW {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.stateIN_REVIEW {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.stateACCEPTED,
+.stateAPPROVED {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.stateSTOPPED {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.stateREJECTED {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.stateREADY_FOR_SUBMISSION {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
 .testCardBody {
   margin-bottom: 1rem;
 }
@@ -518,6 +549,29 @@
 }
 
 .secondaryButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dangerButton {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.dangerButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.dangerButton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
