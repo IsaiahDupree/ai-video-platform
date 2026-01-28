@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 61,
+  "completedFeatures": 62,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1101,10 +1101,15 @@
       "priority": "P1",
       "phase": 6,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/app/cpp/list/"
+        "src/app/cpp/list/",
+        "src/app/cpp/edit/[id]/",
+        "src/app/api/cpp/list/route.ts",
+        "src/app/api/cpp/[id]/route.ts",
+        "scripts/test-cpp-list-management.ts",
+        "docs/APP-011-CPP-LIST-MANAGEMENT.md"
       ],
       "dependencies": [
         "APP-010"

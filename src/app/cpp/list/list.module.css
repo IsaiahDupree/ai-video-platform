@@ -1,0 +1,340 @@
+/**
+ * APP-011: CPP List & Management
+ *
+ * Styles for the Custom Product Pages list page
+ */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  color: #666;
+  margin: 0;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.searchBox {
+  flex: 1;
+  min-width: 300px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #007aff;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterGroup label {
+  font-weight: 500;
+  color: #333;
+}
+
+.filterSelect {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #007aff;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* Buttons */
+.buttonPrimary {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buttonPrimary:hover {
+  background-color: #0051d5;
+}
+
+.buttonPrimary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.buttonSecondary {
+  background-color: white;
+  color: #007aff;
+  border: 1px solid #007aff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buttonSecondary:hover {
+  background-color: #f0f0f0;
+}
+
+.buttonSecondary:disabled {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.buttonEdit {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buttonEdit:hover {
+  background-color: #0051d5;
+}
+
+.buttonDelete {
+  background-color: #ff3b30;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buttonDelete:hover {
+  background-color: #d32f2f;
+}
+
+.buttonDelete:disabled {
+  background-color: #ffcccb;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #ff3b30;
+}
+
+.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #4caf50;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.emptyState p {
+  margin-bottom: 1rem;
+}
+
+/* Table */
+.table {
+  overflow-x: auto;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.table td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badgeSuccess {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badgeWarning {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+.badgeInfo {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.badgeSecondary {
+  background-color: #f5f5f5;
+  color: #757575;
+}
+
+.badgeDefault {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.badgeButton {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.badgeVisible {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badgeVisible:hover {
+  background-color: #c8e6c9;
+}
+
+.badgeHidden {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.badgeHidden:hover {
+  background-color: #ffcdd2;
+}
+
+/* Link */
+.link {
+  color: #007aff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: #999;
+}
+
+/* Footer */
+.footer {
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.875rem;
+  border-top: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}

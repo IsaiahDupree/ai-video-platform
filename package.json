@@ -35,7 +35,8 @@
     "test:asc-apps": "npx tsx scripts/test-asc-apps.ts",
     "test:asc-screenshots": "npx tsx scripts/test-asc-screenshots.ts",
     "test:asc-previews": "npx tsx scripts/test-asc-previews.ts",
-    "test:asc-cpp": "npx tsx scripts/test-asc-custom-product-pages.ts"
+    "test:asc-cpp": "npx tsx scripts/test-asc-custom-product-pages.ts",
+    "test:cpp-list": "npx tsx scripts/test-cpp-list-management.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.975.0",

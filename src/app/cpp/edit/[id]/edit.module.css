@@ -1,0 +1,125 @@
+/**
+ * APP-011: CPP List & Management
+ *
+ * Styles for the edit CPP page
+ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.content {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #ff3b30;
+}
+
+.info {
+  margin-bottom: 2rem;
+}
+
+.info h2 {
+  margin-top: 0;
+  color: #1a1a1a;
+}
+
+.info p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.section h3 {
+  margin-top: 0;
+  color: #1a1a1a;
+}
+
+.localizationList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.localizationCard {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.localizationCard h4 {
+  margin-top: 0;
+  color: #1a1a1a;
+}
+
+.localizationCard p {
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.placeholder {
+  background-color: #fff3e0;
+  color: #ef6c00;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  border-left: 4px solid #ff9800;
+}
+
+.placeholder p {
+  margin: 0.5rem 0;
+}
+
+.buttonSecondary {
+  background-color: white;
+  color: #007aff;
+  border: 1px solid #007aff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buttonSecondary:hover {
+  background-color: #f0f0f0;
+}
