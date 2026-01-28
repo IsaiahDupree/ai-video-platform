@@ -2,6 +2,149 @@
 
 ## Session Summary
 
+### Session 38 - January 28, 2026
+**Feature:** APP-002: Caption Overlay System
+**Status:** ✅ Complete
+**Progress:** 54/106 features (50.9% complete)
+
+#### Implemented
+- Comprehensive text overlay system for App Store screenshots
+- 10 positioning modes (9 presets + custom x/y coordinates)
+- 5 built-in caption presets (hero, subtitle, badge, bottom, center)
+- Complete styling support (font, color, spacing, borders, shadows, backdrop)
+- Multi-language localization with RTL support
+- Per-locale text and style overrides
+- Animation configuration (fade-in, slide, scale - ready for implementation)
+- Interactive demo page with live preview
+- Remotion-compatible for static rendering
+
+#### Components Created
+- `src/types/captionOverlay.ts` (421 lines) - Type definitions and presets
+- `src/components/CaptionOverlay.tsx` (353 lines) - React caption component
+- `src/app/screenshots/captions/page.tsx` (200 lines) - Interactive demo page
+- `src/app/screenshots/captions/captions.module.css` (367 lines) - Demo styles
+- `scripts/test-caption-overlay.ts` (500 lines) - Comprehensive test suite
+- `docs/APP-002-CAPTION-OVERLAY-SYSTEM.md` - Complete documentation
+
+**Total:** ~1,841 lines of code
+
+#### Tests
+- 20/20 tests passing (100% success rate)
+- Caption preset validation and retrieval
+- Localized text handling (exact match, language fallback, default)
+- Style merging with locale-specific overrides
+- All positioning modes (preset and custom)
+- Style properties (font, color, spacing, effects)
+- Animation configuration
+- Visibility toggle
+- Metadata preservation
+- Multiple locales (7 languages: EN, ES, FR, DE, JA, ZH, AR)
+
+#### Technical Details
+- Zero external dependencies (besides React and Remotion)
+- Type-safe TypeScript throughout
+- Pure CSS positioning and styling
+- Built-in color parsing with opacity support
+- RTL support for Arabic and Hebrew
+- Event handlers (click, hover)
+- Compatible with all device frames from APP-001
+
+#### Key Features
+- **Positioning**: 9 presets (top/center/bottom × left/center/right) + custom x/y
+- **Styling**: Comprehensive font, color, spacing, border, shadow, backdrop options
+- **Localization**: Multiple languages with per-locale text and style overrides
+- **Presets**: 5 built-in templates for common use cases
+- **RTL Support**: Automatic right-to-left text direction
+- **Remotion Ready**: Compatible with static rendering pipeline
+- **Interactive Demo**: Live preview at /screenshots/captions
+- **Test Coverage**: 100% test pass rate (20/20 tests)
+
+#### Caption Presets
+1. **Hero Heading**: Large, bold heading at top (48px, SF Pro Display)
+2. **Subtitle**: Medium subtitle text (24px, SF Pro Text)
+3. **Feature Badge**: Small badge for highlights (14px, blue background, rounded)
+4. **Bottom Caption**: Text at bottom with backdrop blur
+5. **Center Callout**: Large centered overlay with effects
+
+#### Localization Support
+- 7 example locales: en-US, es-ES, fr-FR, de-DE, ja-JP, zh-CN, ar-SA
+- Automatic locale matching with fallbacks
+- Per-locale style overrides (e.g., larger font for Japanese)
+- RTL text direction for Arabic and Hebrew
+- Language-only fallback (e.g., 'en-GB' → 'en-US')
+
+---
+
+### Session 37 - January 28, 2026
+**Feature:** APP-001: Screenshot Device Frames
+**Status:** ✅ Complete
+**Progress:** 53/106 features (50.0% complete) - **HALFWAY MILESTONE!**
+
+#### Implemented
+- Device frame rendering system for App Store screenshots
+- 25+ device models with accurate App Store Connect dimensions (January 2026)
+- iPhone support: 11 models (iPhone 17 Pro Max → iPhone SE)
+- iPad support: 6 models (iPad Pro 13" M5 → iPad 11)
+- Mac support: 5 models (MacBook Air 13/15, MacBook Pro 14/16, iMac 24)
+- Apple Watch support: 7 models (Ultra 3 → Series 3)
+- Portrait and landscape orientation support for all devices
+- Dynamic Island rendering for iPhone 16/17 Pro models
+- Notch rendering for iPhone X-16 series and MacBook Pro 14/16
+- Physical button rendering (volume, power, home button)
+- Device color options (Space Black, Silver, Gold, Blue, etc.)
+- Customizable frame styles (shadow, colors, thickness)
+- Remotion-compatible for static rendering
+- Interactive demo page at `/screenshots`
+
+#### Components Created
+- `src/types/deviceFrame.ts` (254 lines) - Comprehensive type definitions
+- `src/config/deviceFrames.ts` (409 lines) - 25+ device presets with helpers
+- `src/components/DeviceFrame.tsx` (279 lines) - React frame component
+- `src/app/screenshots/page.tsx` (203 lines) - Interactive demo page
+- `src/app/screenshots/screenshots.module.css` (265 lines) - Demo styles
+- `scripts/test-device-frames.ts` (380 lines) - Comprehensive test suite
+- `docs/APP-001-SCREENSHOT-DEVICE-FRAMES.md` - Complete documentation
+
+**Total:** ~1,790 lines of code
+
+#### Tests
+- 33/33 tests passing (100% success rate)
+- Device preset validation (all 25+ devices)
+- Dimension accuracy per App Store Connect specs
+- Helper function correctness
+- Aspect ratio validation (including Mac 16:10)
+- Color option validation
+- Device type filtering
+
+#### Technical Details
+- Zero external dependencies (besides Remotion)
+- Type-safe TypeScript throughout
+- CSS-based rendering (no SVG complexity)
+- Supports both React and Remotion rendering
+- Pixel-perfect dimensions per Apple specifications
+- Helper functions for easy device lookup and filtering
+- Configurable frame styles and content positioning
+
+#### Key Features
+- **Comprehensive Coverage**: 25+ Apple devices across all product lines
+- **Accurate Dimensions**: Pixel-perfect per App Store Connect specs
+- **Modern Devices**: iPhone 17 Pro Max, iPad Pro M5, Apple Watch Ultra 3
+- **Dynamic Island**: Accurate rendering for latest iPhones
+- **Notch Support**: iPhone X-16 series and MacBook Pro models
+- **Physical Buttons**: Volume, power, home button rendering
+- **Color Options**: Multiple device colors per model
+- **Interactive Demo**: Live preview with device selection
+- **Test Coverage**: 100% test pass rate (33/33 tests)
+- **Remotion Ready**: Compatible with static rendering pipeline
+
+#### Milestone Achievement
+**50% COMPLETE!** This marks the halfway point of the AI Video Platform project:
+- 53 of 106 features completed
+- All 5 previous phases complete (Foundation, Voice Cloning, Image Gen, T2V, Static Ads)
+- Now starting Phase 6 (Apple Pages) - 1 of 25 features complete
+
+---
+
 ### Session 36 - January 28, 2026
 **Feature:** ADS-020: Multi-language Localization
 **Status:** ✅ Complete
@@ -344,7 +487,7 @@
 - ✅ Phase 3: Image Generation (5/5 features)
 - ✅ Phase 4: Text-to-Video (10/10 features)
 - ✅ Phase 5: Static Ads (20/20 features) - **COMPLETE!**
-- 🔄 Phase 6: Apple Pages (0/25 features) - **CURRENT**
+- 🔄 Phase 6: Apple Pages (2/25 features) - **CURRENT**
 
 ### Feature Categories
 
@@ -386,8 +529,11 @@ All features complete:
 - ✅ Creative QA Checks
 - ✅ Multi-language Localization
 
-#### Apple Pages (0/25) ⏳
-All features pending
+#### Apple Pages (2/25) 🔄
+In progress:
+- ✅ Screenshot Device Frames
+- ✅ Caption Overlay System
+Pending: 23 features
 
 #### Tracking & Analytics (0/16) ⏳
 All features pending
@@ -400,30 +546,30 @@ All features pending
 
 Phase 5 (Static Ads) is now complete with all 20 features implemented!
 
-### Immediate Next Feature: APP-001
-**Feature:** Screenshot Device Frames
+### Immediate Next Feature: APP-003
+**Feature:** Screenshot Size Generator
 **Priority:** P0
 **Effort:** 8pts
-**Description:** Device frame templates for iPhone, iPad, Watch, Mac - STARTS PHASE 6!
+**Description:** Batch resize to all required App Store dimensions
 
 ### Upcoming Features
-1. APP-001: Screenshot Device Frames (P0, 8pts) - STARTS PHASE 6
-2. APP-002: Caption Overlay System (P0, 5pts)
-3. APP-003: Screenshot Size Generator (P0, 8pts)
-4. APP-004: Locale-organized Export (P0, 5pts)
+1. APP-003: Screenshot Size Generator (P0, 8pts)
+2. APP-004: Locale-organized Export (P0, 5pts)
+3. APP-005: Asset Library (P1, 8pts)
+4. APP-006: App Store Connect OAuth (P0, 8pts)
 
 ---
 
 ## Metrics
 
 - **Total Features:** 106
-- **Completed:** 52
-- **Remaining:** 54
-- **Completion:** 49.1%
+- **Completed:** 54
+- **Remaining:** 52
+- **Completion:** 50.9%
 - **Current Phase:** Phase 6 (Apple Pages)
-- **Phase Progress:** 0/25 (0%)
+- **Phase Progress:** 2/25 (8.0%)
 - **Previous Phase:** Phase 5 (Static Ads) - 20/20 (100%) ✅
 
 ---
 
-Last Updated: Session 36 - January 28, 2026
+Last Updated: Session 38 - January 28, 2026
