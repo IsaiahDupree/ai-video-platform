@@ -517,7 +517,121 @@ modal run scripts/modal_longcat_avatar.py \\
 
 **Next Steps**:
 Remaining Phase 4 features:
-- T2V-006: T2V API Router (P1)
+- T2V-007: Model Weight Caching (P0)
+- T2V-008: T2V Web Endpoint (P1)
+- T2V-009: T2V CLI Interface (P1)
+- T2V-010: Video Output Pipeline (P0)
+
+
+## Session 13 - 2026-01-28
+
+### T2V-006: T2V API Router ✅
+
+**Status**: Complete
+**Effort**: 8pts
+**Category**: text-to-video
+
+**Implementation**:
+- Created comprehensive unified API for all T2V models
+- Implemented TextToVideoClient class with automatic routing
+- Added model capability discovery and recommendations
+- Built intelligent model selection based on requirements
+- Created TypeScript types and interfaces for all models
+- Implemented support for all 5 T2V models (LTX, Mochi, HunyuanVideo, Wan, Avatar)
+- Added convenience functions for common use cases
+- Created comprehensive test script with CLI interface
+- Full documentation with usage examples
+
+**Files Created**:
+- `src/services/textToVideo.ts`: Main T2V router service (674 lines)
+- `scripts/test-t2v-router.ts`: Comprehensive test CLI (554 lines)
+- `docs/T2V-006-API-ROUTER.md`: Complete documentation (679 lines)
+
+**Key Features**:
+- **Unified Interface**: Single API for all T2V models
+- **Automatic Routing**: Route requests to appropriate Modal endpoints
+- **Model Discovery**: List, query, and compare model capabilities
+- **Smart Recommendations**: Auto-select best model based on requirements
+- **Type Safety**: Full TypeScript support with comprehensive types
+- **Flexible Configuration**: Override defaults per model
+- **Error Handling**: Robust error handling with configurable timeouts
+- **Convenience Functions**: High-level helpers for common tasks
+
+**Supported Models**:
+1. **LTX-Video**: Fast, lightweight (512x512, ~3s, 8fps)
+2. **Mochi**: High-quality 480p (480x848, 1-2.8s, 30fps, 10B params)
+3. **HunyuanVideo**: Industry-leading 720p (1280x720, ~5.4s, 24fps, 13B params)
+4. **Wan2.2**: Multi-lingual 1080p (1920x1080, ~4s, 16fps, MoE)
+5. **LongCat Avatar**: Audio-driven talking heads (512x512, audio-based)
+
+**API Highlights**:
+```typescript
+// Generate with specific model
+const response = await generateVideo('mochi', {
+  prompt: 'Ocean waves at sunset',
+  fps: 30
+}, 'output.mp4');
+
+// Auto-select best model
+const response2 = await generateVideoAuto('City at night', {
+  quality: 'excellent',
+  speed: 'medium',
+  outputPath: 'city.mp4'
+});
+
+// Using client API
+const client = new TextToVideoClient();
+const models = client.getAvailableModels();
+const recommended = client.recommendModel({ quality: 'high', speed: 'fast' });
+```
+
+**CLI Commands**:
+```bash
+# List all models
+npm run t2v list
+
+# Show model info
+npm run t2v info mochi
+
+# Get recommendation
+npm run t2v recommend --quality excellent --speed medium
+
+# Generate video
+npm run t2v generate ltx-video "Beach sunset" --output sunset.mp4
+
+# Auto-select and generate
+npm run t2v auto "Mountain landscape" --quality high --output mountains.mp4
+
+# Generate avatar
+npm run t2v avatar portrait.jpg audio.wav --output talking.mp4
+```
+
+**Model Selection Features**:
+- Quality-based selection (standard, high, excellent)
+- Speed-based selection (fast, medium, slow)
+- Feature-based selection (multilingual, lip-sync, etc.)
+- Multi-criteria recommendations
+- Fallback to best available model
+
+**Configuration**:
+- Added npm script: `t2v`
+- Updated .env.example with all T2V endpoint URLs
+- Comprehensive error messages for missing configurations
+- Configurable timeouts (default 5 minutes)
+
+**Technical Details**:
+- Full TypeScript with strict typing
+- Supports file paths, URLs, and Buffers for media inputs
+- Base64 encoding/decoding for API communication
+- Automatic directory creation for outputs
+- Model-specific parameter handling and defaults
+- Metadata tracking (resolution, fps, duration, seed)
+
+**Progress**: 28/106 features complete (26.4%)
+- Phase 4 (Text-to-Video): 6/10 features complete (60%)
+
+**Next Steps**:
+Remaining Phase 4 features:
 - T2V-007: Model Weight Caching (P0)
 - T2V-008: T2V Web Endpoint (P1)
 - T2V-009: T2V CLI Interface (P1)
