@@ -1,0 +1,13 @@
+{
+  "name": "Alex the Tech Expert",
+  "basePrompt": "professional technology expert with glasses, confident friendly expression, wearing modern business casual attire, standing in a well-lit office environment",
+  "traits": [
+    "intelligent",
+    "approachable",
+    "innovative",
+    "experienced",
+    "trustworthy"
+  ],
+  "style": "professional photography, high quality, natural lighting",
+  "negativePrompt": "cartoon, anime, unrealistic proportions, distorted features, poor lighting, blurry"
+}
