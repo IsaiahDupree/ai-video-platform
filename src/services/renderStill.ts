@@ -11,6 +11,7 @@ import { bundle } from '@remotion/bundler';
 import path from 'path';
 import fs from 'fs';
 import type { AdTemplate } from '../types/adTemplate';
+import { serverTracking } from './trackingServer';
 
 /**
  * Supported image formats
@@ -214,7 +215,7 @@ export async function renderStill(
     // Get file stats
     const stats = fs.statSync(finalOutputPath);
 
-    return {
+    const result = {
       success: true,
       outputPath: finalOutputPath,
       width: width || composition.width,
@@ -222,6 +223,18 @@ export async function renderStill(
       format,
       sizeInBytes: stats.size,
     };
+
+    // Track first_render_completed
+    serverTracking.track('first_render_completed', {
+      compositionId,
+      format,
+      width: result.width,
+      height: result.height,
+      sizeInBytes: result.sizeInBytes,
+      timestamp: new Date().toISOString(),
+    });
+
+    return result;
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     return {
@@ -311,7 +324,7 @@ export async function renderAdTemplate(
     // Get file stats
     const stats = fs.statSync(finalOutputPath);
 
-    return {
+    const result = {
       success: true,
       outputPath: finalOutputPath,
       width: template.dimensions.width,
@@ -319,6 +332,18 @@ export async function renderAdTemplate(
       format,
       sizeInBytes: stats.size,
     };
+
+    // Track first_render_completed for template render
+    serverTracking.track('first_render_completed', {
+      templateId: template.id,
+      format,
+      width: result.width,
+      height: result.height,
+      sizeInBytes: result.sizeInBytes,
+      timestamp: new Date().toISOString(),
+    });
+
+    return result;
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     return {

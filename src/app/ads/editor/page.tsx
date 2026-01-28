@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { AdTemplate, AD_SIZES, AdLayoutType } from '../../../types/adTemplate';
 import { BrandKit } from '../../../types/brandKit';
 import AdEditorForm from './components/AdEditorForm';
 import AdPreview from './components/AdPreview';
 import QAPanel from './components/QAPanel';
+import { useTracking } from '../../../components/TrackingProvider';
 import styles from './editor.module.css';
 
 // Sample templates for selection
@@ -25,6 +26,8 @@ export default function AdEditorPage() {
   const [loading, setLoading] = useState(true);
   const [selectedTemplate, setSelectedTemplate] = useState('example-hero-ad');
   const [selectedBrandKit, setSelectedBrandKit] = useState('tech-startup-001');
+  const tracking = useTracking();
+  const hasTrackedFirstCreation = useRef(false);
 
   // Load initial template
   useEffect(() => {
@@ -38,6 +41,17 @@ export default function AdEditorPage() {
       const response = await fetch(`/data/ads/${templateId}.json`);
       const data = await response.json();
       setTemplate(data);
+
+      // Track first_video_created when user first loads/modifies a template
+      if (!hasTrackedFirstCreation.current) {
+        tracking.track('first_video_created', {
+          templateId: data.id,
+          templateType: 'starter',
+          layout: data.layout,
+          timestamp: new Date().toISOString(),
+        });
+        hasTrackedFirstCreation.current = true;
+      }
     } catch (error) {
       console.error('Error loading template:', error);
     } finally {
@@ -128,6 +142,17 @@ export default function AdEditorPage() {
     };
 
     setTemplate(newTemplate);
+
+    // Track first_video_created event (only once per session)
+    if (!hasTrackedFirstCreation.current) {
+      tracking.track('first_video_created', {
+        templateId: newTemplate.id,
+        templateType: 'custom',
+        layout: newTemplate.layout,
+        timestamp: new Date().toISOString(),
+      });
+      hasTrackedFirstCreation.current = true;
+    }
   };
 
   // Export template as JSON

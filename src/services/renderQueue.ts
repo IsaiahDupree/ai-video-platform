@@ -10,6 +10,7 @@ import { Queue, Worker, Job, QueueEvents } from 'bullmq';
 import Redis from 'ioredis';
 import type { AdTemplate } from '../types/adTemplate';
 import { renderStill, renderAdTemplate, type RenderStillOptions, type RenderStillResult } from './renderStill';
+import { serverTracking } from './trackingServer';
 
 /**
  * Job types supported by the render queue
@@ -396,6 +397,17 @@ export class RenderQueue {
     // Worker event listeners
     this.worker.on('completed', (job) => {
       console.log(`Job ${job.id} completed successfully`);
+
+      // Track first_render_completed for successful renders
+      if (job.returnvalue && job.returnvalue.success) {
+        serverTracking.track('first_render_completed', {
+          jobId: job.id,
+          jobType: job.data.type,
+          totalRendered: job.returnvalue.totalRendered,
+          duration: job.returnvalue.duration,
+          timestamp: new Date().toISOString(),
+        });
+      }
     });
 
     this.worker.on('failed', (job, err) => {
