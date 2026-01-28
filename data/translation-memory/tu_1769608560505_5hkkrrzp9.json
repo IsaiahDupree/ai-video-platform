@@ -1,0 +1,21 @@
+{
+  "id": "tu_1769608560505_5hkkrrzp9",
+  "sourceText": "Download now",
+  "targetText": "Descargar ahora",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "context": {
+    "domain": "marketing",
+    "fieldType": "cta",
+    "tone": "urgent"
+  },
+  "metadata": {
+    "createdAt": "2026-01-28T13:56:00.505Z",
+    "createdBy": "test-user",
+    "usageCount": 1,
+    "quality": "verified",
+    "source": "professional",
+    "lastUsed": "2026-01-28T13:56:00.505Z"
+  },
+  "fingerprint": "fp_xfqu6f"
+}

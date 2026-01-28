@@ -1,0 +1,21 @@
+{
+  "id": "tu_1769608560506_318e9tstu",
+  "sourceText": "Limited time offer",
+  "targetText": "Oferta por tiempo limitado",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "context": {
+    "domain": "marketing",
+    "fieldType": "headline",
+    "tone": "urgent"
+  },
+  "metadata": {
+    "createdAt": "2026-01-28T13:56:00.506Z",
+    "createdBy": "test-user",
+    "usageCount": 1,
+    "quality": "verified",
+    "source": "ai",
+    "lastUsed": "2026-01-28T13:56:00.506Z"
+  },
+  "fingerprint": "fp_fmlbka"
+}

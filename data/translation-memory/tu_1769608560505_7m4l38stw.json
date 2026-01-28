@@ -1,0 +1,21 @@
+{
+  "id": "tu_1769608560505_7m4l38stw",
+  "sourceText": "Get started today",
+  "targetText": "Empieza hoy",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "context": {
+    "domain": "marketing",
+    "fieldType": "cta",
+    "tone": "friendly"
+  },
+  "metadata": {
+    "createdAt": "2026-01-28T13:56:00.505Z",
+    "createdBy": "test-user",
+    "usageCount": 7,
+    "quality": "professional",
+    "source": "professional",
+    "lastUsed": "2026-01-28T13:56:00.507Z"
+  },
+  "fingerprint": "fp_ws41s3"
+}

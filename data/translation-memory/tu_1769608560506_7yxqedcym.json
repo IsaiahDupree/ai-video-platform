@@ -1,0 +1,20 @@
+{
+  "id": "tu_1769608560506_7yxqedcym",
+  "sourceText": "Try it now",
+  "targetText": "Pruébalo ahora",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "context": {
+    "domain": "marketing",
+    "fieldType": "cta"
+  },
+  "metadata": {
+    "createdAt": "2026-01-28T13:56:00.506Z",
+    "createdBy": "import",
+    "usageCount": 1,
+    "quality": "verified",
+    "source": "ai",
+    "lastUsed": "2026-01-28T13:56:00.506Z"
+  },
+  "fingerprint": "fp_ft3d0h"
+}

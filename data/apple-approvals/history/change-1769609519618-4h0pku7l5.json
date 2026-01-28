@@ -1,0 +1,13 @@
+{
+  "id": "change-1769609519618-4h0pku7l5",
+  "resourceId": "screenshot-1769609519616-anzolxqnh",
+  "resourceType": "screenshot",
+  "fromStatus": "in_review",
+  "toStatus": "approved",
+  "changedBy": "user-2",
+  "changedByName": "Jane Smith",
+  "changedByEmail": "jane@example.com",
+  "changedByRole": "admin",
+  "reason": "Looks perfect now!",
+  "timestamp": "2026-01-28T14:11:59.618Z"
+}

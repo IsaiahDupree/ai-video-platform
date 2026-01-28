@@ -1,0 +1,30 @@
+{
+  "workspaceId": "test-workspace",
+  "resourceType": "custom_product_page",
+  "name": "Summer 2024 Campaign CPP",
+  "description": "Custom product page for summer campaign targeting",
+  "appId": "com.example.testapp",
+  "cppName": "Summer2024",
+  "locale": "en-US",
+  "promotionalText": "Experience the best summer features in our app!",
+  "screenshotSetIds": [
+    "set-001",
+    "set-002"
+  ],
+  "isPublished": false,
+  "createdBy": "user-1",
+  "createdByName": "John Doe",
+  "createdByEmail": "john@example.com",
+  "thumbnailUrl": "/thumbnails/test-cpp-thumb.png",
+  "tags": [
+    "summer",
+    "campaign",
+    "2024"
+  ],
+  "id": "custom_product_page-1769609519619-hrt1kckoa",
+  "approvalStatus": "draft",
+  "approvalHistory": [],
+  "comments": [],
+  "createdAt": "2026-01-28T14:11:59.619Z",
+  "updatedAt": "2026-01-28T14:11:59.619Z"
+}
