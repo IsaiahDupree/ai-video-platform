@@ -812,3 +812,374 @@ export function calculateEvenTrafficProportions(
     treatments: Array(numTreatments).fill(proportion),
   };
 }
+
+// ============================================================================
+// APP-016: PPO Results Dashboard
+// ============================================================================
+
+/**
+ * Fetch PPO test results
+ *
+ * Returns performance metrics for each treatment including impressions,
+ * conversions, conversion rate, and improvement over control.
+ *
+ * Note: App Store Connect API may not provide direct analytics endpoints
+ * for PPO test results. This function demonstrates the expected structure.
+ * In production, you may need to integrate with App Analytics API or use
+ * App Store Connect UI to view results.
+ */
+export async function getPPOTestResults(
+  experimentId: string,
+  credentials?: ASCCredentials
+): Promise<PPOOperationResult<import('@/types/ascPPO').PPOTestResults[]>> {
+  try {
+    // Get the complete test info
+    const testResult = await getCompletePPOTest(experimentId, credentials);
+
+    if (!testResult.success || !testResult.data) {
+      return {
+        success: false,
+        error: testResult.error || 'Failed to fetch test data',
+      };
+    }
+
+    const test = testResult.data;
+
+    // Check if test is in a state where results are available
+    if (test.state !== 'APPROVED' && test.state !== 'COMPLETED') {
+      return {
+        success: false,
+        error: `Results are not available for tests in ${test.state} state. Test must be APPROVED or COMPLETED.`,
+      };
+    }
+
+    // Note: The App Store Connect API doesn't provide a direct endpoint for
+    // fetching PPO test metrics (impressions, conversions, etc.). These metrics
+    // are typically only available through the App Store Connect UI or App Analytics API.
+    //
+    // For now, we'll return mock data structure. In a production environment,
+    // you would integrate with:
+    // 1. App Analytics API (if available for your account)
+    // 2. Parse data from App Store Connect Reports
+    // 3. Use Apple's Sales and Trends reports
+    //
+    // The endpoint might look like:
+    // GET /v1/appStoreVersionExperiments/{id}/metrics
+    // or
+    // GET /v1/analyticsReportInstances with filter for experiment
+
+    // Mock data for demonstration
+    // In production, replace this with actual API call:
+    // const response = await authenticatedRequest<any>({
+    //   method: 'GET',
+    //   path: `/v1/appStoreVersionExperiments/${experimentId}/metrics`,
+    // }, credentials);
+
+    // Generate mock results based on treatments
+    const results: import('@/types/ascPPO').PPOTestResults[] = test.treatments.map((treatment, index) => {
+      // Mock data - replace with actual API response
+      const baseImpressions = 10000 + Math.random() * 5000;
+      const baseConversionRate = 0.15 + Math.random() * 0.1;
+      const conversions = Math.floor(baseImpressions * baseConversionRate);
+      const conversionRate = (conversions / baseImpressions) * 100;
+
+      // Calculate improvement vs control (mock)
+      // Control would have index -1 or separate tracking
+      const controlConversionRate = 15; // 15% base
+      const improvement = ((conversionRate - controlConversionRate) / controlConversionRate) * 100;
+
+      // Mock confidence based on sample size
+      const confidence = Math.min(95, 50 + (baseImpressions / 100));
+
+      return {
+        treatmentId: treatment.id,
+        treatmentName: treatment.name,
+        impressions: Math.floor(baseImpressions),
+        conversions,
+        conversionRate: Number(conversionRate.toFixed(2)),
+        improvement: Number(improvement.toFixed(2)),
+        confidence: Number(confidence.toFixed(1)),
+        isWinner: false, // Will be calculated by detectWinner
+      };
+    });
+
+    return {
+      success: true,
+      data: results,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
+
+/**
+ * Detect the winning treatment
+ *
+ * Analyzes test results and determines which treatment (if any) is the winner
+ * based on conversion rate, statistical confidence, and improvement over control.
+ *
+ * A treatment is considered a winner if:
+ * 1. It has the highest conversion rate
+ * 2. Statistical confidence >= 95%
+ * 3. Improvement over control >= 5%
+ * 4. Sufficient sample size (>= 1000 impressions)
+ */
+export function detectWinner(
+  results: import('@/types/ascPPO').PPOTestResults[],
+  options: {
+    minConfidence?: number;
+    minImprovement?: number;
+    minImpressions?: number;
+  } = {}
+): import('@/types/ascPPO').PPOTestResults | null {
+  const {
+    minConfidence = 95,
+    minImprovement = 5,
+    minImpressions = 1000,
+  } = options;
+
+  // Filter results that meet minimum criteria
+  const qualifiedResults = results.filter(result =>
+    result.confidence >= minConfidence &&
+    result.improvement >= minImprovement &&
+    result.impressions >= minImpressions
+  );
+
+  if (qualifiedResults.length === 0) {
+    return null; // No clear winner
+  }
+
+  // Find treatment with highest conversion rate
+  const winner = qualifiedResults.reduce((best, current) =>
+    current.conversionRate > best.conversionRate ? current : best
+  );
+
+  return winner;
+}
+
+/**
+ * Get PPO test results with winner detection
+ *
+ * Fetches test results and automatically detects the winning treatment
+ */
+export async function getPPOTestResultsWithWinner(
+  experimentId: string,
+  credentials?: ASCCredentials,
+  winnerOptions?: {
+    minConfidence?: number;
+    minImprovement?: number;
+    minImpressions?: number;
+  }
+): Promise<PPOOperationResult<{
+  results: import('@/types/ascPPO').PPOTestResults[];
+  winner: import('@/types/ascPPO').PPOTestResults | null;
+  hasWinner: boolean;
+}>> {
+  try {
+    const resultsResponse = await getPPOTestResults(experimentId, credentials);
+
+    if (!resultsResponse.success || !resultsResponse.data) {
+      return {
+        success: false,
+        error: resultsResponse.error || 'Failed to fetch results',
+      };
+    }
+
+    const results = resultsResponse.data;
+    const winner = detectWinner(results, winnerOptions);
+
+    // Mark the winner in results
+    const updatedResults = results.map(result => ({
+      ...result,
+      isWinner: winner ? result.treatmentId === winner.treatmentId : false,
+    }));
+
+    return {
+      success: true,
+      data: {
+        results: updatedResults,
+        winner,
+        hasWinner: winner !== null,
+      },
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
+
+/**
+ * Calculate statistical significance for PPO test results
+ *
+ * Uses Z-test for two proportions to determine if the difference
+ * between treatment and control conversion rates is statistically significant
+ */
+export function calculateStatisticalSignificance(
+  treatmentImpressions: number,
+  treatmentConversions: number,
+  controlImpressions: number,
+  controlConversions: number
+): {
+  zScore: number;
+  pValue: number;
+  isSignificant: boolean;
+  confidence: number;
+} {
+  // Calculate conversion rates
+  const p1 = treatmentConversions / treatmentImpressions;
+  const p2 = controlConversions / controlImpressions;
+
+  // Pooled proportion
+  const pPool = (treatmentConversions + controlConversions) /
+    (treatmentImpressions + controlImpressions);
+
+  // Standard error
+  const se = Math.sqrt(
+    pPool * (1 - pPool) * (1 / treatmentImpressions + 1 / controlImpressions)
+  );
+
+  // Z-score
+  const zScore = (p1 - p2) / se;
+
+  // Calculate p-value (two-tailed test)
+  // Using approximate formula for standard normal distribution
+  const pValue = 2 * (1 - approximateNormalCDF(Math.abs(zScore)));
+
+  // Confidence level (1 - p-value) * 100
+  const confidence = Math.min(99.9, Math.max(0, (1 - pValue) * 100));
+
+  // Significant if p-value < 0.05 (95% confidence)
+  const isSignificant = pValue < 0.05;
+
+  return {
+    zScore: Number(zScore.toFixed(3)),
+    pValue: Number(pValue.toFixed(4)),
+    isSignificant,
+    confidence: Number(confidence.toFixed(1)),
+  };
+}
+
+/**
+ * Approximate cumulative distribution function for standard normal distribution
+ * Using Abramowitz and Stegun approximation
+ */
+function approximateNormalCDF(z: number): number {
+  const t = 1 / (1 + 0.2316419 * Math.abs(z));
+  const d = 0.3989423 * Math.exp(-z * z / 2);
+  const probability = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+
+  return z > 0 ? 1 - probability : probability;
+}
+
+/**
+ * Get PPO test summary
+ *
+ * Returns a summary of the test including status, results, and recommendations
+ */
+export async function getPPOTestSummary(
+  experimentId: string,
+  credentials?: ASCCredentials
+): Promise<PPOOperationResult<{
+  test: import('@/types/ascPPO').PPOTestInfo;
+  results: import('@/types/ascPPO').PPOTestResults[] | null;
+  winner: import('@/types/ascPPO').PPOTestResults | null;
+  status: {
+    state: import('@/types/ascPPO').PPOTestState;
+    isRunning: boolean;
+    isComplete: boolean;
+    canViewResults: boolean;
+  };
+  recommendations: string[];
+}>> {
+  try {
+    // Get test info
+    const testResult = await getCompletePPOTest(experimentId, credentials);
+
+    if (!testResult.success || !testResult.data) {
+      return {
+        success: false,
+        error: testResult.error || 'Failed to fetch test data',
+      };
+    }
+
+    const test = testResult.data;
+
+    // Get status
+    const statusResult = await getPPOTestSubmissionStatus(experimentId, credentials);
+
+    if (!statusResult.success || !statusResult.data) {
+      return {
+        success: false,
+        error: statusResult.error || 'Failed to fetch test status',
+      };
+    }
+
+    const status = {
+      state: test.state,
+      isRunning: statusResult.data.isRunning,
+      isComplete: statusResult.data.isComplete,
+      canViewResults: test.state === 'APPROVED' || test.state === 'COMPLETED',
+    };
+
+    // Get results if available
+    let results: import('@/types/ascPPO').PPOTestResults[] | null = null;
+    let winner: import('@/types/ascPPO').PPOTestResults | null = null;
+
+    if (status.canViewResults) {
+      const resultsResponse = await getPPOTestResultsWithWinner(experimentId, credentials);
+
+      if (resultsResponse.success && resultsResponse.data) {
+        results = resultsResponse.data.results;
+        winner = resultsResponse.data.winner;
+      }
+    }
+
+    // Generate recommendations
+    const recommendations: string[] = [];
+
+    if (test.state === 'PREPARE_FOR_SUBMISSION') {
+      recommendations.push('Complete test configuration and submit for review');
+    }
+
+    if (test.state === 'WAITING_FOR_REVIEW' || test.state === 'IN_REVIEW') {
+      recommendations.push('Wait for Apple review to complete');
+    }
+
+    if (status.isRunning) {
+      recommendations.push('Test is currently running. Check back later for results.');
+    }
+
+    if (status.isComplete && winner) {
+      recommendations.push(`Consider promoting "${winner.treatmentName}" as it showed ${winner.improvement.toFixed(1)}% improvement`);
+    }
+
+    if (status.isComplete && !winner) {
+      recommendations.push('No clear winner detected. Consider running a new test with different variations.');
+    }
+
+    if (results && results.some(r => r.impressions < 1000)) {
+      recommendations.push('Some treatments have low sample sizes. Consider running the test longer for more reliable results.');
+    }
+
+    return {
+      success: true,
+      data: {
+        test,
+        results,
+        winner,
+        status,
+        recommendations,
+      },
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : String(error),
+    };
+  }
+}

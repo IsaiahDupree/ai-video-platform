@@ -309,7 +309,12 @@ export default function PPOPage() {
                         </button>
                       )}
                       {(test.state === 'COMPLETED' || test.state === 'STOPPED') && (
-                        <button className={styles.secondaryButton}>View Results</button>
+                        <button
+                          className={styles.secondaryButton}
+                          onClick={() => window.location.href = `/ppo/results?testId=${test.id}`}
+                        >
+                          View Results
+                        </button>
                       )}
                     </div>
                   </div>
