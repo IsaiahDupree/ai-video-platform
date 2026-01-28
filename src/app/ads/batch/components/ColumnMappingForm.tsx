@@ -114,7 +114,7 @@ export default function ColumnMappingForm({
       });
 
       if (matchingHeader) {
-        newMapping[field.key as keyof ColumnMapping] = matchingHeader;
+        (newMapping as any)[field.key] = matchingHeader;
       }
     });
 

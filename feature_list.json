@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 51,
+  "completedFeatures": 52,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -886,10 +886,15 @@
       "priority": "P2",
       "phase": 5,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "static-ads",
       "files": [
-        "src/services/localization.ts"
+        "src/types/localization.ts",
+        "src/services/localization.ts",
+        "src/app/ads/localize/page.tsx",
+        "src/app/ads/localize/localize.module.css",
+        "scripts/test-localization.ts",
+        "docs/ADS-020-MULTI-LANGUAGE-LOCALIZATION.md"
       ],
       "dependencies": [
         "ADS-004"

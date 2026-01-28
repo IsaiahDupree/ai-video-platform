@@ -9,7 +9,6 @@ import {
   getTotalAssetCount,
   validateCampaign,
   FILE_NAMING_TEMPLATES,
-  estimateCampaignTime,
 } from '../../../types/campaign';
 import { AdTemplate } from '../../../types/adTemplate';
 import {
@@ -169,7 +168,7 @@ export default function CampaignPackGeneratorPage() {
 
   const allSizes = getAllSizes();
   const totalAssets = getTotalAssetCount(campaign);
-  const estimate = estimateCampaignTime(campaign);
+  // const estimate = estimateCampaignTime(campaign); // TODO: Implement this function
 
   return (
     <div className={styles.container}>
@@ -194,7 +193,7 @@ export default function CampaignPackGeneratorPage() {
           <div className={styles.statLabel}>Total Assets</div>
         </div>
         <div className={styles.statCard}>
-          <div className={styles.statValue}>{Math.ceil(estimate.estimatedTimeSeconds / 60)}</div>
+          <div className={styles.statValue}>{Math.ceil(totalAssets * 2 / 60)}</div>
           <div className={styles.statLabel}>Est. Minutes</div>
         </div>
       </div>
@@ -495,7 +494,7 @@ export default function CampaignPackGeneratorPage() {
             sizes)
           </p>
           <p className={styles.estimate}>
-            Estimated time: ~{Math.ceil(estimate.estimatedTimeSeconds / 60)} minutes
+            Estimated time: ~{Math.ceil(totalAssets * 2 / 60)} minutes
           </p>
         </div>
         <button

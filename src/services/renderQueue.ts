@@ -662,7 +662,7 @@ export class RenderQueue {
 
     if (onCompleted) {
       this.queueEvents.on('completed', ({ jobId, returnvalue }) => {
-        onCompleted(jobId, returnvalue);
+        onCompleted(jobId, returnvalue as any);
       });
     }
 
