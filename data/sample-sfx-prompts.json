@@ -1,0 +1,52 @@
+[
+  {
+    "prompt": "doorbell ringing, clear and sharp",
+    "outputFileName": "doorbell.mp3",
+    "durationSeconds": 2.0
+  },
+  {
+    "prompt": "pleasant notification sound, short ping",
+    "outputFileName": "notification.mp3",
+    "durationSeconds": 1.0
+  },
+  {
+    "prompt": "success sound, positive chime",
+    "outputFileName": "success.mp3",
+    "durationSeconds": 1.5
+  },
+  {
+    "prompt": "error sound, warning beep",
+    "outputFileName": "error.mp3",
+    "durationSeconds": 1.0
+  },
+  {
+    "prompt": "mouse click sound, crisp",
+    "outputFileName": "click.mp3",
+    "durationSeconds": 0.5
+  },
+  {
+    "prompt": "whoosh sound effect, air movement",
+    "outputFileName": "whoosh.mp3",
+    "durationSeconds": 1.5
+  },
+  {
+    "prompt": "smooth transition sound, swoosh",
+    "outputFileName": "transition.mp3",
+    "durationSeconds": 1.0
+  },
+  {
+    "prompt": "camera shutter click",
+    "outputFileName": "camera.mp3",
+    "durationSeconds": 0.5
+  },
+  {
+    "prompt": "bubble pop sound",
+    "outputFileName": "pop.mp3",
+    "durationSeconds": 0.5
+  },
+  {
+    "prompt": "coin collection sound",
+    "outputFileName": "coin.mp3",
+    "durationSeconds": 1.0
+  }
+]
