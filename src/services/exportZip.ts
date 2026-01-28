@@ -562,3 +562,105 @@ export function formatCompressionRatio(ratio: number): string {
   const percentage = ((1 - ratio) * 100).toFixed(1);
   return `${percentage}%`;
 }
+
+/**
+ * Create ZIP from entire directory
+ * Useful for campaign packs where files are already organized in folders
+ *
+ * @param sourceDir - Directory to zip
+ * @param outputPath - Path for the ZIP file
+ * @param compressionLevel - Compression level (0-9, default: 9)
+ * @returns Promise with export result
+ */
+export async function createZipFromDirectory(
+  sourceDir: string,
+  outputPath: string,
+  compressionLevel = 9
+): Promise<ExportZipResult> {
+  try {
+    // Validate source directory
+    if (!fs.existsSync(sourceDir)) {
+      throw new Error(`Source directory does not exist: ${sourceDir}`);
+    }
+
+    const stat = fs.statSync(sourceDir);
+    if (!stat.isDirectory()) {
+      throw new Error(`Source path is not a directory: ${sourceDir}`);
+    }
+
+    // Ensure output directory exists
+    const outputDir = path.dirname(outputPath);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+
+    // Create write stream
+    const output = fs.createWriteStream(outputPath);
+    const archive = archiver('zip', {
+      zlib: { level: compressionLevel },
+    });
+
+    // Track stats
+    let totalFiles = 0;
+    let totalSizeBytes = 0;
+
+    // Handle errors
+    archive.on('error', (err) => {
+      throw err;
+    });
+
+    // Pipe archive to output
+    archive.pipe(output);
+
+    // Add entire directory to archive
+    archive.directory(sourceDir, false);
+
+    // Count files and size
+    const countDirStats = (dir: string): void => {
+      const items = fs.readdirSync(dir);
+      for (const item of items) {
+        const fullPath = path.join(dir, item);
+        const itemStat = fs.statSync(fullPath);
+
+        if (itemStat.isDirectory()) {
+          countDirStats(fullPath);
+        } else {
+          totalFiles++;
+          totalSizeBytes += itemStat.size;
+        }
+      }
+    };
+
+    countDirStats(sourceDir);
+
+    // Finalize archive
+    await archive.finalize();
+
+    // Wait for stream to finish
+    await new Promise<void>((resolve, reject) => {
+      output.on('close', () => resolve());
+      output.on('error', (err) => reject(err));
+    });
+
+    // Get final ZIP file size
+    const zipStat = fs.statSync(outputPath);
+    const compressionRatio = totalSizeBytes > 0 ? zipStat.size / totalSizeBytes : 0;
+
+    return {
+      success: true,
+      zipPath: outputPath,
+      totalFiles,
+      totalSizeBytes: zipStat.size,
+      compressionRatio,
+    };
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return {
+      success: false,
+      zipPath: '',
+      totalFiles: 0,
+      totalSizeBytes: 0,
+      error: errorMessage,
+    };
+  }
+}
