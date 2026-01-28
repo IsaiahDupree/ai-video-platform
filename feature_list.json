@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 53,
+  "completedFeatures": 54,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -927,10 +927,15 @@
       "priority": "P0",
       "phase": 6,
       "effort": "5pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
-        "src/components/CaptionOverlay.tsx"
+        "src/types/captionOverlay.ts",
+        "src/components/CaptionOverlay.tsx",
+        "src/app/screenshots/captions/page.tsx",
+        "src/app/screenshots/captions/captions.module.css",
+        "scripts/test-caption-overlay.ts",
+        "docs/APP-002-CAPTION-OVERLAY-SYSTEM.md"
       ],
       "dependencies": [
         "APP-001"
