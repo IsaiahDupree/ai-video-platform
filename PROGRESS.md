@@ -405,3 +405,121 @@ Remaining Phase 4 features:
 - T2V-009: T2V CLI Interface (P1)
 - T2V-010: Video Output Pipeline (P0)
 
+
+## Session 12 - 2026-01-28
+
+### T2V-005: LongCat Avatar Integration ✅
+
+**Status**: Complete
+**Effort**: 13pts
+**Category**: text-to-video
+
+**Implementation**:
+- Created comprehensive Modal deployment for audio-driven talking head generation
+- Implemented avatar animation pipeline with audio synchronization
+- Built TypeScript CLI for avatar video generation
+- Added batch generation support
+- Comprehensive documentation with usage examples
+
+**Files Created**:
+- `scripts/modal_longcat_avatar.py`: Full Modal deployment (461 lines)
+- `scripts/generate-avatar.ts`: TypeScript CLI client (369 lines)
+- `docs/T2V-005-LONGCAT-AVATAR.md`: Complete documentation (610 lines)
+
+**Model Architecture**:
+- **Audio Processing**: Wav2Vec2 for audio feature extraction
+- **Image Encoding**: StabilityAI SD-VAE-FT-MSE
+- **Animation Pipeline**: Audio-driven motion with diffusion models
+- **Output**: 512x512 video at configurable frame rates
+- **GPU**: A100 40GB (~$3.00/hour)
+- **VRAM**: ~16GB
+
+**Key Features**:
+- Audio-driven lip synchronization
+- Natural facial expressions and micro-movements
+- Identity preservation across frames
+- Support for various portrait styles (photo, illustration, etc.)
+- Long-form audio support (up to 60 seconds)
+- Configurable video quality and frame rate
+- Batch generation for multiple avatars
+- TypeScript and Python APIs
+
+**API Parameters**:
+- `reference_image`: Portrait image (512x512 or higher)
+- `audio`: Audio file (WAV, MP3, etc.)
+- `num_inference_steps`: Denoising steps (default 25)
+- `guidance_scale`: Audio adherence (default 3.0, range 1.5-5.0)
+- `fps`: Output frame rate (default 25, range 15-30)
+- `seed`: Reproducibility seed
+
+**Usage Examples**:
+```bash
+# Deploy to Modal
+modal deploy scripts/modal_longcat_avatar.py
+
+# Generate avatar video
+npm run generate-avatar -- \\
+  --image portrait.jpg \\
+  --audio narration.wav \\
+  --output avatar.mp4
+
+# Custom parameters
+npm run generate-avatar -- \\
+  --image portrait.png \\
+  --audio speech.mp3 \\
+  --output talking_avatar.mp4 \\
+  --steps 30 \\
+  --guidance 3.5 \\
+  --fps 30 \\
+  --seed 42
+
+# Batch generation
+npm run generate-avatar -- --batch-config avatars.json
+
+# Direct Modal usage
+modal run scripts/modal_longcat_avatar.py \\
+  --image portrait.jpg \\
+  --audio narration.wav \\
+  --output avatar.mp4
+```
+
+**Use Cases**:
+- Virtual presenters and avatars for educational content
+- Personalized video messages
+- Character animation for storytelling
+- Marketing and promotional spokesperson videos
+- Training materials with consistent presenters
+- Social media engaging content
+
+**Technical Notes**:
+- Uses Wav2Vec2 for audio encoding (facebook/wav2vec2-base-960h)
+- StabilityAI VAE for image processing
+- DDIM scheduler for diffusion
+- Automatic audio resampling to 16kHz
+- MP4 output with H.264 codec
+- Error handling and logging throughout pipeline
+- Supports reproducible generation with seed parameter
+- 30-minute timeout for long video generation
+
+**Integration**:
+- Works seamlessly with voice cloning pipeline (VC-004)
+- Can use ElevenLabs or IndexTTS for audio generation
+- Integrates with asset management system
+- Ready for T2V API Router integration
+
+**Configuration**:
+- Added `MODAL_AVATAR_URL` to .env.example
+- Added npm script: `generate-avatar`
+- Comprehensive documentation in docs/T2V-005-LONGCAT-AVATAR.md
+
+**Progress**: 27/106 features complete (25.5%)
+- Phase 4 (Text-to-Video): 5/10 features complete (50%)
+
+**Next Steps**:
+Remaining Phase 4 features:
+- T2V-006: T2V API Router (P1)
+- T2V-007: Model Weight Caching (P0)
+- T2V-008: T2V Web Endpoint (P1)
+- T2V-009: T2V CLI Interface (P1)
+- T2V-010: Video Output Pipeline (P0)
+

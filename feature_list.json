@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 26,
+  "completedFeatures": 27,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -426,10 +426,12 @@
       "priority": "P1",
       "phase": 4,
       "effort": "13pts",
-      "passes": false,
+      "passes": true,
       "category": "text-to-video",
       "files": [
-        "scripts/modal_longcat_avatar.py"
+        "scripts/modal_longcat_avatar.py",
+        "scripts/generate-avatar.ts",
+        "docs/T2V-005-LONGCAT-AVATAR.md"
       ],
       "dependencies": []
     },
