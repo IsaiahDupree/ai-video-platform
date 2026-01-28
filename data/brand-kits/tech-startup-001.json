@@ -1,0 +1,133 @@
+{
+  "id": "tech-startup-001",
+  "workspaceId": "workspace-001",
+  "name": "Tech Startup",
+  "description": "Modern tech startup brand with vibrant blue and purple colors",
+  "logos": [
+    {
+      "id": "logo-primary-001",
+      "name": "Tech Startup Logo",
+      "path": "/assets/brands/tech-startup/logo.svg",
+      "width": 200,
+      "height": 60,
+      "format": "svg",
+      "variant": "primary"
+    },
+    {
+      "id": "logo-icon-001",
+      "name": "Tech Startup Icon",
+      "path": "/assets/brands/tech-startup/icon.svg",
+      "width": 100,
+      "height": 100,
+      "format": "svg",
+      "variant": "icon"
+    },
+    {
+      "id": "logo-white-001",
+      "name": "Tech Startup Logo (White)",
+      "path": "/assets/brands/tech-startup/logo-white.svg",
+      "width": 200,
+      "height": 60,
+      "format": "svg",
+      "variant": "white",
+      "backgroundColor": "#1e40af"
+    }
+  ],
+  "primaryLogo": "logo-primary-001",
+  "colors": {
+    "primary": "#3b82f6",
+    "secondary": "#8b5cf6",
+    "accent": "#06b6d4",
+    "background": "#ffffff",
+    "text": "#1f2937",
+    "textSecondary": "#6b7280",
+    "success": "#10b981",
+    "warning": "#f59e0b",
+    "error": "#ef4444",
+    "custom": {
+      "blue-50": "#eff6ff",
+      "blue-900": "#1e3a8a",
+      "purple-50": "#faf5ff",
+      "purple-900": "#581c87"
+    }
+  },
+  "typography": {
+    "headlineFont": "Inter, system-ui, -apple-system, sans-serif",
+    "bodyFont": "Inter, system-ui, -apple-system, sans-serif",
+    "fontWeights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "black": 900
+    },
+    "fontSizes": {
+      "xs": 12,
+      "sm": 14,
+      "base": 16,
+      "lg": 18,
+      "xl": 20,
+      "2xl": 24,
+      "3xl": 30,
+      "4xl": 36,
+      "5xl": 48
+    },
+    "lineHeights": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.75
+    },
+    "letterSpacing": {
+      "tight": -0.025,
+      "normal": 0,
+      "wide": 0.025
+    }
+  },
+  "spacing": {
+    "unit": 4,
+    "padding": {
+      "xs": 8,
+      "sm": 16,
+      "md": 24,
+      "lg": 32,
+      "xl": 48
+    },
+    "gap": {
+      "xs": 8,
+      "sm": 12,
+      "md": 16,
+      "lg": 24,
+      "xl": 32
+    },
+    "borderRadius": {
+      "none": 0,
+      "sm": 4,
+      "md": 8,
+      "lg": 16,
+      "full": 9999
+    }
+  },
+  "effects": {
+    "shadows": {
+      "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+      "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+      "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+    },
+    "blur": {
+      "sm": 4,
+      "md": 8,
+      "lg": 16
+    },
+    "opacity": {
+      "light": 0.1,
+      "medium": 0.5,
+      "heavy": 0.8
+    }
+  },
+  "createdAt": "2026-01-28T00:00:00.000Z",
+  "updatedAt": "2026-01-28T00:00:00.000Z",
+  "version": "1.0",
+  "isDefault": true
+}

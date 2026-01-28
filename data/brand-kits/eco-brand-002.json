@@ -1,0 +1,114 @@
+{
+  "id": "eco-brand-002",
+  "workspaceId": "workspace-001",
+  "name": "Eco Brand",
+  "description": "Natural, eco-friendly brand with green earth tones",
+  "logos": [
+    {
+      "id": "logo-primary-002",
+      "name": "Eco Brand Logo",
+      "path": "/assets/brands/eco-brand/logo.svg",
+      "width": 180,
+      "height": 50,
+      "format": "svg",
+      "variant": "primary"
+    }
+  ],
+  "primaryLogo": "logo-primary-002",
+  "colors": {
+    "primary": "#10b981",
+    "secondary": "#059669",
+    "accent": "#14b8a6",
+    "background": "#f9fafb",
+    "text": "#1f2937",
+    "textSecondary": "#6b7280",
+    "success": "#10b981",
+    "warning": "#f59e0b",
+    "error": "#ef4444",
+    "custom": {
+      "green-50": "#ecfdf5",
+      "green-900": "#064e3b",
+      "emerald-50": "#ecfdf5",
+      "emerald-900": "#064e3b"
+    }
+  },
+  "typography": {
+    "headlineFont": "Montserrat, sans-serif",
+    "bodyFont": "Lato, sans-serif",
+    "fontWeights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "black": 900
+    },
+    "fontSizes": {
+      "xs": 12,
+      "sm": 14,
+      "base": 16,
+      "lg": 18,
+      "xl": 20,
+      "2xl": 24,
+      "3xl": 30,
+      "4xl": 36,
+      "5xl": 48
+    },
+    "lineHeights": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.75
+    },
+    "letterSpacing": {
+      "tight": -0.025,
+      "normal": 0,
+      "wide": 0.025
+    }
+  },
+  "spacing": {
+    "unit": 4,
+    "padding": {
+      "xs": 12,
+      "sm": 20,
+      "md": 28,
+      "lg": 36,
+      "xl": 52
+    },
+    "gap": {
+      "xs": 10,
+      "sm": 14,
+      "md": 18,
+      "lg": 26,
+      "xl": 34
+    },
+    "borderRadius": {
+      "none": 0,
+      "sm": 6,
+      "md": 12,
+      "lg": 20,
+      "full": 9999
+    }
+  },
+  "effects": {
+    "shadows": {
+      "sm": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+      "md": "0 4px 8px -1px rgba(0, 0, 0, 0.15)",
+      "lg": "0 10px 20px -3px rgba(0, 0, 0, 0.15)",
+      "xl": "0 20px 30px -5px rgba(0, 0, 0, 0.15)"
+    },
+    "blur": {
+      "sm": 6,
+      "md": 10,
+      "lg": 18
+    },
+    "opacity": {
+      "light": 0.15,
+      "medium": 0.5,
+      "heavy": 0.75
+    }
+  },
+  "createdAt": "2026-01-28T00:00:00.000Z",
+  "updatedAt": "2026-01-28T00:00:00.000Z",
+  "version": "1.0",
+  "isDefault": false
+}
