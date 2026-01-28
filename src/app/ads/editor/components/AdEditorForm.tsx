@@ -1,6 +1,7 @@
 'use client';
 
-import { AdTemplate, AD_SIZES, AdLayoutType } from '../../../../types/adTemplate';
+import { AdTemplate, AdLayoutType } from '../../../../types/adTemplate';
+import SizeSelector from './SizeSelector';
 import styles from '../editor.module.css';
 
 interface AdEditorFormProps {
@@ -31,29 +32,13 @@ export default function AdEditorForm({ template, onUpdate }: AdEditorFormProps) 
           </select>
         </div>
 
-        <div className={styles.formGroup}>
-          <label className={styles.label}>Size Preset</label>
-          <select
-            onChange={(e) => {
-              const size = AD_SIZES[e.target.value];
-              if (size) {
-                onUpdate(['dimensions'], size);
-              }
-            }}
-            className={styles.select}
-            value={Object.keys(AD_SIZES).find(
-              (key) =>
-                AD_SIZES[key].width === template.dimensions.width &&
-                AD_SIZES[key].height === template.dimensions.height
-            )}
-          >
-            {Object.entries(AD_SIZES).map(([key, size]) => (
-              <option key={key} value={key}>
-                {size.name} ({size.width}x{size.height})
-              </option>
-            ))}
-          </select>
-        </div>
+        <SizeSelector
+          currentWidth={template.dimensions.width}
+          currentHeight={template.dimensions.height}
+          onSizeChange={(width, height, name) => {
+            onUpdate(['dimensions'], { width, height, name });
+          }}
+        />
       </section>
 
       {/* Content */}

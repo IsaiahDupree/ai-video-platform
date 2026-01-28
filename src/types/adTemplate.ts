@@ -3,6 +3,9 @@
  * Type definitions for static ad templates using Remotion Still API
  */
 
+// Import size presets from ADS-008
+import { AD_SIZES_LEGACY, toAdDimensions, getSizeById } from '../config/adSizes';
+
 /**
  * Ad dimensions (standard sizes)
  */
@@ -15,30 +18,10 @@ export interface AdDimensions {
 
 /**
  * Common ad sizes
+ * @deprecated Use AD_SIZES from ../config/adSizes for better organization
+ * This is kept for backwards compatibility
  */
-export const AD_SIZES: Record<string, AdDimensions> = {
-  // Social Media
-  INSTAGRAM_SQUARE: { width: 1080, height: 1080, name: 'Instagram Square', platform: 'Instagram' },
-  INSTAGRAM_STORY: { width: 1080, height: 1920, name: 'Instagram Story', platform: 'Instagram' },
-  FACEBOOK_FEED: { width: 1200, height: 628, name: 'Facebook Feed', platform: 'Facebook' },
-  FACEBOOK_SQUARE: { width: 1080, height: 1080, name: 'Facebook Square', platform: 'Facebook' },
-  TWITTER_POST: { width: 1200, height: 675, name: 'Twitter Post', platform: 'Twitter' },
-
-  // Display Ads
-  LEADERBOARD: { width: 728, height: 90, name: 'Leaderboard', platform: 'Display' },
-  MEDIUM_RECTANGLE: { width: 300, height: 250, name: 'Medium Rectangle', platform: 'Display' },
-  LARGE_RECTANGLE: { width: 336, height: 280, name: 'Large Rectangle', platform: 'Display' },
-  WIDE_SKYSCRAPER: { width: 160, height: 600, name: 'Wide Skyscraper', platform: 'Display' },
-  HALF_PAGE: { width: 300, height: 600, name: 'Half Page', platform: 'Display' },
-
-  // LinkedIn
-  LINKEDIN_SQUARE: { width: 1200, height: 1200, name: 'LinkedIn Square', platform: 'LinkedIn' },
-  LINKEDIN_HORIZONTAL: { width: 1200, height: 627, name: 'LinkedIn Horizontal', platform: 'LinkedIn' },
-
-  // Pinterest
-  PINTEREST_STANDARD: { width: 1000, height: 1500, name: 'Pinterest Standard', platform: 'Pinterest' },
-  PINTEREST_SQUARE: { width: 1000, height: 1000, name: 'Pinterest Square', platform: 'Pinterest' },
-};
+export const AD_SIZES: Record<string, AdDimensions> = AD_SIZES_LEGACY;
 
 /**
  * Layout types for ad templates

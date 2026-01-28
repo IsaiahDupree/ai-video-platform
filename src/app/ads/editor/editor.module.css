@@ -211,6 +211,127 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
+/* Size Selector Styles */
+.sizeSelector {
+  margin-top: 1rem;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+.radioLabel input[type="radio"] {
+  cursor: pointer;
+}
+
+.sizeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.sizeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sizeCard:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.sizeCardSelected {
+  border-color: #3b82f6;
+  background: #dbeafe;
+}
+
+.sizeCardAspect {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.sizeCardBox {
+  background: #9ca3af;
+  border: 1px solid #6b7280;
+  border-radius: 2px;
+}
+
+.sizeCardSelected .sizeCardBox {
+  background: #3b82f6;
+  border-color: #2563eb;
+}
+
+.sizeCardInfo {
+  text-align: center;
+  width: 100%;
+}
+
+.sizeCardName {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sizeCardDimensions {
+  font-size: 0.6875rem;
+  color: #6b7280;
+}
+
+.sizeCardRatio {
+  font-size: 0.625rem;
+  color: #9ca3af;
+  margin-top: 0.125rem;
+}
+
+.currentSize {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.currentSizeLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.currentSizeValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+}
+
 @media (max-width: 1024px) {
   .editor {
     flex-direction: column;
