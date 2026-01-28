@@ -75,6 +75,11 @@ export interface AdContent {
   body?: string;
   cta?: string;
 
+  // Quote layout specific
+  authorName?: string;
+  authorTitle?: string;
+  authorImage?: string;
+
   // Visual content
   backgroundImage?: string;
   backgroundColor?: string;
