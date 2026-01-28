@@ -1,0 +1,6 @@
+product_id,product_name,tagline,description,price,image_url,cta_text
+PROD-001,Wireless Headphones,Premium Sound Quality,Experience crystal-clear audio with noise cancellation,$199,https://example.com/headphones.jpg,Shop Now
+PROD-002,Smart Watch,Your Health Companion,Track your fitness and stay connected all day,$299,https://example.com/watch.jpg,Learn More
+PROD-003,Laptop Stand,Ergonomic Design,Improve your posture and productivity,$49,https://example.com/stand.jpg,Buy Now
+PROD-004,USB-C Hub,Ultimate Connectivity,8-in-1 hub for all your devices,$79,https://example.com/hub.jpg,Get Yours
+PROD-005,Mechanical Keyboard,Type with Precision,Cherry MX switches for the best typing experience,$149,https://example.com/keyboard.jpg,Order Now

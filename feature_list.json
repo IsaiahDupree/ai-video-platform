@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 43,
+  "completedFeatures": 44,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -735,10 +735,11 @@
       "priority": "P1",
       "phase": 5,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "static-ads",
       "files": [
-        "src/services/csvImport.ts"
+        "src/services/csvImport.ts",
+        "scripts/test-csv-import.ts"
       ],
       "dependencies": [
         "ADS-007"
