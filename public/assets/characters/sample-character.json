@@ -1,0 +1,15 @@
+{
+  "name": "Sample Character",
+  "basePrompt": "A friendly software engineer",
+  "physicalFeatures": [
+    "glasses",
+    "smile",
+    "casual attire"
+  ],
+  "traits": [
+    "helpful",
+    "patient",
+    "skilled"
+  ],
+  "style": "professional digital illustration"
+}

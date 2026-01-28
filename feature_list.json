@@ -312,7 +312,7 @@
       "priority": "P1",
       "phase": 3,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "image-gen",
       "files": [
         "scripts/remix-character.ts"

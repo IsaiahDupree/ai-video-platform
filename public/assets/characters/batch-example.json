@@ -1,0 +1,38 @@
+{
+  "character": {
+    "name": "Tech Founder",
+    "basePrompt": "A confident tech startup founder in their early 30s",
+    "physicalFeatures": [
+      "short dark hair",
+      "focused brown eyes",
+      "clean-shaven face",
+      "medium build",
+      "approachable expression"
+    ],
+    "traits": [
+      "innovative",
+      "driven",
+      "charismatic",
+      "visionary"
+    ],
+    "clothing": "modern casual business attire - dark hoodie and jeans",
+    "style": "professional digital illustration, tech industry aesthetic"
+  },
+  "scenarios": [
+    {
+      "scenario": "presenting to investors in a modern conference room",
+      "action": "gesturing towards a presentation screen",
+      "outputName": "founder-presenting.png"
+    },
+    {
+      "scenario": "working late at night in a startup office",
+      "action": "coding at a laptop with multiple monitors",
+      "outputName": "founder-coding.png"
+    },
+    {
+      "scenario": "having a casual team meeting in a creative workspace",
+      "action": "discussing ideas with colleagues around a whiteboard",
+      "outputName": "founder-meeting.png"
+    }
+  ]
+}

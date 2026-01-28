@@ -15,6 +15,7 @@
     "generate-voice": "ts-node scripts/generate-voice-with-elevenlabs.ts",
     "generate-batch-voiceover": "npx tsx scripts/generate-appkit-voiceover.ts",
     "generate-sfx": "npx tsx scripts/generate-sfx.ts",
+    "remix-character": "npx tsx scripts/remix-character.ts",
     "remix-character-gemini": "npx tsx scripts/remix-character-gemini.ts"
   },
   "dependencies": {
