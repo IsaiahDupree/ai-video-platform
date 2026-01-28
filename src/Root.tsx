@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Composition, Still } from 'remotion';
+import { Composition, Still, registerRoot } from 'remotion';
 import { BriefComposition } from './compositions/BriefComposition';
 import { AdTemplate } from './compositions/ads/AdTemplate';
 import type { ContentBrief } from './types/brief';
@@ -84,3 +84,6 @@ export const RemotionRoot: React.FC = () => {
     </>
   );
 };
+
+// Register root for Remotion 4.0+
+registerRoot(RemotionRoot);
