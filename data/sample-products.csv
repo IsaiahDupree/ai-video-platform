@@ -1,0 +1,6 @@
+product_id,product_name,description,price,image_url,cta_text,background_color
+SKU-001,Premium Headphones,Wireless noise-cancelling headphones,$299,https://example.com/headphones.jpg,Shop Now,#1e40af
+SKU-002,Smart Watch,Fitness tracking smartwatch,$199,https://example.com/watch.jpg,Buy Today,#059669
+SKU-003,Laptop Stand,Ergonomic aluminum laptop stand,$49,https://example.com/stand.jpg,Get Yours,#7c3aed
+SKU-004,USB-C Hub,7-in-1 USB-C hub adapter,$39,https://example.com/hub.jpg,Order Now,#dc2626
+SKU-005,Wireless Mouse,Bluetooth precision mouse,$29,https://example.com/mouse.jpg,Add to Cart,#ea580c
