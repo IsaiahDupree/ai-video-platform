@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "private": true,
+  "remotion": {
+    "entryPoint": "src/Root.tsx"
+  },
   "scripts": {
     "dev": "remotion studio",
     "build": "tsc",

@@ -1,0 +1,40 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StudioInternals = exports.writeStaticFile = exports.watchStaticFile = exports.watchPublicFolder = exports.visualControl = exports.updateDefaultProps = exports.toggle = exports.seek = exports.saveDefaultProps = exports.restartStudio = exports.reevaluateComposition = exports.play = exports.pause = exports.goToComposition = exports.getStaticFiles = exports.focusDefaultPropsPath = exports.deleteStaticFile = void 0;
+const create_composition_1 = require("./api/create-composition");
+var delete_static_file_1 = require("./api/delete-static-file");
+Object.defineProperty(exports, "deleteStaticFile", { enumerable: true, get: function () { return delete_static_file_1.deleteStaticFile; } });
+var focus_default_props_path_1 = require("./api/focus-default-props-path");
+Object.defineProperty(exports, "focusDefaultPropsPath", { enumerable: true, get: function () { return focus_default_props_path_1.focusDefaultPropsPath; } });
+var get_static_files_1 = require("./api/get-static-files");
+Object.defineProperty(exports, "getStaticFiles", { enumerable: true, get: function () { return get_static_files_1.getStaticFiles; } });
+var go_to_composition_1 = require("./api/go-to-composition");
+Object.defineProperty(exports, "goToComposition", { enumerable: true, get: function () { return go_to_composition_1.goToComposition; } });
+var pause_1 = require("./api/pause");
+Object.defineProperty(exports, "pause", { enumerable: true, get: function () { return pause_1.pause; } });
+var play_1 = require("./api/play");
+Object.defineProperty(exports, "play", { enumerable: true, get: function () { return play_1.play; } });
+var reevaluate_composition_1 = require("./api/reevaluate-composition");
+Object.defineProperty(exports, "reevaluateComposition", { enumerable: true, get: function () { return reevaluate_composition_1.reevaluateComposition; } });
+var restart_studio_1 = require("./api/restart-studio");
+Object.defineProperty(exports, "restartStudio", { enumerable: true, get: function () { return restart_studio_1.restartStudio; } });
+var save_default_props_1 = require("./api/save-default-props");
+Object.defineProperty(exports, "saveDefaultProps", { enumerable: true, get: function () { return save_default_props_1.saveDefaultProps; } });
+var seek_1 = require("./api/seek");
+Object.defineProperty(exports, "seek", { enumerable: true, get: function () { return seek_1.seek; } });
+var toggle_1 = require("./api/toggle");
+Object.defineProperty(exports, "toggle", { enumerable: true, get: function () { return toggle_1.toggle; } });
+var update_default_props_1 = require("./api/update-default-props");
+Object.defineProperty(exports, "updateDefaultProps", { enumerable: true, get: function () { return update_default_props_1.updateDefaultProps; } });
+var visual_control_1 = require("./api/visual-control");
+Object.defineProperty(exports, "visualControl", { enumerable: true, get: function () { return visual_control_1.visualControl; } });
+var watch_public_folder_1 = require("./api/watch-public-folder");
+Object.defineProperty(exports, "watchPublicFolder", { enumerable: true, get: function () { return watch_public_folder_1.watchPublicFolder; } });
+var watch_static_file_1 = require("./api/watch-static-file");
+Object.defineProperty(exports, "watchStaticFile", { enumerable: true, get: function () { return watch_static_file_1.watchStaticFile; } });
+var write_static_file_1 = require("./api/write-static-file");
+Object.defineProperty(exports, "writeStaticFile", { enumerable: true, get: function () { return write_static_file_1.writeStaticFile; } });
+exports.StudioInternals = {
+    createComposition: create_composition_1.createComposition,
+    createStill: create_composition_1.createStill,
+};

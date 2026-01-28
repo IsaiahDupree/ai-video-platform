@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 1,
+  "completedFeatures": 2,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -35,7 +35,7 @@
       "priority": "P0",
       "phase": 1,
       "effort": "8pts",
-      "passes": false,
+      "passes": true,
       "category": "video-core",
       "files": [
         "src/compositions/",
