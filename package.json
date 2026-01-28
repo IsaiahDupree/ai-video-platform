@@ -40,7 +40,8 @@
     "test:asc-ppo": "npx tsx scripts/test-asc-ppo.ts",
     "test:apple-approval": "npx tsx scripts/test-apple-approval-workflow.ts",
     "test:screenshot-templates": "npx tsx scripts/test-screenshot-templates.ts",
-    "test:app-preview": "npx tsx scripts/test-app-preview.ts"
+    "test:app-preview": "npx tsx scripts/test-app-preview.ts",
+    "test:cpp-analytics": "npx tsx scripts/test-cpp-analytics.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.975.0",

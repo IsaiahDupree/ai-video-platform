@@ -1,0 +1,646 @@
+/* APP-024: CPP Analytics Dashboard Styles */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.headerLeft h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.headerLeft p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.headerRight {
+  display: flex;
+  gap: 1rem;
+}
+
+.backButton {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Controls */
+.controls {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+}
+
+.controlGroup label {
+  font-weight: 600;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.select {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.select option {
+  background: #764ba2;
+  color: white;
+}
+
+.refreshButton {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.refreshButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.refreshButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.tab.active {
+  background: white;
+  color: #764ba2;
+  border-color: white;
+}
+
+/* Content */
+.content {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  min-height: 500px;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* Overview Tab */
+.overviewTab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardLabel {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.cardValue {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.cardChange {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cardChange.positive {
+  color: #4ade80;
+}
+
+.cardChange.negative {
+  color: #f87171;
+}
+
+.cardInfo {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+.quickStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 0.75rem;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statLabel {
+  font-weight: 600;
+  color: #666;
+}
+
+.statValue {
+  font-weight: 700;
+  color: #764ba2;
+}
+
+.appSummary {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 0.75rem;
+}
+
+.appSummary h3 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.summaryItem {
+  text-align: center;
+}
+
+.summaryLabel {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.summaryValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #764ba2;
+}
+
+.summarySubtext {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+/* Performance Tab */
+.performanceTab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.performanceTab h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.notice {
+  background: #fef3c7;
+  border: 1px solid #fbbf24;
+  color: #92400e;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chartSection {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.chartSection h4 {
+  margin: 0 0 1rem 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.miniChart {
+  height: 150px;
+}
+
+.chartPlaceholder {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.dataPoint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pointDate {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.pointValue {
+  background: #764ba2;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Breakdown Tab */
+.breakdownTab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.breakdownSection h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.breakdownTable {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.breakdownRow {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+}
+
+.breakdownLabel {
+  font-weight: 600;
+  color: #333;
+}
+
+.campaign {
+  font-weight: 400;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.breakdownBar {
+  height: 30px;
+  background: #e5e7eb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.breakdownStats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breakdownStats span {
+  white-space: nowrap;
+}
+
+/* Comparison Tab */
+.comparisonTab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.comparisonTab h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.comparisonSummary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summaryCard {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.summaryCard .label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.summaryCard .value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #764ba2;
+}
+
+.comparisonTable {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.tableHeader,
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.tableHeader {
+  background: #f8f9fa;
+  font-weight: 700;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.tableRow {
+  border-top: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.tableRow:hover {
+  background: #faf5ff;
+}
+
+.tableRow.winner {
+  background: #fef3c7;
+}
+
+.tableRow.winner:hover {
+  background: #fef08a;
+}
+
+.trophy {
+  margin-right: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+
+.performanceBar {
+  height: 20px;
+  background: #e5e7eb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.performanceFill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.performanceText {
+  margin-left: 0.5rem;
+  font-weight: 600;
+  color: #764ba2;
+}
+
+/* Funnel Tab */
+.funnelTab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.funnelTab h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.funnelStats {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.statCard .label {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.statCard .value {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.funnelChart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.funnelStage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stageName {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.stageBar {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  height: 60px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  gap: 1rem;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stageCount {
+  font-size: 1.5rem;
+}
+
+.stagePercent {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.dropOff {
+  text-align: right;
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .summaryCards {
+    grid-template-columns: 1fr;
+  }
+
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .breakdownRow {
+    grid-template-columns: 1fr;
+  }
+}
