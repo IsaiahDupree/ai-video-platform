@@ -1,0 +1,69 @@
+{
+  "id": "software-ui",
+  "category": "tech",
+  "name": "Software UI Screenshot",
+  "description": "Modern software interface designs",
+  "template": "Modern {app_type} interface design, {layout}, {color_scheme} color scheme, {style} UI design, {elements}, professional software design, clean and intuitive, high quality mockup, 4k resolution",
+  "variables": {
+    "app_type": {
+      "type": "enum",
+      "options": [
+        "dashboard",
+        "analytics platform",
+        "code editor",
+        "project management tool",
+        "design software",
+        "mobile app"
+      ],
+      "default": "dashboard"
+    },
+    "layout": {
+      "type": "enum",
+      "options": [
+        "clean grid layout",
+        "card-based design",
+        "sidebar navigation",
+        "split-screen layout"
+      ],
+      "default": "clean grid layout"
+    },
+    "color_scheme": {
+      "type": "enum",
+      "options": [
+        "dark mode with blue accents",
+        "light mode with minimal colors",
+        "vibrant and colorful",
+        "professional blue and white"
+      ],
+      "default": "dark mode with blue accents"
+    },
+    "style": {
+      "type": "enum",
+      "options": [
+        "flat modern",
+        "glassmorphic",
+        "neumorphic",
+        "minimalist"
+      ],
+      "default": "flat modern"
+    },
+    "elements": {
+      "type": "enum",
+      "options": [
+        "charts and graphs",
+        "data tables",
+        "cards with metrics",
+        "timeline view",
+        "kanban boards"
+      ],
+      "default": "charts and graphs"
+    }
+  },
+  "examples": [
+    "Modern dashboard interface design, clean grid layout, dark mode with blue accents color scheme, flat modern UI design, charts and graphs, professional software design, clean and intuitive, high quality mockup, 4k resolution",
+    "Modern analytics platform interface design, card-based design, light mode with minimal colors color scheme, glassmorphic UI design, data tables, professional software design, clean and intuitive, high quality mockup, 4k resolution"
+  ],
+  "tags": ["tech", "software", "UI", "interface", "dashboard", "modern"],
+  "aspectRatio": "16:9",
+  "recommendedSize": "1792x1024"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "professional-character",
+  "category": "characters",
+  "name": "Professional Character",
+  "description": "Business professional character illustrations",
+  "template": "{style} illustration of a {age} {gender} professional, {appearance}, wearing {attire}, {pose}, {expression}, {background}, high quality digital art, professional illustration style",
+  "variables": {
+    "style": {
+      "type": "enum",
+      "options": [
+        "Modern flat",
+        "Detailed realistic",
+        "Minimalist",
+        "Corporate illustration"
+      ],
+      "default": "Modern flat"
+    },
+    "age": {
+      "type": "enum",
+      "options": [
+        "young",
+        "middle-aged",
+        "senior"
+      ],
+      "default": "middle-aged"
+    },
+    "gender": {
+      "type": "enum",
+      "options": [
+        "male",
+        "female",
+        "non-binary",
+        "androgynous"
+      ],
+      "default": "female"
+    },
+    "appearance": {
+      "type": "enum",
+      "options": [
+        "confident and approachable",
+        "serious and focused",
+        "friendly and welcoming",
+        "dynamic and energetic"
+      ],
+      "default": "confident and approachable"
+    },
+    "attire": {
+      "type": "enum",
+      "options": [
+        "business suit",
+        "smart casual blazer",
+        "professional dress",
+        "modern business casual"
+      ],
+      "default": "business suit"
+    },
+    "pose": {
+      "type": "enum",
+      "options": [
+        "standing with arms crossed",
+        "sitting at desk",
+        "presenting with gesture",
+        "walking confidently"
+      ],
+      "default": "standing with arms crossed"
+    },
+    "expression": {
+      "type": "enum",
+      "options": [
+        "warm smile",
+        "focused concentration",
+        "friendly expression",
+        "thoughtful demeanor"
+      ],
+      "default": "warm smile"
+    },
+    "background": {
+      "type": "enum",
+      "options": [
+        "solid color background",
+        "blurred office environment",
+        "clean white background",
+        "subtle gradient background"
+      ],
+      "default": "solid color background"
+    }
+  },
+  "examples": [
+    "Modern flat illustration of a middle-aged female professional, confident and approachable, wearing business suit, standing with arms crossed, warm smile, solid color background, high quality digital art, professional illustration style",
+    "Corporate illustration of a young male professional, dynamic and energetic, wearing modern business casual, presenting with gesture, friendly expression, blurred office environment, high quality digital art, professional illustration style"
+  ],
+  "tags": ["character", "professional", "business", "corporate", "person"],
+  "aspectRatio": "portrait",
+  "recommendedSize": "1024x1792"
+}

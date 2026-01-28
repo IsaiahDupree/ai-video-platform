@@ -1,0 +1,62 @@
+{
+  "id": "product-hero-shot",
+  "category": "products",
+  "name": "Product Hero Shot",
+  "description": "Professional product photography style images",
+  "template": "Professional product photography of {product}, {angle}, {lighting}, {background}, {style}, high-end commercial photography, studio quality, 8k resolution, sharp focus",
+  "variables": {
+    "product": {
+      "type": "string",
+      "default": "modern smartphone"
+    },
+    "angle": {
+      "type": "enum",
+      "options": [
+        "front view centered",
+        "3/4 angle view",
+        "isometric view",
+        "dramatic low angle",
+        "overhead flat lay"
+      ],
+      "default": "3/4 angle view"
+    },
+    "lighting": {
+      "type": "enum",
+      "options": [
+        "soft diffused studio lighting",
+        "dramatic side lighting",
+        "clean bright lighting",
+        "moody atmospheric lighting"
+      ],
+      "default": "soft diffused studio lighting"
+    },
+    "background": {
+      "type": "enum",
+      "options": [
+        "pure white background",
+        "gradient background",
+        "minimal abstract background",
+        "lifestyle setting",
+        "dark dramatic background"
+      ],
+      "default": "pure white background"
+    },
+    "style": {
+      "type": "enum",
+      "options": [
+        "minimalist and clean",
+        "premium and luxurious",
+        "modern and tech-forward",
+        "warm and inviting"
+      ],
+      "default": "minimalist and clean"
+    }
+  },
+  "examples": [
+    "Professional product photography of modern smartphone, 3/4 angle view, soft diffused studio lighting, pure white background, minimalist and clean, high-end commercial photography, studio quality, 8k resolution, sharp focus",
+    "Professional product photography of wireless headphones, isometric view, dramatic side lighting, gradient background, premium and luxurious, high-end commercial photography, studio quality, 8k resolution, sharp focus"
+  ],
+  "tags": ["product", "photography", "commercial", "hero-shot", "professional"],
+  "aspectRatio": "1:1",
+  "recommendedSize": "1024x1024"
+}

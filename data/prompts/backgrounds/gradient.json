@@ -1,0 +1,64 @@
+{
+  "id": "gradient-background",
+  "category": "backgrounds",
+  "name": "Gradient Background",
+  "description": "Smooth gradient backgrounds for clean, modern looks",
+  "template": "{style} gradient from {color1} to {color2}, {direction} direction, {texture}, smooth blend, {mood} atmosphere, high quality, 8k resolution",
+  "variables": {
+    "style": {
+      "type": "enum",
+      "options": [
+        "Soft, dreamy",
+        "Bold, vibrant",
+        "Subtle, elegant",
+        "Dynamic, energetic"
+      ],
+      "default": "Soft, dreamy"
+    },
+    "color1": {
+      "type": "string",
+      "default": "deep blue"
+    },
+    "color2": {
+      "type": "string",
+      "default": "purple"
+    },
+    "direction": {
+      "type": "enum",
+      "options": [
+        "diagonal",
+        "vertical",
+        "horizontal",
+        "radial"
+      ],
+      "default": "diagonal"
+    },
+    "texture": {
+      "type": "enum",
+      "options": [
+        "subtle grain texture",
+        "smooth flat finish",
+        "soft blur effect",
+        "minimal noise"
+      ],
+      "default": "subtle grain texture"
+    },
+    "mood": {
+      "type": "enum",
+      "options": [
+        "calm and peaceful",
+        "energetic and vibrant",
+        "professional and clean",
+        "creative and inspiring"
+      ],
+      "default": "calm and peaceful"
+    }
+  },
+  "examples": [
+    "Soft, dreamy gradient from deep blue to purple, diagonal direction, subtle grain texture, smooth blend, calm and peaceful atmosphere, high quality, 8k resolution",
+    "Bold, vibrant gradient from orange to pink, radial direction, soft blur effect, smooth blend, energetic and vibrant atmosphere, high quality, 8k resolution"
+  ],
+  "tags": ["gradient", "background", "clean", "modern", "abstract"],
+  "aspectRatio": "16:9",
+  "recommendedSize": "1792x1024"
+}

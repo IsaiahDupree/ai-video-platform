@@ -1,0 +1,56 @@
+{
+  "id": "modern-office",
+  "category": "backgrounds",
+  "name": "Modern Office Workspace",
+  "description": "Professional office environment with natural lighting",
+  "template": "Modern, minimalist office workspace with {lighting}, {view}, clean desk with {objects}, {color_scheme} color palette, professional business environment, high quality, 8k resolution",
+  "variables": {
+    "lighting": {
+      "type": "enum",
+      "options": [
+        "natural daylight from large windows",
+        "warm ambient lighting",
+        "soft overhead lighting",
+        "dramatic side lighting"
+      ],
+      "default": "natural daylight from large windows"
+    },
+    "view": {
+      "type": "enum",
+      "options": [
+        "city skyline view",
+        "nature view with trees",
+        "minimalist white wall",
+        "glass windows overlooking downtown"
+      ],
+      "default": "city skyline view"
+    },
+    "objects": {
+      "type": "enum",
+      "options": [
+        "laptop and coffee cup",
+        "monitors and keyboard",
+        "notebook and pen",
+        "minimal desk setup"
+      ],
+      "default": "laptop and coffee cup"
+    },
+    "color_scheme": {
+      "type": "enum",
+      "options": [
+        "neutral white and gray",
+        "warm wood tones",
+        "modern black and white",
+        "blue and gray professional"
+      ],
+      "default": "neutral white and gray"
+    }
+  },
+  "examples": [
+    "Modern, minimalist office workspace with natural daylight from large windows, city skyline view, clean desk with laptop and coffee cup, neutral white and gray color palette, professional business environment, high quality, 8k resolution",
+    "Modern, minimalist office workspace with warm ambient lighting, nature view with trees, clean desk with notebook and pen, warm wood tones color palette, professional business environment, high quality, 8k resolution"
+  ],
+  "tags": ["office", "workspace", "professional", "business", "modern"],
+  "aspectRatio": "16:9",
+  "recommendedSize": "1792x1024"
+}
