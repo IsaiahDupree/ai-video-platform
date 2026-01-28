@@ -11,7 +11,8 @@
     "build": "tsc",
     "render": "ts-node scripts/render-video.ts",
     "generate-tts": "ts-node scripts/generate-tts.ts",
-    "generate-images": "ts-node scripts/generate-images.ts"
+    "generate-images": "ts-node scripts/generate-images.ts",
+    "generate-voice": "ts-node scripts/generate-voice-with-elevenlabs.ts"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
