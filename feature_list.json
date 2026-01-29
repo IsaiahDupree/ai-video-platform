@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 87,
+  "completedFeatures": 88,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1585,7 +1585,17 @@
       "description": "Track PageView on all page loads",
       "category": "meta-pixel",
       "priority": "P1",
-      "passes": false
+      "phase": 7,
+      "effort": "5pts",
+      "passes": true,
+      "files": [
+        "src/components/MetaPixel.tsx",
+        "scripts/test-meta-pageview.ts",
+        "docs/META-002-PAGEVIEW-TRACKING.md"
+      ],
+      "dependencies": [
+        "META-001"
+      ]
     },
     {
       "id": "META-003",
