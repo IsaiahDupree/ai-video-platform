@@ -1,3 +1,113 @@
+# AI Video Platform - Progress Update
+
+## Recently Completed: META-004
+
+**Feature:** CAPI Server-Side Events
+**Date:** 2026-01-29
+**Status:** ✅ Complete
+
+### What Was Built
+
+Implemented server-side conversion tracking via Meta Conversions API (CAPI) to complement browser-based Meta Pixel tracking. This improves attribution accuracy and bypasses browser tracking limitations.
+
+**Key Components:**
+1. **Type Definitions** (`src/types/metaCapi.ts`)
+   - Complete TypeScript interfaces for CAPI
+   - Configuration, user data, custom data types
+   - Server event and request/response structures
+
+2. **Meta CAPI Service** (`src/services/metaCapi.ts`)
+   - Automatic SHA256 hashing of PII data (email, phone, name, etc.)
+   - Single and batch event tracking
+   - Event deduplication support with event IDs
+   - Test connection functionality
+   - Graceful error handling
+
+3. **Server Tracking Integration** (`src/services/trackingServer.ts`)
+   - Enhanced to support both PostHog and Meta CAPI
+   - Automatic user data extraction from event properties
+   - Parallel tracking to both systems
+
+4. **Testing & Documentation**
+   - Comprehensive test script (`scripts/test-meta-capi.ts`)
+   - Detailed documentation (`docs/META-004-CAPI-SERVER-SIDE-EVENTS.md`)
+   - Environment configuration guide
+
+### Technical Highlights
+
+**PII Data Hashing:**
+- All personally identifiable information (email, phone, name, etc.) is automatically hashed with SHA256 before sending to Meta
+- Normalization (lowercase, trim) before hashing ensures consistency
+- Complies with Meta's data privacy requirements
+
+**Event Deduplication:**
+- Supports event IDs that can be matched with browser Pixel events
+- Prevents double-counting when events are sent from both client and server
+- Meta automatically deduplicates based on matching event IDs
+
+**Batch Processing:**
+- Support for sending multiple events in a single API call
+- Reduces API overhead for bulk tracking operations
+- Maintains individual event integrity
+
+### Configuration
+
+Added new environment variables:
+```bash
+META_CAPI_ACCESS_TOKEN=your_access_token_here
+META_CAPI_TEST_EVENT_CODE=TEST12345  # optional
+```
+
+### Event Mapping
+
+The service automatically maps internal events to Meta standard events:
+- `signup_started` → Lead
+- `signup_completed` → CompleteRegistration
+- `purchase_completed` → Purchase
+- `video_rendered` → Purchase (micro-conversion)
+- And more...
+
+### Testing
+
+Test script validates:
+- ✅ Connection to Meta CAPI
+- ✅ Standard event tracking (Lead, Purchase)
+- ✅ Server tracking service integration
+- ✅ Batch event tracking
+- ✅ Event parameter formatting
+
+### Next Steps
+
+The CAPI implementation sets the foundation for:
+- **META-005**: Event Deduplication (matching Pixel + CAPI events)
+- **META-006**: User Data Hashing (already implemented in META-004)
+- Enhanced conversion tracking and attribution
+- Better ad optimization with server-side data
+
+### Files Modified
+
+```
+src/types/metaCapi.ts (new)
+src/services/metaCapi.ts (new)
+src/services/trackingServer.ts (updated)
+scripts/test-meta-capi.ts (new)
+docs/META-004-CAPI-SERVER-SIDE-EVENTS.md (new)
+.env.example (updated)
+feature_list.json (updated)
+```
+
+### Progress Stats
+
+- **Total Features:** 106
+- **Completed:** 90
+- **Progress:** 84.9%
+- **Phase 7 (Growth & Analytics):** 9/12 features complete
+
+---
+
+## Previous Updates
+
+[Previous progress entries would be listed here...]
 # AI Video Platform - Development Progress
 
 ## Session Summary
