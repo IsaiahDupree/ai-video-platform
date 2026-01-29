@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 89,
+  "completedFeatures": 90,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1623,7 +1623,21 @@
       "description": "Send conversion events via Conversions API",
       "category": "meta-pixel",
       "priority": "P1",
-      "passes": false
+      "phase": 7,
+      "effort": "8pts",
+      "passes": true,
+      "files": [
+        "src/types/metaCapi.ts",
+        "src/services/metaCapi.ts",
+        "src/services/trackingServer.ts",
+        "scripts/test-meta-capi.ts",
+        "docs/META-004-CAPI-SERVER-SIDE-EVENTS.md"
+      ],
+      "dependencies": [
+        "META-001",
+        "META-002",
+        "META-003"
+      ]
     },
     {
       "id": "META-005",

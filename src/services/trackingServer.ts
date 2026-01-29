@@ -6,12 +6,19 @@ import {
   TrackingEvent,
   ITrackingService,
 } from '../types/tracking';
+import { metaCapiService } from './metaCapi';
+import { CapiUserData } from '@/types/metaCapi';
 
 class ServerTrackingService implements ITrackingService {
   private client: PostHog | null = null;
   private enabled = false;
+  private capiEnabled = false;
 
-  initialize(config: TrackingConfig): void {
+  initialize(config: TrackingConfig & {
+    metaPixelId?: string;
+    metaAccessToken?: string;
+    metaTestEventCode?: string;
+  }): void {
     if (this.client) {
       console.warn('Server tracking service already initialized');
       return;
@@ -40,6 +47,22 @@ class ServerTrackingService implements ITrackingService {
       console.error('Failed to initialize PostHog server:', error);
       this.enabled = false;
     }
+
+    // Initialize Meta CAPI if configured
+    if (config.metaPixelId && config.metaAccessToken) {
+      try {
+        metaCapiService.initialize({
+          pixelId: config.metaPixelId,
+          accessToken: config.metaAccessToken,
+          testEventCode: config.metaTestEventCode,
+        });
+        this.capiEnabled = true;
+        console.info('Meta CAPI server tracking initialized');
+      } catch (error) {
+        console.error('Failed to initialize Meta CAPI:', error);
+        this.capiEnabled = false;
+      }
+    }
   }
 
   identify(userId: string, properties?: UserProperties): void {
@@ -62,11 +85,28 @@ class ServerTrackingService implements ITrackingService {
     }
 
     try {
+      // Track with PostHog
       this.client.capture({
         distinctId: properties?.userId as string || 'anonymous',
         event,
         properties: properties || {},
       });
+
+      // Also track with Meta CAPI if enabled
+      if (this.capiEnabled && metaCapiService.isInitialized()) {
+        // Build user data for CAPI from properties
+        const userData: CapiUserData | undefined = properties?.email
+          ? {
+              em: properties.email as string,
+              external_id: properties.userId as string,
+            }
+          : undefined;
+
+        // Track asynchronously (don't block)
+        metaCapiService.trackAppEvent(event, properties, userData).catch((error) => {
+          console.error('Failed to track event with Meta CAPI:', error);
+        });
+      }
     } catch (error) {
       console.error('Failed to track event on server:', error);
     }
@@ -105,3 +145,15 @@ class ServerTrackingService implements ITrackingService {
 }
 
 export const serverTracking = new ServerTrackingService();
+
+// Auto-initialize with environment variables (server-side only)
+if (typeof window === 'undefined' && process.env.POSTHOG_API_KEY) {
+  serverTracking.initialize({
+    apiKey: process.env.POSTHOG_API_KEY,
+    host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+    enabled: process.env.NODE_ENV !== 'test',
+    metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID,
+    metaAccessToken: process.env.META_CAPI_ACCESS_TOKEN,
+    metaTestEventCode: process.env.META_CAPI_TEST_EVENT_CODE,
+  });
+}
