@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 95,
+  "completedFeatures": 96,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1760,7 +1760,25 @@
       "description": "Verify and store email events from Resend webhooks",
       "category": "growth-data-plane",
       "priority": "P0",
-      "passes": false
+      "phase": 7,
+      "effort": "8pts",
+      "passes": true,
+      "files": [
+        "src/types/resendWebhook.ts",
+        "src/utils/resendWebhookVerify.ts",
+        "src/services/resendWebhookProcessor.ts",
+        "src/app/api/webhooks/resend/route.ts",
+        "scripts/test-resend-webhook.ts",
+        "scripts/test-resend-webhook-unit.ts",
+        "scripts/verify-resend-webhook.ts",
+        "docs/GDP-004-RESEND-WEBHOOK.md",
+        ".env.example"
+      ],
+      "dependencies": [
+        "GDP-001",
+        "GDP-002",
+        "GDP-003"
+      ]
     },
     {
       "id": "GDP-005",
