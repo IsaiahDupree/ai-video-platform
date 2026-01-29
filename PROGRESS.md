@@ -1,467 +1,265 @@
 # AI Video Platform - Progress Update
 
-## Recently Completed: GDP-001, GDP-002, GDP-003
+## Recently Completed: GDP-004
 
-**Feature:** Supabase Schema Setup
-**Date:** 2026-01-29
+**Feature:** Resend Webhook Edge Function  
+**Date:** 2026-01-29  
 **Status:** ✅ Complete
 
 ### What Was Built
 
-Established the foundational database schema for the Growth Data Plane using Supabase (PostgreSQL). This schema enables unified tracking of users, events, and subscriptions across all sources.
+Secure webhook endpoint for receiving and processing email events from Resend. This enables tracking of email engagement (delivered, opened, clicked) in the Growth Data Plane for attribution and analytics.
 
-**Core Tables:**
+**Core Components:**
 
-1. **person** - Canonical user records
-   - Stores email, phone, user_id, and profile data
-   - Tracking identifiers (posthog_distinct_id, meta_fbp, meta_fbc)
-   - Auto-computed features (total_events, active_days, total_renders, pricing_page_views)
-   - Lifecycle timestamps (first_seen_at, last_seen_at)
+1. **Webhook Verification** (`src/utils/resendWebhookVerify.ts`)
+   - Svix signature verification
+   - Timing-safe comparison (prevents timing attacks)
+   - Replay attack prevention (rejects webhooks > 5 minutes old)
+   - HMAC-SHA256 signature computation
 
-2. **identity_link** - Identity resolution
-   - Maps various identifiers to canonical person records
-   - Supports: email, phone, user_id, posthog_distinct_id, anonymous_id, meta_fbp, meta_fbc, session_id
-   - Enables identity stitching (anonymous → known user)
-   - Tracks source of identity capture
+2. **Event Processing** (`src/services/resendWebhookProcessor.ts`)
+   - Parses Resend webhook payloads
+   - Maps Resend event types to Growth Data Plane event types
+   - Extracts metadata (IP address, user agent, click URLs)
+   - Links events to person records via email
+   - Stores events with deduplication
 
-3. **event** - Unified event tracking
-   - All events from all sources in one table
-   - Event sources: client, server, pixel, CAPI, posthog, email, stripe
-   - Event deduplication via unique event_id
-   - Rich context: session, page, UTM params, device, browser, location
-   - Flexible properties JSONB field
-   - Email-specific fields (email_id, email_type, link_url)
-   - Subscription-specific fields (subscription_id, plan_id, mrr_cents)
-   - Revenue tracking (revenue_cents, currency)
+3. **API Route** (`src/app/api/webhooks/resend/route.ts`)
+   - POST handler for webhook events
+   - GET handler for health checks
+   - Full error handling and logging
+   - Returns success/failure status
 
-4. **subscription** - Stripe subscription snapshots
-   - Current subscription status for each person
-   - MRR tracking (Monthly Recurring Revenue)
-   - Stripe subscription/customer/price IDs
-   - Lifecycle dates (trial, current period, canceled, ended)
+4. **TypeScript Types** (`src/types/resendWebhook.ts`)
+   - ResendWebhookPayload
+   - ResendWebhookData
+   - ParsedResendEvent
+   - ResendWebhookEventType
 
-**Helper Functions:**
+### Supported Event Types
 
-1. **find_or_create_person** - Atomic find-or-create by identity
-   - Checks identity_link for existing person
-   - Falls back to email or user_id lookup
-   - Creates new person if not found
-   - Creates identity link
-   - Updates last_seen_at timestamps
+- ✅ **email.delivered** - Email successfully delivered
+- ✅ **email.opened** - Recipient opened the email
+- ✅ **email.clicked** - Recipient clicked a link
+- ✅ **email.bounced** - Email bounced (hard/soft)
+- ✅ **email.complained** - Recipient marked as spam
+- ⏭️ **email.sent** - Skipped (we track delivery, not send)
 
-2. **merge_person_records** - Identity stitching
-   - Moves all identity_links to target person
-   - Moves all events to target person
-   - Moves all subscriptions to target person
-   - Merges person data (fills missing fields)
-   - Deletes source person
+### Security Features
 
-3. **update_person_features** - Compute features from events
-   - total_events: COUNT(*)
-   - active_days: COUNT(DISTINCT DATE(event_time))
-   - total_renders: COUNT(video_rendered events)
-   - pricing_page_views: COUNT(pricing_view events)
-   - Triggered automatically after event insert
-
-### Technical Highlights
-
-**Identity Stitching:**
-- Anonymous visitors get person record with anonymous_id
-- When they sign up, new person created with email
-- merge_person_records links anonymous events to known user
-- Complete attribution from first touch to conversion
-
-**Event Deduplication:**
-- Meta Pixel and CAPI use same event_id
-- UNIQUE constraint prevents duplicates
-- First event stored, subsequent events skipped
-- Accurate event counting across sources
-
-**Multi-Source Tracking:**
-All events flow into unified table:
-- **client**: Browser tracking (PostHog, Meta Pixel)
-- **server**: Server-side tracking
-- **pixel**: Meta Pixel events
-- **capi**: Meta Conversions API events
-- **posthog**: PostHog events
-- **email**: Resend email events (delivered, opened, clicked)
-- **stripe**: Stripe subscription events
-
-**Auto-Computed Features:**
-Triggers update person features after each event:
-```sql
--- Automatically computed
-total_events = 125
-active_days = 18
-total_renders = 42
-pricing_page_views = 3
+**Signature Verification:**
+```typescript
+verifyResendWebhook(payload, signature, timestamp, secret)
+// Verifies HMAC-SHA256 signature from Svix headers
+// Rejects invalid signatures
 ```
 
-**Revenue Tracking:**
-- revenue_cents in event table (purchase, subscription)
-- mrr_cents in subscription table (normalized to monthly)
-- Query total revenue: `SUM(revenue_cents) WHERE person_id = ...`
-
-### Database Migrations
-
-All migrations in `supabase/migrations/`:
-
-1. **20260129000001_create_person_tables.sql**
-   - person table with indexes
-   - identity_link table with UNIQUE constraint
-   - update_updated_at_column() function
-   - Trigger for auto-updating updated_at
-
-2. **20260129000002_create_event_table.sql**
-   - event table with comprehensive fields
-   - UNIQUE index for event deduplication
-   - GIN index for JSONB properties
-   - Partial indexes for performance
-
-3. **20260129000003_create_subscription_table.sql**
-   - subscription table with Stripe fields
-   - Trigger for auto-updating updated_at
-   - Indexes for common queries
-
-4. **20260129000004_create_helper_functions.sql**
-   - find_or_create_person() function
-   - merge_person_records() function
-   - update_person_features() function
-   - Trigger for auto-computing person features
-
-### TypeScript Integration
-
-**Types** (`src/types/growthDataPlane.ts`):
-- Person, IdentityLink, Event, Subscription interfaces
-- CreatePersonInput, CreateEventInput, CreateSubscriptionInput
-- EventType, EventSource, DeviceType, EmailEventType enums
-- IdentityType, SubscriptionStatus, SubscriptionInterval types
-
-**Service Layer** (`src/services/growthDataPlane.ts`):
+**Replay Attack Prevention:**
 ```typescript
-// Person management
-findPersonByIdentity(identityType, identityValue)
-findOrCreatePerson(params)
-createPerson(input)
-updatePerson(personId, updates)
-mergePersonRecords(sourcePersonId, targetPersonId)
-
-// Event tracking
-createEvent(input)
-getPersonEvents(personId, limit)
-getEventsByName(eventName, limit)
-
-// Subscription management
-createSubscription(input)
-updateSubscription(stripeSubscriptionId, updates)
-getPersonSubscriptions(personId)
-
-// Identity management
-addIdentityLink(personId, identityType, identityValue, source)
-getPersonIdentities(personId)
-
-// Person features
-updatePersonFeatures(personId)
-
-// Analytics
-getActivePeople(daysBack)
-getRevenueByPerson(personId)
+validateWebhookTimestamp(timestamp)
+// Rejects webhooks older than 5 minutes
+// Prevents replay attacks
 ```
 
-**Supabase Client** (`src/services/supabase.ts`):
-- supabase: Client-side (anon key)
-- supabaseAdmin: Server-side (service key, bypasses RLS)
-- isSupabaseConfigured(): Check if configured
+### Event Flow
 
-### Usage Examples
+```
+1. Resend sends webhook → /api/webhooks/resend
+   ↓
+2. Verify signature (svix-signature header)
+   ↓
+3. Validate timestamp (svix-timestamp header)
+   ↓
+4. Parse webhook payload
+   ↓
+5. Find or create person by email
+   ↓
+6. Store event in Growth Data Plane
+   ↓
+7. Deduplicate via event_id
+   ↓
+8. Return success response
+```
 
-**Example 1: Track Signup**
+### Deduplication
+
+Events are deduplicated using:
+- `event_id` = `{email_id}_{event_type}`
+- `event_source` = `email`
+
+This prevents duplicate events if Resend retries the webhook.
+
+### Integration Example
+
+**Configure webhook in Resend:**
+```
+Endpoint URL: https://your-domain.com/api/webhooks/resend
+Events: Select all email events
+Status: Active
+```
+
+**Environment variables:**
+```bash
+RESEND_API_KEY=re_your_api_key
+RESEND_WEBHOOK_SECRET=whsec_your_secret
+```
+
+**Send tracked email:**
 ```typescript
-import { findOrCreatePerson, createEvent } from '@/services/growthDataPlane';
+import { Resend } from 'resend';
 
-// Create person
-const person = await findOrCreatePerson({
-  identity_type: 'email',
-  identity_value: 'user@example.com',
-  source: 'signup',
-  email: 'user@example.com',
-  first_name: 'John',
-  last_name: 'Doe',
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Track signup event
-await createEvent({
-  person_id: person.id,
-  event_name: 'signup_completed',
-  event_type: 'acquisition',
-  event_source: 'server',
-  page_url: '/signup',
+await resend.emails.send({
+  from: 'onboarding@yourdomain.com',
+  to: 'user@example.com',
+  subject: 'Welcome!',
+  html: '<p>Click <a href="https://yourdomain.com/start">here</a></p>',
+  tags: { campaign: 'onboarding' },
 });
 ```
 
-**Example 2: Identity Stitching**
+**Query email engagement:**
 ```typescript
-// Anonymous visitor
-const anonPerson = await findOrCreatePerson({
-  identity_type: 'anonymous_id',
-  identity_value: 'anon-123',
-  source: 'client',
-});
+const events = await getPersonEvents(personId, 100);
+const emailEvents = events.filter(e => e.event_source === 'email');
 
-// Track anonymous events
-await createEvent({
-  person_id: anonPerson.id,
-  event_name: 'landing_view',
-  event_type: 'acquisition',
-  event_source: 'client',
-});
+// Opens
+const opens = emailEvents.filter(e => e.email_type === 'opened').length;
 
-// User signs up
-const knownPerson = await findOrCreatePerson({
-  identity_type: 'email',
-  identity_value: 'user@example.com',
-  source: 'signup',
-  email: 'user@example.com',
-});
+// Clicks
+const clicks = emailEvents.filter(e => e.email_type === 'clicked').length;
 
-// Stitch identities
-await mergePersonRecords(anonPerson.id, knownPerson.id);
-
-// All anonymous events now attributed to known user
-```
-
-**Example 3: Meta Pixel + CAPI Deduplication**
-```typescript
-import { generateEventId } from '@/utils/eventId';
-
-const eventId = generateEventId(); // Shared ID
-
-// Client: Meta Pixel
-fbq('track', 'Purchase', { value: 29.99 }, { eventID: eventId });
-
-// Server: Meta CAPI
-await metaCapiService.trackEvent('Purchase', {
-  eventId,
-  customData: { value: 29.99 },
-});
-
-// Database: Only one event stored
-await createEvent({
-  event_name: 'Purchase',
-  event_source: 'pixel', // or 'capi'
-  event_id: eventId, // Deduplicates
-  revenue_cents: 2999,
-});
-```
-
-**Example 4: Stripe Subscription**
-```typescript
-// Create subscription
-await createSubscription({
-  person_id: person.id,
-  stripe_subscription_id: 'sub_123',
-  stripe_customer_id: 'cus_123',
-  plan_id: 'pro-monthly',
-  plan_name: 'Pro Monthly',
-  status: 'active',
-  amount_cents: 2999,
-  interval: 'month',
-  mrr_cents: 2999,
-  current_period_start: new Date().toISOString(),
-  current_period_end: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-});
-
-// Track subscription event
-await createEvent({
-  person_id: person.id,
-  event_name: 'subscription.created',
-  event_type: 'monetization',
-  event_source: 'stripe',
-  subscription_id: 'sub_123',
-  plan_id: 'pro-monthly',
-  mrr_cents: 2999,
-  revenue_cents: 2999,
-});
+// Clicked links
+const links = emailEvents
+  .filter(e => e.email_type === 'clicked')
+  .map(e => e.email_link_url);
 ```
 
 ### Testing
 
-**Test Script** (`scripts/test-growth-data-plane.ts`):
-
-15 comprehensive test cases:
-1. Create person by email
-2. Find existing person by email
-3. Add anonymous identity to person
-4. Create event
-5. Test event deduplication
-6. Create video render event
-7. Create purchase event with revenue
-8. Update person features
-9. Get person events
-10. Get person identities
-11. Create subscription
-12. Create second person for merge test
-13. Add events to second person
-14. Merge person records (identity stitching)
-15. Verify merged events
-
-Run tests:
+**Verification Script:**
 ```bash
-npx tsx scripts/test-growth-data-plane.ts
+npx tsx scripts/verify-resend-webhook.ts
 ```
 
-Expected output: 15/15 tests passed (100%)
+Verifies:
+- ✅ All files exist
+- ✅ Signature verification logic works
+- ✅ Timestamp validation works
+- ✅ Environment variables documented
+- ✅ API route has POST/GET handlers
 
-### Setup Instructions
-
-**1. Create Supabase Project:**
-- Go to https://app.supabase.com
-- Create new project
-- Wait for provisioning
-
-**2. Get API Keys:**
-- Project Settings → API
-- Copy URL → SUPABASE_URL
-- Copy anon public key → SUPABASE_ANON_KEY
-- Copy service_role key → SUPABASE_SERVICE_KEY
-
-**3. Add to .env:**
+**Unit Tests:**
 ```bash
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_ANON_KEY=your_anon_key
-SUPABASE_SERVICE_KEY=your_service_key
+npx tsx scripts/test-resend-webhook-unit.ts
 ```
 
-**4. Run Migrations:**
+Tests (no Supabase required):
+- ✅ Webhook signature verification
+- ✅ Timestamp validation
+- ✅ Parse delivered event
+- ✅ Parse opened event
+- ✅ Parse clicked event
+- ✅ Parse bounced event
+- ✅ Skip unsupported events
 
-Option A: Supabase CLI
+**Integration Tests:**
 ```bash
-supabase login
-supabase link --project-ref your-project-ref
-supabase db push
+npx tsx scripts/test-resend-webhook.ts
 ```
 
-Option B: SQL Editor (Supabase Dashboard)
-- Copy each migration file
-- Run in order in SQL Editor
-
-**5. Test Schema:**
-```bash
-npx tsx scripts/test-growth-data-plane.ts
-```
-
-### Integration with Other Features
-
-**Tracking Features (TRACK-001 to TRACK-008):**
-All tracking events now flow into the unified event table:
-```typescript
-import { trackEvent } from '@/services/tracking';
-import { createEvent, findOrCreatePerson } from '@/services/growthDataPlane';
-
-export async function trackEvent(eventName, properties) {
-  const person = await findOrCreatePerson({
-    identity_type: 'user_id',
-    identity_value: userId,
-  });
-
-  await createEvent({
-    person_id: person.id,
-    event_name: eventName,
-    event_source: 'server',
-    properties,
-  });
-}
-```
-
-**Meta Pixel (META-001 to META-006):**
-Meta events stored in event table:
-```typescript
-await createEvent({
-  person_id: person.id,
-  event_name: 'Purchase',
-  event_source: 'capi',
-  event_id: eventId,
-  revenue_cents: 2999,
-});
-```
-
-**Future Features:**
-This schema enables:
-- **GDP-004**: Resend Webhook Edge Function (store email events)
-- **GDP-005**: Email Event Tracking (delivered, opened, clicked)
-- **GDP-006**: Click Redirect Tracker (email → click → conversion)
-- **GDP-007**: Stripe Webhook Integration (subscription events)
-- **GDP-008**: Subscription Snapshot (MRR tracking)
-- **GDP-009**: PostHog Identity Stitching (posthog.identify)
-- **GDP-010**: Meta Pixel + CAPI Dedup (event_id matching)
-- **GDP-011**: Person Features Computation ✅ (already included!)
-- **GDP-012**: Segment Engine (evaluate segments, trigger automations)
+Tests (requires Supabase):
+- Event storage in database
+- Person linkage
+- Deduplication
+- Event retrieval
 
 ### Files Modified
 
 ```
-.env.example (updated with Supabase config)
-
-supabase/migrations/
-├── 20260129000001_create_person_tables.sql (new)
-├── 20260129000002_create_event_table.sql (new)
-├── 20260129000003_create_subscription_table.sql (new)
-└── 20260129000004_create_helper_functions.sql (new)
+.env.example (added RESEND_API_KEY, RESEND_WEBHOOK_SECRET)
 
 src/types/
-└── growthDataPlane.ts (new)
+└── resendWebhook.ts (new)
+
+src/utils/
+└── resendWebhookVerify.ts (new)
 
 src/services/
-├── supabase.ts (new)
-└── growthDataPlane.ts (new)
+└── resendWebhookProcessor.ts (new)
+
+src/app/api/webhooks/resend/
+└── route.ts (new)
 
 scripts/
-└── test-growth-data-plane.ts (new)
+├── test-resend-webhook.ts (new)
+├── test-resend-webhook-unit.ts (new)
+└── verify-resend-webhook.ts (new)
 
 docs/
-└── GDP-001-SUPABASE-SCHEMA-SETUP.md (new)
+└── GDP-004-RESEND-WEBHOOK.md (new)
 
 feature_list.json (updated)
-package.json (added @supabase/supabase-js)
-package-lock.json (updated)
+```
+
+### Analytics Use Cases
+
+**Email Open Rate:**
+```sql
+SELECT
+  properties->>'campaign' as campaign,
+  COUNT(DISTINCT CASE WHEN email_type = 'delivered' THEN person_id END) as delivered,
+  COUNT(DISTINCT CASE WHEN email_type = 'opened' THEN person_id END) as opened,
+  ROUND(100.0 * COUNT(DISTINCT CASE WHEN email_type = 'opened' THEN person_id END) / 
+    NULLIF(COUNT(DISTINCT CASE WHEN email_type = 'delivered' THEN person_id END), 0), 2) as open_rate
+FROM event
+WHERE event_source = 'email'
+GROUP BY properties->>'campaign';
+```
+
+**Email Attribution:**
+```sql
+-- Users who clicked email and then purchased
+SELECT
+  p.email,
+  e1.email_link_url,
+  e2.revenue_cents / 100.0 as revenue_usd
+FROM event e1
+JOIN event e2 ON e1.person_id = e2.person_id
+JOIN person p ON e1.person_id = p.id
+WHERE e1.email_type = 'clicked'
+  AND e2.event_name = 'purchase_completed'
+  AND e2.event_time > e1.event_time
+  AND e2.event_time < e1.event_time + INTERVAL '7 days';
 ```
 
 ### Progress Stats
 
 - **Total Features:** 106
-- **Completed:** 95/106 (90%)
-- **Remaining:** 11
+- **Completed:** 96/106 (91%)
+- **Remaining:** 10
 - **Current Phase:** 7 (Tracking & Analytics)
 
 ### Recent Milestones
 
-- ✅ META-001: Meta Pixel Installation
-- ✅ META-002: PageView Tracking
-- ✅ META-003: Standard Events Mapping
-- ✅ META-004: CAPI Server-Side Events
-- ✅ META-005: Event Deduplication
-- ✅ META-006: User Data Hashing
-- ✅ **GDP-001: Supabase Schema Setup** ← Just completed!
-- ✅ **GDP-002: Person & Identity Tables** ← Included in GDP-001!
-- ✅ **GDP-003: Unified Events Table** ← Included in GDP-001!
+- ✅ META-001 to META-006: Meta Pixel & CAPI
+- ✅ GDP-001 to GDP-003: Supabase Schema Setup
+- ✅ **GDP-004: Resend Webhook Edge Function** ← Just completed!
 
 ### Up Next
-
-**GDP-004: Resend Webhook Edge Function** (P0)
-- Verify and store email events from Resend webhooks
-- Track delivered, opened, clicked events
-- Link email events to person records
 
 **GDP-005: Email Event Tracking** (P0)
 - Track delivered/opened/clicked events
 - Email engagement metrics
-- Attribution tracking
+- Person-level email stats
 
-**META-007: Custom Audiences Setup** (P2)
-- Configure custom audiences based on events
-- Use hashed user data for audience building
-- Set up retargeting campaigns
+**GDP-006: Click Redirect Tracker** (P1)
+- Attribution spine for email → click → conversion
+- Track UTM parameters through redirects
+- Link email engagement to downstream conversions
 
 ---
 
-**Note:** The Growth Data Plane is now ready with a comprehensive schema for tracking users, events, and subscriptions across all sources. This enables identity stitching, event deduplication, and unified analytics.
+**Note:** Email event tracking is now integrated with the Growth Data Plane. Configure RESEND_WEBHOOK_SECRET in .env and set up the webhook in Resend dashboard to start tracking email engagement.
