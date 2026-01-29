@@ -2873,3 +2873,156 @@ Ready to proceed with:
 
 ---
 
+
+# META-003: Standard Events Mapping ✅
+
+**Completed:** 2026-01-29
+
+## Summary
+
+Implemented comprehensive mapping of internal application events to Meta (Facebook) standard events for conversion tracking and ad optimization. This enables Facebook to optimize ad delivery, build custom audiences, and provide accurate attribution.
+
+## What Was Implemented
+
+1. **Meta Events Service** (`src/services/metaEvents.ts`)
+   - Automatic event mapping for all 18 internal events
+   - 10 standard events (Lead, Purchase, CompleteRegistration, etc.)
+   - 8 custom events for specialized tracking
+   - Automatic value calculation for events
+   - Parameter enrichment based on event type
+   - Debug logging in development mode
+
+2. **Tracking Service Integration**
+   - Updated `src/services/tracking.ts` to automatically trigger Meta events
+   - No code changes required in existing tracking calls
+   - Events tracked with both PostHog and Meta Pixel
+
+3. **Event Mapping Configuration**
+   - **Acquisition Events:** landing_view → ViewContent, signup_started → Lead, signup_completed → CompleteRegistration
+   - **Activation Events:** first_video_created → ViewContent, first_render_completed → CompleteRegistration
+   - **Core Value Events:** video_rendered → Purchase, batch_completed → Purchase, export_downloaded → Purchase
+   - **Monetization Events:** checkout_started → InitiateCheckout, purchase_completed → Purchase
+   - **Custom Events:** return_visit, feature_discovery, template_used, voice_cloned, ad_generated
+   - **Error Events:** render_failed, api_error, slow_render
+
+4. **Value Calculation**
+   - Fixed values: signup_started ($5), signup_completed ($10), first_render_completed ($20)
+   - Dynamic values: video_rendered ($2/render), batch_completed ($2/render), checkout/purchase (plan price)
+   - Custom event values: return_visit ($5), voice_cloned ($10), ad_generated ($5)
+
+5. **Test Suite** (`scripts/test-meta-standard-events.ts`)
+   - Tests event mapping configuration
+   - Validates Meta standard event names
+   - Verifies event parameters
+   - Tests custom event tracking
+   - Tests error event tracking
+   - Tests value calculation
+   - **Result:** 6/6 tests passed ✅
+
+6. **Documentation** (`docs/META-003-STANDARD-EVENTS-MAPPING.md`)
+   - Complete event mapping reference
+   - Usage examples and integration guide
+   - Meta Ads optimization strategies
+   - Custom audience creation guide
+   - Testing and debugging instructions
+   - Privacy & compliance considerations
+
+## Implementation Details
+
+### Event Mapping Example
+
+```typescript
+// Internal tracking call (no changes required)
+tracking.track('signup_completed', {
+  method: 'email',
+});
+
+// Automatically becomes Meta Pixel event:
+fbq('track', 'CompleteRegistration', {
+  value: 10,
+  currency: 'USD',
+  content_category: 'signup',
+  content_name: 'user_registration',
+  original_event: 'signup_completed',
+  method: 'email',
+  timestamp: '2026-01-29T...',
+});
+```
+
+### Standard Events Mapped
+
+- **Lead:** signup_started
+- **CompleteRegistration:** signup_completed, first_render_completed
+- **ViewContent:** landing_view, first_video_created
+- **InitiateCheckout:** checkout_started
+- **Purchase:** video_rendered, batch_completed, export_downloaded, purchase_completed
+
+### Custom Events Mapped
+
+- **ReturnVisit:** return_visit
+- **FeatureDiscovery:** feature_discovery
+- **TemplateUsed:** template_used
+- **VoiceCloned:** voice_cloned
+- **AdGenerated:** ad_generated
+- **RenderFailed, ApiError, SlowRender:** Error tracking events
+
+## Files Created/Modified
+
+- ✅ `src/services/metaEvents.ts` - Event mapping service (350 lines)
+- ✅ `src/services/tracking.ts` - Integration (3 lines modified)
+- ✅ `scripts/test-meta-standard-events.ts` - Test suite (350 lines)
+- ✅ `docs/META-003-STANDARD-EVENTS-MAPPING.md` - Documentation (700+ lines)
+- ✅ `feature_list.json` - Updated META-003 status to passes: true
+
+## Testing
+
+All tests passed:
+- ✅ Event mapping configuration (18 events mapped)
+- ✅ Meta standard event names (10 standard events validated)
+- ✅ Event parameters (signup, checkout, purchase, render)
+- ✅ Custom events (4 custom events tested)
+- ✅ Error events (3 error events tested)
+- ✅ Value calculation (5 value calculations tested)
+
+**Test Result:** 6/6 tests passed ✅
+
+## Integration Points
+
+The Meta event tracking is automatically triggered through:
+- ✅ Signup flow (`src/app/signup/page.tsx`)
+- ✅ Pricing page (`src/app/pricing/page.tsx`)
+- ✅ Checkout page (`src/app/checkout/page.tsx`)
+- ✅ Render service (`src/services/renderStill.ts`)
+- ✅ Batch rendering (`src/services/campaignGenerator.ts`)
+- ✅ Export service (`src/services/exportZip.ts`)
+
+## Use Cases Enabled
+
+1. **Campaign Optimization**
+   - Optimize for Lead events (signup_started)
+   - Optimize for CompleteRegistration events (signup_completed)
+   - Optimize for Purchase events (renders and purchases)
+
+2. **Custom Audiences**
+   - Users who started checkout but didn't purchase
+   - Users who completed first render (activated users)
+   - Users who rendered 10+ videos (power users)
+
+3. **Lookalike Audiences**
+   - Lookalike of users who completed signup
+   - Lookalike of users who made a purchase
+   - Lookalike of users who rendered 10+ videos
+
+4. **Conversion Tracking**
+   - Track full funnel: PageView → Lead → CompleteRegistration → Purchase
+   - Attribute conversions to specific ads
+   - Measure ROAS and conversion rates
+
+## Next Steps
+
+Ready to proceed with:
+- META-004: CAPI Server-Side Events (Conversions API for better iOS 14+ tracking)
+- META-005: Event Deduplication (Match Pixel and CAPI events with event_id)
+- META-006: User Data Hashing (SHA256 hash PII for better attribution)
+
+---

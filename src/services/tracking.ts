@@ -6,6 +6,7 @@ import {
   TrackingEvent,
   ITrackingService,
 } from '../types/tracking';
+import { trackMetaAppEvent } from './metaEvents';
 
 class ClientTrackingService implements ITrackingService {
   private initialized = false;
@@ -75,7 +76,13 @@ class ClientTrackingService implements ITrackingService {
     }
 
     try {
+      // Track with PostHog
       posthog.capture(event, properties);
+
+      // Also track with Meta Pixel (if available)
+      if (typeof window !== 'undefined') {
+        trackMetaAppEvent(event, properties);
+      }
     } catch (error) {
       console.error('Failed to track event:', error);
     }
