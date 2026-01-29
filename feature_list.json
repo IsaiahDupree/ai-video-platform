@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 92,
+  "completedFeatures": 95,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1705,7 +1705,22 @@
       "description": "Create person, identity_link, event, subscription tables",
       "category": "growth-data-plane",
       "priority": "P0",
-      "passes": false
+      "phase": 7,
+      "effort": "13pts",
+      "passes": true,
+      "files": [
+        "supabase/migrations/20260129000001_create_person_tables.sql",
+        "supabase/migrations/20260129000002_create_event_table.sql",
+        "supabase/migrations/20260129000003_create_subscription_table.sql",
+        "supabase/migrations/20260129000004_create_helper_functions.sql",
+        "src/types/growthDataPlane.ts",
+        "src/services/supabase.ts",
+        "src/services/growthDataPlane.ts",
+        "scripts/test-growth-data-plane.ts",
+        "docs/GDP-001-SUPABASE-SCHEMA-SETUP.md",
+        ".env.example"
+      ],
+      "dependencies": []
     },
     {
       "id": "GDP-002",
@@ -1713,7 +1728,15 @@
       "description": "Canonical person table with identity links",
       "category": "growth-data-plane",
       "priority": "P0",
-      "passes": false
+      "phase": 7,
+      "effort": "0pts",
+      "passes": true,
+      "files": [
+        "supabase/migrations/20260129000001_create_person_tables.sql"
+      ],
+      "dependencies": [
+        "GDP-001"
+      ]
     },
     {
       "id": "GDP-003",
@@ -1721,7 +1744,15 @@
       "description": "Normalized events from all sources",
       "category": "growth-data-plane",
       "priority": "P0",
-      "passes": false
+      "phase": 7,
+      "effort": "0pts",
+      "passes": true,
+      "files": [
+        "supabase/migrations/20260129000002_create_event_table.sql"
+      ],
+      "dependencies": [
+        "GDP-001"
+      ]
     },
     {
       "id": "GDP-004",
