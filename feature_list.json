@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 91,
+  "completedFeatures": 92,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1668,7 +1668,20 @@
       "description": "SHA256 hash PII for CAPI events",
       "category": "meta-pixel",
       "priority": "P1",
-      "passes": false
+      "phase": 7,
+      "effort": "5pts",
+      "passes": true,
+      "files": [
+        "src/utils/hashUserData.ts",
+        "src/services/metaCapi.ts",
+        "src/app/api/meta/hash-user-data/route.ts",
+        "scripts/test-user-data-hashing.ts",
+        "docs/META-006-USER-DATA-HASHING.md"
+      ],
+      "dependencies": [
+        "META-001",
+        "META-004"
+      ]
     },
     {
       "id": "META-007",

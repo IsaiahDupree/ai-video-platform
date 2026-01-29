@@ -16,7 +16,6 @@
  * https://developers.facebook.com/docs/marketing-api/conversions-api
  */
 
-import crypto from 'crypto';
 import {
   MetaCapiConfig,
   CapiServerEvent,
@@ -27,6 +26,7 @@ import {
   CapiTrackOptions,
 } from '@/types/metaCapi';
 import { TrackingEvent, EventProperties } from '@/types/tracking';
+import { hashValue } from '@/utils/hashUserData';
 
 class MetaCapiService {
   private config: MetaCapiConfig | null = null;
@@ -56,21 +56,10 @@ class MetaCapiService {
   }
 
   /**
-   * Hash a string value with SHA256 (lowercase)
-   * Meta requires all PII to be hashed before sending
-   */
-  private hashValue(value: string): string {
-    if (!value) return '';
-    // Normalize: lowercase and trim
-    const normalized = value.toLowerCase().trim();
-    // Hash with SHA256
-    return crypto.createHash('sha256').update(normalized).digest('hex');
-  }
-
-  /**
    * Hash all PII fields in user data
+   * Uses the shared hashValue utility for consistency
    */
-  private hashUserData(userData: CapiUserData): CapiUserData {
+  private async hashUserData(userData: CapiUserData): Promise<CapiUserData> {
     const hashed: CapiUserData = { ...userData };
 
     // Fields that need hashing
@@ -79,7 +68,7 @@ class MetaCapiService {
     for (const field of hashFields) {
       const value = userData[field as keyof CapiUserData];
       if (value && typeof value === 'string') {
-        (hashed as any)[field] = this.hashValue(value);
+        (hashed as any)[field] = await hashValue(value);
       }
     }
 
@@ -146,7 +135,7 @@ class MetaCapiService {
     try {
       // Hash user data (PII)
       const hashedUserData = options.userData
-        ? this.hashUserData(options.userData)
+        ? await this.hashUserData(options.userData)
         : {};
 
       // Build server event
@@ -201,9 +190,9 @@ class MetaCapiService {
     }
 
     try {
-      const serverEvents: CapiServerEvent[] = events.map(({ eventName, options }) => {
+      const serverEvents: CapiServerEvent[] = await Promise.all(events.map(async ({ eventName, options }) => {
         const hashedUserData = options.userData
-          ? this.hashUserData(options.userData)
+          ? await this.hashUserData(options.userData)
           : {};
 
         const event: CapiServerEvent = {
@@ -218,7 +207,7 @@ class MetaCapiService {
         if (options.customData) event.custom_data = options.customData;
 
         return event;
-      });
+      }));
 
       const response = await this.sendEvents(serverEvents);
 
