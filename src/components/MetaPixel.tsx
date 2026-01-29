@@ -122,10 +122,20 @@ export function MetaPixel({ pixelId }: MetaPixelProps) {
  *
  * @param eventName - Name of the event (e.g., 'ViewContent', 'Lead', 'Purchase')
  * @param parameters - Event parameters (optional)
+ * @param eventId - Unique event ID for deduplication with CAPI (optional)
  */
-export function trackMetaEvent(eventName: string, parameters?: Record<string, any>) {
+export function trackMetaEvent(
+  eventName: string,
+  parameters?: Record<string, any>,
+  eventId?: string
+) {
   if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', eventName, parameters);
+    // If eventId is provided, use it for deduplication
+    if (eventId) {
+      window.fbq('track', eventName, parameters, { eventID: eventId });
+    } else {
+      window.fbq('track', eventName, parameters);
+    }
   } else {
     console.warn('Meta Pixel not loaded, cannot track event:', eventName);
   }
@@ -136,10 +146,20 @@ export function trackMetaEvent(eventName: string, parameters?: Record<string, an
  *
  * @param eventName - Name of the custom event
  * @param parameters - Event parameters (optional)
+ * @param eventId - Unique event ID for deduplication with CAPI (optional)
  */
-export function trackMetaCustomEvent(eventName: string, parameters?: Record<string, any>) {
+export function trackMetaCustomEvent(
+  eventName: string,
+  parameters?: Record<string, any>,
+  eventId?: string
+) {
   if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('trackCustom', eventName, parameters);
+    // If eventId is provided, use it for deduplication
+    if (eventId) {
+      window.fbq('trackCustom', eventName, parameters, { eventID: eventId });
+    } else {
+      window.fbq('trackCustom', eventName, parameters);
+    }
   } else {
     console.warn('Meta Pixel not loaded, cannot track custom event:', eventName);
   }
@@ -161,4 +181,17 @@ export function revokeMetaConsent() {
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('consent', 'revoke');
   }
+}
+
+/**
+ * Generate a unique event ID for deduplication
+ * This ID should be used for both Pixel (client-side) and CAPI (server-side)
+ * to ensure Meta can deduplicate the same event sent from both sources.
+ *
+ * @returns Unique event ID
+ */
+export function generateMetaEventId(): string {
+  const timestamp = Date.now();
+  const random = Math.random().toString(36).substring(2, 9);
+  return `${timestamp}-${random}`;
 }

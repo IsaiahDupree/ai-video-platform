@@ -312,8 +312,9 @@ class MetaCapiService {
 
   /**
    * Generate a unique event ID for deduplication
+   * Public method to allow sharing event IDs between client and server
    */
-  private generateEventId(): string {
+  generateEventId(): string {
     return `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
   }
 

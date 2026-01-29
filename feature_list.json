@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 90,
+  "completedFeatures": 91,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1645,7 +1645,22 @@
       "description": "Use matching event_id for Pixel and CAPI dedup",
       "category": "meta-pixel",
       "priority": "P1",
-      "passes": false
+      "phase": 7,
+      "effort": "5pts",
+      "passes": true,
+      "files": [
+        "src/components/MetaPixel.tsx",
+        "src/services/metaEvents.ts",
+        "src/services/metaCapi.ts",
+        "scripts/test-meta-event-dedup.ts",
+        "docs/META-005-EVENT-DEDUPLICATION.md"
+      ],
+      "dependencies": [
+        "META-001",
+        "META-002",
+        "META-003",
+        "META-004"
+      ]
     },
     {
       "id": "META-006",

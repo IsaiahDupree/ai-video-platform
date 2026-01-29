@@ -8,7 +8,7 @@
  * https://developers.facebook.com/docs/meta-pixel/reference
  */
 
-import { trackMetaEvent, trackMetaCustomEvent } from '@/components/MetaPixel';
+import { trackMetaEvent, trackMetaCustomEvent, generateMetaEventId } from '@/components/MetaPixel';
 import { TrackingEvent, EventProperties } from '@/types/tracking';
 
 /**
@@ -151,6 +151,10 @@ const EVENT_MAPPING: Record<TrackingEvent, {
  * Automatically maps internal events to Meta Standard Events
  * and sends them to Facebook for conversion tracking.
  *
+ * This function generates a unique event ID for deduplication with CAPI.
+ * If the same event is sent from both the browser (Pixel) and server (CAPI),
+ * Meta will deduplicate them using the matching event ID.
+ *
  * @param event - Internal event name
  * @param properties - Event properties
  *
@@ -173,6 +177,11 @@ export function trackMetaAppEvent(
 
   const { metaEvent, isStandard, getValue } = mapping;
 
+  // Generate unique event ID for deduplication with CAPI
+  // If properties already has an eventId, use it (for server-side calls)
+  // Otherwise generate a new one
+  const eventId = (properties?.eventId as string) || generateMetaEventId();
+
   // Build Meta event parameters
   const metaParams: Record<string, any> = {
     // Include original event name for debugging
@@ -180,6 +189,9 @@ export function trackMetaAppEvent(
 
     // Include timestamp
     timestamp: properties?.timestamp || new Date().toISOString(),
+
+    // Include event ID for deduplication
+    event_id: eventId,
   };
 
   // Add value if available
@@ -268,18 +280,24 @@ export function trackMetaAppEvent(
     ...properties,
   };
 
-  // Track with Meta Pixel
+  // Track with Meta Pixel (with event ID for deduplication)
   if (isStandard) {
-    trackMetaEvent(metaEvent, finalParams);
+    trackMetaEvent(metaEvent, finalParams, eventId);
 
     if (process.env.NODE_ENV === 'development') {
-      console.log(`[Meta Standard Event] ${metaEvent}:`, finalParams);
+      console.log(`[Meta Standard Event] ${metaEvent}:`, {
+        ...finalParams,
+        dedup_event_id: eventId,
+      });
     }
   } else {
-    trackMetaCustomEvent(metaEvent, finalParams);
+    trackMetaCustomEvent(metaEvent, finalParams, eventId);
 
     if (process.env.NODE_ENV === 'development') {
-      console.log(`[Meta Custom Event] ${metaEvent}:`, finalParams);
+      console.log(`[Meta Custom Event] ${metaEvent}:`, {
+        ...finalParams,
+        dedup_event_id: eventId,
+      });
     }
   }
 }
