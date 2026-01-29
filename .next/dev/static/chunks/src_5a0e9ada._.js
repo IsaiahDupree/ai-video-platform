@@ -369,16 +369,22 @@ __turbopack_context__.s([
     "trackMetaEvent",
     ()=>trackMetaEvent
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/script.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
+;
 function MetaPixel({ pixelId }) {
     _s();
+    const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
+    const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"])();
+    // Initialize Meta Pixel on mount
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "MetaPixel.useEffect": ()=>{
             // Initialize fbq function if not already present
@@ -400,13 +406,30 @@ function MetaPixel({ pixelId }) {
                 window.fbq.queue = [];
                 window._fbq = window.fbq;
             }
-            // Track PageView when component mounts
+            // Initialize pixel with ID
             if (window.fbq) {
                 window.fbq('init', pixelId);
-                window.fbq('track', 'PageView');
             }
         }
     }["MetaPixel.useEffect"], [
+        pixelId
+    ]);
+    // Track PageView on pathname or search params change
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "MetaPixel.useEffect": ()=>{
+            if (window.fbq && pixelId && pixelId !== 'your_meta_pixel_id_here') {
+                // Build full URL for tracking
+                const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+                // Track PageView with current URL
+                window.fbq('track', 'PageView');
+                if ("TURBOPACK compile-time truthy", 1) {
+                    console.log('Meta Pixel PageView tracked:', url);
+                }
+            }
+        }
+    }["MetaPixel.useEffect"], [
+        pathname,
+        searchParams,
         pixelId
     ]);
     if (!pixelId || pixelId === 'your_meta_pixel_id_here') {
@@ -430,12 +453,11 @@ function MetaPixel({ pixelId }) {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${pixelId}');
-            fbq('track', 'PageView');
           `
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/MetaPixel.tsx",
-                lineNumber: 65,
+                lineNumber: 89,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("noscript", {
@@ -449,18 +471,23 @@ function MetaPixel({ pixelId }) {
                     alt: ""
                 }, void 0, false, {
                     fileName: "[project]/src/components/MetaPixel.tsx",
-                    lineNumber: 85,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/MetaPixel.tsx",
-                lineNumber: 84,
+                lineNumber: 107,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 }
-_s(MetaPixel, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_s(MetaPixel, "jq/6JV7jSw8H7h1siyRMT4JsAUQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"]
+    ];
+});
 _c = MetaPixel;
 function trackMetaEvent(eventName, parameters) {
     if (("TURBOPACK compile-time value", "object") !== 'undefined' && window.fbq) {
