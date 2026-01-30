@@ -55,7 +55,7 @@ export const RemotionRoot: React.FC = () => {
       {/* App Preview Video (APP-023) */}
       <Composition
         id="ExampleAppPreview"
-        component={AppPreviewComposition}
+        component={AppPreviewComposition as any}
         durationInFrames={appPreviewDuration}
         fps={(exampleAppPreview as AppPreviewConfig).fps || 30}
         width={(exampleAppPreview as AppPreviewConfig).dimensions?.width || 1080}

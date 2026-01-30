@@ -117,7 +117,7 @@ export const iPhoneSizes: ScreenshotSize[] = [
   {
     id: 'iphone-se-landscape',
     deviceType: 'iphone',
-    model: 'iphone-se-3rd',
+    model: 'iphone-se-3',
     width: 1334,
     height: 750,
     orientation: 'landscape',

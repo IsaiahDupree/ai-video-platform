@@ -25,7 +25,8 @@ import {
   SubscriptionInterval,
   EventType as GDPEventType,
 } from '@/types/growthDataPlane';
-import { createEvent, findOrCreatePerson, createSubscription, updateSubscription } from './growthDataPlane';
+import { createEvent, findOrCreatePerson, createSubscription, updateSubscription, getSubscription } from './growthDataPlane';
+import { createSnapshotFromSubscription, getLatestSubscriptionSnapshot } from './subscriptionSnapshot';
 
 /**
  * Map Stripe subscription status to our SubscriptionStatus
@@ -234,6 +235,7 @@ export async function processStripeWebhook(
         parsed.event_type === StripeWebhookEventType.CUSTOMER_SUBSCRIPTION_UPDATED
       ) {
         // Try to update existing subscription, if not found, create new
+        let subscription;
         try {
           await updateSubscription(parsed.subscription_id, {
             status: parsed.subscription_status,
@@ -244,10 +246,12 @@ export async function processStripeWebhook(
             canceled_at: parsed.canceled_at ? new Date(parsed.canceled_at).toISOString() : undefined,
             ended_at: parsed.ended_at ? new Date(parsed.ended_at).toISOString() : undefined,
           });
+          // Get updated subscription for snapshot
+          subscription = await getSubscription(parsed.subscription_id);
         } catch {
           // If update fails, create new subscription
           if (parsed.event_type === StripeWebhookEventType.CUSTOMER_SUBSCRIPTION_CREATED) {
-            await createSubscription({
+            subscription = await createSubscription({
               person_id: person.id,
               stripe_subscription_id: parsed.subscription_id,
               stripe_customer_id: parsed.customer_id!,
@@ -265,6 +269,17 @@ export async function processStripeWebhook(
             });
           }
         }
+
+        // Create subscription snapshot (GDP-008)
+        if (subscription) {
+          try {
+            const previousSnapshot = await getLatestSubscriptionSnapshot(subscription.id);
+            await createSnapshotFromSubscription(subscription, previousSnapshot || undefined);
+          } catch (snapshotError) {
+            console.error('Failed to create subscription snapshot:', snapshotError);
+            // Don't fail the webhook if snapshot creation fails
+          }
+        }
       } else if (parsed.event_type === StripeWebhookEventType.CUSTOMER_SUBSCRIPTION_DELETED) {
         // Mark subscription as canceled
         await updateSubscription(parsed.subscription_id, {
@@ -272,6 +287,17 @@ export async function processStripeWebhook(
           canceled_at: new Date().toISOString(),
           ended_at: new Date().toISOString(),
         });
+
+        // Create snapshot for cancellation (GDP-008)
+        try {
+          const subscription = await getSubscription(parsed.subscription_id);
+          if (subscription) {
+            const previousSnapshot = await getLatestSubscriptionSnapshot(subscription.id);
+            await createSnapshotFromSubscription(subscription, previousSnapshot || undefined);
+          }
+        } catch (snapshotError) {
+          console.error('Failed to create subscription snapshot:', snapshotError);
+        }
       }
     }
 

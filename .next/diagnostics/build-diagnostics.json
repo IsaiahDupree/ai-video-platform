@@ -1,6 +1,6 @@
 {
-  "buildStage": "static-generation",
+  "buildStage": "type-checking",
   "buildOptions": {
-    "useBuildWorker": "true"
+    "useBuildWorker": "false"
   }
 }

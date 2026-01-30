@@ -196,6 +196,55 @@ export type SubscriptionStatus =
 
 export type SubscriptionInterval = 'month' | 'year';
 
+// Subscription Snapshot - Point-in-time view of subscription state (GDP-008)
+export interface SubscriptionSnapshot {
+  id: string;
+  subscription_id: string;
+  person_id: string;
+
+  // Snapshot state
+  status: SubscriptionStatus;
+  mrr_cents: number;
+  amount_cents: number;
+  currency: string;
+
+  // Lifecycle dates
+  current_period_start: string;
+  current_period_end: string;
+  canceled_at?: string;
+  ended_at?: string;
+
+  // Revenue changes from previous snapshot
+  mrr_change_cents?: number; // Positive = expansion, negative = contraction
+  churn_status?: 'active' | 'churned' | 'reactivated';
+  churn_reason?: string;
+
+  // Snapshot timing
+  snapshot_date: string; // ISO 8601 date
+  snapshot_period: 'daily' | 'monthly'; // Frequency of snapshot
+  is_current: boolean; // Latest snapshot for this subscription
+
+  // Timestamps
+  created_at: string;
+  updated_at: string;
+}
+
+export interface SubscriptionSnapshotInput {
+  subscription_id: string;
+  person_id: string;
+  status: SubscriptionStatus;
+  mrr_cents: number;
+  amount_cents: number;
+  currency: string;
+  current_period_start: string;
+  current_period_end: string;
+  canceled_at?: string;
+  ended_at?: string;
+  mrr_change_cents?: number;
+  churn_status?: 'active' | 'churned' | 'reactivated';
+  churn_reason?: string;
+}
+
 // Helper function parameters
 export interface FindOrCreatePersonParams {
   identity_type: IdentityType;

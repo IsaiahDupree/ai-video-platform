@@ -27,6 +27,10 @@ export async function fetchApps(
   // Use provided credentials or get default
   const creds = credentials || (await getDefaultCredentials());
 
+  if (!creds) {
+    throw new Error('App Store Connect credentials not found');
+  }
+
   // Build query parameters
   const query: ListAppsQuery = {};
 
@@ -58,12 +62,12 @@ export async function fetchApps(
   const response = await makeRequest<AppsResponse>(creds, {
     method: 'GET',
     path: '/v1/apps',
-    query,
+    query: query as any,
   });
 
   // If fetchAll is true and there's a next page, fetch all pages
   if (options.fetchAll && response.links?.next) {
-    const allApps = [...response.data];
+    const allApps: App[] = ((response.data as unknown) as App[]).slice(0);
     let nextUrl = response.links.next;
 
     while (nextUrl) {
@@ -74,14 +78,14 @@ export async function fetchApps(
       if (!cursor) break;
 
       // Fetch next page
-      const nextQuery = { ...query, cursor };
+      const nextQuery = { ...query, cursor } as any;
       const nextResponse = await makeRequest<AppsResponse>(creds, {
         method: 'GET',
         path: '/v1/apps',
         query: nextQuery,
       });
 
-      allApps.push(...nextResponse.data);
+      allApps.push(...(((nextResponse.data as unknown) as App[])));
       nextUrl = nextResponse.links?.next || '';
     }
 
@@ -90,7 +94,7 @@ export async function fetchApps(
       data: allApps,
       links: {
         self: response.links.self,
-        first: response.links.first,
+        first: response.links.first || response.links.self,
       },
       meta: {
         paging: {

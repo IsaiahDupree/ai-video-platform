@@ -311,7 +311,11 @@ export default function ScreenshotEditorPage() {
                             onClick={(e) => e.stopPropagation()}
                           />
                           <span className={styles.captionItemText}>
-                            {layer.caption.localizedText?.['en-US'] || 'Untitled Caption'}
+                            {typeof layer.caption.text === 'string'
+                              ? layer.caption.text
+                              : Array.isArray(layer.caption.text) && layer.caption.text.length > 0
+                              ? layer.caption.text[0].text
+                              : 'Untitled Caption'}
                           </span>
                           <button
                             className={styles.deleteButton}
@@ -336,13 +340,14 @@ export default function ScreenshotEditorPage() {
                     <div className={styles.control}>
                       <label>Text</label>
                       <textarea
-                        value={selectedCaption.caption.localizedText?.['en-US'] || ''}
+                        value={
+                          typeof selectedCaption.caption.text === 'string'
+                            ? selectedCaption.caption.text
+                            : ''
+                        }
                         onChange={(e) =>
                           handleUpdateCaption(selectedCaption.id, {
-                            localizedText: {
-                              ...selectedCaption.caption.localizedText,
-                              'en-US': e.target.value,
-                            },
+                            text: e.target.value,
                           })
                         }
                         rows={3}
@@ -522,7 +527,7 @@ export default function ScreenshotEditorPage() {
                     screenshot ||
                     'https://via.placeholder.com/1260x2736/667eea/ffffff?text=Upload+Screenshot'
                   }
-                  frameStyle={{
+                  style={{
                     shadow: true,
                     shadowBlur: 40,
                     shadowColor: 'rgba(0, 0, 0, 0.3)',
@@ -576,7 +581,11 @@ export default function ScreenshotEditorPage() {
               >
                 <span className={styles.layerIcon}>💬</span>
                 <span className={styles.layerName}>
-                  {layer.caption.localizedText?.['en-US'] || 'Untitled'}
+                  {typeof layer.caption.text === 'string'
+                    ? layer.caption.text
+                    : Array.isArray(layer.caption.text) && layer.caption.text.length > 0
+                    ? layer.caption.text[0].text
+                    : 'Untitled'}
                 </span>
                 {!layer.visible && <span className={styles.hiddenBadge}>Hidden</span>}
               </div>

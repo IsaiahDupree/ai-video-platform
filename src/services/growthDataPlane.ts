@@ -238,6 +238,27 @@ export async function updateSubscription(
   return data;
 }
 
+export async function getSubscription(
+  subscriptionId: string
+): Promise<Subscription | null> {
+  const { data, error } = await supabaseAdmin
+    .from('subscription')
+    .select('*')
+    .eq('id', subscriptionId)
+    .single();
+
+  if (error && error.code === 'PGRST116') {
+    // No rows found
+    return null;
+  }
+
+  if (error) {
+    throw new Error(`Error fetching subscription: ${error.message}`);
+  }
+
+  return data;
+}
+
 export async function getPersonSubscriptions(
   personId: string
 ): Promise<Subscription[]> {
