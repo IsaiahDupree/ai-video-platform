@@ -1,7 +1,6 @@
 """
 SadTalker: Audio-Driven Talking Head Generation on Modal
 
-A simpler, more reliable talking head model compared to LongCat.
 Generates lip-synced video from audio + face image.
 
 Deploy: modal deploy scripts/modal_sadtalker.py
@@ -21,16 +20,123 @@ from pathlib import Path
 
 app = modal.App("sadtalker")
 
-# Volume for model weights (~2GB)
-volume = modal.Volume.from_name("sadtalker-models", create_if_missing=True)
-CACHE_DIR = "/cache"
+SADTALKER_ROOT = "/root/SadTalker"
+CHECKPOINT_DIR = f"{SADTALKER_ROOT}/checkpoints"
 
-# Build image with SadTalker dependencies
+
+def download_models():
+    """
+    Download all SadTalker models.
+    The official script has most downloads commented out, so we do it manually.
+    """
+    import subprocess
+    import os
+    import urllib.request
+    import zipfile
+    
+    os.chdir(SADTALKER_ROOT)
+    ckpt_dir = f"{SADTALKER_ROOT}/checkpoints"
+    gfpgan_dir = f"{SADTALKER_ROOT}/gfpgan/weights"
+    os.makedirs(ckpt_dir, exist_ok=True)
+    os.makedirs(gfpgan_dir, exist_ok=True)
+    
+    # All required model files from GitHub releases
+    checkpoint_files = [
+        # Core SadTalker models (from v0.0.2 release)
+        ("https://github.com/Winfredy/SadTalker/releases/download/v0.0.2/auido2exp_00300-model.pth", "checkpoints/auido2exp_00300-model.pth"),
+        ("https://github.com/Winfredy/SadTalker/releases/download/v0.0.2/auido2pose_00140-model.pth", "checkpoints/auido2pose_00140-model.pth"),
+        ("https://github.com/Winfredy/SadTalker/releases/download/v0.0.2/epoch_20.pth", "checkpoints/epoch_20.pth"),
+        ("https://github.com/Winfredy/SadTalker/releases/download/v0.0.2/facevid2vid_00189-model.pth.tar", "checkpoints/facevid2vid_00189-model.pth.tar"),
+        ("https://github.com/Winfredy/SadTalker/releases/download/v0.0.2/shape_predictor_68_face_landmarks.dat", "checkpoints/shape_predictor_68_face_landmarks.dat"),
+        ("https://github.com/Winfredy/SadTalker/releases/download/v0.0.2/wav2lip.pth", "checkpoints/wav2lip.pth"),
+        # Updated mapping models (from v0.0.2-rc)
+        ("https://github.com/OpenTalker/SadTalker/releases/download/v0.0.2-rc/mapping_00109-model.pth.tar", "checkpoints/mapping_00109-model.pth.tar"),
+        ("https://github.com/OpenTalker/SadTalker/releases/download/v0.0.2-rc/mapping_00229-model.pth.tar", "checkpoints/mapping_00229-model.pth.tar"),
+        ("https://github.com/OpenTalker/SadTalker/releases/download/v0.0.2-rc/SadTalker_V0.0.2_256.safetensors", "checkpoints/SadTalker_V0.0.2_256.safetensors"),
+        ("https://github.com/OpenTalker/SadTalker/releases/download/v0.0.2-rc/SadTalker_V0.0.2_512.safetensors", "checkpoints/SadTalker_V0.0.2_512.safetensors"),
+        # GFPGAN/facexlib weights
+        ("https://github.com/xinntao/facexlib/releases/download/v0.1.0/alignment_WFLW_4HG.pth", "gfpgan/weights/alignment_WFLW_4HG.pth"),
+        ("https://github.com/xinntao/facexlib/releases/download/v0.1.0/detection_Resnet50_Final.pth", "gfpgan/weights/detection_Resnet50_Final.pth"),
+        ("https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pth", "gfpgan/weights/GFPGANv1.4.pth"),
+        ("https://github.com/xinntao/facexlib/releases/download/v0.2.2/parsing_parsenet.pth", "gfpgan/weights/parsing_parsenet.pth"),
+    ]
+    
+    # Download each file
+    for url, dest in checkpoint_files:
+        dest_path = f"{SADTALKER_ROOT}/{dest}"
+        if os.path.exists(dest_path):
+            print(f"  ✓ {dest} (exists)")
+            continue
+        print(f"  Downloading {dest}...")
+        try:
+            urllib.request.urlretrieve(url, dest_path)
+            print(f"  ✓ {dest}")
+        except Exception as e:
+            print(f"  ✗ {dest}: {e}")
+    
+    # Download and extract hub.zip (face-alignment models)
+    hub_zip = f"{ckpt_dir}/hub.zip"
+    if not os.path.exists(f"{ckpt_dir}/hub"):
+        print("  Downloading hub.zip (face-alignment)...")
+        try:
+            urllib.request.urlretrieve(
+                "https://github.com/Winfredy/SadTalker/releases/download/v0.0.2/hub.zip",
+                hub_zip
+            )
+            with zipfile.ZipFile(hub_zip, 'r') as z:
+                z.extractall(ckpt_dir)
+            os.remove(hub_zip)
+            print("  ✓ hub/ extracted")
+        except Exception as e:
+            print(f"  ✗ hub.zip: {e}")
+    
+    # Download and extract BFM_Fitting.zip (3DMM face model)
+    bfm_zip = f"{ckpt_dir}/BFM_Fitting.zip"
+    if not os.path.exists(f"{ckpt_dir}/BFM_Fitting"):
+        print("  Downloading BFM_Fitting.zip (3DMM)...")
+        try:
+            urllib.request.urlretrieve(
+                "https://github.com/Winfredy/SadTalker/releases/download/v0.0.2/BFM_Fitting.zip",
+                bfm_zip
+            )
+            with zipfile.ZipFile(bfm_zip, 'r') as z:
+                z.extractall(ckpt_dir)
+            os.remove(bfm_zip)
+            print("  ✓ BFM_Fitting/ extracted")
+        except Exception as e:
+            print(f"  ✗ BFM_Fitting.zip: {e}")
+    
+    # Sanity check
+    need = [
+        "checkpoints/auido2pose_00140-model.pth",
+        "checkpoints/auido2exp_00300-model.pth",
+        "checkpoints/epoch_20.pth",
+        "checkpoints/wav2lip.pth",
+        "checkpoints/shape_predictor_68_face_landmarks.dat",
+        "checkpoints/BFM_Fitting",
+        "checkpoints/hub",
+        "gfpgan/weights/GFPGANv1.4.pth",
+    ]
+    print("\nVerifying checkpoint files:")
+    all_ok = True
+    for p in need:
+        full_path = os.path.join(SADTALKER_ROOT, p)
+        exists = os.path.exists(full_path)
+        print(f"  {p}: {'✓' if exists else '✗'}")
+        if not exists:
+            all_ok = False
+    
+    if all_ok:
+        print("\n✅ All checkpoints downloaded successfully!")
+
+
+# Build image with SadTalker dependencies + baked models
 image = (
     modal.Image.debian_slim(python_version="3.10")
     .apt_install(
         "git",
         "ffmpeg",
+        "wget",  # needed by download_models.sh
         "libgl1-mesa-glx",
         "libglib2.0-0",
         "libsm6",
@@ -41,7 +147,7 @@ image = (
         "torch==2.1.0",
         "torchvision==0.16.0",
         "torchaudio==2.1.0",
-        "numpy<2",
+        "numpy>=1.23,<1.25",  # Pin to 1.24.x for SadTalker compatibility
         "scipy",
         "librosa",
         "opencv-python-headless",
@@ -60,75 +166,26 @@ image = (
         "pydub",
         "safetensors",
         "fastapi",
-        "huggingface_hub",
     )
     .run_commands(
-        # Clone SadTalker
-        "git clone https://github.com/OpenTalker/SadTalker.git /root/SadTalker",
+        # Clone SadTalker repo (force rebuild v2)
+        f"git clone --depth 1 https://github.com/OpenTalker/SadTalker.git {SADTALKER_ROOT} && echo 'Cloned SadTalker'",
     )
+    # Bake models into image using official download script
+    .run_function(download_models, timeout=1800, gpu="A10G")
+    # Set working directory to SadTalker root (critical for relative paths)
+    .workdir(SADTALKER_ROOT)
+    # Set TORCH_HOME so face-alignment uses baked checkpoints, not ~/.cache
     .env({
-        "HF_HOME": CACHE_DIR,
+        "TORCH_HOME": f"{SADTALKER_ROOT}/checkpoints",
+        "XDG_CACHE_HOME": f"{SADTALKER_ROOT}/.cache",
     })
-)
-
-
-def download_checkpoints():
-    """Download SadTalker model checkpoints from GitHub/GDrive."""
-    import subprocess
-    import urllib.request
-    
-    ckpt_dir = f"{CACHE_DIR}/checkpoints"
-    os.makedirs(ckpt_dir, exist_ok=True)
-    
-    # Download from public mirrors
-    print("Downloading SadTalker checkpoints...")
-    
-    # Use gdown for Google Drive links (SadTalker official)
-    subprocess.run(["pip", "install", "-q", "gdown"], check=True)
-    
-    # Download checkpoints via gdown (official SadTalker links)
-    checkpoint_urls = {
-        # SadTalker V0.0.2 safetensors
-        "SadTalker_V0.0.2_256.safetensors": "1OWfDU67M7cKWAeMKQRWKvgqz9HtOhvhI",
-        "SadTalker_V0.0.2_512.safetensors": "1E4fH0nOB4T_oGphCDHl3KqpXnJNzQvXD",
-    }
-    
-    import gdown
-    for filename, file_id in checkpoint_urls.items():
-        output_path = f"{ckpt_dir}/{filename}"
-        if not os.path.exists(output_path):
-            try:
-                print(f"Downloading {filename}...")
-                gdown.download(id=file_id, output=output_path, quiet=False)
-            except Exception as e:
-                print(f"Warning: Could not download {filename}: {e}")
-    
-    # Download face parsing and other required models
-    face_parsing_url = "https://github.com/OpenTalker/SadTalker/releases/download/v0.0.2/mapping_00109-model.pth.tar"
-    try:
-        output_path = f"{ckpt_dir}/mapping_00109-model.pth.tar"
-        if not os.path.exists(output_path):
-            print("Downloading mapping model...")
-            urllib.request.urlretrieve(face_parsing_url, output_path)
-    except Exception as e:
-        print(f"Warning: Could not download mapping model: {e}")
-    
-    print("Checkpoint download complete!")
-
-
-# Build image with checkpoint download
-image = image.run_function(
-    download_checkpoints,
-    volumes={CACHE_DIR: volume},
-    timeout=1800,
-    gpu="A10G",
 )
 
 
 @app.cls(
     image=image,
     gpu="A10G",
-    volumes={CACHE_DIR: volume},
     timeout=600,
     scaledown_window=300,
 )
@@ -139,11 +196,20 @@ class SadTalkerGenerator:
     def setup(self):
         """Initialize SadTalker."""
         import sys
-        sys.path.insert(0, "/root/SadTalker")
+        sys.path.insert(0, SADTALKER_ROOT)
         
         print("Setting up SadTalker...")
-        self.sadtalker_dir = "/root/SadTalker"
-        self.checkpoint_dir = f"{CACHE_DIR}/checkpoints"
+        self.sadtalker_dir = SADTALKER_ROOT
+        self.checkpoint_dir = f"{SADTALKER_ROOT}/checkpoints"
+        
+        # Verify checkpoints are in place (baked during image build)
+        import subprocess
+        result = subprocess.run(
+            ["ls", "-la", self.checkpoint_dir],
+            capture_output=True, text=True
+        )
+        print(f"Checkpoints dir:\n{result.stdout}")
+        
         print("SadTalker ready!")
     
     @modal.method()
@@ -217,8 +283,8 @@ class SadTalkerGenerator:
             
             if result.returncode != 0:
                 return {
-                    "error": f"Generation failed: {result.stderr[:500]}",
-                    "stdout": result.stdout[:500],
+                    "error": f"Generation failed: {result.stderr[-2000:]}",
+                    "stdout": result.stdout[-2000:],
                 }
             
             # Find output video
@@ -262,7 +328,6 @@ def health():
 @app.function(
     image=image,
     gpu="A10G",
-    volumes={CACHE_DIR: volume},
     timeout=600,
     scaledown_window=300,
 )

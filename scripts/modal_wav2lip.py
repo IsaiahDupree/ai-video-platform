@@ -36,7 +36,7 @@ image = (
         "torch==2.1.0",
         "torchvision==0.16.0",
         "torchaudio==2.1.0",
-        "numpy<2",
+        "numpy>=1.23,<1.25",  # Pin to 1.24.x for compatibility
         "scipy",
         "librosa",
         "opencv-python-headless",
@@ -47,6 +47,7 @@ image = (
         "numba",
         "fastapi",
         "batch-face",
+        "huggingface_hub",
     )
     .run_commands(
         "git clone https://github.com/Rudrabha/Wav2Lip.git /root/Wav2Lip",
@@ -57,29 +58,31 @@ image = (
 
 
 def download_models():
-    """Download Wav2Lip model weights."""
-    import urllib.request
+    """Download Wav2Lip model weights from HuggingFace."""
+    from huggingface_hub import hf_hub_download
     
     model_dir = f"{CACHE_DIR}/models"
     os.makedirs(model_dir, exist_ok=True)
     
-    # Wav2Lip GAN model (best quality)
-    model_url = "https://github.com/Rudrabha/Wav2Lip/releases/download/v1.0/wav2lip_gan.pth"
-    model_path = f"{model_dir}/wav2lip_gan.pth"
+    # Wav2Lip GAN model (best quality) from HuggingFace
+    print("Downloading Wav2Lip GAN model from HuggingFace...")
+    hf_hub_download(
+        repo_id="Nekochu/Wav2Lip",
+        filename="wav2lip_gan.pth",
+        local_dir=model_dir,
+    )
+    print(f"Downloaded wav2lip_gan.pth")
     
-    if not os.path.exists(model_path):
-        print(f"Downloading Wav2Lip GAN model...")
-        urllib.request.urlretrieve(model_url, model_path)
-        print(f"Downloaded to {model_path}")
-    
-    # Face detection model
-    face_det_url = "https://github.com/Rudrabha/Wav2Lip/releases/download/v1.0/s3fd.pth"
-    face_det_path = f"{model_dir}/s3fd.pth"
-    
-    if not os.path.exists(face_det_path):
-        print(f"Downloading face detection model...")
-        urllib.request.urlretrieve(face_det_url, face_det_path)
-        print(f"Downloaded to {face_det_path}")
+    # Face detection model (s3fd) from facexlib repo
+    print("Downloading face detection model...")
+    import shutil
+    s3fd_path = hf_hub_download(
+        repo_id="camenduru/facexlib",
+        filename="s3fd-619a316812.pth",
+    )
+    # Copy to expected location with expected name
+    shutil.copy(s3fd_path, f"{model_dir}/s3fd.pth")
+    print(f"Downloaded s3fd.pth")
     
     print("Model download complete!")
 
