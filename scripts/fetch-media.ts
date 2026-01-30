@@ -75,6 +75,7 @@ const API_KEYS = {
   pixabay: process.env.PIXABAY_API_KEY || '',
   freesound: process.env.FREESOUND_API_KEY || '',
   tenor: process.env.TENOR_API_KEY || '',
+  giphy: process.env.GIPHY_API_KEY || '',
 };
 
 // =============================================================================
@@ -428,11 +429,56 @@ async function searchTenor(query: string, limit: number = 10): Promise<SearchRes
 }
 
 // =============================================================================
+// GIPHY GIF API
+// =============================================================================
+
+async function searchGiphy(query: string, limit: number = 10): Promise<SearchResult> {
+  if (!API_KEYS.giphy) {
+    console.log('  ⚠ GIPHY API key not set');
+    return { assets: [], total: 0, provider: 'giphy' };
+  }
+
+  // Use beta endpoint which has higher rate limits
+  const url = `https://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=${API_KEYS.giphy}&limit=${limit}&rating=g`;
+
+  try {
+    const data = await fetchJSON(url);
+
+    const assets: MediaAsset[] = (data.data || []).map((g: any) => {
+      const images = g.images || {};
+      // Prefer mp4, fallback to gif
+      const mp4Url = images.mp4?.mp4 || images.original?.mp4;
+      const gifUrl = images.original?.url;
+
+      return {
+        id: `giphy_${g.id}`,
+        provider: 'giphy',
+        type: 'gif',
+        source_url: g.url,
+        download_url: mp4Url || gifUrl || '',
+        preview_url: images.preview?.url || images.preview_gif?.url,
+        creator: g.username || 'GIPHY',
+        license: 'GIPHY License',
+        attribution_text: `GIF via GIPHY${g.username ? ` by ${g.username}` : ''}`,
+        width: g.images?.original?.width ? parseInt(g.images.original.width) : undefined,
+        height: g.images?.original?.height ? parseInt(g.images.original.height) : undefined,
+        tags: [g.title],
+      };
+    });
+
+    return { assets, total: data.pagination?.total_count || assets.length, provider: 'giphy' };
+  } catch (err) {
+    console.error(`  ✗ GIPHY API error: ${err}`);
+    return { assets: [], total: 0, provider: 'giphy' };
+  }
+}
+
+// =============================================================================
 // Unified Search
 // =============================================================================
 
 type MediaType = 'video' | 'image' | 'audio' | 'gif';
-type Provider = 'pexels' | 'pixabay' | 'nasa' | 'freesound' | 'tenor';
+type Provider = 'pexels' | 'pixabay' | 'nasa' | 'freesound' | 'tenor' | 'giphy';
 
 async function searchMedia(
   query: string,
@@ -465,6 +511,9 @@ async function searchMedia(
           break;
         case 'tenor':
           searchResult = await searchTenor(query, perPage);
+          break;
+        case 'giphy':
+          searchResult = await searchGiphy(query, perPage);
           break;
         default:
           continue;
