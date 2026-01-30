@@ -317,6 +317,25 @@ export class JobQueue {
     };
   }
 
+  // Wait for all jobs to complete
+  async waitForCompletion(pollInterval: number = 1000): Promise<void> {
+    return new Promise((resolve) => {
+      const checkCompletion = () => {
+        const pendingOrProcessing = Array.from(this.jobs.values()).some(
+          job => job.status === 'pending' || job.status === 'processing'
+        );
+
+        if (!pendingOrProcessing) {
+          resolve();
+        } else {
+          setTimeout(checkCompletion, pollInterval);
+        }
+      };
+
+      checkCompletion();
+    });
+  }
+
   // Clean up old jobs (optional maintenance)
   cleanup(olderThanMs: number = 24 * 60 * 60 * 1000): number {
     const cutoff = Date.now() - olderThanMs;
