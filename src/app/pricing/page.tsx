@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { tracking } from '@/services/tracking';
 import styles from './pricing.module.css';
 
@@ -94,6 +94,15 @@ const plans: Plan[] = [
 export default function PricingPage() {
   const [billingInterval, setBillingInterval] = useState<'monthly' | 'yearly'>('monthly');
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
+  // Track pricing page view (GDP-011: Person Features Computation)
+  // This event contributes to the pricing_page_views feature metric
+  useEffect(() => {
+    tracking.track('pricing_view', {
+      page: 'pricing',
+      timestamp: new Date().toISOString(),
+    });
+  }, []);
 
   const handleCheckout = (plan: Plan) => {
     // Track checkout started event

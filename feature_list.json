@@ -1866,7 +1866,7 @@
       "description": "Compute active_days, renders, pricing_views from events",
       "category": "growth-data-plane",
       "priority": "P1",
-      "passes": false
+      "passes": true
     },
     {
       "id": "GDP-012",

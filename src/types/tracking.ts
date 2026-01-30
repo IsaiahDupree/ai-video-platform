@@ -20,6 +20,7 @@ export type TrackingEvent =
   | 'landing_view'
   | 'signup_started'
   | 'signup_completed'
+  | 'login_completed'
   | 'first_video_created'
   | 'first_render_completed'
   | 'video_rendered'
@@ -34,7 +35,8 @@ export type TrackingEvent =
   | 'ad_generated'
   | 'render_failed'
   | 'api_error'
-  | 'slow_render';
+  | 'slow_render'
+  | 'pricing_view';
 
 export interface ITrackingService {
   identify(userId: string, properties?: UserProperties): void;

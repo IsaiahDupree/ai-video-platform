@@ -52,6 +52,11 @@ const EVENT_MAPPING: Record<TrackingEvent, {
     isStandard: true,
     getValue: () => 10, // Estimated value of a registration
   },
+  'login_completed': {
+    metaEvent: 'Lead',
+    isStandard: true,
+    getValue: () => 5, // Value of a returning user
+  },
 
   // Activation Events
   'first_video_created': {
@@ -90,6 +95,11 @@ const EVENT_MAPPING: Record<TrackingEvent, {
   },
 
   // Monetization Events
+  'pricing_view': {
+    metaEvent: 'ViewContent',
+    isStandard: true,
+    getValue: () => 0,
+  },
   'checkout_started': {
     metaEvent: 'InitiateCheckout',
     isStandard: true,
@@ -208,6 +218,11 @@ export function trackMetaAppEvent(
     case 'landing_view':
       metaParams.content_type = 'landing_page';
       metaParams.content_name = properties?.page as string || 'unknown';
+      break;
+
+    case 'pricing_view':
+      metaParams.content_type = 'pricing_page';
+      metaParams.content_name = 'pricing';
       break;
 
     case 'signup_started':
