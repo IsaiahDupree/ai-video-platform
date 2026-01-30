@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTracking } from '@/components/TrackingProvider';
 import Link from 'next/link';
+import posthog from 'posthog-js';
 
 export default function SignupPage() {
   const tracking = useTracking();
@@ -47,7 +48,7 @@ export default function SignupPage() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     // In a real app, you would create the user account here
-    const userId = `user_${Date.now()}`;
+    const userId = `user_${formData.email.split('@')[0]}_${Date.now()}`;
 
     // Track signup completion
     tracking.track('signup_completed', {
@@ -56,11 +57,23 @@ export default function SignupPage() {
       method: 'email',
     });
 
-    // Identify the user
+    // Identify the user with PostHog
+    // This enables PostHog identity stitching - linking the PostHog anonymous ID
+    // to the identified user for proper funnel and retention analysis
     tracking.identify(userId, {
       email: formData.email,
       name: formData.name,
+      user_id: userId,
       plan: 'free',
+    });
+
+    // Also set user properties in PostHog directly for identity stitching
+    posthog.setPersonProperties({
+      email: formData.email,
+      name: formData.name,
+      user_id: userId,
+      signup_source: 'email',
+      signup_time: new Date().toISOString(),
     });
 
     setIsSubmitting(false);

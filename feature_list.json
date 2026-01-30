@@ -1850,7 +1850,7 @@
       "description": "Call posthog.identify on login/signup",
       "category": "growth-data-plane",
       "priority": "P1",
-      "passes": false
+      "passes": true
     },
     {
       "id": "GDP-010",
