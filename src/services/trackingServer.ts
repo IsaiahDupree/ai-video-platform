@@ -8,6 +8,7 @@ import {
 } from '../types/tracking';
 import { metaCapiService } from './metaCapi';
 import { CapiUserData } from '@/types/metaCapi';
+import { generateEventId } from '@/utils/eventIdDedup';
 
 class ServerTrackingService implements ITrackingService {
   private client: PostHog | null = null;
@@ -85,11 +86,19 @@ class ServerTrackingService implements ITrackingService {
     }
 
     try {
+      // Auto-generate event ID if not provided (GDP-010: Meta Pixel + CAPI Dedup)
+      // This ensures client and server events with same ID get deduplicated by Meta
+      const eventId = (properties?.eventId as string) || generateEventId();
+      const enrichedProperties: EventProperties = {
+        ...properties,
+        eventId,
+      };
+
       // Track with PostHog
       this.client.capture({
         distinctId: properties?.userId as string || 'anonymous',
         event,
-        properties: properties || {},
+        properties: enrichedProperties,
       });
 
       // Also track with Meta CAPI if enabled
@@ -103,7 +112,7 @@ class ServerTrackingService implements ITrackingService {
           : undefined;
 
         // Track asynchronously (don't block)
-        metaCapiService.trackAppEvent(event, properties, userData).catch((error) => {
+        metaCapiService.trackAppEvent(event, enrichedProperties, userData).catch((error) => {
           console.error('Failed to track event with Meta CAPI:', error);
         });
       }

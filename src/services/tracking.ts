@@ -7,6 +7,7 @@ import {
   ITrackingService,
 } from '../types/tracking';
 import { trackMetaAppEvent } from './metaEvents';
+import { generateEventId } from '../utils/eventIdDedup';
 
 class ClientTrackingService implements ITrackingService {
   private initialized = false;
@@ -76,12 +77,20 @@ class ClientTrackingService implements ITrackingService {
     }
 
     try {
+      // Auto-generate event ID if not provided (GDP-010: Meta Pixel + CAPI Dedup)
+      // This enables deduplication across client Pixel and server CAPI events
+      const eventId = (properties?.eventId as string) || generateEventId();
+      const enrichedProperties: EventProperties = {
+        ...properties,
+        eventId,
+      };
+
       // Track with PostHog
-      posthog.capture(event, properties);
+      posthog.capture(event, enrichedProperties);
 
       // Also track with Meta Pixel (if available)
       if (typeof window !== 'undefined') {
-        trackMetaAppEvent(event, properties);
+        trackMetaAppEvent(event, enrichedProperties);
       }
     } catch (error) {
       console.error('Failed to track event:', error);

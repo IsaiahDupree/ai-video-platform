@@ -1858,7 +1858,7 @@
       "description": "Match Pixel eventID with CAPI event_id",
       "category": "growth-data-plane",
       "priority": "P1",
-      "passes": false
+      "passes": true
     },
     {
       "id": "GDP-011",
