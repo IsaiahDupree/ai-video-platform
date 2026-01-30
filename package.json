@@ -75,5 +75,13 @@
     "@types/react": "^18.2.0",
     "ts-node": "^10.9.0",
     "typescript": "^5.0.0"
+  },
+  "optionalDependencies": {
+    "@remotion/compositor-darwin-arm64": "^4.0.414",
+    "@remotion/compositor-linux-arm64-gnu": "^4.0.414",
+    "@remotion/compositor-linux-arm64-musl": "^4.0.414",
+    "@remotion/compositor-linux-x64-gnu": "^4.0.414",
+    "@remotion/compositor-linux-x64-musl": "^4.0.414",
+    "@remotion/compositor-win32-x64-msvc": "^4.0.414"
   }
 }
