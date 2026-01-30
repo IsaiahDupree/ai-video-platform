@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 106,
-  "completedFeatures": 97,
+  "completedFeatures": 98,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1810,7 +1810,23 @@
       "description": "Attribution spine for email → click → conversion",
       "category": "growth-data-plane",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "phase": 7,
+      "effort": "8pts",
+      "files": [
+        "src/types/clickRedirect.ts",
+        "src/services/clickRedirect.ts",
+        "src/app/api/redirect/click/route.ts",
+        "scripts/test-click-redirect.ts",
+        "docs/GDP-006-CLICK-REDIRECT-TRACKER.md"
+      ],
+      "dependencies": [
+        "GDP-001",
+        "GDP-002",
+        "GDP-003",
+        "GDP-004",
+        "GDP-005"
+      ]
     },
     {
       "id": "GDP-007",

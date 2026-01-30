@@ -110,7 +110,7 @@ export default function AdEditorPage() {
       if (brandKit.colors) elementsApplied.push('colors');
       if (brandKit.typography) elementsApplied.push('fonts');
       if (brandKit.spacing) elementsApplied.push('spacing');
-      if (brandKit.logo) elementsApplied.push('logo');
+      if (brandKit.logos && brandKit.logos.length > 0) elementsApplied.push('logo');
 
       trackBrandKitUsed(
         brandKit.id,

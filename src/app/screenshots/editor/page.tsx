@@ -7,7 +7,7 @@
 
 'use client';
 
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { trackFeatureDiscovery } from '../../../services/retentionTracking';
 import { DeviceFrame } from '@/components/DeviceFrame';
 import { CaptionOverlay } from '@/components/CaptionOverlay';
@@ -251,7 +251,7 @@ export default function ScreenshotEditorPage() {
                   >
                     {iPhones.map((device) => (
                       <option key={device.model} value={device.model}>
-                        {device.name}
+                        {device.displayName}
                       </option>
                     ))}
                   </select>

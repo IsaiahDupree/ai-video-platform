@@ -231,7 +231,7 @@ export default function AppleReviewPage() {
             filter={filter}
             onFilterChange={handleFilterChange}
             resourceTypes={Object.values(AppleApprovableResourceType)}
-            getResourceTypeDisplayName={getAppleResourceTypeDisplayName}
+            getResourceTypeDisplayName={(type: string) => getAppleResourceTypeDisplayName(type as AppleApprovableResourceType)}
           />
         </aside>
 

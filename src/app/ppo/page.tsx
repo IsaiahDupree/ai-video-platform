@@ -36,6 +36,17 @@ interface Treatment {
   locales: string[];
 }
 
+interface PPOTest {
+  id: string;
+  name: string;
+  app: string;
+  state: string;
+  startDate?: string;
+  endDate?: string;
+  treatments: number;
+  winner?: string;
+}
+
 export default function PPOPage() {
   const [activeTab, setActiveTab] = useState<'list' | 'create' | 'configure'>('list');
   const [selectedApp, setSelectedApp] = useState('');
@@ -46,7 +57,7 @@ export default function PPOPage() {
     { name: 'Treatment A', trafficProportion: 25, locales: ['en-US'] },
     { name: 'Treatment B', trafficProportion: 25, locales: ['en-US'] },
   ]);
-  const [mockTests, setMockTests] = useState([
+  const [mockTests, setMockTests] = useState<PPOTest[]>([
     {
       id: 'test-1',
       name: 'Holiday Campaign Test',

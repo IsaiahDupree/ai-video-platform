@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { trackFeatureDiscovery } from '../../services/retentionTracking';
 import styles from './cpp.module.css';
 
@@ -36,81 +36,17 @@ interface Localization {
 export default function CustomProductPagesPage() {
   // State
   const [activeTab, setActiveTab] = useState<'list' | 'create' | 'edit'>('list');
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [loading, setLoading] = useState(false);
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [apps, setApps] = useState<App[]>([]);
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [selectedApp, setSelectedApp] = useState<string | null>(null);
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [customProductPages, setCustomProductPages] = useState<CustomProductPage[]>([]);
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [selectedCPP, setSelectedCPP] = useState<CustomProductPage | null>(null);
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [localizations, setLocalizations] = useState<Localization[]>([]);
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
-
-  // Create form state
   const [cppName, setCppName] = useState('');
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [cppVisible, setCppVisible] = useState(true);
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [locale, setLocale] = useState('en-US');
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [promotionalText, setPromotionalText] = useState('');
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
-
-  // Error handling
   const [error, setError] = useState<string | null>(null);
-
-  // Track feature discovery
-  useEffect(() => {
-    trackFeatureDiscovery('custom_product_page');
-  }, []);
   const [success, setSuccess] = useState<string | null>(null);
 
   // Track feature discovery

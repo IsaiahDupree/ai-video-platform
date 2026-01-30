@@ -1,6 +1,59 @@
 # AI Video Platform - Progress Update
 
-## Recently Completed: GDP-005
+## Recently Completed: GDP-006
+
+**Feature:** Click Redirect Tracker
+**Date:** 2026-01-30
+**Status:** ✅ Complete
+
+### What Was Built
+
+Attribution spine for email → click → conversion tracking. Creates unique click tokens for every email link click and enables sophisticated multi-touch attribution to track conversions back to specific email campaigns.
+
+**Core Services:**
+
+1. **Create Click Token** (`createClickToken`)
+   - Generates unique click token for email links
+   - Captures UTM parameters and device information
+   - Configurable attribution window (default 72 hours)
+
+2. **Record Click and Redirect** (`recordClickAndRedirect`)
+   - Processes email link clicks
+   - Redirects to personalized or original destination
+   - Tracks click metadata
+
+3. **Attribute Conversion** (`attributeConversion`)
+   - Links conversions to email clicks
+   - Supports multiple attribution models (first-click, last-click, linear, time-decay)
+   - Stores revenue and conversion value
+
+4. **Campaign Click Statistics** (`getCampaignClickStats`)
+   - Aggregates clicks by campaign and link
+   - Calculates conversion rates per link
+   - Revenue attribution by link
+
+5. **Multi-Touch Attribution** (`getMultiTouchAttribution`)
+   - Time-decay attribution model
+   - Calculates credit across all touchpoints
+   - Identifies top channels and campaigns
+
+**API Routes:**
+
+- `GET /api/redirect/click` - Process email link clicks and redirect
+- `POST /api/redirect/click` - Programmatically create click redirects
+
+### Features
+
+✅ Unique click tokens for every email link
+✅ UTM parameter capture and tracking
+✅ Device and session tracking
+✅ Multi-touch attribution with multiple models
+✅ Campaign performance analytics
+✅ Revenue attribution by link and campaign
+✅ Configurable attribution windows
+✅ Automatic expiration of old click tokens
+
+## Previous: GDP-005
 
 **Feature:** Email Event Tracking
 **Date:** 2026-01-29
@@ -213,8 +266,8 @@ Returns list of all campaign names.
 ### Progress Stats
 
 - **Total Features:** 106
-- **Completed:** 97/106 (91%)
-- **Remaining:** 9
+- **Completed:** 98/106 (92.5%)
+- **Remaining:** 8
 - **Current Phase:** 7 (Tracking & Analytics)
 
 ### Recent Milestones

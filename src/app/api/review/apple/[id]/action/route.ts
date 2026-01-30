@@ -20,9 +20,10 @@ interface ActionRequestBody {
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body: ActionRequestBody = await request.json();
 
     // Validate required fields
@@ -50,7 +51,7 @@ export async function POST(
     // Perform action
     const service = getAppleApprovalService();
     const result = await service.performAction(
-      params.id,
+      id,
       body.action,
       body.userId,
       body.userName,
