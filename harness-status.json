@@ -1,16 +1,16 @@
 {
   "projectId": "remotion",
   "projectRoot": "/Users/isaiahdupree/Documents/Software/Remotion",
-  "lastUpdated": "2026-01-30T07:39:10.354Z",
+  "lastUpdated": "2026-01-30T07:57:36.099Z",
   "sessionType": "CODING",
   "status": "running",
   "stats": {
     "total": 114,
-    "passing": 0,
-    "pending": 114,
-    "percentComplete": "0.0"
+    "passing": 86,
+    "pending": 28,
+    "percentComplete": "75.4"
   },
   "pid": 38590,
-  "currentSession": 2,
+  "currentSession": 4,
   "model": "haiku"
 }

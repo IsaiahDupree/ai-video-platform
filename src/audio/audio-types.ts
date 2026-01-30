@@ -140,3 +140,40 @@ export const DEFAULT_MARKER_OVERLAY: MarkerOverlayConfig = {
   opacity: 0.85,
   scale: 1.0,
 };
+
+// =============================================================================
+// Visual Reveals System
+// =============================================================================
+
+export type VisualRevealKind =
+  | 'keyword'
+  | 'bullet'
+  | 'code'
+  | 'chart'
+  | 'cta'
+  | 'error'
+  | 'success';
+
+export interface VisualReveal {
+  t: number;                           // Timestamp in seconds
+  kind: VisualRevealKind;              // Element type
+  key?: string;                        // Label for analytics
+  beatId?: string;                     // Reference to beat
+}
+
+export interface VisualReveals {
+  version: string;
+  fps: number;
+  reveals: VisualReveal[];
+}
+
+// Reveal kind to macro cue mapping for SFX
+export const REVEAL_TO_MACRO_CUE: Record<VisualRevealKind, string> = {
+  keyword: 'reveal_riser',
+  bullet: 'text_ping',
+  code: 'keyboard_tick',
+  chart: 'transition_whoosh',
+  cta: 'sparkle_rise',
+  error: 'error_buzz',
+  success: 'success_ding',
+};
