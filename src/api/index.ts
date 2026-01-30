@@ -17,6 +17,14 @@ export {
   generateStylePrompt,
   ENHANCEMENT_TYPES,
 } from './video-to-video';
+export {
+  Wan22Client,
+  Wan22Settings,
+  Wan22GenerateRequest,
+  Wan22GenerateResponse,
+  createWan22Client,
+  generateWan22Video,
+} from './wan2-2-client';
 
 // Re-export data types
 export {
