@@ -1,0 +1,208 @@
+{
+  "templateId": "sample_hero_ad_1080",
+  "name": "Hero Product Ad - Square",
+  "description": "A versatile product showcase template with headline, subhead, hero image, and CTA",
+  "version": "1.0.0",
+  "canvas": {
+    "width": 1080,
+    "height": 1080,
+    "bgColor": "#0a0a0f"
+  },
+  "layers": [
+    {
+      "id": "bg_gradient",
+      "type": "shape",
+      "z": 0,
+      "rect": { "x": 0, "y": 0, "w": 1080, "h": 1080 },
+      "shape": {
+        "kind": "rect",
+        "radius": 0,
+        "opacity": 1,
+        "strokeWidth": 0,
+        "gradient": {
+          "type": "linear",
+          "angle": 135,
+          "stops": [
+            { "offset": 0, "color": "#0a0a0f" },
+            { "offset": 0.5, "color": "#1a1a2e" },
+            { "offset": 1, "color": "#0f0f1a" }
+          ]
+        }
+      },
+      "visible": true
+    },
+    {
+      "id": "accent_line",
+      "type": "shape",
+      "z": 1,
+      "rect": { "x": 0, "y": 0, "w": 1080, "h": 6 },
+      "shape": {
+        "kind": "rect",
+        "radius": 0,
+        "opacity": 1,
+        "strokeWidth": 0,
+        "gradient": {
+          "type": "linear",
+          "angle": 90,
+          "stops": [
+            { "offset": 0, "color": "#6366f1" },
+            { "offset": 0.5, "color": "#8b5cf6" },
+            { "offset": 1, "color": "#a855f7" }
+          ]
+        }
+      },
+      "visible": true
+    },
+    {
+      "id": "hero_image",
+      "type": "image",
+      "z": 5,
+      "rect": { "x": 540, "y": 180, "w": 480, "h": 480 },
+      "image": {
+        "fit": "contain",
+        "anchor": "center",
+        "borderRadius": 24,
+        "opacity": 1
+      },
+      "bind": { "assetKey": "hero" },
+      "constraints": { "lockAspect": true },
+      "visible": true
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "z": 10,
+      "rect": { "x": 60, "y": 200, "w": 460, "h": 280 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 800,
+        "fontSize": 64,
+        "lineHeight": 1.1,
+        "letterSpacing": -2,
+        "color": "#ffffff",
+        "align": "left",
+        "valign": "top"
+      },
+      "bind": { "textKey": "headline" },
+      "constraints": {
+        "mode": "fitTextOnNLines",
+        "maxLines": 3,
+        "minFontSize": 42,
+        "overflow": "hidden"
+      },
+      "visible": true
+    },
+    {
+      "id": "subheadline",
+      "type": "text",
+      "z": 11,
+      "rect": { "x": 60, "y": 520, "w": 460, "h": 120 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 400,
+        "fontSize": 24,
+        "lineHeight": 1.5,
+        "letterSpacing": 0,
+        "color": "#a1a1aa",
+        "align": "left",
+        "valign": "top"
+      },
+      "bind": { "textKey": "subheadline" },
+      "constraints": {
+        "mode": "fitTextOnNLines",
+        "maxLines": 3,
+        "minFontSize": 18,
+        "overflow": "hidden"
+      },
+      "visible": true
+    },
+    {
+      "id": "cta_button",
+      "type": "shape",
+      "z": 20,
+      "rect": { "x": 60, "y": 700, "w": 300, "h": 70 },
+      "shape": {
+        "kind": "rect",
+        "fill": "#6366f1",
+        "radius": 16,
+        "opacity": 1,
+        "strokeWidth": 0
+      },
+      "visible": true
+    },
+    {
+      "id": "cta_text",
+      "type": "text",
+      "z": 21,
+      "rect": { "x": 60, "y": 700, "w": 300, "h": 70 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 600,
+        "fontSize": 22,
+        "lineHeight": 1,
+        "letterSpacing": 0.5,
+        "color": "#ffffff",
+        "align": "center",
+        "valign": "middle",
+        "textTransform": "uppercase"
+      },
+      "bind": { "textKey": "cta" },
+      "constraints": {
+        "mode": "fixed",
+        "overflow": "hidden"
+      },
+      "visible": true
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "z": 30,
+      "rect": { "x": 60, "y": 920, "w": 160, "h": 60 },
+      "image": {
+        "fit": "contain",
+        "anchor": "left",
+        "borderRadius": 0,
+        "opacity": 0.9
+      },
+      "bind": { "assetKey": "logo" },
+      "constraints": { "lockAspect": true },
+      "visible": true
+    },
+    {
+      "id": "tagline",
+      "type": "text",
+      "z": 31,
+      "rect": { "x": 240, "y": 935, "w": 400, "h": 30 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 400,
+        "fontSize": 16,
+        "lineHeight": 1,
+        "letterSpacing": 1,
+        "color": "#71717a",
+        "align": "left",
+        "valign": "middle",
+        "textTransform": "uppercase"
+      },
+      "bind": { "textKey": "tagline" },
+      "visible": true
+    }
+  ],
+  "bindings": {
+    "text": {
+      "headline": "Transform Your Workflow with AI",
+      "subheadline": "Automate repetitive tasks and focus on what matters most. Get started in minutes.",
+      "cta": "Start Free Trial",
+      "tagline": "Trusted by 10,000+ teams"
+    },
+    "assets": {
+      "hero": "https://placehold.co/480x480/1a1a2e/6366f1?text=Hero+Image",
+      "logo": "https://placehold.co/160x60/transparent/ffffff?text=LOGO"
+    }
+  },
+  "meta": {
+    "source": { "type": "manual" },
+    "tags": ["product", "saas", "tech", "hero"],
+    "category": "product-showcase"
+  }
+}

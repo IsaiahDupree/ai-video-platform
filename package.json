@@ -30,7 +30,11 @@
     "render:demo": "npx remotion render FullVideoDemo --output output/full_demo.mp4",
     "generate:explainer": "npx tsx scripts/generate-explainer.ts",
     "remix:character": "npx tsx scripts/remix-character.ts",
-    "remix:gemini": "npx tsx scripts/remix-character-gemini.ts"
+    "remix:gemini": "npx tsx scripts/remix-character-gemini.ts",
+    "ad:render": "npx tsx scripts/render-ad-still.ts",
+    "ad:extract": "npx tsx scripts/extract-ad-template.ts",
+    "ad:variants": "npx tsx scripts/render-ad-still.ts --variants",
+    "ad:test": "npx tsx scripts/run-ad-tests.ts"
   },
   "dependencies": {
     "@remotion/bundler": "^4.0.0",

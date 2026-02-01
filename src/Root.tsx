@@ -30,6 +30,11 @@ import {
   META_AD_SIZES,
   PHASE_A_ANGLES,
 } from './compositions/everreach';
+import {
+  AdTemplateStill,
+  defaultAdTemplateStillProps,
+  AD_CANVAS_PRESETS,
+} from './ad-templates';
 import { StripePricing, stripePricingDefaultProps } from './compositions/StripePricing';
 import { StripeProductCard, STRIPE_PRODUCTS } from './compositions/StripeProductCard';
 import {
@@ -377,6 +382,38 @@ export const RemotionRoot: React.FC = () => {
           eventLocation: 'Virtual Event',
           ctaText: 'Register Now',
         }}
+      />
+
+      {/* ============================================================= */}
+      {/* AD TEMPLATE DSL - AI-Powered Template System                  */}
+      {/* Use 'npx remotion still <id> output.png --props=<json>'      */}
+      {/* ============================================================= */}
+
+      {/* AdTemplate - Instagram Square (1080x1080) */}
+      <Still
+        id="AdTemplate-Square"
+        component={AdTemplateStill}
+        width={AD_CANVAS_PRESETS.instagram_square.width}
+        height={AD_CANVAS_PRESETS.instagram_square.height}
+        defaultProps={defaultAdTemplateStillProps}
+      />
+
+      {/* AdTemplate - Instagram Story (1080x1920) */}
+      <Still
+        id="AdTemplate-Story"
+        component={AdTemplateStill}
+        width={AD_CANVAS_PRESETS.instagram_story.width}
+        height={AD_CANVAS_PRESETS.instagram_story.height}
+        defaultProps={defaultAdTemplateStillProps}
+      />
+
+      {/* AdTemplate - Facebook Post (1200x630) */}
+      <Still
+        id="AdTemplate-Landscape"
+        component={AdTemplateStill}
+        width={AD_CANVAS_PRESETS.facebook_post.width}
+        height={AD_CANVAS_PRESETS.facebook_post.height}
+        defaultProps={defaultAdTemplateStillProps}
       />
 
       {/* ============================================================= */}

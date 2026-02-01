@@ -1,0 +1,90 @@
+{
+  "baseTemplateId": "sample_hero_ad_1080",
+  "description": "Copy test variants for A/B testing different headlines",
+  "variants": [
+    {
+      "variantId": "copy_test_1",
+      "name": "Benefit-focused headline",
+      "overrides": {
+        "text": {
+          "headline": "Save 10 Hours Every Week",
+          "subheadline": "Our AI assistant handles the busywork so you can focus on growing your business.",
+          "cta": "Try It Free"
+        }
+      }
+    },
+    {
+      "variantId": "copy_test_2",
+      "name": "Problem-focused headline",
+      "overrides": {
+        "text": {
+          "headline": "Tired of Manual Data Entry?",
+          "subheadline": "Let AI do the heavy lifting. Automate your workflows in minutes, not months.",
+          "cta": "Automate Now"
+        }
+      }
+    },
+    {
+      "variantId": "copy_test_3",
+      "name": "Social proof headline",
+      "overrides": {
+        "text": {
+          "headline": "Join 50,000+ Teams Already Saving Time",
+          "subheadline": "See why industry leaders trust us to streamline their operations.",
+          "cta": "See How It Works"
+        }
+      }
+    },
+    {
+      "variantId": "copy_test_4",
+      "name": "Urgency headline",
+      "overrides": {
+        "text": {
+          "headline": "Your Competitors Are Already Automating",
+          "subheadline": "Don't get left behind. Start your automation journey today.",
+          "cta": "Get Started Now"
+        }
+      }
+    },
+    {
+      "variantId": "copy_test_5",
+      "name": "Question headline",
+      "overrides": {
+        "text": {
+          "headline": "What Would You Do With 10 Extra Hours?",
+          "subheadline": "Reclaim your time with intelligent automation that learns your workflows.",
+          "cta": "Discover More"
+        }
+      }
+    }
+  ],
+  "imageTests": [
+    {
+      "variantId": "image_test_1",
+      "name": "Dashboard screenshot",
+      "overrides": {
+        "assets": {
+          "hero": "https://placehold.co/480x480/1a1a2e/22c55e?text=Dashboard"
+        }
+      }
+    },
+    {
+      "variantId": "image_test_2",
+      "name": "Team collaboration",
+      "overrides": {
+        "assets": {
+          "hero": "https://placehold.co/480x480/1a1a2e/3b82f6?text=Team"
+        }
+      }
+    },
+    {
+      "variantId": "image_test_3",
+      "name": "Product mockup",
+      "overrides": {
+        "assets": {
+          "hero": "https://placehold.co/480x480/1a1a2e/f59e0b?text=Product"
+        }
+      }
+    }
+  ]
+}

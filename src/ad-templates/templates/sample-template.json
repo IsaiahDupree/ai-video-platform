@@ -1,0 +1,158 @@
+{
+  "templateId": "sample_1080_square_v1",
+  "name": "Sample Square Ad Template",
+  "description": "A versatile 1080x1080 ad template with headline, subheadline, hero image, and CTA",
+  "version": "1.0.0",
+  "canvas": {
+    "width": 1080,
+    "height": 1080,
+    "bgColor": "#0b0f1a"
+  },
+  "layers": [
+    {
+      "id": "bg_gradient",
+      "type": "shape",
+      "z": 0,
+      "rect": { "x": 0, "y": 0, "w": 1080, "h": 1080 },
+      "shape": {
+        "kind": "rect",
+        "gradient": {
+          "type": "linear",
+          "angle": 135,
+          "stops": [
+            { "offset": 0, "color": "#0b0f1a" },
+            { "offset": 1, "color": "#1a1f2e" }
+          ]
+        }
+      },
+      "visible": true
+    },
+    {
+      "id": "hero_image",
+      "type": "image",
+      "z": 10,
+      "rect": { "x": 540, "y": 120, "w": 480, "h": 480 },
+      "image": {
+        "fit": "cover",
+        "anchor": "center",
+        "borderRadius": 24
+      },
+      "bind": { "assetKey": "hero" },
+      "constraints": { "lockAspect": true },
+      "visible": true
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "z": 20,
+      "rect": { "x": 60, "y": 180, "w": 450, "h": 280 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 800,
+        "fontSize": 64,
+        "lineHeight": 1.05,
+        "letterSpacing": -1,
+        "color": "#ffffff",
+        "align": "left",
+        "valign": "top"
+      },
+      "bind": { "textKey": "headline" },
+      "constraints": {
+        "mode": "fitTextOnNLines",
+        "maxLines": 4,
+        "minFontSize": 36
+      },
+      "visible": true
+    },
+    {
+      "id": "subheadline",
+      "type": "text",
+      "z": 21,
+      "rect": { "x": 60, "y": 480, "w": 450, "h": 100 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 400,
+        "fontSize": 22,
+        "lineHeight": 1.4,
+        "letterSpacing": 0,
+        "color": "#a0a0b0",
+        "align": "left",
+        "valign": "top"
+      },
+      "bind": { "textKey": "subheadline" },
+      "visible": true
+    },
+    {
+      "id": "cta_button",
+      "type": "shape",
+      "z": 30,
+      "rect": { "x": 60, "y": 640, "w": 240, "h": 64 },
+      "shape": {
+        "kind": "rect",
+        "fill": "#5B78C7",
+        "radius": 12
+      },
+      "visible": true
+    },
+    {
+      "id": "cta_text",
+      "type": "text",
+      "z": 31,
+      "rect": { "x": 60, "y": 640, "w": 240, "h": 64 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 600,
+        "fontSize": 18,
+        "lineHeight": 1.0,
+        "letterSpacing": 0.5,
+        "color": "#ffffff",
+        "align": "center",
+        "valign": "middle",
+        "textTransform": "uppercase"
+      },
+      "bind": { "textKey": "cta" },
+      "constraints": { "mode": "fitText", "minFontSize": 14 },
+      "visible": true
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "z": 40,
+      "rect": { "x": 60, "y": 940, "w": 120, "h": 40 },
+      "image": {
+        "fit": "contain",
+        "anchor": "center"
+      },
+      "bind": { "assetKey": "logo" },
+      "visible": true
+    },
+    {
+      "id": "accent_line",
+      "type": "shape",
+      "z": 5,
+      "rect": { "x": 60, "y": 150, "w": 80, "h": 4 },
+      "shape": {
+        "kind": "rect",
+        "fill": "#5B78C7",
+        "radius": 2
+      },
+      "visible": true
+    }
+  ],
+  "bindings": {
+    "text": {
+      "headline": "Build Better Products Faster",
+      "subheadline": "AI-powered tools that streamline your workflow and boost productivity.",
+      "cta": "Start Free Trial"
+    },
+    "assets": {
+      "hero": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800",
+      "logo": ""
+    }
+  },
+  "meta": {
+    "source": { "type": "manual" },
+    "tags": ["tech", "saas", "product"],
+    "category": "technology"
+  }
+}
