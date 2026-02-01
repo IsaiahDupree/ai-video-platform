@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Format Definition Schema",
+  "description": "Configuration schema for video format definitions",
+  "type": "object",
+  "required": ["format_id", "layout", "scene_order"],
+  "properties": {
+    "format_id": {
+      "type": "string",
+      "description": "Unique identifier for this format (e.g., 'explainer_v1')"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable format name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Format description"
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["single_focus", "grid", "split", "carousel", "stack"],
+      "description": "Primary layout style"
+    },
+    "scene_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Order of scene types (e.g., ['intro', 'item_loop', 'outro'])"
+    },
+    "item_mapping": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Source field in content (e.g., 'items')"
+        },
+        "scene": {
+          "type": "string",
+          "description": "Scene component to use (e.g., 'TopicScene')"
+        },
+        "filter": {
+          "type": "object",
+          "description": "Optional filter for items"
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "properties": {
+        "per_item_seconds": {
+          "type": "number",
+          "description": "Default duration per item in seconds"
+        },
+        "transition_seconds": {
+          "type": "number",
+          "default": 0.4,
+          "description": "Transition duration between scenes"
+        },
+        "intro_seconds": {
+          "type": "number",
+          "description": "Intro scene duration"
+        },
+        "outro_seconds": {
+          "type": "number",
+          "description": "Outro scene duration"
+        }
+      }
+    },
+    "visuals": {
+      "type": "object",
+      "properties": {
+        "background": {
+          "type": "string",
+          "description": "Background color or gradient"
+        },
+        "zoom": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable zoom effects"
+        },
+        "accent_color": {
+          "type": "string",
+          "description": "Accent color for highlights"
+        },
+        "text_color": {
+          "type": "string",
+          "default": "#ffffff",
+          "description": "Primary text color"
+        },
+        "font_family": {
+          "type": "string",
+          "default": "Arial",
+          "description": "Font family"
+        },
+        "font_size": {
+          "type": "number",
+          "default": 64,
+          "description": "Base font size"
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "properties": {
+        "voiceover": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable voiceover/narration"
+        },
+        "music": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable background music"
+        },
+        "sound_effects": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable sound effects"
+        }
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "integer",
+          "default": 1920,
+          "description": "Video width in pixels"
+        },
+        "height": {
+          "type": "integer",
+          "default": 1080,
+          "description": "Video height in pixels"
+        },
+        "aspect_ratio": {
+          "type": "string",
+          "enum": ["16:9", "9:16", "1:1", "4:5"],
+          "default": "16:9",
+          "description": "Aspect ratio"
+        }
+      }
+    }
+  }
+}
+

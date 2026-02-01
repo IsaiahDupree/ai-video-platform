@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Universal Content Schema",
+  "description": "Format-agnostic content schema for video rendering service",
+  "type": "object",
+  "required": ["meta", "items"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["project_id"],
+      "properties": {
+        "project_id": {
+          "type": "string",
+          "description": "Unique identifier for this content project"
+        },
+        "language": {
+          "type": "string",
+          "default": "en",
+          "description": "Language code (ISO 639-1)"
+        },
+        "tone": {
+          "type": "string",
+          "enum": ["neutral", "casual", "professional", "energetic", "calm"],
+          "default": "neutral",
+          "description": "Overall tone of the content"
+        },
+        "target_audience": {
+          "type": "string",
+          "description": "Target audience description"
+        },
+        "duration_target": {
+          "type": "number",
+          "description": "Target duration in seconds (optional)"
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "description": "Content items (topics, beats, scenes, etc.)",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "title"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this item"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["topic", "comparison", "beat", "scene", "intro", "outro", "transition"],
+            "description": "Type of content item"
+          },
+          "title": {
+            "type": "string",
+            "description": "Primary title/heading"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description or body text"
+          },
+          "subtitle": {
+            "type": "string",
+            "description": "Optional subtitle"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Icon identifier or emoji"
+          },
+          "order": {
+            "type": "integer",
+            "description": "Display order (0-indexed)"
+          },
+          "media": {
+            "type": "object",
+            "properties": {
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Array of image URLs or paths"
+              },
+              "videos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Array of video URLs or paths"
+              }
+            }
+          },
+          "audio": {
+            "type": "object",
+            "properties": {
+              "narration": {
+                "type": "string",
+                "description": "Narration text (for TTS)"
+              },
+              "duration": {
+                "type": "number",
+                "description": "Audio duration in seconds"
+              },
+              "file": {
+                "type": "string",
+                "description": "Pre-generated audio file path"
+              }
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Format-specific metadata",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}
+
