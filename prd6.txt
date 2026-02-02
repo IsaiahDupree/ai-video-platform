@@ -1,0 +1,602 @@
+Skip to content
+Chat history
+
+
+
+
+
+You said:
+Can we get extensive documentation on basically using Remotion for ad creative? Basically, we want to be able to analyze an existing static ad or a static ad template, or basically ads that already exist on Canva, and basically revamp them in our image, and basically be able to have full fidelity of where we're placing text and where we're placing images and where we're placing everything to make it all make sense in the minutest of most detail and with the most selective of selectors and the text of text fields for each and every image, for each and every ad creative that we pull or feed in into the system, let AI analysis have analysis over it to the fullest and greatest extent to get the most pixel depth placement of text fields as well as image centering, to be able to recreate to a very extensive extent the same, basically the same ad copy, right, place everything in the same exact place, but with new and creative and different text with using Remotion. And we're gonna have tests to make sure that this thing can work, as in when we send in an example ad image, static ad, that it will basically recreate the same thing and make a template for it, and we could use it across different other ad creatives and different other, you know, basically when a user sends in an example ad copy, they will be able to get a template and then be able to prompt this system to create another ad using the same template and have different copy on it, right? So we could test the different copy on that same template and or be able to test different images on that same template, but keep the same copy.
+ChatGPT said:
+
+Thought for 3m 28s
+Below is an “engineering-grade” doc you can drop into a repo as your north-star for pixel-accurate static ad templating + variant generation in Remotion—including ingestion from a reference ad image or a Canva design, AI layout extraction, a template DSL, Remotion rendering, and a test harness that proves you can recreate layouts reliably.
+
+One important boundary up front: recreating someone else’s copyrighted ad 1:1 to reuse commercially can be IP-infringing. The system below is framed for revamping into your own brand (your assets, your fonts, your copy, your logos), while still achieving “same layout, different creative” when you have rights to the source (e.g., your own Canva templates, licensed templates, or internal design system).
+
+1) What we’re building
+Goal
+A system where a user can:
+
+Upload a reference static ad (PNG/JPG) or select a Canva design they own.
+
+The system extracts a high-fidelity layout template: text boxes, image slots, shapes, colors, fonts, alignment, and layer order.
+
+The system generates:
+
+a Template JSON (the “single source of truth”)
+
+a Remotion Still renderer that consumes that JSON as props
+
+The user can generate variants by swapping:
+
+copy only (same images)
+
+images only (same copy)
+
+both
+
+Tests guarantee:
+
+template recreation accuracy vs reference
+
+constraints (no overflow, safe margins, alignment rules)
+
+deterministic rendering
+
+Why Remotion
+Remotion can define still images (not just video) using <Still />. 
+
+And you can render a single still via the Node renderer API renderStill() from @remotion/renderer. 
+
+2) System overview
+Components
+A) Ingestion
+
+Input types:
+
+reference_image (PNG/JPG)
+
+canva_design_id (preferred when available)
+
+B) Layout Extraction (AI + heuristics)
+
+Output: TemplateDSL (JSON)
+
+C) Template Engine
+
+Converts TemplateDSL → Remotion component props
+
+Optional: generates a typed “semantic mapping” (headline, CTA, logo, hero image)
+
+D) Remotion Renderer
+
+<Still /> composition(s) for each ad size
+
+Uses <Img /> to guarantee assets are loaded properly during rendering 
+
+Uses font loading + layout measurement utilities for tight text-fitting
+
+E) Variant Generator
+
+Takes TemplateDSL + VariantSpec → final props JSON
+
+F) QA & Tests
+
+Golden-image diff tests
+
+Layer-level geometry tests
+
+Overflow / wrapping tests
+
+Render determinism tests
+
+3) Template DSL (the core contract)
+You want a format that is:
+
+pixel-native (everything in px for a given canvas size)
+
+layered (z-index order)
+
+bindable (copy/image variables)
+
+constraint-aware (fit text, alignment, lock aspect ratio)
+
+TemplateDSL v1 (example)
+{
+  "templateId": "tpl_1080_square_v1",
+  "canvas": { "width": 1080, "height": 1080, "bgColor": "#0b0f1a" },
+  "layers": [
+    {
+      "id": "bg_shape",
+      "type": "shape",
+      "z": 0,
+      "rect": { "x": 0, "y": 0, "w": 1080, "h": 1080 },
+      "shape": { "kind": "rect", "fill": "#0b0f1a", "radius": 0 }
+    },
+    {
+      "id": "hero_image",
+      "type": "image",
+      "z": 10,
+      "rect": { "x": 540, "y": 120, "w": 420, "h": 420 },
+      "image": { "fit": "cover", "anchor": "center" },
+      "bind": { "assetKey": "hero" },
+      "constraints": { "lockAspect": true }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "z": 20,
+      "rect": { "x": 80, "y": 160, "w": 420, "h": 220 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 800,
+        "fontSize": 64,
+        "lineHeight": 1.05,
+        "letterSpacing": -1,
+        "color": "#ffffff",
+        "align": "left",
+        "valign": "top"
+      },
+      "bind": { "textKey": "headline" },
+      "constraints": {
+        "mode": "fitTextOnNLines",
+        "maxLines": 3,
+        "minFontSize": 36
+      }
+    },
+    {
+      "id": "cta_button",
+      "type": "shape",
+      "z": 30,
+      "rect": { "x": 80, "y": 720, "w": 420, "h": 110 },
+      "shape": { "kind": "rect", "fill": "#5B78C7", "radius": 28 }
+    },
+    {
+      "id": "cta_text",
+      "type": "text",
+      "z": 31,
+      "rect": { "x": 80, "y": 720, "w": 420, "h": 110 },
+      "text": {
+        "fontFamily": "Inter",
+        "fontWeight": 700,
+        "fontSize": 38,
+        "lineHeight": 1.0,
+        "color": "#ffffff",
+        "align": "center",
+        "valign": "middle"
+      },
+      "bind": { "textKey": "cta" },
+      "constraints": { "mode": "fitText", "minFontSize": 24 }
+    }
+  ],
+  "bindings": {
+    "text": {
+      "headline": "default headline",
+      "cta": "learn more"
+    },
+    "assets": {
+      "hero": "https://cdn.example.com/hero.png"
+    }
+  },
+  "meta": {
+    "source": { "type": "reference_image", "sha256": "..." },
+    "extraction": { "confidence": 0.86 }
+  }
+}
+“Selectors” in this world
+Instead of DOM selectors, define stable layer selectors:
+
+headline.rect.x
+
+headline.text.fontSize
+
+hero_image.bind.assetKey
+
+This gives you the “minutest detail” control you’re asking for—without brittle CSS selectors.
+
+4) Ingestion paths
+Path A (best): Canva design → true layer coordinates
+If the user’s reference ad is in Canva, you can often avoid guessing.
+
+Canva Apps SDK – Design Editing API
+
+Canva’s Design Editing API lets apps read and edit the “ingredients” of a design (pages/elements). 
+
+You open a design session with openDesign and get a page snapshot containing elements. 
+
+Elements can include geometry like top, left, width and text formatting (example shown in docs when creating a text element state). 
+
+Canva export for reference renders
+
+Canva Connect “Create design export job” can export a design to PNG/JPG/PDF/etc. 
+
+That exported PNG becomes your golden reference for your pixel-diff tests.
+
+This is the “dream path” because you get:
+
+layer structure
+
+order/grouping
+
+precise positions
+
+text styles (often)
+
+fewer OCR/layout mistakes
+
+Path B: Reference PNG/JPG only → AI layout extraction
+When you only have a flattened image, do:
+
+Detect canvas size
+
+OCR all text (with bounding boxes)
+
+Infer text grouping (headline vs body vs CTA)
+
+Detect image regions (largest non-text blocks, product photo areas)
+
+Detect shapes (buttons, banners, cards)
+
+Infer z-order (background → shapes → images → text)
+
+This will never be 100% perfect automatically, so design for:
+
+human-in-the-loop corrections (a lightweight template editor)
+
+confidence scoring + “needs review” flags per layer
+
+Optional: import from Figma
+If you later add a Figma path, it’s usually easier to get structured layer info than from a flattened export.
+
+5) AI extraction spec
+Output requirements (non-negotiable)
+Your extraction model must output:
+
+canvas width/height
+
+ordered layers
+
+each layer:
+
+type: text | image | shape
+
+bounding rect: x/y/w/h (px)
+
+style properties (font size, color, radius, etc.)
+
+binding key (headline, cta, hero, logo, etc.)
+
+constraints (fit text, lock aspect, align)
+
+A practical “two-pass” extraction
+Pass 1: literal reconstruction
+
+“What is on the image and where is it?”
+
+Pass 2: semantic templating
+
+“Which elements are variable vs fixed?”
+
+“Name slots like headline, subhead, cta, logo, hero”
+
+“Infer constraints: max lines, min font size, text-fit mode”
+
+Confidence model
+Store per-layer confidence:
+
+OCR confidence
+
+style inference confidence (font family is often lowest)
+
+shape classification confidence
+
+Use this to decide:
+
+auto-approve template
+
+require manual review
+
+6) Remotion implementation guide for pixel-accurate still ads
+6.1 Define still compositions
+Use <Still /> rather than <Composition /> for static ad creatives. 
+
+You’ll define one Still per size (1080x1080, 1080x1920, 1200x628, etc.).
+
+6.2 Render stills server-side
+Use renderStill() from @remotion/renderer to output a PNG from a composition. 
+
+For scaling, you can render in the cloud using Remotion Lambda’s still command if you want. 
+
+6.3 Always use Remotion’s asset components
+Use <Img /> (and <Video />/<Audio /> if you ever do motion) to ensure assets are fully loaded and synchronized during rendering. 
+
+6.4 Text fitting + measurement
+Remotion provides @remotion/layout-utils:
+
+measureText()
+
+fillTextBox()
+
+fitText()
+
+fitTextOnNLines() 
+
+Critical gotchas
+
+Layout utils run in the browser (not Node/Bun) for some APIs like fillTextBox() and measureText(). 
+
+You must measure only after fonts are loaded. 
+
+6.5 Font loading strategy
+If you use @remotion/google-fonts, watch for timeouts: Remotion notes loadFont() may try to load many weights/subsets by default and cause render delays/timeouts. 
+
+So your template system should:
+
+pin exact weights you need per template
+
+pre-bundle fonts (preferred) or cache them
+
+fail gracefully to fallback fonts
+
+6.6 Delay rendering until everything is ready
+Use delayRender() / continueRender() to prevent rendering before fonts/data/assets are ready. 
+
+6.7 Prop schemas + visual editing
+Define a Zod schema for your template props so you can edit them visually in Remotion Studio. 
+
+This is clutch for human-in-the-loop fine-tuning.
+
+6.8 Passing props to render variants
+Remotion supports overriding props via CLI with --props (inline JSON or JSON file path). 
+
+That means your variant generator can output props.json and render many permutations.
+
+7) Template engine design in Remotion
+Rendering model
+You’ll get the cleanest precision by rendering layers with:
+
+position: absolute
+
+left/top/width/height in px
+
+deterministic font sizing rules
+
+Recommended component structure
+src/templates/TemplateRenderer.tsx
+
+generic renderer that loops through layers[]
+
+src/templates/layers/TextLayer.tsx
+
+src/templates/layers/ImageLayer.tsx
+
+src/templates/layers/ShapeLayer.tsx
+
+src/comps/AdStill1080.tsx
+
+selects the template + binds props
+
+Constraint enforcement
+For text layers:
+
+fitTextOnNLines() for headlines that must not exceed N lines 
+
+fillTextBox() to detect overflow and choose fallback behavior (shrink, truncate, or wrap) 
+
+For image layers:
+
+enforce aspect locks (cover vs contain)
+
+anchor points
+
+8) Variant generation
+VariantSpec (concept)
+templateId
+
+overrides:
+
+text.headline = "..."
+
+assets.hero = "..."
+
+Two common experiment modes
+Copy test (constant imagery)
+
+change headline, subhead, cta
+
+Image test (constant copy)
+
+swap hero, product, background
+
+Your generator should be able to:
+
+output a batch of props.json files
+
+render them
+
+record metadata (render time, diff score, overflow warnings)
+
+9) Testing & QA harness
+This is where you make the repo “real.”
+
+9.1 Golden render recreation test
+Test: Given a reference input (Canva export or uploaded PNG), can we extract template + render and match?
+
+Pipeline:
+
+Ingest reference → TemplateDSL
+
+Render still via renderStill() 
+
+Compare output PNG vs reference PNG using pixel diff (pixelmatch/resemble)
+
+Acceptance thresholds (example):
+
+Mean pixel delta < 2.0
+
+Max pixel delta < 20 (to allow antialiasing differences)
+
+% pixels changed < 0.5%
+
+9.2 Layer geometry tests
+If your source is Canva-based (layer truth exists):
+
+Assert each extracted layer rect is within ±1px of Canva geometry
+
+If your source is image-only:
+
+Assert internal invariants:
+
+headline aligned to CTA edge within ±2px
+
+hero centered in its rect within tolerance
+
+margins consistent
+
+9.3 Text overflow tests
+For each text layer:
+
+run overflow detection (via fillTextBox() in-browser) 
+
+fail test if overflow occurs in “strict templates”
+
+or log warning if template is “elastic”
+
+9.4 Deterministic rendering tests
+Render the same props twice:
+
+ensure identical output hash (or within tiny pixel threshold)
+
+9.5 Font-loading regression tests
+Because font loading is a common source of layout drift, keep a test that:
+
+renders a known template with your fonts
+
+verifies measured text width/height doesn’t change unexpectedly
+(And follow Remotion’s guidance to measure only after fonts load.) 
+
+10) Canva integration blueprint
+If you want “full fidelity selectors” and minimal guessing, this is the strongest route:
+
+A) Read design structure (apps SDK)
+Use Design Editing API:
+
+open a design session with openDesign
+
+access session.page which includes elements
+
+extract geometry + text formatting from those elements 
+
+B) Export the design for test references
+Use Canva Connect export jobs to get the PNG/JPG you’ll compare against (golden test). 
+
+C) Store both
+For each template store:
+
+template.dsl.json
+
+reference.png (or multiple references per page/size)
+
+source.canva.designId
+
+extraction version + confidence
+
+11) Repo documentation outline you can paste as README.md
+Sections
+What this repo does
+
+Quickstart
+
+install
+
+run Remotion Studio
+
+render a still with props
+
+TemplateDSL spec
+
+Ingestion
+
+Image-based extraction
+
+Canva-based extraction
+
+Rendering
+
+Remotion stills (<Still />) 
+
+renderStill() API 
+
+Constraints
+
+@remotion/layout-utils (fitText, overflow rules) 
+
+Variant generation
+
+Tests
+
+golden diff
+
+overflow checks
+
+determinism
+
+Troubleshooting
+
+font loading timeouts 
+
+delayRender leaks 
+
+IP/Compliance guidance
+
+Roadmap
+
+12) Practical milestones
+Milestone 1 — Remotion still renderer with TemplateDSL
+Implement TemplateRenderer for text/image/shape
+
+Render 1080x1080 from a hand-made DSL
+
+Add --props pipeline for variants 
+
+Milestone 2 — Text fitting + font strategy
+Integrate @remotion/layout-utils 
+
+Add font loading discipline + delayRender() 
+
+Add overflow warnings
+
+Milestone 3 — Golden tests
+Baseline reference image
+
+Render output and pixel-diff
+
+CI pass/fail gates
+
+Milestone 4 — Canva ingestion (highest fidelity)
+Read design via Design Editing API (elements snapshot) 
+
+Export PNG via export jobs for golden references 
+
+Produce TemplateDSL from Canva elements
+
+Milestone 5 — Image-only extraction (fallback)
+OCR + region detection
+
+Human-in-the-loop editor
+
+Confidence scoring
+
+If you want, I can turn this into:
+
+a full repo doc set (/docs/architecture.md, /docs/template-dsl.md, /docs/testing.md, /docs/canva-ingestion.md)
+
+plus a starter TemplateDSL + Remotion Still project structure that’s ready to paste into a monorepo (template engine + renderer + tests).
+
+
+
+
+
+No file chosenNo file chosen
+ChatGPT can make mistakes. Check important info.
