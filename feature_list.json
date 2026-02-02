@@ -3,9 +3,9 @@
   "description": "AI-powered video generation platform with voice cloning, talking avatars, SFX system, and static ad generation",
   "version": "1.0",
   "totalFeatures": 153,
-  "completedFeatures": 145,
+  "completedFeatures": 148,
   "lastUpdated": "2026-02-02",
-  "completionPercentage": 94.8,
+  "completionPercentage": 96.7,
   "prds": [
     "PRD.md",
     "PRD-Video-Generation-Platform.md",
@@ -1272,8 +1272,8 @@
       "category": "microservice",
       "priority": "P2",
       "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
-      "passes": false,
-      "notes": "Planned for future implementation - comprehensive MICROSERVICE_GUIDE.md documentation available"
+      "passes": true,
+      "notes": "Fully implemented with OpenAPI 3.0 spec generation, Swagger UI at /docs endpoint, and public access (no auth required)"
     },
     {
       "id": "MSVC-012",
@@ -1401,7 +1401,8 @@
       "category": "ingestion",
       "priority": "P1",
       "prd": "prd6.txt",
-      "passes": false
+      "passes": true,
+      "notes": "Fully implemented in src/ad-templates/extraction/two-pass-extractor.ts with Pass 1 (literal reconstruction) and Pass 2 (semantic templating with role assignment, constraint inference, and variability classification). CLI tool available at scripts/extract-template-two-pass.ts"
     },
     {
       "id": "INGEST-005",
@@ -1410,7 +1411,8 @@
       "category": "ingestion",
       "priority": "P1",
       "prd": "prd6.txt",
-      "passes": false
+      "passes": true,
+      "notes": "Fully implemented in src/ad-templates/extraction/confidence-scorer.ts with per-layer confidence scores, auto-approve/manual-review thresholds, and comprehensive confidence reporting. Integrated with two-pass extraction system."
     },
     {
       "id": "INGEST-006",

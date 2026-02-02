@@ -286,8 +286,23 @@ export class APIGateway {
     await this.webhookManager.trigger(event, payload);
   }
 
+  // Public paths that don't require authentication
+  private publicPaths = new Set([
+    '/health',
+    '/docs',
+    '/api/v1/openapi.json',
+  ]);
+
+  // Check if path is public
+  private isPublicPath(path: string): boolean {
+    return this.publicPaths.has(path);
+  }
+
   // Middleware for authentication
   private authenticate(req: APIRequest): boolean {
+    // Skip auth for public paths
+    if (this.isPublicPath(req.path)) return true;
+
     if (!this.config.apiKey) return true;
 
     const authHeader = req.headers.authorization || req.headers['x-api-key'];
@@ -435,7 +450,13 @@ export class APIGateway {
     };
 
     httpRes.writeHead(res.status, headers);
-    httpRes.end(JSON.stringify(res.body));
+
+    // Handle different content types
+    if (headers['Content-Type'] === 'text/html') {
+      httpRes.end(res.body);
+    } else {
+      httpRes.end(JSON.stringify(res.body));
+    }
   }
 
   // Stop server

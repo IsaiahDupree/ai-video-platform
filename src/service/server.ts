@@ -1106,6 +1106,69 @@ gateway.registerRoute('DELETE', '/api/v1/template/images/:imageId', async (req, 
 });
 
 // =============================================================================
+// OpenAPI Documentation & Swagger UI
+// =============================================================================
+
+/**
+ * Serve OpenAPI spec
+ */
+gateway.registerRoute('GET', '/api/v1/openapi.json', (req, res) => {
+  const { openApiSpec } = require('./openapi-spec');
+  res.status = 200;
+  res.body = openApiSpec;
+});
+
+/**
+ * Swagger UI - Interactive API Documentation
+ */
+gateway.registerRoute('GET', '/docs', async (req, res) => {
+  const swaggerHtml = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remotion Media Service - API Documentation</title>
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui.css" />
+  <style>
+    body { margin: 0; padding: 0; }
+    .topbar { display: none; }
+  </style>
+</head>
+<body>
+  <div id="swagger-ui"></div>
+  <script src="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui-bundle.js"></script>
+  <script src="https://unpkg.com/swagger-ui-dist@5.10.5/swagger-ui-standalone-preset.js"></script>
+  <script>
+    window.onload = function() {
+      const ui = SwaggerUIBundle({
+        url: '/api/v1/openapi.json',
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout",
+        persistAuthorization: true,
+        tryItOutEnabled: true,
+      });
+      window.ui = ui;
+    };
+  </script>
+</body>
+</html>
+  `.trim();
+
+  res.status = 200;
+  res.headers = { 'Content-Type': 'text/html' };
+  res.body = swaggerHtml;
+});
+
+// =============================================================================
 // Server Startup
 // =============================================================================
 
@@ -1119,7 +1182,9 @@ async function start() {
   await gateway.start();
 
   console.log(`✅ Remotion Media Service is running on http://localhost:${CONFIG.port}`);
-  console.log(`📚 Endpoints: GET http://localhost:${CONFIG.port}/api/v1/capabilities`);
+  console.log(`📚 API Docs: http://localhost:${CONFIG.port}/docs`);
+  console.log(`📋 OpenAPI Spec: http://localhost:${CONFIG.port}/api/v1/openapi.json`);
+  console.log(`📊 Capabilities: http://localhost:${CONFIG.port}/api/v1/capabilities`);
 }
 
 // Start server
