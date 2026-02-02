@@ -37,6 +37,8 @@
     "ad:variants": "npx tsx scripts/render-ad-still.ts --variants",
     "ad:test": "npx tsx scripts/run-ad-tests.ts",
     "upload:reference-ad": "npx tsx scripts/upload-reference-ad.ts",
+    "ingest:canva": "npx tsx scripts/ingest-canva-design.ts",
+    "edit:template": "npx tsx scripts/edit-template-hitl.ts",
     "service:start": "npx tsx src/service/server.ts",
     "service:dev": "npx tsx --watch src/service/server.ts"
   },
