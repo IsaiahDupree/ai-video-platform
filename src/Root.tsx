@@ -62,6 +62,26 @@ import {
   VIDEO_AD_COPY,
   VIDEO_PAIRS,
 } from './compositions/blanklogo';
+import {
+  UGCBeforeAfter,
+  ugcBeforeAfterDefaultProps,
+  UGCTestimonial,
+  ugcTestimonialDefaultProps,
+  UGCProductDemo,
+  ugcProductDemoDefaultProps,
+  UGCProblemSolution,
+  ugcProblemSolutionDefaultProps,
+  UGCStatCounter,
+  ugcStatCounterDefaultProps,
+  UGCFeatureList,
+  ugcFeatureListDefaultProps,
+  UGCUrgency,
+  ugcUrgencyDefaultProps,
+} from './compositions/ugc';
+import {
+  BeforeAfterReveal,
+  beforeAfterRevealDefaultProps,
+} from './compositions/BeforeAfterReveal';
 import { ContentBrief } from './types';
 
 export interface BriefCompositionProps {
@@ -2110,6 +2130,355 @@ export const RemotionRoot: React.FC = () => {
           ctaText: 'Try Free',
           badge: 'No Re-Encode',
         }}
+      />
+
+      {/* ============================================================= */}
+      {/* BEFORE/AFTER REVEAL - Whip-pan transition video                */}
+      {/* TEMPLATE-BA-001/002/003                                        */}
+      {/* ============================================================= */}
+
+      {/* Before/After Reveal - Story (9:16, 8 seconds) */}
+      <Composition
+        id="BeforeAfterReveal"
+        component={BeforeAfterReveal}
+        durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={beforeAfterRevealDefaultProps}
+      />
+
+      {/* Before/After Reveal - Square (1:1) */}
+      <Composition
+        id="BeforeAfterReveal-Square"
+        component={BeforeAfterReveal}
+        durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={beforeAfterRevealDefaultProps}
+      />
+
+      {/* Before/After Reveal - Landscape (16:9) */}
+      <Composition
+        id="BeforeAfterReveal-Landscape"
+        component={BeforeAfterReveal}
+        durationInFrames={240}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={beforeAfterRevealDefaultProps}
+      />
+
+      {/* ============================================================= */}
+      {/* UGC PIPELINE COMPOSITIONS - Brand-agnostic ad templates        */}
+      {/* Used by: scripts/generate-ugc-ads.ts                          */}
+      {/* ============================================================= */}
+
+      {/* UGC Before/After - Square (Instagram Post) */}
+      <Composition
+        id="UGC-BeforeAfter-Post"
+        component={UGCBeforeAfter}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={ugcBeforeAfterDefaultProps}
+      />
+      <Still
+        id="UGC-BeforeAfter-Post-Still"
+        component={UGCBeforeAfter}
+        width={1080}
+        height={1080}
+        defaultProps={ugcBeforeAfterDefaultProps}
+      />
+
+      {/* UGC Before/After - Story (Instagram/FB Story, Reels) */}
+      <Composition
+        id="UGC-BeforeAfter-Story"
+        component={UGCBeforeAfter}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={ugcBeforeAfterDefaultProps}
+      />
+      <Still
+        id="UGC-BeforeAfter-Story-Still"
+        component={UGCBeforeAfter}
+        width={1080}
+        height={1920}
+        defaultProps={ugcBeforeAfterDefaultProps}
+      />
+
+      {/* UGC Before/After - Portrait (Instagram Feed 4:5) */}
+      <Still
+        id="UGC-BeforeAfter-Portrait-Still"
+        component={UGCBeforeAfter}
+        width={1080}
+        height={1350}
+        defaultProps={ugcBeforeAfterDefaultProps}
+      />
+
+      {/* UGC Before/After - Landscape (Facebook Feed) */}
+      <Still
+        id="UGC-BeforeAfter-Landscape-Still"
+        component={UGCBeforeAfter}
+        width={1200}
+        height={628}
+        defaultProps={{...ugcBeforeAfterDefaultProps, headlineSize: 36, subheadlineSize: 18}}
+      />
+
+      {/* UGC Testimonial - Square */}
+      <Composition
+        id="UGC-Testimonial-Post"
+        component={UGCTestimonial}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={ugcTestimonialDefaultProps}
+      />
+      <Still
+        id="UGC-Testimonial-Post-Still"
+        component={UGCTestimonial}
+        width={1080}
+        height={1080}
+        defaultProps={ugcTestimonialDefaultProps}
+      />
+
+      {/* UGC Testimonial - Story */}
+      <Composition
+        id="UGC-Testimonial-Story"
+        component={UGCTestimonial}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={ugcTestimonialDefaultProps}
+      />
+      <Still
+        id="UGC-Testimonial-Story-Still"
+        component={UGCTestimonial}
+        width={1080}
+        height={1920}
+        defaultProps={ugcTestimonialDefaultProps}
+      />
+
+      {/* UGC Product Demo - Square */}
+      <Composition
+        id="UGC-ProductDemo-Post"
+        component={UGCProductDemo}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={ugcProductDemoDefaultProps}
+      />
+      <Still
+        id="UGC-ProductDemo-Post-Still"
+        component={UGCProductDemo}
+        width={1080}
+        height={1080}
+        defaultProps={ugcProductDemoDefaultProps}
+      />
+
+      {/* UGC Product Demo - Story */}
+      <Composition
+        id="UGC-ProductDemo-Story"
+        component={UGCProductDemo}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={ugcProductDemoDefaultProps}
+      />
+      <Still
+        id="UGC-ProductDemo-Story-Still"
+        component={UGCProductDemo}
+        width={1080}
+        height={1920}
+        defaultProps={ugcProductDemoDefaultProps}
+      />
+
+      {/* UGC Problem/Solution - Square */}
+      <Composition
+        id="UGC-ProblemSolution-Post"
+        component={UGCProblemSolution}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={ugcProblemSolutionDefaultProps}
+      />
+      <Still
+        id="UGC-ProblemSolution-Post-Still"
+        component={UGCProblemSolution}
+        width={1080}
+        height={1080}
+        defaultProps={ugcProblemSolutionDefaultProps}
+      />
+
+      {/* UGC Problem/Solution - Story */}
+      <Composition
+        id="UGC-ProblemSolution-Story"
+        component={UGCProblemSolution}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={ugcProblemSolutionDefaultProps}
+      />
+      <Still
+        id="UGC-ProblemSolution-Story-Still"
+        component={UGCProblemSolution}
+        width={1080}
+        height={1920}
+        defaultProps={ugcProblemSolutionDefaultProps}
+      />
+
+      {/* UGC Problem/Solution - Portrait */}
+      <Composition
+        id="UGC-ProblemSolution-Portrait"
+        component={UGCProblemSolution}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1350}
+        defaultProps={ugcProblemSolutionDefaultProps}
+      />
+      <Still
+        id="UGC-ProblemSolution-Portrait-Still"
+        component={UGCProblemSolution}
+        width={1080}
+        height={1350}
+        defaultProps={ugcProblemSolutionDefaultProps}
+      />
+
+      {/* UGC Problem/Solution - Landscape */}
+      <Composition
+        id="UGC-ProblemSolution-Landscape"
+        component={UGCProblemSolution}
+        durationInFrames={120}
+        fps={30}
+        width={1200}
+        height={628}
+        defaultProps={ugcProblemSolutionDefaultProps}
+      />
+      <Still
+        id="UGC-ProblemSolution-Landscape-Still"
+        component={UGCProblemSolution}
+        width={1200}
+        height={628}
+        defaultProps={ugcProblemSolutionDefaultProps}
+      />
+
+      {/* UGC Stat Counter - Square */}
+      <Composition
+        id="UGC-StatCounter-Post"
+        component={UGCStatCounter}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={ugcStatCounterDefaultProps}
+      />
+      <Still
+        id="UGC-StatCounter-Post-Still"
+        component={UGCStatCounter}
+        width={1080}
+        height={1080}
+        defaultProps={ugcStatCounterDefaultProps}
+      />
+
+      {/* UGC Stat Counter - Story */}
+      <Composition
+        id="UGC-StatCounter-Story"
+        component={UGCStatCounter}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={ugcStatCounterDefaultProps}
+      />
+      <Still
+        id="UGC-StatCounter-Story-Still"
+        component={UGCStatCounter}
+        width={1080}
+        height={1920}
+        defaultProps={ugcStatCounterDefaultProps}
+      />
+
+      {/* UGC Feature List - Square */}
+      <Composition
+        id="UGC-FeatureList-Post"
+        component={UGCFeatureList}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={ugcFeatureListDefaultProps}
+      />
+      <Still
+        id="UGC-FeatureList-Post-Still"
+        component={UGCFeatureList}
+        width={1080}
+        height={1080}
+        defaultProps={ugcFeatureListDefaultProps}
+      />
+
+      {/* UGC Feature List - Story */}
+      <Composition
+        id="UGC-FeatureList-Story"
+        component={UGCFeatureList}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={ugcFeatureListDefaultProps}
+      />
+      <Still
+        id="UGC-FeatureList-Story-Still"
+        component={UGCFeatureList}
+        width={1080}
+        height={1920}
+        defaultProps={ugcFeatureListDefaultProps}
+      />
+
+      {/* UGC Urgency - Square */}
+      <Composition
+        id="UGC-Urgency-Post"
+        component={UGCUrgency}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={ugcUrgencyDefaultProps}
+      />
+      <Still
+        id="UGC-Urgency-Post-Still"
+        component={UGCUrgency}
+        width={1080}
+        height={1080}
+        defaultProps={ugcUrgencyDefaultProps}
+      />
+
+      {/* UGC Urgency - Story */}
+      <Composition
+        id="UGC-Urgency-Story"
+        component={UGCUrgency}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={ugcUrgencyDefaultProps}
+      />
+      <Still
+        id="UGC-Urgency-Story-Still"
+        component={UGCUrgency}
+        width={1080}
+        height={1920}
+        defaultProps={ugcUrgencyDefaultProps}
       />
     </>
   );

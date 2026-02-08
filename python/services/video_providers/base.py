@@ -12,6 +12,11 @@ from typing import Any, Dict, List, Optional
 import os
 
 
+class NotConfiguredError(Exception):
+    """Raised when a video provider is not configured (missing API key or unsupported)."""
+    pass
+
+
 class ProviderName(str, Enum):
     """Supported video generation providers."""
     SORA = "sora"

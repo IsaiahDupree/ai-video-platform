@@ -124,25 +124,118 @@ class MemeAdapter(VisualsAdapter):
         criteria: VisualsSearchCriteria,
         limit: int
     ) -> List[Dict[str, Any]]:
-        """Search for trending memes via RapidAPI."""
-        # TODO: Implement RapidAPI meme search
-        # This would use Instagram/TikTok scrapers to find trending meme formats
-        logger.info("RapidAPI meme search not yet implemented")
-        return []
-    
+        """Search for trending memes via RapidAPI (Meme API)."""
+        if not self.rapidapi_key:
+            logger.debug("No RapidAPI key configured; skipping meme API search")
+            return []
+
+        try:
+            import aiohttp
+
+            headers = {
+                "X-RapidAPI-Key": self.rapidapi_key,
+                "X-RapidAPI-Host": "meme-api.p.rapidapi.com",
+            }
+
+            url = f"https://meme-api.p.rapidapi.com/gimme/{limit}"
+
+            async with aiohttp.ClientSession() as session:
+                async with session.get(
+                    url, headers=headers,
+                    timeout=aiohttp.ClientTimeout(total=15)
+                ) as resp:
+                    if resp.status != 200:
+                        logger.warning(f"RapidAPI meme search returned {resp.status}")
+                        return []
+
+                    data = await resp.json()
+                    memes = data.get("memes", [])
+
+                    results = []
+                    for meme in memes[:limit]:
+                        preview = meme.get("preview", [])
+                        preview_url = preview[0] if isinstance(preview, list) and preview else meme.get("url", "")
+                        results.append({
+                            "asset_id": meme.get("postLink", meme.get("title", "")),
+                            "title": meme.get("title", "Untitled"),
+                            "url": meme.get("url", ""),
+                            "preview_url": preview_url,
+                            "subreddit": meme.get("subreddit", ""),
+                            "source": "rapidapi_meme",
+                            "type": "meme",
+                            "nsfw": meme.get("nsfw", False),
+                        })
+
+                    return results
+
+        except ImportError:
+            logger.warning("aiohttp not installed; RapidAPI meme search unavailable")
+            return []
+        except Exception as e:
+            logger.error(f"RapidAPI meme search failed: {e}")
+            return []
+
     async def _get_from_rapidapi(
         self,
         asset_id: str,
         output_path: Optional[Path]
     ) -> VisualsResponse:
-        """Get meme from RapidAPI."""
-        # TODO: Implement RapidAPI meme download
-        logger.info("RapidAPI meme download not yet implemented")
-        return VisualsResponse(
-            job_id=asset_id,
-            success=False,
-            error="RapidAPI meme download not yet implemented"
-        )
+        """Download meme image from a URL (RapidAPI asset_id is the image URL)."""
+        if not self.rapidapi_key:
+            return VisualsResponse(
+                job_id=asset_id,
+                success=False,
+                error="No RapidAPI key configured"
+            )
+
+        try:
+            import aiohttp
+
+            url = asset_id if asset_id.startswith("http") else f"https://i.redd.it/{asset_id}"
+
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, timeout=aiohttp.ClientTimeout(total=30)) as resp:
+                    if resp.status != 200:
+                        return VisualsResponse(
+                            job_id=asset_id,
+                            success=False,
+                            error=f"Download failed with status {resp.status}"
+                        )
+
+                    content = await resp.read()
+
+                    if output_path:
+                        output_path.parent.mkdir(parents=True, exist_ok=True)
+                        output_path.write_bytes(content)
+                        visuals_path = str(output_path)
+                    else:
+                        import tempfile
+                        ext = Path(url).suffix or ".jpg"
+                        tmp = Path(tempfile.mktemp(suffix=ext))
+                        tmp.write_bytes(content)
+                        visuals_path = str(tmp)
+
+                    return VisualsResponse(
+                        job_id=asset_id,
+                        success=True,
+                        visuals_path=visuals_path,
+                        visuals_type="meme",
+                        source="rapidapi_meme"
+                    )
+
+        except ImportError:
+            return VisualsResponse(
+                job_id=asset_id,
+                success=False,
+                error="aiohttp not installed"
+            )
+        except Exception as e:
+            logger.error(f"RapidAPI meme download failed: {e}")
+            return VisualsResponse(
+                job_id=asset_id,
+                success=False,
+                error=str(e)
+            )
     
     def _matches_criteria(self, file_path: Path, criteria: VisualsSearchCriteria) -> bool:
         """Check if meme file matches criteria."""

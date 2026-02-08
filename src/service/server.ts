@@ -19,6 +19,25 @@ import path from 'path';
 import fs from 'fs';
 import os from 'os';
 
+// Load .env.local for API keys (Gemini, Veo, etc.)
+const envPath = path.join(process.cwd(), '.env.local');
+if (fs.existsSync(envPath)) {
+  const envContent = fs.readFileSync(envPath, 'utf-8');
+  envContent.split('\n').forEach(line => {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#')) {
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx > 0) {
+        const key = trimmed.substring(0, eqIdx).trim();
+        const value = trimmed.substring(eqIdx + 1).trim();
+        if (!process.env[key]) {
+          process.env[key] = value;
+        }
+      }
+    }
+  });
+}
+
 // =============================================================================
 // Configuration
 // =============================================================================
@@ -481,6 +500,327 @@ queue.registerHandler('audio-sfx', async (input) => {
 });
 
 // =============================================================================
+// Veo 3.1 Video Generation Job Handler
+// =============================================================================
+
+/**
+ * Generate video with Google Veo 3.1 (image-to-video)
+ */
+queue.registerHandler('veo-generate', async (input) => {
+  const { VeoClient } = await import('../api/veo-client');
+
+  const {
+    imageUrl,
+    imageBase64,
+    prompt,
+    duration = 8,
+    aspectRatio = '9:16',
+    seed,
+  } = input;
+
+  const client = new VeoClient();
+
+  const response = await client.generateVideo({
+    imageUrl,
+    imageBase64,
+    prompt,
+    duration,
+    aspectRatio,
+    seed,
+  });
+
+  return {
+    jobId: response.jobId,
+    status: response.status.status,
+    pollUrl: `/api/v1/ai/veo/jobs/${response.jobId}`,
+  };
+});
+
+/**
+ * Poll Veo job status
+ */
+queue.registerHandler('veo-poll', async (input) => {
+  const { VeoClient } = await import('../api/veo-client');
+  const client = new VeoClient();
+
+  const status = await client.getJobStatus(input.veoJobId);
+
+  // Download video if completed
+  if (status.status === 'completed' && status.videoUrl) {
+    const outputPath = path.join(
+      process.env.OUTPUT_DIR || './output',
+      `veo-${input.veoJobId}.mp4`
+    );
+    await client.downloadVideo(status.videoUrl, outputPath);
+    return { ...status, localPath: outputPath };
+  }
+
+  return status;
+});
+
+// =============================================================================
+// Nano Banana (Gemini) Image Generation Job Handler
+// =============================================================================
+
+/**
+ * Generate before/after image pairs with Gemini
+ */
+queue.registerHandler('nano-banana-generate', async (input) => {
+  const { runNanoBananaStage } = await import('../pipeline/nano-banana-stage');
+
+  const outputDir = input.outputDir || path.join(
+    process.env.OUTPUT_DIR || './output',
+    `nano-banana-${Date.now()}`
+  );
+
+  const result = await runNanoBananaStage({
+    product: {
+      name: input.product?.name || 'Product',
+      description: input.product?.description || '',
+      imageUrl: input.product?.imageUrl,
+      imagePath: input.product?.imagePath,
+    },
+    scene: {
+      beforePrompt: input.beforePrompt || 'A frustrated person dealing with the problem',
+      afterPrompt: input.afterPrompt || 'A happy person enjoying the solution',
+      characterStyle: input.characterStyle || 'realistic',
+    },
+    imageCount: input.imageCount || 1,
+    outputDir,
+  });
+
+  return {
+    pairs: result.pairs.map(p => ({
+      id: p.id,
+      beforeImagePath: p.beforeImagePath,
+      afterImagePath: p.afterImagePath,
+    })),
+    characterProfile: result.characterProfile,
+    outputDir: result.outputDir,
+    totalPairs: result.pairs.length,
+  };
+});
+
+// =============================================================================
+// Before/After Reveal Video Job Handler
+// =============================================================================
+
+/**
+ * Generate a before/after reveal video using Remotion composition
+ */
+queue.registerHandler('render-before-after', async (input) => {
+  const {
+    beforeImageSrc,
+    afterImageSrc,
+    beforeVideoSrc,
+    afterVideoSrc,
+    headline,
+    subheadline,
+    ctaText,
+    brandName,
+    primaryColor,
+    accentColor,
+    transitionStyle = 'whip-pan',
+    enableCameraShake = true,
+    outputFormat = 'mp4',
+    quality = 'production',
+  } = input;
+
+  const outputPath = path.join(
+    process.env.OUTPUT_DIR || './output',
+    `before-after-reveal-${Date.now()}.${outputFormat}`
+  );
+
+  const propsJson = JSON.stringify({
+    beforeImageSrc,
+    afterImageSrc,
+    beforeVideoSrc,
+    afterVideoSrc,
+    headline,
+    subheadline,
+    ctaText,
+    brandName,
+    primaryColor,
+    accentColor,
+    transitionStyle,
+    enableCameraShake,
+  });
+
+  const crf = quality === 'preview' ? 28 : 18;
+
+  execSync(
+    `npx remotion render BeforeAfterReveal "${outputPath}" --props='${propsJson}' --crf=${crf}`,
+    { cwd: path.resolve(__dirname, '../..'), stdio: 'pipe' }
+  );
+
+  const stats = fs.statSync(outputPath);
+
+  return {
+    videoPath: outputPath,
+    fileSize: stats.size,
+    format: outputFormat,
+    duration: 8,
+    transitionStyle,
+  };
+});
+
+// =============================================================================
+// UGC Pipeline Job Handlers
+// =============================================================================
+
+/**
+ * Generate UGC ad batch (full pipeline or dry-run)
+ */
+queue.registerHandler('ugc-generate', async (input) => {
+  const { runUGCPipeline } = await import('../pipeline/ugc-ad-pipeline');
+  const { META_AD_SIZES } = await import('../pipeline/types');
+
+  const config = {
+    product: input.product || { name: 'Product', description: '' },
+    brand: input.brand || { name: 'Brand', primaryColor: '#6366f1', accentColor: '#22c55e', fontFamily: 'Inter' },
+    scenes: input.scenes || { beforePrompt: '', afterPrompt: '', characterStyle: 'realistic' as const },
+    matrix: {
+      templates: input.matrix?.templates || ['before_after' as const],
+      hookTypes: input.matrix?.hookTypes || ['question' as const, 'social_proof' as const],
+      awarenessLevels: input.matrix?.awarenessLevels || ['problem_aware' as const, 'solution_aware' as const],
+      ctaTypes: input.matrix?.ctaTypes || ['action' as const, 'benefit' as const],
+      sizes: input.matrix?.sizes || META_AD_SIZES.filter((s: any) => ['feed_square', 'story'].includes(s.name)),
+      strategy: input.matrix?.strategy || 'latin_square' as const,
+      maxVariants: input.matrix?.maxVariants || 12,
+    },
+    copyBank: input.copyBank || {
+      headlines: { question: ['Try it today'], social_proof: ['Trusted by thousands'] },
+      subheadlines: { problem_aware: ['Solve your problem'], solution_aware: ['The better way'] },
+      ctas: { action: ['Try Now'], benefit: ['Get Started'] },
+      beforeLabels: ['BEFORE'], afterLabels: ['AFTER'],
+      trustLines: [''], badges: [''],
+    },
+    outputDir: input.outputDir || './output/ugc-ads',
+    dryRun: input.dryRun ?? false,
+  };
+
+  const runOptions = input.resumeBatchDir ? { resumeBatchDir: input.resumeBatchDir } : undefined;
+  const batch = await runUGCPipeline(config, runOptions);
+  return batch;
+});
+
+/**
+ * Optimize existing batch with Meta performance data
+ */
+queue.registerHandler('ugc-optimize', async (input) => {
+  const { ingestMetaCSV, mergePerformanceIntoBatch, loadBatch, saveBatch } = await import('../pipeline/meta-data-ingester');
+  const { generateOptimizationReport } = await import('../pipeline/parameter-scorer');
+
+  const batchJsonPath = path.join(input.batchDir, 'batch.json');
+  const batch = loadBatch(batchJsonPath);
+
+  // Ingest performance data
+  let performances;
+  if (input.metaCsvPath) {
+    performances = ingestMetaCSV(input.metaCsvPath);
+  } else if (input.performanceData && Array.isArray(input.performanceData)) {
+    performances = input.performanceData;
+  } else {
+    throw new Error('Either metaCsvPath or performanceData array is required');
+  }
+
+  mergePerformanceIntoBatch(batch, performances);
+  saveBatch(batch, batchJsonPath);
+
+  const report = generateOptimizationReport(batch, input.weights);
+
+  // Save report
+  const reportPath = path.join(input.batchDir, 'optimization_report.json');
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+
+  return { batch, report, reportPath };
+});
+
+/**
+ * Generate next optimized batch from report
+ */
+queue.registerHandler('ugc-next-batch', async (input) => {
+  const { loadBatch } = await import('../pipeline/meta-data-ingester');
+  const { generateOptimizationReport } = await import('../pipeline/parameter-scorer');
+  const { generateNextBatch } = await import('../pipeline/optimization-engine');
+  const { META_AD_SIZES } = await import('../pipeline/types');
+
+  const batchJsonPath = path.join(input.batchDir, 'batch.json');
+  const batch = loadBatch(batchJsonPath);
+
+  // Load or generate report
+  let report;
+  const reportPath = path.join(input.batchDir, 'optimization_report.json');
+  if (fs.existsSync(reportPath)) {
+    report = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
+  } else {
+    report = generateOptimizationReport(batch);
+  }
+
+  const nextBatchResult = generateNextBatch({
+    previousBatch: batch,
+    report,
+    allTemplates: input.allTemplates || ['before_after', 'testimonial', 'product_demo', 'problem_solution', 'stat_counter', 'feature_list', 'urgency'],
+    allHookTypes: input.allHookTypes || ['question', 'statement', 'shock', 'curiosity', 'social_proof', 'urgency'],
+    allAwarenessLevels: input.allAwarenessLevels || ['unaware', 'problem_aware', 'solution_aware', 'product_aware', 'most_aware'],
+    allCtaTypes: input.allCtaTypes || ['action', 'benefit', 'urgency', 'curiosity'],
+    copyBank: input.copyBank || batch.variants[0]?.parameters ? {
+      headlines: { question: ['Try it today'] },
+      subheadlines: { problem_aware: ['Solve it now'] },
+      ctas: { action: ['Try Now'] },
+      beforeLabels: ['BEFORE'], afterLabels: ['AFTER'],
+      trustLines: [''], badges: [''],
+    } : input.copyBank,
+    maxVariants: input.maxVariants || 12,
+    strategy: input.strategy,
+    sizes: input.sizes || META_AD_SIZES.filter((s: any) => ['feed_square', 'story'].includes(s.name)),
+  });
+
+  // Save next batch
+  const nextBatchDir = input.outputDir || path.join(path.dirname(input.batchDir), `next_${batch.id}`);
+  if (!fs.existsSync(nextBatchDir)) {
+    fs.mkdirSync(nextBatchDir, { recursive: true });
+  }
+
+  fs.writeFileSync(
+    path.join(nextBatchDir, 'next_batch.json'),
+    JSON.stringify(nextBatchResult, null, 2)
+  );
+
+  return { ...nextBatchResult, outputDir: nextBatchDir };
+});
+
+/**
+ * List UGC batches
+ */
+function listUGCBatches(outputDir: string): any[] {
+  const baseDir = outputDir || './output/ugc-ads';
+  if (!fs.existsSync(baseDir)) return [];
+
+  return fs.readdirSync(baseDir)
+    .filter(d => {
+      const batchJson = path.join(baseDir, d, 'batch.json');
+      return fs.existsSync(batchJson);
+    })
+    .map(d => {
+      const batchJson = path.join(baseDir, d, 'batch.json');
+      try {
+        const batch = JSON.parse(fs.readFileSync(batchJson, 'utf-8'));
+        return {
+          id: batch.id,
+          productId: batch.productId,
+          totalVariants: batch.totalVariants,
+          status: batch.status,
+          createdAt: batch.createdAt,
+          hasReport: fs.existsSync(path.join(baseDir, d, 'optimization_report.json')),
+          dir: path.join(baseDir, d),
+        };
+      } catch { return null; }
+    })
+    .filter(Boolean);
+}
+
+// =============================================================================
 // API Endpoints
 // =============================================================================
 
@@ -550,6 +890,29 @@ gateway.registerRoute('GET', '/api/v1/capabilities', (req, res) => {
         '/api/v1/audio/search-music',
         '/api/v1/audio/mix',
         '/api/v1/audio/sfx',
+      ],
+      'external-api': [
+        '/api/render/video',
+        '/api/render/static',
+        '/api/ai/veo',
+        '/api/ai/veo/jobs/:jobId',
+        '/api/ai/nano-banana',
+        '/api/templates/before-after',
+      ],
+      ugc: [
+        '/api/v1/ugc/generate',
+        '/api/v1/ugc/resume',
+        '/api/v1/ugc/batches',
+        '/api/v1/ugc/batches/:id',
+        '/api/v1/ugc/batches/:id/gallery',
+        '/api/v1/ugc/batches/:id/significance',
+        '/api/v1/ugc/batches/:id/budget',
+        '/api/v1/ugc/batches/:id/export-csv',
+        '/api/v1/ugc/optimize',
+        '/api/v1/ugc/next-batch',
+        '/api/v1/ugc/compare',
+        '/api/v1/ugc/sample-size',
+        '/api/v1/ugc/batches/:id/fatigue',
       ],
     },
   };
@@ -993,6 +1356,758 @@ gateway.registerRoute('POST', '/api/v1/audio/sfx', async (req, res) => {
 });
 
 // =============================================================================
+// External Consumer API Endpoints (API-001 through API-006)
+// =============================================================================
+
+/**
+ * POST /api/render/video — Render video from brief (external consumer API)
+ * Mirrors /api/v1/render/brief for cross-app integration
+ */
+gateway.registerRoute('POST', '/api/render/video', async (req, res) => {
+  const { brief, quality, outputFormat, webhookUrl } = req.body;
+
+  if (!brief) {
+    res.status = 400;
+    res.body = { error: 'Missing required field: brief' };
+    return;
+  }
+
+  const jobId = queue.enqueue('render-brief', { brief, quality, outputFormat }, {
+    webhookUrl,
+  });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    outputUrl: null,
+    pollUrl: `/api/v1/jobs/${jobId}`,
+  };
+});
+
+/**
+ * POST /api/render/static — Render static ad (external consumer API)
+ * Supports multi-size output for PCT integration
+ */
+gateway.registerRoute('POST', '/api/render/static', async (req, res) => {
+  const { template, bindings, sizes, format = 'png', webhookUrl } = req.body;
+
+  if (!template || !bindings) {
+    res.status = 400;
+    res.body = { error: 'Missing required fields: template, bindings' };
+    return;
+  }
+
+  // If multiple sizes requested, enqueue one job per size
+  if (sizes && Array.isArray(sizes) && sizes.length > 1) {
+    const jobIds: string[] = [];
+
+    for (const size of sizes) {
+      const jobId = queue.enqueue('render-static-ad', { template, bindings, size, format }, {
+        webhookUrl,
+      });
+      jobIds.push(jobId);
+    }
+
+    res.status = 202;
+    res.body = {
+      jobIds,
+      status: 'queued',
+      totalSizes: sizes.length,
+    };
+    return;
+  }
+
+  const size = sizes?.[0] || req.body.size;
+  const jobId = queue.enqueue('render-static-ad', { template, bindings, size, format }, {
+    webhookUrl,
+  });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    pollUrl: `/api/v1/jobs/${jobId}`,
+  };
+});
+
+/**
+ * POST /api/ai/veo — Veo 3.1 video generation (API-004)
+ * For Content Factory video generation
+ */
+gateway.registerRoute('POST', '/api/ai/veo', async (req, res) => {
+  const { imageUrl, imageBase64, prompt, duration, aspectRatio, seed, webhookUrl } = req.body;
+
+  if (!prompt) {
+    res.status = 400;
+    res.body = { error: 'Missing required field: prompt' };
+    return;
+  }
+
+  if (!imageUrl && !imageBase64) {
+    res.status = 400;
+    res.body = { error: 'Either imageUrl or imageBase64 is required' };
+    return;
+  }
+
+  const jobId = queue.enqueue('veo-generate', {
+    imageUrl,
+    imageBase64,
+    prompt,
+    duration: duration || 8,
+    aspectRatio: aspectRatio || '9:16',
+    seed,
+  }, {
+    webhookUrl,
+    priority: 1,
+  });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    pollUrl: `/api/v1/jobs/${jobId}`,
+    estimatedDuration: 120,
+  };
+});
+
+/**
+ * GET /api/ai/veo/jobs/:jobId — Poll Veo job status (VEO-003)
+ */
+gateway.registerRoute('GET', '/api/ai/veo/jobs/:jobId', async (req, res) => {
+  const veoJobId = req.path.split('/').pop()!;
+
+  try {
+    const { VeoClient } = await import('../api/veo-client');
+    const client = new VeoClient();
+    const status = await client.getJobStatus(veoJobId);
+
+    res.status = 200;
+    res.body = status;
+  } catch (error: any) {
+    if (error.message?.includes('API key is required')) {
+      res.status = 503;
+      res.body = { error: 'Veo service not configured. Set GOOGLE_VEO_API_KEY.' };
+    } else {
+      res.status = 500;
+      res.body = { error: error.message };
+    }
+  }
+});
+
+/**
+ * POST /api/ai/nano-banana — Nano Banana image generation (API-005)
+ * For Content Factory before/after image pair generation
+ */
+gateway.registerRoute('POST', '/api/ai/nano-banana', async (req, res) => {
+  const {
+    product,
+    beforePrompt,
+    afterPrompt,
+    characterStyle,
+    imageCount,
+    outputDir,
+    webhookUrl,
+  } = req.body;
+
+  if (!product?.name) {
+    res.status = 400;
+    res.body = { error: 'Missing required field: product.name' };
+    return;
+  }
+
+  const jobId = queue.enqueue('nano-banana-generate', {
+    product,
+    beforePrompt: beforePrompt || 'A person struggling with the problem',
+    afterPrompt: afterPrompt || 'A person enjoying the solution',
+    characterStyle: characterStyle || 'realistic',
+    imageCount: imageCount || 1,
+    outputDir,
+  }, {
+    webhookUrl,
+    priority: 1,
+  });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    pollUrl: `/api/v1/jobs/${jobId}`,
+    estimatedDuration: 30,
+  };
+});
+
+/**
+ * POST /api/templates/before-after — Before/After reveal video (API-006)
+ * Combines Veo/images + Remotion template for reveal videos
+ */
+gateway.registerRoute('POST', '/api/templates/before-after', async (req, res) => {
+  const {
+    beforeImageSrc,
+    afterImageSrc,
+    beforeVideoSrc,
+    afterVideoSrc,
+    headline,
+    subheadline,
+    ctaText,
+    brandName,
+    primaryColor,
+    accentColor,
+    transitionStyle,
+    enableCameraShake,
+    quality,
+    webhookUrl,
+  } = req.body;
+
+  if (!beforeImageSrc && !beforeVideoSrc) {
+    res.status = 400;
+    res.body = { error: 'Either beforeImageSrc or beforeVideoSrc is required' };
+    return;
+  }
+
+  if (!afterImageSrc && !afterVideoSrc) {
+    res.status = 400;
+    res.body = { error: 'Either afterImageSrc or afterVideoSrc is required' };
+    return;
+  }
+
+  const jobId = queue.enqueue('render-before-after', {
+    beforeImageSrc,
+    afterImageSrc,
+    beforeVideoSrc,
+    afterVideoSrc,
+    headline,
+    subheadline,
+    ctaText,
+    brandName,
+    primaryColor,
+    accentColor,
+    transitionStyle: transitionStyle || 'whip-pan',
+    enableCameraShake: enableCameraShake ?? true,
+    quality: quality || 'production',
+  }, {
+    webhookUrl,
+    priority: 1,
+  });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    pollUrl: `/api/v1/jobs/${jobId}`,
+    estimatedDuration: 60,
+  };
+});
+
+// =============================================================================
+// UGC Pipeline Endpoints
+// =============================================================================
+
+/**
+ * Generate UGC ad batch
+ *
+ * POST /api/v1/ugc/generate
+ * Body: { product, brand, scenes, matrix, copyBank, dryRun, outputDir, webhookUrl }
+ */
+gateway.registerRoute('POST', '/api/v1/ugc/generate', async (req, res) => {
+  const { product, brand, scenes, matrix, copyBank, dryRun, outputDir, webhookUrl } = req.body;
+
+  if (!product || !product.name) {
+    res.status = 400;
+    res.body = { error: 'Missing required field: product.name' };
+    return;
+  }
+
+  const jobId = queue.enqueue('ugc-generate', {
+    product,
+    brand,
+    scenes,
+    matrix,
+    copyBank,
+    dryRun: dryRun ?? false,
+    outputDir: outputDir || './output/ugc-ads',
+  }, { webhookUrl, priority: 1 });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    dryRun: dryRun ?? false,
+    pollUrl: `/api/v1/jobs/${jobId}`,
+  };
+});
+
+/**
+ * List all UGC batches
+ *
+ * GET /api/v1/ugc/batches
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/batches', (req, res) => {
+  const batches = listUGCBatches('./output/ugc-ads');
+
+  res.status = 200;
+  res.body = { batches, total: batches.length };
+});
+
+/**
+ * Get a specific UGC batch
+ *
+ * GET /api/v1/ugc/batches/:id
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/batches/:id', (req, res) => {
+  const batchId = req.path.split('/').pop()!;
+  const batchDir = path.join('./output/ugc-ads', batchId);
+  const batchJsonPath = path.join(batchDir, 'batch.json');
+
+  if (!fs.existsSync(batchJsonPath)) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  const batch = JSON.parse(fs.readFileSync(batchJsonPath, 'utf-8'));
+
+  // Check for optimization report
+  const reportPath = path.join(batchDir, 'optimization_report.json');
+  const report = fs.existsSync(reportPath)
+    ? JSON.parse(fs.readFileSync(reportPath, 'utf-8'))
+    : null;
+
+  res.status = 200;
+  res.body = { batch, report };
+});
+
+/**
+ * Optimize batch with Meta performance data
+ *
+ * POST /api/v1/ugc/optimize
+ * Body: { batchId, metaCsvPath?, performanceData?, weights?, webhookUrl? }
+ */
+gateway.registerRoute('POST', '/api/v1/ugc/optimize', async (req, res) => {
+  const { batchId, metaCsvPath, performanceData, weights, webhookUrl } = req.body;
+
+  if (!batchId) {
+    res.status = 400;
+    res.body = { error: 'Missing required field: batchId' };
+    return;
+  }
+
+  if (!metaCsvPath && !performanceData) {
+    res.status = 400;
+    res.body = { error: 'Either metaCsvPath or performanceData is required' };
+    return;
+  }
+
+  const batchDir = path.join('./output/ugc-ads', batchId);
+  if (!fs.existsSync(path.join(batchDir, 'batch.json'))) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  const jobId = queue.enqueue('ugc-optimize', {
+    batchDir,
+    metaCsvPath,
+    performanceData,
+    weights,
+  }, { webhookUrl });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    pollUrl: `/api/v1/jobs/${jobId}`,
+  };
+});
+
+/**
+ * Generate next optimized batch
+ *
+ * POST /api/v1/ugc/next-batch
+ * Body: { batchId, maxVariants?, copyBank?, strategy?, webhookUrl? }
+ */
+gateway.registerRoute('POST', '/api/v1/ugc/next-batch', async (req, res) => {
+  const { batchId, maxVariants, copyBank, strategy, webhookUrl } = req.body;
+
+  if (!batchId) {
+    res.status = 400;
+    res.body = { error: 'Missing required field: batchId' };
+    return;
+  }
+
+  const batchDir = path.join('./output/ugc-ads', batchId);
+  if (!fs.existsSync(path.join(batchDir, 'batch.json'))) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  const jobId = queue.enqueue('ugc-next-batch', {
+    batchDir,
+    maxVariants: maxVariants || 12,
+    copyBank,
+    strategy,
+  }, { webhookUrl });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    pollUrl: `/api/v1/jobs/${jobId}`,
+  };
+});
+
+/**
+ * Resume an interrupted UGC batch
+ *
+ * POST /api/v1/ugc/resume
+ * Body: { batchId, product?, brand?, scenes?, matrix?, copyBank?, webhookUrl? }
+ */
+gateway.registerRoute('POST', '/api/v1/ugc/resume', async (req, res) => {
+  const { batchId, product, brand, scenes, matrix, copyBank, webhookUrl } = req.body;
+
+  if (!batchId) {
+    res.status = 400;
+    res.body = { error: 'Missing required field: batchId' };
+    return;
+  }
+
+  const batchDir = path.join('./output/ugc-ads', batchId);
+  if (!fs.existsSync(path.join(batchDir, 'batch.json'))) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  const { loadCheckpoint } = await import('../pipeline/batch-resume');
+  const checkpoint = loadCheckpoint(batchDir);
+  if (!checkpoint) {
+    res.status = 400;
+    res.body = { error: `No checkpoint found for batch ${batchId}` };
+    return;
+  }
+
+  if (checkpoint.stage === 'complete') {
+    res.status = 200;
+    res.body = { message: 'Batch already complete', checkpoint };
+    return;
+  }
+
+  const { META_AD_SIZES } = await import('../pipeline/types');
+  const jobId = queue.enqueue('ugc-generate', {
+    product: product || { name: 'Product', description: '' },
+    brand: brand || { name: 'Brand', primaryColor: '#6366f1', accentColor: '#22c55e', fontFamily: 'Inter' },
+    scenes: scenes || { beforePrompt: '', afterPrompt: '', characterStyle: 'realistic' as const },
+    matrix: matrix || {
+      templates: ['before_after' as const],
+      hookTypes: ['question' as const, 'social_proof' as const],
+      awarenessLevels: ['problem_aware' as const, 'solution_aware' as const],
+      ctaTypes: ['action' as const, 'benefit' as const],
+      sizes: META_AD_SIZES.filter((s: any) => ['feed_square', 'story'].includes(s.name)),
+      strategy: 'latin_square' as const,
+      maxVariants: 12,
+    },
+    copyBank,
+    outputDir: path.dirname(batchDir),
+    resumeBatchDir: batchDir,
+  }, { webhookUrl, priority: 1 });
+
+  res.status = 202;
+  res.body = {
+    jobId,
+    status: 'queued',
+    resumingFrom: checkpoint.stage,
+    completedStages: checkpoint.completedStages,
+    pollUrl: `/api/v1/jobs/${jobId}`,
+  };
+});
+
+/**
+ * Generate gallery HTML for a batch
+ *
+ * GET /api/v1/ugc/batches/:id/gallery
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/batches/:id/gallery', (req, res) => {
+  const parts = req.path.split('/');
+  const batchId = parts[parts.indexOf('batches') + 1];
+  const batchDir = path.join('./output/ugc-ads', batchId);
+
+  if (!fs.existsSync(path.join(batchDir, 'batch.json'))) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  try {
+    const { generateGalleryFromBatch } = require('../pipeline/preview-generator');
+    const galleryPath = generateGalleryFromBatch(batchDir);
+    const html = fs.readFileSync(galleryPath, 'utf-8');
+
+    res.status = 200;
+    res.headers = { 'Content-Type': 'text/html' };
+    res.body = html;
+  } catch (error: any) {
+    res.status = 500;
+    res.body = { error: `Gallery generation failed: ${error.message}` };
+  }
+});
+
+/**
+ * Run statistical significance tests on a batch
+ *
+ * GET /api/v1/ugc/batches/:id/significance
+ * Query: ?metric=ctr (default) | roas | conversionRate
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/batches/:id/significance', (req, res) => {
+  const parts = req.path.split('/');
+  const batchId = parts[parts.indexOf('batches') + 1];
+  const batchDir = path.join('./output/ugc-ads', batchId);
+  const batchJsonPath = path.join(batchDir, 'batch.json');
+
+  if (!fs.existsSync(batchJsonPath)) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  try {
+    const batch = JSON.parse(fs.readFileSync(batchJsonPath, 'utf-8'));
+    const { testParameterSignificance } = require('../pipeline/parameter-scorer');
+
+    const url = new URL(req.path, 'http://localhost');
+    const metric = (url.searchParams.get('metric') || 'ctr') as 'ctr' | 'roas' | 'conversionRate';
+    const results = testParameterSignificance(batch, metric);
+
+    // Save to file
+    fs.writeFileSync(
+      path.join(batchDir, 'significance_tests.json'),
+      JSON.stringify(results, null, 2)
+    );
+
+    const significant = results.filter((r: any) => r.isSignificant);
+    const highlySignificant = results.filter((r: any) => r.isHighlySignificant);
+
+    res.status = 200;
+    res.body = {
+      batchId,
+      metric,
+      totalTests: results.length,
+      significant: significant.length,
+      highlySignificant: highlySignificant.length,
+      results,
+    };
+  } catch (error: any) {
+    res.status = 500;
+    res.body = { error: `Significance testing failed: ${error.message}` };
+  }
+});
+
+/**
+ * Get budget allocation recommendations for a batch
+ *
+ * GET /api/v1/ugc/batches/:id/budget
+ * Query: ?dailyBudget=100
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/batches/:id/budget', (req, res) => {
+  const parts = req.path.split('/');
+  const batchId = parts[parts.indexOf('batches') + 1];
+  const batchDir = path.join('./output/ugc-ads', batchId);
+  const batchJsonPath = path.join(batchDir, 'batch.json');
+
+  if (!fs.existsSync(batchJsonPath)) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  try {
+    const batch = JSON.parse(fs.readFileSync(batchJsonPath, 'utf-8'));
+    const { recommendBudgetAllocation } = require('../pipeline/parameter-scorer');
+
+    const url = new URL(req.path, 'http://localhost');
+    const dailyBudget = parseFloat(url.searchParams.get('dailyBudget') || '100');
+    const allocations = recommendBudgetAllocation(batch, dailyBudget);
+
+    fs.writeFileSync(
+      path.join(batchDir, 'budget_allocation.json'),
+      JSON.stringify(allocations, null, 2)
+    );
+
+    const actions = { increase: 0, maintain: 0, decrease: 0, pause: 0 };
+    for (const a of allocations) {
+      actions[a.action as keyof typeof actions]++;
+    }
+
+    res.status = 200;
+    res.body = {
+      batchId,
+      dailyBudget,
+      totalVariants: allocations.length,
+      actions,
+      allocations,
+    };
+  } catch (error: any) {
+    res.status = 500;
+    res.body = { error: `Budget allocation failed: ${error.message}` };
+  }
+});
+
+/**
+ * Export batch as Meta Ads Manager CSV
+ *
+ * GET /api/v1/ugc/batches/:id/export-csv
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/batches/:id/export-csv', (req, res) => {
+  const parts = req.path.split('/');
+  const batchId = parts[parts.indexOf('batches') + 1];
+  const batchDir = path.join('./output/ugc-ads', batchId);
+  const batchJsonPath = path.join(batchDir, 'batch.json');
+
+  if (!fs.existsSync(batchJsonPath)) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  try {
+    const batch = JSON.parse(fs.readFileSync(batchJsonPath, 'utf-8'));
+    const { generateMetaUploadCSV } = require('../pipeline/meta-csv-exporter');
+    const csv = generateMetaUploadCSV(batch);
+
+    const csvPath = path.join(batchDir, 'meta_upload.csv');
+    fs.writeFileSync(csvPath, csv);
+
+    res.status = 200;
+    res.headers = { 'Content-Type': 'text/csv', 'Content-Disposition': `attachment; filename="${batchId}_meta_upload.csv"` };
+    res.body = csv;
+  } catch (error: any) {
+    res.status = 500;
+    res.body = { error: `CSV export failed: ${error.message}` };
+  }
+});
+
+/**
+ * Creative fatigue detection for a batch
+ *
+ * GET /api/v1/ugc/batches/:id/fatigue
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/batches/:id/fatigue', (req, res) => {
+  const parts = req.path.split('/');
+  const batchId = parts[parts.indexOf('batches') + 1];
+  const batchDir = path.join('./output/ugc-ads', batchId);
+  const batchJsonPath = path.join(batchDir, 'batch.json');
+
+  if (!fs.existsSync(batchJsonPath)) {
+    res.status = 404;
+    res.body = { error: `Batch not found: ${batchId}` };
+    return;
+  }
+
+  try {
+    const batch = JSON.parse(fs.readFileSync(batchJsonPath, 'utf-8'));
+    const { quickFatigueCheck, detectFatigue, parseMultiPeriodData } = require('../pipeline/fatigue-detector');
+
+    // Check for multi-period CSV
+    const multiPeriodCsvPath = path.join(batchDir, 'meta_periods.csv');
+    let report;
+    if (fs.existsSync(multiPeriodCsvPath)) {
+      const csvContent = fs.readFileSync(multiPeriodCsvPath, 'utf-8');
+      const periodData = parseMultiPeriodData(csvContent);
+      report = detectFatigue(batch, periodData);
+    } else {
+      report = quickFatigueCheck(batch);
+    }
+
+    fs.writeFileSync(
+      path.join(batchDir, 'fatigue_report.json'),
+      JSON.stringify(report, null, 2)
+    );
+
+    res.status = 200;
+    res.body = report;
+  } catch (error: any) {
+    res.status = 500;
+    res.body = { error: `Fatigue detection failed: ${error.message}` };
+  }
+});
+
+/**
+ * Compare two batches (A vs B)
+ *
+ * GET /api/v1/ugc/compare?batchA=<id>&batchB=<id>
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/compare', (req, res) => {
+  const url = new URL(req.path, 'http://localhost');
+  const batchAId = url.searchParams.get('batchA') || '';
+  const batchBId = url.searchParams.get('batchB') || '';
+
+  if (!batchAId || !batchBId) {
+    res.status = 400;
+    res.body = { error: 'Both batchA and batchB query params are required' };
+    return;
+  }
+
+  const batchAPath = path.join('./output/ugc-ads', batchAId, 'batch.json');
+  const batchBPath = path.join('./output/ugc-ads', batchBId, 'batch.json');
+
+  if (!fs.existsSync(batchAPath)) {
+    res.status = 404;
+    res.body = { error: `Batch A not found: ${batchAId}` };
+    return;
+  }
+  if (!fs.existsSync(batchBPath)) {
+    res.status = 404;
+    res.body = { error: `Batch B not found: ${batchBId}` };
+    return;
+  }
+
+  try {
+    const batchA = JSON.parse(fs.readFileSync(batchAPath, 'utf-8'));
+    const batchB = JSON.parse(fs.readFileSync(batchBPath, 'utf-8'));
+    const { compareBatches } = require('../pipeline/batch-comparator');
+    const comparison = compareBatches(batchA, batchB);
+
+    res.status = 200;
+    res.body = comparison;
+  } catch (error: any) {
+    res.status = 500;
+    res.body = { error: `Comparison failed: ${error.message}` };
+  }
+});
+
+/**
+ * Calculate A/B test sample size
+ *
+ * GET /api/v1/ugc/sample-size?baselineCtr=0.02&mde=0.2&numVariants=4
+ */
+gateway.registerRoute('GET', '/api/v1/ugc/sample-size', (req, res) => {
+  const url = new URL(req.path, 'http://localhost');
+
+  const baselineCtr = parseFloat(url.searchParams.get('baselineCtr') || '0.02');
+  const mde = parseFloat(url.searchParams.get('mde') || '0.2');
+  const numVariants = parseInt(url.searchParams.get('numVariants') || '4', 10);
+  const dailyImpressions = parseInt(url.searchParams.get('dailyImpressions') || '1000', 10);
+  const cpm = parseFloat(url.searchParams.get('cpm') || '15');
+
+  try {
+    const { calculateSampleSize } = require('../pipeline/batch-comparator');
+    const result = calculateSampleSize({
+      baselineCtr,
+      mde,
+      numVariants,
+      dailyImpressions,
+      cpm,
+    });
+
+    res.status = 200;
+    res.body = result;
+  } catch (error: any) {
+    res.status = 500;
+    res.body = { error: `Sample size calculation failed: ${error.message}` };
+  }
+});
+
+// =============================================================================
 // Template Ingestion Endpoints
 // =============================================================================
 
@@ -1186,6 +2301,22 @@ async function start() {
   console.log(`📋 OpenAPI Spec: http://localhost:${CONFIG.port}/api/v1/openapi.json`);
   console.log(`📊 Capabilities: http://localhost:${CONFIG.port}/api/v1/capabilities`);
 }
+
+// Graceful shutdown
+function shutdown(signal: string) {
+  console.log(`\n🛑 ${signal} received. Shutting down gracefully...`);
+  if (gateway && (gateway as any).server) {
+    (gateway as any).server.close(() => {
+      console.log('✅ Server closed.');
+      process.exit(0);
+    });
+    setTimeout(() => { process.exit(1); }, 3000);
+  } else {
+    process.exit(0);
+  }
+}
+process.on('SIGINT', () => shutdown('SIGINT'));
+process.on('SIGTERM', () => shutdown('SIGTERM'));
 
 // Start server
 if (require.main === module) {

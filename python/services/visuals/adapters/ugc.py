@@ -152,25 +152,201 @@ class UGCAdapter(VisualsAdapter):
         criteria: VisualsSearchCriteria,
         limit: int
     ) -> List[Dict[str, Any]]:
-        """Search for UGC via RapidAPI."""
-        # TODO: Implement RapidAPI UGC search
-        # This would use Instagram/TikTok scrapers to find UGC content
-        logger.info("RapidAPI UGC search not yet implemented")
-        return []
-    
+        """Search for UGC via RapidAPI (Pexels API for stock UGC-style content)."""
+        if not self.rapidapi_key:
+            logger.debug("No RapidAPI key configured; skipping UGC API search")
+            return []
+
+        try:
+            import aiohttp
+
+            headers = {
+                "X-RapidAPI-Key": self.rapidapi_key,
+                "X-RapidAPI-Host": "pexels.p.rapidapi.com",
+                "Authorization": self.rapidapi_key,
+            }
+
+            # Build query from criteria keywords with UGC-style modifiers
+            base_query = " ".join(criteria.keywords) if criteria.keywords else "lifestyle"
+            query = f"{base_query} authentic"
+            if criteria.platform == "tiktok":
+                query += " selfie vertical"
+            elif criteria.platform == "instagram":
+                query += " lifestyle portrait"
+
+            # Search both photos and videos
+            results = []
+
+            async with aiohttp.ClientSession() as session:
+                # Search videos first (more useful for UGC)
+                async with session.get(
+                    "https://pexels.p.rapidapi.com/videos/search",
+                    headers=headers,
+                    params={"query": query, "per_page": str(limit), "orientation": "portrait"},
+                    timeout=aiohttp.ClientTimeout(total=15),
+                ) as resp:
+                    if resp.status == 200:
+                        data = await resp.json()
+                        for video in data.get("videos", [])[:limit]:
+                            files = video.get("video_files", [])
+                            best_file = max(files, key=lambda f: f.get("width", 0)) if files else {}
+                            results.append({
+                                "asset_id": f"video:{video.get('id', '')}",
+                                "title": video.get("url", "").split("/")[-2] if video.get("url") else "untitled",
+                                "url": best_file.get("link", ""),
+                                "preview_url": video.get("image", ""),
+                                "duration": video.get("duration", 0),
+                                "type": "video",
+                                "source": "rapidapi_pexels_ugc",
+                                "user": video.get("user", {}).get("name", ""),
+                            })
+
+                # Fill remaining with photos
+                remaining = limit - len(results)
+                if remaining > 0:
+                    async with session.get(
+                        "https://pexels.p.rapidapi.com/v1/search",
+                        headers=headers,
+                        params={"query": query, "per_page": str(remaining), "orientation": "portrait"},
+                        timeout=aiohttp.ClientTimeout(total=15),
+                    ) as resp:
+                        if resp.status == 200:
+                            data = await resp.json()
+                            for photo in data.get("photos", [])[:remaining]:
+                                src = photo.get("src", {})
+                                results.append({
+                                    "asset_id": f"photo:{photo.get('id', '')}",
+                                    "title": photo.get("alt", "untitled"),
+                                    "url": src.get("original", ""),
+                                    "preview_url": src.get("medium", ""),
+                                    "type": "image",
+                                    "source": "rapidapi_pexels_ugc",
+                                    "user": photo.get("photographer", ""),
+                                })
+
+            return results[:limit]
+
+        except ImportError:
+            logger.warning("aiohttp not installed; RapidAPI UGC search unavailable")
+            return []
+        except Exception as e:
+            logger.error(f"RapidAPI UGC search failed: {e}")
+            return []
+
     async def _get_from_rapidapi(
         self,
         asset_id: str,
         output_path: Optional[Path]
     ) -> VisualsResponse:
-        """Get UGC from RapidAPI."""
-        # TODO: Implement RapidAPI UGC download
-        logger.info("RapidAPI UGC download not yet implemented")
-        return VisualsResponse(
-            job_id=asset_id,
-            success=False,
-            error="RapidAPI UGC download not yet implemented"
-        )
+        """Download UGC content from Pexels via RapidAPI."""
+        if not self.rapidapi_key:
+            return VisualsResponse(
+                job_id=asset_id,
+                success=False,
+                error="No RapidAPI key configured"
+            )
+
+        try:
+            import aiohttp
+
+            headers = {
+                "X-RapidAPI-Key": self.rapidapi_key,
+                "X-RapidAPI-Host": "pexels.p.rapidapi.com",
+                "Authorization": self.rapidapi_key,
+            }
+
+            # Parse asset type from ID (video:123 or photo:123)
+            asset_type, pexels_id = "photo", asset_id
+            if ":" in asset_id:
+                asset_type, pexels_id = asset_id.split(":", 1)
+
+            async with aiohttp.ClientSession() as session:
+                if asset_type == "video":
+                    async with session.get(
+                        f"https://pexels.p.rapidapi.com/videos/videos/{pexels_id}",
+                        headers=headers,
+                        timeout=aiohttp.ClientTimeout(total=15),
+                    ) as resp:
+                        if resp.status != 200:
+                            return VisualsResponse(
+                                job_id=asset_id, success=False,
+                                error=f"Lookup failed: {resp.status}"
+                            )
+                        data = await resp.json()
+                        files = data.get("video_files", [])
+                        if not files:
+                            return VisualsResponse(
+                                job_id=asset_id, success=False,
+                                error="No video files"
+                            )
+                        best = max(files, key=lambda f: f.get("width", 0))
+                        download_url = best.get("link", "")
+                        ext = ".mp4"
+                        duration = data.get("duration", 0)
+                else:
+                    async with session.get(
+                        f"https://pexels.p.rapidapi.com/v1/photos/{pexels_id}",
+                        headers=headers,
+                        timeout=aiohttp.ClientTimeout(total=15),
+                    ) as resp:
+                        if resp.status != 200:
+                            return VisualsResponse(
+                                job_id=asset_id, success=False,
+                                error=f"Lookup failed: {resp.status}"
+                            )
+                        data = await resp.json()
+                        download_url = data.get("src", {}).get("original", "")
+                        ext = ".jpg"
+                        duration = None
+
+                if not download_url:
+                    return VisualsResponse(
+                        job_id=asset_id, success=False,
+                        error="No download URL"
+                    )
+
+                # Download content
+                async with session.get(
+                    download_url,
+                    timeout=aiohttp.ClientTimeout(total=120),
+                ) as dl_resp:
+                    if dl_resp.status != 200:
+                        return VisualsResponse(
+                            job_id=asset_id, success=False,
+                            error=f"Download failed: {dl_resp.status}"
+                        )
+
+                    content = await dl_resp.read()
+                    if output_path:
+                        output_path.parent.mkdir(parents=True, exist_ok=True)
+                        output_path.write_bytes(content)
+                        visuals_path = str(output_path)
+                    else:
+                        import tempfile
+                        tmp = Path(tempfile.mktemp(suffix=ext))
+                        tmp.write_bytes(content)
+                        visuals_path = str(tmp)
+
+                    return VisualsResponse(
+                        job_id=asset_id,
+                        success=True,
+                        visuals_path=visuals_path,
+                        visuals_type="video" if asset_type == "video" else "image",
+                        duration_seconds=float(duration) if duration else None,
+                        source="rapidapi_pexels_ugc"
+                    )
+
+        except ImportError:
+            return VisualsResponse(
+                job_id=asset_id, success=False,
+                error="aiohttp not installed"
+            )
+        except Exception as e:
+            logger.error(f"RapidAPI UGC download failed: {e}")
+            return VisualsResponse(
+                job_id=asset_id, success=False,
+                error=str(e)
+            )
     
     def _matches_criteria(self, file_path: Path, criteria: VisualsSearchCriteria) -> bool:
         """Check if UGC file matches criteria."""

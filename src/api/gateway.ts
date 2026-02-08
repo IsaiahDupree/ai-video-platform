@@ -289,6 +289,7 @@ export class APIGateway {
   // Public paths that don't require authentication
   private publicPaths = new Set([
     '/health',
+    '/health/ready',
     '/docs',
     '/api/v1/openapi.json',
   ]);
@@ -452,7 +453,8 @@ export class APIGateway {
     httpRes.writeHead(res.status, headers);
 
     // Handle different content types
-    if (headers['Content-Type'] === 'text/html') {
+    const ct = headers['Content-Type'];
+    if (ct === 'text/html' || ct === 'text/csv' || ct === 'text/plain') {
       httpRes.end(res.body);
     } else {
       httpRes.end(JSON.stringify(res.body));

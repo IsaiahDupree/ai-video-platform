@@ -40,7 +40,13 @@
     "ingest:canva": "npx tsx scripts/ingest-canva-design.ts",
     "edit:template": "npx tsx scripts/edit-template-hitl.ts",
     "service:start": "npx tsx src/service/server.ts",
-    "service:dev": "npx tsx --watch src/service/server.ts"
+    "service:dev": "npx tsx --watch src/service/server.ts",
+    "ugc:generate": "npx tsx scripts/generate-ugc-ads.ts",
+    "ugc:dry-run": "npx tsx scripts/generate-ugc-ads.ts --dry-run",
+    "ugc:optimize": "npx tsx scripts/optimize-ugc-ads.ts",
+    "ugc:resume": "npx tsx scripts/generate-ugc-ads.ts --resume",
+    "ugc:gallery": "npx tsx scripts/preview-ugc-gallery.ts",
+    "ugc:export": "npx tsx scripts/export-ugc-csv.ts"
   },
   "dependencies": {
     "@remotion/bundler": "^4.0.0",

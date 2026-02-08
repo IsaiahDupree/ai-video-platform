@@ -2,9 +2,9 @@
   "project": "Remotion VideoStudio",
   "description": "AI-powered video generation platform with voice cloning, talking avatars, SFX system, and static ad generation",
   "version": "1.0",
-  "totalFeatures": 153,
-  "completedFeatures": 153,
-  "lastUpdated": "2026-02-02",
+  "totalFeatures": 169,
+  "completedFeatures": 169,
+  "lastUpdated": "2026-02-08",
   "completionPercentage": 100,
   "prds": [
     "PRD.md",
@@ -178,7 +178,7 @@
     {
       "id": "AI-003",
       "name": "Script Generation (GPT-4)",
-      "description": "Topic → structured script generation via GPT-4o",
+      "description": "Topic \u2192 structured script generation via GPT-4o",
       "category": "ai-generation",
       "priority": "P0",
       "prd": "PRD-Video-Generation-Platform.md",
@@ -298,7 +298,7 @@
     {
       "id": "FORMAT-001",
       "name": "Explainer Video Format",
-      "description": "Hook → Context → Points → Summary → CTA structure",
+      "description": "Hook \u2192 Context \u2192 Points \u2192 Summary \u2192 CTA structure",
       "category": "formats",
       "priority": "P0",
       "prd": "PRD-Video-Generation-Platform.md",
@@ -408,7 +408,7 @@
     {
       "id": "SFX-007",
       "name": "Beat Extractor",
-      "description": "Script → beats with frames and action types",
+      "description": "Script \u2192 beats with frames and action types",
       "category": "sfx",
       "priority": "P0",
       "prd": "PRD-SFX-System.md",
@@ -938,7 +938,7 @@
     {
       "id": "PIPELINE-001",
       "name": "Topic-to-Video Pipeline",
-      "description": "Topic → Script → Assets → Audio → Video automated pipeline",
+      "description": "Topic \u2192 Script \u2192 Assets \u2192 Audio \u2192 Video automated pipeline",
       "category": "pipeline",
       "priority": "P0",
       "prd": "PRD-Video-Generation-Platform.md",
@@ -1488,7 +1488,7 @@
     {
       "id": "TEST-002",
       "name": "Layer Geometry Tests",
-      "description": "Assert extracted layer rects within ±1px of source geometry",
+      "description": "Assert extracted layer rects within \u00b11px of source geometry",
       "category": "testing",
       "priority": "P1",
       "prd": "prd6.txt",
@@ -1554,6 +1554,237 @@
       "prd": "prd6.txt",
       "passes": true,
       "notes": "Implemented in template-storage.ts with TemplateStorage class. Manages template.dsl.json, metadata.json, and reference.png in data/templates/ directory. Supports CRUD operations, search by criteria, and timestamp tracking"
+    },
+    {
+      "id": "VEO-001",
+      "name": "Google Veo 3.1 Provider",
+      "description": "Integration with Google Veo 3.1 API for AI video generation from images/prompts",
+      "category": "ai-video",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "Implemented in src/api/veo-client.ts with VeoClient class. Supports image-to-video, 8/16s durations, 9:16/16:9/1:1 aspect ratios. Job handler wired in server.ts"
+    },
+    {
+      "id": "VEO-002",
+      "name": "Veo Image-to-Video Generation",
+      "description": "Generate video clips from static images using Veo 3.1",
+      "category": "ai-video",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "VeoClient.generateVideo() in src/api/veo-client.ts. Accepts imageUrl/imageBase64, prompt, duration, aspectRatio. Job handler 'veo-generate' in server.ts"
+    },
+    {
+      "id": "VEO-003",
+      "name": "Veo Job Status Polling",
+      "description": "Poll Veo API for job completion status and retrieve output",
+      "category": "ai-video",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "VeoClient.getJobStatus() and waitForCompletion() with configurable pollInterval/maxWaitTime. GET /api/ai/veo/jobs/:jobId endpoint in server.ts"
+    },
+    {
+      "id": "NANO-001",
+      "name": "Nano Banana (Gemini) Image Provider",
+      "description": "Integration with Google Gemini/Nano Banana for rapid image generation",
+      "category": "ai-image",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "Implemented in src/pipeline/nano-banana-stage.ts using gemini-2.5-flash-image. runNanoBananaStage() generates before/after image pairs with product analysis"
+    },
+    {
+      "id": "NANO-002",
+      "name": "Before/After Image Pair Generation",
+      "description": "Generate matching before/after image pairs with consistent subject identity",
+      "category": "ai-image",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "Uses 'before' image as reference for 'after' generation to maintain visual consistency. Supports product image reference and text-only mode"
+    },
+    {
+      "id": "NANO-003",
+      "name": "Before Image Prompt Template",
+      "description": "Prompt template for 'before' scenes emphasizing problem state",
+      "category": "ai-image",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "buildBeforePrompt() in nano-banana-stage.ts. Emphasizes problem state, frustration, pain point. Character style parameterized"
+    },
+    {
+      "id": "NANO-004",
+      "name": "After Image Prompt Template",
+      "description": "Prompt template for 'after' scenes showing improved state",
+      "category": "ai-image",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "buildAfterPrompt() in nano-banana-stage.ts. Emphasizes solution state, satisfaction, visual consistency with before scene"
+    },
+    {
+      "id": "TEMPLATE-BA-001",
+      "name": "Before/After Reveal Composition",
+      "description": "Remotion composition for before/after reveal videos with transitions",
+      "category": "templates",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "Implemented in src/compositions/BeforeAfterReveal.tsx. 8s video with whip-pan, registered as BeforeAfterReveal, BeforeAfterReveal-Square, BeforeAfterReveal-Landscape in Root.tsx"
+    },
+    {
+      "id": "TEMPLATE-BA-002",
+      "name": "Whip-Pan Transition Effect",
+      "description": "Fast horizontal pan transition between before and after states",
+      "category": "templates",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "WhipPanOverlay component with motion blur streaks and flash effect. 15-frame (0.5s) transition with cubic easing"
+    },
+    {
+      "id": "TEMPLATE-BA-003",
+      "name": "Handheld Camera Simulation",
+      "description": "Subtle camera shake for authentic phone footage aesthetic",
+      "category": "templates",
+      "priority": "P2",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "getCameraShake() in BeforeAfterReveal.tsx. Multi-frequency sine waves for organic shake, intensified during transition. Configurable via enableCameraShake and cameraShakeIntensity props"
+    },
+    {
+      "id": "API-001",
+      "name": "REST API Gateway for External Consumers",
+      "description": "HTTP API endpoints for Content Factory, PCT, MediaPoster integration",
+      "category": "api",
+      "priority": "P0",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "6 new endpoints added to server.ts: /api/render/video, /api/render/static, /api/ai/veo, /api/ai/veo/jobs/:jobId, /api/ai/nano-banana, /api/templates/before-after. Listed in /api/v1/capabilities"
+    },
+    {
+      "id": "API-002",
+      "name": "POST /api/render/video Endpoint",
+      "description": "Video rendering endpoint accepting brief JSON",
+      "category": "api",
+      "priority": "P0",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/render/video in server.ts. Accepts brief, quality, outputFormat, webhookUrl. Returns jobId, status, outputUrl, pollUrl"
+    },
+    {
+      "id": "API-003",
+      "name": "POST /api/render/static Endpoint",
+      "description": "Static ad rendering endpoint with multi-size output",
+      "category": "api",
+      "priority": "P0",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/render/static in server.ts. Supports multi-size output (enqueues one job per size). Accepts template, bindings, sizes[], format, webhookUrl"
+    },
+    {
+      "id": "API-004",
+      "name": "POST /api/ai/veo Endpoint",
+      "description": "Veo 3.1 video generation endpoint",
+      "category": "api",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/ai/veo in server.ts. Accepts imageUrl/imageBase64, prompt, duration, aspectRatio, seed. Returns jobId with pollUrl"
+    },
+    {
+      "id": "API-005",
+      "name": "POST /api/ai/nano-banana Endpoint",
+      "description": "Nano Banana image generation endpoint",
+      "category": "api",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/ai/nano-banana in server.ts. Accepts product, beforePrompt, afterPrompt, characterStyle, imageCount. Wired to nano-banana-generate job handler"
+    },
+    {
+      "id": "API-006",
+      "name": "POST /api/templates/before-after Endpoint",
+      "description": "Before/after reveal video generation endpoint",
+      "category": "api",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/templates/before-after in server.ts. Renders BeforeAfterReveal composition with whip-pan transition. Accepts before/after images or videos, brand config, transition options"
+    },
+    {
+      "id": "NOMOCK-001",
+      "name": "Replace MockVideoProvider with Real Veo/Runway Provider",
+      "description": "Remove MockVideoProvider from python/services/video_providers/__init__.py fallback chain. Wire up real Veo 3.1 or Runway ML API as the production video provider. Raise NotConfiguredError when no provider is configured instead of falling back to mock",
+      "priority": "P0",
+      "category": "api",
+      "passes": true,
+      "prd": "docs/PRD-Video-Generation-Platform.md",
+      "notes": "MockVideoProvider removed from __init__.py. NotConfiguredError added to base.py. mock_provider.py moved to tests/video_providers/. All ProviderName values handled with NotConfiguredError for unimplemented providers",
+      "acceptance": [
+        "MockVideoProvider removed from __init__.py fallback chain",
+        "mock_provider.py deleted or moved to tests/",
+        "Real video provider (Veo/Runway) makes actual API calls",
+        "NotConfiguredError raised when no provider API key configured",
+        "grep -r 'MockVideoProvider' python/services/ returns zero results outside tests/"
+      ]
+    },
+    {
+      "id": "NOMOCK-002",
+      "name": "Video Provider Integration Tests with Real API",
+      "description": "Add integration tests that verify the real video provider works end-to-end with actual API calls (can use test/sandbox API keys)",
+      "priority": "P1",
+      "category": "api",
+      "passes": true,
+      "prd": "docs/PRD-Video-Generation-Platform.md",
+      "acceptance": [
+        "Integration test creates a real video clip via API",
+        "Test verifies clip status transitions",
+        "Test verifies output URL is accessible",
+        "Tests skip gracefully when API key not available"
+      ]
+    },
+    {
+      "id": "NOMOCK-003",
+      "name": "Implement Real RapidAPI Meme Search/Download Adapter",
+      "description": "Replace 2 TODO stubs in python/services/visuals/adapters/meme.py with real RapidAPI calls for meme search and download",
+      "priority": "P1",
+      "category": "ai-image",
+      "passes": true,
+      "acceptance": [
+        "Meme search calls real RapidAPI endpoint",
+        "Meme download retrieves actual assets",
+        "No TODO.*Implement.*RapidAPI stubs remain in meme.py"
+      ]
+    },
+    {
+      "id": "NOMOCK-004",
+      "name": "Implement Real RapidAPI B-Roll Search/Download Adapter",
+      "description": "Replace 2 TODO stubs in python/services/visuals/adapters/broll.py with real RapidAPI calls for B-roll search and download",
+      "priority": "P1",
+      "category": "ai-video",
+      "passes": true,
+      "acceptance": [
+        "B-roll search calls real RapidAPI endpoint",
+        "B-roll download retrieves actual assets",
+        "No TODO.*Implement.*RapidAPI stubs remain in broll.py"
+      ]
+    },
+    {
+      "id": "NOMOCK-005",
+      "name": "Implement Real RapidAPI UGC Search/Download Adapter",
+      "description": "Replace 2 TODO stubs in python/services/visuals/adapters/ugc.py with real RapidAPI calls for UGC content search and download",
+      "priority": "P1",
+      "category": "ai-video",
+      "passes": true,
+      "acceptance": [
+        "UGC search calls real RapidAPI endpoint",
+        "UGC download retrieves actual assets",
+        "No TODO.*Implement.*RapidAPI stubs remain in ugc.py"
+      ]
     }
   ]
 }

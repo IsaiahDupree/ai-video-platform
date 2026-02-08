@@ -136,25 +136,173 @@ class BrollAdapter(VisualsAdapter):
         criteria: VisualsSearchCriteria,
         limit: int
     ) -> List[Dict[str, Any]]:
-        """Search for trending B-roll via RapidAPI."""
-        # TODO: Implement RapidAPI B-roll search
-        # This would use Instagram/TikTok scrapers to find trending B-roll
-        logger.info("RapidAPI B-roll search not yet implemented")
-        return []
-    
+        """Search for B-roll via RapidAPI (Pexels Video API)."""
+        if not self.rapidapi_key:
+            logger.debug("No RapidAPI key configured; skipping B-roll API search")
+            return []
+
+        try:
+            import aiohttp
+
+            headers = {
+                "X-RapidAPI-Key": self.rapidapi_key,
+                "X-RapidAPI-Host": "pexels.p.rapidapi.com",
+                "Authorization": self.rapidapi_key,
+            }
+
+            query = " ".join(criteria.keywords) if criteria.keywords else "cinematic"
+            params = {
+                "query": query,
+                "per_page": str(limit),
+                "orientation": "portrait" if criteria.aspect_ratio == "9:16" else "landscape",
+            }
+
+            async with aiohttp.ClientSession() as session:
+                async with session.get(
+                    "https://pexels.p.rapidapi.com/videos/search",
+                    headers=headers,
+                    params=params,
+                    timeout=aiohttp.ClientTimeout(total=15),
+                ) as resp:
+                    if resp.status != 200:
+                        logger.warning(f"RapidAPI B-roll search returned {resp.status}")
+                        return []
+
+                    data = await resp.json()
+                    videos = data.get("videos", [])
+
+                    results = []
+                    for video in videos[:limit]:
+                        # Get the best quality video file
+                        files = video.get("video_files", [])
+                        best_file = max(files, key=lambda f: f.get("width", 0)) if files else {}
+
+                        results.append({
+                            "asset_id": str(video.get("id", "")),
+                            "title": video.get("url", "").split("/")[-2] if video.get("url") else "untitled",
+                            "url": best_file.get("link", ""),
+                            "preview_url": video.get("image", ""),
+                            "duration": video.get("duration", 0),
+                            "width": best_file.get("width", 0),
+                            "height": best_file.get("height", 0),
+                            "source": "rapidapi_pexels",
+                            "type": "broll",
+                            "user": video.get("user", {}).get("name", ""),
+                        })
+
+                    return results
+
+        except ImportError:
+            logger.warning("aiohttp not installed; RapidAPI B-roll search unavailable")
+            return []
+        except Exception as e:
+            logger.error(f"RapidAPI B-roll search failed: {e}")
+            return []
+
     async def _get_from_rapidapi(
         self,
         asset_id: str,
         output_path: Optional[Path]
     ) -> VisualsResponse:
-        """Get B-roll from RapidAPI."""
-        # TODO: Implement RapidAPI B-roll download
-        logger.info("RapidAPI B-roll download not yet implemented")
-        return VisualsResponse(
-            job_id=asset_id,
-            success=False,
-            error="RapidAPI B-roll download not yet implemented"
-        )
+        """Download B-roll video from Pexels via RapidAPI."""
+        if not self.rapidapi_key:
+            return VisualsResponse(
+                job_id=asset_id,
+                success=False,
+                error="No RapidAPI key configured"
+            )
+
+        try:
+            import aiohttp
+
+            # First, look up the video to get the download URL
+            headers = {
+                "X-RapidAPI-Key": self.rapidapi_key,
+                "X-RapidAPI-Host": "pexels.p.rapidapi.com",
+                "Authorization": self.rapidapi_key,
+            }
+
+            async with aiohttp.ClientSession() as session:
+                # Get video details
+                async with session.get(
+                    f"https://pexels.p.rapidapi.com/videos/videos/{asset_id}",
+                    headers=headers,
+                    timeout=aiohttp.ClientTimeout(total=15),
+                ) as resp:
+                    if resp.status != 200:
+                        return VisualsResponse(
+                            job_id=asset_id,
+                            success=False,
+                            error=f"Video lookup failed with status {resp.status}"
+                        )
+
+                    data = await resp.json()
+                    files = data.get("video_files", [])
+                    if not files:
+                        return VisualsResponse(
+                            job_id=asset_id,
+                            success=False,
+                            error="No video files found"
+                        )
+
+                    best_file = max(files, key=lambda f: f.get("width", 0))
+                    download_url = best_file.get("link", "")
+
+                if not download_url:
+                    return VisualsResponse(
+                        job_id=asset_id,
+                        success=False,
+                        error="No download URL"
+                    )
+
+                # Download the video
+                async with session.get(
+                    download_url,
+                    timeout=aiohttp.ClientTimeout(total=120),
+                ) as dl_resp:
+                    if dl_resp.status != 200:
+                        return VisualsResponse(
+                            job_id=asset_id,
+                            success=False,
+                            error=f"Download failed with status {dl_resp.status}"
+                        )
+
+                    content = await dl_resp.read()
+
+                    if output_path:
+                        output_path.parent.mkdir(parents=True, exist_ok=True)
+                        output_path.write_bytes(content)
+                        visuals_path = str(output_path)
+                    else:
+                        import tempfile
+                        tmp = Path(tempfile.mktemp(suffix=".mp4"))
+                        tmp.write_bytes(content)
+                        visuals_path = str(tmp)
+
+                    duration = data.get("duration", 0)
+
+                    return VisualsResponse(
+                        job_id=asset_id,
+                        success=True,
+                        visuals_path=visuals_path,
+                        visuals_type="broll",
+                        duration_seconds=float(duration),
+                        source="rapidapi_pexels"
+                    )
+
+        except ImportError:
+            return VisualsResponse(
+                job_id=asset_id,
+                success=False,
+                error="aiohttp not installed"
+            )
+        except Exception as e:
+            logger.error(f"RapidAPI B-roll download failed: {e}")
+            return VisualsResponse(
+                job_id=asset_id,
+                success=False,
+                error=str(e)
+            )
     
     def _matches_criteria(self, file_path: Path, criteria: VisualsSearchCriteria) -> bool:
         """Check if B-roll file matches criteria."""
