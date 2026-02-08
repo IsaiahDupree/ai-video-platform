@@ -75,18 +75,16 @@ export default function CustomProductPagesPage() {
       setLoading(true);
       setError(null);
 
-      // TODO: Replace with actual API call
-      // const response = await fetch('/api/asc/apps');
-      // const data = await response.json();
+      const response = await fetch('/api/asc/apps');
+      if (!response.ok) {
+        throw new Error('Failed to fetch apps');
+      }
+      const data = await response.json();
+      const apps = data.apps || [];
 
-      // Mock data for now
-      const mockApps: App[] = [
-        { id: 'app-1', name: 'Demo App', bundleId: 'com.example.demo' },
-      ];
-
-      setApps(mockApps);
-      if (mockApps.length > 0 && !selectedApp) {
-        setSelectedApp(mockApps[0].id);
+      setApps(apps);
+      if (apps.length > 0 && !selectedApp) {
+        setSelectedApp(apps[0].id);
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load apps');
@@ -102,14 +100,14 @@ export default function CustomProductPagesPage() {
       setLoading(true);
       setError(null);
 
-      // TODO: Replace with actual API call
-      // const response = await fetch(`/api/asc/apps/${selectedApp}/custom-product-pages`);
-      // const data = await response.json();
+      const response = await fetch(`/api/asc/apps/${selectedApp}/custom-product-pages`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch custom product pages');
+      }
+      const data = await response.json();
+      const cpps = data.customProductPages || [];
 
-      // Mock data for now
-      const mockCPPs: CustomProductPage[] = [];
-
-      setCustomProductPages(mockCPPs);
+      setCustomProductPages(cpps);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load custom product pages');
     } finally {
@@ -124,14 +122,14 @@ export default function CustomProductPagesPage() {
       setLoading(true);
       setError(null);
 
-      // TODO: Replace with actual API call
-      // const response = await fetch(`/api/asc/custom-product-pages/${selectedCPP.id}/localizations`);
-      // const data = await response.json();
+      const response = await fetch(`/api/asc/custom-product-pages/${selectedCPP.id}/localizations`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch localizations');
+      }
+      const data = await response.json();
+      const localizations = data.localizations || [];
 
-      // Mock data for now
-      const mockLocalizations: Localization[] = [];
-
-      setLocalizations(mockLocalizations);
+      setLocalizations(localizations);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load localizations');
     } finally {
@@ -162,19 +160,22 @@ export default function CustomProductPagesPage() {
       setError(null);
       setSuccess(null);
 
-      // TODO: Replace with actual API call
-      // const response = await fetch('/api/asc/custom-product-pages', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({
-      //     appId: selectedApp,
-      //     name: cppName,
-      //     visible: cppVisible,
-      //     locale,
-      //     promotionalText,
-      //   }),
-      // });
-      // const data = await response.json();
+      const response = await fetch('/api/asc/custom-product-pages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          appId: selectedApp,
+          name: cppName,
+          visible: cppVisible,
+          locale,
+          promotionalText,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create custom product page');
+      }
+      const data = await response.json();
 
       setSuccess('Custom Product Page created successfully!');
 
@@ -206,13 +207,16 @@ export default function CustomProductPagesPage() {
       setLoading(true);
       setError(null);
 
-      // TODO: Replace with actual API call
-      // const response = await fetch(`/api/asc/custom-product-pages/${selectedCPP.id}/localizations`, {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ locale: newLocale, promotionalText: newPromotionalText }),
-      // });
-      // const data = await response.json();
+      const response = await fetch(`/api/asc/custom-product-pages/${selectedCPP.id}/localizations`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ locale: newLocale, promotionalText: newPromotionalText }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to add localization');
+      }
+      const data = await response.json();
 
       setSuccess('Localization added successfully!');
       await loadLocalizations();

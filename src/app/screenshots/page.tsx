@@ -19,8 +19,8 @@ export default function ScreenshotsPage() {
   const [showNotch, setShowNotch] = useState(true);
   const [shadow, setShadow] = useState(true);
 
-  // Sample screenshot content
-  const sampleContent = 'https://via.placeholder.com/1260x2736/667eea/ffffff?text=Your+App+Screenshot';
+  // Sample screenshot content - will be replaced with user-uploaded image
+  const sampleContent = null;
 
   // Get all device types
   const iPhones = getDevicesByType('iphone');
@@ -182,30 +182,39 @@ export default function ScreenshotsPage() {
 
         {/* Preview */}
         <main className={styles.preview}>
-          <div className={styles.previewContainer}>
-            <DeviceFrame
-              device={selectedDevice}
-              orientation={orientation}
-              content={sampleContent}
-              style={{
-                frameColor,
-                showButtons,
-                showNotch,
-                shadow,
-              }}
-              width={orientation === 'portrait' ? 400 : 600}
-            />
-          </div>
+          {sampleContent ? (
+            <>
+              <div className={styles.previewContainer}>
+                <DeviceFrame
+                  device={selectedDevice}
+                  orientation={orientation}
+                  content={sampleContent}
+                  style={{
+                    frameColor,
+                    showButtons,
+                    showNotch,
+                    shadow,
+                  }}
+                  width={orientation === 'portrait' ? 400 : 600}
+                />
+              </div>
 
-          <div className={styles.previewInfo}>
-            <h3>Preview</h3>
-            <p>
-              <strong>Device:</strong> {selectedDevice}
-            </p>
-            <p>
-              <strong>Orientation:</strong> {orientation}
-            </p>
-          </div>
+              <div className={styles.previewInfo}>
+                <h3>Preview</h3>
+                <p>
+                  <strong>Device:</strong> {selectedDevice}
+                </p>
+                <p>
+                  <strong>Orientation:</strong> {orientation}
+                </p>
+              </div>
+            </>
+          ) : (
+            <div className={styles.emptyState}>
+              <h3>No Screenshot Loaded</h3>
+              <p>Upload or select a screenshot to preview device frames</p>
+            </div>
+          )}
         </main>
       </div>
     </div>

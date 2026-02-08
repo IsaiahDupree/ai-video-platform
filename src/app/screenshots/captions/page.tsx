@@ -26,8 +26,8 @@ export default function CaptionsPage() {
   const [captionText, setCaptionText] = useState('Welcome to Your App');
   const [locale, setLocale] = useState('en-US');
 
-  // Sample screenshot content
-  const sampleContent = 'https://via.placeholder.com/1260x2736/667eea/ffffff?text=Your+App+Screenshot';
+  // Sample screenshot content - will be replaced with user-uploaded image
+  const sampleContent = null;
 
   // Get all device types
   const iPhones = getDevicesByType('iphone');
@@ -166,50 +166,59 @@ export default function CaptionsPage() {
 
         {/* Preview */}
         <main className={styles.preview}>
-          <div className={styles.previewContainer}>
-            <div className={styles.frameWrapper}>
-              <DeviceFrame
-                device={selectedDevice}
-                orientation={orientation}
-                content={sampleContent}
-                width={orientation === 'portrait' ? 400 : 600}
-              />
-
-              {/* Caption overlay on top of device frame */}
-              {caption && (
-                <div className={styles.captionLayer}>
-                  <CaptionOverlay
-                    caption={caption}
-                    locale={locale}
-                    containerWidth={orientation === 'portrait' ? 400 : 600}
-                    rtl={locale === 'ar-SA'}
+          {sampleContent ? (
+            <>
+              <div className={styles.previewContainer}>
+                <div className={styles.frameWrapper}>
+                  <DeviceFrame
+                    device={selectedDevice}
+                    orientation={orientation}
+                    content={sampleContent}
+                    width={orientation === 'portrait' ? 400 : 600}
                   />
-                </div>
-              )}
-            </div>
-          </div>
 
-          <div className={styles.previewInfo}>
-            <h3>Preview</h3>
-            <div className={styles.infoGrid}>
-              <div className={styles.infoItem}>
-                <span className={styles.infoLabel}>Device:</span>
-                <span className={styles.infoValue}>{selectedDevice}</span>
+                  {/* Caption overlay on top of device frame */}
+                  {caption && (
+                    <div className={styles.captionLayer}>
+                      <CaptionOverlay
+                        caption={caption}
+                        locale={locale}
+                        containerWidth={orientation === 'portrait' ? 400 : 600}
+                        rtl={locale === 'ar-SA'}
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className={styles.infoItem}>
-                <span className={styles.infoLabel}>Orientation:</span>
-                <span className={styles.infoValue}>{orientation}</span>
+
+              <div className={styles.previewInfo}>
+                <h3>Preview</h3>
+                <div className={styles.infoGrid}>
+                  <div className={styles.infoItem}>
+                    <span className={styles.infoLabel}>Device:</span>
+                    <span className={styles.infoValue}>{selectedDevice}</span>
+                  </div>
+                  <div className={styles.infoItem}>
+                    <span className={styles.infoLabel}>Orientation:</span>
+                    <span className={styles.infoValue}>{orientation}</span>
+                  </div>
+                  <div className={styles.infoItem}>
+                    <span className={styles.infoLabel}>Caption:</span>
+                    <span className={styles.infoValue}>{caption?.positioning.position}</span>
+                  </div>
+                  <div className={styles.infoItem}>
+                    <span className={styles.infoLabel}>Locale:</span>
+                    <span className={styles.infoValue}>{locale}</span>
+                  </div>
+                </div>
               </div>
-              <div className={styles.infoItem}>
-                <span className={styles.infoLabel}>Caption:</span>
-                <span className={styles.infoValue}>{caption?.positioning.position}</span>
-              </div>
-              <div className={styles.infoItem}>
-                <span className={styles.infoLabel}>Locale:</span>
-                <span className={styles.infoValue}>{locale}</span>
-              </div>
+            </>
+          ) : (
+            <div className={styles.emptyState}>
+              <h3>No Screenshot Loaded</h3>
+              <p>Upload or select a screenshot to preview captions</p>
             </div>
-          </div>
+          )}
 
           <div className={styles.previewHelp}>
             <h4>Caption Positioning</h4>

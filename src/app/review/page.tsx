@@ -43,8 +43,6 @@ export default function AppleReviewPage() {
       setLoading(true);
       setError(null);
 
-      // TODO: Replace with actual API calls
-      // For now, using mock data
       const response = await fetch('/api/review/apple?' + new URLSearchParams({
         workspaceId: filter.workspaceId || '',
         ...(filter.status && { status: Array.isArray(filter.status) ? filter.status.join(',') : filter.status }),
@@ -63,122 +61,10 @@ export default function AppleReviewPage() {
       setStats(data.stats || null);
     } catch (err) {
       console.error('Failed to load data:', err);
-
-      // Fallback to mock data
-      const mockItems: AppleApprovableResource[] = [
-        {
-          id: 'screenshot-001',
-          workspaceId: 'default-workspace',
-          resourceType: AppleApprovableResourceType.SCREENSHOT,
-          name: 'iPhone 15 Pro Screenshot 1',
-          description: 'Main feature showcase screenshot',
-          appId: 'com.example.myapp',
-          locale: 'en-US',
-          deviceType: 'iPhone 15 Pro',
-          displayType: '6.7-inch',
-          imageUrl: '/placeholder-screenshot.png',
-          captionText: 'Discover amazing features',
-          captionPosition: 'bottom',
-          approvalStatus: ApprovalStatus.IN_REVIEW,
-          approvalHistory: [],
-          comments: [],
-          createdBy: 'user-1',
-          createdByName: 'John Doe',
-          createdByEmail: 'john@example.com',
-          createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-          updatedAt: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
-          submittedForReviewAt: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
-          submittedForReviewBy: 'user-1',
-          thumbnailUrl: '/placeholder-screenshot.png',
-          tags: ['main-feature', 'en-US'],
-        },
-        {
-          id: 'cpp-001',
-          workspaceId: 'default-workspace',
-          resourceType: AppleApprovableResourceType.CUSTOM_PRODUCT_PAGE,
-          name: 'Summer Campaign CPP',
-          description: 'Custom product page for summer campaign',
-          appId: 'com.example.myapp',
-          cppName: 'Summer2024',
-          locale: 'en-US',
-          promotionalText: 'Experience the best summer features',
-          screenshotSetIds: ['set-001', 'set-002'],
-          isPublished: false,
-          approvalStatus: ApprovalStatus.DRAFT,
-          approvalHistory: [],
-          comments: [],
-          createdBy: 'user-2',
-          createdByName: 'Jane Smith',
-          createdByEmail: 'jane@example.com',
-          createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
-          updatedAt: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
-          thumbnailUrl: '/placeholder-cpp.png',
-          tags: ['summer', 'campaign'],
-        },
-        {
-          id: 'screenshot-set-001',
-          workspaceId: 'default-workspace',
-          resourceType: AppleApprovableResourceType.SCREENSHOT_SET,
-          name: 'iPad Pro Screenshot Set',
-          description: 'Complete set of iPad screenshots',
-          appId: 'com.example.myapp',
-          locale: 'en-US',
-          deviceType: 'iPad Pro 12.9',
-          screenshotCount: 5,
-          screenshotIds: ['ss-1', 'ss-2', 'ss-3', 'ss-4', 'ss-5'],
-          approvalStatus: ApprovalStatus.APPROVED,
-          approvalHistory: [],
-          comments: [],
-          createdBy: 'user-1',
-          createdByName: 'John Doe',
-          createdByEmail: 'john@example.com',
-          createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
-          updatedAt: new Date(Date.now() - 20 * 60 * 60 * 1000).toISOString(),
-          submittedForReviewAt: new Date(Date.now() - 22 * 60 * 60 * 1000).toISOString(),
-          submittedForReviewBy: 'user-1',
-          approvedAt: new Date(Date.now() - 20 * 60 * 60 * 1000).toISOString(),
-          approvedBy: 'admin-1',
-          thumbnailUrl: '/placeholder-ipad.png',
-          tags: ['ipad', 'complete-set'],
-        },
-      ];
-
-      const mockStats: AppleApprovalStatistics = {
-        totalDraft: 1,
-        totalInReview: 1,
-        totalApproved: 1,
-        totalRejected: 0,
-        totalChangesRequested: 0,
-        byResourceType: {
-          [AppleApprovableResourceType.SCREENSHOT]: { draft: 0, inReview: 1, approved: 0, rejected: 0 },
-          [AppleApprovableResourceType.SCREENSHOT_SET]: { draft: 0, inReview: 0, approved: 1, rejected: 0 },
-          [AppleApprovableResourceType.CUSTOM_PRODUCT_PAGE]: { draft: 1, inReview: 0, approved: 0, rejected: 0 },
-          [AppleApprovableResourceType.APP_PREVIEW_VIDEO]: { draft: 0, inReview: 0, approved: 0, rejected: 0 },
-          [AppleApprovableResourceType.LOCALIZED_METADATA]: { draft: 0, inReview: 0, approved: 0, rejected: 0 },
-          [AppleApprovableResourceType.PPO_TREATMENT]: { draft: 0, inReview: 0, approved: 0, rejected: 0 },
-        },
-        byApp: {
-          'com.example.myapp': {
-            appName: 'My Example App',
-            total: 3,
-            approved: 1,
-          },
-        },
-        avgTimeToApproval: 2 * 60 * 60 * 1000, // 2 hours
-        approvalRate: 100,
-      };
-
-      // Apply filters
-      let filteredItems = mockItems;
-      if (filter.status && filter.status.length > 0) {
-        const statuses = Array.isArray(filter.status) ? filter.status : [filter.status];
-        filteredItems = mockItems.filter((item) =>
-          statuses.includes(item.approvalStatus)
-        );
-      }
-
-      setItems(filteredItems);
-      setStats(mockStats);
+      setError('Failed to load approval items. Please try again.');
+      // Set empty state on error
+      setItems([]);
+      setStats(null);
     } finally {
       setLoading(false);
     }

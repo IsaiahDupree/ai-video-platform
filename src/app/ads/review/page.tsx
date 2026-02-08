@@ -39,90 +39,27 @@ export default function ReviewPage() {
       setLoading(true);
       setError(null);
 
-      // TODO: Replace with actual API calls
-      const mockItems: ApprovableResource[] = [
-        {
-          id: 'ad-001',
-          workspaceId: 'default-workspace',
-          resourceType: 'ad' as any,
-          name: 'Summer Sale Instagram Story',
-          description: 'Promotional ad for summer sale campaign',
-          approvalStatus: ApprovalStatus.IN_REVIEW,
-          approvalHistory: [],
-          comments: [],
-          createdBy: 'user-1',
-          createdByName: 'John Doe',
-          createdByEmail: 'john@example.com',
-          createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-          updatedAt: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
-          submittedForReviewAt: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
-          submittedForReviewBy: 'user-1',
-          thumbnailUrl: '/placeholder-ad.png',
-          tags: ['instagram', 'sale', 'summer'],
-        },
-        {
-          id: 'ad-002',
-          workspaceId: 'default-workspace',
-          resourceType: 'ad' as any,
-          name: 'Product Launch Facebook Ad',
-          description: 'New product launch announcement',
-          approvalStatus: ApprovalStatus.DRAFT,
-          approvalHistory: [],
-          comments: [],
-          createdBy: 'user-2',
-          createdByName: 'Jane Smith',
-          createdByEmail: 'jane@example.com',
-          createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
-          updatedAt: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
-          thumbnailUrl: '/placeholder-ad.png',
-          tags: ['facebook', 'product', 'launch'],
-        },
-        {
-          id: 'ad-003',
-          workspaceId: 'default-workspace',
-          resourceType: 'ad' as any,
-          name: 'Holiday Campaign Banner',
-          description: 'Holiday season promotional banner',
-          approvalStatus: ApprovalStatus.APPROVED,
-          approvalHistory: [],
-          comments: [],
-          createdBy: 'user-1',
-          createdByName: 'John Doe',
-          createdByEmail: 'john@example.com',
-          createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
-          updatedAt: new Date(Date.now() - 20 * 60 * 60 * 1000).toISOString(),
-          submittedForReviewAt: new Date(Date.now() - 22 * 60 * 60 * 1000).toISOString(),
-          submittedForReviewBy: 'user-1',
-          approvedAt: new Date(Date.now() - 20 * 60 * 60 * 1000).toISOString(),
-          approvedBy: 'admin-1',
-          thumbnailUrl: '/placeholder-ad.png',
-          tags: ['banner', 'holiday', 'campaign'],
-        },
-      ];
+      const response = await fetch('/api/ads/review?' + new URLSearchParams({
+        workspaceId: filter.workspaceId || '',
+        ...(filter.status && { status: Array.isArray(filter.status) ? filter.status.join(',') : filter.status }),
+      }));
 
-      const mockStats: ApprovalStatistics = {
-        totalDraft: 1,
-        totalInReview: 1,
-        totalApproved: 1,
-        totalRejected: 0,
-        totalChangesRequested: 0,
-        avgTimeToApproval: 2 * 60 * 60 * 1000, // 2 hours
-        approvalRate: 100,
-      };
-
-      // Apply filters
-      let filteredItems = mockItems;
-      if (filter.status && filter.status.length > 0) {
-        filteredItems = mockItems.filter((item) =>
-          filter.status!.includes(item.approvalStatus)
-        );
+      if (!response.ok) {
+        throw new Error('Failed to load approval items');
       }
 
-      setItems(filteredItems);
-      setStats(mockStats);
+      const data = await response.json();
+      const items = data.items || [];
+      const stats = data.stats || null;
+
+      setItems(items);
+      setStats(stats);
     } catch (err) {
       console.error('Failed to load data:', err);
       setError('Failed to load approval items. Please try again.');
+      // Set empty state on error
+      setItems([]);
+      setStats(null);
     } finally {
       setLoading(false);
     }

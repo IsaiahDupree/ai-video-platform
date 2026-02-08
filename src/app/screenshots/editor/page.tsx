@@ -520,19 +520,22 @@ export default function ScreenshotEditorPage() {
               }}
             >
               <div style={{ position: 'relative', display: 'inline-block' }}>
-                <DeviceFrame
-                  device={selectedDevice}
-                  orientation={orientation}
-                  content={
-                    screenshot ||
-                    'https://via.placeholder.com/1260x2736/667eea/ffffff?text=Upload+Screenshot'
-                  }
-                  style={{
-                    shadow: true,
-                    shadowBlur: 40,
-                    shadowColor: 'rgba(0, 0, 0, 0.3)',
-                  }}
-                />
+                {screenshot ? (
+                  <DeviceFrame
+                    device={selectedDevice}
+                    orientation={orientation}
+                    content={screenshot}
+                    style={{
+                      shadow: true,
+                      shadowBlur: 40,
+                      shadowColor: 'rgba(0, 0, 0, 0.3)',
+                    }}
+                  />
+                ) : (
+                  <div className={styles.emptyFrameState}>
+                    <p>📱 Upload a screenshot to see preview</p>
+                  </div>
+                )}
 
                 {/* Render caption overlays */}
                 {captions

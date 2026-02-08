@@ -27,12 +27,6 @@ export function ReviewItemCard({ item, onUpdate }: ReviewItemCardProps) {
   const [comment, setComment] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // TODO: Get from auth context
-  const currentUser = {
-    userId: 'admin-1',
-    role: WorkspaceRole.ADMIN,
-  };
-
   async function handleAction(action: ApprovalAction, requireComment = false) {
     if (requireComment && !comment.trim()) {
       setShowCommentModal(true);
@@ -42,17 +36,19 @@ export function ReviewItemCard({ item, onUpdate }: ReviewItemCardProps) {
     try {
       setLoading(true);
 
-      // TODO: Replace with actual API call
-      console.log('Performing action:', {
-        resourceId: item.id,
-        action,
-        userId: currentUser.userId,
-        userRole: currentUser.role,
-        comment: comment || undefined,
+      const response = await fetch('/api/ads/review/actions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          resourceId: item.id,
+          action,
+          comment: comment || undefined,
+        }),
       });
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      if (!response.ok) {
+        throw new Error('Failed to perform action');
+      }
 
       alert(`Action "${action}" completed successfully!`);
       setComment('');

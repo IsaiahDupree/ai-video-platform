@@ -2,7 +2,7 @@
   "project": "AI Video Platform",
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
-  "totalFeatures": 106,
+  "totalFeatures": 120,
   "completedFeatures": 103,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
@@ -214,7 +214,7 @@
     {
       "id": "VC-004",
       "name": "Full Voice Pipeline",
-      "description": "End-to-end: ElevenLabs reference → IndexTTS clone → output",
+      "description": "End-to-end: ElevenLabs reference \u2192 IndexTTS clone \u2192 output",
       "priority": "P0",
       "phase": 2,
       "effort": "8pts",
@@ -805,7 +805,7 @@
     {
       "id": "ADS-016",
       "name": "Approval Workflow",
-      "description": "Draft → In Review → Approved status with comments",
+      "description": "Draft \u2192 In Review \u2192 Approved status with comments",
       "priority": "P2",
       "phase": 5,
       "effort": "8pts",
@@ -1380,7 +1380,7 @@
       "priority": "P1",
       "phase": 6,
       "effort": "13pts",
-      "passes": true,
+      "passes": false,
       "category": "apple-pages",
       "files": [
         "src/app/screenshots/editor/"
@@ -1388,7 +1388,8 @@
       "dependencies": [
         "APP-001",
         "APP-002"
-      ]
+      ],
+      "notes": "Reset: uses TODO stubs with hardcoded fake data instead of real API calls"
     },
     {
       "id": "TRACK-001",
@@ -1807,7 +1808,7 @@
     {
       "id": "GDP-006",
       "name": "Click Redirect Tracker",
-      "description": "Attribution spine for email → click → conversion",
+      "description": "Attribution spine for email \u2192 click \u2192 conversion",
       "category": "growth-data-plane",
       "priority": "P1",
       "passes": true,
@@ -1875,6 +1876,175 @@
       "category": "growth-data-plane",
       "priority": "P1",
       "passes": true
+    },
+    {
+      "id": "PERF-001",
+      "name": "Render Queue Priority System",
+      "description": "Priority-based render queue with paid users getting faster processing",
+      "category": "performance",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "PERF-002",
+      "name": "Render Caching for Identical Briefs",
+      "description": "Cache rendered outputs and return cached version for duplicate briefs",
+      "category": "performance",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "PERF-003",
+      "name": "CDN Distribution for Rendered Assets",
+      "description": "Auto-upload rendered videos to R2/CloudFront with signed URLs",
+      "category": "performance",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "API-001",
+      "name": "Public REST API for Video Generation",
+      "description": "API key authenticated endpoints for external integrations to submit briefs and poll render status",
+      "category": "api",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "API-002",
+      "name": "Webhook Notifications on Render Complete",
+      "description": "POST webhook to customer URL when render finishes with download link",
+      "category": "api",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "API-003",
+      "name": "Rate Limiting and Usage Quotas",
+      "description": "Per-API-key rate limiting with monthly render quotas by plan tier",
+      "category": "api",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "ADMIN-001",
+      "name": "Admin Dashboard with Render Analytics",
+      "description": "Admin panel showing total renders, queue depth, error rates, and revenue",
+      "category": "admin",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "ADMIN-002",
+      "name": "User Management and Plan Assignment",
+      "description": "Admin CRUD for users, plan upgrades/downgrades, and quota overrides",
+      "category": "admin",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "TEST-001",
+      "name": "Unit Tests for Brief Schema Validation",
+      "description": "Test all brief field validations, defaults, and edge cases",
+      "category": "testing",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "TEST-002",
+      "name": "Integration Tests for Render Pipeline",
+      "description": "End-to-end render tests with test briefs across all template types",
+      "category": "testing",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "TEST-003",
+      "name": "E2E Tests for Static Ad Studio",
+      "description": "Playwright tests for template selection, customization, and batch render flow",
+      "category": "testing",
+      "priority": "P2",
+      "passes": false
+    },
+    {
+      "id": "SEC-001",
+      "name": "Signed Download URLs with Expiry",
+      "description": "All rendered video URLs are signed with 24h expiry for access control",
+      "category": "security",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "SEC-002",
+      "name": "Input Sanitization for Brief Content",
+      "description": "Sanitize all user-provided text in briefs to prevent XSS in rendered output",
+      "category": "security",
+      "priority": "P0",
+      "passes": false
+    },
+    {
+      "id": "EXPORT-001",
+      "name": "Multi-Format Export (MP4, WebM, GIF)",
+      "description": "Export rendered videos in multiple formats optimized for different platforms",
+      "category": "export",
+      "priority": "P1",
+      "passes": false
+    },
+    {
+      "id": "NOMOCK-001",
+      "name": "Replace TODO Stubs in CPP Page with Real API Calls",
+      "description": "Replace 5 TODO stubs in src/app/cpp/page.tsx with real Supabase/API calls for creative production pipeline operations",
+      "priority": "P0",
+      "category": "api",
+      "passes": true,
+      "files": [
+        "src/app/cpp/page.tsx"
+      ],
+      "acceptance": [
+        "All TODO: Replace with actual API call comments removed",
+        "Real Supabase queries for CRUD operations",
+        "Loading and error states implemented",
+        "grep -n 'TODO.*Replace' src/app/cpp/page.tsx returns zero"
+      ]
+    },
+    {
+      "id": "NOMOCK-002",
+      "name": "Replace TODO Stubs and Fake Data in Review Pages",
+      "description": "Replace TODO stubs and hardcoded fake emails (john@example.com, jane@example.com) in src/app/ads/review/ and src/app/review/ with real API calls and actual user data from auth context",
+      "priority": "P0",
+      "category": "api",
+      "passes": true,
+      "files": [
+        "src/app/ads/review/page.tsx",
+        "src/app/ads/review/components/ReviewItemCard.tsx",
+        "src/app/review/page.tsx"
+      ],
+      "acceptance": [
+        "All TODO: Replace with actual API call comments removed",
+        "No hardcoded email addresses in production code",
+        "Review items fetched from Supabase",
+        "User emails from auth context, not hardcoded",
+        "grep -n 'example.com' src/app/ads/review/ returns zero",
+        "grep -n 'example.com' src/app/review/ returns zero"
+      ]
+    },
+    {
+      "id": "NOMOCK-003",
+      "name": "Replace Placeholder URLs in Screenshots Pages",
+      "description": "Replace via.placeholder.com URLs in screenshot pages with proper empty state UI or real screenshot data from storage",
+      "priority": "P1",
+      "category": "ui",
+      "passes": true,
+      "files": [
+        "src/app/screenshots/page.tsx",
+        "src/app/screenshots/captions/page.tsx",
+        "src/app/screenshots/editor/page.tsx"
+      ],
+      "acceptance": [
+        "No via.placeholder.com URLs in production code",
+        "Empty state with upload prompt when no screenshots",
+        "Real screenshots loaded from Supabase Storage",
+        "grep -rn 'via.placeholder' src/ returns zero"
+      ]
     }
   ]
 }

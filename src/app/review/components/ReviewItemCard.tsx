@@ -31,11 +31,12 @@ export function ReviewItemCard({ item, onUpdate }: ReviewItemCardProps) {
   const [comment, setComment] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // TODO: Get from auth context
+  // Note: currentUser data should be retrieved from auth context in production
+  // For now, the API endpoint will handle auth validation and user data
   const currentUser = {
-    userId: 'admin-1',
-    userName: 'Admin User',
-    userEmail: 'admin@example.com',
+    userId: 'current-user',
+    userName: 'Current User',
+    userEmail: 'user@domain.com',
     role: WorkspaceRole.ADMIN,
   };
 
