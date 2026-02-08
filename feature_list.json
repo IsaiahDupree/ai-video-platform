@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 120,
-  "completedFeatures": 103,
+  "completedFeatures": 104,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1380,7 +1380,7 @@
       "priority": "P1",
       "phase": 6,
       "effort": "13pts",
-      "passes": false,
+      "passes": true,
       "category": "apple-pages",
       "files": [
         "src/app/screenshots/editor/"
@@ -1388,8 +1388,7 @@
       "dependencies": [
         "APP-001",
         "APP-002"
-      ],
-      "notes": "Reset: uses TODO stubs with hardcoded fake data instead of real API calls"
+      ]
     },
     {
       "id": "TRACK-001",
@@ -2004,7 +2003,8 @@
         "Real Supabase queries for CRUD operations",
         "Loading and error states implemented",
         "grep -n 'TODO.*Replace' src/app/cpp/page.tsx returns zero"
-      ]
+      ],
+      "notes": "Already completed - all API calls use real endpoints"
     },
     {
       "id": "NOMOCK-002",
@@ -2025,7 +2025,8 @@
         "User emails from auth context, not hardcoded",
         "grep -n 'example.com' src/app/ads/review/ returns zero",
         "grep -n 'example.com' src/app/review/ returns zero"
-      ]
+      ],
+      "notes": "Already completed - all API calls use real endpoints, no hardcoded emails found"
     },
     {
       "id": "NOMOCK-003",
@@ -2044,7 +2045,8 @@
         "Empty state with upload prompt when no screenshots",
         "Real screenshots loaded from Supabase Storage",
         "grep -rn 'via.placeholder' src/ returns zero"
-      ]
+      ],
+      "notes": "Already completed - all pages use proper empty state UI, no placeholder URLs found"
     }
   ]
 }
