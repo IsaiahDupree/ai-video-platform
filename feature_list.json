@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 120,
-  "completedFeatures": 112,
+  "completedFeatures": 123,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -214,7 +214,7 @@
     {
       "id": "VC-004",
       "name": "Full Voice Pipeline",
-      "description": "End-to-end: ElevenLabs reference \u2192 IndexTTS clone \u2192 output",
+      "description": "End-to-end: ElevenLabs reference → IndexTTS clone → output",
       "priority": "P0",
       "phase": 2,
       "effort": "8pts",
@@ -805,7 +805,7 @@
     {
       "id": "ADS-016",
       "name": "Approval Workflow",
-      "description": "Draft \u2192 In Review \u2192 Approved status with comments",
+      "description": "Draft → In Review → Approved status with comments",
       "priority": "P2",
       "phase": 5,
       "effort": "8pts",
@@ -1807,7 +1807,7 @@
     {
       "id": "GDP-006",
       "name": "Click Redirect Tracker",
-      "description": "Attribution spine for email \u2192 click \u2192 conversion",
+      "description": "Attribution spine for email → click → conversion",
       "category": "growth-data-plane",
       "priority": "P1",
       "passes": true,
@@ -1882,7 +1882,13 @@
       "description": "Priority-based render queue with paid users getting faster processing",
       "category": "performance",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "files": [
+        "src/services/renderQueuePriority.ts",
+        "scripts/test-render-queue-priority.ts",
+        "docs/PERF-001-RENDER-QUEUE-PRIORITY-SYSTEM.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "PERF-002",
@@ -1890,7 +1896,13 @@
       "description": "Cache rendered outputs and return cached version for duplicate briefs",
       "category": "performance",
       "priority": "P2",
-      "passes": false
+      "passes": true,
+      "files": [
+        "src/services/renderCache.ts",
+        "scripts/test-render-cache.ts",
+        "docs/PERF-002-RENDER-CACHING.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "PERF-003",
@@ -1898,7 +1910,12 @@
       "description": "Auto-upload rendered videos to R2/CloudFront with signed URLs",
       "category": "performance",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "files": [
+        "src/services/cdnDistribution.ts",
+        "docs/PERF-003-CDN-DISTRIBUTION.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "API-001",
@@ -1906,7 +1923,12 @@
       "description": "API key authenticated endpoints for external integrations to submit briefs and poll render status",
       "category": "api",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "files": [
+        "src/services/publicAPI.ts",
+        "docs/API-001-PUBLIC-REST-API.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "API-002",
@@ -1914,7 +1936,14 @@
       "description": "POST webhook to customer URL when render finishes with download link",
       "category": "api",
       "priority": "P2",
-      "passes": false
+      "passes": true,
+      "files": [
+        "src/services/publicAPI.ts",
+        "docs/API-002-WEBHOOK-NOTIFICATIONS.md"
+      ],
+      "dependencies": [
+        "API-001"
+      ]
     },
     {
       "id": "API-003",
@@ -1922,7 +1951,14 @@
       "description": "Per-API-key rate limiting with monthly render quotas by plan tier",
       "category": "api",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "files": [
+        "src/services/publicAPI.ts",
+        "docs/API-003-RATE-LIMITING.md"
+      ],
+      "dependencies": [
+        "API-001"
+      ]
     },
     {
       "id": "ADMIN-001",
@@ -1930,7 +1966,12 @@
       "description": "Admin panel showing total renders, queue depth, error rates, and revenue",
       "category": "admin",
       "priority": "P2",
-      "passes": false
+      "passes": true,
+      "files": [
+        "src/app/admin/dashboard/page.tsx",
+        "docs/ADMIN-001-ADMIN-DASHBOARD.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "ADMIN-002",
@@ -1938,7 +1979,13 @@
       "description": "Admin CRUD for users, plan upgrades/downgrades, and quota overrides",
       "category": "admin",
       "priority": "P2",
-      "passes": false
+      "passes": true,
+      "files": [
+        "src/app/admin/users/page.tsx",
+        "src/services/adminUserManagement.ts",
+        "docs/ADMIN-002-USER-MANAGEMENT.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "TEST-001",
@@ -1946,7 +1993,12 @@
       "description": "Test all brief field validations, defaults, and edge cases",
       "category": "testing",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "files": [
+        "scripts/test-brief-validation.ts",
+        "docs/TEST-001-BRIEF-VALIDATION.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "TEST-002",
@@ -1954,7 +2006,12 @@
       "description": "End-to-end render tests with test briefs across all template types",
       "category": "testing",
       "priority": "P1",
-      "passes": false
+      "passes": true,
+      "files": [
+        "scripts/test-render-pipeline-integration.ts",
+        "docs/TEST-002-RENDER-PIPELINE.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "TEST-003",
@@ -1962,7 +2019,12 @@
       "description": "Playwright tests for template selection, customization, and batch render flow",
       "category": "testing",
       "priority": "P2",
-      "passes": false
+      "passes": true,
+      "files": [
+        "scripts/test-e2e-ad-studio.ts",
+        "docs/TEST-003-E2E-TESTS.md"
+      ],
+      "dependencies": []
     },
     {
       "id": "SEC-001",
