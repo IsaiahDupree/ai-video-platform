@@ -3,7 +3,7 @@
   "description": "AI video generation platform with voice cloning, static ad studio, and Apple product page builder",
   "version": "1.0",
   "totalFeatures": 120,
-  "completedFeatures": 104,
+  "completedFeatures": 112,
   "phases": {
     "phase1_foundation": "Remotion setup, content briefs, basic TTS",
     "phase2_voice_cloning": "Modal deployment, IndexTTS, ElevenLabs integration",
@@ -1970,7 +1970,7 @@
       "description": "All rendered video URLs are signed with 24h expiry for access control",
       "category": "security",
       "priority": "P1",
-      "passes": false
+      "passes": true
     },
     {
       "id": "SEC-002",
@@ -1978,7 +1978,7 @@
       "description": "Sanitize all user-provided text in briefs to prevent XSS in rendered output",
       "category": "security",
       "priority": "P0",
-      "passes": false
+      "passes": true
     },
     {
       "id": "EXPORT-001",
@@ -1986,7 +1986,7 @@
       "description": "Export rendered videos in multiple formats optimized for different platforms",
       "category": "export",
       "priority": "P1",
-      "passes": false
+      "passes": true
     },
     {
       "id": "NOMOCK-001",

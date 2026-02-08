@@ -1,6 +1,7 @@
 /**
  * VID-010: Brief Validation
  * JSON schema validation for content briefs with helpful error messages
+ * SEC-002: Input Sanitization integrated for XSS prevention
  */
 
 import type {
@@ -10,6 +11,7 @@ import type {
   Section,
   AudioConfig,
 } from '../types/brief';
+import { sanitizeBrief } from './sanitizeInput';
 
 export interface ValidationError {
   path: string;
@@ -469,4 +471,40 @@ export function formatValidationErrors(errors: ValidationError[]): string {
       return `${index + 1}. ${error.path}: ${error.message}${valueStr}`;
     })
     .join('\n');
+}
+
+/**
+ * Validate and sanitize a content brief
+ * SEC-002: Combines validation with XSS prevention through input sanitization
+ */
+export interface ValidateAndSanitizeResult {
+  valid: boolean;
+  errors: ValidationError[];
+  sanitized?: ContentBrief;
+  sanitizationWarnings: string[];
+}
+
+export function validateAndSanitizeBrief(
+  brief: any
+): ValidateAndSanitizeResult {
+  // First sanitize the input
+  const sanitized = sanitizeBrief(brief);
+
+  // Then validate the sanitized brief
+  const validation = validateBrief(sanitized);
+
+  // Determine if values were changed during sanitization
+  const sanitizationWarnings: string[] = [];
+  if (JSON.stringify(brief) !== JSON.stringify(sanitized)) {
+    sanitizationWarnings.push(
+      'Input contained potentially unsafe content that was sanitized for rendering'
+    );
+  }
+
+  return {
+    valid: validation.valid,
+    errors: validation.errors,
+    sanitized: validation.valid ? (sanitized as ContentBrief) : undefined,
+    sanitizationWarnings,
+  };
 }

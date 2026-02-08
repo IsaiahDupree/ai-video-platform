@@ -1,12 +1,14 @@
 /**
  * Storage Service - ADS-018
  * S3/R2 Upload Integration
+ * SEC-001: Signed Download URLs with Expiry
  *
  * This service provides methods to upload rendered assets to cloud storage
  * (Amazon S3 or Cloudflare R2). Supports both services with the same API.
+ * Includes signed URLs with 24h expiry for secure downloads.
  */
 
-import { S3Client, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand, ListObjectsV2Command, GetObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import fs from 'fs';
 import path from 'path';
@@ -413,6 +415,23 @@ export class StorageService {
    */
   async getPresignedUrl(key: string, expiresIn: number = 3600): Promise<string> {
     const command = new PutObjectCommand({
+      Bucket: this.config.bucket,
+      Key: key,
+    });
+
+    return getSignedUrl(this.client, command, { expiresIn });
+  }
+
+  /**
+   * SEC-001: Generate a signed download URL with 24h default expiry
+   * Download URLs are signed for secure access to rendered assets
+   *
+   * @param key - S3 key
+   * @param expiresIn - URL expiration in seconds (default: 86400 = 24 hours)
+   * @returns Promise with signed download URL
+   */
+  async getDownloadUrl(key: string, expiresIn: number = 86400): Promise<string> {
+    const command = new GetObjectCommand({
       Bucket: this.config.bucket,
       Key: key,
     });

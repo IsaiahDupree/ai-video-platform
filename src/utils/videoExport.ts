@@ -19,9 +19,11 @@ import { promisify } from 'util';
 const execAsync = promisify(exec);
 
 /**
+ * EXPORT-001: Multi-Format Export (MP4, WebM, GIF)
+ * Export rendered videos in multiple formats optimized for different platforms
  * Supported video output formats
  */
-export type VideoFormat = 'mp4' | 'mov' | 'webm' | 'avi';
+export type VideoFormat = 'mp4' | 'mov' | 'webm' | 'avi' | 'gif';
 
 /**
  * Video codec options
@@ -598,4 +600,116 @@ export function createExportConfig(overrides: Partial<VideoExportConfig>): Video
     overwrite: overrides.overwrite !== undefined ? overrides.overwrite : false,
     ...overrides,
   };
+}
+
+/**
+ * EXPORT-001: Convert video to animated GIF
+ * Optimized for web sharing and social media
+ *
+ * @param inputPath - Path to input video file
+ * @param outputPath - Path for output GIF file
+ * @param options - Optional GIF generation options
+ * @returns Promise<string> - Path to generated GIF
+ *
+ * @example
+ * ```typescript
+ * const gifPath = await convertVideoToGif(
+ *   'input.mp4',
+ *   'output.gif',
+ *   { fps: 10, scale: 640 }
+ * );
+ * ```
+ */
+export async function convertVideoToGif(
+  inputPath: string,
+  outputPath: string,
+  options: {
+    fps?: number; // Frames per second (default: 10)
+    scale?: number; // Width in pixels (default: 640)
+    quality?: number; // GIF quality 1-100 (default: 75)
+    duration?: number; // Max duration in seconds (default: 10)
+  } = {}
+): Promise<string> {
+  ensureFfmpeg();
+
+  if (!fs.existsSync(inputPath)) {
+    throw new Error(`Input video not found: ${inputPath}`);
+  }
+
+  const fps = options.fps || 10;
+  const scale = options.scale || 640;
+  const quality = Math.min(100, Math.max(1, options.quality || 75));
+  const duration = options.duration || 10;
+
+  // FFmpeg command to generate palette and GIF
+  const paletteCmd = `ffmpeg -i "${inputPath}" -vf "fps=${fps},scale=${scale}:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -t ${duration} "${outputPath}" -y`;
+
+  try {
+    await execAsync(paletteCmd, { maxBuffer: 10 * 1024 * 1024 });
+
+    if (!fs.existsSync(outputPath)) {
+      throw new Error('GIF generation failed - output file not created');
+    }
+
+    return outputPath;
+  } catch (error) {
+    throw new Error(
+      `Failed to convert video to GIF: ${error instanceof Error ? error.message : 'Unknown error'}`
+    );
+  }
+}
+
+/**
+ * EXPORT-001: Export video in optimal format for target platform
+ * Automatically selects codec and bitrate based on target platform
+ *
+ * @param inputPath - Path to input video
+ * @param outputPath - Path for output file
+ * @param platform - Target platform (youtube, instagram, tiktok, twitter, web)
+ * @returns Promise<string> - Path to exported video
+ */
+export async function exportForPlatform(
+  inputPath: string,
+  outputPath: string,
+  platform: 'youtube' | 'instagram' | 'tiktok' | 'twitter' | 'web'
+): Promise<string> {
+  const platformConfigs: Record<string, Partial<VideoExportConfig>> = {
+    youtube: {
+      format: 'mp4',
+      codec: 'libx264',
+      quality: 'high',
+      bitrate: '5M', // 5 Mbps for HD
+      pixelFormat: 'yuv420p',
+    },
+    instagram: {
+      format: 'mp4',
+      codec: 'libx264',
+      quality: 'standard',
+      bitrate: '2M', // 2 Mbps
+      pixelFormat: 'yuv420p',
+    },
+    tiktok: {
+      format: 'mp4',
+      codec: 'libx264',
+      quality: 'standard',
+      bitrate: '1500k', // 1.5 Mbps for mobile
+      pixelFormat: 'yuv420p',
+    },
+    twitter: {
+      format: 'mp4',
+      codec: 'libx264',
+      quality: 'standard',
+      bitrate: '2M',
+      pixelFormat: 'yuv420p',
+    },
+    web: {
+      format: 'webm',
+      codec: 'libvpx-vp9',
+      quality: 'standard',
+      bitrate: '1M',
+    },
+  };
+
+  const config = platformConfigs[platform];
+  return convertVideo(inputPath, outputPath, config.format as VideoFormat, config);
 }
