@@ -13,7 +13,8 @@ import * as path from 'path';
 import { runNanoBananaStage } from './nano-banana-stage';
 import { runVeoAnimateStage, getMotionPrompt } from './veo-animate-stage';
 import { generateVariants } from './variant-generator';
-import { runRemotionComposeBatch } from './remotion-compose-stage';
+import { runRemotionComposeBatch, type ComposeOptions } from './remotion-compose-stage';
+import { runCopyGenerationStage, type GeneratedCopy, type TemplateSpecificCopy } from './copy-generation-stage';
 import {
   createCheckpoint,
   loadCheckpoint,
@@ -39,6 +40,8 @@ import type {
 
 export interface RunOptions {
   resumeBatchDir?: string;
+  renderVideo?: boolean;
+  autoCopy?: boolean; // Use Gemini to generate product-aware copy (replaces static copy bank)
 }
 
 export async function runUGCPipeline(config: UGCPipelineConfig, options?: RunOptions): Promise<AdBatch> {
@@ -79,6 +82,51 @@ export async function runUGCPipeline(config: UGCPipelineConfig, options?: RunOpt
   saveCheckpoint(checkpoint);
 
   // =========================================================================
+  // Stage 0: AI Copy Generation (optional — when autoCopy is enabled)
+  // =========================================================================
+  let generatedCopy: GeneratedCopy | null = null;
+  let templateSpecificCopy: TemplateSpecificCopy | undefined;
+  let activeCopyBank = config.copyBank;
+
+  if (options?.autoCopy) {
+    if (isStageCompleted(checkpoint, 'copy_generation')) {
+      console.log('\n✍️  STAGE 0: Copy Generation (cached) ✅');
+      const copyPath = path.join(batchDir, 'generated_copy.json');
+      if (fs.existsSync(copyPath)) {
+        generatedCopy = JSON.parse(fs.readFileSync(copyPath, 'utf-8'));
+        activeCopyBank = generatedCopy!.copyBank;
+        templateSpecificCopy = generatedCopy!.templateSpecific;
+        console.log(`   Loaded cached AI-generated copy`);
+      }
+    } else {
+      console.log('\n✍️  STAGE 0: AI Copy Generation');
+      console.log('─'.repeat(60));
+
+      try {
+        generatedCopy = await runCopyGenerationStage({
+          product: config.product,
+          templates: config.matrix.templates,
+        });
+        activeCopyBank = generatedCopy.copyBank;
+        templateSpecificCopy = generatedCopy.templateSpecific;
+
+        // Save generated copy for resume and reference
+        const copyPath = path.join(batchDir, 'generated_copy.json');
+        fs.writeFileSync(copyPath, JSON.stringify(generatedCopy, null, 2));
+
+        markStageComplete(checkpoint, 'copy_generation', {
+          copyGeneration: { outputPath: copyPath },
+        });
+        console.log(`\n   ✅ AI copy generated and saved\n`);
+      } catch (error: any) {
+        console.log(`   ❌ Copy generation failed: ${error.message}`);
+        markStageError(checkpoint, `copy_generation: ${error.message}`);
+        console.log('   ⚠️  Falling back to static copy bank\n');
+      }
+    }
+  }
+
+  // =========================================================================
   // Stage 1: Generate Variants (parametric)
   // =========================================================================
   let variants: AdVariant[];
@@ -93,12 +141,12 @@ export async function runUGCPipeline(config: UGCPipelineConfig, options?: RunOpt
       console.log(`   Loaded ${variants.length} cached variants`);
     } else {
       console.log('   ⚠️  Cache missing, regenerating...');
-      variants = generateVariants(config.matrix, config.copyBank, batchId);
+      variants = generateVariants(config.matrix, activeCopyBank, batchId);
     }
   } else {
     console.log('\n📐 STAGE 1: Generating Parametric Variants');
     console.log('─'.repeat(60));
-    variants = generateVariants(config.matrix, config.copyBank, batchId);
+    variants = generateVariants(config.matrix, activeCopyBank, batchId);
     console.log(`   ✅ ${variants.length} variants generated\n`);
 
     markStageComplete(checkpoint, 'variants', {
@@ -271,18 +319,26 @@ export async function runUGCPipeline(config: UGCPipelineConfig, options?: RunOpt
     const composeDir = path.join(batchDir, 'composed');
 
     try {
+      const composeOpts: ComposeOptions = {
+        renderVideo: options?.renderVideo,
+        templateCopy: templateSpecificCopy,
+      };
       const composed = await runRemotionComposeBatch(
         variants,
         veoOutput.videoPath,
         config.brand,
         config.matrix.sizes,
-        composeDir
+        composeDir,
+        composeOpts
       );
 
       for (const result of composed) {
         const variant = variants.find(v => v.id === result.variantId);
         if (variant) {
           variant.assets.composedPaths = result.outputPaths;
+          if (result.videoPaths) {
+            variant.assets.videoPaths = result.videoPaths;
+          }
           variant.status = 'rendered';
         }
       }

@@ -17,6 +17,7 @@ export {
   recommendBudgetAllocation,
 } from './parameter-scorer';
 export { generateNextBatch } from './optimization-engine';
+export { runCopyGenerationStage } from './copy-generation-stage';
 export {
   createCheckpoint,
   loadCheckpoint,

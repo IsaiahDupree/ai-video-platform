@@ -806,10 +806,12 @@ function listUGCBatches(outputDir: string): any[] {
       const batchJson = path.join(baseDir, d, 'batch.json');
       try {
         const batch = JSON.parse(fs.readFileSync(batchJson, 'utf-8'));
+        const templates = [...new Set((batch.variants || []).map((v: any) => v.parameters?.visual?.template).filter(Boolean))] as string[];
         return {
           id: batch.id,
           productId: batch.productId,
           totalVariants: batch.totalVariants,
+          templates,
           status: batch.status,
           createdAt: batch.createdAt,
           hasReport: fs.existsSync(path.join(baseDir, d, 'optimization_report.json')),

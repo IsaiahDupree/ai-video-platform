@@ -77,6 +77,10 @@ import {
   ugcFeatureListDefaultProps,
   UGCUrgency,
   ugcUrgencyDefaultProps,
+  UGCVideoAdWrapper,
+  ugcVideoAdWrapperDefaultProps,
+  VIDEO_AD_DURATION,
+  VIDEO_AD_FPS,
 } from './compositions/ugc';
 import {
   BeforeAfterReveal,
@@ -2479,6 +2483,55 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={ugcUrgencyDefaultProps}
+      />
+
+      {/* ============================================================= */}
+      {/* UGC VIDEO AD COMPOSITIONS - Animated video ads with wrapper    */}
+      {/* Includes intro, main template content, outro, and audio        */}
+      {/* ============================================================= */}
+
+      {/* Video Ad - Square (Instagram Feed) */}
+      <Composition
+        id="UGC-VideoAd-Post"
+        component={UGCVideoAdWrapper}
+        durationInFrames={VIDEO_AD_DURATION}
+        fps={VIDEO_AD_FPS}
+        width={1080}
+        height={1080}
+        defaultProps={ugcVideoAdWrapperDefaultProps}
+      />
+
+      {/* Video Ad - Story (Instagram/FB Story, Reels, TikTok) */}
+      <Composition
+        id="UGC-VideoAd-Story"
+        component={UGCVideoAdWrapper}
+        durationInFrames={VIDEO_AD_DURATION}
+        fps={VIDEO_AD_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={ugcVideoAdWrapperDefaultProps}
+      />
+
+      {/* Video Ad - Portrait (Instagram Feed 4:5) */}
+      <Composition
+        id="UGC-VideoAd-Portrait"
+        component={UGCVideoAdWrapper}
+        durationInFrames={VIDEO_AD_DURATION}
+        fps={VIDEO_AD_FPS}
+        width={1080}
+        height={1350}
+        defaultProps={ugcVideoAdWrapperDefaultProps}
+      />
+
+      {/* Video Ad - Landscape (Facebook Feed, YouTube) */}
+      <Composition
+        id="UGC-VideoAd-Landscape"
+        component={UGCVideoAdWrapper}
+        durationInFrames={VIDEO_AD_DURATION}
+        fps={VIDEO_AD_FPS}
+        width={1200}
+        height={628}
+        defaultProps={ugcVideoAdWrapperDefaultProps}
       />
     </>
   );

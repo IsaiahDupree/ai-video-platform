@@ -141,6 +141,8 @@ function parseArgs(): {
   resume: string;
   templates: string;
   preview: boolean;
+  video: boolean;
+  autoCopy: boolean;
   brandName: string;
   primaryColor: string;
   accentColor: string;
@@ -155,6 +157,10 @@ function parseArgs(): {
         opts['dryRun'] = 'true';
       } else if (key === 'preview') {
         opts['preview'] = 'true';
+      } else if (key === 'video') {
+        opts['video'] = 'true';
+      } else if (key === 'auto-copy' || key === 'autoCopy') {
+        opts['autoCopy'] = 'true';
       } else if (args[i + 1] && !args[i + 1].startsWith('--')) {
         opts[key] = args[++i];
       }
@@ -173,8 +179,10 @@ function parseArgs(): {
     strategy: (opts['strategy'] as any) || 'latin_square',
     dryRun: opts['dryRun'] === 'true',
     resume: opts['resume'] || '',
-    templates: opts['templates'] || 'before_after,testimonial,product_demo,problem_solution',
+    templates: opts['templates'] || 'before_after,testimonial,product_demo,problem_solution,stat_counter,feature_list,urgency',
     preview: opts['preview'] === 'true',
+    video: opts['video'] === 'true',
+    autoCopy: opts['autoCopy'] === 'true',
     brandName: opts['brand'] || 'BlankLogo',
     primaryColor: opts['primary-color'] || '#635bff',
     accentColor: opts['accent-color'] || '#00d4ff',
@@ -207,8 +215,11 @@ Options:
   --brand <name>            Brand name
   --primary-color <hex>     Primary brand color
   --accent-color <hex>      Accent color
-  --templates <list>         Comma-separated templates (default: all 4)
-                            Options: before_after,testimonial,product_demo,problem_solution
+  --templates <list>         Comma-separated templates (default: all 7)
+                            Options: before_after,testimonial,product_demo,problem_solution,
+                                     stat_counter,feature_list,urgency
+  --video                   Also render MP4 video ads (8s with intro/outro/SFX)
+  --auto-copy               Use Gemini AI to generate product-aware ad copy
   --dry-run                 Generate variants without rendering
   --preview                 Auto-generate HTML gallery after batch creation
   --resume <batch_dir>      Resume an interrupted batch from last checkpoint
@@ -300,8 +311,11 @@ async function main() {
 
   // Run pipeline
   try {
-    const runOptions = args.resume ? { resumeBatchDir: args.resume } : undefined;
-    const batch = await runUGCPipeline(config, runOptions);
+    const runOptions: any = {};
+    if (args.resume) runOptions.resumeBatchDir = args.resume;
+    if (args.video) runOptions.renderVideo = true;
+    if (args.autoCopy) runOptions.autoCopy = true;
+    const batch = await runUGCPipeline(config, Object.keys(runOptions).length > 0 ? runOptions : undefined);
 
     // Auto-generate gallery if --preview
     if (args.preview) {

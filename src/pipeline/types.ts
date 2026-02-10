@@ -238,11 +238,13 @@ export interface RemotionComposeInput {
 export interface ComposedAd {
   variantId: string;
   parameters: AdParameters;
-  outputPaths: Record<string, string>; // sizeName → filePath
+  outputPaths: Record<string, string>; // sizeName → filePath (stills)
+  videoPaths?: Record<string, string>; // sizeName → filePath (video ads)
   utmParams: Record<string, string>;
   metadata: {
     renderTimeMs: number;
     sizes: string[];
+    videoSizes?: string[];
   };
 }
 
@@ -260,6 +262,7 @@ export interface AdVariant {
     afterImagePath?: string;
     videoPath?: string;
     composedPaths: Record<string, string>;
+    videoPaths?: Record<string, string>;
     thumbnailPath?: string;
   };
   utmParams: Record<string, string>;

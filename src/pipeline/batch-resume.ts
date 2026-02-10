@@ -25,6 +25,7 @@ export interface PipelineCheckpoint {
 }
 
 export type PipelineStage =
+  | 'copy_generation'
   | 'variants'
   | 'nano_banana'
   | 'veo_animate'
@@ -32,6 +33,7 @@ export type PipelineStage =
   | 'complete';
 
 export interface StageArtifacts {
+  copyGeneration: { outputPath: string };
   variants: { count: number; path: string };
   nanoBanana: { pairs: number; outputDir: string; manifestPath: string };
   veoAnimate: { videoPath: string; jobId: string; pairId: string };
@@ -83,7 +85,7 @@ export function markStageComplete(
   }
 
   // Advance to next stage
-  const stageOrder: PipelineStage[] = ['variants', 'nano_banana', 'veo_animate', 'remotion_compose', 'complete'];
+  const stageOrder: PipelineStage[] = ['copy_generation', 'variants', 'nano_banana', 'veo_animate', 'remotion_compose', 'complete'];
   const currentIndex = stageOrder.indexOf(stage);
   if (currentIndex < stageOrder.length - 1) {
     checkpoint.stage = stageOrder[currentIndex + 1];

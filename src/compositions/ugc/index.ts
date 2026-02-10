@@ -43,3 +43,11 @@ export {
   ugcUrgencyDefaultProps,
   type UGCUrgencyProps,
 } from './UGCUrgency';
+
+export {
+  UGCVideoAdWrapper,
+  ugcVideoAdWrapperDefaultProps,
+  VIDEO_AD_DURATION,
+  VIDEO_AD_FPS,
+  type UGCVideoAdWrapperProps,
+} from './UGCVideoAdWrapper';
