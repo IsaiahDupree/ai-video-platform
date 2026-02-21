@@ -178,8 +178,17 @@ The voice script must feel like a real person talking, not an ad. First line MUS
 
   const raw = JSON.parse(content) as AngleInputs;
 
+  // Force-inject the pre-built hook line as line 1 — GPT sometimes rewrites it longer
+  let voiceScript = raw.voiceScript ?? '';
+  if (voiceScript) {
+    const lines = voiceScript.split('\n').map((l) => l.trim()).filter(Boolean);
+    lines[0] = hookLine; // always use our validated hook, never GPT's rewrite
+    voiceScript = lines.join('\n');
+  }
+
   const inputs: AngleInputs = {
     ...raw,
+    voiceScript,
     angleId,
     awarenessStage,
     audienceCategory,

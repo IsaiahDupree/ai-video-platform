@@ -31,6 +31,7 @@ export type HookFormula =
   | 'social_proof';    // "[Number] people [did thing] and [result]" — 11x ROAS hook
 
 /** Priority order by proven win rate (from Alfie Carter's 500-ad test) */
+// All hook lines are capped at 15 words — validated by validateScript()
 export const HOOK_PRIORITY_ORDER: HookFormula[] = [
   'pain_literally',
   'social_proof',
@@ -44,32 +45,36 @@ export const HOOK_PRIORITY_ORDER: HookFormula[] = [
  * Takes offer data and returns a ready-to-use hook sentence.
  */
 export function buildHookLine(formula: HookFormula, offer: Offer): string {
-  const product = offer.productName;
   const pain = offer.problemSolved;
   const proof = offer.socialProof ?? '10,000 people';
 
-  // Truncate pain to first clause for hook brevity
-  const shortPain = pain.split(/[.,;]/)[0].trim().toLowerCase();
+  // Truncate pain to max 4 words to keep hook under 15 words total
+  const painWords = pain.split(/[.,;]/)[0].trim().toLowerCase().split(/\s+/).slice(0, 4).join(' ');
 
   switch (formula) {
     case 'pain_literally':
-      return `my ${shortPain} was out of control. ${product} literally saved me.`;
+      // "my X was bad. it literally saved me." — max 12 words
+      return `my ${painWords} was ruining my life. this literally saved me.`;
 
     case 'never_tried':
-      return `i've never tried ${product} before. believe it or not.`;
+      // "i've never tried this before. believe it or not." — 10 words
+      return `i've never tried this before. believe it or not.`;
 
     case 'pov':
-      return `pov: you just discovered how to fix ${shortPain} without any effort.`;
+      // "POV: you just fixed X." — max 9 words
+      return `pov: you just fixed your ${painWords} for good.`;
 
     case 'stop_scrolling':
-      return `stop scrolling if you're tired of dealing with ${shortPain}.`;
+      // "stop scrolling if you have X." — max 10 words
+      return `stop scrolling if you struggle with ${painWords}.`;
 
     case 'social_proof': {
       // Extract a number from socialProof if present, else use generic
       const numMatch = proof.match(/[\d,]+/);
       const num = numMatch ? numMatch[0].replace(',', '') : '8000';
       const numWords = numberToWords(parseInt(num, 10));
-      return `${numWords} people switched to ${product} and the results are insane.`;
+      // "eight thousand people tried this and the results are insane." — 11 words
+      return `${numWords} people tried this and the results are insane.`;
     }
   }
 }
