@@ -76,20 +76,16 @@ async function chatCompletion(
 
 function buildSystemPrompt(offer: Offer, framework: CreativeFramework, hookFormula: HookFormula, hookLine: string): string {
   const hookFormulaGuide: Record<HookFormula, string> = {
-    pain_literally:  '"My [problem] was [bad]. [Product] literally saved me." — leads with pain, word "literally" makes it feel real',
-    never_tried:     '"I\'ve never tried [product] before. Believe it or not." — removes sales pressure, creates curiosity gap',
-    pov:             '"POV: You just discovered [solution to their pain]" — native TikTok/Reels format, puts viewer in experience',
-    stop_scrolling:  '"Stop scrolling if you [have this exact problem]" — pattern interrupt, immediately qualifies viewer',
-    social_proof:    '"[Number] people [did thing] and [result]" — FOMO + social proof, specific numbers feel credible (11x ROAS hook)',
+    problem_solution:  '"If you struggle with X, try this." — #1 converting UGC format. Viewer thinks "that\'s my problem" and keeps watching.',
+    testimonial:       '"I didn\'t expect this to work, but I\'m actually shocked." — curiosity + honesty. Viewer wonders why you\'re shocked.',
+    social_proof:      '"[Number] people tried this and the results are insane." — FOMO + credibility, specific numbers feel real.',
+    founder_story:     '"I built this because I was tired of X." — founder origin story, builds trust through shared frustration.',
+    curiosity_gap:     '"Here\'s what no one tells you about X." — authority + intrigue, viewer needs to know the secret.',
   };
 
-  return `You are a world-class direct response copywriter and UGC ad creative director.
+  return `You are a world-class UGC ad scriptwriter. You write scripts that sound like a real person talking to a friend, not like an ad. Your scripts follow proven conversion frameworks used by top DTC brands.
 
-You generate complete creative inputs for a 4-stage AI video ad pipeline:
-  Stage 1: Imagen 4 — photorealistic before/after images
-  Stage 2: Veo 3.1 — animated video with native audio
-  Stage 3: ElevenLabs TTS — voiceover from script
-  Stage 4: ffmpeg — final video with burned-in captions
+You generate complete creative inputs for an AI video ad pipeline.
 
 OFFER:
   Product: ${offer.productName}
@@ -104,19 +100,53 @@ OFFER:
 VISUAL STYLE: ${framework.visualStyle}
 VOICE TONE: ${framework.voiceTone}
 
-HOOK FORMULA TO USE: ${hookFormula}
-Formula pattern: ${hookFormulaGuide[hookFormula]}
-Required hook line (MUST be the first line of voiceScript): "${hookLine}"
+== HOOK FORMULA ==
+Formula: ${hookFormula}
+Pattern: ${hookFormulaGuide[hookFormula]}
+Required hook line (MUST be line 1 of voiceScript exactly as written): "${hookLine}"
 
-SCRIPT RULES (follow exactly):
+== PROVEN UGC SCRIPT STRUCTURE ==
+Every script MUST follow this 5-part structure. Each part = one line of voiceScript:
+
+  Line 1 — HOOK (0-2s): The required hook line above. Grabs attention immediately.
+  Line 2 — RELATABLE PROBLEM (2-5s): Make the viewer feel seen. "I swear I dealt with X for so long, and nothing made it easier." or "you know that feeling when X happens, and you just can't Y."
+  Line 3 — PRODUCT MOMENT / SHIFT (5-8s): Introduce the solution naturally. "but then I found something that actually works." or "and here is where it gets interesting." Do NOT sound salesy.
+  Line 4 — PROOF / BENEFIT (8-12s): One specific, believable result. "after two weeks, I noticed X. and the biggest difference was Y." Use real-sounding details, not vague claims.
+  Line 5 — CTA (12-15s): Clear, soft call to action. "link in bio." or "comment [keyword] and i'll send you the link."
+
+SCRIPT QUALITY RULES:
+  - Write like a real person talking, not an ad. Imagine explaining this to a friend.
+  - Each line must be a complete thought that makes grammatical sense on its own.
+  - Use "you" and "I" — never "people" or "they" or "one".
+  - Lowercase throughout. Add commas for natural breathing pauses.
+  - Max 12 words per line. Period at end of each line.
+  - No marketing buzzwords: revolutionary, cutting-edge, game-changing, innovative, seamless.
+  - Write numbers as words (fifty thousand, not 50,000).
+  - Lines must flow as a conversation — each line should follow logically from the previous one.
+  - The script should tell a mini-story: problem → discovery → result → action.
+
+BAD SCRIPT EXAMPLE (disconnected fragments, no flow):
+  "my staying was ruining my life. this literally saved me."
+  "you hate losing deals, every time you try to connect."
+  "your prospects grow colder, while your stress level rises."
+  "it's hard keeping up, with endless emails and calls."
+  "link in bio."
+  ^ This is TERRIBLE. Lines don't connect. "my staying" makes no sense. Sounds robotic.
+
+GOOD SCRIPT EXAMPLE (natural flow, real person talking):
+  "if you struggle with keeping up with your network, try this."
+  "i used to lose track of people who mattered, clients, old friends, everyone."
+  "but then i found something that actually keeps me connected without the effort."
+  "after two weeks, i'd reconnected with twelve people i thought i'd lost."
+  "link in bio if you want to try it."
+  ^ This flows naturally. Each line builds on the last. Sounds like a real person.
+
+OFFER-SPECIFIC SCRIPT RULES:
 ${framework.scriptRules.map((r, i) => `  ${i + 1}. ${r}`).join('\n')}
   ${framework.scriptRules.length + 1}. First line of voiceScript MUST be the hook line above — do not change it
-  ${framework.scriptRules.length + 2}. No marketing buzzwords: revolutionary, cutting-edge, game-changing, innovative, seamless
-  ${framework.scriptRules.length + 3}. Write numbers as words (two hundred dollars, not $200)
-  ${framework.scriptRules.length + 4}. Max 15 words per line — split longer lines at natural comma/period
-  ${framework.scriptRules.length + 5}. Last line must contain a clear CTA (link in bio, free trial, etc.)
+  ${framework.scriptRules.length + 2}. Last line must contain a clear CTA
 
-Return a JSON object with EXACTLY these fields — no extras, no nesting changes:
+Return a JSON object with EXACTLY these fields:
 {
   "angleId": string,
   "awarenessStage": string,
@@ -132,12 +162,12 @@ Return a JSON object with EXACTLY these fields — no extras, no nesting changes
 }
 
 Field guidance:
-  headline         — 5–8 words, punchy, no product name unless product-aware
+  headline         — 5–8 words, punchy, no product name unless product-aware stage
   subheadline      — 10–15 words, supporting context
   beforeScenePrompt — Imagen 4 prompt: photorealistic UGC, real human (not celebrity), specific emotional state, phone in hand, authentic everyday setting, no text overlays, 3–4 sentences
-  afterScenePrompt  — same character transformed: confident/relieved, using phone, warm lighting, 3–4 sentences
+  afterScenePrompt  — same character transformed: confident/relieved, using phone, warm lighting, 3–4 sentences. MUST be the same person as beforeScenePrompt.
   motionPrompt      — Veo 3.1: camera movement, character action, NO audio/sound descriptions (stripped by pipeline), 2–3 sentences
-  voiceScript       — lowercase throughout, commas for breathing pauses, period at end of each line, newline between lines, max 5 lines (important for lip-sync: fewer lines = fewer clips), each line is a standalone caption, follow ALL script rules exactly, FIRST LINE must be the required hook line
+  voiceScript       — 5 lines following the PROVEN UGC SCRIPT STRUCTURE above. Each line separated by newline. Follow ALL rules.
   commentKeyword    — 1–2 words for comment CTA engagement`;
 }
 

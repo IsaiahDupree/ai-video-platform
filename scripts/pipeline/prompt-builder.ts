@@ -24,96 +24,96 @@ import { buildCharacterDescription, buildVoiceProfile } from './stage-lipsync.js
 // =============================================================================
 
 export type HookFormula =
-  | 'pain_literally'   // "My [problem] was [bad]. [Product] literally saved me."
-  | 'never_tried'      // "I've never tried [product] before. Believe it or not."
-  | 'pov'              // "POV: You just discovered [solution]"
-  | 'stop_scrolling'   // "Stop scrolling if you [have this problem]"
-  | 'social_proof';    // "[Number] people [did thing] and [result]" — 11x ROAS hook
+  | 'problem_solution'   // "if you struggle with X, try this." — proven #1 UGC format
+  | 'testimonial'        // "i didn't expect this to work, but i'm actually shocked." — curiosity + honesty
+  | 'social_proof'       // "fifty thousand people tried this and the results are insane." — FOMO + credibility
+  | 'founder_story'      // "i built this because i was tired of X." — trust + authenticity
+  | 'curiosity_gap';     // "here's what no one tells you about X." — authority + intrigue
 
-/** Priority order by proven win rate (from Alfie Carter's 500-ad test) */
-// All hook lines are capped at 15 words — validated by validateScript()
+/** Priority order by proven conversion rate (from UGC ad research) */
 export const HOOK_PRIORITY_ORDER: HookFormula[] = [
-  'pain_literally',
+  'problem_solution',
+  'testimonial',
   'social_proof',
-  'never_tried',
-  'stop_scrolling',
-  'pov',
+  'founder_story',
+  'curiosity_gap',
 ];
 
 /**
+ * Extract a short, natural pain phrase from the offer's problemSolved field.
+ * Returns a 3-6 word phrase suitable for inserting into hook templates.
+ * e.g. "losing deals and referrals" or "keeping up with your network"
+ */
+function extractPainPhrase(offer: Offer): string {
+  const pain = offer.problemSolved.toLowerCase();
+
+  // Pattern: "but because there is no X" or "because a lack of X" → the root cause
+  const butBecause = pain.match(/but because\s+(?:there is no|there's no|a lack of|the lack of|no)\s+([a-z][a-z ]{2,25}?)(?:[,.]|$)/i);
+  if (butBecause) {
+    const phrase = butBecause[1].trim().split(/\s+/).slice(0, 5).join(' ');
+    // Only use if it's descriptive enough (>1 word) — "system" alone is too vague
+    if (phrase.split(/\s+/).length >= 2) return phrase;
+  }
+
+  // Pattern: "due to lack of X" — only if X is descriptive (2+ words)
+  const dueToLack = pain.match(/due to\s+(?:lack of|the lack of)?\s*([a-z][a-z ]{3,25}?)(?:[,.]|$)/i);
+  if (dueToLack) {
+    const phrase = dueToLack[1].trim().split(/\s+/).slice(0, 5).join(' ');
+    if (phrase.split(/\s+/).length >= 2) return phrase;
+  }
+
+  // Pattern: "People/X drift from Y" or "fade from Y" → "keeping up with Y"
+  const driftFrom = pain.match(/(?:drift|fade|slip|fall)\s+(?:from|away from)\s+([a-z][a-z ]{2,25}?)(?:\s+not\b|[,.]|$)/i);
+  if (driftFrom) return 'keeping up with ' + driftFrom[1].trim().split(/\s+/).slice(0, 3).join(' ');
+
+  // Pattern: "fail to VERB" → convert to gerund: "stay in touch" → "staying in touch"
+  const failTo = pain.match(/(?:fail|forget|neglect|don't|do not|struggle) to\s+([a-z][a-z ]{2,30}?)(?:\s+consistently|[,.]|$)/i);
+  if (failTo) {
+    const words = failTo[1].trim().split(/\s+/).slice(0, 5);
+    words[0] = words[0].replace(/e$/, '') + 'ing';
+    return words.join(' ');
+  }
+
+  // Pattern: "lose X because" or "miss X"
+  const loseX = pain.match(/(?:lose|miss|drop|waste)\s+([a-z][a-z ]{2,25}?)(?:\s+because|[,.]|$)/i);
+  if (loseX) return loseX[0].trim().split(/\s+/).slice(0, 5).join(' ');
+
+  // Fallback: first clause, cleaned up, strip "not because..." trailing clauses
+  const clause = pain.split(/[.,;]/)[0].trim()
+    .replace(/\s+not because.*/i, '')
+    .replace(/\s+because.*/i, '')
+    .replace(/^(people|professionals|founders|users|everyone)\s+/i, '')
+    .replace(/^(important\s+)?relationships?\s+/i, '');
+  return clause.split(/\s+/).slice(0, 5).join(' ');
+}
+
+/**
  * Build a hook line using one of the 5 proven formulas.
- * Takes offer data and returns a ready-to-use hook sentence.
+ * Each hook is a natural, complete sentence that sounds like a real person talking.
  */
 export function buildHookLine(formula: HookFormula, offer: Offer): string {
-  const pain = offer.problemSolved;
+  const painPhrase = extractPainPhrase(offer);
   const proof = offer.socialProof ?? '10,000 people';
 
-  // Truncate pain to max 4 words — strip subject+verb prefix first
-  const painWords = (() => {
-    const clause = pain.split(/[.,;]/)[0].trim().toLowerCase();
-    const stripped = clause
-      .replace(/\s+not because.*/i, '')   // strip "not because they stop caring" first
-      .replace(/\s+because.*/i, '')       // strip any trailing "because..." clause
-      .replace(/^(people|professionals|founders|users|everyone|most people|many people)\s+\w+\s+(from\s+)?/i, '')
-      .replace(/^(important\s+)?relationships?\s+/i, '')
-      .trim();
-    return stripped.split(/\s+/).slice(0, 4).join(' ');
-  })();
-
-  // For pain_literally, we need a short personal pain NOUN (2-3 words max),
-  // not a full sentence fragment. Extract the core pain concept.
-  const painNoun = (() => {
-    const lower = pain.toLowerCase();
-    // Pattern: "not because X, but because there is no Y" → extract Y
-    const butBecause = lower.match(/but because\s+(?:there is no|there's no|a lack of|the lack of|no)\s+([a-z][a-z ]{2,25}?)(?:[,.]|$)/i);
-    if (butBecause) return butBecause[1].trim().split(/\s+/).slice(0, 3).join(' ');
-    // Pattern: "because they fail to VERB [PREP]" → extract verb phrase as gerund
-    // Captures "stay in touch", "follow up", "keep up with" etc (up to 4 words before boundary)
-    const failTo = lower.match(/because (?:they|we|people|you) (?:fail|forget|neglect|don't|do not) to\s+([a-z][a-z ]{2,30}?)(?:\s+with\s+clients|\s+with\s+contacts|\s+consistently|[,.]|$)/i);
-    if (failTo) {
-      // Just take the verb itself and convert to gerund: "stay" → "staying", "follow" → "following"
-      const verb = failTo[1].trim().split(/\s+/)[0];
-      return verb.replace(/e$/, '') + 'ing';
-    }
-    // Pattern: "fade ... due to lack of X" or "due to X"
-    const dueToLack = lower.match(/due to\s+(?:lack of|the lack of)?\s*([a-z][a-z ]{3,25}?)(?:[,.]|$)/i);
-    if (dueToLack) return dueToLack[1].trim().split(/\s+/).slice(0, 3).join(' ');
-    // Pattern: "lose X because of Y" → Y is the pain
-    const becauseOf = lower.match(/because of\s+([a-z][a-z ]{3,25}?)(?:[,.]|$)/i);
-    if (becauseOf) return becauseOf[1].trim().split(/\s+/).slice(0, 3).join(' ');
-    // Fallback: strip common subject+verb prefix, take first meaningful noun phrase
-    const firstClause = lower.split(/[.,;]/)[0].trim();
-    const stripped = firstClause
-      .replace(/^(people|professionals|founders|users|everyone|most people|many people)\s+\w+\s+(from\s+)?/i, '')
-      .replace(/^(important\s+)?relationships?\s+/i, '');
-    return stripped.split(/\s+/).slice(0, 4).join(' ');
-  })();
-
   switch (formula) {
-    case 'pain_literally':
-      // "my X was bad. it literally saved me." — max 12 words
-      return `my ${painNoun} was ruining my life. this literally saved me.`;
+    case 'problem_solution':
+      return `if you struggle with ${painPhrase}, try this.`;
 
-    case 'never_tried':
-      // "i've never tried this before. believe it or not." — 10 words
-      return `i've never tried this before. believe it or not.`;
-
-    case 'pov':
-      // "POV: you just fixed X." — max 9 words
-      return `pov: you just fixed your ${painWords} for good.`;
-
-    case 'stop_scrolling':
-      // "stop scrolling if you have X." — max 10 words
-      return `stop scrolling if you struggle with ${painWords}.`;
+    case 'testimonial':
+      return `i didn't expect this to work, but i'm actually shocked.`;
 
     case 'social_proof': {
-      // Extract a number from socialProof — strip commas and + before parsing
       const numMatch = proof.match(/[\d,]+/);
       const num = numMatch ? numMatch[0].replace(/,/g, '') : '8000';
       const numWords = numberToWords(parseInt(num, 10));
-      // "fifty thousand people tried this and the results are insane." — 11 words
       return `${numWords} people tried this and the results are insane.`;
     }
+
+    case 'founder_story':
+      return `i built this because i was tired of ${painPhrase}.`;
+
+    case 'curiosity_gap':
+      return `here's what no one tells you about ${painPhrase}.`;
   }
 }
 
