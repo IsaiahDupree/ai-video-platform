@@ -248,8 +248,10 @@ async function describeCharacterFromImage(imagePath: string, openAIKey: string):
   if (!res.ok) return '';
   const result = await res.json() as any;
   const desc = result.choices?.[0]?.message?.content?.trim() ?? '';
-  if (desc) fs.writeFileSync(cacheFile, desc, 'utf-8');
-  return desc;
+  // Reject refusal responses — don't cache them
+  const isRefusal = /i('m| am) sorry|can't help|cannot help|i'm unable|not able to/i.test(desc);
+  if (desc && !isRefusal) fs.writeFileSync(cacheFile, desc, 'utf-8');
+  return isRefusal ? '' : desc;
 }
 
 /**

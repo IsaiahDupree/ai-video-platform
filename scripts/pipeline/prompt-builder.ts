@@ -81,11 +81,11 @@ export function buildHookLine(formula: HookFormula, offer: Offer): string {
       return `stop scrolling if you struggle with ${painWords}.`;
 
     case 'social_proof': {
-      // Extract a number from socialProof if present, else use generic
+      // Extract a number from socialProof — strip commas and + before parsing
       const numMatch = proof.match(/[\d,]+/);
-      const num = numMatch ? numMatch[0].replace(',', '') : '8000';
+      const num = numMatch ? numMatch[0].replace(/,/g, '') : '8000';
       const numWords = numberToWords(parseInt(num, 10));
-      // "eight thousand people tried this and the results are insane." — 11 words
+      // "fifty thousand people tried this and the results are insane." — 11 words
       return `${numWords} people tried this and the results are insane.`;
     }
   }
