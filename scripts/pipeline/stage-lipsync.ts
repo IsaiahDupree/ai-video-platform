@@ -392,19 +392,19 @@ async function pollFalClip(requestToken: string, falKey: string): Promise<Buffer
   const sep = requestToken.indexOf('::');
   const endpoint = requestToken.slice(0, sep);
   const requestId = requestToken.slice(sep + 2);
-  const statusUrl = `https://queue.fal.run/${endpoint}/requests/${requestId}/status`;
-  const resultUrl = `https://queue.fal.run/${endpoint}/requests/${requestId}`;
+  // fal.ai status/result URLs use only the base model path (first two segments: org/model)
+  // e.g. "fal-ai/kling-video/v2.6/pro/text-to-video" → "fal-ai/kling-video"
+  //      "fal-ai/veo3.1" → "fal-ai/veo3.1"
+  const baseModel = endpoint.split('/').slice(0, 2).join('/');
+  const statusUrl = `https://queue.fal.run/${baseModel}/requests/${requestId}/status`;
+  const resultUrl = `https://queue.fal.run/${baseModel}/requests/${requestId}`;
   const start = Date.now();
 
-  while (Date.now() - start < 1_200_000) {
+  while (Date.now() - start < 2_700_000) {  // 45 min — Kling queue can be very long
     await new Promise((r) => setTimeout(r, 8_000));
     let res: Response;
     try {
-      res = await fetch(`${statusUrl}?logs=0`, {
-        method: 'POST',
-        headers: { 'Authorization': `Key ${falKey}`, 'Content-Type': 'application/json' },
-        body: '{}',
-      });
+      res = await fetch(`${statusUrl}?logs=0`, { headers: { 'Authorization': `Key ${falKey}` } });
     } catch { process.stdout.write('~'); continue; }  // transient network error — retry
     if (!res.ok) { process.stdout.write('?'); continue; }
     const status = await res.json() as any;
@@ -430,7 +430,7 @@ async function pollFalClip(requestToken: string, falKey: string): Promise<Buffer
     if (!dlRes.ok) throw new Error(`fal.ai download failed: ${dlRes.status}`);
     return Buffer.from(await dlRes.arrayBuffer());
   }
-  throw new Error('fal.ai clip timed out after 20 minutes');
+  throw new Error('fal.ai clip timed out after 45 minutes');
 }
 
 // =============================================================================
