@@ -1,0 +1,3765 @@
+1
+00:00:00,080 --> 00:00:01,750
+
+Okay, so I just tested something that
+
+2
+00:00:01,750 --> 00:00:01,760
+Okay, so I just tested something that
+ 
+
+3
+00:00:01,760 --> 00:00:03,750
+Okay, so I just tested something that
+completely blew my mind. I took viral
+
+4
+00:00:03,750 --> 00:00:03,760
+completely blew my mind. I took viral
+ 
+
+5
+00:00:03,760 --> 00:00:05,510
+completely blew my mind. I took viral
+videos from Tik Tok and recreated them
+
+6
+00:00:05,510 --> 00:00:05,520
+videos from Tik Tok and recreated them
+ 
+
+7
+00:00:05,520 --> 00:00:07,110
+videos from Tik Tok and recreated them
+with AI for different products in
+
+8
+00:00:07,110 --> 00:00:07,120
+with AI for different products in
+ 
+
+9
+00:00:07,120 --> 00:00:09,190
+with AI for different products in
+literally minutes. No film crew, no
+
+10
+00:00:09,190 --> 00:00:09,200
+literally minutes. No film crew, no
+ 
+
+11
+00:00:09,200 --> 00:00:11,190
+literally minutes. No film crew, no
+models, no editing, just AI doing
+
+12
+00:00:11,190 --> 00:00:11,200
+models, no editing, just AI doing
+ 
+
+13
+00:00:11,200 --> 00:00:12,950
+models, no editing, just AI doing
+everything. And the results, I honestly
+
+14
+00:00:12,950 --> 00:00:12,960
+everything. And the results, I honestly
+ 
+
+15
+00:00:12,960 --> 00:00:14,310
+everything. And the results, I honestly
+had to watch them twice because I
+
+16
+00:00:14,310 --> 00:00:14,320
+had to watch them twice because I
+ 
+
+17
+00:00:14,320 --> 00:00:16,150
+had to watch them twice because I
+couldn't believe they were AI generated.
+
+18
+00:00:16,150 --> 00:00:16,160
+couldn't believe they were AI generated.
+ 
+
+19
+00:00:16,160 --> 00:00:17,430
+couldn't believe they were AI generated.
+Look, I know what you're thinking right
+
+20
+00:00:17,430 --> 00:00:17,440
+Look, I know what you're thinking right
+ 
+
+21
+00:00:17,440 --> 00:00:19,349
+Look, I know what you're thinking right
+now. This probably needs expensive
+
+22
+00:00:19,349 --> 00:00:19,359
+now. This probably needs expensive
+ 
+
+23
+00:00:19,359 --> 00:00:21,429
+now. This probably needs expensive
+software, editing skills, maybe even a
+
+24
+00:00:21,429 --> 00:00:21,439
+software, editing skills, maybe even a
+ 
+
+25
+00:00:21,439 --> 00:00:23,349
+software, editing skills, maybe even a
+whole production team. Wrong. What I'm
+
+26
+00:00:23,349 --> 00:00:23,359
+whole production team. Wrong. What I'm
+ 
+
+27
+00:00:23,359 --> 00:00:25,349
+whole production team. Wrong. What I'm
+about to show you requires absolutely
+
+28
+00:00:25,349 --> 00:00:25,359
+about to show you requires absolutely
+ 
+
+29
+00:00:25,359 --> 00:00:27,269
+about to show you requires absolutely
+zero experience. Here's why you should
+
+30
+00:00:27,269 --> 00:00:27,279
+zero experience. Here's why you should
+ 
+
+31
+00:00:27,279 --> 00:00:29,189
+zero experience. Here's why you should
+listen to me. I've been testing AI video
+
+32
+00:00:29,189 --> 00:00:29,199
+listen to me. I've been testing AI video
+ 
+
+33
+00:00:29,199 --> 00:00:31,029
+listen to me. I've been testing AI video
+tools for over a year now. I've seen
+
+34
+00:00:31,029 --> 00:00:31,039
+tools for over a year now. I've seen
+ 
+
+35
+00:00:31,039 --> 00:00:33,190
+tools for over a year now. I've seen
+what works for viral UGC content and
+
+36
+00:00:33,190 --> 00:00:33,200
+what works for viral UGC content and
+ 
+
+37
+00:00:33,200 --> 00:00:34,630
+what works for viral UGC content and
+what's just hype. So, when I tell you
+
+38
+00:00:34,630 --> 00:00:34,640
+what's just hype. So, when I tell you
+ 
+
+39
+00:00:34,640 --> 00:00:36,709
+what's just hype. So, when I tell you
+this tool is different, I genuinely mean
+
+40
+00:00:36,709 --> 00:00:36,719
+this tool is different, I genuinely mean
+ 
+
+41
+00:00:36,719 --> 00:00:38,630
+this tool is different, I genuinely mean
+it based on real experience. Here's
+
+42
+00:00:38,630 --> 00:00:38,640
+it based on real experience. Here's
+ 
+
+43
+00:00:38,640 --> 00:00:39,830
+it based on real experience. Here's
+exactly what you're getting in this
+
+44
+00:00:39,830 --> 00:00:39,840
+exactly what you're getting in this
+ 
+
+45
+00:00:39,840 --> 00:00:41,830
+exactly what you're getting in this
+video. I'm testing Top View video agent,
+
+46
+00:00:41,830 --> 00:00:41,840
+video. I'm testing Top View video agent,
+ 
+
+47
+00:00:41,840 --> 00:00:44,150
+video. I'm testing Top View video agent,
+which is powered by OpenAI Sora 2 with
+
+48
+00:00:44,150 --> 00:00:44,160
+which is powered by OpenAI Sora 2 with
+ 
+
+49
+00:00:44,160 --> 00:00:45,670
+which is powered by OpenAI Sora 2 with
+three completely different real
+
+50
+00:00:45,670 --> 00:00:45,680
+three completely different real
+ 
+
+51
+00:00:45,680 --> 00:00:47,430
+three completely different real
+products. You'll see the full recreation
+
+52
+00:00:47,430 --> 00:00:47,440
+products. You'll see the full recreation
+ 
+
+53
+00:00:47,440 --> 00:00:49,270
+products. You'll see the full recreation
+process from start to finish.
+
+54
+00:00:49,270 --> 00:00:49,280
+process from start to finish.
+ 
+
+55
+00:00:49,280 --> 00:00:51,029
+process from start to finish.
+Side-by-side comparisons that'll make
+
+56
+00:00:51,029 --> 00:00:51,039
+Side-by-side comparisons that'll make
+ 
+
+57
+00:00:51,039 --> 00:00:53,029
+Side-by-side comparisons that'll make
+you question what's real anymore, and my
+
+58
+00:00:53,029 --> 00:00:53,039
+you question what's real anymore, and my
+ 
+
+59
+00:00:53,039 --> 00:00:54,950
+you question what's real anymore, and my
+completely honest reaction to how
+
+60
+00:00:54,950 --> 00:00:54,960
+completely honest reaction to how
+ 
+
+61
+00:00:54,960 --> 00:00:56,950
+completely honest reaction to how
+insanely good this has become. Let's get
+
+62
+00:00:56,950 --> 00:00:56,960
+insanely good this has become. Let's get
+ 
+
+63
+00:00:56,960 --> 00:00:58,709
+insanely good this has become. Let's get
+into it. If you want to follow along,
+
+64
+00:00:58,709 --> 00:00:58,719
+into it. If you want to follow along,
+ 
+
+65
+00:00:58,719 --> 00:01:00,950
+into it. If you want to follow along,
+head to topview.ai, link in the
+
+66
+00:01:00,950 --> 00:01:00,960
+head to topview.ai, link in the
+ 
+
+67
+00:01:00,960 --> 00:01:03,029
+head to topview.ai, link in the
+description, click try video agent, and
+
+68
+00:01:03,029 --> 00:01:03,039
+description, click try video agent, and
+ 
+
+69
+00:01:03,039 --> 00:01:04,469
+description, click try video agent, and
+you're in. The workflow is stupid
+
+70
+00:01:04,469 --> 00:01:04,479
+you're in. The workflow is stupid
+ 
+
+71
+00:01:04,479 --> 00:01:06,230
+you're in. The workflow is stupid
+simple. You need just two things. An
+
+72
+00:01:06,230 --> 00:01:06,240
+simple. You need just two things. An
+ 
+
+73
+00:01:06,240 --> 00:01:07,910
+simple. You need just two things. An
+image of your product and a viral
+
+74
+00:01:07,910 --> 00:01:07,920
+image of your product and a viral
+ 
+
+75
+00:01:07,920 --> 00:01:09,670
+image of your product and a viral
+reference video you want to recreate.
+
+76
+00:01:09,670 --> 00:01:09,680
+reference video you want to recreate.
+ 
+
+77
+00:01:09,680 --> 00:01:11,350
+reference video you want to recreate.
+That's it. Upload those two things and
+
+78
+00:01:11,350 --> 00:01:11,360
+That's it. Upload those two things and
+ 
+
+79
+00:01:11,360 --> 00:01:13,429
+That's it. Upload those two things and
+the AI handles everything else. Let me
+
+80
+00:01:13,429 --> 00:01:13,439
+the AI handles everything else. Let me
+ 
+
+81
+00:01:13,439 --> 00:01:15,030
+the AI handles everything else. Let me
+show you what happens behind the scenes
+
+82
+00:01:15,030 --> 00:01:15,040
+show you what happens behind the scenes
+ 
+
+83
+00:01:15,040 --> 00:01:16,469
+show you what happens behind the scenes
+because this is where it gets really
+
+84
+00:01:16,469 --> 00:01:16,479
+because this is where it gets really
+ 
+
+85
+00:01:16,479 --> 00:01:18,070
+because this is where it gets really
+interesting. For my first test, I went
+
+86
+00:01:18,070 --> 00:01:18,080
+interesting. For my first test, I went
+ 
+
+87
+00:01:18,080 --> 00:01:20,230
+interesting. For my first test, I went
+to Colada, a platform that tracks which
+
+88
+00:01:20,230 --> 00:01:20,240
+to Colada, a platform that tracks which
+ 
+
+89
+00:01:20,240 --> 00:01:21,910
+to Colada, a platform that tracks which
+products are crushing it on Tik Tok
+
+90
+00:01:21,910 --> 00:01:21,920
+products are crushing it on Tik Tok
+ 
+
+91
+00:01:21,920 --> 00:01:23,510
+products are crushing it on Tik Tok
+right now. It shows you which videos are
+
+92
+00:01:23,510 --> 00:01:23,520
+right now. It shows you which videos are
+ 
+
+93
+00:01:23,520 --> 00:01:25,190
+right now. It shows you which videos are
+getting the most sales, which creators
+
+94
+00:01:25,190 --> 00:01:25,200
+getting the most sales, which creators
+ 
+
+95
+00:01:25,200 --> 00:01:27,109
+getting the most sales, which creators
+are converting the best. I found these
+
+96
+00:01:27,109 --> 00:01:27,119
+are converting the best. I found these
+ 
+
+97
+00:01:27,119 --> 00:01:28,870
+are converting the best. I found these
+jeans that were absolutely crushing it
+
+98
+00:01:28,870 --> 00:01:28,880
+jeans that were absolutely crushing it
+ 
+
+99
+00:01:28,880 --> 00:01:30,789
+jeans that were absolutely crushing it
+this week. Then I grabbed a video from a
+
+100
+00:01:30,789 --> 00:01:30,799
+this week. Then I grabbed a video from a
+ 
+
+101
+00:01:30,799 --> 00:01:32,310
+this week. Then I grabbed a video from a
+creator whose content was converting
+
+102
+00:01:32,310 --> 00:01:32,320
+creator whose content was converting
+ 
+
+103
+00:01:32,320 --> 00:01:34,789
+creator whose content was converting
+like crazy based on actual sales data. I
+
+104
+00:01:34,789 --> 00:01:34,799
+like crazy based on actual sales data. I
+ 
+
+105
+00:01:34,799 --> 00:01:36,630
+like crazy based on actual sales data. I
+uploaded the jeans photo as my product
+
+106
+00:01:36,630 --> 00:01:36,640
+uploaded the jeans photo as my product
+ 
+
+107
+00:01:36,640 --> 00:01:38,870
+uploaded the jeans photo as my product
+image and her video as my reference. You
+
+108
+00:01:38,870 --> 00:01:38,880
+image and her video as my reference. You
+ 
+
+109
+00:01:38,880 --> 00:01:40,469
+image and her video as my reference. You
+choose portrait or landscape format
+
+110
+00:01:40,469 --> 00:01:40,479
+choose portrait or landscape format
+ 
+
+111
+00:01:40,479 --> 00:01:41,910
+choose portrait or landscape format
+depending on your platform. I went
+
+112
+00:01:41,910 --> 00:01:41,920
+depending on your platform. I went
+ 
+
+113
+00:01:41,920 --> 00:01:43,670
+depending on your platform. I went
+portrait for Tik Tok. Now watch what
+
+114
+00:01:43,670 --> 00:01:43,680
+portrait for Tik Tok. Now watch what
+ 
+
+115
+00:01:43,680 --> 00:01:45,270
+portrait for Tik Tok. Now watch what
+happens. The AI starts creating what
+
+116
+00:01:45,270 --> 00:01:45,280
+happens. The AI starts creating what
+ 
+
+117
+00:01:45,280 --> 00:01:47,190
+happens. The AI starts creating what
+they call a smart plan. On the left
+
+118
+00:01:47,190 --> 00:01:47,200
+they call a smart plan. On the left
+ 
+
+119
+00:01:47,200 --> 00:01:48,630
+they call a smart plan. On the left
+side, you can see it working through
+
+120
+00:01:48,630 --> 00:01:48,640
+side, you can see it working through
+ 
+
+121
+00:01:48,640 --> 00:01:50,389
+side, you can see it working through
+different stages. First, it analyzed
+
+122
+00:01:50,389 --> 00:01:50,399
+different stages. First, it analyzed
+ 
+
+123
+00:01:50,399 --> 00:01:51,990
+different stages. First, it analyzed
+your product just from the photo. It
+
+124
+00:01:51,990 --> 00:01:52,000
+your product just from the photo. It
+ 
+
+125
+00:01:52,000 --> 00:01:53,510
+your product just from the photo. It
+creates a full comprehensive list of
+
+126
+00:01:53,510 --> 00:01:53,520
+creates a full comprehensive list of
+ 
+
+127
+00:01:53,520 --> 00:01:55,429
+creates a full comprehensive list of
+features automatically. For these jeans,
+
+128
+00:01:55,429 --> 00:01:55,439
+features automatically. For these jeans,
+ 
+
+129
+00:01:55,439 --> 00:01:57,270
+features automatically. For these jeans,
+it picked up the wash, the fit, the
+
+130
+00:01:57,270 --> 00:01:57,280
+it picked up the wash, the fit, the
+ 
+
+131
+00:01:57,280 --> 00:01:59,270
+it picked up the wash, the fit, the
+style, all just from the image. Then it
+
+132
+00:01:59,270 --> 00:01:59,280
+style, all just from the image. Then it
+ 
+
+133
+00:01:59,280 --> 00:02:00,870
+style, all just from the image. Then it
+writes an entire video brief with an
+
+134
+00:02:00,870 --> 00:02:00,880
+writes an entire video brief with an
+ 
+
+135
+00:02:00,880 --> 00:02:02,069
+writes an entire video brief with an
+outline of what the video should be
+
+136
+00:02:02,069 --> 00:02:02,079
+outline of what the video should be
+ 
+
+137
+00:02:02,079 --> 00:02:03,990
+outline of what the video should be
+about, who the target audience is, and
+
+138
+00:02:03,990 --> 00:02:04,000
+about, who the target audience is, and
+ 
+
+139
+00:02:04,000 --> 00:02:05,830
+about, who the target audience is, and
+the key selling points. Next, this is
+
+140
+00:02:05,830 --> 00:02:05,840
+the key selling points. Next, this is
+ 
+
+141
+00:02:05,840 --> 00:02:07,830
+the key selling points. Next, this is
+the genius part. It analyzes why the
+
+142
+00:02:07,830 --> 00:02:07,840
+the genius part. It analyzes why the
+ 
+
+143
+00:02:07,840 --> 00:02:09,669
+the genius part. It analyzes why the
+reference video actually worked. It's
+
+144
+00:02:09,669 --> 00:02:09,679
+reference video actually worked. It's
+ 
+
+145
+00:02:09,679 --> 00:02:11,350
+reference video actually worked. It's
+not just blindly copying. It's
+
+146
+00:02:11,350 --> 00:02:11,360
+not just blindly copying. It's
+ 
+
+147
+00:02:11,360 --> 00:02:13,110
+not just blindly copying. It's
+understanding the psychology behind it.
+
+148
+00:02:13,110 --> 00:02:13,120
+understanding the psychology behind it.
+ 
+
+149
+00:02:13,120 --> 00:02:14,710
+understanding the psychology behind it.
+For this video, it picked up hooks like
+
+150
+00:02:14,710 --> 00:02:14,720
+For this video, it picked up hooks like
+ 
+
+151
+00:02:14,720 --> 00:02:16,710
+For this video, it picked up hooks like
+viral bloat friendly jeans and Mother
+
+152
+00:02:16,710 --> 00:02:16,720
+viral bloat friendly jeans and Mother
+ 
+
+153
+00:02:16,720 --> 00:02:19,110
+viral bloat friendly jeans and Mother
+over 40 as strong attention grabbers. It
+
+154
+00:02:19,110 --> 00:02:19,120
+over 40 as strong attention grabbers. It
+ 
+
+155
+00:02:19,120 --> 00:02:20,790
+over 40 as strong attention grabbers. It
+identified specific shot types,
+
+156
+00:02:20,790 --> 00:02:20,800
+identified specific shot types,
+ 
+
+157
+00:02:20,800 --> 00:02:22,309
+identified specific shot types,
+close-ups highlighting the stretch,
+
+158
+00:02:22,309 --> 00:02:22,319
+close-ups highlighting the stretch,
+ 
+
+159
+00:02:22,319 --> 00:02:24,070
+close-ups highlighting the stretch,
+moments expressing love for the color
+
+160
+00:02:24,070 --> 00:02:24,080
+moments expressing love for the color
+ 
+
+161
+00:02:24,080 --> 00:02:25,910
+moments expressing love for the color
+and shape. Then the AI storyboards
+
+162
+00:02:25,910 --> 00:02:25,920
+and shape. Then the AI storyboards
+ 
+
+163
+00:02:25,920 --> 00:02:27,990
+and shape. Then the AI storyboards
+multiple shots for your UGC video,
+
+164
+00:02:27,990 --> 00:02:28,000
+multiple shots for your UGC video,
+ 
+
+165
+00:02:28,000 --> 00:02:29,510
+multiple shots for your UGC video,
+keeping it aligned with what made that
+
+166
+00:02:29,510 --> 00:02:29,520
+keeping it aligned with what made that
+ 
+
+167
+00:02:29,520 --> 00:02:31,750
+keeping it aligned with what made that
+reference successful. Shot one, shot
+
+168
+00:02:31,750 --> 00:02:31,760
+reference successful. Shot one, shot
+ 
+
+169
+00:02:31,760 --> 00:02:33,589
+reference successful. Shot one, shot
+two, shot three, all planned out
+
+170
+00:02:33,589 --> 00:02:33,599
+two, shot three, all planned out
+ 
+
+171
+00:02:33,599 --> 00:02:34,949
+two, shot three, all planned out
+automatically. You review the
+
+172
+00:02:34,949 --> 00:02:34,959
+automatically. You review the
+ 
+
+173
+00:02:34,959 --> 00:02:36,869
+automatically. You review the
+storyboard, click proceed, and the video
+
+174
+00:02:36,869 --> 00:02:36,879
+storyboard, click proceed, and the video
+ 
+
+175
+00:02:36,879 --> 00:02:39,110
+storyboard, click proceed, and the video
+generates. The AI creates each shot
+
+176
+00:02:39,110 --> 00:02:39,120
+generates. The AI creates each shot
+ 
+
+177
+00:02:39,120 --> 00:02:41,110
+generates. The AI creates each shot
+separately and edits them together. When
+
+178
+00:02:41,110 --> 00:02:41,120
+separately and edits them together. When
+ 
+
+179
+00:02:41,120 --> 00:02:43,190
+separately and edits them together. When
+this finished, I was genuinely shocked.
+
+180
+00:02:43,190 --> 00:02:43,200
+this finished, I was genuinely shocked.
+ 
+
+181
+00:02:43,200 --> 00:02:45,110
+this finished, I was genuinely shocked.
+Stop for a second. Look at this,
+
+182
+00:02:45,110 --> 00:02:45,120
+Stop for a second. Look at this,
+ 
+
+183
+00:02:45,120 --> 00:02:47,030
+Stop for a second. Look at this,
+>> you guys. I'm not kidding. These are the
+
+184
+00:02:47,030 --> 00:02:47,040
+>> you guys. I'm not kidding. These are the
+ 
+
+185
+00:02:47,040 --> 00:02:48,710
+>> you guys. I'm not kidding. These are the
+stretchiest, most comfortable jeans I've
+
+186
+00:02:48,710 --> 00:02:48,720
+stretchiest, most comfortable jeans I've
+ 
+
+187
+00:02:48,720 --> 00:02:49,430
+stretchiest, most comfortable jeans I've
+ever owned.
+
+188
+00:02:49,430 --> 00:02:49,440
+ever owned.
+ 
+
+189
+00:02:49,440 --> 00:02:51,509
+ever owned.
+>> Multiple shots. She's holding the jeans,
+
+190
+00:02:51,509 --> 00:02:51,519
+>> Multiple shots. She's holding the jeans,
+ 
+
+191
+00:02:51,519 --> 00:02:53,110
+>> Multiple shots. She's holding the jeans,
+showing the stretch on the waistband,
+
+192
+00:02:53,110 --> 00:02:53,120
+showing the stretch on the waistband,
+ 
+
+193
+00:02:53,120 --> 00:02:54,710
+showing the stretch on the waistband,
+different camera angles, natural
+
+194
+00:02:54,710 --> 00:02:54,720
+different camera angles, natural
+ 
+
+195
+00:02:54,720 --> 00:02:56,229
+different camera angles, natural
+movements. If I showed this to my
+
+196
+00:02:56,229 --> 00:02:56,239
+movements. If I showed this to my
+ 
+
+197
+00:02:56,239 --> 00:02:57,830
+movements. If I showed this to my
+parents, they would not know this was
+
+198
+00:02:57,830 --> 00:02:57,840
+parents, they would not know this was
+ 
+
+199
+00:02:57,840 --> 00:03:00,390
+parents, they would not know this was
+AI. The pacing matches almost perfectly.
+
+200
+00:03:00,390 --> 00:03:00,400
+AI. The pacing matches almost perfectly.
+ 
+
+201
+00:03:00,400 --> 00:03:01,990
+AI. The pacing matches almost perfectly.
+The shot types are identical. The
+
+202
+00:03:01,990 --> 00:03:02,000
+The shot types are identical. The
+ 
+
+203
+00:03:02,000 --> 00:03:03,910
+The shot types are identical. The
+messaging hits the same selling points.
+
+204
+00:03:03,910 --> 00:03:03,920
+messaging hits the same selling points.
+ 
+
+205
+00:03:03,920 --> 00:03:06,309
+messaging hits the same selling points.
+This is all powered by OpenAI Sora 2. I
+
+206
+00:03:06,309 --> 00:03:06,319
+This is all powered by OpenAI Sora 2. I
+ 
+
+207
+00:03:06,319 --> 00:03:08,070
+This is all powered by OpenAI Sora 2. I
+generated several more versions to test
+
+208
+00:03:08,070 --> 00:03:08,080
+generated several more versions to test
+ 
+
+209
+00:03:08,080 --> 00:03:09,830
+generated several more versions to test
+consistency, and every single one
+
+210
+00:03:09,830 --> 00:03:09,840
+consistency, and every single one
+ 
+
+211
+00:03:09,840 --> 00:03:11,830
+consistency, and every single one
+delivered. different UGC avatars each
+
+212
+00:03:11,830 --> 00:03:11,840
+delivered. different UGC avatars each
+ 
+
+213
+00:03:11,840 --> 00:03:13,670
+delivered. different UGC avatars each
+time, same professional quality. Because
+
+214
+00:03:13,670 --> 00:03:13,680
+time, same professional quality. Because
+ 
+
+215
+00:03:13,680 --> 00:03:15,589
+time, same professional quality. Because
+the AI learned from a video that already
+
+216
+00:03:15,589 --> 00:03:15,599
+the AI learned from a video that already
+ 
+
+217
+00:03:15,599 --> 00:03:17,430
+the AI learned from a video that already
+proved it could convert based on actual
+
+218
+00:03:17,430 --> 00:03:17,440
+proved it could convert based on actual
+ 
+
+219
+00:03:17,440 --> 00:03:19,110
+proved it could convert based on actual
+sales data, it knew exactly what
+
+220
+00:03:19,110 --> 00:03:19,120
+sales data, it knew exactly what
+ 
+
+221
+00:03:19,120 --> 00:03:20,790
+sales data, it knew exactly what
+language to use, what points to
+
+222
+00:03:20,790 --> 00:03:20,800
+language to use, what points to
+ 
+
+223
+00:03:20,800 --> 00:03:22,710
+language to use, what points to
+emphasize. What's even crazier is how
+
+224
+00:03:22,710 --> 00:03:22,720
+emphasize. What's even crazier is how
+ 
+
+225
+00:03:22,720 --> 00:03:24,790
+emphasize. What's even crazier is how
+the AI adapts the style. Each version
+
+226
+00:03:24,790 --> 00:03:24,800
+the AI adapts the style. Each version
+ 
+
+227
+00:03:24,800 --> 00:03:26,390
+the AI adapts the style. Each version
+felt authentic, like a real person
+
+228
+00:03:26,390 --> 00:03:26,400
+felt authentic, like a real person
+ 
+
+229
+00:03:26,400 --> 00:03:27,750
+felt authentic, like a real person
+reviewing the product, the hand
+
+230
+00:03:27,750 --> 00:03:27,760
+reviewing the product, the hand
+ 
+
+231
+00:03:27,760 --> 00:03:29,030
+reviewing the product, the hand
+movements, the way they interact with
+
+232
+00:03:29,030 --> 00:03:29,040
+movements, the way they interact with
+ 
+
+233
+00:03:29,040 --> 00:03:30,710
+movements, the way they interact with
+the genes, the natural pauses and
+
+234
+00:03:30,710 --> 00:03:30,720
+the genes, the natural pauses and
+ 
+
+235
+00:03:30,720 --> 00:03:32,390
+the genes, the natural pauses and
+speech. All of it looks and sounds
+
+236
+00:03:32,390 --> 00:03:32,400
+speech. All of it looks and sounds
+ 
+
+237
+00:03:32,400 --> 00:03:34,229
+speech. All of it looks and sounds
+completely real. The only small thing I
+
+238
+00:03:34,229 --> 00:03:34,239
+completely real. The only small thing I
+ 
+
+239
+00:03:34,239 --> 00:03:35,990
+completely real. The only small thing I
+noticed is videos cut off around 12
+
+240
+00:03:35,990 --> 00:03:36,000
+noticed is videos cut off around 12
+ 
+
+241
+00:03:36,000 --> 00:03:37,670
+noticed is videos cut off around 12
+seconds. So, you don't get the full call
+
+242
+00:03:37,670 --> 00:03:37,680
+seconds. So, you don't get the full call
+ 
+
+243
+00:03:37,680 --> 00:03:39,030
+seconds. So, you don't get the full call
+to action, but I'll work on the
+
+244
+00:03:39,030 --> 00:03:39,040
+to action, but I'll work on the
+ 
+
+245
+00:03:39,040 --> 00:03:40,710
+to action, but I'll work on the
+prompting for that. For my second test,
+
+246
+00:03:40,710 --> 00:03:40,720
+prompting for that. For my second test,
+ 
+
+247
+00:03:40,720 --> 00:03:43,030
+prompting for that. For my second test,
+I searched UGC makeup on Tik Tok and
+
+248
+00:03:43,030 --> 00:03:43,040
+I searched UGC makeup on Tik Tok and
+ 
+
+249
+00:03:43,040 --> 00:03:45,270
+I searched UGC makeup on Tik Tok and
+found this video for Rebound Skin Milk.
+
+250
+00:03:45,270 --> 00:03:45,280
+found this video for Rebound Skin Milk.
+ 
+
+251
+00:03:45,280 --> 00:03:47,430
+found this video for Rebound Skin Milk.
+Huge in Australia, sold out everywhere.
+
+252
+00:03:47,430 --> 00:03:47,440
+Huge in Australia, sold out everywhere.
+ 
+
+253
+00:03:47,440 --> 00:03:49,190
+Huge in Australia, sold out everywhere.
+It's a milky toner you apply before
+
+254
+00:03:49,190 --> 00:03:49,200
+It's a milky toner you apply before
+ 
+
+255
+00:03:49,200 --> 00:03:50,630
+It's a milky toner you apply before
+makeup. This was the perfect test
+
+256
+00:03:50,630 --> 00:03:50,640
+makeup. This was the perfect test
+ 
+
+257
+00:03:50,640 --> 00:03:52,550
+makeup. This was the perfect test
+because we have a real paid human UGC
+
+258
+00:03:52,550 --> 00:03:52,560
+because we have a real paid human UGC
+ 
+
+259
+00:03:52,560 --> 00:03:54,229
+because we have a real paid human UGC
+video. This creator does UGC
+
+260
+00:03:54,229 --> 00:03:54,239
+video. This creator does UGC
+ 
+
+261
+00:03:54,239 --> 00:03:55,509
+video. This creator does UGC
+professionally, so we're comparing
+
+262
+00:03:55,509 --> 00:03:55,519
+professionally, so we're comparing
+ 
+
+263
+00:03:55,519 --> 00:03:57,509
+professionally, so we're comparing
+professional quality to AI. Here's what
+
+264
+00:03:57,509 --> 00:03:57,519
+professional quality to AI. Here's what
+ 
+
+265
+00:03:57,519 --> 00:03:58,949
+professional quality to AI. Here's what
+made this tricky. In the video, the
+
+266
+00:03:58,949 --> 00:03:58,959
+made this tricky. In the video, the
+ 
+
+267
+00:03:58,959 --> 00:04:00,869
+made this tricky. In the video, the
+creator applies cream into her hand and
+
+268
+00:04:00,869 --> 00:04:00,879
+creator applies cream into her hand and
+ 
+
+269
+00:04:00,879 --> 00:04:02,710
+creator applies cream into her hand and
+rubs it in. She's physically interacting
+
+270
+00:04:02,710 --> 00:04:02,720
+rubs it in. She's physically interacting
+ 
+
+271
+00:04:02,720 --> 00:04:04,710
+rubs it in. She's physically interacting
+with the product. AI has never done that
+
+272
+00:04:04,710 --> 00:04:04,720
+with the product. AI has never done that
+ 
+
+273
+00:04:04,720 --> 00:04:06,390
+with the product. AI has never done that
+convincingly before. This has always
+
+274
+00:04:06,390 --> 00:04:06,400
+convincingly before. This has always
+ 
+
+275
+00:04:06,400 --> 00:04:08,309
+convincingly before. This has always
+been the weak point realistic product
+
+276
+00:04:08,309 --> 00:04:08,319
+been the weak point realistic product
+ 
+
+277
+00:04:08,319 --> 00:04:09,990
+been the weak point realistic product
+interaction. I uploaded the product
+
+278
+00:04:09,990 --> 00:04:10,000
+interaction. I uploaded the product
+ 
+
+279
+00:04:10,000 --> 00:04:11,910
+interaction. I uploaded the product
+image and her video is reference. This
+
+280
+00:04:11,910 --> 00:04:11,920
+image and her video is reference. This
+ 
+
+281
+00:04:11,920 --> 00:04:13,429
+image and her video is reference. This
+time the AI gave me a product
+
+282
+00:04:13,429 --> 00:04:13,439
+time the AI gave me a product
+ 
+
+283
+00:04:13,439 --> 00:04:14,949
+time the AI gave me a product
+questionnaire. It asked, "Who are the
+
+284
+00:04:14,949 --> 00:04:14,959
+questionnaire. It asked, "Who are the
+ 
+
+285
+00:04:14,959 --> 00:04:16,550
+questionnaire. It asked, "Who are the
+main users? What are the key selling
+
+286
+00:04:16,550 --> 00:04:16,560
+main users? What are the key selling
+ 
+
+287
+00:04:16,560 --> 00:04:18,390
+main users? What are the key selling
+points? What are your target countries?"
+
+288
+00:04:18,390 --> 00:04:18,400
+points? What are your target countries?"
+ 
+
+289
+00:04:18,400 --> 00:04:19,990
+points? What are your target countries?"
+This is smart design. Instead of
+
+290
+00:04:19,990 --> 00:04:20,000
+This is smart design. Instead of
+ 
+
+291
+00:04:20,000 --> 00:04:21,590
+This is smart design. Instead of
+guessing if the AI needs more
+
+292
+00:04:21,590 --> 00:04:21,600
+guessing if the AI needs more
+ 
+
+293
+00:04:21,600 --> 00:04:23,430
+guessing if the AI needs more
+information, it asked directly. This
+
+294
+00:04:23,430 --> 00:04:23,440
+information, it asked directly. This
+ 
+
+295
+00:04:23,440 --> 00:04:25,030
+information, it asked directly. This
+ensures the final video is actually
+
+296
+00:04:25,030 --> 00:04:25,040
+ensures the final video is actually
+ 
+
+297
+00:04:25,040 --> 00:04:27,110
+ensures the final video is actually
+accurate and targeted. I filled it out.
+
+298
+00:04:27,110 --> 00:04:27,120
+accurate and targeted. I filled it out.
+ 
+
+299
+00:04:27,120 --> 00:04:29,189
+accurate and targeted. I filled it out.
+Super hydrating, supports skin barrier,
+
+300
+00:04:29,189 --> 00:04:29,199
+Super hydrating, supports skin barrier,
+ 
+
+301
+00:04:29,199 --> 00:04:30,950
+Super hydrating, supports skin barrier,
+reduces redness, and hit generate.
+
+302
+00:04:30,950 --> 00:04:30,960
+reduces redness, and hit generate.
+ 
+
+303
+00:04:30,960 --> 00:04:32,230
+reduces redness, and hit generate.
+Finally got my hands on the viral
+
+304
+00:04:32,230 --> 00:04:32,240
+Finally got my hands on the viral
+ 
+
+305
+00:04:32,240 --> 00:04:33,350
+Finally got my hands on the viral
+rebound serum. It's supposed to be
+
+306
+00:04:33,350 --> 00:04:33,360
+rebound serum. It's supposed to be
+ 
+
+307
+00:04:33,360 --> 00:04:35,110
+rebound serum. It's supposed to be
+amazing for sensitive skin.
+
+308
+00:04:35,110 --> 00:04:35,120
+amazing for sensitive skin.
+ 
+
+309
+00:04:35,120 --> 00:04:36,950
+amazing for sensitive skin.
+>> Did you see that? The AI literally
+
+310
+00:04:36,950 --> 00:04:36,960
+>> Did you see that? The AI literally
+ 
+
+311
+00:04:36,960 --> 00:04:38,550
+>> Did you see that? The AI literally
+squirted product onto her hand. She's
+
+312
+00:04:38,550 --> 00:04:38,560
+squirted product onto her hand. She's
+ 
+
+313
+00:04:38,560 --> 00:04:39,670
+squirted product onto her hand. She's
+rubbing it in with natural hand
+
+314
+00:04:39,670 --> 00:04:39,680
+rubbing it in with natural hand
+ 
+
+315
+00:04:39,680 --> 00:04:41,510
+rubbing it in with natural hand
+movements. The product dispensing looks
+
+316
+00:04:41,510 --> 00:04:41,520
+movements. The product dispensing looks
+ 
+
+317
+00:04:41,520 --> 00:04:43,510
+movements. The product dispensing looks
+real. The skin absorption looks real.
+
+318
+00:04:43,510 --> 00:04:43,520
+real. The skin absorption looks real.
+ 
+
+319
+00:04:43,520 --> 00:04:45,270
+real. The skin absorption looks real.
+That is absolutely insane. Multiple
+
+320
+00:04:45,270 --> 00:04:45,280
+That is absolutely insane. Multiple
+ 
+
+321
+00:04:45,280 --> 00:04:47,189
+That is absolutely insane. Multiple
+edited shots flowing naturally.
+
+322
+00:04:47,189 --> 00:04:47,199
+edited shots flowing naturally.
+ 
+
+323
+00:04:47,199 --> 00:04:49,110
+edited shots flowing naturally.
+Realistic movements. The AI picked up
+
+324
+00:04:49,110 --> 00:04:49,120
+Realistic movements. The AI picked up
+ 
+
+325
+00:04:49,120 --> 00:04:51,270
+Realistic movements. The AI picked up
+all the key phrases. Super hydrating,
+
+326
+00:04:51,270 --> 00:04:51,280
+all the key phrases. Super hydrating,
+ 
+
+327
+00:04:51,280 --> 00:04:53,350
+all the key phrases. Super hydrating,
+calms redness, strengthens skin barrier,
+
+328
+00:04:53,350 --> 00:04:53,360
+calms redness, strengthens skin barrier,
+ 
+
+329
+00:04:53,360 --> 00:04:55,110
+calms redness, strengthens skin barrier,
+and incorporated them seamlessly into
+
+330
+00:04:55,110 --> 00:04:55,120
+and incorporated them seamlessly into
+ 
+
+331
+00:04:55,120 --> 00:04:56,870
+and incorporated them seamlessly into
+the script. Here's what shocked me most.
+
+332
+00:04:56,870 --> 00:04:56,880
+the script. Here's what shocked me most.
+ 
+
+333
+00:04:56,880 --> 00:04:58,790
+the script. Here's what shocked me most.
+I generated three versions. The original
+
+334
+00:04:58,790 --> 00:04:58,800
+I generated three versions. The original
+ 
+
+335
+00:04:58,800 --> 00:05:00,870
+I generated three versions. The original
+mentions it sold out in Australia. Both
+
+336
+00:05:00,870 --> 00:05:00,880
+mentions it sold out in Australia. Both
+ 
+
+337
+00:05:00,880 --> 00:05:03,270
+mentions it sold out in Australia. Both
+AI videos have Australian accents. Is it
+
+338
+00:05:03,270 --> 00:05:03,280
+AI videos have Australian accents. Is it
+ 
+
+339
+00:05:03,280 --> 00:05:04,870
+AI videos have Australian accents. Is it
+picking that up from context? That's
+
+340
+00:05:04,870 --> 00:05:04,880
+picking that up from context? That's
+ 
+
+341
+00:05:04,880 --> 00:05:06,629
+picking that up from context? That's
+next level marketing understanding
+
+342
+00:05:06,629 --> 00:05:06,639
+next level marketing understanding
+ 
+
+343
+00:05:06,639 --> 00:05:09,029
+next level marketing understanding
+powered by OpenAI Sora 2. It's not just
+
+344
+00:05:09,029 --> 00:05:09,039
+powered by OpenAI Sora 2. It's not just
+ 
+
+345
+00:05:09,039 --> 00:05:10,950
+powered by OpenAI Sora 2. It's not just
+recreating visuals. It's understanding
+
+346
+00:05:10,950 --> 00:05:10,960
+recreating visuals. It's understanding
+ 
+
+347
+00:05:10,960 --> 00:05:12,629
+recreating visuals. It's understanding
+target demographics and regional
+
+348
+00:05:12,629 --> 00:05:12,639
+target demographics and regional
+ 
+
+349
+00:05:12,639 --> 00:05:13,510
+target demographics and regional
+preferences.
+
+350
+00:05:13,510 --> 00:05:13,520
+preferences.
+ 
+
+351
+00:05:13,520 --> 00:05:15,110
+preferences.
+>> Finally got my hands on the viral
+
+352
+00:05:15,110 --> 00:05:15,120
+>> Finally got my hands on the viral
+ 
+
+353
+00:05:15,120 --> 00:05:17,029
+>> Finally got my hands on the viral
+rebound serum. Everyone's talking about
+
+354
+00:05:17,029 --> 00:05:17,039
+rebound serum. Everyone's talking about
+ 
+
+355
+00:05:17,039 --> 00:05:19,510
+rebound serum. Everyone's talking about
+this for barrier repair.
+
+356
+00:05:19,510 --> 00:05:19,520
+this for barrier repair.
+ 
+
+357
+00:05:19,520 --> 00:05:21,270
+this for barrier repair.
+>> Okay, let's try it.
+
+358
+00:05:21,270 --> 00:05:21,280
+>> Okay, let's try it.
+ 
+
+359
+00:05:21,280 --> 00:05:22,950
+>> Okay, let's try it.
+>> That delivery, that pacing, the
+
+360
+00:05:22,950 --> 00:05:22,960
+>> That delivery, that pacing, the
+ 
+
+361
+00:05:22,960 --> 00:05:24,950
+>> That delivery, that pacing, the
+conversational tone. This is completely
+
+362
+00:05:24,950 --> 00:05:24,960
+conversational tone. This is completely
+ 
+
+363
+00:05:24,960 --> 00:05:26,710
+conversational tone. This is completely
+ready to post. You could run this as an
+
+364
+00:05:26,710 --> 00:05:26,720
+ready to post. You could run this as an
+ 
+
+365
+00:05:26,720 --> 00:05:28,550
+ready to post. You could run this as an
+ad right now and I guarantee it would
+
+366
+00:05:28,550 --> 00:05:28,560
+ad right now and I guarantee it would
+ 
+
+367
+00:05:28,560 --> 00:05:30,550
+ad right now and I guarantee it would
+perform well. For my third test, I use
+
+368
+00:05:30,550 --> 00:05:30,560
+perform well. For my third test, I use
+ 
+
+369
+00:05:30,560 --> 00:05:32,469
+perform well. For my third test, I use
+my actual product, my ice tub. The
+
+370
+00:05:32,469 --> 00:05:32,479
+my actual product, my ice tub. The
+ 
+
+371
+00:05:32,479 --> 00:05:33,909
+my actual product, my ice tub. The
+reference video breaks down five
+
+372
+00:05:33,909 --> 00:05:33,919
+reference video breaks down five
+ 
+
+373
+00:05:33,919 --> 00:05:35,909
+reference video breaks down five
+benefits of ice baths. Burns fat,
+
+374
+00:05:35,909 --> 00:05:35,919
+benefits of ice baths. Burns fat,
+ 
+
+375
+00:05:35,919 --> 00:05:37,990
+benefits of ice baths. Burns fat,
+improves mood, strengthens immunity,
+
+376
+00:05:37,990 --> 00:05:38,000
+improves mood, strengthens immunity,
+ 
+
+377
+00:05:38,000 --> 00:05:40,230
+improves mood, strengthens immunity,
+fights anxiety, reduces soreness. I
+
+378
+00:05:40,230 --> 00:05:40,240
+fights anxiety, reduces soreness. I
+ 
+
+379
+00:05:40,240 --> 00:05:41,909
+fights anxiety, reduces soreness. I
+uploaded my ice tub image and the
+
+380
+00:05:41,909 --> 00:05:41,919
+uploaded my ice tub image and the
+ 
+
+381
+00:05:41,919 --> 00:05:43,670
+uploaded my ice tub image and the
+reference. The AI recognized five
+
+382
+00:05:43,670 --> 00:05:43,680
+reference. The AI recognized five
+ 
+
+383
+00:05:43,680 --> 00:05:45,430
+reference. The AI recognized five
+distinct benefits, so it created five
+
+384
+00:05:45,430 --> 00:05:45,440
+distinct benefits, so it created five
+ 
+
+385
+00:05:45,440 --> 00:05:47,110
+distinct benefits, so it created five
+different shots automatically, smart
+
+386
+00:05:47,110 --> 00:05:47,120
+different shots automatically, smart
+ 
+
+387
+00:05:47,120 --> 00:05:48,629
+different shots automatically, smart
+enough to structure the video based on
+
+388
+00:05:48,629 --> 00:05:48,639
+enough to structure the video based on
+ 
+
+389
+00:05:48,639 --> 00:05:56,950
+enough to structure the video based on
+the content breakdown.
+
+390
+00:05:56,950 --> 00:05:56,960
+
+ 
+
+391
+00:05:56,960 --> 00:05:59,270
+
+The AI filmed someone pouring ice into
+
+392
+00:05:59,270 --> 00:05:59,280
+The AI filmed someone pouring ice into
+ 
+
+393
+00:05:59,280 --> 00:06:01,350
+The AI filmed someone pouring ice into
+an ice bath, taking the lid off, getting
+
+394
+00:06:01,350 --> 00:06:01,360
+an ice bath, taking the lid off, getting
+ 
+
+395
+00:06:01,360 --> 00:06:03,430
+an ice bath, taking the lid off, getting
+into it, multiple complex actions,
+
+396
+00:06:03,430 --> 00:06:03,440
+into it, multiple complex actions,
+ 
+
+397
+00:06:03,440 --> 00:06:04,950
+into it, multiple complex actions,
+realistic physics with the ice and
+
+398
+00:06:04,950 --> 00:06:04,960
+realistic physics with the ice and
+ 
+
+399
+00:06:04,960 --> 00:06:06,629
+realistic physics with the ice and
+water, natural human movements showing
+
+400
+00:06:06,629 --> 00:06:06,639
+water, natural human movements showing
+ 
+
+401
+00:06:06,639 --> 00:06:08,390
+water, natural human movements showing
+the actual use case. When could you
+
+402
+00:06:08,390 --> 00:06:08,400
+the actual use case. When could you
+ 
+
+403
+00:06:08,400 --> 00:06:10,230
+the actual use case. When could you
+imagine AI would choreograph and film a
+
+404
+00:06:10,230 --> 00:06:10,240
+imagine AI would choreograph and film a
+ 
+
+405
+00:06:10,240 --> 00:06:11,990
+imagine AI would choreograph and film a
+sequence like that, understanding not
+
+406
+00:06:11,990 --> 00:06:12,000
+sequence like that, understanding not
+ 
+
+407
+00:06:12,000 --> 00:06:13,510
+sequence like that, understanding not
+just what the product looks like, but
+
+408
+00:06:13,510 --> 00:06:13,520
+just what the product looks like, but
+ 
+
+409
+00:06:13,520 --> 00:06:15,590
+just what the product looks like, but
+how it's actually used in real life. I
+
+410
+00:06:15,590 --> 00:06:15,600
+how it's actually used in real life. I
+ 
+
+411
+00:06:15,600 --> 00:06:16,870
+how it's actually used in real life. I
+never thought that day would come this
+
+412
+00:06:16,870 --> 00:06:16,880
+never thought that day would come this
+ 
+
+413
+00:06:16,880 --> 00:06:18,950
+never thought that day would come this
+soon. Shot composition matches. Message
+
+414
+00:06:18,950 --> 00:06:18,960
+soon. Shot composition matches. Message
+ 
+
+415
+00:06:18,960 --> 00:06:20,790
+soon. Shot composition matches. Message
+structure is identical. The educational
+
+416
+00:06:20,790 --> 00:06:20,800
+structure is identical. The educational
+ 
+
+417
+00:06:20,800 --> 00:06:22,629
+structure is identical. The educational
+tone is preserved. Quality is scary
+
+418
+00:06:22,629 --> 00:06:22,639
+tone is preserved. Quality is scary
+ 
+
+419
+00:06:22,639 --> 00:06:25,189
+tone is preserved. Quality is scary
+good. All powered by OpenAI Sora 2. Now
+
+420
+00:06:25,189 --> 00:06:25,199
+good. All powered by OpenAI Sora 2. Now
+ 
+
+421
+00:06:25,199 --> 00:06:26,629
+good. All powered by OpenAI Sora 2. Now
+for the curveball. I wanted to see if
+
+422
+00:06:26,629 --> 00:06:26,639
+for the curveball. I wanted to see if
+ 
+
+423
+00:06:26,639 --> 00:06:28,150
+for the curveball. I wanted to see if
+Topview agent could handle something
+
+424
+00:06:28,150 --> 00:06:28,160
+Topview agent could handle something
+ 
+
+425
+00:06:28,160 --> 00:06:30,070
+Topview agent could handle something
+beyond physical products. So I gave it a
+
+426
+00:06:30,070 --> 00:06:30,080
+beyond physical products. So I gave it a
+ 
+
+427
+00:06:30,080 --> 00:06:32,550
+beyond physical products. So I gave it a
+screenshot of my website tools deck.ai
+
+428
+00:06:32,550 --> 00:06:32,560
+screenshot of my website tools deck.ai
+ 
+
+429
+00:06:32,560 --> 00:06:34,390
+screenshot of my website tools deck.ai
+and AI tools directory. This is
+
+430
+00:06:34,390 --> 00:06:34,400
+and AI tools directory. This is
+ 
+
+431
+00:06:34,400 --> 00:06:35,990
+and AI tools directory. This is
+completely digital. No physical product
+
+432
+00:06:35,990 --> 00:06:36,000
+completely digital. No physical product
+ 
+
+433
+00:06:36,000 --> 00:06:37,670
+completely digital. No physical product
+to hold, no texture to show, no
+
+434
+00:06:37,670 --> 00:06:37,680
+to hold, no texture to show, no
+ 
+
+435
+00:06:37,680 --> 00:06:39,749
+to hold, no texture to show, no
+unboxing, just a website interface. If
+
+436
+00:06:39,749 --> 00:06:39,759
+unboxing, just a website interface. If
+ 
+
+437
+00:06:39,759 --> 00:06:41,670
+unboxing, just a website interface. If
+the AI can market this effectively, it
+
+438
+00:06:41,670 --> 00:06:41,680
+the AI can market this effectively, it
+ 
+
+439
+00:06:41,680 --> 00:06:43,110
+the AI can market this effectively, it
+can truly handle anything. For
+
+440
+00:06:43,110 --> 00:06:43,120
+can truly handle anything. For
+ 
+
+441
+00:06:43,120 --> 00:06:44,629
+can truly handle anything. For
+reference, I used a tech reviewer
+
+442
+00:06:44,629 --> 00:06:44,639
+reference, I used a tech reviewer
+ 
+
+443
+00:06:44,639 --> 00:06:46,309
+reference, I used a tech reviewer
+breaking down a new laptop. I wanted
+
+444
+00:06:46,309 --> 00:06:46,319
+breaking down a new laptop. I wanted
+ 
+
+445
+00:06:46,319 --> 00:06:48,230
+breaking down a new laptop. I wanted
+those tech vibes, that enthusiastic but
+
+446
+00:06:48,230 --> 00:06:48,240
+those tech vibes, that enthusiastic but
+ 
+
+447
+00:06:48,240 --> 00:06:49,990
+those tech vibes, that enthusiastic but
+informative presentation style that
+
+448
+00:06:49,990 --> 00:06:50,000
+informative presentation style that
+ 
+
+449
+00:06:50,000 --> 00:06:51,590
+informative presentation style that
+works well for digital products.
+
+450
+00:06:51,590 --> 00:06:51,600
+works well for digital products.
+ 
+
+451
+00:06:51,600 --> 00:06:53,830
+works well for digital products.
+>> Finding the right AI tool is a nightmare
+
+452
+00:06:53,830 --> 00:06:53,840
+>> Finding the right AI tool is a nightmare
+ 
+
+453
+00:06:53,840 --> 00:06:56,230
+>> Finding the right AI tool is a nightmare
+until I found tools deck.ai. It's a
+
+454
+00:06:56,230 --> 00:06:56,240
+until I found tools deck.ai. It's a
+ 
+
+455
+00:06:56,240 --> 00:06:58,150
+until I found tools deck.ai. It's a
+directory of the best AI tools, all
+
+456
+00:06:58,150 --> 00:06:58,160
+directory of the best AI tools, all
+ 
+
+457
+00:06:58,160 --> 00:06:59,430
+directory of the best AI tools, all
+curated by experts.
+
+458
+00:06:59,430 --> 00:06:59,440
+curated by experts.
+ 
+
+459
+00:06:59,440 --> 00:07:00,950
+curated by experts.
+>> Look at this. It's making motion
+
+460
+00:07:00,950 --> 00:07:00,960
+>> Look at this. It's making motion
+ 
+
+461
+00:07:00,960 --> 00:07:03,029
+>> Look at this. It's making motion
+graphics, professionallook animations,
+
+462
+00:07:03,029 --> 00:07:03,039
+graphics, professionallook animations,
+ 
+
+463
+00:07:03,039 --> 00:07:05,029
+graphics, professionallook animations,
+text flying in, screen transitions that
+
+464
+00:07:05,029 --> 00:07:05,039
+text flying in, screen transitions that
+ 
+
+465
+00:07:05,039 --> 00:07:06,790
+text flying in, screen transitions that
+look professionally edited, visual
+
+466
+00:07:06,790 --> 00:07:06,800
+look professionally edited, visual
+ 
+
+467
+00:07:06,800 --> 00:07:08,230
+look professionally edited, visual
+elements highlighting different features
+
+468
+00:07:08,230 --> 00:07:08,240
+elements highlighting different features
+ 
+
+469
+00:07:08,240 --> 00:07:09,990
+elements highlighting different features
+of the website. This went way beyond
+
+470
+00:07:09,990 --> 00:07:10,000
+of the website. This went way beyond
+ 
+
+471
+00:07:10,000 --> 00:07:12,950
+of the website. This went way beyond
+UGC. The AI understood this is a digital
+
+472
+00:07:12,950 --> 00:07:12,960
+UGC. The AI understood this is a digital
+ 
+
+473
+00:07:12,960 --> 00:07:14,390
+UGC. The AI understood this is a digital
+product and created actual tech
+
+474
+00:07:14,390 --> 00:07:14,400
+product and created actual tech
+ 
+
+475
+00:07:14,400 --> 00:07:15,909
+product and created actual tech
+marketing content with professional
+
+476
+00:07:15,909 --> 00:07:15,919
+marketing content with professional
+ 
+
+477
+00:07:15,919 --> 00:07:17,990
+marketing content with professional
+motion graphics. It adapted its entire
+
+478
+00:07:17,990 --> 00:07:18,000
+motion graphics. It adapted its entire
+ 
+
+479
+00:07:18,000 --> 00:07:19,589
+motion graphics. It adapted its entire
+approach. That level of contextual
+
+480
+00:07:19,589 --> 00:07:19,599
+approach. That level of contextual
+ 
+
+481
+00:07:19,599 --> 00:07:21,270
+approach. That level of contextual
+understanding is genuinely impressive
+
+482
+00:07:21,270 --> 00:07:21,280
+understanding is genuinely impressive
+ 
+
+483
+00:07:21,280 --> 00:07:23,430
+understanding is genuinely impressive
+and shows how versatile this tool really
+
+484
+00:07:23,430 --> 00:07:23,440
+and shows how versatile this tool really
+ 
+
+485
+00:07:23,440 --> 00:07:25,270
+and shows how versatile this tool really
+is. Here's the final compilation. All
+
+486
+00:07:25,270 --> 00:07:25,280
+is. Here's the final compilation. All
+ 
+
+487
+00:07:25,280 --> 00:07:27,430
+is. Here's the final compilation. All
+three tests side by side. Original viral
+
+488
+00:07:27,430 --> 00:07:27,440
+three tests side by side. Original viral
+ 
+
+489
+00:07:27,440 --> 00:07:29,510
+three tests side by side. Original viral
+videos versus AI recreations with top
+
+490
+00:07:29,510 --> 00:07:29,520
+videos versus AI recreations with top
+ 
+
+491
+00:07:29,520 --> 00:07:30,870
+videos versus AI recreations with top
+view video agent. Look at these
+
+492
+00:07:30,870 --> 00:07:30,880
+view video agent. Look at these
+ 
+
+493
+00:07:30,880 --> 00:07:32,710
+view video agent. Look at these
+comparisons carefully. Can you honestly
+
+494
+00:07:32,710 --> 00:07:32,720
+comparisons carefully. Can you honestly
+ 
+
+495
+00:07:32,720 --> 00:07:34,469
+comparisons carefully. Can you honestly
+tell which are originals and which are
+
+496
+00:07:34,469 --> 00:07:34,479
+tell which are originals and which are
+ 
+
+497
+00:07:34,479 --> 00:07:36,790
+tell which are originals and which are
+AI recreations without me labeling them?
+
+498
+00:07:36,790 --> 00:07:36,800
+AI recreations without me labeling them?
+ 
+
+499
+00:07:36,800 --> 00:07:38,629
+AI recreations without me labeling them?
+That's the real aha moment here. It's
+
+500
+00:07:38,629 --> 00:07:38,639
+That's the real aha moment here. It's
+ 
+
+501
+00:07:38,639 --> 00:07:40,550
+That's the real aha moment here. It's
+genuinely becoming hard to distinguish
+
+502
+00:07:40,550 --> 00:07:40,560
+genuinely becoming hard to distinguish
+ 
+
+503
+00:07:40,560 --> 00:07:42,950
+genuinely becoming hard to distinguish
+AI generated content from human created
+
+504
+00:07:42,950 --> 00:07:42,960
+AI generated content from human created
+ 
+
+505
+00:07:42,960 --> 00:07:45,909
+AI generated content from human created
+content. Good AIGC content is officially
+
+506
+00:07:45,909 --> 00:07:45,919
+content. Good AIGC content is officially
+ 
+
+507
+00:07:45,919 --> 00:07:47,670
+content. Good AIGC content is officially
+here, not coming in the future. Not
+
+508
+00:07:47,670 --> 00:07:47,680
+here, not coming in the future. Not
+ 
+
+509
+00:07:47,680 --> 00:07:48,790
+here, not coming in the future. Not
+something we'll have access to
+
+510
+00:07:48,790 --> 00:07:48,800
+something we'll have access to
+ 
+
+511
+00:07:48,800 --> 00:07:50,710
+something we'll have access to
+eventually. Right now, today, I'm going
+
+512
+00:07:50,710 --> 00:07:50,720
+eventually. Right now, today, I'm going
+ 
+
+513
+00:07:50,720 --> 00:07:52,629
+eventually. Right now, today, I'm going
+to be honest, part of me is genuinely
+
+514
+00:07:52,629 --> 00:07:52,639
+to be honest, part of me is genuinely
+ 
+
+515
+00:07:52,639 --> 00:07:54,869
+to be honest, part of me is genuinely
+scared by how real this is getting. This
+
+516
+00:07:54,869 --> 00:07:54,879
+scared by how real this is getting. This
+ 
+
+517
+00:07:54,879 --> 00:07:57,029
+scared by how real this is getting. This
+is getting too realistic too fast. I've
+
+518
+00:07:57,029 --> 00:07:57,039
+is getting too realistic too fast. I've
+ 
+
+519
+00:07:57,039 --> 00:07:59,029
+is getting too realistic too fast. I've
+had people send me Sora two videos over
+
+520
+00:07:59,029 --> 00:07:59,039
+had people send me Sora two videos over
+ 
+
+521
+00:07:59,039 --> 00:08:01,029
+had people send me Sora two videos over
+the past few weeks asking, "Is this real
+
+522
+00:08:01,029 --> 00:08:01,039
+the past few weeks asking, "Is this real
+ 
+
+523
+00:08:01,039 --> 00:08:02,869
+the past few weeks asking, "Is this real
+or AI?" Because they literally can't
+
+524
+00:08:02,869 --> 00:08:02,879
+or AI?" Because they literally can't
+ 
+
+525
+00:08:02,879 --> 00:08:04,550
+or AI?" Because they literally can't
+tell anymore. But here's the reality.
+
+526
+00:08:04,550 --> 00:08:04,560
+tell anymore. But here's the reality.
+ 
+
+527
+00:08:04,560 --> 00:08:06,150
+tell anymore. But here's the reality.
+This technology is here whether we like
+
+528
+00:08:06,150 --> 00:08:06,160
+This technology is here whether we like
+ 
+
+529
+00:08:06,160 --> 00:08:07,990
+This technology is here whether we like
+it or not. You can choose to resist it
+
+530
+00:08:07,990 --> 00:08:08,000
+it or not. You can choose to resist it
+ 
+
+531
+00:08:08,000 --> 00:08:09,749
+it or not. You can choose to resist it
+and eventually get left behind or you
+
+532
+00:08:09,749 --> 00:08:09,759
+and eventually get left behind or you
+ 
+
+533
+00:08:09,759 --> 00:08:11,110
+and eventually get left behind or you
+can embrace it. Learn to use it
+
+534
+00:08:11,110 --> 00:08:11,120
+can embrace it. Learn to use it
+ 
+
+535
+00:08:11,120 --> 00:08:12,869
+can embrace it. Learn to use it
+responsibly and let it help you create
+
+536
+00:08:12,869 --> 00:08:12,879
+responsibly and let it help you create
+ 
+
+537
+00:08:12,879 --> 00:08:14,950
+responsibly and let it help you create
+better content faster. For businesses,
+
+538
+00:08:14,950 --> 00:08:14,960
+better content faster. For businesses,
+ 
+
+539
+00:08:14,960 --> 00:08:16,950
+better content faster. For businesses,
+this genuinely changes everything. Think
+
+540
+00:08:16,950 --> 00:08:16,960
+this genuinely changes everything. Think
+ 
+
+541
+00:08:16,960 --> 00:08:18,710
+this genuinely changes everything. Think
+about what this means. Top view video
+
+542
+00:08:18,710 --> 00:08:18,720
+about what this means. Top view video
+ 
+
+543
+00:08:18,720 --> 00:08:20,710
+about what this means. Top view video
+agent lets you recreate any viral video
+
+544
+00:08:20,710 --> 00:08:20,720
+agent lets you recreate any viral video
+ 
+
+545
+00:08:20,720 --> 00:08:22,390
+agent lets you recreate any viral video
+with your product in minutes. No
+
+546
+00:08:22,390 --> 00:08:22,400
+with your product in minutes. No
+ 
+
+547
+00:08:22,400 --> 00:08:23,990
+with your product in minutes. No
+production crew to hire, no editing
+
+548
+00:08:23,990 --> 00:08:24,000
+production crew to hire, no editing
+ 
+
+549
+00:08:24,000 --> 00:08:25,990
+production crew to hire, no editing
+skills required, no expensive equipment
+
+550
+00:08:25,990 --> 00:08:26,000
+skills required, no expensive equipment
+ 
+
+551
+00:08:26,000 --> 00:08:27,909
+skills required, no expensive equipment
+needed, just your product image, a
+
+552
+00:08:27,909 --> 00:08:27,919
+needed, just your product image, a
+ 
+
+553
+00:08:27,919 --> 00:08:29,670
+needed, just your product image, a
+reference video, and AI does all the
+
+554
+00:08:29,670 --> 00:08:29,680
+reference video, and AI does all the
+ 
+
+555
+00:08:29,680 --> 00:08:31,589
+reference video, and AI does all the
+heavy lifting. The smart analysis built
+
+556
+00:08:31,589 --> 00:08:31,599
+heavy lifting. The smart analysis built
+ 
+
+557
+00:08:31,599 --> 00:08:33,509
+heavy lifting. The smart analysis built
+into the tool understands scripts,
+
+558
+00:08:33,509 --> 00:08:33,519
+into the tool understands scripts,
+ 
+
+559
+00:08:33,519 --> 00:08:35,509
+into the tool understands scripts,
+pacing, camera angles from the original
+
+560
+00:08:35,509 --> 00:08:35,519
+pacing, camera angles from the original
+ 
+
+561
+00:08:35,519 --> 00:08:37,509
+pacing, camera angles from the original
+viral content. It figures out why that
+
+562
+00:08:37,509 --> 00:08:37,519
+viral content. It figures out why that
+ 
+
+563
+00:08:37,519 --> 00:08:39,110
+viral content. It figures out why that
+content worked and applies those same
+
+564
+00:08:39,110 --> 00:08:39,120
+content worked and applies those same
+ 
+
+565
+00:08:39,120 --> 00:08:40,949
+content worked and applies those same
+winning principles to your product. The
+
+566
+00:08:40,949 --> 00:08:40,959
+winning principles to your product. The
+ 
+
+567
+00:08:40,959 --> 00:08:42,630
+winning principles to your product. The
+workflow is completely effortless. You
+
+568
+00:08:42,630 --> 00:08:42,640
+workflow is completely effortless. You
+ 
+
+569
+00:08:42,640 --> 00:08:43,909
+workflow is completely effortless. You
+go from trend discovery to
+
+570
+00:08:43,909 --> 00:08:43,919
+go from trend discovery to
+ 
+
+571
+00:08:43,919 --> 00:08:45,750
+go from trend discovery to
+productionready content all in one
+
+572
+00:08:45,750 --> 00:08:45,760
+productionready content all in one
+ 
+
+573
+00:08:45,760 --> 00:08:47,670
+productionready content all in one
+place. Made specifically for e-commerce
+
+574
+00:08:47,670 --> 00:08:47,680
+place. Made specifically for e-commerce
+ 
+
+575
+00:08:47,680 --> 00:08:49,509
+place. Made specifically for e-commerce
+brands, marketers, and content-driven
+
+576
+00:08:49,509 --> 00:08:49,519
+brands, marketers, and content-driven
+ 
+
+577
+00:08:49,519 --> 00:08:50,949
+brands, marketers, and content-driven
+campaigns. You can test multiple
+
+578
+00:08:50,949 --> 00:08:50,959
+campaigns. You can test multiple
+ 
+
+579
+00:08:50,959 --> 00:08:52,710
+campaigns. You can test multiple
+variations quickly. See what resonates
+
+580
+00:08:52,710 --> 00:08:52,720
+variations quickly. See what resonates
+ 
+
+581
+00:08:52,720 --> 00:08:54,550
+variations quickly. See what resonates
+with your audience and scale what works.
+
+582
+00:08:54,550 --> 00:08:54,560
+with your audience and scale what works.
+ 
+
+583
+00:08:54,560 --> 00:08:56,310
+with your audience and scale what works.
+That's the real power here. The ability
+
+584
+00:08:56,310 --> 00:08:56,320
+That's the real power here. The ability
+ 
+
+585
+00:08:56,320 --> 00:08:58,389
+That's the real power here. The ability
+to iterate and test at a speed that was
+
+586
+00:08:58,389 --> 00:08:58,399
+to iterate and test at a speed that was
+ 
+
+587
+00:08:58,399 --> 00:09:00,310
+to iterate and test at a speed that was
+impossible before. Want to test this?
+
+588
+00:09:00,310 --> 00:09:00,320
+impossible before. Want to test this?
+ 
+
+589
+00:09:00,320 --> 00:09:03,110
+impossible before. Want to test this?
+Head to www.topview.ai
+
+590
+00:09:03,110 --> 00:09:03,120
+Head to www.topview.ai
+ 
+
+591
+00:09:03,120 --> 00:09:04,790
+Head to www.topview.ai
+link in description. Check the pack
+
+592
+00:09:04,790 --> 00:09:04,800
+link in description. Check the pack
+ 
+
+593
+00:09:04,800 --> 00:09:06,630
+link in description. Check the pack
+opening experience on the site to redeem
+
+594
+00:09:06,630 --> 00:09:06,640
+opening experience on the site to redeem
+ 
+
+595
+00:09:06,640 --> 00:09:08,230
+opening experience on the site to redeem
+it and start creating your own viral
+
+596
+00:09:08,230 --> 00:09:08,240
+it and start creating your own viral
+ 
+
+597
+00:09:08,240 --> 00:09:10,150
+it and start creating your own viral
+video recreations. But real talk, does
+
+598
+00:09:10,150 --> 00:09:10,160
+video recreations. But real talk, does
+ 
+
+599
+00:09:10,160 --> 00:09:12,070
+video recreations. But real talk, does
+this excite you or scare you? Are you
+
+600
+00:09:12,070 --> 00:09:12,080
+this excite you or scare you? Are you
+ 
+
+601
+00:09:12,080 --> 00:09:14,150
+this excite you or scare you? Are you
+team AI is replacing everything and
+
+602
+00:09:14,150 --> 00:09:14,160
+team AI is replacing everything and
+ 
+
+603
+00:09:14,160 --> 00:09:16,150
+team AI is replacing everything and
+that's terrifying? Or are you team this
+
+604
+00:09:16,150 --> 00:09:16,160
+that's terrifying? Or are you team this
+ 
+
+605
+00:09:16,160 --> 00:09:17,990
+that's terrifying? Or are you team this
+is the future and we should embrace it?
+
+606
+00:09:17,990 --> 00:09:18,000
+is the future and we should embrace it?
+ 
+
+607
+00:09:18,000 --> 00:09:19,829
+is the future and we should embrace it?
+I'm honestly somewhere in the middle and
+
+608
+00:09:19,829 --> 00:09:19,839
+I'm honestly somewhere in the middle and
+ 
+
+609
+00:09:19,839 --> 00:09:21,190
+I'm honestly somewhere in the middle and
+I think that's where most of us should
+
+610
+00:09:21,190 --> 00:09:21,200
+I think that's where most of us should
+ 
+
+611
+00:09:21,200 --> 00:09:22,790
+I think that's where most of us should
+be. There are aspects of this technology
+
+612
+00:09:22,790 --> 00:09:22,800
+be. There are aspects of this technology
+ 
+
+613
+00:09:22,800 --> 00:09:24,470
+be. There are aspects of this technology
+that genuinely excite me. Think about
+
+614
+00:09:24,470 --> 00:09:24,480
+that genuinely excite me. Think about
+ 
+
+615
+00:09:24,480 --> 00:09:25,990
+that genuinely excite me. Think about
+the possibilities for small businesses
+
+616
+00:09:25,990 --> 00:09:26,000
+the possibilities for small businesses
+ 
+
+617
+00:09:26,000 --> 00:09:27,590
+the possibilities for small businesses
+who couldn't afford professional video
+
+618
+00:09:27,590 --> 00:09:27,600
+who couldn't afford professional video
+ 
+
+619
+00:09:27,600 --> 00:09:29,829
+who couldn't afford professional video
+production before. a local coffee shop,
+
+620
+00:09:29,829 --> 00:09:29,839
+production before. a local coffee shop,
+ 
+
+621
+00:09:29,839 --> 00:09:31,509
+production before. a local coffee shop,
+a handmade jewelry brand, a fitness
+
+622
+00:09:31,509 --> 00:09:31,519
+a handmade jewelry brand, a fitness
+ 
+
+623
+00:09:31,519 --> 00:09:33,430
+a handmade jewelry brand, a fitness
+coach just starting out. They now have
+
+624
+00:09:33,430 --> 00:09:33,440
+coach just starting out. They now have
+ 
+
+625
+00:09:33,440 --> 00:09:35,190
+coach just starting out. They now have
+access to the same quality content that
+
+626
+00:09:35,190 --> 00:09:35,200
+access to the same quality content that
+ 
+
+627
+00:09:35,200 --> 00:09:36,949
+access to the same quality content that
+major brands were spending thousands of
+
+628
+00:09:36,949 --> 00:09:36,959
+major brands were spending thousands of
+ 
+
+629
+00:09:36,959 --> 00:09:38,710
+major brands were spending thousands of
+dollars to create. That's powerful. The
+
+630
+00:09:38,710 --> 00:09:38,720
+dollars to create. That's powerful. The
+ 
+
+631
+00:09:38,720 --> 00:09:40,470
+dollars to create. That's powerful. The
+ability to test ideas quickly before
+
+632
+00:09:40,470 --> 00:09:40,480
+ability to test ideas quickly before
+ 
+
+633
+00:09:40,480 --> 00:09:41,990
+ability to test ideas quickly before
+investing heavily is another game
+
+634
+00:09:41,990 --> 00:09:42,000
+investing heavily is another game
+ 
+
+635
+00:09:42,000 --> 00:09:43,750
+investing heavily is another game
+changer. You can try 10 different video
+
+636
+00:09:43,750 --> 00:09:43,760
+changer. You can try 10 different video
+ 
+
+637
+00:09:43,760 --> 00:09:45,670
+changer. You can try 10 different video
+concepts in a single afternoon, see what
+
+638
+00:09:45,670 --> 00:09:45,680
+concepts in a single afternoon, see what
+ 
+
+639
+00:09:45,680 --> 00:09:47,030
+concepts in a single afternoon, see what
+resonates with your audience, and then
+
+640
+00:09:47,030 --> 00:09:47,040
+resonates with your audience, and then
+ 
+
+641
+00:09:47,040 --> 00:09:48,870
+resonates with your audience, and then
+double down on what works. That kind of
+
+642
+00:09:48,870 --> 00:09:48,880
+double down on what works. That kind of
+ 
+
+643
+00:09:48,880 --> 00:09:50,550
+double down on what works. That kind of
+rapid iteration was impossible before
+
+644
+00:09:50,550 --> 00:09:50,560
+rapid iteration was impossible before
+ 
+
+645
+00:09:50,560 --> 00:09:52,470
+rapid iteration was impossible before
+without burning through massive budgets.
+
+646
+00:09:52,470 --> 00:09:52,480
+without burning through massive budgets.
+ 
+
+647
+00:09:52,480 --> 00:09:53,509
+without burning through massive budgets.
+And there's something beautiful about
+
+648
+00:09:53,509 --> 00:09:53,519
+And there's something beautiful about
+ 
+
+649
+00:09:53,519 --> 00:09:55,430
+And there's something beautiful about
+the democratization of content creation
+
+650
+00:09:55,430 --> 00:09:55,440
+the democratization of content creation
+ 
+
+651
+00:09:55,440 --> 00:09:57,350
+the democratization of content creation
+tools. We're removing barriers. We're
+
+652
+00:09:57,350 --> 00:09:57,360
+tools. We're removing barriers. We're
+ 
+
+653
+00:09:57,360 --> 00:09:58,630
+tools. We're removing barriers. We're
+giving people who have great products
+
+654
+00:09:58,630 --> 00:09:58,640
+giving people who have great products
+ 
+
+655
+00:09:58,640 --> 00:10:00,870
+giving people who have great products
+and great ideas but limited resources a
+
+656
+00:10:00,870 --> 00:10:00,880
+and great ideas but limited resources a
+ 
+
+657
+00:10:00,880 --> 00:10:02,470
+and great ideas but limited resources a
+real fighting chance to compete in the
+
+658
+00:10:02,470 --> 00:10:02,480
+real fighting chance to compete in the
+ 
+
+659
+00:10:02,480 --> 00:10:04,070
+real fighting chance to compete in the
+digital marketplace. But I'd be lying if
+
+660
+00:10:04,070 --> 00:10:04,080
+digital marketplace. But I'd be lying if
+ 
+
+661
+00:10:04,080 --> 00:10:05,990
+digital marketplace. But I'd be lying if
+I said I didn't have concerns because I
+
+662
+00:10:05,990 --> 00:10:06,000
+I said I didn't have concerns because I
+ 
+
+663
+00:10:06,000 --> 00:10:07,670
+I said I didn't have concerns because I
+do. The potential for misinformation and
+
+664
+00:10:07,670 --> 00:10:07,680
+do. The potential for misinformation and
+ 
+
+665
+00:10:07,680 --> 00:10:09,750
+do. The potential for misinformation and
+deep fakes is real and it's scary. When
+
+666
+00:10:09,750 --> 00:10:09,760
+deep fakes is real and it's scary. When
+ 
+
+667
+00:10:09,760 --> 00:10:11,350
+deep fakes is real and it's scary. When
+you can create videos this realistic
+
+668
+00:10:11,350 --> 00:10:11,360
+you can create videos this realistic
+ 
+
+669
+00:10:11,360 --> 00:10:12,870
+you can create videos this realistic
+with just a few clicks, how do we
+
+670
+00:10:12,870 --> 00:10:12,880
+with just a few clicks, how do we
+ 
+
+671
+00:10:12,880 --> 00:10:14,870
+with just a few clicks, how do we
+maintain trust in what we see online?
+
+672
+00:10:14,870 --> 00:10:14,880
+maintain trust in what we see online?
+ 
+
+673
+00:10:14,880 --> 00:10:16,230
+maintain trust in what we see online?
+How do we protect people from being
+
+674
+00:10:16,230 --> 00:10:16,240
+How do we protect people from being
+ 
+
+675
+00:10:16,240 --> 00:10:18,230
+How do we protect people from being
+manipulated or deceived? The challenge
+
+676
+00:10:18,230 --> 00:10:18,240
+manipulated or deceived? The challenge
+ 
+
+677
+00:10:18,240 --> 00:10:19,750
+manipulated or deceived? The challenge
+of distinguishing what's real from
+
+678
+00:10:19,750 --> 00:10:19,760
+of distinguishing what's real from
+ 
+
+679
+00:10:19,760 --> 00:10:21,670
+of distinguishing what's real from
+what's fake is only going to get harder.
+
+680
+00:10:21,670 --> 00:10:21,680
+what's fake is only going to get harder.
+ 
+
+681
+00:10:21,680 --> 00:10:23,030
+what's fake is only going to get harder.
+We're approaching a point where our
+
+682
+00:10:23,030 --> 00:10:23,040
+We're approaching a point where our
+ 
+
+683
+00:10:23,040 --> 00:10:24,949
+We're approaching a point where our
+natural human ability to detect AI
+
+684
+00:10:24,949 --> 00:10:24,959
+natural human ability to detect AI
+ 
+
+685
+00:10:24,959 --> 00:10:26,710
+natural human ability to detect AI
+generated content is going to fail us
+
+686
+00:10:26,710 --> 00:10:26,720
+generated content is going to fail us
+ 
+
+687
+00:10:26,720 --> 00:10:27,910
+generated content is going to fail us
+completely. That has serious
+
+688
+00:10:27,910 --> 00:10:27,920
+completely. That has serious
+ 
+
+689
+00:10:27,920 --> 00:10:29,269
+completely. That has serious
+implications for everything from
+
+690
+00:10:29,269 --> 00:10:29,279
+implications for everything from
+ 
+
+691
+00:10:29,279 --> 00:10:31,430
+implications for everything from
+journalism to legal evidence to personal
+
+692
+00:10:31,430 --> 00:10:31,440
+journalism to legal evidence to personal
+ 
+
+693
+00:10:31,440 --> 00:10:33,110
+journalism to legal evidence to personal
+relationships. And I think about the
+
+694
+00:10:33,110 --> 00:10:33,120
+relationships. And I think about the
+ 
+
+695
+00:10:33,120 --> 00:10:34,790
+relationships. And I think about the
+impact on creative professionals who
+
+696
+00:10:34,790 --> 00:10:34,800
+impact on creative professionals who
+ 
+
+697
+00:10:34,800 --> 00:10:36,389
+impact on creative professionals who
+make their living creating this type of
+
+698
+00:10:36,389 --> 00:10:36,399
+make their living creating this type of
+ 
+
+699
+00:10:36,399 --> 00:10:38,470
+make their living creating this type of
+content, the UGC creators, the video
+
+700
+00:10:38,470 --> 00:10:38,480
+content, the UGC creators, the video
+ 
+
+701
+00:10:38,480 --> 00:10:40,470
+content, the UGC creators, the video
+editors, the production teams. These are
+
+702
+00:10:40,470 --> 00:10:40,480
+editors, the production teams. These are
+ 
+
+703
+00:10:40,480 --> 00:10:42,389
+editors, the production teams. These are
+real people with real skills who built
+
+704
+00:10:42,389 --> 00:10:42,399
+real people with real skills who built
+ 
+
+705
+00:10:42,399 --> 00:10:44,630
+real people with real skills who built
+careers in this space. What happens to
+
+706
+00:10:44,630 --> 00:10:44,640
+careers in this space. What happens to
+ 
+
+707
+00:10:44,640 --> 00:10:46,870
+careers in this space. What happens to
+them when AI can do in minutes what took
+
+708
+00:10:46,870 --> 00:10:46,880
+them when AI can do in minutes what took
+ 
+
+709
+00:10:46,880 --> 00:10:48,870
+them when AI can do in minutes what took
+them hours or days? That's not a
+
+710
+00:10:48,870 --> 00:10:48,880
+them hours or days? That's not a
+ 
+
+711
+00:10:48,880 --> 00:10:50,550
+them hours or days? That's not a
+hypothetical concern. that's happening
+
+712
+00:10:50,550 --> 00:10:50,560
+hypothetical concern. that's happening
+ 
+
+713
+00:10:50,560 --> 00:10:52,310
+hypothetical concern. that's happening
+right now. I don't have all the answers
+
+714
+00:10:52,310 --> 00:10:52,320
+right now. I don't have all the answers
+ 
+
+715
+00:10:52,320 --> 00:10:54,630
+right now. I don't have all the answers
+here. Nobody does. This technology is
+
+716
+00:10:54,630 --> 00:10:54,640
+here. Nobody does. This technology is
+ 
+
+717
+00:10:54,640 --> 00:10:56,630
+here. Nobody does. This technology is
+moving faster than our ability to fully
+
+718
+00:10:56,630 --> 00:10:56,640
+moving faster than our ability to fully
+ 
+
+719
+00:10:56,640 --> 00:10:59,269
+moving faster than our ability to fully
+understand its implications, but I think
+
+720
+00:10:59,269 --> 00:10:59,279
+understand its implications, but I think
+ 
+
+721
+00:10:59,279 --> 00:11:01,110
+understand its implications, but I think
+the conversation is important. We need
+
+722
+00:11:01,110 --> 00:11:01,120
+the conversation is important. We need
+ 
+
+723
+00:11:01,120 --> 00:11:02,949
+the conversation is important. We need
+to talk about both the opportunities and
+
+724
+00:11:02,949 --> 00:11:02,959
+to talk about both the opportunities and
+ 
+
+725
+00:11:02,959 --> 00:11:04,790
+to talk about both the opportunities and
+the risks. We need to think about how we
+
+726
+00:11:04,790 --> 00:11:04,800
+the risks. We need to think about how we
+ 
+
+727
+00:11:04,800 --> 00:11:06,949
+the risks. We need to think about how we
+use these tools responsibly. We need to
+
+728
+00:11:06,949 --> 00:11:06,959
+use these tools responsibly. We need to
+ 
+
+729
+00:11:06,959 --> 00:11:08,790
+use these tools responsibly. We need to
+consider the human impact alongside the
+
+730
+00:11:08,790 --> 00:11:08,800
+consider the human impact alongside the
+ 
+
+731
+00:11:08,800 --> 00:11:10,630
+consider the human impact alongside the
+business benefits. So, drop your honest
+
+732
+00:11:10,630 --> 00:11:10,640
+business benefits. So, drop your honest
+ 
+
+733
+00:11:10,640 --> 00:11:12,389
+business benefits. So, drop your honest
+thoughts in the comments. I read every
+
+734
+00:11:12,389 --> 00:11:12,399
+thoughts in the comments. I read every
+ 
+
+735
+00:11:12,399 --> 00:11:14,150
+thoughts in the comments. I read every
+single one and would genuinely love to
+
+736
+00:11:14,150 --> 00:11:14,160
+single one and would genuinely love to
+ 
+
+737
+00:11:14,160 --> 00:11:15,750
+single one and would genuinely love to
+hear different perspectives on this
+
+738
+00:11:15,750 --> 00:11:15,760
+hear different perspectives on this
+ 
+
+739
+00:11:15,760 --> 00:11:17,509
+hear different perspectives on this
+because it's a complex topic with no
+
+740
+00:11:17,509 --> 00:11:17,519
+because it's a complex topic with no
+ 
+
+741
+00:11:17,519 --> 00:11:19,670
+because it's a complex topic with no
+simple answers. Whether you're excited,
+
+742
+00:11:19,670 --> 00:11:19,680
+simple answers. Whether you're excited,
+ 
+
+743
+00:11:19,680 --> 00:11:22,150
+simple answers. Whether you're excited,
+scared, skeptical, or optimistic, I want
+
+744
+00:11:22,150 --> 00:11:22,160
+scared, skeptical, or optimistic, I want
+ 
+
+745
+00:11:22,160 --> 00:11:23,829
+scared, skeptical, or optimistic, I want
+to hear your take. Let's have a real
+
+746
+00:11:23,829 --> 00:11:23,839
+to hear your take. Let's have a real
+ 
+
+747
+00:11:23,839 --> 00:11:25,509
+to hear your take. Let's have a real
+conversation about where this technology
+
+748
+00:11:25,509 --> 00:11:25,519
+conversation about where this technology
+ 
+
+749
+00:11:25,519 --> 00:11:27,430
+conversation about where this technology
+is taking us. Now, if you want to become
+
+750
+00:11:27,430 --> 00:11:27,440
+is taking us. Now, if you want to become
+ 
+
+751
+00:11:27,440 --> 00:11:29,430
+is taking us. Now, if you want to become
+a millionaire this year, watch this
+
+752
+00:11:29,430 --> 00:11:29,440
+a millionaire this year, watch this
+ 
+
+753
+00:11:29,440 --> 00:11:32,079
+a millionaire this year, watch this
+video right
+

@@ -1,0 +1,3455 @@
+1
+00:00:00,000 --> 00:00:02,470
+
+Hey clothing brands, Google's V3 is
+
+2
+00:00:02,470 --> 00:00:02,480
+Hey clothing brands, Google's V3 is
+ 
+
+3
+00:00:02,480 --> 00:00:04,710
+Hey clothing brands, Google's V3 is
+about to kill traditional video
+
+4
+00:00:04,710 --> 00:00:04,720
+about to kill traditional video
+ 
+
+5
+00:00:04,720 --> 00:00:06,470
+about to kill traditional video
+marketing. We're talking about 8second
+
+6
+00:00:06,470 --> 00:00:06,480
+marketing. We're talking about 8second
+ 
+
+7
+00:00:06,480 --> 00:00:09,990
+marketing. We're talking about 8second
+cinematic stylized sound enabled videos
+
+8
+00:00:09,990 --> 00:00:10,000
+cinematic stylized sound enabled videos
+ 
+
+9
+00:00:10,000 --> 00:00:12,470
+cinematic stylized sound enabled videos
+from a single text prompt. You type it
+
+10
+00:00:12,470 --> 00:00:12,480
+from a single text prompt. You type it
+ 
+
+11
+00:00:12,480 --> 00:00:15,509
+from a single text prompt. You type it
+in and Google VO makes it real. It's
+
+12
+00:00:15,509 --> 00:00:15,519
+in and Google VO makes it real. It's
+ 
+
+13
+00:00:15,519 --> 00:00:17,349
+in and Google VO makes it real. It's
+like having your own literally Hollywood
+
+14
+00:00:17,349 --> 00:00:17,359
+like having your own literally Hollywood
+ 
+
+15
+00:00:17,359 --> 00:00:20,070
+like having your own literally Hollywood
+director, VFX team, audio engineer all
+
+16
+00:00:20,070 --> 00:00:20,080
+director, VFX team, audio engineer all
+ 
+
+17
+00:00:20,080 --> 00:00:22,790
+director, VFX team, audio engineer all
+rolled into one little prompt box. And
+
+18
+00:00:22,790 --> 00:00:22,800
+rolled into one little prompt box. And
+ 
+
+19
+00:00:22,800 --> 00:00:23,990
+rolled into one little prompt box. And
+yes, this is real. Hey, my name is
+
+20
+00:00:23,990 --> 00:00:24,000
+yes, this is real. Hey, my name is
+ 
+
+21
+00:00:24,000 --> 00:00:25,269
+yes, this is real. Hey, my name is
+Christian Pñan, one of the co-founders
+
+22
+00:00:25,269 --> 00:00:25,279
+Christian Pñan, one of the co-founders
+ 
+
+23
+00:00:25,279 --> 00:00:26,790
+Christian Pñan, one of the co-founders
+here at Bit Branding. We're specialized
+
+24
+00:00:26,790 --> 00:00:26,800
+here at Bit Branding. We're specialized
+ 
+
+25
+00:00:26,800 --> 00:00:28,550
+here at Bit Branding. We're specialized
+in helping clothing brands scale online
+
+26
+00:00:28,550 --> 00:00:28,560
+in helping clothing brands scale online
+ 
+
+27
+00:00:28,560 --> 00:00:29,910
+in helping clothing brands scale online
+and we've served over 300 clothing
+
+28
+00:00:29,910 --> 00:00:29,920
+and we've served over 300 clothing
+ 
+
+29
+00:00:29,920 --> 00:00:31,429
+and we've served over 300 clothing
+brands in the last year alone. I would
+
+30
+00:00:31,429 --> 00:00:31,439
+brands in the last year alone. I would
+ 
+
+31
+00:00:31,439 --> 00:00:32,950
+brands in the last year alone. I would
+appreciate it if you like and subscribe
+
+32
+00:00:32,950 --> 00:00:32,960
+appreciate it if you like and subscribe
+ 
+
+33
+00:00:32,960 --> 00:00:34,470
+appreciate it if you like and subscribe
+so you don't miss any of our content.
+
+34
+00:00:34,470 --> 00:00:34,480
+so you don't miss any of our content.
+ 
+
+35
+00:00:34,480 --> 00:00:36,709
+so you don't miss any of our content.
+Now, let me show you exactly how to use
+
+36
+00:00:36,709 --> 00:00:36,719
+Now, let me show you exactly how to use
+ 
+
+37
+00:00:36,719 --> 00:00:39,910
+Now, let me show you exactly how to use
+VO3 to create viral videos that sell
+
+38
+00:00:39,910 --> 00:00:39,920
+VO3 to create viral videos that sell
+ 
+
+39
+00:00:39,920 --> 00:00:42,150
+VO3 to create viral videos that sell
+your clothes like crazy. So, step one,
+
+40
+00:00:42,150 --> 00:00:42,160
+your clothes like crazy. So, step one,
+ 
+
+41
+00:00:42,160 --> 00:00:43,990
+your clothes like crazy. So, step one,
+you really want to understand the power
+
+42
+00:00:43,990 --> 00:00:44,000
+you really want to understand the power
+ 
+
+43
+00:00:44,000 --> 00:00:47,029
+you really want to understand the power
+of VO3. Most AI video tools out there
+
+44
+00:00:47,029 --> 00:00:47,039
+of VO3. Most AI video tools out there
+ 
+
+45
+00:00:47,039 --> 00:00:48,310
+of VO3. Most AI video tools out there
+just create kind of like the visuals,
+
+46
+00:00:48,310 --> 00:00:48,320
+just create kind of like the visuals,
+ 
+
+47
+00:00:48,320 --> 00:00:50,389
+just create kind of like the visuals,
+right? But VO3 goes a step further and
+
+48
+00:00:50,389 --> 00:00:50,399
+right? But VO3 goes a step further and
+ 
+
+49
+00:00:50,399 --> 00:00:53,350
+right? But VO3 goes a step further and
+it generates native audio. It generates
+
+50
+00:00:53,350 --> 00:00:53,360
+it generates native audio. It generates
+ 
+
+51
+00:00:53,360 --> 00:00:57,350
+it generates native audio. It generates
+realistic camera motion and video scenes
+
+52
+00:00:57,350 --> 00:00:57,360
+realistic camera motion and video scenes
+ 
+
+53
+00:00:57,360 --> 00:00:59,270
+realistic camera motion and video scenes
+that follow your instructions like a
+
+54
+00:00:59,270 --> 00:00:59,280
+that follow your instructions like a
+ 
+
+55
+00:00:59,280 --> 00:01:00,950
+that follow your instructions like a
+trained cinematographer. So you can
+
+56
+00:01:00,950 --> 00:01:00,960
+trained cinematographer. So you can
+ 
+
+57
+00:01:00,960 --> 00:01:03,430
+trained cinematographer. So you can
+create Tik Toks with storyline hooks.
+
+58
+00:01:03,430 --> 00:01:03,440
+create Tik Toks with storyline hooks.
+ 
+
+59
+00:01:03,440 --> 00:01:05,429
+create Tik Toks with storyline hooks.
+You can create Instagram reels with
+
+60
+00:01:05,429 --> 00:01:05,439
+You can create Instagram reels with
+ 
+
+61
+00:01:05,439 --> 00:01:07,750
+You can create Instagram reels with
+product reveals, cinematic B-rolls for
+
+62
+00:01:07,750 --> 00:01:07,760
+product reveals, cinematic B-rolls for
+ 
+
+63
+00:01:07,760 --> 00:01:10,310
+product reveals, cinematic B-rolls for
+paid ads and create UGC style scenes
+
+64
+00:01:10,310 --> 00:01:10,320
+paid ads and create UGC style scenes
+ 
+
+65
+00:01:10,320 --> 00:01:13,429
+paid ads and create UGC style scenes
+with humor and dialogue. Really the best
+
+66
+00:01:13,429 --> 00:01:13,439
+with humor and dialogue. Really the best
+ 
+
+67
+00:01:13,439 --> 00:01:15,109
+with humor and dialogue. Really the best
+part about this is that you can do it
+
+68
+00:01:15,109 --> 00:01:15,119
+part about this is that you can do it
+ 
+
+69
+00:01:15,119 --> 00:01:18,550
+part about this is that you can do it
+all in dur.
+
+70
+00:01:18,550 --> 00:01:18,560
+
+ 
+
+71
+00:01:18,560 --> 00:01:20,390
+
+And speaking of prompt, I think that's
+
+72
+00:01:20,390 --> 00:01:20,400
+And speaking of prompt, I think that's
+ 
+
+73
+00:01:20,400 --> 00:01:22,630
+And speaking of prompt, I think that's
+the the biggest crutch I would say with
+
+74
+00:01:22,630 --> 00:01:22,640
+the the biggest crutch I would say with
+ 
+
+75
+00:01:22,640 --> 00:01:24,469
+the the biggest crutch I would say with
+with Google's video is that you
+
+76
+00:01:24,469 --> 00:01:24,479
+with Google's video is that you
+ 
+
+77
+00:01:24,479 --> 00:01:26,950
+with Google's video is that you
+definitely need to master the prompt
+
+78
+00:01:26,950 --> 00:01:26,960
+definitely need to master the prompt
+ 
+
+79
+00:01:26,960 --> 00:01:28,950
+definitely need to master the prompt
+formula. And here's the secret sauce.
+
+80
+00:01:28,950 --> 00:01:28,960
+formula. And here's the secret sauce.
+ 
+
+81
+00:01:28,960 --> 00:01:30,710
+formula. And here's the secret sauce.
+You need to write your prompts like a
+
+82
+00:01:30,710 --> 00:01:30,720
+You need to write your prompts like a
+ 
+
+83
+00:01:30,720 --> 00:01:33,830
+You need to write your prompts like a
+mini movie script. So the better your
+
+84
+00:01:33,830 --> 00:01:33,840
+mini movie script. So the better your
+ 
+
+85
+00:01:33,840 --> 00:01:36,789
+mini movie script. So the better your
+prompt, the better your video. And just
+
+86
+00:01:36,789 --> 00:01:36,799
+prompt, the better your video. And just
+ 
+
+87
+00:01:36,799 --> 00:01:39,749
+prompt, the better your video. And just
+to show you an example, if I type in a
+
+88
+00:01:39,749 --> 00:01:39,759
+to show you an example, if I type in a
+ 
+
+89
+00:01:39,759 --> 00:01:42,550
+to show you an example, if I type in a
+model walks down the street wearing a
+
+90
+00:01:42,550 --> 00:01:42,560
+model walks down the street wearing a
+ 
+
+91
+00:01:42,560 --> 00:01:44,870
+model walks down the street wearing a
+jacket, it's going to give me a very
+
+92
+00:01:44,870 --> 00:01:44,880
+jacket, it's going to give me a very
+ 
+
+93
+00:01:44,880 --> 00:01:47,270
+jacket, it's going to give me a very
+simple video of a model walking. She
+
+94
+00:01:47,270 --> 00:01:47,280
+simple video of a model walking. She
+ 
+
+95
+00:01:47,280 --> 00:01:49,429
+simple video of a model walking. She
+actually doesn't even have a shirt on.
+
+96
+00:01:49,429 --> 00:01:49,439
+actually doesn't even have a shirt on.
+ 
+
+97
+00:01:49,439 --> 00:01:50,870
+actually doesn't even have a shirt on.
+It's just a jacket, which is
+
+98
+00:01:50,870 --> 00:01:50,880
+It's just a jacket, which is
+ 
+
+99
+00:01:50,880 --> 00:01:52,389
+It's just a jacket, which is
+interesting. And then listen to this.
+
+100
+00:01:52,389 --> 00:01:52,399
+interesting. And then listen to this.
+ 
+
+101
+00:01:52,399 --> 00:01:53,670
+interesting. And then listen to this.
+Hopefully you can we can get the audio
+
+102
+00:01:53,670 --> 00:01:53,680
+Hopefully you can we can get the audio
+ 
+
+103
+00:01:53,680 --> 00:01:54,230
+Hopefully you can we can get the audio
+in here.
+
+104
+00:01:54,230 --> 00:01:54,240
+in here.
+ 
+
+105
+00:01:54,240 --> 00:01:56,069
+in here.
+>> This jacket just makes you feel so
+
+106
+00:01:56,069 --> 00:01:56,079
+>> This jacket just makes you feel so
+ 
+
+107
+00:01:56,079 --> 00:01:59,030
+>> This jacket just makes you feel so
+powerful when you walk down the street.
+
+108
+00:01:59,030 --> 00:01:59,040
+powerful when you walk down the street.
+ 
+
+109
+00:01:59,040 --> 00:02:01,830
+powerful when you walk down the street.
+>> For whatever reason, it added that audio
+
+110
+00:02:01,830 --> 00:02:01,840
+>> For whatever reason, it added that audio
+ 
+
+111
+00:02:01,840 --> 00:02:04,069
+>> For whatever reason, it added that audio
+on top of it just saying this jacket
+
+112
+00:02:04,069 --> 00:02:04,079
+on top of it just saying this jacket
+ 
+
+113
+00:02:04,079 --> 00:02:05,830
+on top of it just saying this jacket
+makes you feel so powerful when walking
+
+114
+00:02:05,830 --> 00:02:05,840
+makes you feel so powerful when walking
+ 
+
+115
+00:02:05,840 --> 00:02:07,429
+makes you feel so powerful when walking
+down the street, which I guess is that's
+
+116
+00:02:07,429 --> 00:02:07,439
+down the street, which I guess is that's
+ 
+
+117
+00:02:07,439 --> 00:02:09,589
+down the street, which I guess is that's
+fine. It's okay. But again, you get an
+
+118
+00:02:09,589 --> 00:02:09,599
+fine. It's okay. But again, you get an
+ 
+
+119
+00:02:09,599 --> 00:02:11,830
+fine. It's okay. But again, you get an
+idea, right? A very simple prompt will
+
+120
+00:02:11,830 --> 00:02:11,840
+idea, right? A very simple prompt will
+ 
+
+121
+00:02:11,840 --> 00:02:14,550
+idea, right? A very simple prompt will
+kind of get you there, but it won't get
+
+122
+00:02:14,550 --> 00:02:14,560
+kind of get you there, but it won't get
+ 
+
+123
+00:02:14,560 --> 00:02:16,630
+kind of get you there, but it won't get
+you to where you truly want to go. Right
+
+124
+00:02:16,630 --> 00:02:16,640
+you to where you truly want to go. Right
+ 
+
+125
+00:02:16,640 --> 00:02:18,630
+you to where you truly want to go. Right
+now, if we do a different prompt,
+
+126
+00:02:18,630 --> 00:02:18,640
+now, if we do a different prompt,
+ 
+
+127
+00:02:18,640 --> 00:02:20,470
+now, if we do a different prompt,
+something with a little bit more
+
+128
+00:02:20,470 --> 00:02:20,480
+something with a little bit more
+ 
+
+129
+00:02:20,480 --> 00:02:22,790
+something with a little bit more
+structure. So, a confident young woman
+
+130
+00:02:22,790 --> 00:02:22,800
+structure. So, a confident young woman
+ 
+
+131
+00:02:22,800 --> 00:02:25,190
+structure. So, a confident young woman
+with natural curls wears a cropped
+
+132
+00:02:25,190 --> 00:02:25,200
+with natural curls wears a cropped
+ 
+
+133
+00:02:25,200 --> 00:02:27,430
+with natural curls wears a cropped
+caramel puffer jacket and distressed
+
+134
+00:02:27,430 --> 00:02:27,440
+caramel puffer jacket and distressed
+ 
+
+135
+00:02:27,440 --> 00:02:29,510
+caramel puffer jacket and distressed
+denim. She struts through a bustling
+
+136
+00:02:29,510 --> 00:02:29,520
+denim. She struts through a bustling
+ 
+
+137
+00:02:29,520 --> 00:02:31,350
+denim. She struts through a bustling
+downtown street at golden hour. The
+
+138
+00:02:31,350 --> 00:02:31,360
+downtown street at golden hour. The
+ 
+
+139
+00:02:31,360 --> 00:02:33,990
+downtown street at golden hour. The
+camera follows from a low angle in slow
+
+140
+00:02:33,990 --> 00:02:34,000
+camera follows from a low angle in slow
+ 
+
+141
+00:02:34,000 --> 00:02:36,150
+camera follows from a low angle in slow
+motion. Sunflares bouncing off glass
+
+142
+00:02:36,150 --> 00:02:36,160
+motion. Sunflares bouncing off glass
+ 
+
+143
+00:02:36,160 --> 00:02:38,229
+motion. Sunflares bouncing off glass
+buildings. Style is cinematic, warm
+
+144
+00:02:38,229 --> 00:02:38,239
+buildings. Style is cinematic, warm
+ 
+
+145
+00:02:38,239 --> 00:02:42,070
+buildings. Style is cinematic, warm
+tones. The audio upbeat R&B instrumental
+
+146
+00:02:42,070 --> 00:02:42,080
+tones. The audio upbeat R&B instrumental
+ 
+
+147
+00:02:42,080 --> 00:02:44,390
+tones. The audio upbeat R&B instrumental
+plays faint city sounds. Her heels
+
+148
+00:02:44,390 --> 00:02:44,400
+plays faint city sounds. Her heels
+ 
+
+149
+00:02:44,400 --> 00:02:46,790
+plays faint city sounds. Her heels
+clicking on the pavement. And this is
+
+150
+00:02:46,790 --> 00:02:46,800
+clicking on the pavement. And this is
+ 
+
+151
+00:02:46,800 --> 00:02:56,869
+clicking on the pavement. And this is
+the video that we got from that one.
+
+152
+00:02:56,869 --> 00:02:56,879
+
+ 
+
+153
+00:02:56,879 --> 00:02:58,710
+
+>> The music could be a little bit better,
+
+154
+00:02:58,710 --> 00:02:58,720
+>> The music could be a little bit better,
+ 
+
+155
+00:02:58,720 --> 00:03:00,869
+>> The music could be a little bit better,
+but we have all the right elements in
+
+156
+00:03:00,869 --> 00:03:00,879
+but we have all the right elements in
+ 
+
+157
+00:03:00,879 --> 00:03:02,229
+but we have all the right elements in
+here, right? We have the right model
+
+158
+00:03:02,229 --> 00:03:02,239
+here, right? We have the right model
+ 
+
+159
+00:03:02,239 --> 00:03:03,910
+here, right? We have the right model
+that we want. We have the camera angle
+
+160
+00:03:03,910 --> 00:03:03,920
+that we want. We have the camera angle
+ 
+
+161
+00:03:03,920 --> 00:03:06,229
+that we want. We have the camera angle
+that we want. we have the the tones and
+
+162
+00:03:06,229 --> 00:03:06,239
+that we want. we have the the tones and
+ 
+
+163
+00:03:06,239 --> 00:03:08,390
+that we want. we have the the tones and
+the color palette that we want from that
+
+164
+00:03:08,390 --> 00:03:08,400
+the color palette that we want from that
+ 
+
+165
+00:03:08,400 --> 00:03:09,509
+the color palette that we want from that
+video. So, you kind of see the
+
+166
+00:03:09,509 --> 00:03:09,519
+video. So, you kind of see the
+ 
+
+167
+00:03:09,519 --> 00:03:10,949
+video. So, you kind of see the
+difference. Now, when it comes to
+
+168
+00:03:10,949 --> 00:03:10,959
+difference. Now, when it comes to
+ 
+
+169
+00:03:10,959 --> 00:03:13,350
+difference. Now, when it comes to
+structure of your prompts, these are the
+
+170
+00:03:13,350 --> 00:03:13,360
+structure of your prompts, these are the
+ 
+
+171
+00:03:13,360 --> 00:03:15,110
+structure of your prompts, these are the
+things that I want you to include.
+
+172
+00:03:15,110 --> 00:03:15,120
+things that I want you to include.
+ 
+
+173
+00:03:15,120 --> 00:03:16,070
+things that I want you to include.
+Number one, it's going to be the
+
+174
+00:03:16,070 --> 00:03:16,080
+Number one, it's going to be the
+ 
+
+175
+00:03:16,080 --> 00:03:18,869
+Number one, it's going to be the
+subject, right? Who is in this scene?
+
+176
+00:03:18,869 --> 00:03:18,879
+subject, right? Who is in this scene?
+ 
+
+177
+00:03:18,879 --> 00:03:21,509
+subject, right? Who is in this scene?
+Number two, the action. What are they
+
+178
+00:03:21,509 --> 00:03:21,519
+Number two, the action. What are they
+ 
+
+179
+00:03:21,519 --> 00:03:24,390
+Number two, the action. What are they
+doing? Number three, context. Where and
+
+180
+00:03:24,390 --> 00:03:24,400
+doing? Number three, context. Where and
+ 
+
+181
+00:03:24,400 --> 00:03:26,630
+doing? Number three, context. Where and
+when it is happening. Number four is
+
+182
+00:03:26,630 --> 00:03:26,640
+when it is happening. Number four is
+ 
+
+183
+00:03:26,640 --> 00:03:28,869
+when it is happening. Number four is
+motion. How does the camera actually
+
+184
+00:03:28,869 --> 00:03:28,879
+motion. How does the camera actually
+ 
+
+185
+00:03:28,879 --> 00:03:31,509
+motion. How does the camera actually
+move? Number five, style. So, what
+
+186
+00:03:31,509 --> 00:03:31,519
+move? Number five, style. So, what
+ 
+
+187
+00:03:31,519 --> 00:03:34,070
+move? Number five, style. So, what
+visual tone or genre you want to
+
+188
+00:03:34,070 --> 00:03:34,080
+visual tone or genre you want to
+ 
+
+189
+00:03:34,080 --> 00:03:36,550
+visual tone or genre you want to
+emulate? Number six, framing. A wide
+
+190
+00:03:36,550 --> 00:03:36,560
+emulate? Number six, framing. A wide
+ 
+
+191
+00:03:36,560 --> 00:03:39,110
+emulate? Number six, framing. A wide
+shot, a closeup, etc. Number seven,
+
+192
+00:03:39,110 --> 00:03:39,120
+shot, a closeup, etc. Number seven,
+ 
+
+193
+00:03:39,120 --> 00:03:41,030
+shot, a closeup, etc. Number seven,
+constraints, right? Are there any
+
+194
+00:03:41,030 --> 00:03:41,040
+constraints, right? Are there any
+ 
+
+195
+00:03:41,040 --> 00:03:43,030
+constraints, right? Are there any
+musthaves or things that you don't want
+
+196
+00:03:43,030 --> 00:03:43,040
+musthaves or things that you don't want
+ 
+
+197
+00:03:43,040 --> 00:03:45,990
+musthaves or things that you don't want
+to include? And number eight is audio.
+
+198
+00:03:45,990 --> 00:03:46,000
+to include? And number eight is audio.
+ 
+
+199
+00:03:46,000 --> 00:03:48,070
+to include? And number eight is audio.
+What should we hear? Now, a little trick
+
+200
+00:03:48,070 --> 00:03:48,080
+What should we hear? Now, a little trick
+ 
+
+201
+00:03:48,080 --> 00:03:49,830
+What should we hear? Now, a little trick
+that you can use is use those eight
+
+202
+00:03:49,830 --> 00:03:49,840
+that you can use is use those eight
+ 
+
+203
+00:03:49,840 --> 00:03:53,270
+that you can use is use those eight
+elements and feed them into chat GPT to
+
+204
+00:03:53,270 --> 00:03:53,280
+elements and feed them into chat GPT to
+ 
+
+205
+00:03:53,280 --> 00:03:55,190
+elements and feed them into chat GPT to
+actually level up your prompts a lot
+
+206
+00:03:55,190 --> 00:03:55,200
+actually level up your prompts a lot
+ 
+
+207
+00:03:55,200 --> 00:03:56,229
+actually level up your prompts a lot
+easier. So, you don't have to come up
+
+208
+00:03:56,229 --> 00:03:56,239
+easier. So, you don't have to come up
+ 
+
+209
+00:03:56,239 --> 00:03:58,470
+easier. So, you don't have to come up
+with, you know, all these chat GPT to
+
+210
+00:03:58,470 --> 00:03:58,480
+with, you know, all these chat GPT to
+ 
+
+211
+00:03:58,480 --> 00:04:00,550
+with, you know, all these chat GPT to
+actually level up your prompts. And you
+
+212
+00:04:00,550 --> 00:04:00,560
+actually level up your prompts. And you
+ 
+
+213
+00:04:00,560 --> 00:04:01,910
+actually level up your prompts. And you
+can give it kind of like the scene that
+
+214
+00:04:01,910 --> 00:04:01,920
+can give it kind of like the scene that
+ 
+
+215
+00:04:01,920 --> 00:04:03,750
+can give it kind of like the scene that
+you're trying to come up with. So you
+
+216
+00:04:03,750 --> 00:04:03,760
+you're trying to come up with. So you
+ 
+
+217
+00:04:03,760 --> 00:04:06,229
+you're trying to come up with. So you
+can literally have ChadBt come up with
+
+218
+00:04:06,229 --> 00:04:06,239
+can literally have ChadBt come up with
+ 
+
+219
+00:04:06,239 --> 00:04:07,990
+can literally have ChadBt come up with
+all the details, right? It's a little
+
+220
+00:04:07,990 --> 00:04:08,000
+all the details, right? It's a little
+ 
+
+221
+00:04:08,000 --> 00:04:09,750
+all the details, right? It's a little
+bit of cheating, but look, we're all
+
+222
+00:04:09,750 --> 00:04:09,760
+bit of cheating, but look, we're all
+ 
+
+223
+00:04:09,760 --> 00:04:11,030
+bit of cheating, but look, we're all
+doing it right now, right? So you can
+
+224
+00:04:11,030 --> 00:04:11,040
+doing it right now, right? So you can
+ 
+
+225
+00:04:11,040 --> 00:04:14,630
+doing it right now, right? So you can
+use ChadBT to expand your base idea. So
+
+226
+00:04:14,630 --> 00:04:14,640
+use ChadBT to expand your base idea. So
+ 
+
+227
+00:04:14,640 --> 00:04:16,310
+use ChadBT to expand your base idea. So
+you can start with something like, give
+
+228
+00:04:16,310 --> 00:04:16,320
+you can start with something like, give
+ 
+
+229
+00:04:16,320 --> 00:04:18,789
+you can start with something like, give
+me a cinematic scene for a male model
+
+230
+00:04:18,789 --> 00:04:18,799
+me a cinematic scene for a male model
+ 
+
+231
+00:04:18,799 --> 00:04:21,590
+me a cinematic scene for a male model
+wearing street wear in an urban setting,
+
+232
+00:04:21,590 --> 00:04:21,600
+wearing street wear in an urban setting,
+ 
+
+233
+00:04:21,600 --> 00:04:23,830
+wearing street wear in an urban setting,
+right? Then you tweak the results. You
+
+234
+00:04:23,830 --> 00:04:23,840
+right? Then you tweak the results. You
+ 
+
+235
+00:04:23,840 --> 00:04:26,150
+right? Then you tweak the results. You
+add sounds, adjust framing, describe the
+
+236
+00:04:26,150 --> 00:04:26,160
+add sounds, adjust framing, describe the
+ 
+
+237
+00:04:26,160 --> 00:04:29,110
+add sounds, adjust framing, describe the
+lighting. You got to really think like a
+
+238
+00:04:29,110 --> 00:04:29,120
+lighting. You got to really think like a
+ 
+
+239
+00:04:29,120 --> 00:04:31,350
+lighting. You got to really think like a
+director to some extent. Another bonus
+
+240
+00:04:31,350 --> 00:04:31,360
+director to some extent. Another bonus
+ 
+
+241
+00:04:31,360 --> 00:04:34,150
+director to some extent. Another bonus
+that you can also do is before going
+
+242
+00:04:34,150 --> 00:04:34,160
+that you can also do is before going
+ 
+
+243
+00:04:34,160 --> 00:04:37,909
+that you can also do is before going
+into VO3, you can use chat GPT or
+
+244
+00:04:37,909 --> 00:04:37,919
+into VO3, you can use chat GPT or
+ 
+
+245
+00:04:37,919 --> 00:04:40,469
+into VO3, you can use chat GPT or
+MidJourney or any other image generator
+
+246
+00:04:40,469 --> 00:04:40,479
+MidJourney or any other image generator
+ 
+
+247
+00:04:40,479 --> 00:04:43,030
+MidJourney or any other image generator
+and use the prompt, but instead of a
+
+248
+00:04:43,030 --> 00:04:43,040
+and use the prompt, but instead of a
+ 
+
+249
+00:04:43,040 --> 00:04:44,710
+and use the prompt, but instead of a
+video, you're doing an image. So, at
+
+250
+00:04:44,710 --> 00:04:44,720
+video, you're doing an image. So, at
+ 
+
+251
+00:04:44,720 --> 00:04:47,350
+video, you're doing an image. So, at
+least you can get a preview of the look
+
+252
+00:04:47,350 --> 00:04:47,360
+least you can get a preview of the look
+ 
+
+253
+00:04:47,360 --> 00:04:50,629
+least you can get a preview of the look
+and really lock down the style down in
+
+254
+00:04:50,629 --> 00:04:50,639
+and really lock down the style down in
+ 
+
+255
+00:04:50,639 --> 00:04:52,310
+and really lock down the style down in
+like the style references, right? So the
+
+256
+00:04:52,310 --> 00:04:52,320
+like the style references, right? So the
+ 
+
+257
+00:04:52,320 --> 00:04:54,070
+like the style references, right? So the
+the you're building out the prompt, but
+
+258
+00:04:54,070 --> 00:04:54,080
+the you're building out the prompt, but
+ 
+
+259
+00:04:54,080 --> 00:04:55,830
+the you're building out the prompt, but
+before you feed it into Gemini, you can
+
+260
+00:04:55,830 --> 00:04:55,840
+before you feed it into Gemini, you can
+ 
+
+261
+00:04:55,840 --> 00:04:57,830
+before you feed it into Gemini, you can
+actually create images. So you'll be
+
+262
+00:04:57,830 --> 00:04:57,840
+actually create images. So you'll be
+ 
+
+263
+00:04:57,840 --> 00:04:59,590
+actually create images. So you'll be
+able to tweak the prompt without using
+
+264
+00:04:59,590 --> 00:04:59,600
+able to tweak the prompt without using
+ 
+
+265
+00:04:59,600 --> 00:05:02,950
+able to tweak the prompt without using
+credits or wasting a prompt on Gemini.
+
+266
+00:05:02,950 --> 00:05:02,960
+credits or wasting a prompt on Gemini.
+ 
+
+267
+00:05:02,960 --> 00:05:04,710
+credits or wasting a prompt on Gemini.
+Now, I want you to remember this. You
+
+268
+00:05:04,710 --> 00:05:04,720
+Now, I want you to remember this. You
+ 
+
+269
+00:05:04,720 --> 00:05:07,830
+Now, I want you to remember this. You
+only get 8 seconds out of these videos.
+
+270
+00:05:07,830 --> 00:05:07,840
+only get 8 seconds out of these videos.
+ 
+
+271
+00:05:07,840 --> 00:05:10,070
+only get 8 seconds out of these videos.
+So you really want to use them wisely.
+
+272
+00:05:10,070 --> 00:05:10,080
+So you really want to use them wisely.
+ 
+
+273
+00:05:10,080 --> 00:05:12,629
+So you really want to use them wisely.
+And to be honest, a lot of what you will
+
+274
+00:05:12,629 --> 00:05:12,639
+And to be honest, a lot of what you will
+ 
+
+275
+00:05:12,639 --> 00:05:14,710
+And to be honest, a lot of what you will
+probably be using this, especially as
+
+276
+00:05:14,710 --> 00:05:14,720
+probably be using this, especially as
+ 
+
+277
+00:05:14,720 --> 00:05:16,710
+probably be using this, especially as
+you're starting to to test it out,
+
+278
+00:05:16,710 --> 00:05:16,720
+you're starting to to test it out,
+ 
+
+279
+00:05:16,720 --> 00:05:19,749
+you're starting to to test it out,
+right, is to use them as hooks, right?
+
+280
+00:05:19,749 --> 00:05:19,759
+right, is to use them as hooks, right?
+ 
+
+281
+00:05:19,759 --> 00:05:22,150
+right, is to use them as hooks, right?
+is to hook the viewer in the first two
+
+282
+00:05:22,150 --> 00:05:22,160
+is to hook the viewer in the first two
+ 
+
+283
+00:05:22,160 --> 00:05:23,670
+is to hook the viewer in the first two
+seconds. So, this is where you really
+
+284
+00:05:23,670 --> 00:05:23,680
+seconds. So, this is where you really
+ 
+
+285
+00:05:23,680 --> 00:05:26,070
+seconds. So, this is where you really
+got to think about motion, contrast,
+
+286
+00:05:26,070 --> 00:05:26,080
+got to think about motion, contrast,
+ 
+
+287
+00:05:26,080 --> 00:05:27,510
+got to think about motion, contrast,
+maybe humor, maybe a little bit of
+
+288
+00:05:27,510 --> 00:05:27,520
+maybe humor, maybe a little bit of
+ 
+
+289
+00:05:27,520 --> 00:05:29,749
+maybe humor, maybe a little bit of
+mystery in there because then you can
+
+290
+00:05:29,749 --> 00:05:29,759
+mystery in there because then you can
+ 
+
+291
+00:05:29,759 --> 00:05:31,110
+mystery in there because then you can
+combine that with something else. So,
+
+292
+00:05:31,110 --> 00:05:31,120
+combine that with something else. So,
+ 
+
+293
+00:05:31,120 --> 00:05:32,629
+combine that with something else. So,
+for example, like you could do like a
+
+294
+00:05:32,629 --> 00:05:32,639
+for example, like you could do like a
+ 
+
+295
+00:05:32,639 --> 00:05:35,350
+for example, like you could do like a
+skateboarder wearing a cargo joggers and
+
+296
+00:05:35,350 --> 00:05:35,360
+skateboarder wearing a cargo joggers and
+ 
+
+297
+00:05:35,360 --> 00:05:37,430
+skateboarder wearing a cargo joggers and
+it does a trick over a puddle in slow
+
+298
+00:05:37,430 --> 00:05:37,440
+it does a trick over a puddle in slow
+ 
+
+299
+00:05:37,440 --> 00:05:40,070
+it does a trick over a puddle in slow
+motion, right? The water splashes,
+
+300
+00:05:40,070 --> 00:05:40,080
+motion, right? The water splashes,
+ 
+
+301
+00:05:40,080 --> 00:05:42,230
+motion, right? The water splashes,
+reflecting city lights, some night mode,
+
+302
+00:05:42,230 --> 00:05:42,240
+reflecting city lights, some night mode,
+ 
+
+303
+00:05:42,240 --> 00:05:44,710
+reflecting city lights, some night mode,
+maybe some neon aesthetics. Audio is
+
+304
+00:05:44,710 --> 00:05:44,720
+maybe some neon aesthetics. Audio is
+ 
+
+305
+00:05:44,720 --> 00:05:47,029
+maybe some neon aesthetics. Audio is
+maybe some hip-hop bead, the wheels
+
+306
+00:05:47,029 --> 00:05:47,039
+maybe some hip-hop bead, the wheels
+ 
+
+307
+00:05:47,039 --> 00:05:49,110
+maybe some hip-hop bead, the wheels
+rolling, the splashing, right? That's
+
+308
+00:05:49,110 --> 00:05:49,120
+rolling, the splashing, right? That's
+ 
+
+309
+00:05:49,120 --> 00:05:50,950
+rolling, the splashing, right? That's
+visual. That's visceral. That's like an
+
+310
+00:05:50,950 --> 00:05:50,960
+visual. That's visceral. That's like an
+ 
+
+311
+00:05:50,960 --> 00:05:53,510
+visual. That's visceral. That's like an
+instant like thumb stopping content that
+
+312
+00:05:53,510 --> 00:05:53,520
+instant like thumb stopping content that
+ 
+
+313
+00:05:53,520 --> 00:05:55,350
+instant like thumb stopping content that
+you would see on Tik Tok or or
+
+314
+00:05:55,350 --> 00:05:55,360
+you would see on Tik Tok or or
+ 
+
+315
+00:05:55,360 --> 00:05:57,270
+you would see on Tik Tok or or
+Instagram. Now, this should enable you
+
+316
+00:05:57,270 --> 00:05:57,280
+Instagram. Now, this should enable you
+ 
+
+317
+00:05:57,280 --> 00:06:00,629
+Instagram. Now, this should enable you
+to create variations of ads also very
+
+318
+00:06:00,629 --> 00:06:00,639
+to create variations of ads also very
+ 
+
+319
+00:06:00,639 --> 00:06:03,029
+to create variations of ads also very
+fast, right? Because it can just create
+
+320
+00:06:03,029 --> 00:06:03,039
+fast, right? Because it can just create
+ 
+
+321
+00:06:03,039 --> 00:06:04,950
+fast, right? Because it can just create
+something and I mean one to two minutes
+
+322
+00:06:04,950 --> 00:06:04,960
+something and I mean one to two minutes
+ 
+
+323
+00:06:04,960 --> 00:06:07,270
+something and I mean one to two minutes
+after the prompt and you have this video
+
+324
+00:06:07,270 --> 00:06:07,280
+after the prompt and you have this video
+ 
+
+325
+00:06:07,280 --> 00:06:08,950
+after the prompt and you have this video
+already generated for you, right? So,
+
+326
+00:06:08,950 --> 00:06:08,960
+already generated for you, right? So,
+ 
+
+327
+00:06:08,960 --> 00:06:10,550
+already generated for you, right? So,
+let's say you want to promote a new
+
+328
+00:06:10,550 --> 00:06:10,560
+let's say you want to promote a new
+ 
+
+329
+00:06:10,560 --> 00:06:13,029
+let's say you want to promote a new
+embroidered hoodie like don't make just
+
+330
+00:06:13,029 --> 00:06:13,039
+embroidered hoodie like don't make just
+ 
+
+331
+00:06:13,039 --> 00:06:15,510
+embroidered hoodie like don't make just
+one video, right? make five with the
+
+332
+00:06:15,510 --> 00:06:15,520
+one video, right? make five with the
+ 
+
+333
+00:06:15,520 --> 00:06:17,350
+one video, right? make five with the
+same product just different angles
+
+334
+00:06:17,350 --> 00:06:17,360
+same product just different angles
+ 
+
+335
+00:06:17,360 --> 00:06:20,230
+same product just different angles
+aerial drone style of the model running
+
+336
+00:06:20,230 --> 00:06:20,240
+aerial drone style of the model running
+ 
+
+337
+00:06:20,240 --> 00:06:22,469
+aerial drone style of the model running
+on a rooftop like maybe slow pans
+
+338
+00:06:22,469 --> 00:06:22,479
+on a rooftop like maybe slow pans
+ 
+
+339
+00:06:22,479 --> 00:06:24,629
+on a rooftop like maybe slow pans
+across, you know, hoodie details with
+
+340
+00:06:24,629 --> 00:06:24,639
+across, you know, hoodie details with
+ 
+
+341
+00:06:24,639 --> 00:06:26,550
+across, you know, hoodie details with
+rain in the background. Two friends
+
+342
+00:06:26,550 --> 00:06:26,560
+rain in the background. Two friends
+ 
+
+343
+00:06:26,560 --> 00:06:29,029
+rain in the background. Two friends
+wearing the hoodie laughing in a cafe,
+
+344
+00:06:29,029 --> 00:06:29,039
+wearing the hoodie laughing in a cafe,
+ 
+
+345
+00:06:29,039 --> 00:06:31,350
+wearing the hoodie laughing in a cafe,
+right? Again, skater jumping a stair,
+
+346
+00:06:31,350 --> 00:06:31,360
+right? Again, skater jumping a stair,
+ 
+
+347
+00:06:31,360 --> 00:06:32,550
+right? Again, skater jumping a stair,
+you know, while wearing the actual
+
+348
+00:06:32,550 --> 00:06:32,560
+you know, while wearing the actual
+ 
+
+349
+00:06:32,560 --> 00:06:34,870
+you know, while wearing the actual
+hoodie. Close-ups of stitching as the
+
+350
+00:06:34,870 --> 00:06:34,880
+hoodie. Close-ups of stitching as the
+ 
+
+351
+00:06:34,880 --> 00:06:36,629
+hoodie. Close-ups of stitching as the
+wind moves the fabric, right? The
+
+352
+00:06:36,629 --> 00:06:36,639
+wind moves the fabric, right? The
+ 
+
+353
+00:06:36,639 --> 00:06:38,550
+wind moves the fabric, right? The
+opportunities are really endless when it
+
+354
+00:06:38,550 --> 00:06:38,560
+opportunities are really endless when it
+ 
+
+355
+00:06:38,560 --> 00:06:40,309
+opportunities are really endless when it
+comes to to the content that you can
+
+356
+00:06:40,309 --> 00:06:40,319
+comes to to the content that you can
+ 
+
+357
+00:06:40,319 --> 00:06:42,790
+comes to to the content that you can
+create and allows you to test widely
+
+358
+00:06:42,790 --> 00:06:42,800
+create and allows you to test widely
+ 
+
+359
+00:06:42,800 --> 00:06:45,110
+create and allows you to test widely
+ranging ideas and very different ideas
+
+360
+00:06:45,110 --> 00:06:45,120
+ranging ideas and very different ideas
+ 
+
+361
+00:06:45,120 --> 00:06:47,749
+ranging ideas and very different ideas
+with just a few prompt variations. And
+
+362
+00:06:47,749 --> 00:06:47,759
+with just a few prompt variations. And
+ 
+
+363
+00:06:47,759 --> 00:06:50,230
+with just a few prompt variations. And
+you can create basically new ads to
+
+364
+00:06:50,230 --> 00:06:50,240
+you can create basically new ads to
+ 
+
+365
+00:06:50,240 --> 00:06:51,670
+you can create basically new ads to
+test. There's no reissues, no extra
+
+366
+00:06:51,670 --> 00:06:51,680
+test. There's no reissues, no extra
+ 
+
+367
+00:06:51,680 --> 00:06:53,350
+test. There's no reissues, no extra
+models, no nothing. It's just prompting
+
+368
+00:06:53,350 --> 00:06:53,360
+models, no nothing. It's just prompting
+ 
+
+369
+00:06:53,360 --> 00:06:55,909
+models, no nothing. It's just prompting
+it just slightly different here. You can
+
+370
+00:06:55,909 --> 00:06:55,919
+it just slightly different here. You can
+ 
+
+371
+00:06:55,919 --> 00:07:00,230
+it just slightly different here. You can
+also pair up these V3 videos with actual
+
+372
+00:07:00,230 --> 00:07:00,240
+also pair up these V3 videos with actual
+ 
+
+373
+00:07:00,240 --> 00:07:02,469
+also pair up these V3 videos with actual
+UGC. And that's I think a very killer
+
+374
+00:07:02,469 --> 00:07:02,479
+UGC. And that's I think a very killer
+ 
+
+375
+00:07:02,479 --> 00:07:04,070
+UGC. And that's I think a very killer
+combo that I don't I haven't seen a lot
+
+376
+00:07:04,070 --> 00:07:04,080
+combo that I don't I haven't seen a lot
+ 
+
+377
+00:07:04,080 --> 00:07:05,670
+combo that I don't I haven't seen a lot
+of people do. But you can start with
+
+378
+00:07:05,670 --> 00:07:05,680
+of people do. But you can start with
+ 
+
+379
+00:07:05,680 --> 00:07:07,670
+of people do. But you can start with
+something that is I mean what you see
+
+380
+00:07:07,670 --> 00:07:07,680
+something that is I mean what you see
+ 
+
+381
+00:07:07,680 --> 00:07:09,430
+something that is I mean what you see
+every day now on social media, you know,
+
+382
+00:07:09,430 --> 00:07:09,440
+every day now on social media, you know,
+ 
+
+383
+00:07:09,440 --> 00:07:11,350
+every day now on social media, you know,
+with this AI videos that are very
+
+384
+00:07:11,350 --> 00:07:11,360
+with this AI videos that are very
+ 
+
+385
+00:07:11,360 --> 00:07:14,150
+with this AI videos that are very
+eye-catching and maybe you're showcasing
+
+386
+00:07:14,150 --> 00:07:14,160
+eye-catching and maybe you're showcasing
+ 
+
+387
+00:07:14,160 --> 00:07:16,230
+eye-catching and maybe you're showcasing
+that person wearing the product, but
+
+388
+00:07:16,230 --> 00:07:16,240
+that person wearing the product, but
+ 
+
+389
+00:07:16,240 --> 00:07:17,749
+that person wearing the product, but
+it's a very eye-catching thing. And then
+
+390
+00:07:17,749 --> 00:07:17,759
+it's a very eye-catching thing. And then
+ 
+
+391
+00:07:17,759 --> 00:07:20,070
+it's a very eye-catching thing. And then
+you cut into maybe a real customer
+
+392
+00:07:20,070 --> 00:07:20,080
+you cut into maybe a real customer
+ 
+
+393
+00:07:20,080 --> 00:07:23,110
+you cut into maybe a real customer
+testimonial or review or ending with
+
+394
+00:07:23,110 --> 00:07:23,120
+testimonial or review or ending with
+ 
+
+395
+00:07:23,120 --> 00:07:25,029
+testimonial or review or ending with
+your brand's visuals and call to
+
+396
+00:07:25,029 --> 00:07:25,039
+your brand's visuals and call to
+ 
+
+397
+00:07:25,039 --> 00:07:27,749
+your brand's visuals and call to
+actions, right? That combination of
+
+398
+00:07:27,749 --> 00:07:27,759
+actions, right? That combination of
+ 
+
+399
+00:07:27,759 --> 00:07:31,189
+actions, right? That combination of
+using the V3 videos as the hook could be
+
+400
+00:07:31,189 --> 00:07:31,199
+using the V3 videos as the hook could be
+ 
+
+401
+00:07:31,199 --> 00:07:34,150
+using the V3 videos as the hook could be
+a very interesting way to to do ads on
+
+402
+00:07:34,150 --> 00:07:34,160
+a very interesting way to to do ads on
+ 
+
+403
+00:07:34,160 --> 00:07:35,749
+a very interesting way to to do ads on
+social media and also to just to create
+
+404
+00:07:35,749 --> 00:07:35,759
+social media and also to just to create
+ 
+
+405
+00:07:35,759 --> 00:07:38,070
+social media and also to just to create
+content. I think a lot of people tend to
+
+406
+00:07:38,070 --> 00:07:38,080
+content. I think a lot of people tend to
+ 
+
+407
+00:07:38,080 --> 00:07:41,350
+content. I think a lot of people tend to
+struggle to create new content for just
+
+408
+00:07:41,350 --> 00:07:41,360
+struggle to create new content for just
+ 
+
+409
+00:07:41,360 --> 00:07:43,749
+struggle to create new content for just
+regular posting. But using this would be
+
+410
+00:07:43,749 --> 00:07:43,759
+regular posting. But using this would be
+ 
+
+411
+00:07:43,759 --> 00:07:45,749
+regular posting. But using this would be
+just a very easy way to again just test
+
+412
+00:07:45,749 --> 00:07:45,759
+just a very easy way to again just test
+ 
+
+413
+00:07:45,759 --> 00:07:47,510
+just a very easy way to again just test
+different things and see what resonates
+
+414
+00:07:47,510 --> 00:07:47,520
+different things and see what resonates
+ 
+
+415
+00:07:47,520 --> 00:07:50,150
+different things and see what resonates
+with your audience. Now I will say what
+
+416
+00:07:50,150 --> 00:07:50,160
+with your audience. Now I will say what
+ 
+
+417
+00:07:50,160 --> 00:07:53,270
+with your audience. Now I will say what
+we've been showing you so far here is
+
+418
+00:07:53,270 --> 00:07:53,280
+we've been showing you so far here is
+ 
+
+419
+00:07:53,280 --> 00:07:57,189
+we've been showing you so far here is
+Google's Gemini. So Gemini has the
+
+420
+00:07:57,189 --> 00:07:57,199
+Google's Gemini. So Gemini has the
+ 
+
+421
+00:07:57,199 --> 00:07:59,830
+Google's Gemini. So Gemini has the
+ability to insert the the video
+
+422
+00:07:59,830 --> 00:07:59,840
+ability to insert the the video
+ 
+
+423
+00:07:59,840 --> 00:08:03,350
+ability to insert the the video
+component of it. So it's a a very easy
+
+424
+00:08:03,350 --> 00:08:03,360
+component of it. So it's a a very easy
+ 
+
+425
+00:08:03,360 --> 00:08:05,350
+component of it. So it's a a very easy
+and and what you've been used to
+
+426
+00:08:05,350 --> 00:08:05,360
+and and what you've been used to
+ 
+
+427
+00:08:05,360 --> 00:08:07,749
+and and what you've been used to
+probably using with Chat GPT, which you
+
+428
+00:08:07,749 --> 00:08:07,759
+probably using with Chat GPT, which you
+ 
+
+429
+00:08:07,759 --> 00:08:09,670
+probably using with Chat GPT, which you
+just click on video down here. You
+
+430
+00:08:09,670 --> 00:08:09,680
+just click on video down here. You
+ 
+
+431
+00:08:09,680 --> 00:08:11,510
+just click on video down here. You
+describe your video and you could even
+
+432
+00:08:11,510 --> 00:08:11,520
+describe your video and you could even
+ 
+
+433
+00:08:11,520 --> 00:08:13,430
+describe your video and you could even
+add photos in here. So I want to show
+
+434
+00:08:13,430 --> 00:08:13,440
+add photos in here. So I want to show
+ 
+
+435
+00:08:13,440 --> 00:08:16,230
+add photos in here. So I want to show
+you an example of a prompt that we did
+
+436
+00:08:16,230 --> 00:08:16,240
+you an example of a prompt that we did
+ 
+
+437
+00:08:16,240 --> 00:08:18,950
+you an example of a prompt that we did
+adding this sweatshirt as a product that
+
+438
+00:08:18,950 --> 00:08:18,960
+adding this sweatshirt as a product that
+ 
+
+439
+00:08:18,960 --> 00:08:21,830
+adding this sweatshirt as a product that
+we wanted the model to wear. And you're
+
+440
+00:08:21,830 --> 00:08:21,840
+we wanted the model to wear. And you're
+ 
+
+441
+00:08:21,840 --> 00:08:23,189
+we wanted the model to wear. And you're
+going to be surprised because it looks
+
+442
+00:08:23,189 --> 00:08:23,199
+going to be surprised because it looks
+ 
+
+443
+00:08:23,199 --> 00:08:24,790
+going to be surprised because it looks
+awesome. So in this one it was just yeah
+
+444
+00:08:24,790 --> 00:08:24,800
+awesome. So in this one it was just yeah
+ 
+
+445
+00:08:24,800 --> 00:08:26,950
+awesome. So in this one it was just yeah
+black model with t twist out hair
+
+446
+00:08:26,950 --> 00:08:26,960
+black model with t twist out hair
+ 
+
+447
+00:08:26,960 --> 00:08:28,869
+black model with t twist out hair
+wearing sweatshirt and I put in
+
+448
+00:08:28,869 --> 00:08:28,879
+wearing sweatshirt and I put in
+ 
+
+449
+00:08:28,879 --> 00:08:31,589
+wearing sweatshirt and I put in
+parenthesis image uploaded neon lit
+
+450
+00:08:31,589 --> 00:08:31,599
+parenthesis image uploaded neon lit
+ 
+
+451
+00:08:31,599 --> 00:08:34,070
+parenthesis image uploaded neon lit
+Tokyo alley rainy night walking past
+
+452
+00:08:34,070 --> 00:08:34,080
+Tokyo alley rainy night walking past
+ 
+
+453
+00:08:34,080 --> 00:08:36,949
+Tokyo alley rainy night walking past
+glowing signs slow motion camera follows
+
+454
+00:08:36,949 --> 00:08:36,959
+glowing signs slow motion camera follows
+ 
+
+455
+00:08:36,959 --> 00:08:39,829
+glowing signs slow motion camera follows
+from behind a cinematic bokeh 24 frames
+
+456
+00:08:39,829 --> 00:08:39,839
+from behind a cinematic bokeh 24 frames
+ 
+
+457
+00:08:39,839 --> 00:08:43,110
+from behind a cinematic bokeh 24 frames
+per second dark synth wave lightning and
+
+458
+00:08:43,110 --> 00:08:43,120
+per second dark synth wave lightning and
+ 
+
+459
+00:08:43,120 --> 00:08:45,030
+per second dark synth wave lightning and
+then you can add the image of your
+
+460
+00:08:45,030 --> 00:08:45,040
+then you can add the image of your
+ 
+
+461
+00:08:45,040 --> 00:08:47,910
+then you can add the image of your
+product into any prompt that you create
+
+462
+00:08:47,910 --> 00:08:47,920
+product into any prompt that you create
+ 
+
+463
+00:08:47,920 --> 00:08:50,470
+product into any prompt that you create
+in order for that model to actually wear
+
+464
+00:08:50,470 --> 00:08:50,480
+in order for that model to actually wear
+ 
+
+465
+00:08:50,480 --> 00:09:03,829
+in order for that model to actually wear
+that item. And this is the result.
+
+466
+00:09:03,829 --> 00:09:03,839
+
+ 
+
+467
+00:09:03,839 --> 00:09:06,870
+
+Amazing, right? So, you can create this
+
+468
+00:09:06,870 --> 00:09:06,880
+Amazing, right? So, you can create this
+ 
+
+469
+00:09:06,880 --> 00:09:08,470
+Amazing, right? So, you can create this
+right now. This literally took me 2
+
+470
+00:09:08,470 --> 00:09:08,480
+right now. This literally took me 2
+ 
+
+471
+00:09:08,480 --> 00:09:10,630
+right now. This literally took me 2
+minutes to make this happen. The beauty
+
+472
+00:09:10,630 --> 00:09:10,640
+minutes to make this happen. The beauty
+ 
+
+473
+00:09:10,640 --> 00:09:12,630
+minutes to make this happen. The beauty
+of it obviously is that you get an
+
+474
+00:09:12,630 --> 00:09:12,640
+of it obviously is that you get an
+ 
+
+475
+00:09:12,640 --> 00:09:14,389
+of it obviously is that you get an
+opportunity to download this video and
+
+476
+00:09:14,389 --> 00:09:14,399
+opportunity to download this video and
+ 
+
+477
+00:09:14,399 --> 00:09:15,910
+opportunity to download this video and
+then again you definitely want to
+
+478
+00:09:15,910 --> 00:09:15,920
+then again you definitely want to
+ 
+
+479
+00:09:15,920 --> 00:09:17,430
+then again you definitely want to
+combine this with potentially other
+
+480
+00:09:17,430 --> 00:09:17,440
+combine this with potentially other
+ 
+
+481
+00:09:17,440 --> 00:09:19,670
+combine this with potentially other
+scenes with potentially other content
+
+482
+00:09:19,670 --> 00:09:19,680
+scenes with potentially other content
+ 
+
+483
+00:09:19,680 --> 00:09:21,509
+scenes with potentially other content
+maybe real content from your customers
+
+484
+00:09:21,509 --> 00:09:21,519
+maybe real content from your customers
+ 
+
+485
+00:09:21,519 --> 00:09:23,670
+maybe real content from your customers
+and that's where the real magic happens.
+
+486
+00:09:23,670 --> 00:09:23,680
+and that's where the real magic happens.
+ 
+
+487
+00:09:23,680 --> 00:09:25,670
+and that's where the real magic happens.
+Now this right here using Gemini we're
+
+488
+00:09:25,670 --> 00:09:25,680
+Now this right here using Gemini we're
+ 
+
+489
+00:09:25,680 --> 00:09:28,470
+Now this right here using Gemini we're
+actually under a Google Workspace
+
+490
+00:09:28,470 --> 00:09:28,480
+actually under a Google Workspace
+ 
+
+491
+00:09:28,480 --> 00:09:30,949
+actually under a Google Workspace
+account. So we have the pro enabled but
+
+492
+00:09:30,949 --> 00:09:30,959
+account. So we have the pro enabled but
+ 
+
+493
+00:09:30,959 --> 00:09:33,030
+account. So we have the pro enabled but
+even with the pro there are limitations.
+
+494
+00:09:33,030 --> 00:09:33,040
+even with the pro there are limitations.
+ 
+
+495
+00:09:33,040 --> 00:09:35,430
+even with the pro there are limitations.
+We've already reached the limit today on
+
+496
+00:09:35,430 --> 00:09:35,440
+We've already reached the limit today on
+ 
+
+497
+00:09:35,440 --> 00:09:37,350
+We've already reached the limit today on
+creating videos. we have to wait till
+
+498
+00:09:37,350 --> 00:09:37,360
+creating videos. we have to wait till
+ 
+
+499
+00:09:37,360 --> 00:09:39,670
+creating videos. we have to wait till
+tomorrow 8:00 a.m. in order to keep
+
+500
+00:09:39,670 --> 00:09:39,680
+tomorrow 8:00 a.m. in order to keep
+ 
+
+501
+00:09:39,680 --> 00:09:41,670
+tomorrow 8:00 a.m. in order to keep
+creating videos. So, just know that us
+
+502
+00:09:41,670 --> 00:09:41,680
+creating videos. So, just know that us
+ 
+
+503
+00:09:41,680 --> 00:09:43,269
+creating videos. So, just know that us
+as a pro account, we were able to create
+
+504
+00:09:43,269 --> 00:09:43,279
+as a pro account, we were able to create
+ 
+
+505
+00:09:43,279 --> 00:09:44,790
+as a pro account, we were able to create
+about three videos and we've kind of
+
+506
+00:09:44,790 --> 00:09:44,800
+about three videos and we've kind of
+ 
+
+507
+00:09:44,800 --> 00:09:46,470
+about three videos and we've kind of
+reached the limit for the day. I say
+
+508
+00:09:46,470 --> 00:09:46,480
+reached the limit for the day. I say
+ 
+
+509
+00:09:46,480 --> 00:09:48,470
+reached the limit for the day. I say
+four videos and we reached the limit for
+
+510
+00:09:48,470 --> 00:09:48,480
+four videos and we reached the limit for
+ 
+
+511
+00:09:48,480 --> 00:09:50,630
+four videos and we reached the limit for
+for the day. Beyond this, you can also,
+
+512
+00:09:50,630 --> 00:09:50,640
+for the day. Beyond this, you can also,
+ 
+
+513
+00:09:50,640 --> 00:09:52,389
+for the day. Beyond this, you can also,
+you know, go into the next, which is the
+
+514
+00:09:52,389 --> 00:09:52,399
+you know, go into the next, which is the
+ 
+
+515
+00:09:52,399 --> 00:09:54,470
+you know, go into the next, which is the
+AI, Google AI ultra is what they call
+
+516
+00:09:54,470 --> 00:09:54,480
+AI, Google AI ultra is what they call
+ 
+
+517
+00:09:54,480 --> 00:09:56,070
+AI, Google AI ultra is what they call
+it, which obviously you get a bunch more
+
+518
+00:09:56,070 --> 00:09:56,080
+it, which obviously you get a bunch more
+ 
+
+519
+00:09:56,080 --> 00:09:58,470
+it, which obviously you get a bunch more
+credits in the back end. Now, beyond
+
+520
+00:09:58,470 --> 00:09:58,480
+credits in the back end. Now, beyond
+ 
+
+521
+00:09:58,480 --> 00:10:02,389
+credits in the back end. Now, beyond
+using Google Gemini, you could also use
+
+522
+00:10:02,389 --> 00:10:02,399
+using Google Gemini, you could also use
+ 
+
+523
+00:10:02,399 --> 00:10:05,110
+using Google Gemini, you could also use
+Flow. So, this is a little bit newer,
+
+524
+00:10:05,110 --> 00:10:05,120
+Flow. So, this is a little bit newer,
+ 
+
+525
+00:10:05,120 --> 00:10:07,750
+Flow. So, this is a little bit newer,
+but again, it uses the same technology.
+
+526
+00:10:07,750 --> 00:10:07,760
+but again, it uses the same technology.
+ 
+
+527
+00:10:07,760 --> 00:10:11,750
+but again, it uses the same technology.
+It uses VO3, but with Flow, which I I'll
+
+528
+00:10:11,750 --> 00:10:11,760
+It uses VO3, but with Flow, which I I'll
+ 
+
+529
+00:10:11,760 --> 00:10:13,829
+It uses VO3, but with Flow, which I I'll
+I'll warn you right now, we don't have
+
+530
+00:10:13,829 --> 00:10:13,839
+I'll warn you right now, we don't have
+ 
+
+531
+00:10:13,839 --> 00:10:16,150
+I'll warn you right now, we don't have
+access to to this just yet because we
+
+532
+00:10:16,150 --> 00:10:16,160
+access to to this just yet because we
+ 
+
+533
+00:10:16,160 --> 00:10:17,990
+access to to this just yet because we
+haven't upgraded our account. But with
+
+534
+00:10:17,990 --> 00:10:18,000
+haven't upgraded our account. But with
+ 
+
+535
+00:10:18,000 --> 00:10:20,870
+haven't upgraded our account. But with
+Flow, what it allows you to do is be
+
+536
+00:10:20,870 --> 00:10:20,880
+Flow, what it allows you to do is be
+ 
+
+537
+00:10:20,880 --> 00:10:23,430
+Flow, what it allows you to do is be
+more of a almost like a filmmaker. So,
+
+538
+00:10:23,430 --> 00:10:23,440
+more of a almost like a filmmaker. So,
+ 
+
+539
+00:10:23,440 --> 00:10:26,790
+more of a almost like a filmmaker. So,
+if your plan is to potentially create a
+
+540
+00:10:26,790 --> 00:10:26,800
+if your plan is to potentially create a
+ 
+
+541
+00:10:26,800 --> 00:10:29,190
+if your plan is to potentially create a
+a series, right, that you will upload as
+
+542
+00:10:29,190 --> 00:10:29,200
+a series, right, that you will upload as
+ 
+
+543
+00:10:29,200 --> 00:10:31,910
+a series, right, that you will upload as
+Instagram reels and it's following this
+
+544
+00:10:31,910 --> 00:10:31,920
+Instagram reels and it's following this
+ 
+
+545
+00:10:31,920 --> 00:10:33,829
+Instagram reels and it's following this
+character that you've created and this
+
+546
+00:10:33,829 --> 00:10:33,839
+character that you've created and this
+ 
+
+547
+00:10:33,839 --> 00:10:34,870
+character that you've created and this
+character maybe goes on different
+
+548
+00:10:34,870 --> 00:10:34,880
+character maybe goes on different
+ 
+
+549
+00:10:34,880 --> 00:10:36,230
+character maybe goes on different
+adventures and different things and you
+
+550
+00:10:36,230 --> 00:10:36,240
+adventures and different things and you
+ 
+
+551
+00:10:36,240 --> 00:10:38,389
+adventures and different things and you
+want that consistency of that character
+
+552
+00:10:38,389 --> 00:10:38,399
+want that consistency of that character
+ 
+
+553
+00:10:38,399 --> 00:10:39,990
+want that consistency of that character
+and sort of like this storytelling
+
+554
+00:10:39,990 --> 00:10:40,000
+and sort of like this storytelling
+ 
+
+555
+00:10:40,000 --> 00:10:41,670
+and sort of like this storytelling
+aspect that maybe you're doing it to
+
+556
+00:10:41,670 --> 00:10:41,680
+aspect that maybe you're doing it to
+ 
+
+557
+00:10:41,680 --> 00:10:43,190
+aspect that maybe you're doing it to
+entertain again, not necessarily
+
+558
+00:10:43,190 --> 00:10:43,200
+entertain again, not necessarily
+ 
+
+559
+00:10:43,200 --> 00:10:44,790
+entertain again, not necessarily
+yourself, but to entertain your
+
+560
+00:10:44,790 --> 00:10:44,800
+yourself, but to entertain your
+ 
+
+561
+00:10:44,800 --> 00:10:46,230
+yourself, but to entertain your
+audience. Doing something like that
+
+562
+00:10:46,230 --> 00:10:46,240
+audience. Doing something like that
+ 
+
+563
+00:10:46,240 --> 00:10:48,630
+audience. Doing something like that
+would be a really great idea and very
+
+564
+00:10:48,630 --> 00:10:48,640
+would be a really great idea and very
+ 
+
+565
+00:10:48,640 --> 00:10:50,230
+would be a really great idea and very
+easy to do with something like Google
+
+566
+00:10:50,230 --> 00:10:50,240
+easy to do with something like Google
+ 
+
+567
+00:10:50,240 --> 00:10:53,670
+easy to do with something like Google
+Flow because Flow allows you to have
+
+568
+00:10:53,670 --> 00:10:53,680
+Flow because Flow allows you to have
+ 
+
+569
+00:10:53,680 --> 00:10:55,430
+Flow because Flow allows you to have
+different scenes and cut up the scenes
+
+570
+00:10:55,430 --> 00:10:55,440
+different scenes and cut up the scenes
+ 
+
+571
+00:10:55,440 --> 00:10:56,790
+different scenes and cut up the scenes
+together. It almost has like a like a
+
+572
+00:10:56,790 --> 00:10:56,800
+together. It almost has like a like a
+ 
+
+573
+00:10:56,800 --> 00:10:59,190
+together. It almost has like a like a
+mini cap cut, you know, already built in
+
+574
+00:10:59,190 --> 00:10:59,200
+mini cap cut, you know, already built in
+ 
+
+575
+00:10:59,200 --> 00:11:00,949
+mini cap cut, you know, already built in
+within here and allows you to combine
+
+576
+00:11:00,949 --> 00:11:00,959
+within here and allows you to combine
+ 
+
+577
+00:11:00,959 --> 00:11:02,630
+within here and allows you to combine
+different scenes. It allows you to stay
+
+578
+00:11:02,630 --> 00:11:02,640
+different scenes. It allows you to stay
+ 
+
+579
+00:11:02,640 --> 00:11:06,389
+different scenes. It allows you to stay
+consistent. It allows you to by default
+
+580
+00:11:06,389 --> 00:11:06,399
+consistent. It allows you to by default
+ 
+
+581
+00:11:06,399 --> 00:11:08,389
+consistent. It allows you to by default
+add all the elements that you want. So,
+
+582
+00:11:08,389 --> 00:11:08,399
+add all the elements that you want. So,
+ 
+
+583
+00:11:08,399 --> 00:11:10,150
+add all the elements that you want. So,
+we're talking about your product shots.
+
+584
+00:11:10,150 --> 00:11:10,160
+we're talking about your product shots.
+ 
+
+585
+00:11:10,160 --> 00:11:11,590
+we're talking about your product shots.
+If you already have a model created, you
+
+586
+00:11:11,590 --> 00:11:11,600
+If you already have a model created, you
+ 
+
+587
+00:11:11,600 --> 00:11:13,829
+If you already have a model created, you
+can add the model and it it it gives you
+
+588
+00:11:13,829 --> 00:11:13,839
+can add the model and it it it gives you
+ 
+
+589
+00:11:13,839 --> 00:11:16,069
+can add the model and it it it gives you
+that consistency, that seamlessness and
+
+590
+00:11:16,069 --> 00:11:16,079
+that consistency, that seamlessness and
+ 
+
+591
+00:11:16,079 --> 00:11:18,630
+that consistency, that seamlessness and
+still that cinematic look overall. So, I
+
+592
+00:11:18,630 --> 00:11:18,640
+still that cinematic look overall. So, I
+ 
+
+593
+00:11:18,640 --> 00:11:21,990
+still that cinematic look overall. So, I
+would say this was made by filmmakers
+
+594
+00:11:21,990 --> 00:11:22,000
+would say this was made by filmmakers
+ 
+
+595
+00:11:22,000 --> 00:11:24,790
+would say this was made by filmmakers
+alongside with Google to help generate
+
+596
+00:11:24,790 --> 00:11:24,800
+alongside with Google to help generate
+ 
+
+597
+00:11:24,800 --> 00:11:27,430
+alongside with Google to help generate
+almost like mini movies, right? But you
+
+598
+00:11:27,430 --> 00:11:27,440
+almost like mini movies, right? But you
+ 
+
+599
+00:11:27,440 --> 00:11:29,509
+almost like mini movies, right? But you
+can use it to do those types of things.
+
+600
+00:11:29,509 --> 00:11:29,519
+can use it to do those types of things.
+ 
+
+601
+00:11:29,519 --> 00:11:30,630
+can use it to do those types of things.
+So, if you're interested in this,
+
+602
+00:11:30,630 --> 00:11:30,640
+So, if you're interested in this,
+ 
+
+603
+00:11:30,640 --> 00:11:32,389
+So, if you're interested in this,
+obviously with this one, you will kind
+
+604
+00:11:32,389 --> 00:11:32,399
+obviously with this one, you will kind
+ 
+
+605
+00:11:32,399 --> 00:11:33,670
+obviously with this one, you will kind
+more than likely have to get into the
+
+606
+00:11:33,670 --> 00:11:33,680
+more than likely have to get into the
+ 
+
+607
+00:11:33,680 --> 00:11:36,150
+more than likely have to get into the
+the AI Ultra, which $125 a month. That's
+
+608
+00:11:36,150 --> 00:11:36,160
+the AI Ultra, which $125 a month. That's
+ 
+
+609
+00:11:36,160 --> 00:11:37,910
+the AI Ultra, which $125 a month. That's
+for 3 months. They're doing a little
+
+610
+00:11:37,910 --> 00:11:37,920
+for 3 months. They're doing a little
+ 
+
+611
+00:11:37,920 --> 00:11:39,350
+for 3 months. They're doing a little
+sale right now. If you're seeing this,
+
+612
+00:11:39,350 --> 00:11:39,360
+sale right now. If you're seeing this,
+ 
+
+613
+00:11:39,360 --> 00:11:41,430
+sale right now. If you're seeing this,
+the the pricing may change, but using
+
+614
+00:11:41,430 --> 00:11:41,440
+the the pricing may change, but using
+ 
+
+615
+00:11:41,440 --> 00:11:43,269
+the the pricing may change, but using
+that Google AI Ultra will give you all
+
+616
+00:11:43,269 --> 00:11:43,279
+that Google AI Ultra will give you all
+ 
+
+617
+00:11:43,279 --> 00:11:45,829
+that Google AI Ultra will give you all
+these additional tools and you could
+
+618
+00:11:45,829 --> 00:11:45,839
+these additional tools and you could
+ 
+
+619
+00:11:45,839 --> 00:11:48,069
+these additional tools and you could
+even create better content overall.
+
+620
+00:11:48,069 --> 00:11:48,079
+even create better content overall.
+ 
+
+621
+00:11:48,079 --> 00:11:49,509
+even create better content overall.
+Again, it's still using the same
+
+622
+00:11:49,509 --> 00:11:49,519
+Again, it's still using the same
+ 
+
+623
+00:11:49,519 --> 00:11:51,590
+Again, it's still using the same
+technology, but with Flow, you have some
+
+624
+00:11:51,590 --> 00:11:51,600
+technology, but with Flow, you have some
+ 
+
+625
+00:11:51,600 --> 00:11:54,710
+technology, but with Flow, you have some
+additional tools to potentially create a
+
+626
+00:11:54,710 --> 00:11:54,720
+additional tools to potentially create a
+ 
+
+627
+00:11:54,720 --> 00:11:56,550
+additional tools to potentially create a
+longer, you know, more than the 8
+
+628
+00:11:56,550 --> 00:11:56,560
+longer, you know, more than the 8
+ 
+
+629
+00:11:56,560 --> 00:11:58,150
+longer, you know, more than the 8
+seconds, right, that we can create with
+
+630
+00:11:58,150 --> 00:11:58,160
+seconds, right, that we can create with
+ 
+
+631
+00:11:58,160 --> 00:11:59,990
+seconds, right, that we can create with
+just Google Gemini. Hold up just one
+
+632
+00:11:59,990 --> 00:12:00,000
+just Google Gemini. Hold up just one
+ 
+
+633
+00:12:00,000 --> 00:12:01,509
+just Google Gemini. Hold up just one
+second. I want to say if you are a
+
+634
+00:12:01,509 --> 00:12:01,519
+second. I want to say if you are a
+ 
+
+635
+00:12:01,519 --> 00:12:02,790
+second. I want to say if you are a
+clothing brand owner and want to jump
+
+636
+00:12:02,790 --> 00:12:02,800
+clothing brand owner and want to jump
+ 
+
+637
+00:12:02,800 --> 00:12:04,790
+clothing brand owner and want to jump
+into the specifics of your brand and how
+
+638
+00:12:04,790 --> 00:12:04,800
+into the specifics of your brand and how
+ 
+
+639
+00:12:04,800 --> 00:12:06,790
+into the specifics of your brand and how
+to grow it profitably online, you can
+
+640
+00:12:06,790 --> 00:12:06,800
+to grow it profitably online, you can
+ 
+
+641
+00:12:06,800 --> 00:12:09,030
+to grow it profitably online, you can
+schedule a free 45minute strategy
+
+642
+00:12:09,030 --> 00:12:09,040
+schedule a free 45minute strategy
+ 
+
+643
+00:12:09,040 --> 00:12:10,870
+schedule a free 45minute strategy
+session with us. There are limited spots
+
+644
+00:12:10,870 --> 00:12:10,880
+session with us. There are limited spots
+ 
+
+645
+00:12:10,880 --> 00:12:12,629
+session with us. There are limited spots
+so go find a time right now in the link
+
+646
+00:12:12,629 --> 00:12:12,639
+so go find a time right now in the link
+ 
+
+647
+00:12:12,639 --> 00:12:14,310
+so go find a time right now in the link
+in the description below. So if you are
+
+648
+00:12:14,310 --> 00:12:14,320
+in the description below. So if you are
+ 
+
+649
+00:12:14,320 --> 00:12:16,790
+in the description below. So if you are
+a oneperson shop or running a 10person
+
+650
+00:12:16,790 --> 00:12:16,800
+a oneperson shop or running a 10person
+ 
+
+651
+00:12:16,800 --> 00:12:20,310
+a oneperson shop or running a 10person
+creative team, VO3 gives you prolevel
+
+652
+00:12:20,310 --> 00:12:20,320
+creative team, VO3 gives you prolevel
+ 
+
+653
+00:12:20,320 --> 00:12:22,150
+creative team, VO3 gives you prolevel
+content at zero production cost.
+
+654
+00:12:22,150 --> 00:12:22,160
+content at zero production cost.
+ 
+
+655
+00:12:22,160 --> 00:12:23,269
+content at zero production cost.
+Obviously, there's a little bit of cost
+
+656
+00:12:23,269 --> 00:12:23,279
+Obviously, there's a little bit of cost
+ 
+
+657
+00:12:23,279 --> 00:12:24,949
+Obviously, there's a little bit of cost
+associated, but comparing it to what it
+
+658
+00:12:24,949 --> 00:12:24,959
+associated, but comparing it to what it
+ 
+
+659
+00:12:24,959 --> 00:12:26,550
+associated, but comparing it to what it
+would cost you, right, to do those
+
+660
+00:12:26,550 --> 00:12:26,560
+would cost you, right, to do those
+ 
+
+661
+00:12:26,560 --> 00:12:29,269
+would cost you, right, to do those
+things. The future isn't about replacing
+
+662
+00:12:29,269 --> 00:12:29,279
+things. The future isn't about replacing
+ 
+
+663
+00:12:29,279 --> 00:12:31,110
+things. The future isn't about replacing
+creative, it's about supercharging them,
+
+664
+00:12:31,110 --> 00:12:31,120
+creative, it's about supercharging them,
+ 
+
+665
+00:12:31,120 --> 00:12:34,069
+creative, it's about supercharging them,
+right? So, the best brands will use
+
+666
+00:12:34,069 --> 00:12:34,079
+right? So, the best brands will use
+ 
+
+667
+00:12:34,079 --> 00:12:36,310
+right? So, the best brands will use
+tools like VO, not just to make videos,
+
+668
+00:12:36,310 --> 00:12:36,320
+tools like VO, not just to make videos,
+ 
+
+669
+00:12:36,320 --> 00:12:38,230
+tools like VO, not just to make videos,
+but to help them tell stories that
+
+670
+00:12:38,230 --> 00:12:38,240
+but to help them tell stories that
+ 
+
+671
+00:12:38,240 --> 00:12:39,990
+but to help them tell stories that
+actually move people, right? So, if
+
+672
+00:12:39,990 --> 00:12:40,000
+actually move people, right? So, if
+ 
+
+673
+00:12:40,000 --> 00:12:41,590
+actually move people, right? So, if
+you're serious about growing your
+
+674
+00:12:41,590 --> 00:12:41,600
+you're serious about growing your
+ 
+
+675
+00:12:41,600 --> 00:12:43,829
+you're serious about growing your
+clothing brand, this is the moment to
+
+676
+00:12:43,829 --> 00:12:43,839
+clothing brand, this is the moment to
+ 
+
+677
+00:12:43,839 --> 00:12:47,110
+clothing brand, this is the moment to
+lean into AI video. Everyone else is
+
+678
+00:12:47,110 --> 00:12:47,120
+lean into AI video. Everyone else is
+ 
+
+679
+00:12:47,120 --> 00:12:49,910
+lean into AI video. Everyone else is
+going to run past you with these tools
+
+680
+00:12:49,910 --> 00:12:49,920
+going to run past you with these tools
+ 
+
+681
+00:12:49,920 --> 00:12:52,069
+going to run past you with these tools
+if you don't learn today. Now, if you're
+
+682
+00:12:52,069 --> 00:12:52,079
+if you don't learn today. Now, if you're
+ 
+
+683
+00:12:52,079 --> 00:12:54,629
+if you don't learn today. Now, if you're
+interested in what other tools are out
+
+684
+00:12:54,629 --> 00:12:54,639
+interested in what other tools are out
+ 
+
+685
+00:12:54,639 --> 00:12:57,350
+interested in what other tools are out
+there, I would say Higsfield is another
+
+686
+00:12:57,350 --> 00:12:57,360
+there, I would say Higsfield is another
+ 
+
+687
+00:12:57,360 --> 00:13:00,069
+there, I would say Higsfield is another
+great video tool that you need to know
+
+688
+00:13:00,069 --> 00:13:00,079
+great video tool that you need to know
+ 
+
+689
+00:13:00,079 --> 00:13:01,910
+great video tool that you need to know
+about. So, check out that video here
+
+690
+00:13:01,910 --> 00:13:01,920
+about. So, check out that video here
+ 
+
+691
+00:13:01,920 --> 00:13:04,920
+about. So, check out that video here
+next.
+

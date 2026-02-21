@@ -1,0 +1,3275 @@
+1
+00:00:00,080 --> 00:00:02,070
+
+Hello and welcome. In this video, I'll
+
+2
+00:00:02,070 --> 00:00:02,080
+Hello and welcome. In this video, I'll
+ 
+
+3
+00:00:02,080 --> 00:00:03,909
+Hello and welcome. In this video, I'll
+show you exactly how you can take any
+
+4
+00:00:03,909 --> 00:00:03,919
+show you exactly how you can take any
+ 
+
+5
+00:00:03,919 --> 00:00:06,789
+show you exactly how you can take any
+product and turn it into viral UGC ads
+
+6
+00:00:06,789 --> 00:00:06,799
+product and turn it into viral UGC ads
+ 
+
+7
+00:00:06,799 --> 00:00:09,750
+product and turn it into viral UGC ads
+using V3 and Google's brand new model,
+
+8
+00:00:09,750 --> 00:00:09,760
+using V3 and Google's brand new model,
+ 
+
+9
+00:00:09,760 --> 00:00:11,910
+using V3 and Google's brand new model,
+Nano Banana. The process is simple,
+
+10
+00:00:11,910 --> 00:00:11,920
+Nano Banana. The process is simple,
+ 
+
+11
+00:00:11,920 --> 00:00:14,230
+Nano Banana. The process is simple,
+fast, and repeatable. So, you can test,
+
+12
+00:00:14,230 --> 00:00:14,240
+fast, and repeatable. So, you can test,
+ 
+
+13
+00:00:14,240 --> 00:00:16,070
+fast, and repeatable. So, you can test,
+iterate, and actually start to create
+
+14
+00:00:16,070 --> 00:00:16,080
+iterate, and actually start to create
+ 
+
+15
+00:00:16,080 --> 00:00:18,550
+iterate, and actually start to create
+ads that convert. So, if you're ready to
+
+16
+00:00:18,550 --> 00:00:18,560
+ads that convert. So, if you're ready to
+ 
+
+17
+00:00:18,560 --> 00:00:21,510
+ads that convert. So, if you're ready to
+go, let's get started. Now, to create
+
+18
+00:00:21,510 --> 00:00:21,520
+go, let's get started. Now, to create
+ 
+
+19
+00:00:21,520 --> 00:00:23,509
+go, let's get started. Now, to create
+our UGC ads, I've broken the process
+
+20
+00:00:23,509 --> 00:00:23,519
+our UGC ads, I've broken the process
+ 
+
+21
+00:00:23,519 --> 00:00:25,750
+our UGC ads, I've broken the process
+down to three simple steps. First, we'll
+
+22
+00:00:25,750 --> 00:00:25,760
+down to three simple steps. First, we'll
+ 
+
+23
+00:00:25,760 --> 00:00:27,349
+down to three simple steps. First, we'll
+start by picking the product. This could
+
+24
+00:00:27,349 --> 00:00:27,359
+start by picking the product. This could
+ 
+
+25
+00:00:27,359 --> 00:00:28,710
+start by picking the product. This could
+be something that you already are
+
+26
+00:00:28,710 --> 00:00:28,720
+be something that you already are
+ 
+
+27
+00:00:28,720 --> 00:00:31,109
+be something that you already are
+selling or just some random product if
+
+28
+00:00:31,109 --> 00:00:31,119
+selling or just some random product if
+ 
+
+29
+00:00:31,119 --> 00:00:33,030
+selling or just some random product if
+you want to practice. I'll show you how
+
+30
+00:00:33,030 --> 00:00:33,040
+you want to practice. I'll show you how
+ 
+
+31
+00:00:33,040 --> 00:00:35,670
+you want to practice. I'll show you how
+to break that product down into scripts
+
+32
+00:00:35,670 --> 00:00:35,680
+to break that product down into scripts
+ 
+
+33
+00:00:35,680 --> 00:00:38,150
+to break that product down into scripts
+and angles that actually make sense for
+
+34
+00:00:38,150 --> 00:00:38,160
+and angles that actually make sense for
+ 
+
+35
+00:00:38,160 --> 00:00:39,990
+and angles that actually make sense for
+marketing. Next, we'll create the
+
+36
+00:00:39,990 --> 00:00:40,000
+marketing. Next, we'll create the
+ 
+
+37
+00:00:40,000 --> 00:00:42,630
+marketing. Next, we'll create the
+scenes. So, we will generate images for
+
+38
+00:00:42,630 --> 00:00:42,640
+scenes. So, we will generate images for
+ 
+
+39
+00:00:42,640 --> 00:00:44,630
+scenes. So, we will generate images for
+our ads. These aren't just random
+
+40
+00:00:44,630 --> 00:00:44,640
+our ads. These aren't just random
+ 
+
+41
+00:00:44,640 --> 00:00:46,630
+our ads. These aren't just random
+pictures. We're going to design proper
+
+42
+00:00:46,630 --> 00:00:46,640
+pictures. We're going to design proper
+ 
+
+43
+00:00:46,640 --> 00:00:49,430
+pictures. We're going to design proper
+ad scenes using Nano Banana, which can
+
+44
+00:00:49,430 --> 00:00:49,440
+ad scenes using Nano Banana, which can
+ 
+
+45
+00:00:49,440 --> 00:00:51,670
+ad scenes using Nano Banana, which can
+create avatars holding products and
+
+46
+00:00:51,670 --> 00:00:51,680
+create avatars holding products and
+ 
+
+47
+00:00:51,680 --> 00:00:53,430
+create avatars holding products and
+looking super realistic. And then
+
+48
+00:00:53,430 --> 00:00:53,440
+looking super realistic. And then
+ 
+
+49
+00:00:53,440 --> 00:00:55,350
+looking super realistic. And then
+finally, we'll take those images to
+
+50
+00:00:55,350 --> 00:00:55,360
+finally, we'll take those images to
+ 
+
+51
+00:00:55,360 --> 00:00:57,350
+finally, we'll take those images to
+generate our videos. Then we'll stitch
+
+52
+00:00:57,350 --> 00:00:57,360
+generate our videos. Then we'll stitch
+ 
+
+53
+00:00:57,360 --> 00:00:59,830
+generate our videos. Then we'll stitch
+them together into complete ads. By the
+
+54
+00:00:59,830 --> 00:00:59,840
+them together into complete ads. By the
+ 
+
+55
+00:00:59,840 --> 00:01:02,229
+them together into complete ads. By the
+end, you'll know exactly how to go from
+
+56
+00:01:02,229 --> 00:01:02,239
+end, you'll know exactly how to go from
+ 
+
+57
+00:01:02,239 --> 00:01:04,390
+end, you'll know exactly how to go from
+nothing to a finished ad. All created
+
+58
+00:01:04,390 --> 00:01:04,400
+nothing to a finished ad. All created
+ 
+
+59
+00:01:04,400 --> 00:01:07,670
+nothing to a finished ad. All created
+using Google's V3 and Nano Banana. And
+
+60
+00:01:07,670 --> 00:01:07,680
+using Google's V3 and Nano Banana. And
+ 
+
+61
+00:01:07,680 --> 00:01:09,190
+using Google's V3 and Nano Banana. And
+the best part, once you learn this
+
+62
+00:01:09,190 --> 00:01:09,200
+the best part, once you learn this
+ 
+
+63
+00:01:09,200 --> 00:01:11,270
+the best part, once you learn this
+process, you can repeat it with any
+
+64
+00:01:11,270 --> 00:01:11,280
+process, you can repeat it with any
+ 
+
+65
+00:01:11,280 --> 00:01:13,590
+process, you can repeat it with any
+product and scale it up as much as you
+
+66
+00:01:13,590 --> 00:01:13,600
+product and scale it up as much as you
+ 
+
+67
+00:01:13,600 --> 00:01:16,390
+product and scale it up as much as you
+want. So, let's get going and start
+
+68
+00:01:16,390 --> 00:01:16,400
+want. So, let's get going and start
+ 
+
+69
+00:01:16,400 --> 00:01:18,149
+want. So, let's get going and start
+finding our first product. I just went
+
+70
+00:01:18,149 --> 00:01:18,159
+finding our first product. I just went
+ 
+
+71
+00:01:18,159 --> 00:01:19,990
+finding our first product. I just went
+to Perplexity and searched what's the
+
+72
+00:01:19,990 --> 00:01:20,000
+to Perplexity and searched what's the
+ 
+
+73
+00:01:20,000 --> 00:01:22,149
+to Perplexity and searched what's the
+most trending products this month. It
+
+74
+00:01:22,149 --> 00:01:22,159
+most trending products this month. It
+ 
+
+75
+00:01:22,159 --> 00:01:23,990
+most trending products this month. It
+gave me a list and I picked the one that
+
+76
+00:01:23,990 --> 00:01:24,000
+gave me a list and I picked the one that
+ 
+
+77
+00:01:24,000 --> 00:01:25,749
+gave me a list and I picked the one that
+stood out. So, I went ahead with the
+
+78
+00:01:25,749 --> 00:01:25,759
+stood out. So, I went ahead with the
+ 
+
+79
+00:01:25,759 --> 00:01:28,310
+stood out. So, I went ahead with the
+smart water bottles and found a brand
+
+80
+00:01:28,310 --> 00:01:28,320
+smart water bottles and found a brand
+ 
+
+81
+00:01:28,320 --> 00:01:30,469
+smart water bottles and found a brand
+that could potentially be a good fit for
+
+82
+00:01:30,469 --> 00:01:30,479
+that could potentially be a good fit for
+ 
+
+83
+00:01:30,479 --> 00:01:33,030
+that could potentially be a good fit for
+what we're trying to do. So, I did some
+
+84
+00:01:33,030 --> 00:01:33,040
+what we're trying to do. So, I did some
+ 
+
+85
+00:01:33,040 --> 00:01:34,789
+what we're trying to do. So, I did some
+research and I found this brand. It's
+
+86
+00:01:34,789 --> 00:01:34,799
+research and I found this brand. It's
+ 
+
+87
+00:01:34,799 --> 00:01:37,030
+research and I found this brand. It's
+called Hydrate Spark and it could be
+
+88
+00:01:37,030 --> 00:01:37,040
+called Hydrate Spark and it could be
+ 
+
+89
+00:01:37,040 --> 00:01:39,270
+called Hydrate Spark and it could be
+very trendable because they have this
+
+90
+00:01:39,270 --> 00:01:39,280
+very trendable because they have this
+ 
+
+91
+00:01:39,280 --> 00:01:42,310
+very trendable because they have this
+LED light on the bottom and it seems
+
+92
+00:01:42,310 --> 00:01:42,320
+LED light on the bottom and it seems
+ 
+
+93
+00:01:42,320 --> 00:01:44,550
+LED light on the bottom and it seems
+like a quality product. It's also very
+
+94
+00:01:44,550 --> 00:01:44,560
+like a quality product. It's also very
+ 
+
+95
+00:01:44,560 --> 00:01:46,789
+like a quality product. It's also very
+simple to show in someone's hand and it
+
+96
+00:01:46,789 --> 00:01:46,799
+simple to show in someone's hand and it
+ 
+
+97
+00:01:46,799 --> 00:01:49,109
+simple to show in someone's hand and it
+works well in all settings. That means
+
+98
+00:01:49,109 --> 00:01:49,119
+works well in all settings. That means
+ 
+
+99
+00:01:49,119 --> 00:01:51,350
+works well in all settings. That means
+we can test a lot of ad angles and try
+
+100
+00:01:51,350 --> 00:01:51,360
+we can test a lot of ad angles and try
+ 
+
+101
+00:01:51,360 --> 00:01:53,350
+we can test a lot of ad angles and try
+multiple avatars, which makes this
+
+102
+00:01:53,350 --> 00:01:53,360
+multiple avatars, which makes this
+ 
+
+103
+00:01:53,360 --> 00:01:55,510
+multiple avatars, which makes this
+product a perfect demo. Once we're on
+
+104
+00:01:55,510 --> 00:01:55,520
+product a perfect demo. Once we're on
+ 
+
+105
+00:01:55,520 --> 00:01:58,709
+product a perfect demo. Once we're on
+the website, we need to find the actual
+
+106
+00:01:58,709 --> 00:01:58,719
+the website, we need to find the actual
+ 
+
+107
+00:01:58,719 --> 00:02:01,270
+the website, we need to find the actual
+product that we want. So, I'll go to
+
+108
+00:02:01,270 --> 00:02:01,280
+product that we want. So, I'll go to
+ 
+
+109
+00:02:01,280 --> 00:02:04,310
+product that we want. So, I'll go to
+Smart Drinkware and let's try this one.
+
+110
+00:02:04,310 --> 00:02:04,320
+Smart Drinkware and let's try this one.
+ 
+
+111
+00:02:04,320 --> 00:02:06,789
+Smart Drinkware and let's try this one.
+Once we're happy with the product and
+
+112
+00:02:06,789 --> 00:02:06,799
+Once we're happy with the product and
+ 
+
+113
+00:02:06,799 --> 00:02:09,109
+Once we're happy with the product and
+all of the images looks good, we'll take
+
+114
+00:02:09,109 --> 00:02:09,119
+all of the images looks good, we'll take
+ 
+
+115
+00:02:09,119 --> 00:02:10,949
+all of the images looks good, we'll take
+one or two of the images and just save
+
+116
+00:02:10,949 --> 00:02:10,959
+one or two of the images and just save
+ 
+
+117
+00:02:10,959 --> 00:02:13,190
+one or two of the images and just save
+them to our bank. So, I'll save this.
+
+118
+00:02:13,190 --> 00:02:13,200
+them to our bank. So, I'll save this.
+ 
+
+119
+00:02:13,200 --> 00:02:15,270
+them to our bank. So, I'll save this.
+And we'll also just get the product
+
+120
+00:02:15,270 --> 00:02:15,280
+And we'll also just get the product
+ 
+
+121
+00:02:15,280 --> 00:02:17,830
+And we'll also just get the product
+information so we can mark everything on
+
+122
+00:02:17,830 --> 00:02:17,840
+information so we can mark everything on
+ 
+
+123
+00:02:17,840 --> 00:02:20,869
+information so we can mark everything on
+this side, these drop-own menus to get
+
+124
+00:02:20,869 --> 00:02:20,879
+this side, these drop-own menus to get
+ 
+
+125
+00:02:20,879 --> 00:02:23,030
+this side, these drop-own menus to get
+as much information as possible about
+
+126
+00:02:23,030 --> 00:02:23,040
+as much information as possible about
+ 
+
+127
+00:02:23,040 --> 00:02:24,869
+as much information as possible about
+this product. Now that we have saved the
+
+128
+00:02:24,869 --> 00:02:24,879
+this product. Now that we have saved the
+ 
+
+129
+00:02:24,879 --> 00:02:27,510
+this product. Now that we have saved the
+images and copied the product
+
+130
+00:02:27,510 --> 00:02:27,520
+images and copied the product
+ 
+
+131
+00:02:27,520 --> 00:02:29,510
+images and copied the product
+information, we're going to paste all of
+
+132
+00:02:29,510 --> 00:02:29,520
+information, we're going to paste all of
+ 
+
+133
+00:02:29,520 --> 00:02:32,150
+information, we're going to paste all of
+that information into chat GBT. I also
+
+134
+00:02:32,150 --> 00:02:32,160
+that information into chat GBT. I also
+ 
+
+135
+00:02:32,160 --> 00:02:34,070
+that information into chat GBT. I also
+prepared a special prompt that acts like
+
+136
+00:02:34,070 --> 00:02:34,080
+prepared a special prompt that acts like
+ 
+
+137
+00:02:34,080 --> 00:02:36,949
+prepared a special prompt that acts like
+an expert product analyzer. So I'll
+
+138
+00:02:36,949 --> 00:02:36,959
+an expert product analyzer. So I'll
+ 
+
+139
+00:02:36,959 --> 00:02:39,110
+an expert product analyzer. So I'll
+leave a link for this prompt in the
+
+140
+00:02:39,110 --> 00:02:39,120
+leave a link for this prompt in the
+ 
+
+141
+00:02:39,120 --> 00:02:41,589
+leave a link for this prompt in the
+description. You can just copy this one
+
+142
+00:02:41,589 --> 00:02:41,599
+description. You can just copy this one
+ 
+
+143
+00:02:41,599 --> 00:02:44,550
+description. You can just copy this one
+and paste that into chat JBT. Just go to
+
+144
+00:02:44,550 --> 00:02:44,560
+and paste that into chat JBT. Just go to
+ 
+
+145
+00:02:44,560 --> 00:02:47,509
+and paste that into chat JBT. Just go to
+the top and paste that in. And I'll say
+
+146
+00:02:47,509 --> 00:02:47,519
+the top and paste that in. And I'll say
+ 
+
+147
+00:02:47,519 --> 00:02:52,229
+the top and paste that in. And I'll say
+here is our product info. Now chat GBT
+
+148
+00:02:52,229 --> 00:02:52,239
+here is our product info. Now chat GBT
+ 
+
+149
+00:02:52,239 --> 00:02:54,630
+here is our product info. Now chat GBT
+will break that down into key features,
+
+150
+00:02:54,630 --> 00:02:54,640
+will break that down into key features,
+ 
+
+151
+00:02:54,640 --> 00:02:57,350
+will break that down into key features,
+benefits, pain points, unique selling
+
+152
+00:02:57,350 --> 00:02:57,360
+benefits, pain points, unique selling
+ 
+
+153
+00:02:57,360 --> 00:03:00,070
+benefits, pain points, unique selling
+points, ideal customer profile,
+
+154
+00:03:00,070 --> 00:03:00,080
+points, ideal customer profile,
+ 
+
+155
+00:03:00,080 --> 00:03:02,229
+points, ideal customer profile,
+emotional hooks, and call to actions
+
+156
+00:03:02,229 --> 00:03:02,239
+emotional hooks, and call to actions
+ 
+
+157
+00:03:02,239 --> 00:03:05,350
+emotional hooks, and call to actions
+ideas. So this will work for our base to
+
+158
+00:03:05,350 --> 00:03:05,360
+ideas. So this will work for our base to
+ 
+
+159
+00:03:05,360 --> 00:03:07,270
+ideas. So this will work for our base to
+create our ads from. Now that we have
+
+160
+00:03:07,270 --> 00:03:07,280
+create our ads from. Now that we have
+ 
+
+161
+00:03:07,280 --> 00:03:09,430
+create our ads from. Now that we have
+run the product analyzis, it's time to
+
+162
+00:03:09,430 --> 00:03:09,440
+run the product analyzis, it's time to
+ 
+
+163
+00:03:09,440 --> 00:03:11,350
+run the product analyzis, it's time to
+turn that information into scripts,
+
+164
+00:03:11,350 --> 00:03:11,360
+turn that information into scripts,
+ 
+
+165
+00:03:11,360 --> 00:03:13,509
+turn that information into scripts,
+avatars, and prompts for our ads. We'll
+
+166
+00:03:13,509 --> 00:03:13,519
+avatars, and prompts for our ads. We'll
+ 
+
+167
+00:03:13,519 --> 00:03:15,430
+avatars, and prompts for our ads. We'll
+grab the second prompt I've prepared in
+
+168
+00:03:15,430 --> 00:03:15,440
+grab the second prompt I've prepared in
+ 
+
+169
+00:03:15,440 --> 00:03:17,990
+grab the second prompt I've prepared in
+the Google Docs. I'll just copy paste
+
+170
+00:03:17,990 --> 00:03:18,000
+the Google Docs. I'll just copy paste
+ 
+
+171
+00:03:18,000 --> 00:03:20,309
+the Google Docs. I'll just copy paste
+this one. This way, GPT keeps the
+
+172
+00:03:20,309 --> 00:03:20,319
+this one. This way, GPT keeps the
+ 
+
+173
+00:03:20,319 --> 00:03:22,550
+this one. This way, GPT keeps the
+context from our analyzes and gives us
+
+174
+00:03:22,550 --> 00:03:22,560
+context from our analyzes and gives us
+ 
+
+175
+00:03:22,560 --> 00:03:25,110
+context from our analyzes and gives us
+ready to use ideas, image prompts, and
+
+176
+00:03:25,110 --> 00:03:25,120
+ready to use ideas, image prompts, and
+ 
+
+177
+00:03:25,120 --> 00:03:27,270
+ready to use ideas, image prompts, and
+video prompts. All right, so now we got
+
+178
+00:03:27,270 --> 00:03:27,280
+video prompts. All right, so now we got
+ 
+
+179
+00:03:27,280 --> 00:03:29,750
+video prompts. All right, so now we got
+our custom avatar. This is Kayla. She's
+
+180
+00:03:29,750 --> 00:03:29,760
+our custom avatar. This is Kayla. She's
+ 
+
+181
+00:03:29,760 --> 00:03:32,070
+our custom avatar. This is Kayla. She's
+24. We got a little backstory right
+
+182
+00:03:32,070 --> 00:03:32,080
+24. We got a little backstory right
+ 
+
+183
+00:03:32,080 --> 00:03:35,030
+24. We got a little backstory right
+here, but we also got the ad scripts. So
+
+184
+00:03:35,030 --> 00:03:35,040
+here, but we also got the ad scripts. So
+ 
+
+185
+00:03:35,040 --> 00:03:37,509
+here, but we also got the ad scripts. So
+you can see the scenes. So here's the
+
+186
+00:03:37,509 --> 00:03:37,519
+you can see the scenes. So here's the
+ 
+
+187
+00:03:37,519 --> 00:03:39,670
+you can see the scenes. So here's the
+hook, the problem, the solution. And
+
+188
+00:03:39,670 --> 00:03:39,680
+hook, the problem, the solution. And
+ 
+
+189
+00:03:39,680 --> 00:03:41,110
+hook, the problem, the solution. And
+once you scroll down, we can see the
+
+190
+00:03:41,110 --> 00:03:41,120
+once you scroll down, we can see the
+ 
+
+191
+00:03:41,120 --> 00:03:44,390
+once you scroll down, we can see the
+breakdown with the prompts. So here we
+
+192
+00:03:44,390 --> 00:03:44,400
+breakdown with the prompts. So here we
+ 
+
+193
+00:03:44,400 --> 00:03:47,190
+breakdown with the prompts. So here we
+got the script. Then we got the nano
+
+194
+00:03:47,190 --> 00:03:47,200
+got the script. Then we got the nano
+ 
+
+195
+00:03:47,200 --> 00:03:49,350
+got the script. Then we got the nano
+banana prompt. So this will be our image
+
+196
+00:03:49,350 --> 00:03:49,360
+banana prompt. So this will be our image
+ 
+
+197
+00:03:49,360 --> 00:03:51,430
+banana prompt. So this will be our image
+prompt. Here we got all of the scenes,
+
+198
+00:03:51,430 --> 00:03:51,440
+prompt. Here we got all of the scenes,
+ 
+
+199
+00:03:51,440 --> 00:03:53,430
+prompt. Here we got all of the scenes,
+all of the scripts, and all of the
+
+200
+00:03:53,430 --> 00:03:53,440
+all of the scripts, and all of the
+ 
+
+201
+00:03:53,440 --> 00:03:55,270
+all of the scripts, and all of the
+prompts that we need to start creating
+
+202
+00:03:55,270 --> 00:03:55,280
+prompts that we need to start creating
+ 
+
+203
+00:03:55,280 --> 00:03:57,670
+prompts that we need to start creating
+these ads. The cool thing is that you
+
+204
+00:03:57,670 --> 00:03:57,680
+these ads. The cool thing is that you
+ 
+
+205
+00:03:57,680 --> 00:03:59,990
+these ads. The cool thing is that you
+can play around here. You can ask chatbt
+
+206
+00:03:59,990 --> 00:04:00,000
+can play around here. You can ask chatbt
+ 
+
+207
+00:04:00,000 --> 00:04:01,750
+can play around here. You can ask chatbt
+to create more variants. If you didn't
+
+208
+00:04:01,750 --> 00:04:01,760
+to create more variants. If you didn't
+ 
+
+209
+00:04:01,760 --> 00:04:03,830
+to create more variants. If you didn't
+like the first one, you can ask it to
+
+210
+00:04:03,830 --> 00:04:03,840
+like the first one, you can ask it to
+ 
+
+211
+00:04:03,840 --> 00:04:06,390
+like the first one, you can ask it to
+create like five variants, 10 variants,
+
+212
+00:04:06,390 --> 00:04:06,400
+create like five variants, 10 variants,
+ 
+
+213
+00:04:06,400 --> 00:04:09,030
+create like five variants, 10 variants,
+as many as you like and then make more
+
+214
+00:04:09,030 --> 00:04:09,040
+as many as you like and then make more
+ 
+
+215
+00:04:09,040 --> 00:04:11,589
+as many as you like and then make more
+hooks or alternative prompts. And then
+
+216
+00:04:11,589 --> 00:04:11,599
+hooks or alternative prompts. And then
+ 
+
+217
+00:04:11,599 --> 00:04:14,390
+hooks or alternative prompts. And then
+you pick a script that you like in order
+
+218
+00:04:14,390 --> 00:04:14,400
+you pick a script that you like in order
+ 
+
+219
+00:04:14,400 --> 00:04:17,189
+you pick a script that you like in order
+to create the ads that you want. So, for
+
+220
+00:04:17,189 --> 00:04:17,199
+to create the ads that you want. So, for
+ 
+
+221
+00:04:17,199 --> 00:04:19,189
+to create the ads that you want. So, for
+now, I'll just stick with this version.
+
+222
+00:04:19,189 --> 00:04:19,199
+now, I'll just stick with this version.
+ 
+
+223
+00:04:19,199 --> 00:04:21,270
+now, I'll just stick with this version.
+The key is to get the foundation right
+
+224
+00:04:21,270 --> 00:04:21,280
+The key is to get the foundation right
+ 
+
+225
+00:04:21,280 --> 00:04:23,110
+The key is to get the foundation right
+because when your first scenes are
+
+226
+00:04:23,110 --> 00:04:23,120
+because when your first scenes are
+ 
+
+227
+00:04:23,120 --> 00:04:24,950
+because when your first scenes are
+solid, then the rest of the process goes
+
+228
+00:04:24,950 --> 00:04:24,960
+solid, then the rest of the process goes
+ 
+
+229
+00:04:24,960 --> 00:04:26,629
+solid, then the rest of the process goes
+a lot smoother. Let's head over to
+
+230
+00:04:26,629 --> 00:04:26,639
+a lot smoother. Let's head over to
+ 
+
+231
+00:04:26,639 --> 00:04:29,110
+a lot smoother. Let's head over to
+Google AI Studio so we can start to
+
+232
+00:04:29,110 --> 00:04:29,120
+Google AI Studio so we can start to
+ 
+
+233
+00:04:29,120 --> 00:04:31,749
+Google AI Studio so we can start to
+create our images. So just go open
+
+234
+00:04:31,749 --> 00:04:31,759
+create our images. So just go open
+ 
+
+235
+00:04:31,759 --> 00:04:34,230
+create our images. So just go open
+Google AI studio. Inside here you will
+
+236
+00:04:34,230 --> 00:04:34,240
+Google AI studio. Inside here you will
+ 
+
+237
+00:04:34,240 --> 00:04:36,390
+Google AI studio. Inside here you will
+find nano banana. So click on this one.
+
+238
+00:04:36,390 --> 00:04:36,400
+find nano banana. So click on this one.
+ 
+
+239
+00:04:36,400 --> 00:04:38,150
+find nano banana. So click on this one.
+So the first thing we will try is to
+
+240
+00:04:38,150 --> 00:04:38,160
+So the first thing we will try is to
+ 
+
+241
+00:04:38,160 --> 00:04:39,909
+So the first thing we will try is to
+create the avatar from the prompts that
+
+242
+00:04:39,909 --> 00:04:39,919
+create the avatar from the prompts that
+ 
+
+243
+00:04:39,919 --> 00:04:42,310
+create the avatar from the prompts that
+we already generated. I'll run one of
+
+244
+00:04:42,310 --> 00:04:42,320
+we already generated. I'll run one of
+ 
+
+245
+00:04:42,320 --> 00:04:44,710
+we already generated. I'll run one of
+those so you can see how it works. So
+
+246
+00:04:44,710 --> 00:04:44,720
+those so you can see how it works. So
+ 
+
+247
+00:04:44,720 --> 00:04:48,950
+those so you can see how it works. So
+just go to your chat GBT and find the
+
+248
+00:04:48,950 --> 00:04:48,960
+just go to your chat GBT and find the
+ 
+
+249
+00:04:48,960 --> 00:04:52,469
+just go to your chat GBT and find the
+nano banana prompt. So let's go for the
+
+250
+00:04:52,469 --> 00:04:52,479
+nano banana prompt. So let's go for the
+ 
+
+251
+00:04:52,479 --> 00:04:54,950
+nano banana prompt. So let's go for the
+first scene and just copy this one and
+
+252
+00:04:54,950 --> 00:04:54,960
+first scene and just copy this one and
+ 
+
+253
+00:04:54,960 --> 00:04:57,350
+first scene and just copy this one and
+then we'll paste that in. So, as you can
+
+254
+00:04:57,350 --> 00:04:57,360
+then we'll paste that in. So, as you can
+ 
+
+255
+00:04:57,360 --> 00:05:01,189
+then we'll paste that in. So, as you can
+see, this is okay, but it seems very AI.
+
+256
+00:05:01,189 --> 00:05:01,199
+see, this is okay, but it seems very AI.
+ 
+
+257
+00:05:01,199 --> 00:05:03,430
+see, this is okay, but it seems very AI.
+So, I will actually show you a useful
+
+258
+00:05:03,430 --> 00:05:03,440
+So, I will actually show you a useful
+ 
+
+259
+00:05:03,440 --> 00:05:06,870
+So, I will actually show you a useful
+trick so that you can find a image
+
+260
+00:05:06,870 --> 00:05:06,880
+trick so that you can find a image
+ 
+
+261
+00:05:06,880 --> 00:05:09,029
+trick so that you can find a image
+online and use that as your reference
+
+262
+00:05:09,029 --> 00:05:09,039
+online and use that as your reference
+ 
+
+263
+00:05:09,039 --> 00:05:11,510
+online and use that as your reference
+image. It helps AI match the style and
+
+264
+00:05:11,510 --> 00:05:11,520
+image. It helps AI match the style and
+ 
+
+265
+00:05:11,520 --> 00:05:13,350
+image. It helps AI match the style and
+the wibe you're going for. What I'll do
+
+266
+00:05:13,350 --> 00:05:13,360
+the wibe you're going for. What I'll do
+ 
+
+267
+00:05:13,360 --> 00:05:15,990
+the wibe you're going for. What I'll do
+is I'll just go to Hen because I know
+
+268
+00:05:15,990 --> 00:05:16,000
+is I'll just go to Hen because I know
+ 
+
+269
+00:05:16,000 --> 00:05:19,749
+is I'll just go to Hen because I know
+they already have a lot of AI avatars.
+
+270
+00:05:19,749 --> 00:05:19,759
+they already have a lot of AI avatars.
+ 
+
+271
+00:05:19,759 --> 00:05:22,230
+they already have a lot of AI avatars.
+So, you can use any image if you want,
+
+272
+00:05:22,230 --> 00:05:22,240
+So, you can use any image if you want,
+ 
+
+273
+00:05:22,240 --> 00:05:24,550
+So, you can use any image if you want,
+but I'll use one here. You just click on
+
+274
+00:05:24,550 --> 00:05:24,560
+but I'll use one here. You just click on
+ 
+
+275
+00:05:24,560 --> 00:05:26,230
+but I'll use one here. You just click on
+create a video. Click on the one in
+
+276
+00:05:26,230 --> 00:05:26,240
+create a video. Click on the one in
+ 
+
+277
+00:05:26,240 --> 00:05:27,909
+create a video. Click on the one in
+portrait because that's the one we're
+
+278
+00:05:27,909 --> 00:05:27,919
+portrait because that's the one we're
+ 
+
+279
+00:05:27,919 --> 00:05:29,990
+portrait because that's the one we're
+creating and then you go to the avatar
+
+280
+00:05:29,990 --> 00:05:30,000
+creating and then you go to the avatar
+ 
+
+281
+00:05:30,000 --> 00:05:32,230
+creating and then you go to the avatar
+in the top corner right here and then
+
+282
+00:05:32,230 --> 00:05:32,240
+in the top corner right here and then
+ 
+
+283
+00:05:32,240 --> 00:05:34,870
+in the top corner right here and then
+you click on replace avatar and they
+
+284
+00:05:34,870 --> 00:05:34,880
+you click on replace avatar and they
+ 
+
+285
+00:05:34,880 --> 00:05:37,350
+you click on replace avatar and they
+actually got this UGC section. So click
+
+286
+00:05:37,350 --> 00:05:37,360
+actually got this UGC section. So click
+ 
+
+287
+00:05:37,360 --> 00:05:39,830
+actually got this UGC section. So click
+on UGC and then you find the one you
+
+288
+00:05:39,830 --> 00:05:39,840
+on UGC and then you find the one you
+ 
+
+289
+00:05:39,840 --> 00:05:42,390
+on UGC and then you find the one you
+like. I think this one could work well.
+
+290
+00:05:42,390 --> 00:05:42,400
+like. I think this one could work well.
+ 
+
+291
+00:05:42,400 --> 00:05:44,550
+like. I think this one could work well.
+So what we do is we just right click and
+
+292
+00:05:44,550 --> 00:05:44,560
+So what we do is we just right click and
+ 
+
+293
+00:05:44,560 --> 00:05:47,110
+So what we do is we just right click and
+then we save that image. Once we have
+
+294
+00:05:47,110 --> 00:05:47,120
+then we save that image. Once we have
+ 
+
+295
+00:05:47,120 --> 00:05:52,390
+then we save that image. Once we have
+the image, we can go back into Google AI
+
+296
+00:05:52,390 --> 00:05:52,400
+the image, we can go back into Google AI
+ 
+
+297
+00:05:52,400 --> 00:05:55,189
+the image, we can go back into Google AI
+Studio and we can just add that in and
+
+298
+00:05:55,189 --> 00:05:55,199
+Studio and we can just add that in and
+ 
+
+299
+00:05:55,199 --> 00:06:00,950
+Studio and we can just add that in and
+say, "Please change the hairstyle
+
+300
+00:06:00,950 --> 00:06:00,960
+say, "Please change the hairstyle
+ 
+
+301
+00:06:00,960 --> 00:06:06,230
+say, "Please change the hairstyle
+and her outfit, but keep the same
+
+302
+00:06:06,230 --> 00:06:06,240
+and her outfit, but keep the same
+ 
+
+303
+00:06:06,240 --> 00:06:08,710
+and her outfit, but keep the same
+quality." Let's run that one. Now, as
+
+304
+00:06:08,710 --> 00:06:08,720
+quality." Let's run that one. Now, as
+ 
+
+305
+00:06:08,720 --> 00:06:11,510
+quality." Let's run that one. Now, as
+you can see, we generated a new image
+
+306
+00:06:11,510 --> 00:06:11,520
+you can see, we generated a new image
+ 
+
+307
+00:06:11,520 --> 00:06:13,909
+you can see, we generated a new image
+from this image that we already liked
+
+308
+00:06:13,909 --> 00:06:13,919
+from this image that we already liked
+ 
+
+309
+00:06:13,919 --> 00:06:17,029
+from this image that we already liked
+because we asked it specifically to have
+
+310
+00:06:17,029 --> 00:06:17,039
+because we asked it specifically to have
+ 
+
+311
+00:06:17,039 --> 00:06:20,150
+because we asked it specifically to have
+the same quality. Now, this isn't as
+
+312
+00:06:20,150 --> 00:06:20,160
+the same quality. Now, this isn't as
+ 
+
+313
+00:06:20,160 --> 00:06:22,710
+the same quality. Now, this isn't as
+polished as some of the images usually
+
+314
+00:06:22,710 --> 00:06:22,720
+polished as some of the images usually
+ 
+
+315
+00:06:22,720 --> 00:06:25,670
+polished as some of the images usually
+these AIs create. I'll use this image as
+
+316
+00:06:25,670 --> 00:06:25,680
+these AIs create. I'll use this image as
+ 
+
+317
+00:06:25,680 --> 00:06:27,749
+these AIs create. I'll use this image as
+our reference image to create all of the
+
+318
+00:06:27,749 --> 00:06:27,759
+our reference image to create all of the
+ 
+
+319
+00:06:27,759 --> 00:06:29,510
+our reference image to create all of the
+other scenes. Now that we have our
+
+320
+00:06:29,510 --> 00:06:29,520
+other scenes. Now that we have our
+ 
+
+321
+00:06:29,520 --> 00:06:31,830
+other scenes. Now that we have our
+reference image, let's head back to Chat
+
+322
+00:06:31,830 --> 00:06:31,840
+reference image, let's head back to Chat
+ 
+
+323
+00:06:31,840 --> 00:06:34,150
+reference image, let's head back to Chat
+GPT to pull the prompts for the scenes
+
+324
+00:06:34,150 --> 00:06:34,160
+GPT to pull the prompts for the scenes
+ 
+
+325
+00:06:34,160 --> 00:06:36,230
+GPT to pull the prompts for the scenes
+that we want to create. Starting with
+
+326
+00:06:36,230 --> 00:06:36,240
+that we want to create. Starting with
+ 
+
+327
+00:06:36,240 --> 00:06:37,990
+that we want to create. Starting with
+the first prompt, we can see that we
+
+328
+00:06:37,990 --> 00:06:38,000
+the first prompt, we can see that we
+ 
+
+329
+00:06:38,000 --> 00:06:40,309
+the first prompt, we can see that we
+have a girl in the gym holding our
+
+330
+00:06:40,309 --> 00:06:40,319
+have a girl in the gym holding our
+ 
+
+331
+00:06:40,319 --> 00:06:42,070
+have a girl in the gym holding our
+product. This tells us that we need to
+
+332
+00:06:42,070 --> 00:06:42,080
+product. This tells us that we need to
+ 
+
+333
+00:06:42,080 --> 00:06:44,550
+product. This tells us that we need to
+combine both elements, the girl and the
+
+334
+00:06:44,550 --> 00:06:44,560
+combine both elements, the girl and the
+ 
+
+335
+00:06:44,560 --> 00:06:47,189
+combine both elements, the girl and the
+product. We'll copy this prompt and
+
+336
+00:06:47,189 --> 00:06:47,199
+product. We'll copy this prompt and
+ 
+
+337
+00:06:47,199 --> 00:06:50,230
+product. We'll copy this prompt and
+we'll go to Google AI Studio and we'll
+
+338
+00:06:50,230 --> 00:06:50,240
+we'll go to Google AI Studio and we'll
+ 
+
+339
+00:06:50,240 --> 00:06:52,790
+we'll go to Google AI Studio and we'll
+add in our reference image and we'll
+
+340
+00:06:52,790 --> 00:06:52,800
+add in our reference image and we'll
+ 
+
+341
+00:06:52,800 --> 00:06:55,749
+add in our reference image and we'll
+also add in our product. Once you add
+
+342
+00:06:55,749 --> 00:06:55,759
+also add in our product. Once you add
+ 
+
+343
+00:06:55,759 --> 00:06:57,590
+also add in our product. Once you add
+the product, make sure that it's in the
+
+344
+00:06:57,590 --> 00:06:57,600
+the product, make sure that it's in the
+ 
+
+345
+00:06:57,600 --> 00:06:59,830
+the product, make sure that it's in the
+same format so that Google doesn't get
+
+346
+00:06:59,830 --> 00:06:59,840
+same format so that Google doesn't get
+ 
+
+347
+00:06:59,840 --> 00:07:03,110
+same format so that Google doesn't get
+confused. Now we can just tell Google
+
+348
+00:07:03,110 --> 00:07:03,120
+confused. Now we can just tell Google
+ 
+
+349
+00:07:03,120 --> 00:07:07,510
+confused. Now we can just tell Google
+make her hold this product in a natural
+
+350
+00:07:07,510 --> 00:07:07,520
+make her hold this product in a natural
+ 
+
+351
+00:07:07,520 --> 00:07:09,670
+make her hold this product in a natural
+way. Then we run that. Now we can see
+
+352
+00:07:09,670 --> 00:07:09,680
+way. Then we run that. Now we can see
+ 
+
+353
+00:07:09,680 --> 00:07:12,070
+way. Then we run that. Now we can see
+that we have our reference image holding
+
+354
+00:07:12,070 --> 00:07:12,080
+that we have our reference image holding
+ 
+
+355
+00:07:12,080 --> 00:07:15,110
+that we have our reference image holding
+our product. Now our prompt was young
+
+356
+00:07:15,110 --> 00:07:15,120
+our product. Now our prompt was young
+ 
+
+357
+00:07:15,120 --> 00:07:18,550
+our product. Now our prompt was young
+athletic woman. I'll say put her in the
+
+358
+00:07:18,550 --> 00:07:18,560
+athletic woman. I'll say put her in the
+ 
+
+359
+00:07:18,560 --> 00:07:22,390
+athletic woman. I'll say put her in the
+gym wearing gym clothes holding this
+
+360
+00:07:22,390 --> 00:07:22,400
+gym wearing gym clothes holding this
+ 
+
+361
+00:07:22,400 --> 00:07:24,390
+gym wearing gym clothes holding this
+black smart tumbler towards the camera.
+
+362
+00:07:24,390 --> 00:07:24,400
+black smart tumbler towards the camera.
+ 
+
+363
+00:07:24,400 --> 00:07:28,469
+black smart tumbler towards the camera.
+And I'll also add keep the quality the
+
+364
+00:07:28,469 --> 00:07:28,479
+And I'll also add keep the quality the
+ 
+
+365
+00:07:28,479 --> 00:07:30,629
+And I'll also add keep the quality the
+same. Now, let's see how that looks.
+
+366
+00:07:30,629 --> 00:07:30,639
+same. Now, let's see how that looks.
+ 
+
+367
+00:07:30,639 --> 00:07:33,510
+same. Now, let's see how that looks.
+We'll keep iterating until we get the
+
+368
+00:07:33,510 --> 00:07:33,520
+We'll keep iterating until we get the
+ 
+
+369
+00:07:33,520 --> 00:07:35,350
+We'll keep iterating until we get the
+product that we want. This looks pretty
+
+370
+00:07:35,350 --> 00:07:35,360
+product that we want. This looks pretty
+ 
+
+371
+00:07:35,360 --> 00:07:37,189
+product that we want. This looks pretty
+nice, but I don't like that she's
+
+372
+00:07:37,189 --> 00:07:37,199
+nice, but I don't like that she's
+ 
+
+373
+00:07:37,199 --> 00:07:39,909
+nice, but I don't like that she's
+holding it with two hands. So, I'll just
+
+374
+00:07:39,909 --> 00:07:39,919
+holding it with two hands. So, I'll just
+ 
+
+375
+00:07:39,919 --> 00:07:43,270
+holding it with two hands. So, I'll just
+download this again and tell it make her
+
+376
+00:07:43,270 --> 00:07:43,280
+download this again and tell it make her
+ 
+
+377
+00:07:43,280 --> 00:07:47,510
+download this again and tell it make her
+hold the product with one hand. Let's
+
+378
+00:07:47,510 --> 00:07:47,520
+hold the product with one hand. Let's
+ 
+
+379
+00:07:47,520 --> 00:07:49,430
+hold the product with one hand. Let's
+see how that turns out. Great. This
+
+380
+00:07:49,430 --> 00:07:49,440
+see how that turns out. Great. This
+ 
+
+381
+00:07:49,440 --> 00:07:51,350
+see how that turns out. Great. This
+looks nice. Now, she's holding it in a
+
+382
+00:07:51,350 --> 00:07:51,360
+looks nice. Now, she's holding it in a
+ 
+
+383
+00:07:51,360 --> 00:07:53,110
+looks nice. Now, she's holding it in a
+natural way and everything is looking
+
+384
+00:07:53,110 --> 00:07:53,120
+natural way and everything is looking
+ 
+
+385
+00:07:53,120 --> 00:07:55,510
+natural way and everything is looking
+great. So, what we'll do is we'll
+
+386
+00:07:55,510 --> 00:07:55,520
+great. So, what we'll do is we'll
+ 
+
+387
+00:07:55,520 --> 00:07:57,350
+great. So, what we'll do is we'll
+download this and from there it's just
+
+388
+00:07:57,350 --> 00:07:57,360
+download this and from there it's just
+ 
+
+389
+00:07:57,360 --> 00:07:59,110
+download this and from there it's just
+repeating the process for all of the
+
+390
+00:07:59,110 --> 00:07:59,120
+repeating the process for all of the
+ 
+
+391
+00:07:59,120 --> 00:08:01,350
+repeating the process for all of the
+five scenes. The key is to tune the
+
+392
+00:08:01,350 --> 00:08:01,360
+five scenes. The key is to tune the
+ 
+
+393
+00:08:01,360 --> 00:08:03,830
+five scenes. The key is to tune the
+prompts until the images fits the scenes
+
+394
+00:08:03,830 --> 00:08:03,840
+prompts until the images fits the scenes
+ 
+
+395
+00:08:03,840 --> 00:08:06,390
+prompts until the images fits the scenes
+that you want for the ads. So, I'll just
+
+396
+00:08:06,390 --> 00:08:06,400
+that you want for the ads. So, I'll just
+ 
+
+397
+00:08:06,400 --> 00:08:09,350
+that you want for the ads. So, I'll just
+keep going finding the next scene. And
+
+398
+00:08:09,350 --> 00:08:09,360
+keep going finding the next scene. And
+ 
+
+399
+00:08:09,360 --> 00:08:11,430
+keep going finding the next scene. And
+once we got all of that figured out,
+
+400
+00:08:11,430 --> 00:08:11,440
+once we got all of that figured out,
+ 
+
+401
+00:08:11,440 --> 00:08:13,350
+once we got all of that figured out,
+we'll download them. Now that we got all
+
+402
+00:08:13,350 --> 00:08:13,360
+we'll download them. Now that we got all
+ 
+
+403
+00:08:13,360 --> 00:08:15,430
+we'll download them. Now that we got all
+of our scenes downloaded, the next step
+
+404
+00:08:15,430 --> 00:08:15,440
+of our scenes downloaded, the next step
+ 
+
+405
+00:08:15,440 --> 00:08:18,309
+of our scenes downloaded, the next step
+is to prep them for V3. We want to make
+
+406
+00:08:18,309 --> 00:08:18,319
+is to prep them for V3. We want to make
+ 
+
+407
+00:08:18,319 --> 00:08:20,869
+is to prep them for V3. We want to make
+sure that V3 generates the videos in
+
+408
+00:08:20,869 --> 00:08:20,879
+sure that V3 generates the videos in
+ 
+
+409
+00:08:20,879 --> 00:08:23,110
+sure that V3 generates the videos in
+portrait format. To keep it simple,
+
+410
+00:08:23,110 --> 00:08:23,120
+portrait format. To keep it simple,
+ 
+
+411
+00:08:23,120 --> 00:08:24,869
+portrait format. To keep it simple,
+we're going to pre-frame the images
+
+412
+00:08:24,869 --> 00:08:24,879
+we're going to pre-frame the images
+ 
+
+413
+00:08:24,879 --> 00:08:27,430
+we're going to pre-frame the images
+inside of Canva. This step is crucial
+
+414
+00:08:27,430 --> 00:08:27,440
+inside of Canva. This step is crucial
+ 
+
+415
+00:08:27,440 --> 00:08:29,270
+inside of Canva. This step is crucial
+because it makes it super easy for
+
+416
+00:08:29,270 --> 00:08:29,280
+because it makes it super easy for
+ 
+
+417
+00:08:29,280 --> 00:08:32,149
+because it makes it super easy for
+Google AI to understand exactly what
+
+418
+00:08:32,149 --> 00:08:32,159
+Google AI to understand exactly what
+ 
+
+419
+00:08:32,159 --> 00:08:34,870
+Google AI to understand exactly what
+we're asking for. So, just head over to
+
+420
+00:08:34,870 --> 00:08:34,880
+we're asking for. So, just head over to
+ 
+
+421
+00:08:34,880 --> 00:08:36,949
+we're asking for. So, just head over to
+Canva and inside here, you want to
+
+422
+00:08:36,949 --> 00:08:36,959
+Canva and inside here, you want to
+ 
+
+423
+00:08:36,959 --> 00:08:39,990
+Canva and inside here, you want to
+create a new presentation in landscape
+
+424
+00:08:39,990 --> 00:08:40,000
+create a new presentation in landscape
+ 
+
+425
+00:08:40,000 --> 00:08:42,230
+create a new presentation in landscape
+mode. And then you just pick a color.
+
+426
+00:08:42,230 --> 00:08:42,240
+mode. And then you just pick a color.
+ 
+
+427
+00:08:42,240 --> 00:08:44,550
+mode. And then you just pick a color.
+I'll pick the blue one. Open five slides
+
+428
+00:08:44,550 --> 00:08:44,560
+I'll pick the blue one. Open five slides
+ 
+
+429
+00:08:44,560 --> 00:08:46,870
+I'll pick the blue one. Open five slides
+for all of your scenes. Then I'll drop
+
+430
+00:08:46,870 --> 00:08:46,880
+for all of your scenes. Then I'll drop
+ 
+
+431
+00:08:46,880 --> 00:08:49,269
+for all of your scenes. Then I'll drop
+each image right in the center and then
+
+432
+00:08:49,269 --> 00:08:49,279
+each image right in the center and then
+ 
+
+433
+00:08:49,279 --> 00:08:52,310
+each image right in the center and then
+download every image. So, let's head to
+
+434
+00:08:52,310 --> 00:08:52,320
+download every image. So, let's head to
+ 
+
+435
+00:08:52,320 --> 00:08:54,310
+download every image. So, let's head to
+Google Flow and I'll show you exactly
+
+436
+00:08:54,310 --> 00:08:54,320
+Google Flow and I'll show you exactly
+ 
+
+437
+00:08:54,320 --> 00:08:56,150
+Google Flow and I'll show you exactly
+how you can turn those scenes into great
+
+438
+00:08:56,150 --> 00:08:56,160
+how you can turn those scenes into great
+ 
+
+439
+00:08:56,160 --> 00:08:58,710
+how you can turn those scenes into great
+ads. Now that we're inside Google Flow,
+
+440
+00:08:58,710 --> 00:08:58,720
+ads. Now that we're inside Google Flow,
+ 
+
+441
+00:08:58,720 --> 00:09:00,790
+ads. Now that we're inside Google Flow,
+we'll start by creating a new project.
+
+442
+00:09:00,790 --> 00:09:00,800
+we'll start by creating a new project.
+ 
+
+443
+00:09:00,800 --> 00:09:02,470
+we'll start by creating a new project.
+So, this is the scene builder and this
+
+444
+00:09:02,470 --> 00:09:02,480
+So, this is the scene builder and this
+ 
+
+445
+00:09:02,480 --> 00:09:04,310
+So, this is the scene builder and this
+is where we'll actually generate our
+
+446
+00:09:04,310 --> 00:09:04,320
+is where we'll actually generate our
+ 
+
+447
+00:09:04,320 --> 00:09:06,630
+is where we'll actually generate our
+videos. In here, you got a few options.
+
+448
+00:09:06,630 --> 00:09:06,640
+videos. In here, you got a few options.
+ 
+
+449
+00:09:06,640 --> 00:09:09,110
+videos. In here, you got a few options.
+Click on frames to video so that we can
+
+450
+00:09:09,110 --> 00:09:09,120
+Click on frames to video so that we can
+ 
+
+451
+00:09:09,120 --> 00:09:11,350
+Click on frames to video so that we can
+use the scenes and images we just
+
+452
+00:09:11,350 --> 00:09:11,360
+use the scenes and images we just
+ 
+
+453
+00:09:11,360 --> 00:09:13,269
+use the scenes and images we just
+created in order to make the AI
+
+454
+00:09:13,269 --> 00:09:13,279
+created in order to make the AI
+ 
+
+455
+00:09:13,279 --> 00:09:15,590
+created in order to make the AI
+understand what we're trying to create.
+
+456
+00:09:15,590 --> 00:09:15,600
+understand what we're trying to create.
+ 
+
+457
+00:09:15,600 --> 00:09:17,350
+understand what we're trying to create.
+Make sure you have the frames to video
+
+458
+00:09:17,350 --> 00:09:17,360
+Make sure you have the frames to video
+ 
+
+459
+00:09:17,360 --> 00:09:20,070
+Make sure you have the frames to video
+on. And then make sure you also have the
+
+460
+00:09:20,070 --> 00:09:20,080
+on. And then make sure you also have the
+ 
+
+461
+00:09:20,080 --> 00:09:22,470
+on. And then make sure you also have the
+settings set to V3 fast. We don't want
+
+462
+00:09:22,470 --> 00:09:22,480
+settings set to V3 fast. We don't want
+ 
+
+463
+00:09:22,480 --> 00:09:24,550
+settings set to V3 fast. We don't want
+to waste any credits by using the
+
+464
+00:09:24,550 --> 00:09:24,560
+to waste any credits by using the
+ 
+
+465
+00:09:24,560 --> 00:09:26,870
+to waste any credits by using the
+quality one. It isn't that much better
+
+466
+00:09:26,870 --> 00:09:26,880
+quality one. It isn't that much better
+ 
+
+467
+00:09:26,880 --> 00:09:30,070
+quality one. It isn't that much better
+and fast also runs a lot faster. So just
+
+468
+00:09:30,070 --> 00:09:30,080
+and fast also runs a lot faster. So just
+ 
+
+469
+00:09:30,080 --> 00:09:31,990
+and fast also runs a lot faster. So just
+upload the image and we'll just click
+
+470
+00:09:31,990 --> 00:09:32,000
+upload the image and we'll just click
+ 
+
+471
+00:09:32,000 --> 00:09:34,310
+upload the image and we'll just click
+the crop and save. Nice. Now the image
+
+472
+00:09:34,310 --> 00:09:34,320
+the crop and save. Nice. Now the image
+ 
+
+473
+00:09:34,320 --> 00:09:36,550
+the crop and save. Nice. Now the image
+is uploaded. We'll head back to our chat
+
+474
+00:09:36,550 --> 00:09:36,560
+is uploaded. We'll head back to our chat
+ 
+
+475
+00:09:36,560 --> 00:09:39,590
+is uploaded. We'll head back to our chat
+GBT and grab the V3 prompt to put in
+
+476
+00:09:39,590 --> 00:09:39,600
+GBT and grab the V3 prompt to put in
+ 
+
+477
+00:09:39,600 --> 00:09:43,110
+GBT and grab the V3 prompt to put in
+here. So go to V3. This will be the
+
+478
+00:09:43,110 --> 00:09:43,120
+here. So go to V3. This will be the
+ 
+
+479
+00:09:43,120 --> 00:09:45,750
+here. So go to V3. This will be the
+first scene. Just paste that in. Make
+
+480
+00:09:45,750 --> 00:09:45,760
+first scene. Just paste that in. Make
+ 
+
+481
+00:09:45,760 --> 00:09:47,750
+first scene. Just paste that in. Make
+your adjustments to the script. It isn't
+
+482
+00:09:47,750 --> 00:09:47,760
+your adjustments to the script. It isn't
+ 
+
+483
+00:09:47,760 --> 00:09:49,910
+your adjustments to the script. It isn't
+perfect, but with a small adjustments,
+
+484
+00:09:49,910 --> 00:09:49,920
+perfect, but with a small adjustments,
+ 
+
+485
+00:09:49,920 --> 00:09:52,070
+perfect, but with a small adjustments,
+you can make it perfect. I'll just edit
+
+486
+00:09:52,070 --> 00:09:52,080
+you can make it perfect. I'll just edit
+ 
+
+487
+00:09:52,080 --> 00:09:56,949
+you can make it perfect. I'll just edit
+this first one to say use the image as
+
+488
+00:09:56,949 --> 00:09:56,959
+this first one to say use the image as
+ 
+
+489
+00:09:56,959 --> 00:10:00,470
+this first one to say use the image as
+reference. Because V3 doesn't really
+
+490
+00:10:00,470 --> 00:10:00,480
+reference. Because V3 doesn't really
+ 
+
+491
+00:10:00,480 --> 00:10:03,430
+reference. Because V3 doesn't really
+create videos in portrait, we need to
+
+492
+00:10:03,430 --> 00:10:03,440
+create videos in portrait, we need to
+ 
+
+493
+00:10:03,440 --> 00:10:05,350
+create videos in portrait, we need to
+make sure that it understands what we're
+
+494
+00:10:05,350 --> 00:10:05,360
+make sure that it understands what we're
+ 
+
+495
+00:10:05,360 --> 00:10:07,509
+make sure that it understands what we're
+trying to do. So, what I like to do is
+
+496
+00:10:07,509 --> 00:10:07,519
+trying to do. So, what I like to do is
+ 
+
+497
+00:10:07,519 --> 00:10:11,590
+trying to do. So, what I like to do is
+I'll just say only rule is to keep the
+
+498
+00:10:11,590 --> 00:10:11,600
+I'll just say only rule is to keep the
+ 
+
+499
+00:10:11,600 --> 00:10:16,150
+I'll just say only rule is to keep the
+blue on the sides as it is. Now, let's
+
+500
+00:10:16,150 --> 00:10:16,160
+blue on the sides as it is. Now, let's
+ 
+
+501
+00:10:16,160 --> 00:10:18,230
+blue on the sides as it is. Now, let's
+just run this prompt. At this stage,
+
+502
+00:10:18,230 --> 00:10:18,240
+just run this prompt. At this stage,
+ 
+
+503
+00:10:18,240 --> 00:10:20,389
+just run this prompt. At this stage,
+it's really about testing. You try out
+
+504
+00:10:20,389 --> 00:10:20,399
+it's really about testing. You try out
+ 
+
+505
+00:10:20,399 --> 00:10:23,190
+it's really about testing. You try out
+your images with different scenes and
+
+506
+00:10:23,190 --> 00:10:23,200
+your images with different scenes and
+ 
+
+507
+00:10:23,200 --> 00:10:25,269
+your images with different scenes and
+different prompts to see what works.
+
+508
+00:10:25,269 --> 00:10:25,279
+different prompts to see what works.
+ 
+
+509
+00:10:25,279 --> 00:10:27,430
+different prompts to see what works.
+Some videos just won't turn out right,
+
+510
+00:10:27,430 --> 00:10:27,440
+Some videos just won't turn out right,
+ 
+
+511
+00:10:27,440 --> 00:10:29,670
+Some videos just won't turn out right,
+and that's okay. I just started to
+
+512
+00:10:29,670 --> 00:10:29,680
+and that's okay. I just started to
+ 
+
+513
+00:10:29,680 --> 00:10:31,750
+and that's okay. I just started to
+generate all of the scenes. I'll show
+
+514
+00:10:31,750 --> 00:10:31,760
+generate all of the scenes. I'll show
+ 
+
+515
+00:10:31,760 --> 00:10:32,790
+generate all of the scenes. I'll show
+you the first one.
+
+516
+00:10:32,790 --> 00:10:32,800
+you the first one.
+ 
+
+517
+00:10:32,800 --> 00:10:35,910
+you the first one.
+>> Okay, this bottle literally guilt
+
+518
+00:10:35,910 --> 00:10:35,920
+>> Okay, this bottle literally guilt
+ 
+
+519
+00:10:35,920 --> 00:10:38,230
+>> Okay, this bottle literally guilt
+tripped me into drinking more water.
+
+520
+00:10:38,230 --> 00:10:38,240
+tripped me into drinking more water.
+ 
+
+521
+00:10:38,240 --> 00:10:39,990
+tripped me into drinking more water.
+>> And as you can see, that degeneration
+
+522
+00:10:39,990 --> 00:10:40,000
+>> And as you can see, that degeneration
+ 
+
+523
+00:10:40,000 --> 00:10:41,829
+>> And as you can see, that degeneration
+didn't turn out well. You see that
+
+524
+00:10:41,829 --> 00:10:41,839
+didn't turn out well. You see that
+ 
+
+525
+00:10:41,839 --> 00:10:43,910
+didn't turn out well. You see that
+there's something off with her eyes and
+
+526
+00:10:43,910 --> 00:10:43,920
+there's something off with her eyes and
+ 
+
+527
+00:10:43,920 --> 00:10:46,870
+there's something off with her eyes and
+she's talking very slowly. So that's why
+
+528
+00:10:46,870 --> 00:10:46,880
+she's talking very slowly. So that's why
+ 
+
+529
+00:10:46,880 --> 00:10:49,030
+she's talking very slowly. So that's why
+you need to really play around and do a
+
+530
+00:10:49,030 --> 00:10:49,040
+you need to really play around and do a
+ 
+
+531
+00:10:49,040 --> 00:10:51,590
+you need to really play around and do a
+lot of generations. I basically swapped
+
+532
+00:10:51,590 --> 00:10:51,600
+lot of generations. I basically swapped
+ 
+
+533
+00:10:51,600 --> 00:10:53,190
+lot of generations. I basically swapped
+out the image because I didn't like that
+
+534
+00:10:53,190 --> 00:10:53,200
+out the image because I didn't like that
+ 
+
+535
+00:10:53,200 --> 00:10:55,509
+out the image because I didn't like that
+one and this one really turns out a lot
+
+536
+00:10:55,509 --> 00:10:55,519
+one and this one really turns out a lot
+ 
+
+537
+00:10:55,519 --> 00:10:56,310
+one and this one really turns out a lot
+better.
+
+538
+00:10:56,310 --> 00:10:56,320
+better.
+ 
+
+539
+00:10:56,320 --> 00:10:58,790
+better.
+>> Okay, this bottle literally guilt
+
+540
+00:10:58,790 --> 00:10:58,800
+>> Okay, this bottle literally guilt
+ 
+
+541
+00:10:58,800 --> 00:11:03,509
+>> Okay, this bottle literally guilt
+tripped me into drinking more water.
+
+542
+00:11:03,509 --> 00:11:03,519
+
+ 
+
+543
+00:11:03,519 --> 00:11:05,670
+
+>> That's a lot better than the first one.
+
+544
+00:11:05,670 --> 00:11:05,680
+>> That's a lot better than the first one.
+ 
+
+545
+00:11:05,680 --> 00:11:08,870
+>> That's a lot better than the first one.
+And then I just kept experimenting. I
+
+546
+00:11:08,870 --> 00:11:08,880
+And then I just kept experimenting. I
+ 
+
+547
+00:11:08,880 --> 00:11:10,870
+And then I just kept experimenting. I
+tried to just continue this scene
+
+548
+00:11:10,870 --> 00:11:10,880
+tried to just continue this scene
+ 
+
+549
+00:11:10,880 --> 00:11:14,069
+tried to just continue this scene
+without her holding the product. This is
+
+550
+00:11:14,069 --> 00:11:14,079
+without her holding the product. This is
+ 
+
+551
+00:11:14,079 --> 00:11:15,590
+without her holding the product. This is
+how the next scene looked.
+
+552
+00:11:15,590 --> 00:11:15,600
+how the next scene looked.
+ 
+
+553
+00:11:15,600 --> 00:11:17,750
+how the next scene looked.
+>> I would finish a workout and realize I
+
+554
+00:11:17,750 --> 00:11:17,760
+>> I would finish a workout and realize I
+ 
+
+555
+00:11:17,760 --> 00:11:20,630
+>> I would finish a workout and realize I
+barely sipped anything. No wonder I felt
+
+556
+00:11:20,630 --> 00:11:20,640
+barely sipped anything. No wonder I felt
+ 
+
+557
+00:11:20,640 --> 00:11:21,990
+barely sipped anything. No wonder I felt
+so wiped out.
+
+558
+00:11:21,990 --> 00:11:22,000
+so wiped out.
+ 
+
+559
+00:11:22,000 --> 00:11:24,389
+so wiped out.
+>> So, the whole point here is just to
+
+560
+00:11:24,389 --> 00:11:24,399
+>> So, the whole point here is just to
+ 
+
+561
+00:11:24,399 --> 00:11:27,030
+>> So, the whole point here is just to
+generate videos, review the results, and
+
+562
+00:11:27,030 --> 00:11:27,040
+generate videos, review the results, and
+ 
+
+563
+00:11:27,040 --> 00:11:29,190
+generate videos, review the results, and
+basically mine the best content. If you
+
+564
+00:11:29,190 --> 00:11:29,200
+basically mine the best content. If you
+ 
+
+565
+00:11:29,200 --> 00:11:31,430
+basically mine the best content. If you
+look for the moments that stand out,
+
+566
+00:11:31,430 --> 00:11:31,440
+look for the moments that stand out,
+ 
+
+567
+00:11:31,440 --> 00:11:33,750
+look for the moments that stand out,
+those become your core ad. I tried with
+
+568
+00:11:33,750 --> 00:11:33,760
+those become your core ad. I tried with
+ 
+
+569
+00:11:33,760 --> 00:11:34,230
+those become your core ad. I tried with
+this image.
+
+570
+00:11:34,230 --> 00:11:34,240
+this image.
+ 
+
+571
+00:11:34,240 --> 00:11:36,389
+this image.
+>> I have this smart water bottle. It glows
+
+572
+00:11:36,389 --> 00:11:36,399
+>> I have this smart water bottle. It glows
+ 
+
+573
+00:11:36,399 --> 00:11:39,350
+>> I have this smart water bottle. It glows
+when I forget to drink. every sip.
+
+574
+00:11:39,350 --> 00:11:39,360
+when I forget to drink. every sip.
+ 
+
+575
+00:11:39,360 --> 00:11:41,670
+when I forget to drink. every sip.
+>> But as you can see, this wasn't the best
+
+576
+00:11:41,670 --> 00:11:41,680
+>> But as you can see, this wasn't the best
+ 
+
+577
+00:11:41,680 --> 00:11:44,230
+>> But as you can see, this wasn't the best
+generation. So, I just switched the
+
+578
+00:11:44,230 --> 00:11:44,240
+generation. So, I just switched the
+ 
+
+579
+00:11:44,240 --> 00:11:44,949
+generation. So, I just switched the
+scene again.
+
+580
+00:11:44,949 --> 00:11:44,959
+scene again.
+ 
+
+581
+00:11:44,959 --> 00:11:46,550
+scene again.
+>> Now, I'm actually hitting my hydration
+
+582
+00:11:46,550 --> 00:11:46,560
+>> Now, I'm actually hitting my hydration
+ 
+
+583
+00:11:46,560 --> 00:11:49,030
+>> Now, I'm actually hitting my hydration
+goals. And honestly,
+
+584
+00:11:49,030 --> 00:11:49,040
+goals. And honestly,
+ 
+
+585
+00:11:49,040 --> 00:11:50,790
+goals. And honestly,
+>> and then I tried a new scene with the
+
+586
+00:11:50,790 --> 00:11:50,800
+>> and then I tried a new scene with the
+ 
+
+587
+00:11:50,800 --> 00:11:51,590
+>> and then I tried a new scene with the
+same prompt.
+
+588
+00:11:51,590 --> 00:11:51,600
+same prompt.
+ 
+
+589
+00:11:51,600 --> 00:11:53,430
+same prompt.
+>> So, I grabbed this smart water bottle.
+
+590
+00:11:53,430 --> 00:11:53,440
+>> So, I grabbed this smart water bottle.
+ 
+
+591
+00:11:53,440 --> 00:11:55,190
+>> So, I grabbed this smart water bottle.
+It literally glows when I forget to
+
+592
+00:11:55,190 --> 00:11:55,200
+It literally glows when I forget to
+ 
+
+593
+00:11:55,200 --> 00:11:58,069
+It literally glows when I forget to
+drink, tracks every sip I take, and even
+
+594
+00:11:58,069 --> 00:11:58,079
+drink, tracks every sip I take, and even
+ 
+
+595
+00:11:58,079 --> 00:11:59,910
+drink, tracks every sip I take, and even
+syncs to my phone. If you're into
+
+596
+00:11:59,910 --> 00:11:59,920
+syncs to my phone. If you're into
+ 
+
+597
+00:11:59,920 --> 00:12:02,150
+syncs to my phone. If you're into
+fitness or just struggle to stay
+
+598
+00:12:02,150 --> 00:12:02,160
+fitness or just struggle to stay
+ 
+
+599
+00:12:02,160 --> 00:12:05,190
+fitness or just struggle to stay
+hydrated, this one is a lifesaver. Once
+
+600
+00:12:05,190 --> 00:12:05,200
+hydrated, this one is a lifesaver. Once
+ 
+
+601
+00:12:05,200 --> 00:12:07,190
+hydrated, this one is a lifesaver. Once
+you have your generations, just bring
+
+602
+00:12:07,190 --> 00:12:07,200
+you have your generations, just bring
+ 
+
+603
+00:12:07,200 --> 00:12:09,350
+you have your generations, just bring
+them into your favorite editor. For this
+
+604
+00:12:09,350 --> 00:12:09,360
+them into your favorite editor. For this
+ 
+
+605
+00:12:09,360 --> 00:12:12,069
+them into your favorite editor. For this
+demo, I used Canva and I downloaded all
+
+606
+00:12:12,069 --> 00:12:12,079
+demo, I used Canva and I downloaded all
+ 
+
+607
+00:12:12,079 --> 00:12:14,230
+demo, I used Canva and I downloaded all
+of the clips that I liked. Finally, I
+
+608
+00:12:14,230 --> 00:12:14,240
+of the clips that I liked. Finally, I
+ 
+
+609
+00:12:14,240 --> 00:12:16,230
+of the clips that I liked. Finally, I
+stitched them together into a complete
+
+610
+00:12:16,230 --> 00:12:16,240
+stitched them together into a complete
+ 
+
+611
+00:12:16,240 --> 00:12:18,389
+stitched them together into a complete
+ad. Now, I wish you the best of luck
+
+612
+00:12:18,389 --> 00:12:18,399
+ad. Now, I wish you the best of luck
+ 
+
+613
+00:12:18,399 --> 00:12:20,470
+ad. Now, I wish you the best of luck
+putting together your own. Here's how
+
+614
+00:12:20,470 --> 00:12:20,480
+putting together your own. Here's how
+ 
+
+615
+00:12:20,480 --> 00:12:22,870
+putting together your own. Here's how
+this ad turned out after the editing.
+
+616
+00:12:22,870 --> 00:12:22,880
+this ad turned out after the editing.
+ 
+
+617
+00:12:22,880 --> 00:12:24,949
+this ad turned out after the editing.
+Okay, this bottle literally guilt
+
+618
+00:12:24,949 --> 00:12:24,959
+Okay, this bottle literally guilt
+ 
+
+619
+00:12:24,959 --> 00:12:26,949
+Okay, this bottle literally guilt
+tripped me into drinking more water. I
+
+620
+00:12:26,949 --> 00:12:26,959
+tripped me into drinking more water. I
+ 
+
+621
+00:12:26,959 --> 00:12:28,790
+tripped me into drinking more water. I
+would finish a workout and realize I
+
+622
+00:12:28,790 --> 00:12:28,800
+would finish a workout and realize I
+ 
+
+623
+00:12:28,800 --> 00:12:30,790
+would finish a workout and realize I
+barely sipped anything. So, I grabbed
+
+624
+00:12:30,790 --> 00:12:30,800
+barely sipped anything. So, I grabbed
+ 
+
+625
+00:12:30,800 --> 00:12:32,710
+barely sipped anything. So, I grabbed
+this smart water bottle. It literally
+
+626
+00:12:32,710 --> 00:12:32,720
+this smart water bottle. It literally
+ 
+
+627
+00:12:32,720 --> 00:12:34,870
+this smart water bottle. It literally
+glows when I forget to drink, tracks
+
+628
+00:12:34,870 --> 00:12:34,880
+glows when I forget to drink, tracks
+ 
+
+629
+00:12:34,880 --> 00:12:37,269
+glows when I forget to drink, tracks
+every sip I take, and even syncs to my
+
+630
+00:12:37,269 --> 00:12:37,279
+every sip I take, and even syncs to my
+ 
+
+631
+00:12:37,279 --> 00:12:39,590
+every sip I take, and even syncs to my
+phone. If you're into fitness or just
+
+632
+00:12:39,590 --> 00:12:39,600
+phone. If you're into fitness or just
+ 
+
+633
+00:12:39,600 --> 00:12:42,230
+phone. If you're into fitness or just
+struggle to stay hydrated, this one is a
+
+634
+00:12:42,230 --> 00:12:42,240
+struggle to stay hydrated, this one is a
+ 
+
+635
+00:12:42,240 --> 00:12:43,190
+struggle to stay hydrated, this one is a
+lifesaver.
+
+636
+00:12:43,190 --> 00:12:43,200
+lifesaver.
+ 
+
+637
+00:12:43,200 --> 00:12:44,790
+lifesaver.
+>> I hope you got some value out of this
+
+638
+00:12:44,790 --> 00:12:44,800
+>> I hope you got some value out of this
+ 
+
+639
+00:12:44,800 --> 00:12:46,470
+>> I hope you got some value out of this
+video. If you did, make sure to hit that
+
+640
+00:12:46,470 --> 00:12:46,480
+video. If you did, make sure to hit that
+ 
+
+641
+00:12:46,480 --> 00:12:47,990
+video. If you did, make sure to hit that
+subscribe button. This is a brand new
+
+642
+00:12:47,990 --> 00:12:48,000
+subscribe button. This is a brand new
+ 
+
+643
+00:12:48,000 --> 00:12:49,910
+subscribe button. This is a brand new
+channel and we'll be sharing a lot more
+
+644
+00:12:49,910 --> 00:12:49,920
+channel and we'll be sharing a lot more
+ 
+
+645
+00:12:49,920 --> 00:12:52,150
+channel and we'll be sharing a lot more
+content in the future. I'm wishing you
+
+646
+00:12:52,150 --> 00:12:52,160
+content in the future. I'm wishing you
+ 
+
+647
+00:12:52,160 --> 00:12:53,829
+content in the future. I'm wishing you
+the best of luck creating your own
+
+648
+00:12:53,829 --> 00:12:53,839
+the best of luck creating your own
+ 
+
+649
+00:12:53,839 --> 00:12:56,230
+the best of luck creating your own
+generations. And if you need any help,
+
+650
+00:12:56,230 --> 00:12:56,240
+generations. And if you need any help,
+ 
+
+651
+00:12:56,240 --> 00:12:57,910
+generations. And if you need any help,
+just reach out and we'll see if it's a
+
+652
+00:12:57,910 --> 00:12:57,920
+just reach out and we'll see if it's a
+ 
+
+653
+00:12:57,920 --> 00:12:59,509
+just reach out and we'll see if it's a
+great fit. Thank you so much for
+
+654
+00:12:59,509 --> 00:12:59,519
+great fit. Thank you so much for
+ 
+
+655
+00:12:59,519 --> 00:13:03,760
+great fit. Thank you so much for
+watching. Have a great day. Bye.
+

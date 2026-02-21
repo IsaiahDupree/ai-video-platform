@@ -1,0 +1,3395 @@
+1
+00:00:00,080 --> 00:00:01,829
+
+So, right here is a video of a girl
+
+2
+00:00:01,829 --> 00:00:01,839
+So, right here is a video of a girl
+ 
+
+3
+00:00:01,839 --> 00:00:03,830
+So, right here is a video of a girl
+making a simple review of some pants
+
+4
+00:00:03,830 --> 00:00:03,840
+making a simple review of some pants
+ 
+
+5
+00:00:03,840 --> 00:00:05,590
+making a simple review of some pants
+that she bought online. And I thought to
+
+6
+00:00:05,590 --> 00:00:05,600
+that she bought online. And I thought to
+ 
+
+7
+00:00:05,600 --> 00:00:07,269
+that she bought online. And I thought to
+myself, how can I recreate the same
+
+8
+00:00:07,269 --> 00:00:07,279
+myself, how can I recreate the same
+ 
+
+9
+00:00:07,279 --> 00:00:09,270
+myself, how can I recreate the same
+video, but replace her outfit with my
+
+10
+00:00:09,270 --> 00:00:09,280
+video, but replace her outfit with my
+ 
+
+11
+00:00:09,280 --> 00:00:11,110
+video, but replace her outfit with my
+own product like this? Or even change up
+
+12
+00:00:11,110 --> 00:00:11,120
+own product like this? Or even change up
+ 
+
+13
+00:00:11,120 --> 00:00:12,470
+own product like this? Or even change up
+the background like this while
+
+14
+00:00:12,470 --> 00:00:12,480
+the background like this while
+ 
+
+15
+00:00:12,480 --> 00:00:14,310
+the background like this while
+preserving the same exact movements.
+
+16
+00:00:14,310 --> 00:00:14,320
+preserving the same exact movements.
+ 
+
+17
+00:00:14,320 --> 00:00:16,150
+preserving the same exact movements.
+This way, I have a fully unique video
+
+18
+00:00:16,150 --> 00:00:16,160
+This way, I have a fully unique video
+ 
+
+19
+00:00:16,160 --> 00:00:17,910
+This way, I have a fully unique video
+that I can use for my own products.
+
+20
+00:00:17,910 --> 00:00:17,920
+that I can use for my own products.
+ 
+
+21
+00:00:17,920 --> 00:00:19,189
+that I can use for my own products.
+Well, in this video, I'm going to show
+
+22
+00:00:19,189 --> 00:00:19,199
+Well, in this video, I'm going to show
+ 
+
+23
+00:00:19,199 --> 00:00:21,670
+Well, in this video, I'm going to show
+you how this is done by using AI motion
+
+24
+00:00:21,670 --> 00:00:21,680
+you how this is done by using AI motion
+ 
+
+25
+00:00:21,680 --> 00:00:25,109
+you how this is done by using AI motion
+control.
+
+26
+00:00:25,109 --> 00:00:25,119
+
+ 
+
+27
+00:00:25,119 --> 00:00:26,550
+
+So, you're probably wondering why would
+
+28
+00:00:26,550 --> 00:00:26,560
+So, you're probably wondering why would
+ 
+
+29
+00:00:26,560 --> 00:00:28,470
+So, you're probably wondering why would
+you want to use AI motion control to
+
+30
+00:00:28,470 --> 00:00:28,480
+you want to use AI motion control to
+ 
+
+31
+00:00:28,480 --> 00:00:30,470
+you want to use AI motion control to
+copy the same movements from other video
+
+32
+00:00:30,470 --> 00:00:30,480
+copy the same movements from other video
+ 
+
+33
+00:00:30,480 --> 00:00:32,150
+copy the same movements from other video
+ads. Well, the first reason is because
+
+34
+00:00:32,150 --> 00:00:32,160
+ads. Well, the first reason is because
+ 
+
+35
+00:00:32,160 --> 00:00:34,310
+ads. Well, the first reason is because
+we can use it to our advantage to copy
+
+36
+00:00:34,310 --> 00:00:34,320
+we can use it to our advantage to copy
+ 
+
+37
+00:00:34,320 --> 00:00:36,069
+we can use it to our advantage to copy
+certain concepts that are proven to
+
+38
+00:00:36,069 --> 00:00:36,079
+certain concepts that are proven to
+ 
+
+39
+00:00:36,079 --> 00:00:37,590
+certain concepts that are proven to
+work. So, for example, this is an ad
+
+40
+00:00:37,590 --> 00:00:37,600
+work. So, for example, this is an ad
+ 
+
+41
+00:00:37,600 --> 00:00:39,430
+work. So, for example, this is an ad
+that's doing well for a brand called Oi
+
+42
+00:00:39,430 --> 00:00:39,440
+that's doing well for a brand called Oi
+ 
+
+43
+00:00:39,440 --> 00:00:41,430
+that's doing well for a brand called Oi
+Rosie, and it's a simple 5-second video
+
+44
+00:00:41,430 --> 00:00:41,440
+Rosie, and it's a simple 5-second video
+ 
+
+45
+00:00:41,440 --> 00:00:43,430
+Rosie, and it's a simple 5-second video
+of this girl doing specific movements
+
+46
+00:00:43,430 --> 00:00:43,440
+of this girl doing specific movements
+ 
+
+47
+00:00:43,440 --> 00:00:45,030
+of this girl doing specific movements
+while she's wearing this dress. And what
+
+48
+00:00:45,030 --> 00:00:45,040
+while she's wearing this dress. And what
+ 
+
+49
+00:00:45,040 --> 00:00:47,270
+while she's wearing this dress. And what
+we can do is use AI to copy the exact
+
+50
+00:00:47,270 --> 00:00:47,280
+we can do is use AI to copy the exact
+ 
+
+51
+00:00:47,280 --> 00:00:49,110
+we can do is use AI to copy the exact
+same look of this video, replace it with
+
+52
+00:00:49,110 --> 00:00:49,120
+same look of this video, replace it with
+ 
+
+53
+00:00:49,120 --> 00:00:50,790
+same look of this video, replace it with
+a different model who's wearing our
+
+54
+00:00:50,790 --> 00:00:50,800
+a different model who's wearing our
+ 
+
+55
+00:00:50,800 --> 00:00:52,229
+a different model who's wearing our
+product, and then changing up the
+
+56
+00:00:52,229 --> 00:00:52,239
+product, and then changing up the
+ 
+
+57
+00:00:52,239 --> 00:00:53,830
+product, and then changing up the
+background. This way, we end up with a
+
+58
+00:00:53,830 --> 00:00:53,840
+background. This way, we end up with a
+ 
+
+59
+00:00:53,840 --> 00:00:55,430
+background. This way, we end up with a
+fully unique video that's not just
+
+60
+00:00:55,430 --> 00:00:55,440
+fully unique video that's not just
+ 
+
+61
+00:00:55,440 --> 00:00:57,270
+fully unique video that's not just
+straight up copying the ad one for one,
+
+62
+00:00:57,270 --> 00:00:57,280
+straight up copying the ad one for one,
+ 
+
+63
+00:00:57,280 --> 00:00:59,189
+straight up copying the ad one for one,
+but we're simply taking inspiration on
+
+64
+00:00:59,189 --> 00:00:59,199
+but we're simply taking inspiration on
+ 
+
+65
+00:00:59,199 --> 00:01:01,029
+but we're simply taking inspiration on
+the motion. Not only that, we can also
+
+66
+00:01:01,029 --> 00:01:01,039
+the motion. Not only that, we can also
+ 
+
+67
+00:01:01,039 --> 00:01:03,029
+the motion. Not only that, we can also
+spy on other competitors who are doing
+
+68
+00:01:03,029 --> 00:01:03,039
+spy on other competitors who are doing
+ 
+
+69
+00:01:03,039 --> 00:01:04,630
+spy on other competitors who are doing
+extremely well, such as this men's
+
+70
+00:01:04,630 --> 00:01:04,640
+extremely well, such as this men's
+ 
+
+71
+00:01:04,640 --> 00:01:05,910
+extremely well, such as this men's
+clothing store that's literally doing
+
+72
+00:01:05,910 --> 00:01:05,920
+clothing store that's literally doing
+ 
+
+73
+00:01:05,920 --> 00:01:08,070
+clothing store that's literally doing
+like $10,000 per day. And what I could
+
+74
+00:01:08,070 --> 00:01:08,080
+like $10,000 per day. And what I could
+ 
+
+75
+00:01:08,080 --> 00:01:09,429
+like $10,000 per day. And what I could
+do is look at all of their best
+
+76
+00:01:09,429 --> 00:01:09,439
+do is look at all of their best
+ 
+
+77
+00:01:09,439 --> 00:01:11,109
+do is look at all of their best
+performing ads and we could take the
+
+78
+00:01:11,109 --> 00:01:11,119
+performing ads and we could take the
+ 
+
+79
+00:01:11,119 --> 00:01:12,550
+performing ads and we could take the
+exact hook that they're using in their
+
+80
+00:01:12,550 --> 00:01:12,560
+exact hook that they're using in their
+ 
+
+81
+00:01:12,560 --> 00:01:14,149
+exact hook that they're using in their
+video like this. Then take our own
+
+82
+00:01:14,149 --> 00:01:14,159
+video like this. Then take our own
+ 
+
+83
+00:01:14,159 --> 00:01:16,070
+video like this. Then take our own
+product, put it on top of our own AI
+
+84
+00:01:16,070 --> 00:01:16,080
+product, put it on top of our own AI
+ 
+
+85
+00:01:16,080 --> 00:01:17,830
+product, put it on top of our own AI
+model inside of their home, and we will
+
+86
+00:01:17,830 --> 00:01:17,840
+model inside of their home, and we will
+ 
+
+87
+00:01:17,840 --> 00:01:19,510
+model inside of their home, and we will
+have our own unique version of a hook
+
+88
+00:01:19,510 --> 00:01:19,520
+have our own unique version of a hook
+ 
+
+89
+00:01:19,520 --> 00:01:21,109
+have our own unique version of a hook
+that is proven to work from another
+
+90
+00:01:21,109 --> 00:01:21,119
+that is proven to work from another
+ 
+
+91
+00:01:21,119 --> 00:01:22,550
+that is proven to work from another
+brand. And if you're still sleeping on
+
+92
+00:01:22,550 --> 00:01:22,560
+brand. And if you're still sleeping on
+ 
+
+93
+00:01:22,560 --> 00:01:24,310
+brand. And if you're still sleeping on
+AI ads and you don't think they actually
+
+94
+00:01:24,310 --> 00:01:24,320
+AI ads and you don't think they actually
+ 
+
+95
+00:01:24,320 --> 00:01:25,749
+AI ads and you don't think they actually
+work, here's the results of one of my
+
+96
+00:01:25,749 --> 00:01:25,759
+work, here's the results of one of my
+ 
+
+97
+00:01:25,759 --> 00:01:27,749
+work, here's the results of one of my
+stores that I ran in Q4 that literally
+
+98
+00:01:27,749 --> 00:01:27,759
+stores that I ran in Q4 that literally
+ 
+
+99
+00:01:27,759 --> 00:01:30,950
+stores that I ran in Q4 that literally
+did 130K off of one single AI ad. And
+
+100
+00:01:30,950 --> 00:01:30,960
+did 130K off of one single AI ad. And
+ 
+
+101
+00:01:30,960 --> 00:01:32,390
+did 130K off of one single AI ad. And
+here's a Facebook campaign that I've
+
+102
+00:01:32,390 --> 00:01:32,400
+here's a Facebook campaign that I've
+ 
+
+103
+00:01:32,400 --> 00:01:34,310
+here's a Facebook campaign that I've
+been using to test some new AI ads,
+
+104
+00:01:34,310 --> 00:01:34,320
+been using to test some new AI ads,
+ 
+
+105
+00:01:34,320 --> 00:01:35,990
+been using to test some new AI ads,
+which has given me a pretty solid cost
+
+106
+00:01:35,990 --> 00:01:36,000
+which has given me a pretty solid cost
+ 
+
+107
+00:01:36,000 --> 00:01:38,310
+which has given me a pretty solid cost
+per click of 86 cents and a nice rorowaz
+
+108
+00:01:38,310 --> 00:01:38,320
+per click of 86 cents and a nice rorowaz
+ 
+
+109
+00:01:38,320 --> 00:01:40,950
+per click of 86 cents and a nice rorowaz
+of 2.17, giving this new store a net
+
+110
+00:01:40,950 --> 00:01:40,960
+of 2.17, giving this new store a net
+ 
+
+111
+00:01:40,960 --> 00:01:44,069
+of 2.17, giving this new store a net
+profit of $445 in just the last week,
+
+112
+00:01:44,069 --> 00:01:44,079
+profit of $445 in just the last week,
+ 
+
+113
+00:01:44,079 --> 00:01:45,590
+profit of $445 in just the last week,
+which I think is pretty good considering
+
+114
+00:01:45,590 --> 00:01:45,600
+which I think is pretty good considering
+ 
+
+115
+00:01:45,600 --> 00:01:47,510
+which I think is pretty good considering
+that this is a new product test with a
+
+116
+00:01:47,510 --> 00:01:47,520
+that this is a new product test with a
+ 
+
+117
+00:01:47,520 --> 00:01:49,190
+that this is a new product test with a
+new style of ads that I'm testing with
+
+118
+00:01:49,190 --> 00:01:49,200
+new style of ads that I'm testing with
+ 
+
+119
+00:01:49,200 --> 00:01:50,630
+new style of ads that I'm testing with
+AI. And by the way, if you want to know
+
+120
+00:01:50,630 --> 00:01:50,640
+AI. And by the way, if you want to know
+ 
+
+121
+00:01:50,640 --> 00:01:52,310
+AI. And by the way, if you want to know
+the best way to track your profits on
+
+122
+00:01:52,310 --> 00:01:52,320
+the best way to track your profits on
+ 
+
+123
+00:01:52,320 --> 00:01:54,149
+the best way to track your profits on
+any of your Shopify stores, this app is
+
+124
+00:01:54,149 --> 00:01:54,159
+any of your Shopify stores, this app is
+ 
+
+125
+00:01:54,159 --> 00:01:55,830
+any of your Shopify stores, this app is
+called True Profit, and it gives me a
+
+126
+00:01:55,830 --> 00:01:55,840
+called True Profit, and it gives me a
+ 
+
+127
+00:01:55,840 --> 00:01:57,749
+called True Profit, and it gives me a
+clear view on a daily basis of how much
+
+128
+00:01:57,749 --> 00:01:57,759
+clear view on a daily basis of how much
+ 
+
+129
+00:01:57,759 --> 00:01:59,270
+clear view on a daily basis of how much
+I'm paying my supplier, how much I'm
+
+130
+00:01:59,270 --> 00:01:59,280
+I'm paying my supplier, how much I'm
+ 
+
+131
+00:01:59,280 --> 00:02:00,709
+I'm paying my supplier, how much I'm
+spending on Facebook ads, and how much
+
+132
+00:02:00,709 --> 00:02:00,719
+spending on Facebook ads, and how much
+ 
+
+133
+00:02:00,719 --> 00:02:02,550
+spending on Facebook ads, and how much
+I'm paying in Shopify transaction fees.
+
+134
+00:02:02,550 --> 00:02:02,560
+I'm paying in Shopify transaction fees.
+ 
+
+135
+00:02:02,560 --> 00:02:04,149
+I'm paying in Shopify transaction fees.
+You can connect all of your ad platforms
+
+136
+00:02:04,149 --> 00:02:04,159
+You can connect all of your ad platforms
+ 
+
+137
+00:02:04,159 --> 00:02:05,749
+You can connect all of your ad platforms
+in just a click of a button. And all you
+
+138
+00:02:05,749 --> 00:02:05,759
+in just a click of a button. And all you
+ 
+
+139
+00:02:05,759 --> 00:02:07,350
+in just a click of a button. And all you
+have to do is enter in the exact amount
+
+140
+00:02:07,350 --> 00:02:07,360
+have to do is enter in the exact amount
+ 
+
+141
+00:02:07,360 --> 00:02:09,109
+have to do is enter in the exact amount
+it costs you to fulfill all of your
+
+142
+00:02:09,109 --> 00:02:09,119
+it costs you to fulfill all of your
+ 
+
+143
+00:02:09,119 --> 00:02:10,550
+it costs you to fulfill all of your
+products on your store, and everything
+
+144
+00:02:10,550 --> 00:02:10,560
+products on your store, and everything
+ 
+
+145
+00:02:10,560 --> 00:02:12,229
+products on your store, and everything
+will be synced automatically, so you
+
+146
+00:02:12,229 --> 00:02:12,239
+will be synced automatically, so you
+ 
+
+147
+00:02:12,239 --> 00:02:13,990
+will be synced automatically, so you
+know exactly how much you're making or
+
+148
+00:02:13,990 --> 00:02:14,000
+know exactly how much you're making or
+ 
+
+149
+00:02:14,000 --> 00:02:15,990
+know exactly how much you're making or
+losing every single day. This way, you
+
+150
+00:02:15,990 --> 00:02:16,000
+losing every single day. This way, you
+ 
+
+151
+00:02:16,000 --> 00:02:17,430
+losing every single day. This way, you
+can make the proper decisions when
+
+152
+00:02:17,430 --> 00:02:17,440
+can make the proper decisions when
+ 
+
+153
+00:02:17,440 --> 00:02:18,790
+can make the proper decisions when
+you're running ads for your store. If
+
+154
+00:02:18,790 --> 00:02:18,800
+you're running ads for your store. If
+ 
+
+155
+00:02:18,800 --> 00:02:20,070
+you're running ads for your store. If
+you want to give this app a try, feel
+
+156
+00:02:20,070 --> 00:02:20,080
+you want to give this app a try, feel
+ 
+
+157
+00:02:20,080 --> 00:02:21,830
+you want to give this app a try, feel
+free to use my link down below to get a
+
+158
+00:02:21,830 --> 00:02:21,840
+free to use my link down below to get a
+ 
+
+159
+00:02:21,840 --> 00:02:23,270
+free to use my link down below to get a
+free trial. So, first things first, you
+
+160
+00:02:23,270 --> 00:02:23,280
+free trial. So, first things first, you
+ 
+
+161
+00:02:23,280 --> 00:02:24,869
+free trial. So, first things first, you
+want to find some good video ads that
+
+162
+00:02:24,869 --> 00:02:24,879
+want to find some good video ads that
+ 
+
+163
+00:02:24,879 --> 00:02:26,869
+want to find some good video ads that
+you can model after from a successful
+
+164
+00:02:26,869 --> 00:02:26,879
+you can model after from a successful
+ 
+
+165
+00:02:26,879 --> 00:02:28,150
+you can model after from a successful
+brand. Because the last thing you want
+
+166
+00:02:28,150 --> 00:02:28,160
+brand. Because the last thing you want
+ 
+
+167
+00:02:28,160 --> 00:02:30,309
+brand. Because the last thing you want
+to do is copy the movements from an ad
+
+168
+00:02:30,309 --> 00:02:30,319
+to do is copy the movements from an ad
+ 
+
+169
+00:02:30,319 --> 00:02:32,070
+to do is copy the movements from an ad
+concept that's not even proven to work.
+
+170
+00:02:32,070 --> 00:02:32,080
+concept that's not even proven to work.
+ 
+
+171
+00:02:32,080 --> 00:02:33,750
+concept that's not even proven to work.
+And one of the easiest ways to find a
+
+172
+00:02:33,750 --> 00:02:33,760
+And one of the easiest ways to find a
+ 
+
+173
+00:02:33,760 --> 00:02:35,750
+And one of the easiest ways to find a
+bunch of ads with winning concepts is by
+
+174
+00:02:35,750 --> 00:02:35,760
+bunch of ads with winning concepts is by
+ 
+
+175
+00:02:35,760 --> 00:02:37,430
+bunch of ads with winning concepts is by
+using Monana because they have a ton of
+
+176
+00:02:37,430 --> 00:02:37,440
+using Monana because they have a ton of
+ 
+
+177
+00:02:37,440 --> 00:02:39,190
+using Monana because they have a ton of
+filters we can choose from to find what
+
+178
+00:02:39,190 --> 00:02:39,200
+filters we can choose from to find what
+ 
+
+179
+00:02:39,200 --> 00:02:40,470
+filters we can choose from to find what
+we're looking for. And me personally,
+
+180
+00:02:40,470 --> 00:02:40,480
+we're looking for. And me personally,
+ 
+
+181
+00:02:40,480 --> 00:02:41,670
+we're looking for. And me personally,
+I'm going to go in their Tik Tok
+
+182
+00:02:41,670 --> 00:02:41,680
+I'm going to go in their Tik Tok
+ 
+
+183
+00:02:41,680 --> 00:02:43,509
+I'm going to go in their Tik Tok
+database because Tik Tok has a ton of
+
+184
+00:02:43,509 --> 00:02:43,519
+database because Tik Tok has a ton of
+ 
+
+185
+00:02:43,519 --> 00:02:45,670
+database because Tik Tok has a ton of
+UGC content that we can model after. And
+
+186
+00:02:45,670 --> 00:02:45,680
+UGC content that we can model after. And
+ 
+
+187
+00:02:45,680 --> 00:02:46,790
+UGC content that we can model after. And
+I'm just going to filter all of these
+
+188
+00:02:46,790 --> 00:02:46,800
+I'm just going to filter all of these
+ 
+
+189
+00:02:46,800 --> 00:02:48,470
+I'm just going to filter all of these
+videos by United States. I'm going to
+
+190
+00:02:48,470 --> 00:02:48,480
+videos by United States. I'm going to
+ 
+
+191
+00:02:48,480 --> 00:02:50,150
+videos by United States. I'm going to
+select medium engagement so I know that
+
+192
+00:02:50,150 --> 00:02:50,160
+select medium engagement so I know that
+ 
+
+193
+00:02:50,160 --> 00:02:51,670
+select medium engagement so I know that
+there's some traction with some of these
+
+194
+00:02:51,670 --> 00:02:51,680
+there's some traction with some of these
+ 
+
+195
+00:02:51,680 --> 00:02:53,190
+there's some traction with some of these
+videos. And then I'm going to type in a
+
+196
+00:02:53,190 --> 00:02:53,200
+videos. And then I'm going to type in a
+ 
+
+197
+00:02:53,200 --> 00:02:55,430
+videos. And then I'm going to type in a
+keyword like OOTD which stands for
+
+198
+00:02:55,430 --> 00:02:55,440
+keyword like OOTD which stands for
+ 
+
+199
+00:02:55,440 --> 00:02:57,270
+keyword like OOTD which stands for
+outfit of the day because these style of
+
+200
+00:02:57,270 --> 00:02:57,280
+outfit of the day because these style of
+ 
+
+201
+00:02:57,280 --> 00:02:59,190
+outfit of the day because these style of
+videos have a really consistent motion
+
+202
+00:02:59,190 --> 00:02:59,200
+videos have a really consistent motion
+ 
+
+203
+00:02:59,200 --> 00:03:00,790
+videos have a really consistent motion
+that's going to work very well with
+
+204
+00:03:00,790 --> 00:03:00,800
+that's going to work very well with
+ 
+
+205
+00:03:00,800 --> 00:03:02,470
+that's going to work very well with
+motion control. Now to get the best
+
+206
+00:03:02,470 --> 00:03:02,480
+motion control. Now to get the best
+ 
+
+207
+00:03:02,480 --> 00:03:04,070
+motion control. Now to get the best
+results it's very important that you
+
+208
+00:03:04,070 --> 00:03:04,080
+results it's very important that you
+ 
+
+209
+00:03:04,080 --> 00:03:05,750
+results it's very important that you
+find videos such as this one where
+
+210
+00:03:05,750 --> 00:03:05,760
+find videos such as this one where
+ 
+
+211
+00:03:05,760 --> 00:03:07,750
+find videos such as this one where
+there's absolutely no cuts in between
+
+212
+00:03:07,750 --> 00:03:07,760
+there's absolutely no cuts in between
+ 
+
+213
+00:03:07,760 --> 00:03:09,190
+there's absolutely no cuts in between
+the clips because if you find a video
+
+214
+00:03:09,190 --> 00:03:09,200
+the clips because if you find a video
+ 
+
+215
+00:03:09,200 --> 00:03:10,790
+the clips because if you find a video
+with a ton of different cuts, it's just
+
+216
+00:03:10,790 --> 00:03:10,800
+with a ton of different cuts, it's just
+ 
+
+217
+00:03:10,800 --> 00:03:12,229
+with a ton of different cuts, it's just
+going to mess everything up and you're
+
+218
+00:03:12,229 --> 00:03:12,239
+going to mess everything up and you're
+ 
+
+219
+00:03:12,239 --> 00:03:13,589
+going to mess everything up and you're
+not going to get good results. So this
+
+220
+00:03:13,589 --> 00:03:13,599
+not going to get good results. So this
+ 
+
+221
+00:03:13,599 --> 00:03:14,869
+not going to get good results. So this
+video that we're looking at right here
+
+222
+00:03:14,869 --> 00:03:14,879
+video that we're looking at right here
+ 
+
+223
+00:03:14,879 --> 00:03:16,790
+video that we're looking at right here
+is the perfect example of what I like to
+
+224
+00:03:16,790 --> 00:03:16,800
+is the perfect example of what I like to
+ 
+
+225
+00:03:16,800 --> 00:03:18,229
+is the perfect example of what I like to
+look for. And from the looks of it, I
+
+226
+00:03:18,229 --> 00:03:18,239
+look for. And from the looks of it, I
+ 
+
+227
+00:03:18,239 --> 00:03:19,910
+look for. And from the looks of it, I
+think it's really successful cuz it has
+
+228
+00:03:19,910 --> 00:03:19,920
+think it's really successful cuz it has
+ 
+
+229
+00:03:19,920 --> 00:03:21,830
+think it's really successful cuz it has
+literally 4 million views. If we get a
+
+230
+00:03:21,830 --> 00:03:21,840
+literally 4 million views. If we get a
+ 
+
+231
+00:03:21,840 --> 00:03:23,430
+literally 4 million views. If we get a
+closer look, we can see the brand that's
+
+232
+00:03:23,430 --> 00:03:23,440
+closer look, we can see the brand that's
+ 
+
+233
+00:03:23,440 --> 00:03:25,110
+closer look, we can see the brand that's
+actually behind this video ad. And this
+
+234
+00:03:25,110 --> 00:03:25,120
+actually behind this video ad. And this
+ 
+
+235
+00:03:25,120 --> 00:03:26,790
+actually behind this video ad. And this
+brand is called Mother Denim. And I'm
+
+236
+00:03:26,790 --> 00:03:26,800
+brand is called Mother Denim. And I'm
+ 
+
+237
+00:03:26,800 --> 00:03:28,470
+brand is called Mother Denim. And I'm
+just going to quickly copy the URL of
+
+238
+00:03:28,470 --> 00:03:28,480
+just going to quickly copy the URL of
+ 
+
+239
+00:03:28,480 --> 00:03:29,990
+just going to quickly copy the URL of
+this brand just cuz I want to make sure
+
+240
+00:03:29,990 --> 00:03:30,000
+this brand just cuz I want to make sure
+ 
+
+241
+00:03:30,000 --> 00:03:31,509
+this brand just cuz I want to make sure
+if they're actually successful or not.
+
+242
+00:03:31,509 --> 00:03:31,519
+if they're actually successful or not.
+ 
+
+243
+00:03:31,519 --> 00:03:32,630
+if they're actually successful or not.
+So I'm just going to plug it into the
+
+244
+00:03:32,630 --> 00:03:32,640
+So I'm just going to plug it into the
+ 
+
+245
+00:03:32,640 --> 00:03:34,470
+So I'm just going to plug it into the
+trending shops on Mana. And here we can
+
+246
+00:03:34,470 --> 00:03:34,480
+trending shops on Mana. And here we can
+ 
+
+247
+00:03:34,480 --> 00:03:36,630
+trending shops on Mana. And here we can
+see that they're doing $11,000 per day
+
+248
+00:03:36,630 --> 00:03:36,640
+see that they're doing $11,000 per day
+ 
+
+249
+00:03:36,640 --> 00:03:38,470
+see that they're doing $11,000 per day
+and they're doing around 400k visitors
+
+250
+00:03:38,470 --> 00:03:38,480
+and they're doing around 400k visitors
+ 
+
+251
+00:03:38,480 --> 00:03:39,990
+and they're doing around 400k visitors
+per month, which pretty much tells me
+
+252
+00:03:39,990 --> 00:03:40,000
+per month, which pretty much tells me
+ 
+
+253
+00:03:40,000 --> 00:03:41,509
+per month, which pretty much tells me
+that they're absolutely killing it. And
+
+254
+00:03:41,509 --> 00:03:41,519
+that they're absolutely killing it. And
+ 
+
+255
+00:03:41,519 --> 00:03:43,270
+that they're absolutely killing it. And
+I know I definitely want to copy this ad
+
+256
+00:03:43,270 --> 00:03:43,280
+I know I definitely want to copy this ad
+ 
+
+257
+00:03:43,280 --> 00:03:45,030
+I know I definitely want to copy this ad
+format for my own product. And then what
+
+258
+00:03:45,030 --> 00:03:45,040
+format for my own product. And then what
+ 
+
+259
+00:03:45,040 --> 00:03:46,470
+format for my own product. And then what
+I'm going to do is just simply download
+
+260
+00:03:46,470 --> 00:03:46,480
+I'm going to do is just simply download
+ 
+
+261
+00:03:46,480 --> 00:03:47,830
+I'm going to do is just simply download
+this video. Then we're going to open a
+
+262
+00:03:47,830 --> 00:03:47,840
+this video. Then we're going to open a
+ 
+
+263
+00:03:47,840 --> 00:03:49,589
+this video. Then we're going to open a
+new window on chat GPT. And then I'm
+
+264
+00:03:49,589 --> 00:03:49,599
+new window on chat GPT. And then I'm
+ 
+
+265
+00:03:49,599 --> 00:03:51,190
+new window on chat GPT. And then I'm
+going to drag that video over and then
+
+266
+00:03:51,190 --> 00:03:51,200
+going to drag that video over and then
+ 
+
+267
+00:03:51,200 --> 00:03:53,670
+going to drag that video over and then
+simply say extract the first frame. And
+
+268
+00:03:53,670 --> 00:03:53,680
+simply say extract the first frame. And
+ 
+
+269
+00:03:53,680 --> 00:03:54,869
+simply say extract the first frame. And
+after a few seconds, we're going to have
+
+270
+00:03:54,869 --> 00:03:54,879
+after a few seconds, we're going to have
+ 
+
+271
+00:03:54,879 --> 00:03:56,390
+after a few seconds, we're going to have
+this downloadable link, which is going
+
+272
+00:03:56,390 --> 00:03:56,400
+this downloadable link, which is going
+ 
+
+273
+00:03:56,400 --> 00:03:58,149
+this downloadable link, which is going
+to give us the very first frame from
+
+274
+00:03:58,149 --> 00:03:58,159
+to give us the very first frame from
+ 
+
+275
+00:03:58,159 --> 00:03:59,830
+to give us the very first frame from
+that video we want to copy. And the
+
+276
+00:03:59,830 --> 00:03:59,840
+that video we want to copy. And the
+ 
+
+277
+00:03:59,840 --> 00:04:01,110
+that video we want to copy. And the
+reason I'm doing this is so that we
+
+278
+00:04:01,110 --> 00:04:01,120
+reason I'm doing this is so that we
+ 
+
+279
+00:04:01,120 --> 00:04:02,869
+reason I'm doing this is so that we
+could take the exact same angle of that
+
+280
+00:04:02,869 --> 00:04:02,879
+could take the exact same angle of that
+ 
+
+281
+00:04:02,879 --> 00:04:04,470
+could take the exact same angle of that
+photo, but replace it with our own
+
+282
+00:04:04,470 --> 00:04:04,480
+photo, but replace it with our own
+ 
+
+283
+00:04:04,480 --> 00:04:05,990
+photo, but replace it with our own
+product just like this. So to make this
+
+284
+00:04:05,990 --> 00:04:06,000
+product just like this. So to make this
+ 
+
+285
+00:04:06,000 --> 00:04:07,750
+product just like this. So to make this
+work, you just want to get my GPT in the
+
+286
+00:04:07,750 --> 00:04:07,760
+work, you just want to get my GPT in the
+ 
+
+287
+00:04:07,760 --> 00:04:09,190
+work, you just want to get my GPT in the
+description below, which is completely
+
+288
+00:04:09,190 --> 00:04:09,200
+description below, which is completely
+ 
+
+289
+00:04:09,200 --> 00:04:10,390
+description below, which is completely
+for free. And what I'm going to do is
+
+290
+00:04:10,390 --> 00:04:10,400
+for free. And what I'm going to do is
+ 
+
+291
+00:04:10,400 --> 00:04:11,990
+for free. And what I'm going to do is
+just upload that first frame that we
+
+292
+00:04:11,990 --> 00:04:12,000
+just upload that first frame that we
+ 
+
+293
+00:04:12,000 --> 00:04:13,270
+just upload that first frame that we
+just downloaded earlier. And let's
+
+294
+00:04:13,270 --> 00:04:13,280
+just downloaded earlier. And let's
+ 
+
+295
+00:04:13,280 --> 00:04:14,710
+just downloaded earlier. And let's
+assume that this is the product that I'm
+
+296
+00:04:14,710 --> 00:04:14,720
+assume that this is the product that I'm
+ 
+
+297
+00:04:14,720 --> 00:04:16,229
+assume that this is the product that I'm
+selling on my store and I want this
+
+298
+00:04:16,229 --> 00:04:16,239
+selling on my store and I want this
+ 
+
+299
+00:04:16,239 --> 00:04:17,749
+selling on my store and I want this
+model to be wearing it. Then I'm simply
+
+300
+00:04:17,749 --> 00:04:17,759
+model to be wearing it. Then I'm simply
+ 
+
+301
+00:04:17,759 --> 00:04:19,030
+model to be wearing it. Then I'm simply
+just going to take a screenshot of that
+
+302
+00:04:19,030 --> 00:04:19,040
+just going to take a screenshot of that
+ 
+
+303
+00:04:19,040 --> 00:04:20,390
+just going to take a screenshot of that
+and then I'm also going to upload it
+
+304
+00:04:20,390 --> 00:04:20,400
+and then I'm also going to upload it
+ 
+
+305
+00:04:20,400 --> 00:04:22,310
+and then I'm also going to upload it
+directly into chat GPT. And then I just
+
+306
+00:04:22,310 --> 00:04:22,320
+directly into chat GPT. And then I just
+ 
+
+307
+00:04:22,320 --> 00:04:23,830
+directly into chat GPT. And then I just
+wrote out this very simple prompt where
+
+308
+00:04:23,830 --> 00:04:23,840
+wrote out this very simple prompt where
+ 
+
+309
+00:04:23,840 --> 00:04:25,830
+wrote out this very simple prompt where
+I say create an image prompt cloning the
+
+310
+00:04:25,830 --> 00:04:25,840
+I say create an image prompt cloning the
+ 
+
+311
+00:04:25,840 --> 00:04:27,510
+I say create an image prompt cloning the
+first image but replacing her clothes
+
+312
+00:04:27,510 --> 00:04:27,520
+first image but replacing her clothes
+ 
+
+313
+00:04:27,520 --> 00:04:28,950
+first image but replacing her clothes
+with this dress. And after a couple of
+
+314
+00:04:28,950 --> 00:04:28,960
+with this dress. And after a couple of
+ 
+
+315
+00:04:28,960 --> 00:04:30,790
+with this dress. And after a couple of
+seconds, we now have a full prompt that
+
+316
+00:04:30,790 --> 00:04:30,800
+seconds, we now have a full prompt that
+ 
+
+317
+00:04:30,800 --> 00:04:32,150
+seconds, we now have a full prompt that
+we can either copy and paste into
+
+318
+00:04:32,150 --> 00:04:32,160
+we can either copy and paste into
+ 
+
+319
+00:04:32,160 --> 00:04:33,990
+we can either copy and paste into
+chatbt. But me personally, I'm going to
+
+320
+00:04:33,990 --> 00:04:34,000
+chatbt. But me personally, I'm going to
+ 
+
+321
+00:04:34,000 --> 00:04:35,909
+chatbt. But me personally, I'm going to
+use Google Gemini, which I think is the
+
+322
+00:04:35,909 --> 00:04:35,919
+use Google Gemini, which I think is the
+ 
+
+323
+00:04:35,919 --> 00:04:37,670
+use Google Gemini, which I think is the
+best image generator out right now. So
+
+324
+00:04:37,670 --> 00:04:37,680
+best image generator out right now. So
+ 
+
+325
+00:04:37,680 --> 00:04:38,950
+best image generator out right now. So
+we're going to paste in that prompt. And
+
+326
+00:04:38,950 --> 00:04:38,960
+we're going to paste in that prompt. And
+ 
+
+327
+00:04:38,960 --> 00:04:40,310
+we're going to paste in that prompt. And
+then I'm going to upload the first frame
+
+328
+00:04:40,310 --> 00:04:40,320
+then I'm going to upload the first frame
+ 
+
+329
+00:04:40,320 --> 00:04:41,909
+then I'm going to upload the first frame
+that we extracted earlier. And then I'm
+
+330
+00:04:41,909 --> 00:04:41,919
+that we extracted earlier. And then I'm
+ 
+
+331
+00:04:41,919 --> 00:04:43,430
+that we extracted earlier. And then I'm
+also going to drag over that screenshot
+
+332
+00:04:43,430 --> 00:04:43,440
+also going to drag over that screenshot
+ 
+
+333
+00:04:43,440 --> 00:04:45,510
+also going to drag over that screenshot
+of the dress that we want applied onto
+
+334
+00:04:45,510 --> 00:04:45,520
+of the dress that we want applied onto
+ 
+
+335
+00:04:45,520 --> 00:04:46,629
+of the dress that we want applied onto
+that girl. And you want to make sure
+
+336
+00:04:46,629 --> 00:04:46,639
+that girl. And you want to make sure
+ 
+
+337
+00:04:46,639 --> 00:04:48,150
+that girl. And you want to make sure
+that you're using the pro model so that
+
+338
+00:04:48,150 --> 00:04:48,160
+that you're using the pro model so that
+ 
+
+339
+00:04:48,160 --> 00:04:49,590
+that you're using the pro model so that
+you can get the best results. Press
+
+340
+00:04:49,590 --> 00:04:49,600
+you can get the best results. Press
+ 
+
+341
+00:04:49,600 --> 00:04:51,189
+you can get the best results. Press
+enter. And then now we wait for the
+
+342
+00:04:51,189 --> 00:04:51,199
+enter. And then now we wait for the
+ 
+
+343
+00:04:51,199 --> 00:04:52,469
+enter. And then now we wait for the
+results. And after submitting that
+
+344
+00:04:52,469 --> 00:04:52,479
+results. And after submitting that
+ 
+
+345
+00:04:52,479 --> 00:04:54,390
+results. And after submitting that
+entire prompt, we now have an image that
+
+346
+00:04:54,390 --> 00:04:54,400
+entire prompt, we now have an image that
+ 
+
+347
+00:04:54,400 --> 00:04:56,230
+entire prompt, we now have an image that
+looks pretty much identical to the very
+
+348
+00:04:56,230 --> 00:04:56,240
+looks pretty much identical to the very
+ 
+
+349
+00:04:56,240 --> 00:04:57,909
+looks pretty much identical to the very
+first frame that we extracted. And now
+
+350
+00:04:57,909 --> 00:04:57,919
+first frame that we extracted. And now
+ 
+
+351
+00:04:57,919 --> 00:04:59,430
+first frame that we extracted. And now
+all we have to do from here is apply
+
+352
+00:04:59,430 --> 00:04:59,440
+all we have to do from here is apply
+ 
+
+353
+00:04:59,440 --> 00:05:01,110
+all we have to do from here is apply
+some motion control. So now we need to
+
+354
+00:05:01,110 --> 00:05:01,120
+some motion control. So now we need to
+ 
+
+355
+00:05:01,120 --> 00:05:02,390
+some motion control. So now we need to
+head over to a website called
+
+356
+00:05:02,390 --> 00:05:02,400
+head over to a website called
+ 
+
+357
+00:05:02,400 --> 00:05:04,469
+head over to a website called
+cleaningai.com. I'll leave a link in the
+
+358
+00:05:04,469 --> 00:05:04,479
+cleaningai.com. I'll leave a link in the
+ 
+
+359
+00:05:04,479 --> 00:05:05,990
+cleaningai.com. I'll leave a link in the
+description below. And with my link, you
+
+360
+00:05:05,990 --> 00:05:06,000
+description below. And with my link, you
+ 
+
+361
+00:05:06,000 --> 00:05:07,350
+description below. And with my link, you
+can actually get some free credits so
+
+362
+00:05:07,350 --> 00:05:07,360
+can actually get some free credits so
+ 
+
+363
+00:05:07,360 --> 00:05:08,629
+can actually get some free credits so
+that you can generate your first few
+
+364
+00:05:08,629 --> 00:05:08,639
+that you can generate your first few
+ 
+
+365
+00:05:08,639 --> 00:05:10,070
+that you can generate your first few
+clips for free. But I would strongly
+
+366
+00:05:10,070 --> 00:05:10,080
+clips for free. But I would strongly
+ 
+
+367
+00:05:10,080 --> 00:05:11,670
+clips for free. But I would strongly
+recommend going with a paid plan which
+
+368
+00:05:11,670 --> 00:05:11,680
+recommend going with a paid plan which
+ 
+
+369
+00:05:11,680 --> 00:05:13,909
+recommend going with a paid plan which
+starts at like $7 which is way cheaper
+
+370
+00:05:13,909 --> 00:05:13,919
+starts at like $7 which is way cheaper
+ 
+
+371
+00:05:13,919 --> 00:05:15,510
+starts at like $7 which is way cheaper
+than what you'll ever find from pretty
+
+372
+00:05:15,510 --> 00:05:15,520
+than what you'll ever find from pretty
+ 
+
+373
+00:05:15,520 --> 00:05:17,029
+than what you'll ever find from pretty
+much any other tool that will help you
+
+374
+00:05:17,029 --> 00:05:17,039
+much any other tool that will help you
+ 
+
+375
+00:05:17,039 --> 00:05:18,790
+much any other tool that will help you
+make ads with AI. Once you're inside the
+
+376
+00:05:18,790 --> 00:05:18,800
+make ads with AI. Once you're inside the
+ 
+
+377
+00:05:18,800 --> 00:05:20,310
+make ads with AI. Once you're inside the
+platform on the lefth hand side, make
+
+378
+00:05:20,310 --> 00:05:20,320
+platform on the lefth hand side, make
+ 
+
+379
+00:05:20,320 --> 00:05:22,230
+platform on the lefth hand side, make
+sure you're on the AI video generator.
+
+380
+00:05:22,230 --> 00:05:22,240
+sure you're on the AI video generator.
+ 
+
+381
+00:05:22,240 --> 00:05:24,070
+sure you're on the AI video generator.
+Then go up here and find that tab that
+
+382
+00:05:24,070 --> 00:05:24,080
+Then go up here and find that tab that
+ 
+
+383
+00:05:24,080 --> 00:05:25,830
+Then go up here and find that tab that
+says motion control. And on this left
+
+384
+00:05:25,830 --> 00:05:25,840
+says motion control. And on this left
+ 
+
+385
+00:05:25,840 --> 00:05:27,590
+says motion control. And on this left
+box is where we want to upload this
+
+386
+00:05:27,590 --> 00:05:27,600
+box is where we want to upload this
+ 
+
+387
+00:05:27,600 --> 00:05:29,350
+box is where we want to upload this
+original video ad that we found off of
+
+388
+00:05:29,350 --> 00:05:29,360
+original video ad that we found off of
+ 
+
+389
+00:05:29,360 --> 00:05:31,350
+original video ad that we found off of
+Mana. And once that is uploaded, we then
+
+390
+00:05:31,350 --> 00:05:31,360
+Mana. And once that is uploaded, we then
+ 
+
+391
+00:05:31,360 --> 00:05:32,870
+Mana. And once that is uploaded, we then
+want to upload this image of the girl
+
+392
+00:05:32,870 --> 00:05:32,880
+want to upload this image of the girl
+ 
+
+393
+00:05:32,880 --> 00:05:34,390
+want to upload this image of the girl
+wearing our product. And by the way, if
+
+394
+00:05:34,390 --> 00:05:34,400
+wearing our product. And by the way, if
+ 
+
+395
+00:05:34,400 --> 00:05:35,590
+wearing our product. And by the way, if
+you want to know how to remove this
+
+396
+00:05:35,590 --> 00:05:35,600
+you want to know how to remove this
+ 
+
+397
+00:05:35,600 --> 00:05:37,350
+you want to know how to remove this
+watermark from Gemini, just upload that
+
+398
+00:05:37,350 --> 00:05:37,360
+watermark from Gemini, just upload that
+ 
+
+399
+00:05:37,360 --> 00:05:39,430
+watermark from Gemini, just upload that
+photo directly into canva.com and then
+
+400
+00:05:39,430 --> 00:05:39,440
+photo directly into canva.com and then
+ 
+
+401
+00:05:39,440 --> 00:05:41,270
+photo directly into canva.com and then
+use their magic erasing tool so that you
+
+402
+00:05:41,270 --> 00:05:41,280
+use their magic erasing tool so that you
+ 
+
+403
+00:05:41,280 --> 00:05:42,629
+use their magic erasing tool so that you
+could just brush over that watermark.
+
+404
+00:05:42,629 --> 00:05:42,639
+could just brush over that watermark.
+ 
+
+405
+00:05:42,639 --> 00:05:44,150
+could just brush over that watermark.
+Click erase and now the watermark is
+
+406
+00:05:44,150 --> 00:05:44,160
+Click erase and now the watermark is
+ 
+
+407
+00:05:44,160 --> 00:05:45,510
+Click erase and now the watermark is
+gone. And now that we have our source
+
+408
+00:05:45,510 --> 00:05:45,520
+gone. And now that we have our source
+ 
+
+409
+00:05:45,520 --> 00:05:47,270
+gone. And now that we have our source
+video uploaded and we have the image of
+
+410
+00:05:47,270 --> 00:05:47,280
+video uploaded and we have the image of
+ 
+
+411
+00:05:47,280 --> 00:05:48,710
+video uploaded and we have the image of
+the girl who's wearing our product,
+
+412
+00:05:48,710 --> 00:05:48,720
+the girl who's wearing our product,
+ 
+
+413
+00:05:48,720 --> 00:05:49,830
+the girl who's wearing our product,
+that's pretty much all we need to do
+
+414
+00:05:49,830 --> 00:05:49,840
+that's pretty much all we need to do
+ 
+
+415
+00:05:49,840 --> 00:05:51,270
+that's pretty much all we need to do
+from here. You don't need to enter in
+
+416
+00:05:51,270 --> 00:05:51,280
+from here. You don't need to enter in
+ 
+
+417
+00:05:51,280 --> 00:05:53,110
+from here. You don't need to enter in
+any type of prompt as I don't really see
+
+418
+00:05:53,110 --> 00:05:53,120
+any type of prompt as I don't really see
+ 
+
+419
+00:05:53,120 --> 00:05:54,870
+any type of prompt as I don't really see
+any differences in results when I do
+
+420
+00:05:54,870 --> 00:05:54,880
+any differences in results when I do
+ 
+
+421
+00:05:54,880 --> 00:05:56,550
+any differences in results when I do
+that. And I also recommend checking this
+
+422
+00:05:56,550 --> 00:05:56,560
+that. And I also recommend checking this
+ 
+
+423
+00:05:56,560 --> 00:05:58,550
+that. And I also recommend checking this
+box that says character orientation
+
+424
+00:05:58,550 --> 00:05:58,560
+box that says character orientation
+ 
+
+425
+00:05:58,560 --> 00:06:00,230
+box that says character orientation
+matches video. And then down here, we
+
+426
+00:06:00,230 --> 00:06:00,240
+matches video. And then down here, we
+ 
+
+427
+00:06:00,240 --> 00:06:01,510
+matches video. And then down here, we
+have the ability to select different
+
+428
+00:06:01,510 --> 00:06:01,520
+have the ability to select different
+ 
+
+429
+00:06:01,520 --> 00:06:02,790
+have the ability to select different
+qualities. I would just recommend
+
+430
+00:06:02,790 --> 00:06:02,800
+qualities. I would just recommend
+ 
+
+431
+00:06:02,800 --> 00:06:04,629
+qualities. I would just recommend
+sticking with 720p so that you can
+
+432
+00:06:04,629 --> 00:06:04,639
+sticking with 720p so that you can
+ 
+
+433
+00:06:04,639 --> 00:06:06,309
+sticking with 720p so that you can
+conserve your credits. Only select one
+
+434
+00:06:06,309 --> 00:06:06,319
+conserve your credits. Only select one
+ 
+
+435
+00:06:06,319 --> 00:06:07,830
+conserve your credits. Only select one
+output and you can choose whether you
+
+436
+00:06:07,830 --> 00:06:07,840
+output and you can choose whether you
+ 
+
+437
+00:06:07,840 --> 00:06:09,430
+output and you can choose whether you
+want to preserve the same audio from
+
+438
+00:06:09,430 --> 00:06:09,440
+want to preserve the same audio from
+ 
+
+439
+00:06:09,440 --> 00:06:11,189
+want to preserve the same audio from
+your source clip or not. And here's the
+
+440
+00:06:11,189 --> 00:06:11,199
+your source clip or not. And here's the
+ 
+
+441
+00:06:11,199 --> 00:06:12,790
+your source clip or not. And here's the
+results of how this clip came out. And
+
+442
+00:06:12,790 --> 00:06:12,800
+results of how this clip came out. And
+ 
+
+443
+00:06:12,800 --> 00:06:14,309
+results of how this clip came out. And
+you can see that it looks insanely
+
+444
+00:06:14,309 --> 00:06:14,319
+you can see that it looks insanely
+ 
+
+445
+00:06:14,319 --> 00:06:15,909
+you can see that it looks insanely
+realistic and it's pretty insane how
+
+446
+00:06:15,909 --> 00:06:15,919
+realistic and it's pretty insane how
+ 
+
+447
+00:06:15,919 --> 00:06:17,830
+realistic and it's pretty insane how
+it's copying the exact same movements
+
+448
+00:06:17,830 --> 00:06:17,840
+it's copying the exact same movements
+ 
+
+449
+00:06:17,840 --> 00:06:20,150
+it's copying the exact same movements
+and still preserving this mirror very
+
+450
+00:06:20,150 --> 00:06:20,160
+and still preserving this mirror very
+ 
+
+451
+00:06:20,160 --> 00:06:21,909
+and still preserving this mirror very
+accurately just like in the original
+
+452
+00:06:21,909 --> 00:06:21,919
+accurately just like in the original
+ 
+
+453
+00:06:21,919 --> 00:06:23,590
+accurately just like in the original
+video. Now, keep in mind that this is
+
+454
+00:06:23,590 --> 00:06:23,600
+video. Now, keep in mind that this is
+ 
+
+455
+00:06:23,600 --> 00:06:25,189
+video. Now, keep in mind that this is
+just an example and I would never
+
+456
+00:06:25,189 --> 00:06:25,199
+just an example and I would never
+ 
+
+457
+00:06:25,199 --> 00:06:27,270
+just an example and I would never
+recommend running an ad using the exact
+
+458
+00:06:27,270 --> 00:06:27,280
+recommend running an ad using the exact
+ 
+
+459
+00:06:27,280 --> 00:06:29,270
+recommend running an ad using the exact
+same background as your source footage.
+
+460
+00:06:29,270 --> 00:06:29,280
+same background as your source footage.
+ 
+
+461
+00:06:29,280 --> 00:06:31,029
+same background as your source footage.
+And we can simply use Gemini to change
+
+462
+00:06:31,029 --> 00:06:31,039
+And we can simply use Gemini to change
+ 
+
+463
+00:06:31,039 --> 00:06:32,710
+And we can simply use Gemini to change
+the background like this. This way we
+
+464
+00:06:32,710 --> 00:06:32,720
+the background like this. This way we
+ 
+
+465
+00:06:32,720 --> 00:06:34,710
+the background like this. This way we
+have a fully unique video ad with our
+
+466
+00:06:34,710 --> 00:06:34,720
+have a fully unique video ad with our
+ 
+
+467
+00:06:34,720 --> 00:06:36,309
+have a fully unique video ad with our
+own actor in their own home.
+
+468
+00:06:36,309 --> 00:06:36,319
+own actor in their own home.
+ 
+
+469
+00:06:36,319 --> 00:06:38,390
+own actor in their own home.
+>> Outfit of the day today wearing my
+
+470
+00:06:38,390 --> 00:06:38,400
+>> Outfit of the day today wearing my
+ 
+
+471
+00:06:38,400 --> 00:06:40,150
+>> Outfit of the day today wearing my
+favorite white dress. It's the most
+
+472
+00:06:40,150 --> 00:06:40,160
+favorite white dress. It's the most
+ 
+
+473
+00:06:40,160 --> 00:06:42,230
+favorite white dress. It's the most
+comfortable dress and also flattering.
+
+474
+00:06:42,230 --> 00:06:42,240
+comfortable dress and also flattering.
+ 
+
+475
+00:06:42,240 --> 00:06:43,830
+comfortable dress and also flattering.
+Love how it's kind of belted here and
+
+476
+00:06:43,830 --> 00:06:43,840
+Love how it's kind of belted here and
+ 
+
+477
+00:06:43,840 --> 00:06:44,950
+Love how it's kind of belted here and
+then flares at the bottom.
+
+478
+00:06:44,950 --> 00:06:44,960
+then flares at the bottom.
+ 
+
+479
+00:06:44,960 --> 00:06:46,550
+then flares at the bottom.
+>> And the possibilities are pretty endless
+
+480
+00:06:46,550 --> 00:06:46,560
+>> And the possibilities are pretty endless
+ 
+
+481
+00:06:46,560 --> 00:06:48,070
+>> And the possibilities are pretty endless
+because you could put your actor in
+
+482
+00:06:48,070 --> 00:06:48,080
+because you could put your actor in
+ 
+
+483
+00:06:48,080 --> 00:06:49,510
+because you could put your actor in
+whatever setting that you want, such as
+
+484
+00:06:49,510 --> 00:06:49,520
+whatever setting that you want, such as
+ 
+
+485
+00:06:49,520 --> 00:06:51,350
+whatever setting that you want, such as
+outer space or even in the middle of
+
+486
+00:06:51,350 --> 00:06:51,360
+outer space or even in the middle of
+ 
+
+487
+00:06:51,360 --> 00:06:53,350
+outer space or even in the middle of
+Antarctica. So, as you can see, it's not
+
+488
+00:06:53,350 --> 00:06:53,360
+Antarctica. So, as you can see, it's not
+ 
+
+489
+00:06:53,360 --> 00:06:55,029
+Antarctica. So, as you can see, it's not
+really hard to do. And now I'm going to
+
+490
+00:06:55,029 --> 00:06:55,039
+really hard to do. And now I'm going to
+ 
+
+491
+00:06:55,039 --> 00:06:56,710
+really hard to do. And now I'm going to
+show you just a couple of more use cases
+
+492
+00:06:56,710 --> 00:06:56,720
+show you just a couple of more use cases
+ 
+
+493
+00:06:56,720 --> 00:06:58,070
+show you just a couple of more use cases
+on how you can use this for your
+
+494
+00:06:58,070 --> 00:06:58,080
+on how you can use this for your
+ 
+
+495
+00:06:58,080 --> 00:06:59,350
+on how you can use this for your
+advantage. So, let's say I'm selling
+
+496
+00:06:59,350 --> 00:06:59,360
+advantage. So, let's say I'm selling
+ 
+
+497
+00:06:59,360 --> 00:07:01,029
+advantage. So, let's say I'm selling
+these pair of jeans on my store and I
+
+498
+00:07:01,029 --> 00:07:01,039
+these pair of jeans on my store and I
+ 
+
+499
+00:07:01,039 --> 00:07:03,110
+these pair of jeans on my store and I
+want to copy an ad with a proven format
+
+500
+00:07:03,110 --> 00:07:03,120
+want to copy an ad with a proven format
+ 
+
+501
+00:07:03,120 --> 00:07:04,629
+want to copy an ad with a proven format
+while wearing these jeans. I could just
+
+502
+00:07:04,629 --> 00:07:04,639
+while wearing these jeans. I could just
+ 
+
+503
+00:07:04,639 --> 00:07:06,309
+while wearing these jeans. I could just
+go back into Mana, filter all of these
+
+504
+00:07:06,309 --> 00:07:06,319
+go back into Mana, filter all of these
+ 
+
+505
+00:07:06,319 --> 00:07:08,150
+go back into Mana, filter all of these
+Facebook ads by videos only, and I want
+
+506
+00:07:08,150 --> 00:07:08,160
+Facebook ads by videos only, and I want
+ 
+
+507
+00:07:08,160 --> 00:07:09,510
+Facebook ads by videos only, and I want
+to make sure that all of these ads are
+
+508
+00:07:09,510 --> 00:07:09,520
+to make sure that all of these ads are
+ 
+
+509
+00:07:09,520 --> 00:07:11,029
+to make sure that all of these ads are
+still active. And then to narrow it down
+
+510
+00:07:11,029 --> 00:07:11,039
+still active. And then to narrow it down
+ 
+
+511
+00:07:11,039 --> 00:07:12,550
+still active. And then to narrow it down
+further so I can find what I actually
+
+512
+00:07:12,550 --> 00:07:12,560
+further so I can find what I actually
+ 
+
+513
+00:07:12,560 --> 00:07:14,230
+further so I can find what I actually
+want, I'm going to type in pants. This
+
+514
+00:07:14,230 --> 00:07:14,240
+want, I'm going to type in pants. This
+ 
+
+515
+00:07:14,240 --> 00:07:16,309
+want, I'm going to type in pants. This
+way, I have access and inspiration of
+
+516
+00:07:16,309 --> 00:07:16,319
+way, I have access and inspiration of
+ 
+
+517
+00:07:16,319 --> 00:07:18,469
+way, I have access and inspiration of
+all the ads that are advertising a pair
+
+518
+00:07:18,469 --> 00:07:18,479
+all the ads that are advertising a pair
+ 
+
+519
+00:07:18,479 --> 00:07:19,990
+all the ads that are advertising a pair
+of pants. And for example, let's just
+
+520
+00:07:19,990 --> 00:07:20,000
+of pants. And for example, let's just
+ 
+
+521
+00:07:20,000 --> 00:07:21,430
+of pants. And for example, let's just
+take a look at this ad and see what
+
+522
+00:07:21,430 --> 00:07:21,440
+take a look at this ad and see what
+ 
+
+523
+00:07:21,440 --> 00:07:22,790
+take a look at this ad and see what
+she's doing. So, you can see it's really
+
+524
+00:07:22,790 --> 00:07:22,800
+she's doing. So, you can see it's really
+ 
+
+525
+00:07:22,800 --> 00:07:24,469
+she's doing. So, you can see it's really
+simple. This girl is just backing up and
+
+526
+00:07:24,469 --> 00:07:24,479
+simple. This girl is just backing up and
+ 
+
+527
+00:07:24,479 --> 00:07:25,990
+simple. This girl is just backing up and
+then showing the features of the pants.
+
+528
+00:07:25,990 --> 00:07:26,000
+then showing the features of the pants.
+ 
+
+529
+00:07:26,000 --> 00:07:27,350
+then showing the features of the pants.
+But let's just assume that this was
+
+530
+00:07:27,350 --> 00:07:27,360
+But let's just assume that this was
+ 
+
+531
+00:07:27,360 --> 00:07:29,029
+But let's just assume that this was
+actually an ad concept that was working
+
+532
+00:07:29,029 --> 00:07:29,039
+actually an ad concept that was working
+ 
+
+533
+00:07:29,039 --> 00:07:30,550
+actually an ad concept that was working
+extremely well. Let me show you how we
+
+534
+00:07:30,550 --> 00:07:30,560
+extremely well. Let me show you how we
+ 
+
+535
+00:07:30,560 --> 00:07:32,230
+extremely well. Let me show you how we
+can easily recreate this using motion
+
+536
+00:07:32,230 --> 00:07:32,240
+can easily recreate this using motion
+ 
+
+537
+00:07:32,240 --> 00:07:33,510
+can easily recreate this using motion
+control. So once again, I'm just going
+
+538
+00:07:33,510 --> 00:07:33,520
+control. So once again, I'm just going
+ 
+
+539
+00:07:33,520 --> 00:07:35,029
+control. So once again, I'm just going
+to download this video clip. Then we're
+
+540
+00:07:35,029 --> 00:07:35,039
+to download this video clip. Then we're
+ 
+
+541
+00:07:35,039 --> 00:07:36,710
+to download this video clip. Then we're
+going to take it over to Chat GBT. Then
+
+542
+00:07:36,710 --> 00:07:36,720
+going to take it over to Chat GBT. Then
+ 
+
+543
+00:07:36,720 --> 00:07:38,469
+going to take it over to Chat GBT. Then
+I'm going to tell it to extract the very
+
+544
+00:07:38,469 --> 00:07:38,479
+I'm going to tell it to extract the very
+ 
+
+545
+00:07:38,479 --> 00:07:40,070
+I'm going to tell it to extract the very
+first frame. And here's how that photo
+
+546
+00:07:40,070 --> 00:07:40,080
+first frame. And here's how that photo
+ 
+
+547
+00:07:40,080 --> 00:07:41,670
+first frame. And here's how that photo
+turned out. And then just like before, I
+
+548
+00:07:41,670 --> 00:07:41,680
+turned out. And then just like before, I
+ 
+
+549
+00:07:41,680 --> 00:07:43,350
+turned out. And then just like before, I
+just uploaded that first frame and then
+
+550
+00:07:43,350 --> 00:07:43,360
+just uploaded that first frame and then
+ 
+
+551
+00:07:43,360 --> 00:07:44,950
+just uploaded that first frame and then
+a picture of the jeans that I'm selling.
+
+552
+00:07:44,950 --> 00:07:44,960
+a picture of the jeans that I'm selling.
+ 
+
+553
+00:07:44,960 --> 00:07:46,390
+a picture of the jeans that I'm selling.
+And then I simply said to clone the
+
+554
+00:07:46,390 --> 00:07:46,400
+And then I simply said to clone the
+ 
+
+555
+00:07:46,400 --> 00:07:47,990
+And then I simply said to clone the
+image and replace her pants with those
+
+556
+00:07:47,990 --> 00:07:48,000
+image and replace her pants with those
+ 
+
+557
+00:07:48,000 --> 00:07:49,270
+image and replace her pants with those
+jeans. And then it gave me the full
+
+558
+00:07:49,270 --> 00:07:49,280
+jeans. And then it gave me the full
+ 
+
+559
+00:07:49,280 --> 00:07:51,110
+jeans. And then it gave me the full
+prompt once again. However, I added a
+
+560
+00:07:51,110 --> 00:07:51,120
+prompt once again. However, I added a
+ 
+
+561
+00:07:51,120 --> 00:07:52,629
+prompt once again. However, I added a
+slight twist where I wanted to change
+
+562
+00:07:52,629 --> 00:07:52,639
+slight twist where I wanted to change
+ 
+
+563
+00:07:52,639 --> 00:07:54,309
+slight twist where I wanted to change
+the way the actor looks while still
+
+564
+00:07:54,309 --> 00:07:54,319
+the way the actor looks while still
+ 
+
+565
+00:07:54,319 --> 00:07:56,150
+the way the actor looks while still
+preserving the exact same pose. And then
+
+566
+00:07:56,150 --> 00:07:56,160
+preserving the exact same pose. And then
+ 
+
+567
+00:07:56,160 --> 00:07:57,909
+preserving the exact same pose. And then
+it ended up giving me this exact prompt
+
+568
+00:07:57,909 --> 00:07:57,919
+it ended up giving me this exact prompt
+ 
+
+569
+00:07:57,919 --> 00:07:59,270
+it ended up giving me this exact prompt
+right here. And then after putting that
+
+570
+00:07:59,270 --> 00:07:59,280
+right here. And then after putting that
+ 
+
+571
+00:07:59,280 --> 00:08:01,110
+right here. And then after putting that
+prompt into Gemini, this is the exact
+
+572
+00:08:01,110 --> 00:08:01,120
+prompt into Gemini, this is the exact
+ 
+
+573
+00:08:01,120 --> 00:08:02,710
+prompt into Gemini, this is the exact
+result that I was able to get, which
+
+574
+00:08:02,710 --> 00:08:02,720
+result that I was able to get, which
+ 
+
+575
+00:08:02,720 --> 00:08:04,390
+result that I was able to get, which
+looks really spot-on. And then I just
+
+576
+00:08:04,390 --> 00:08:04,400
+looks really spot-on. And then I just
+ 
+
+577
+00:08:04,400 --> 00:08:05,909
+looks really spot-on. And then I just
+uploaded the base clip like I did
+
+578
+00:08:05,909 --> 00:08:05,919
+uploaded the base clip like I did
+ 
+
+579
+00:08:05,919 --> 00:08:07,510
+uploaded the base clip like I did
+before. Uploaded that image of that
+
+580
+00:08:07,510 --> 00:08:07,520
+before. Uploaded that image of that
+ 
+
+581
+00:08:07,520 --> 00:08:09,029
+before. Uploaded that image of that
+blonde girl wearing the jeans. And
+
+582
+00:08:09,029 --> 00:08:09,039
+blonde girl wearing the jeans. And
+ 
+
+583
+00:08:09,039 --> 00:08:10,390
+blonde girl wearing the jeans. And
+here's how the video looks like after
+
+584
+00:08:10,390 --> 00:08:10,400
+here's how the video looks like after
+ 
+
+585
+00:08:10,400 --> 00:08:12,230
+here's how the video looks like after
+swapping out the background. This way we
+
+586
+00:08:12,230 --> 00:08:12,240
+swapping out the background. This way we
+ 
+
+587
+00:08:12,240 --> 00:08:14,230
+swapping out the background. This way we
+have a fully unique video with our own
+
+588
+00:08:14,230 --> 00:08:14,240
+have a fully unique video with our own
+ 
+
+589
+00:08:14,240 --> 00:08:16,309
+have a fully unique video with our own
+model, our own product, and using the
+
+590
+00:08:16,309 --> 00:08:16,319
+model, our own product, and using the
+ 
+
+591
+00:08:16,319 --> 00:08:18,150
+model, our own product, and using the
+motion as inspiration. Now, the only
+
+592
+00:08:18,150 --> 00:08:18,160
+motion as inspiration. Now, the only
+ 
+
+593
+00:08:18,160 --> 00:08:19,670
+motion as inspiration. Now, the only
+slight issue is that this girl is
+
+594
+00:08:19,670 --> 00:08:19,680
+slight issue is that this girl is
+ 
+
+595
+00:08:19,680 --> 00:08:21,270
+slight issue is that this girl is
+talking and it's going to use the audio
+
+596
+00:08:21,270 --> 00:08:21,280
+talking and it's going to use the audio
+ 
+
+597
+00:08:21,280 --> 00:08:23,029
+talking and it's going to use the audio
+from the original footage, which is not
+
+598
+00:08:23,029 --> 00:08:23,039
+from the original footage, which is not
+ 
+
+599
+00:08:23,039 --> 00:08:24,309
+from the original footage, which is not
+going to look right. So, the only
+
+600
+00:08:24,309 --> 00:08:24,319
+going to look right. So, the only
+ 
+
+601
+00:08:24,319 --> 00:08:25,830
+going to look right. So, the only
+solution would be to use something like
+
+602
+00:08:25,830 --> 00:08:25,840
+solution would be to use something like
+ 
+
+603
+00:08:25,840 --> 00:08:27,990
+solution would be to use something like
+11 Labs to generate our own voice and
+
+604
+00:08:27,990 --> 00:08:28,000
+11 Labs to generate our own voice and
+ 
+
+605
+00:08:28,000 --> 00:08:30,230
+11 Labs to generate our own voice and
+then use a tool like sync.so to sync
+
+606
+00:08:30,230 --> 00:08:30,240
+then use a tool like sync.so to sync
+ 
+
+607
+00:08:30,240 --> 00:08:32,149
+then use a tool like sync.so to sync
+that new voice on top of her lips. This
+
+608
+00:08:32,149 --> 00:08:32,159
+that new voice on top of her lips. This
+ 
+
+609
+00:08:32,159 --> 00:08:33,990
+that new voice on top of her lips. This
+way, we can actually run it as an ad.
+
+610
+00:08:33,990 --> 00:08:34,000
+way, we can actually run it as an ad.
+ 
+
+611
+00:08:34,000 --> 00:08:35,829
+way, we can actually run it as an ad.
+>> If you're done sacrificing comfort toear
+
+612
+00:08:35,829 --> 00:08:35,839
+>> If you're done sacrificing comfort toear
+ 
+
+613
+00:08:35,839 --> 00:08:37,509
+>> If you're done sacrificing comfort toear
+denim, these are the perfect jeans.
+
+614
+00:08:37,509 --> 00:08:37,519
+denim, these are the perfect jeans.
+ 
+
+615
+00:08:37,519 --> 00:08:38,790
+denim, these are the perfect jeans.
+>> But if you don't want to do all of that,
+
+616
+00:08:38,790 --> 00:08:38,800
+>> But if you don't want to do all of that,
+ 
+
+617
+00:08:38,800 --> 00:08:40,709
+>> But if you don't want to do all of that,
+this is still going to be very useful as
+
+618
+00:08:40,709 --> 00:08:40,719
+this is still going to be very useful as
+ 
+
+619
+00:08:40,719 --> 00:08:42,310
+this is still going to be very useful as
+we can use a lot of these scenes as
+
+620
+00:08:42,310 --> 00:08:42,320
+we can use a lot of these scenes as
+ 
+
+621
+00:08:42,320 --> 00:08:44,310
+we can use a lot of these scenes as
+B-roll shots for any type of video ad
+
+622
+00:08:44,310 --> 00:08:44,320
+B-roll shots for any type of video ad
+ 
+
+623
+00:08:44,320 --> 00:08:45,750
+B-roll shots for any type of video ad
+that we create. Another cool thing that
+
+624
+00:08:45,750 --> 00:08:45,760
+that we create. Another cool thing that
+ 
+
+625
+00:08:45,760 --> 00:08:47,190
+that we create. Another cool thing that
+you could do is that you can generate
+
+626
+00:08:47,190 --> 00:08:47,200
+you could do is that you can generate
+ 
+
+627
+00:08:47,200 --> 00:08:49,110
+you could do is that you can generate
+three different clips of the same exact
+
+628
+00:08:49,110 --> 00:08:49,120
+three different clips of the same exact
+ 
+
+629
+00:08:49,120 --> 00:08:50,870
+three different clips of the same exact
+motion but the model wearing different
+
+630
+00:08:50,870 --> 00:08:50,880
+motion but the model wearing different
+ 
+
+631
+00:08:50,880 --> 00:08:52,630
+motion but the model wearing different
+colors of your product. And if you piece
+
+632
+00:08:52,630 --> 00:08:52,640
+colors of your product. And if you piece
+ 
+
+633
+00:08:52,640 --> 00:08:54,230
+colors of your product. And if you piece
+it all together using Cap Cut, you can
+
+634
+00:08:54,230 --> 00:08:54,240
+it all together using Cap Cut, you can
+ 
+
+635
+00:08:54,240 --> 00:08:56,070
+it all together using Cap Cut, you can
+end up with a dynamic looking ad that
+
+636
+00:08:56,070 --> 00:08:56,080
+end up with a dynamic looking ad that
+ 
+
+637
+00:08:56,080 --> 00:09:01,590
+end up with a dynamic looking ad that
+looks something like this.
+
+638
+00:09:01,590 --> 00:09:01,600
+
+ 
+
+639
+00:09:01,600 --> 00:09:03,430
+
+Again, this was just a quick tutorial to
+
+640
+00:09:03,430 --> 00:09:03,440
+Again, this was just a quick tutorial to
+ 
+
+641
+00:09:03,440 --> 00:09:05,190
+Again, this was just a quick tutorial to
+give you an idea of what is actually
+
+642
+00:09:05,190 --> 00:09:05,200
+give you an idea of what is actually
+ 
+
+643
+00:09:05,200 --> 00:09:07,190
+give you an idea of what is actually
+possible with AI motion control and how
+
+644
+00:09:07,190 --> 00:09:07,200
+possible with AI motion control and how
+ 
+
+645
+00:09:07,200 --> 00:09:09,110
+possible with AI motion control and how
+you can use tools like Mana to find a
+
+646
+00:09:09,110 --> 00:09:09,120
+you can use tools like Mana to find a
+ 
+
+647
+00:09:09,120 --> 00:09:11,190
+you can use tools like Mana to find a
+lot of ads with proven concepts that you
+
+648
+00:09:11,190 --> 00:09:11,200
+lot of ads with proven concepts that you
+ 
+
+649
+00:09:11,200 --> 00:09:13,110
+lot of ads with proven concepts that you
+can model after with your own products.
+
+650
+00:09:13,110 --> 00:09:13,120
+can model after with your own products.
+ 
+
+651
+00:09:13,120 --> 00:09:14,630
+can model after with your own products.
+Once again, the link will be down below
+
+652
+00:09:14,630 --> 00:09:14,640
+Once again, the link will be down below
+ 
+
+653
+00:09:14,640 --> 00:09:16,310
+Once again, the link will be down below
+in case you want to give Bana a try. And
+
+654
+00:09:16,310 --> 00:09:16,320
+in case you want to give Bana a try. And
+ 
+
+655
+00:09:16,320 --> 00:09:18,310
+in case you want to give Bana a try. And
+you can also use my code to get 20% off
+
+656
+00:09:18,310 --> 00:09:18,320
+you can also use my code to get 20% off
+ 
+
+657
+00:09:18,320 --> 00:09:19,910
+you can also use my code to get 20% off
+your first 3 months. And if you did find
+
+658
+00:09:19,910 --> 00:09:19,920
+your first 3 months. And if you did find
+ 
+
+659
+00:09:19,920 --> 00:09:21,509
+your first 3 months. And if you did find
+this video helpful, be sure to drop a
+
+660
+00:09:21,509 --> 00:09:21,519
+this video helpful, be sure to drop a
+ 
+
+661
+00:09:21,519 --> 00:09:23,110
+this video helpful, be sure to drop a
+like and subscribe to this channel as
+
+662
+00:09:23,110 --> 00:09:23,120
+like and subscribe to this channel as
+ 
+
+663
+00:09:23,120 --> 00:09:24,310
+like and subscribe to this channel as
+I'm going to continue to make more
+
+664
+00:09:24,310 --> 00:09:24,320
+I'm going to continue to make more
+ 
+
+665
+00:09:24,320 --> 00:09:26,630
+I'm going to continue to make more
+tutorials about AI and how I make ads
+
+666
+00:09:26,630 --> 00:09:26,640
+tutorials about AI and how I make ads
+ 
+
+667
+00:09:26,640 --> 00:09:28,310
+tutorials about AI and how I make ads
+for e-commerce. And also follow me on
+
+668
+00:09:28,310 --> 00:09:28,320
+for e-commerce. And also follow me on
+ 
+
+669
+00:09:28,320 --> 00:09:29,990
+for e-commerce. And also follow me on
+Twitter as I share tips and strategies
+
+670
+00:09:29,990 --> 00:09:30,000
+Twitter as I share tips and strategies
+ 
+
+671
+00:09:30,000 --> 00:09:31,910
+Twitter as I share tips and strategies
+from time to time on everything that I'm
+
+672
+00:09:31,910 --> 00:09:31,920
+from time to time on everything that I'm
+ 
+
+673
+00:09:31,920 --> 00:09:33,750
+from time to time on everything that I'm
+doing with my stores and with AI. And
+
+674
+00:09:33,750 --> 00:09:33,760
+doing with my stores and with AI. And
+ 
+
+675
+00:09:33,760 --> 00:09:35,350
+doing with my stores and with AI. And
+with all that being said, I thank you so
+
+676
+00:09:35,350 --> 00:09:35,360
+with all that being said, I thank you so
+ 
+
+677
+00:09:35,360 --> 00:09:36,870
+with all that being said, I thank you so
+much for watching and I'll catch you on
+
+678
+00:09:36,870 --> 00:09:36,880
+much for watching and I'll catch you on
+ 
+
+679
+00:09:36,880 --> 00:09:40,120
+much for watching and I'll catch you on
+the next one.
+
