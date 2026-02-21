@@ -274,6 +274,7 @@ export async function generateAngleInputs(
   audienceCategory: string,
   angleId: string,
   hookFormula?: HookFormula,
+  angleContext?: string,
 ): Promise<AIGenerationResult> {
   // Select hook formula: use provided, or pick from priority order based on angleId index
   const angleIndex = parseInt(angleId.replace(/\D/g, ''), 10) || 0;
@@ -282,12 +283,16 @@ export async function generateAngleInputs(
 
   const systemPrompt = buildSystemPrompt(offer, framework, selectedFormula, hookLine, awarenessStage);
 
+  const angleContextBlock = angleContext
+    ? `\n\nCREATIVE ANGLE: ${angleContext}\nThe script should be built around this specific scenario/angle. Make the pain point, proof, and CTA relevant to this angle.`
+    : '';
+
   const userPrompt = `Generate creative inputs for:
   Angle ID: ${angleId}
   Awareness Stage: ${awarenessStage}
   Audience Category: ${audienceCategory}
   Hook Formula: ${selectedFormula}
-  Required Hook Line: "${hookLine}"
+  Required Hook Line: "${hookLine}"${angleContextBlock}
 
 The before scene should viscerally show the pain point for a ${audienceCategory} relationship.
 The after scene shows the same character transformed — same face, same setting, different emotional state.
