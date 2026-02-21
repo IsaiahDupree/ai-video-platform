@@ -21,6 +21,7 @@ import * as path from 'path';
 import * as https from 'https';
 import { execSync } from 'child_process';
 import type { AngleInputs, StageResult } from './offer.schema.js';
+import { postProcessClip, detectBurnedSubtitles, type AmbientNoiseType } from './post-process-clip.js';
 
 function getKey(): string {
   const key = process.env.GOOGLE_API_KEY || process.env.GOOGLE_VEO_API_KEY || process.env.GEMINI_API_KEY;
@@ -92,8 +93,11 @@ export function buildLipsyncPrompt(
     `A selfie-style UGC video clip featuring a fictional character: ${characterDescription}. Setting: ${setting}.`,
     shot,
     // Timestamp prompting for hook + delivery structure
-    `[00:00-00:0${hookSec}] Close-up on face, ${expression}, slight pause before speaking.`,
-    `[00:0${hookSec}-00:0${endSec}] ${pronoun} speaks directly to camera and says: "${cleanLine}" ${endGesture}.`,
+    `[00:00-00:0${hookSec}] Close-up on face, ${expression}, takes a natural breath before speaking.`,
+    // CRITICAL: explicit voiceover-in-prompt — forces character to say the exact line with no pauses
+    `[00:0${hookSec}-00:0${endSec}] ${pronoun} speaks directly to camera and says the following sentence completely, word for word, with no pauses or hesitations: "${cleanLine}" ${endGesture}.`,
+    // Reinforce: the character MUST complete the full sentence
+    `The character speaks the ENTIRE sentence "${cleanLine}" — every word, no truncation, no trailing off.`,
   ];
 
   // Voice profile for accent/tone consistency across ALL clips
@@ -103,11 +107,11 @@ export function buildLipsyncPrompt(
 
   parts.push(
     // Audio spec — explicit environment prevents hallucinations
-    `Audio: close microphone pickup, warm acoustic properties, minimal background noise, no studio audience, no background music.`,
+    `Audio: close microphone pickup, warm acoustic properties, minimal background noise, no studio audience, no background music, no speaking pauses longer than 0.2 seconds.`,
     // Repeat character at end — reinforces consistency, reduces clip-to-clip drift
     `IMPORTANT: The character must be exactly ${characterDescription} throughout the entire clip. Same face, same hair, same clothing as described. No character changes.`,
-    // Quality + subtitle prevention
-    `The image is slightly grainy, looks very film-like, authentic UGC style. No subtitles. No on-screen text whatsoever.`,
+    // Quality + subtitle prevention — multiple negations for stubborn cases
+    `The image is slightly grainy, looks very film-like, authentic UGC style. No subtitles. No on-screen text whatsoever. No captions. No burned-in text of any kind.`,
   );
 
   return parts.join(' ');
@@ -929,6 +933,29 @@ export async function runStageLipsync(
         throw pollErr;
       }
       fs.writeFileSync(clipPath, buf);
+
+      // ── Post-processing: speed up + ambient noise + subtitle removal ──────────
+      // Research finding: 1.4x speed removes AI "thinking pauses"; ambient noise
+      // masks synthetic voice artifacts; subtitle crop removes Veo 3 burn-in bug.
+      try {
+        const hasBurnedSubs = detectBurnedSubtitles(clipPath);
+        if (hasBurnedSubs) {
+          console.log(`   ⚠️  Burned subtitles detected in clip_${i + 1} — cropping bottom 8%`);
+        }
+        const ambientType = ((inputs as any).ambientNoiseType as AmbientNoiseType) ?? 'office';
+        const speedFactor = ((inputs as any).speedFactor as number) ?? 1.4;
+        await postProcessClip(clipPath, {
+          speedFactor,
+          ambientNoise: ambientType,
+          ambientNoiseVolume: -28,
+          cropSubtitleArea: hasBurnedSubs,
+        });
+        console.log(`   🎛️  Post-processed: ${speedFactor}x speed + ambient noise`);
+      } catch (ppErr: any) {
+        console.log(`   ⚠️  Post-process skipped: ${ppErr.message?.substring(0, 80)}`);
+      }
+      // ─────────────────────────────────────────────────────────────────────────
+
       const dur = getClipDuration(clipPath);
       clipDurations.push(dur);
       clipPaths.push(clipPath);

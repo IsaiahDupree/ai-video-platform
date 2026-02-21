@@ -258,7 +258,7 @@ Field guidance:
   subheadline      — 10–15 words, supporting context
   beforeScenePrompt — Imagen 4 prompt: photorealistic UGC, real human (not celebrity), specific emotional state, phone in hand, authentic everyday setting, no text overlays, 3–4 sentences
   afterScenePrompt  — same character transformed: confident/relieved, using phone, warm lighting, 3–4 sentences. MUST be the same person as beforeScenePrompt.
-  motionPrompt      — Veo 3.1: camera movement, character action, NO audio/sound descriptions (stripped by pipeline), 2–3 sentences
+  motionPrompt      — Veo 3.1: camera movement, character action, NO audio/sound descriptions (stripped by pipeline), 2–3 sentences. MUST end with: "No subtitles. No on-screen text. No captions."
   voiceScript       — 5 lines following the SCRIPT STRUCTURE above. Each line separated by newline. Follow ALL rules.
   commentKeyword    — 1–2 words for comment CTA engagement`;
 }
