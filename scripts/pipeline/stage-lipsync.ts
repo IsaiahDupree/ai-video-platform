@@ -303,8 +303,10 @@ async function uploadToFalStorage(imagePath: string, falKey: string): Promise<st
 }
 
 /**
- * Submit a Veo 3.1 clip via fal.ai queue API.
- * If imageUrl is provided, uses first-last-frame-to-video for visual anchoring.
+ * Submit a video clip via fal.ai queue API.
+ * validateMode=true uses Kling 2.6 Pro (~$0.07-0.14/s) instead of Veo 3.1 ($0.40/s)
+ * for cheap dry-run validation of prompts, character lock, and gate logic.
+ * If imageUrl is provided (Veo only), uses first-last-frame-to-video for visual anchoring.
  * Returns a request_id used for polling.
  */
 async function submitFalClip(
@@ -312,8 +314,32 @@ async function submitFalClip(
   aspectRatio: string,
   falKey: string,
   imageUrl?: string,
+  validateMode = false,
 ): Promise<string> {
-  // Use image-to-video endpoint when we have a reference image URL (public https://)
+  // Validate mode: use Kling 2.6 Pro — much cheaper, good enough to test prompts/gate
+  if (validateMode) {
+    const endpoint = 'fal-ai/kling-video/v2.6/pro/text-to-video';
+    const body: Record<string, unknown> = {
+      prompt,
+      aspect_ratio: aspectRatio === '9:16' ? '9:16' : aspectRatio,
+      duration: '5',  // Kling uses seconds as number string, 5s = cheaper
+      cfg_scale: 0.5,
+    };
+    const res = await fetch(`https://queue.fal.run/${endpoint}`, {
+      method: 'POST',
+      headers: { 'Authorization': `Key ${falKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`fal.ai submit ${res.status}: ${text.substring(0, 300)}`);
+    }
+    const result = await res.json() as any;
+    if (!result.request_id) throw new Error(`fal.ai no request_id: ${JSON.stringify(result).substring(0, 200)}`);
+    return `${endpoint}::${result.request_id}`;
+  }
+
+  // Production mode: Veo 3.1
   const useImageEndpoint = !!imageUrl && imageUrl.startsWith('https://');
   const endpoint = useImageEndpoint
     ? 'fal-ai/veo3.1/first-last-frame-to-video'
@@ -680,7 +706,8 @@ export async function runStageLipsync(
   aspectRatio: string,
   force = false,
   characterOverride?: CharacterTraits,
-  voiceOverride?: VoiceProfile
+  voiceOverride?: VoiceProfile,
+  validateMode = false,
 ): Promise<StageResult> {
   const t0 = Date.now();
   const safeAspect = aspectRatio.replace(':', 'x');
@@ -691,8 +718,14 @@ export async function runStageLipsync(
 
   const falKey = getFalKey();
   const openAIKey = getOpenAIKey();
-  console.log(`\n🗣️  Stage 2b: Veo 3.1 Lip-Sync — Native Speech Video [fal.ai]`);
-  console.log(`   💡 fal.ai provider ($0.40/s with audio, no RPD quota)`);
+  if (validateMode) {
+    console.log(`\n🗣️  Stage 2b: Kling 2.6 Pro — Validate Mode [fal.ai]`);
+    console.log(`   💡 VALIDATE MODE: Kling 2.6 Pro ~$0.07-0.14/s (vs Veo3.1 $0.40/s) — 5s clips`);
+    console.log(`   💡 Use this to validate prompts, character lock, and gate before Veo3.1 spend`);
+  } else {
+    console.log(`\n🗣️  Stage 2b: Veo 3.1 Lip-Sync — Native Speech Video [fal.ai]`);
+    console.log(`   💡 fal.ai provider ($0.40/s with audio, no RPD quota)`);
+  }
 
   if (fs.existsSync(finalPath) && !force) {
     console.log(`   ⏭️  lipsync_${safeAspect}.mp4 exists`);
@@ -815,7 +848,8 @@ export async function runStageLipsync(
         }
         operationToken = await submitFalClip(
           lipsyncPrompts[i], aspectRatio, falKey,
-          useImageAnchor ? referenceImageUrl : undefined
+          useImageAnchor ? referenceImageUrl : undefined,
+          validateMode,
         );
         fs.writeFileSync(opFile, JSON.stringify({
           operationToken, provider: 'fal.ai',
@@ -872,7 +906,7 @@ export async function runStageLipsync(
 
                 console.log(`      🎬 Sub-clip ${si + 1}/${subLines.length}: "${subLines[si].slice(0, 40)}..."`);
                 try {
-                  const subOp = await submitFalClip(subPrompt, aspectRatio, falKey);
+                  const subOp = await submitFalClip(subPrompt, aspectRatio, falKey, undefined, validateMode);
                   fs.writeFileSync(subOpFile, JSON.stringify({ operationToken: subOp, provider: 'fal.ai' }, null, 2));
                   const subBuf = await pollFalClip(subOp, falKey);
                   fs.writeFileSync(subClipPath, subBuf);

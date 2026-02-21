@@ -66,8 +66,24 @@ const PRICING = {
   GPT4O_GATE_OUTPUT_TOKENS: 300,
 };
 
-function clipCost(clipCount: number): number {
-  return clipCount * PRICING.FAL_VEO_CLIP_SECONDS * PRICING.FAL_VEO_PER_SECOND;
+// Validate mode: Kling 2.6 Pro — $0.07-0.14/s with audio (~$0.56-1.12/clip)
+// Use --validate to dry-run prompts/gate/character lock before spending on Veo 3.1
+const PRICING_VALIDATE = {
+  FAL_VEO_PER_SECOND:   0.14,  // Kling 2.6 Pro worst-case with audio
+  FAL_VEO_CLIP_SECONDS: 8,
+};
+
+// fal.ai model endpoints
+const FAL_MODELS = {
+  veo31:        'fal-ai/veo3.1',
+  veo31_anchor: 'fal-ai/veo3.1/first-last-frame-to-video',
+  kling_pro:    'fal-ai/kling-video/v2.6/pro/text-to-video',
+} as const;
+export type FalVideoModel = keyof typeof FAL_MODELS;
+
+function clipCost(clipCount: number, validate = false): number {
+  const p = validate ? PRICING_VALIDATE : PRICING;
+  return clipCount * p.FAL_VEO_CLIP_SECONDS * p.FAL_VEO_PER_SECOND;
 }
 function imageCost(): number {
   return PRICING.IMAGES_PER_ANGLE * PRICING.IMAGEN_PER_IMAGE;
@@ -229,6 +245,7 @@ function parseArgs() {
     maxRetries: parseInt(get('max-retries') ?? '3', 10),
     assessOnly: get('assess-only'),
     force: argv.includes('--force'),
+    validate: argv.includes('--validate'),  // use Kling 2.6 instead of Veo 3.1
   };
 }
 
@@ -582,7 +599,8 @@ async function runAngle(
   angleId: string, outputDir: string,
   aspectRatio: string, maxRetries: number,
   learnings: Learnings, force: boolean,
-  openAIKey: string
+  openAIKey: string,
+  validateMode = false,
 ): Promise<AngleResult> {
   const t0 = Date.now();
   const safeAspect = aspectRatio.replace(':', 'x');
@@ -664,7 +682,7 @@ async function runAngle(
       if (fs.existsSync(lipsyncPath)) fs.unlinkSync(lipsyncPath);
     }
 
-    const lipsyncResult = await runStageLipsync(inputs, outputDir, aspectRatio, lipsyncForce);
+    const lipsyncResult = await runStageLipsync(inputs, outputDir, aspectRatio, lipsyncForce, undefined, undefined, validateMode);
     if (lipsyncResult.status === 'failed') {
       console.log(`  ❌ Stage 2b (lipsync) failed: ${lipsyncResult.error}`);
       if (lipsyncResult.error?.includes('429')) {
@@ -680,8 +698,9 @@ async function runAngle(
     if (fs.existsSync(clipsDir)) {
       const newClips = fs.readdirSync(clipsDir).filter((f) => f.endsWith('.mp4')).length;
       totalClipCount += newClips;
-      totalVideoUsd += clipCost(newClips);
-      console.log(`  💰 Video cost this attempt: $${clipCost(newClips).toFixed(2)} (${newClips} clips × $${(PRICING.FAL_VEO_PER_SECOND * PRICING.FAL_VEO_CLIP_SECONDS).toFixed(2)})`);
+      totalVideoUsd += clipCost(newClips, validateMode);
+      const rateLabel = validateMode ? `$${PRICING_VALIDATE.FAL_VEO_PER_SECOND}/s Kling` : `$${PRICING.FAL_VEO_PER_SECOND}/s Veo3.1`;
+      console.log(`  💰 Video cost this attempt: $${clipCost(newClips, validateMode).toFixed(2)} (${newClips} clips × ${rateLabel})`);
     }
 
     if (!fs.existsSync(lipsyncPath)) {
@@ -938,6 +957,10 @@ async function main() {
     console.log(`\n  📦 Product: ${offer.productName}`);
     console.log(`  🎯 Angles: ${combos.length} (start: ${args.start})`);
     console.log(`  🔄 Max retries: ${args.maxRetries}`);
+    if (args.validate) {
+      console.log(`  🧪 VALIDATE MODE: Kling 2.6 Pro (~$0.07-0.14/s) — validate before Veo3.1 ($0.40/s)`);
+      console.log(`     Est. cost: ~$${(0.14 * 5 * 5).toFixed(2)}/angle vs ~$${(0.40 * 8 * 5).toFixed(2)}/angle production`);
+    }
     console.log(`  📁 Output: ${sessionDir}`);
 
     results = [];
@@ -954,7 +977,7 @@ async function main() {
       fs.mkdirSync(outputDir, { recursive: true });
 
       const result = await runAngle(offer, framework, combo, angleId, outputDir,
-        args.aspect, args.maxRetries, learnings, args.force, openAIKey);
+        args.aspect, args.maxRetries, learnings, args.force, openAIKey, args.validate);
       results.push(result);
 
       // If 429 hit, stop all remaining angles
