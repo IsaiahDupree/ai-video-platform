@@ -396,7 +396,7 @@ async function pollFalClip(requestToken: string, falKey: string): Promise<Buffer
   const resultUrl = `https://queue.fal.run/${endpoint}/requests/${requestId}`;
   const start = Date.now();
 
-  while (Date.now() - start < 600_000) {
+  while (Date.now() - start < 1_200_000) {
     await new Promise((r) => setTimeout(r, 8_000));
     let res: Response;
     try {
@@ -916,7 +916,14 @@ export async function runStageLipsync(
       }
 
       console.log(`   ⏳ Polling...`);
-      const buf = await pollFalClip(operationToken, falKey);
+      let buf: Buffer;
+      try {
+        buf = await pollFalClip(operationToken, falKey);
+      } catch (pollErr: any) {
+        // Delete op.json so next run re-submits fresh (timed-out/failed requests can't be resumed)
+        if (fs.existsSync(opFile)) fs.unlinkSync(opFile);
+        throw pollErr;
+      }
       fs.writeFileSync(clipPath, buf);
       const dur = getClipDuration(clipPath);
       clipDurations.push(dur);

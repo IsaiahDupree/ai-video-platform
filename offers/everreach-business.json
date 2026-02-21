@@ -58,7 +58,10 @@
       "Frame pain in business/money terms: lost deals, missed referrals, cold prospects"
     ],
     "voiceTone": "Direct, confident, slightly urgent. Like a successful founder giving a peer a wake-up call. Not salesy. Not corporate. Conversational but sharp. Lowercase delivery.",
-    "visualStyle": "Photorealistic UGC — real professional (not a celebrity), authentic home office or coffee shop setting, laptop or phone in hand. Before scene: stressed founder staring at unanswered emails, looking overwhelmed at a CRM. After scene: same character, confident, relaxed, phone in hand with a smile — deal closed energy.",
+    "visualStyle": "Photorealistic UGC — real professional woman (not a celebrity), authentic home office or coffee shop setting, laptop or phone in hand. Before scene: thoughtful founder staring at unanswered emails, looking busy at a CRM. After scene: same character, confident, relaxed, phone in hand with a smile — deal closed energy.",
+    "characterGender": "woman",
+    "voiceGender": "female",
+    "voiceAge": "early 30s",
     "elevenLabsVoiceId": "IKne3meq5aSn9XLyUdCD",
     "aspectRatio": "9:16"
   }

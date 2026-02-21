@@ -67,6 +67,14 @@ export function buildHookLine(formula: HookFormula, offer: Offer): string {
     // Pattern: "not because X, but because there is no Y" → extract Y
     const butBecause = lower.match(/but because\s+(?:there is no|there's no|a lack of|the lack of|no)\s+([a-z][a-z ]{2,25}?)(?:[,.]|$)/i);
     if (butBecause) return butBecause[1].trim().split(/\s+/).slice(0, 3).join(' ');
+    // Pattern: "because they fail to VERB [PREP]" → extract verb phrase as gerund
+    // Captures "stay in touch", "follow up", "keep up with" etc (up to 4 words before boundary)
+    const failTo = lower.match(/because (?:they|we|people|you) (?:fail|forget|neglect|don't|do not) to\s+([a-z][a-z ]{2,30}?)(?:\s+with\s+clients|\s+with\s+contacts|\s+consistently|[,.]|$)/i);
+    if (failTo) {
+      // Just take the verb itself and convert to gerund: "stay" → "staying", "follow" → "following"
+      const verb = failTo[1].trim().split(/\s+/)[0];
+      return verb.replace(/e$/, '') + 'ing';
+    }
     // Pattern: "fade ... due to lack of X" or "due to X"
     const dueToLack = lower.match(/due to\s+(?:lack of|the lack of)?\s*([a-z][a-z ]{3,25}?)(?:[,.]|$)/i);
     if (dueToLack) return dueToLack[1].trim().split(/\s+/).slice(0, 3).join(' ');

@@ -26,6 +26,7 @@
  *   --max-retries=<n>    Max gate retries per angle (default: 3)
  *   --assess-only=<dir>  Skip generation, only gate+assess existing session
  *   --force              Force re-run even if outputs exist
+ *   --resume=<dir>       Resume a previous session dir — skip cleanup, continue from last good clip
  */
 
 import * as fs from 'fs';
@@ -246,6 +247,7 @@ function parseArgs() {
     assessOnly: get('assess-only'),
     force: argv.includes('--force'),
     validate: argv.includes('--validate'),  // use Kling 2.6 instead of Veo 3.1
+    resume: get('resume'),                  // path to existing session dir to resume
   };
 }
 
@@ -671,8 +673,9 @@ async function runAngle(
     }
 
     // ── Stage 2b: Lipsync ──────────────────────────────────────────────────
-    // Force on retry so we get new video
-    const lipsyncForce = isRetry || force;
+    // Force on retry so we get new video — but NOT when resuming (preserve completed clips)
+    const isResume = !!(framework as any)._resumeMode;
+    const lipsyncForce = (isRetry || force) && !isResume;
     if (lipsyncForce) {
       // Clean old clips so we don't reuse stale ones
       const clipsDir = path.join(outputDir, 'lipsync_clips');
@@ -682,7 +685,15 @@ async function runAngle(
       if (fs.existsSync(lipsyncPath)) fs.unlinkSync(lipsyncPath);
     }
 
-    const lipsyncResult = await runStageLipsync(inputs, outputDir, aspectRatio, lipsyncForce, undefined, undefined, validateMode);
+    // Inject framework gender/voice fields into inputs so stage-lipsync.ts can read them
+    // (AngleInputs doesn't have these fields typed, but stage-lipsync reads via (inputs as any))
+    const lipsyncInputs = {
+      ...inputs,
+      voiceGender:     (framework as any).voiceGender     ?? undefined,
+      voiceAge:        (framework as any).voiceAge        ?? undefined,
+      characterGender: (framework as any).characterGender ?? undefined,
+    };
+    const lipsyncResult = await runStageLipsync(lipsyncInputs, outputDir, aspectRatio, lipsyncForce, undefined, undefined, validateMode);
     if (lipsyncResult.status === 'failed') {
       console.log(`  ❌ Stage 2b (lipsync) failed: ${lipsyncResult.error}`);
       if (lipsyncResult.error?.includes('429')) {
@@ -943,19 +954,60 @@ async function main() {
     console.log(`\n  📂 Assessing existing: ${sessionDir}`);
     results = await assessExisting(sessionDir, args.aspect, openAIKey);
   } else {
-    // Full generation mode
+    // Full generation mode (or --resume)
     const offerFile = path.resolve(process.cwd(), args.offerPath);
     if (!fs.existsSync(offerFile)) { console.error(`❌ Offer not found: ${offerFile}`); process.exit(1); }
     const { offer, framework } = JSON.parse(fs.readFileSync(offerFile, 'utf-8'));
 
-    const sessionId = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-    const sessionDir = path.join('output', 'pipeline', offer.productName.toLowerCase().replace(/\s+/g, '-'), sessionId);
-    fs.mkdirSync(sessionDir, { recursive: true });
+    // ── Resume mode: reuse an existing session dir ──────────────────────────
+    let sessionDir: string;
+    let resumeMode = false;
+    if (args.resume) {
+      sessionDir = path.resolve(args.resume);
+      if (!fs.existsSync(sessionDir)) { console.error(`❌ Resume dir not found: ${sessionDir}`); process.exit(1); }
+      resumeMode = true;
+      // Tag framework so runAngle skips clip dir cleanup
+      (framework as any)._resumeMode = true;
+      console.log(`\n  ♻️  RESUME MODE: ${sessionDir}`);
+    } else {
+      const sessionId = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+      sessionDir = path.join('output', 'pipeline', offer.productName.toLowerCase().replace(/\s+/g, '-'), sessionId);
+      fs.mkdirSync(sessionDir, { recursive: true });
+    }
 
-    const combos = ANGLE_COMBOS.slice(args.start, args.start + args.count);
+    // In resume mode, discover existing angle dirs; otherwise use combos
+    let angleEntries: Array<{ combo: { stage: string; category: string }; angleId: string; outputDir: string }>;
+    if (resumeMode) {
+      angleEntries = fs.readdirSync(sessionDir)
+        .filter((d) => fs.statSync(path.join(sessionDir, d)).isDirectory())
+        .sort()
+        .map((d) => {
+          const outputDir = path.join(sessionDir, d);
+          // Read combo from saved scene_config if available
+          let combo = { stage: 'unaware', category: 'friend' };
+          const cfg = path.join(outputDir, 'scene_config.json');
+          if (fs.existsSync(cfg)) {
+            try {
+              const sc = JSON.parse(fs.readFileSync(cfg, 'utf-8'));
+              combo = { stage: sc.awarenessStage ?? combo.stage, category: sc.audienceCategory ?? combo.category };
+            } catch { /* use default */ }
+          }
+          return { combo, angleId: d, outputDir };
+        });
+      console.log(`  📂 Found ${angleEntries.length} angle(s) to resume`);
+    } else {
+      const combos = ANGLE_COMBOS.slice(args.start, args.start + args.count);
+      const sessionId = path.basename(sessionDir);
+      angleEntries = combos.map((combo, i) => {
+        const angleId = `${offer.productName.toUpperCase().replace(/\s+/g, '_').slice(0, 8)}_${sessionId.slice(0, 10)}_${String(args.start + i + 1).padStart(2, '0')}`;
+        const outputDir = path.join(sessionDir, angleId);
+        fs.mkdirSync(outputDir, { recursive: true });
+        return { combo, angleId, outputDir };
+      });
+    }
 
     console.log(`\n  📦 Product: ${offer.productName}`);
-    console.log(`  🎯 Angles: ${combos.length} (start: ${args.start})`);
+    console.log(`  🎯 Angles: ${angleEntries.length}${resumeMode ? ' (resume)' : ` (start: ${args.start})`}`);
     console.log(`  🔄 Max retries: ${args.maxRetries}`);
     if (args.validate) {
       console.log(`  🧪 VALIDATE MODE: Kling 2.6 Pro (~$0.07-0.14/s) — validate before Veo3.1 ($0.40/s)`);
@@ -965,16 +1017,24 @@ async function main() {
 
     results = [];
     let quotaExhausted = false;
-    for (let i = 0; i < combos.length; i++) {
+    for (let i = 0; i < angleEntries.length; i++) {
       if (quotaExhausted) {
-        console.log(`\n  ⏭️  Skipping angle ${i + 1}/${combos.length} — Veo quota exhausted`);
+        console.log(`\n  ⏭️  Skipping angle ${i + 1}/${angleEntries.length} — Veo quota exhausted`);
         continue;
       }
 
-      const combo = combos[i];
-      const angleId = `${offer.productName.toUpperCase().replace(/\s+/g, '_').slice(0, 8)}_${sessionId.slice(0, 10)}_${String(args.start + i + 1).padStart(2, '0')}`;
-      const outputDir = path.join(sessionDir, angleId);
-      fs.mkdirSync(outputDir, { recursive: true });
+      const { combo, angleId, outputDir } = angleEntries[i];
+
+      // In resume mode, skip angles that already have a finished lipsync video
+      if (resumeMode) {
+        const safeAspect = args.aspect.replace(':', 'x');
+        const done = path.join(outputDir, `lipsync_${safeAspect}.mp4`);
+        if (fs.existsSync(done)) {
+          console.log(`\n  ⏭️  ${angleId} — lipsync complete, skipping`);
+          continue;
+        }
+        console.log(`\n  ♻️  ${angleId} — resuming incomplete clips...`);
+      }
 
       const result = await runAngle(offer, framework, combo, angleId, outputDir,
         args.aspect, args.maxRetries, learnings, args.force, openAIKey, args.validate);
@@ -983,8 +1043,8 @@ async function main() {
       // If 429 hit, stop all remaining angles
       if (result.error?.includes('429')) {
         quotaExhausted = true;
-        console.log(`\n  ⛔ Veo quota exhausted — stopping remaining ${combos.length - i - 1} angle(s)`);
-        console.log(`  📁 Re-run later: npx tsx scripts/pipeline/smart-generate.ts --assess-only ${sessionDir}`);
+        console.log(`\n  ⛔ Veo quota exhausted — stopping remaining ${angleEntries.length - i - 1} angle(s)`);
+        console.log(`  📁 Re-run later: npx tsx scripts/pipeline/smart-generate.ts --resume ${sessionDir}`);
       } else {
         const status = result.gatePassed
           ? `Score: ${result.viral?.pre_social_score?.toFixed(1) ?? 'N/A'}/100`
