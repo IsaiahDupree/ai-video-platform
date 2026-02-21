@@ -318,6 +318,7 @@ async function submitFalClip(
   falKey: string,
   imageUrl?: string,
   validateMode = false,
+  lastFrameUrl?: string,
 ): Promise<string> {
   // Validate mode: use Kling 2.6 Pro — much cheaper, good enough to test prompts/gate
   if (validateMode) {
@@ -343,7 +344,10 @@ async function submitFalClip(
   }
 
   // Production mode: Veo 3.1
-  const useImageEndpoint = !!imageUrl && imageUrl.startsWith('https://');
+  // Use first-last-frame endpoint when we have at least a start frame
+  const hasFirst = !!imageUrl && imageUrl.startsWith('https://');
+  const hasLast  = !!lastFrameUrl && lastFrameUrl.startsWith('https://');
+  const useImageEndpoint = hasFirst || hasLast;
   const endpoint = useImageEndpoint
     ? 'fal-ai/veo3.1/first-last-frame-to-video'
     : 'fal-ai/veo3.1';
@@ -356,7 +360,15 @@ async function submitFalClip(
     generate_audio: true,
     auto_fix: true,
   };
-  if (useImageEndpoint) body.first_frame_url = imageUrl;
+  // first-last-frame endpoint requires BOTH fields — fall back to text-only if only one
+  if (hasFirst && hasLast) {
+    body.first_frame_url = imageUrl;
+    body.last_frame_url  = lastFrameUrl;
+  } else if (hasFirst) {
+    body.first_frame_url = imageUrl;
+  } else if (hasLast) {
+    body.last_frame_url = lastFrameUrl;
+  }
 
   const res = await fetch(`https://queue.fal.run/${endpoint}`, {
     method: 'POST',
@@ -746,12 +758,19 @@ export async function runStageLipsync(
     console.log(`   ✂️  Pre-split: ${rawLines.length} lines → ${scriptLines.length} (long lines broken up)`);
   }
 
-  // ── Character consistency: derive locked description from Imagen 4 before.png ──
-  // GPT-4o vision reads the actual generated character image and returns a precise
-  // description (age, hair, skin, clothing) that gets injected into EVERY clip prompt.
-  // This is the key to visual consistency across clips — same words = same face.
+  // ── Character consistency: 3-image anchor strategy ──────────────────────────
+  // Upload before.png (start), character_sheet.png (middle), after.png (end) to
+  // fal.ai storage. Each clip gets first_frame_url + last_frame_url so Veo 3.1
+  // interpolates between two pinned frames — the character stays visually locked.
+  //
+  // Anchor assignment per clip:
+  //   Clip 1        : first=before,  last=sheet   (hook — character introduced)
+  //   Clips 2..N-1  : first=sheet,   last=sheet   (body — same face both ends)
+  //   Clip N (last) : first=sheet,   last=after   (payoff — transformation)
+  //   Single clip   : first=before,  last=after   (full arc in one clip)
+  // ─────────────────────────────────────────────────────────────────────────────
   let characterDesc: string;
-  let referenceImageUrl = ''; // fal.ai storage URL for first-frame anchoring
+  let anchorUrls = { before: '', sheet: '', after: '' };
 
   if (fs.existsSync(beforePath) && openAIKey) {
     console.log(`   🖼️  Describing character from before.png...`);
@@ -759,16 +778,6 @@ export async function runStageLipsync(
     if (visionDesc) {
       characterDesc = visionDesc;
       console.log(`   ✅ Character locked: ${characterDesc.slice(0, 80)}...`);
-
-      // Upload before.png to fal.ai storage so we can use first-frame anchoring
-      // This gives Veo 3.1 a visual anchor for clip 1 — strongest consistency signal
-      console.log(`   📤 Uploading reference image to fal.ai storage...`);
-      referenceImageUrl = await uploadToFalStorage(beforePath, falKey);
-      if (referenceImageUrl) {
-        console.log(`   ✅ Reference image uploaded: ${referenceImageUrl.slice(0, 60)}...`);
-      } else {
-        console.log(`   ⚠️  Upload failed — will use text-to-video with locked description`);
-      }
     } else {
       characterDesc = buildCharacterDescription(characterOverride ?? {
         age: '28', hair: 'natural hair, casually styled',
@@ -782,6 +791,25 @@ export async function runStageLipsync(
       clothing: 'a simple t-shirt or casual top',
       mannerisms: 'genuine, relatable energy, authentic UGC creator vibe',
     });
+  }
+
+  // Upload all 3 anchor images in parallel
+  if (!validateMode) {
+    console.log(`   📤 Uploading 3 anchor images to fal.ai storage...`);
+    const sheetPath = path.join(outputDir, 'character_sheet.png');
+    const afterPath  = path.join(outputDir, 'after.png');
+    const [beforeUrl, sheetUrl, afterUrl] = await Promise.all([
+      fs.existsSync(beforePath) ? uploadToFalStorage(beforePath, falKey) : Promise.resolve(''),
+      fs.existsSync(sheetPath)  ? uploadToFalStorage(sheetPath,  falKey) : Promise.resolve(''),
+      fs.existsSync(afterPath)  ? uploadToFalStorage(afterPath,  falKey) : Promise.resolve(''),
+    ]);
+    anchorUrls = { before: beforeUrl, sheet: sheetUrl, after: afterUrl };
+    const uploaded = [beforeUrl && 'before', sheetUrl && 'sheet', afterUrl && 'after'].filter(Boolean);
+    if (uploaded.length > 0) {
+      console.log(`   ✅ Uploaded: ${uploaded.join(', ')} — 3-image anchor active`);
+    } else {
+      console.log(`   ⚠️  All uploads failed — falling back to text-only generation`);
+    }
   }
 
   // ── Setting: derive from offer inputs instead of hardcoding ──
@@ -843,23 +871,45 @@ export async function runStageLipsync(
         const shortId = operationToken.includes('::') ? operationToken.split('::')[1].slice(0, 8) : operationToken.split('/').pop();
         console.log(`   ♻️  Resuming: ${shortId}`);
       } else {
-        // Use reference image URL for first clip only — anchors the character visually.
-        // Subsequent clips use the locked text description for consistency.
-        const useImageAnchor = i === 0 && referenceImageUrl;
-        if (useImageAnchor) {
-          console.log(`   📡 Submitting clip ${i + 1} via fal.ai [image-anchored]...`);
-        } else {
-          console.log(`   📡 Submitting clip ${i + 1} via fal.ai...`);
+        // 3-image anchor strategy — assign first+last frame per clip position:
+        //   Clip 1        : first=before,  last=sheet
+        //   Clips 2..N-1  : first=sheet,   last=sheet
+        //   Clip N (last) : first=sheet,   last=after
+        //   Single clip   : first=before,  last=after
+        const n = scriptLines.length;
+        const isFirst = i === 0;
+        const isLast  = i === n - 1;
+        const isSingle = n === 1;
+        let firstUrl: string | undefined;
+        let lastUrl:  string | undefined;
+        if (!validateMode) {
+          if (isSingle) {
+            firstUrl = anchorUrls.before || undefined;
+            lastUrl  = anchorUrls.after  || undefined;
+          } else if (isFirst) {
+            firstUrl = anchorUrls.before || anchorUrls.sheet || undefined;
+            lastUrl  = anchorUrls.sheet  || undefined;
+          } else if (isLast) {
+            firstUrl = anchorUrls.sheet  || undefined;
+            lastUrl  = anchorUrls.after  || anchorUrls.sheet || undefined;
+          } else {
+            firstUrl = anchorUrls.sheet  || undefined;
+            lastUrl  = anchorUrls.sheet  || undefined;
+          }
         }
+        const anchorLabel = firstUrl && lastUrl ? '[first+last anchored]'
+          : firstUrl ? '[first anchored]' : '';
+        console.log(`   📡 Submitting clip ${i + 1}/${n} via fal.ai ${anchorLabel}...`);
         operationToken = await submitFalClip(
           lipsyncPrompts[i], aspectRatio, falKey,
-          useImageAnchor ? referenceImageUrl : undefined,
+          firstUrl,
           validateMode,
+          lastUrl,
         );
         fs.writeFileSync(opFile, JSON.stringify({
           operationToken, provider: 'fal.ai',
           submittedAt: new Date().toISOString(),
-          imageAnchored: !!useImageAnchor,
+          anchorStrategy: anchorLabel || 'text-only',
         }, null, 2));
         const shortId = operationToken.split('::')[1]?.slice(0, 8) ?? operationToken.slice(0, 8);
         console.log(`   ✅ Submitted: ${shortId}`);

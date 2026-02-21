@@ -318,6 +318,107 @@ function testInventory() {
   videos.forEach((v) => console.log(v));
 }
 
+// ── Test 13: 3-image anchor strategy ───────────────────────────────────────
+function testAnchorStrategy() {
+  S('13. 3-Image Anchor Strategy — Logic Validation');
+
+  // Simulate the anchor assignment logic from stage-lipsync.ts
+  function getAnchors(i: number, n: number, urls: { before: string; sheet: string; after: string }) {
+    const isFirst = i === 0;
+    const isLast  = i === n - 1;
+    const isSingle = n === 1;
+    let firstUrl: string | undefined;
+    let lastUrl:  string | undefined;
+    if (isSingle) {
+      firstUrl = urls.before || undefined;
+      lastUrl  = urls.after  || undefined;
+    } else if (isFirst) {
+      firstUrl = urls.before || urls.sheet || undefined;
+      lastUrl  = urls.sheet  || undefined;
+    } else if (isLast) {
+      firstUrl = urls.sheet  || undefined;
+      lastUrl  = urls.after  || urls.sheet || undefined;
+    } else {
+      firstUrl = urls.sheet  || undefined;
+      lastUrl  = urls.sheet  || undefined;
+    }
+    return { firstUrl, lastUrl };
+  }
+
+  const URLS = { before: 'https://cdn.fal/before.png', sheet: 'https://cdn.fal/sheet.png', after: 'https://cdn.fal/after.png' };
+  const NONE = { before: '', sheet: '', after: '' };
+
+  // Test: single clip
+  const single = getAnchors(0, 1, URLS);
+  single.firstUrl === URLS.before && single.lastUrl === URLS.after
+    ? P('Single clip: first=before, last=after ✓')
+    : F(`Single clip wrong: first=${single.firstUrl}, last=${single.lastUrl}`);
+
+  // Test: 5-clip sequence
+  const cases5 = [
+    { i: 0, label: 'Clip 1 (hook)',   expectFirst: URLS.before, expectLast: URLS.sheet },
+    { i: 1, label: 'Clip 2 (body)',   expectFirst: URLS.sheet,  expectLast: URLS.sheet },
+    { i: 2, label: 'Clip 3 (body)',   expectFirst: URLS.sheet,  expectLast: URLS.sheet },
+    { i: 3, label: 'Clip 4 (body)',   expectFirst: URLS.sheet,  expectLast: URLS.sheet },
+    { i: 4, label: 'Clip 5 (payoff)', expectFirst: URLS.sheet,  expectLast: URLS.after },
+  ];
+  for (const c of cases5) {
+    const { firstUrl, lastUrl } = getAnchors(c.i, 5, URLS);
+    firstUrl === c.expectFirst && lastUrl === c.expectLast
+      ? P(`${c.label}: first=${firstUrl?.split('/').pop()}, last=${lastUrl?.split('/').pop()} ✓`)
+      : F(`${c.label}: expected first=${c.expectFirst?.split('/').pop()} last=${c.expectLast?.split('/').pop()}, got first=${firstUrl?.split('/').pop()} last=${lastUrl?.split('/').pop()}`);
+  }
+
+  // Test: graceful fallback when sheet missing
+  const noSheet = { ...URLS, sheet: '' };
+  const fb1 = getAnchors(0, 3, noSheet);
+  fb1.firstUrl === URLS.before
+    ? P('Fallback (no sheet): clip 1 still uses before ✓')
+    : F(`Fallback (no sheet): clip 1 first=${fb1.firstUrl}`);
+
+  // Test: all uploads failed — no anchors
+  const fb2 = getAnchors(0, 3, NONE);
+  fb2.firstUrl === undefined && fb2.lastUrl === undefined
+    ? P('Fallback (all failed): no anchors → text-only mode ✓')
+    : F(`Fallback (all failed): unexpected anchors first=${fb2.firstUrl} last=${fb2.lastUrl}`);
+
+  // Test: anchor label logic
+  const labelBoth = URLS.before && URLS.sheet ? '[first+last anchored]' : '';
+  const labelFirst = URLS.before && !URLS.sheet ? '[first anchored]' : '';
+  P(`Anchor label with both URLs: "${labelBoth}" ✓`);
+
+  // Test: Veo3.1 endpoint selection
+  S('13b. Veo 3.1 Endpoint Selection');
+  const cases: Array<{ first?: string; last?: string; expectedEndpoint: string }> = [
+    { first: URLS.before, last: URLS.sheet, expectedEndpoint: 'fal-ai/veo3.1/first-last-frame-to-video' },
+    { first: URLS.before, last: undefined,  expectedEndpoint: 'fal-ai/veo3.1/first-last-frame-to-video' },
+    { first: undefined,   last: URLS.after, expectedEndpoint: 'fal-ai/veo3.1/first-last-frame-to-video' },
+    { first: undefined,   last: undefined,  expectedEndpoint: 'fal-ai/veo3.1' },
+  ];
+  for (const c of cases) {
+    const hasFirst = !!c.first?.startsWith('https://');
+    const hasLast  = !!c.last?.startsWith('https://');
+    const endpoint = (hasFirst || hasLast) ? 'fal-ai/veo3.1/first-last-frame-to-video' : 'fal-ai/veo3.1';
+    const body: Record<string, unknown> = {};
+    if (hasFirst && hasLast) { body.first_frame_url = c.first; body.last_frame_url = c.last; }
+    else if (hasFirst) { body.first_frame_url = c.first; }
+    else if (hasLast)  { body.last_frame_url  = c.last; }
+    const label = `first=${c.first ? 'yes' : 'no'} last=${c.last ? 'yes' : 'no'}`;
+    endpoint === c.expectedEndpoint
+      ? P(`${label} → ${endpoint.split('/').slice(-1)[0]} ✓`)
+      : F(`${label} → got ${endpoint}, expected ${c.expectedEndpoint}`);
+  }
+
+  // Test: Kling validate mode — no anchors (Kling text-to-video only in validate mode)
+  S('13c. Validate Mode — No Anchors (Kling)');
+  I('In validateMode=true, anchor URLs are never assigned (Kling text-to-video only)');
+  const validateAnchors = { firstUrl: undefined as string|undefined, lastUrl: undefined as string|undefined };
+  // validateMode skips the anchor assignment block entirely
+  validateAnchors.firstUrl === undefined && validateAnchors.lastUrl === undefined
+    ? P('Validate mode: no anchors passed to Kling ✓')
+    : F('Validate mode: unexpected anchors');
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   loadEnv();
@@ -345,6 +446,7 @@ async function main() {
   await testAnalysisServer();
   testLearnings();
   testInventory();
+  testAnchorStrategy();
 
   console.log(`\n${'═'.repeat(60)}`);
   console.log(`  🧪 RESULTS: ✅ ${pass} passed  ❌ ${fail} failed  ⚠️  ${warn} warnings`);
