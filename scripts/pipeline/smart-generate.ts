@@ -106,7 +106,8 @@ const CHAR_COHERENCE_THRESHOLD = 7;
 const PRODUCT_CONSISTENCY_THRESHOLD = 7;
 const LIP_SYNC_THRESHOLD = 6;
 
-const ANGLE_COMBOS: Array<{ stage: string; category: string }> = [
+// Default combos used when offer doesn't define audienceCategories/awarenessStages
+const DEFAULT_ANGLE_COMBOS: Array<{ stage: string; category: string }> = [
   { stage: 'unaware',         category: 'friend'     },
   { stage: 'unaware',         category: 'old friend' },
   { stage: 'unaware',         category: 'coworker'   },
@@ -128,6 +129,19 @@ const ANGLE_COMBOS: Array<{ stage: string; category: string }> = [
   { stage: 'product-aware',   category: 'family'     },
   { stage: 'product-aware',   category: 'client'     },
 ];
+
+function buildAngleCombos(framework: CreativeFramework): Array<{ stage: string; category: string }> {
+  const stages = (framework.awarenessStages ?? []).map((s) => s.id);
+  const categories = framework.audienceCategories ?? [];
+  if (stages.length === 0 || categories.length === 0) return DEFAULT_ANGLE_COMBOS;
+  const combos: Array<{ stage: string; category: string }> = [];
+  for (const stage of stages) {
+    for (const category of categories) {
+      combos.push({ stage, category });
+    }
+  }
+  return combos;
+}
 
 // =============================================================================
 // Types
@@ -996,9 +1010,10 @@ async function main() {
         });
       console.log(`  📂 Found ${angleEntries.length} angle(s) to resume`);
     } else {
-      const combos = ANGLE_COMBOS.slice(args.start, args.start + args.count);
+      const allCombos = buildAngleCombos(framework);
+      const combos = allCombos.slice(args.start, args.start + args.count);
       const sessionId = path.basename(sessionDir);
-      angleEntries = combos.map((combo, i) => {
+      angleEntries = combos.map((combo: { stage: string; category: string }, i: number) => {
         const angleId = `${offer.productName.toUpperCase().replace(/\s+/g, '_').slice(0, 8)}_${sessionId.slice(0, 10)}_${String(args.start + i + 1).padStart(2, '0')}`;
         const outputDir = path.join(sessionDir, angleId);
         fs.mkdirSync(outputDir, { recursive: true });
@@ -1007,7 +1022,8 @@ async function main() {
     }
 
     console.log(`\n  📦 Product: ${offer.productName}`);
-    console.log(`  🎯 Angles: ${angleEntries.length}${resumeMode ? ' (resume)' : ` (start: ${args.start})`}`);
+    const totalCombos = resumeMode ? angleEntries.length : buildAngleCombos(framework).length;
+    console.log(`  🎯 Angles: ${angleEntries.length}${resumeMode ? ' (resume)' : ` of ${totalCombos} available (start: ${args.start})`}`);
     console.log(`  🔄 Max retries: ${args.maxRetries}`);
     if (args.validate) {
       console.log(`  🧪 VALIDATE MODE: Kling 2.6 Pro (~$0.07-0.14/s) — validate before Veo3.1 ($0.40/s)`);
