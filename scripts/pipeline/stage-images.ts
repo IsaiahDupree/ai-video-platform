@@ -16,6 +16,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
 import type { AngleInputs, StageResult } from './offer.schema.js';
+import { loadCharacterPack, selectCharacter, buildCharacterImagePrompt } from './character-pack.js';
 
 function getKey(): string {
   const key = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
@@ -124,8 +125,20 @@ export async function runStageImages(
       console.log(`   📸 Step 0: Character reference sheet...`);
       const characterGender = (inputs as any).characterGender ?? 'woman';
       const genderPronoun = characterGender === 'man' ? 'his' : 'her';
+
+      // Use character pack identity_prompt_block if available (much more specific than generic)
+      const pack = loadCharacterPack();
+      let charIdentity = `a ${characterGender} in ${genderPronoun} early 30s, casual everyday clothing`;
+      if (pack) {
+        const preferredGender = characterGender === 'woman' ? 'female' : characterGender === 'man' ? 'male' : undefined;
+        const audienceCategory = (inputs as any).audienceCategory as string ?? '';
+        const selectedChar = selectCharacter(pack, audienceCategory, '', preferredGender);
+        charIdentity = selectedChar.identity_prompt_block;
+        console.log(`   🎭 Character pack: ${selectedChar.name} (${selectedChar.id})`);
+      }
+
       const buf = await imagen4Generate(
-        `Character reference sheet. Left half: front-facing headshot of a ${characterGender} in ${genderPronoun} early 30s, casual everyday clothing, neutral expression, plain white background. Right half: same ${characterGender}, 3/4 angle, slight smile, same clothing. Both panels show the exact same individual. Portrait photography, sharp focus, studio quality.`,
+        `Character reference sheet. Left half: front-facing headshot of ${charIdentity}, neutral expression, plain white background. Right half: same person, 3/4 angle, slight smile, same clothing. Both panels show the exact same individual. Portrait photography, sharp focus, studio quality.`,
         '1:1'
       );
       fs.writeFileSync(sheetPath, buf);

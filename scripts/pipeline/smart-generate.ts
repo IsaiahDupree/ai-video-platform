@@ -706,6 +706,8 @@ async function runAngle(
       voiceGender:     (framework as any).voiceGender     ?? undefined,
       voiceAge:        (framework as any).voiceAge        ?? undefined,
       characterGender: (framework as any).characterGender ?? undefined,
+      audienceCategory: (inputs as any).audienceCategory ?? '',
+      awarenessStage:   (inputs as any).awarenessStage   ?? '',
     };
     const lipsyncResult = await runStageLipsync(lipsyncInputs, outputDir, aspectRatio, lipsyncForce, undefined, undefined, validateMode);
     if (lipsyncResult.status === 'failed') {

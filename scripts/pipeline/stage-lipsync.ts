@@ -22,6 +22,7 @@ import * as https from 'https';
 import { execSync } from 'child_process';
 import type { AngleInputs, StageResult } from './offer.schema.js';
 import { postProcessClip, detectBurnedSubtitles, type AmbientNoiseType } from './post-process-clip.js';
+import { loadCharacterPack, selectCharacter, buildPackCharacterDescription, getConsistencyBlocks, getAnglePromptBlock, getUnghostingContext } from './character-pack.js';
 
 function getKey(): string {
   const key = process.env.GOOGLE_API_KEY || process.env.GOOGLE_VEO_API_KEY || process.env.GEMINI_API_KEY;
@@ -62,7 +63,7 @@ export function buildLipsyncPrompt(
   setting: string,
   lineIndex: number,
   totalLines: number,
-  options?: { voiceProfile?: string; shotDescription?: string; pronoun?: string }
+  options?: { voiceProfile?: string; shotDescription?: string; pronoun?: string; consistencyBlock?: string; negativeBlock?: string; angleContext?: string }
 ): string {
   // Estimate speaking duration: ~2.5 words/sec casual pace
   const wordCount = line.split(/\s+/).length;
@@ -105,6 +106,11 @@ export function buildLipsyncPrompt(
     parts.push(`Voice: ${options.voiceProfile}.`);
   }
 
+  // Angle/context layer from character pack (e.g. "holding phone, glancing at old message thread")
+  if (options?.angleContext) {
+    parts.push(`Context: ${options.angleContext}.`);
+  }
+
   parts.push(
     // Audio spec — explicit environment prevents hallucinations
     `Audio: close microphone pickup, warm acoustic properties, minimal background noise, no studio audience, no background music, no speaking pauses longer than 0.2 seconds.`,
@@ -113,6 +119,16 @@ export function buildLipsyncPrompt(
     // Quality + subtitle prevention — multiple negations for stubborn cases
     `The image is slightly grainy, looks very film-like, authentic UGC style. No subtitles. No on-screen text whatsoever. No captions. No burned-in text of any kind.`,
   );
+
+  // Character pack consistency block — reinforces identity lock across clips
+  if (options?.consistencyBlock) {
+    parts.push(options.consistencyBlock);
+  }
+
+  // Character pack negative block — prevents common drift patterns
+  if (options?.negativeBlock) {
+    parts.push(`Avoid: ${options.negativeBlock}.`);
+  }
 
   return parts.join(' ');
 }
@@ -777,6 +793,40 @@ export async function runStageLipsync(
   //   Clip N (last) : first=sheet,   last=after   (payoff — transformation)
   //   Single clip   : first=before,  last=after   (full arc in one clip)
   // ─────────────────────────────────────────────────────────────────────────────
+
+  // ── Character Pack integration ─────────────────────────────────────────────
+  // Load AD_CHARACTER_PACK.json for identity-locked character descriptions,
+  // consistency blocks, negative blocks, and angle-specific context prompts.
+  // Falls back gracefully to GPT-4o vision → generic description if pack not found.
+  const pack = loadCharacterPack();
+  let packConsistencyBlock = '';
+  let packNegativeBlock = '';
+  let packAngleContext = '';
+  let packCharacterId = '';
+
+  const audienceCategory = (inputs as any).audienceCategory as string ?? '';
+  const awarenessStage = (inputs as any).awarenessStage as string ?? '';
+
+  if (pack) {
+    const preferredGender = (inputs as any).characterGender === 'woman' ? 'female'
+      : (inputs as any).characterGender === 'man' ? 'male'
+      : (inputs as any).voiceGender ?? undefined;
+    const selectedChar = selectCharacter(pack, audienceCategory, awarenessStage, preferredGender);
+    packCharacterId = selectedChar.id;
+    console.log(`   🎭 Character pack: ${selectedChar.name} (${selectedChar.id}) — ${selectedChar.archetype}`);
+
+    const blocks = getConsistencyBlocks(pack.globals);
+    packConsistencyBlock = blocks.consistencyBlock;
+    packNegativeBlock = blocks.negativeBlock;
+
+    if (audienceCategory) {
+      packAngleContext = getAnglePromptBlock(pack, audienceCategory);
+      const ugContext = getUnghostingContext(pack, audienceCategory);
+      if (ugContext) packAngleContext = `${packAngleContext}. ${ugContext}`;
+    }
+  }
+  // ─────────────────────────────────────────────────────────────────────────────
+
   let characterDesc: string;
   let anchorUrls = { before: '', sheet: '', after: '' };
 
@@ -785,7 +835,33 @@ export async function runStageLipsync(
     const visionDesc = await describeCharacterFromImage(beforePath, openAIKey);
     if (visionDesc) {
       characterDesc = visionDesc;
-      console.log(`   ✅ Character locked: ${characterDesc.slice(0, 80)}...`);
+      console.log(`   ✅ Character locked (vision): ${characterDesc.slice(0, 80)}...`);
+    } else if (pack && packCharacterId) {
+      // Fallback to character pack identity_prompt_block (much better than generic)
+      const packChar = pack.characters.find(c => c.id === packCharacterId);
+      if (packChar) {
+        characterDesc = buildPackCharacterDescription(packChar);
+        console.log(`   ✅ Character locked (pack): ${characterDesc.slice(0, 80)}...`);
+      } else {
+        characterDesc = buildCharacterDescription(characterOverride ?? {
+          age: '28', hair: 'natural hair, casually styled',
+          clothing: 'a simple t-shirt or casual top',
+          mannerisms: 'genuine, relatable energy, authentic UGC creator vibe',
+        });
+      }
+    } else {
+      characterDesc = buildCharacterDescription(characterOverride ?? {
+        age: '28', hair: 'natural hair, casually styled',
+        clothing: 'a simple t-shirt or casual top',
+        mannerisms: 'genuine, relatable energy, authentic UGC creator vibe',
+      });
+    }
+  } else if (pack && packCharacterId) {
+    // No before.png but character pack available — use pack identity
+    const packChar = pack.characters.find(c => c.id === packCharacterId);
+    if (packChar) {
+      characterDesc = buildPackCharacterDescription(packChar);
+      console.log(`   ✅ Character locked (pack, no image): ${characterDesc.slice(0, 80)}...`);
     } else {
       characterDesc = buildCharacterDescription(characterOverride ?? {
         age: '28', hair: 'natural hair, casually styled',
@@ -845,9 +921,15 @@ export async function runStageLipsync(
   // Pre-generated lipsyncPrompts from ai-inputs.ts used a generic character description
   // that won't match the actual before.png — so we always rebuild here to ensure
   // every clip gets the exact same locked character + setting injected.
+  // Now also injects character pack consistency/negative/angle blocks.
   const lipsyncPrompts = scriptLines.map((line, i) =>
-    buildLipsyncPrompt(line, characterDesc, settingDesc, i, scriptLines.length,
-      { voiceProfile: voiceProfileStr, pronoun })
+    buildLipsyncPrompt(line, characterDesc, settingDesc, i, scriptLines.length, {
+      voiceProfile: voiceProfileStr,
+      pronoun,
+      consistencyBlock: packConsistencyBlock || undefined,
+      negativeBlock: packNegativeBlock || undefined,
+      angleContext: packAngleContext || undefined,
+    })
   );
 
   console.log(`   📋 ${scriptLines.length} lines → ${scriptLines.length} clips`);
@@ -856,6 +938,9 @@ export async function runStageLipsync(
   const clipPaths: string[] = [];
   const clipDurations: number[] = [];
   let lastClipError = '';
+  // Clip chaining: store the fal.ai URL of the last frame from the previous clip
+  // so the next clip starts exactly where the previous one ended (temporal consistency).
+  let chainedLastFrameUrl = '';
 
   for (let i = 0; i < scriptLines.length; i++) {
     const clipPath = path.join(clipsDir, `clip_${String(i + 1).padStart(2, '0')}.mp4`);
@@ -879,11 +964,14 @@ export async function runStageLipsync(
         const shortId = operationToken.includes('::') ? operationToken.split('::')[1].slice(0, 8) : operationToken.split('/').pop();
         console.log(`   ♻️  Resuming: ${shortId}`);
       } else {
-        // 3-image anchor strategy — assign first+last frame per clip position:
-        //   Clip 1        : first=before,  last=sheet
-        //   Clips 2..N-1  : first=sheet,   last=sheet
-        //   Clip N (last) : first=sheet,   last=after
-        //   Single clip   : first=before,  last=after
+        // Hybrid anchor strategy: 3-image anchors + clip chaining
+        //   Clip 1        : first=before,              last=sheet
+        //   Clips 2..N-1  : first=chainedLastFrame,    last=sheet   (chained!)
+        //   Clip N (last) : first=chainedLastFrame,    last=after   (chained!)
+        //   Single clip   : first=before,              last=after
+        // Clip chaining (research: FAL_CHARACTER_CONSISTENCY_DEEP_DIVE.md):
+        //   Extract last frame of clip N → use as start frame for clip N+1
+        //   This eliminates the "jump" between clips and preserves temporal consistency.
         const n = scriptLines.length;
         const isFirst = i === 0;
         const isLast  = i === n - 1;
@@ -898,10 +986,12 @@ export async function runStageLipsync(
             firstUrl = anchorUrls.before || anchorUrls.sheet || undefined;
             lastUrl  = anchorUrls.sheet  || undefined;
           } else if (isLast) {
-            firstUrl = anchorUrls.sheet  || undefined;
+            // Prefer chained last frame from previous clip over static sheet
+            firstUrl = chainedLastFrameUrl || anchorUrls.sheet || undefined;
             lastUrl  = anchorUrls.after  || anchorUrls.sheet || undefined;
           } else {
-            firstUrl = anchorUrls.sheet  || undefined;
+            // Prefer chained last frame from previous clip over static sheet
+            firstUrl = chainedLastFrameUrl || anchorUrls.sheet || undefined;
             lastUrl  = anchorUrls.sheet  || undefined;
           }
         }
@@ -960,6 +1050,26 @@ export async function runStageLipsync(
       clipDurations.push(dur);
       clipPaths.push(clipPath);
       console.log(`   ✅ clip_${i + 1}.mp4 (${(buf.length / 1024 / 1024).toFixed(1)}MB, ${dur.toFixed(1)}s)`);
+
+      // ── Clip chaining: extract last frame → upload for next clip's start frame ──
+      // Research: FAL_CHARACTER_CONSISTENCY_DEEP_DIVE.md — Layer 3: Temporal Consistency
+      // "Extract last frame of clip N → use as start_image_url for clip N+1"
+      if (i < scriptLines.length - 1 && !validateMode) {
+        try {
+          const lastFramePath = path.join(clipsDir, `clip_${String(i + 1).padStart(2, '0')}_lastframe.png`);
+          execSync(`ffmpeg -y -sseof -0.05 -i "${clipPath}" -frames:v 1 "${lastFramePath}" 2>/dev/null`, { stdio: 'pipe' });
+          if (fs.existsSync(lastFramePath)) {
+            const chainUrl = await uploadToFalStorage(lastFramePath, falKey);
+            if (chainUrl) {
+              chainedLastFrameUrl = chainUrl;
+              console.log(`   🔗 Clip chaining: last frame uploaded for clip ${i + 2} start`);
+            }
+          }
+        } catch {
+          // Non-fatal — chaining is best-effort, falls back to sheet anchor
+        }
+      }
+      // ─────────────────────────────────────────────────────────────────────────
 
       // Verify script completion via Whisper transcription
       const oaiKey = getOpenAIKey();
