@@ -48,19 +48,37 @@ export function buildHookLine(formula: HookFormula, offer: Offer): string {
   const pain = offer.problemSolved;
   const proof = offer.socialProof ?? '10,000 people';
 
-  // Truncate pain to max 4 words to keep hook under 15 words total
-  const painWords = pain.split(/[.,;]/)[0].trim().toLowerCase().split(/\s+/).slice(0, 4).join(' ');
+  // Truncate pain to max 4 words — strip subject+verb prefix first
+  const painWords = (() => {
+    const clause = pain.split(/[.,;]/)[0].trim().toLowerCase();
+    const stripped = clause
+      .replace(/\s+not because.*/i, '')   // strip "not because they stop caring" first
+      .replace(/\s+because.*/i, '')       // strip any trailing "because..." clause
+      .replace(/^(people|professionals|founders|users|everyone|most people|many people)\s+\w+\s+(from\s+)?/i, '')
+      .replace(/^(important\s+)?relationships?\s+/i, '')
+      .trim();
+    return stripped.split(/\s+/).slice(0, 4).join(' ');
+  })();
 
   // For pain_literally, we need a short personal pain NOUN (2-3 words max),
   // not a full sentence fragment. Extract the core pain concept.
   const painNoun = (() => {
     const lower = pain.toLowerCase();
-    // If problemSolved starts with a subject ("People drift...", "Professionals lose...")
-    // skip to the core pain concept after the first verb
-    const afterVerb = lower.match(/(?:drift|lose|fail|struggle|miss|forget|neglect|ignore)[^,.]*?(?:because|due to|from|with)\s+(.{5,40}?)(?:[,.]|$)/i);
-    if (afterVerb) return afterVerb[1].trim().split(/\s+/).slice(0, 4).join(' ');
-    // Otherwise use first 3-4 words of the first clause
-    return lower.split(/[.,;]/)[0].trim().split(/\s+/).slice(0, 4).join(' ');
+    // Pattern: "not because X, but because there is no Y" → extract Y
+    const butBecause = lower.match(/but because\s+(?:there is no|there's no|a lack of|the lack of|no)\s+([a-z][a-z ]{2,25}?)(?:[,.]|$)/i);
+    if (butBecause) return butBecause[1].trim().split(/\s+/).slice(0, 3).join(' ');
+    // Pattern: "fade ... due to lack of X" or "due to X"
+    const dueToLack = lower.match(/due to\s+(?:lack of|the lack of)?\s*([a-z][a-z ]{3,25}?)(?:[,.]|$)/i);
+    if (dueToLack) return dueToLack[1].trim().split(/\s+/).slice(0, 3).join(' ');
+    // Pattern: "lose X because of Y" → Y is the pain
+    const becauseOf = lower.match(/because of\s+([a-z][a-z ]{3,25}?)(?:[,.]|$)/i);
+    if (becauseOf) return becauseOf[1].trim().split(/\s+/).slice(0, 3).join(' ');
+    // Fallback: strip common subject+verb prefix, take first meaningful noun phrase
+    const firstClause = lower.split(/[.,;]/)[0].trim();
+    const stripped = firstClause
+      .replace(/^(people|professionals|founders|users|everyone|most people|many people)\s+\w+\s+(from\s+)?/i, '')
+      .replace(/^(important\s+)?relationships?\s+/i, '');
+    return stripped.split(/\s+/).slice(0, 4).join(' ');
   })();
 
   switch (formula) {
@@ -352,5 +370,15 @@ function numberToWords(n: number): string {
   if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 ? ` ${ones[n % 10]}` : '');
   if (n < 1000) return `${ones[Math.floor(n / 100)]} hundred${n % 100 ? ` ${numberToWords(n % 100)}` : ''}`;
   if (n < 10000) return `${ones[Math.floor(n / 1000)]} thousand${n % 1000 ? ` ${numberToWords(n % 1000)}` : ''}`;
-  return n.toLocaleString(); // fallback for very large numbers
+  if (n < 100000) {
+    const t = Math.floor(n / 1000);
+    const r = n % 1000;
+    return `${numberToWords(t)} thousand${r ? ` ${numberToWords(r)}` : ''}`;
+  }
+  if (n < 1000000) {
+    const h = Math.floor(n / 100000);
+    const r = n % 100000;
+    return `${ones[h]} hundred thousand${r ? ` ${numberToWords(r)}` : ''}`;
+  }
+  return `${numberToWords(Math.floor(n / 1000000))} million${n % 1000000 ? ` ${numberToWords(n % 1000000)}` : ''}`;
 }
