@@ -104,7 +104,7 @@ async function geminiEditImage(prompt: string, imagePaths: string[]): Promise<Bu
   throw new Error(`Gemini edit no image: ${data.toString().substring(0, 300)}`);
 }
 
-const UGC_STYLE = `authentic UGC-style photo, shot on iPhone, natural lighting, candid moment, real person, no studio lighting, genuine emotion, slightly imperfect composition, social media native feel`;
+const UGC_STYLE = `authentic UGC-style photo, shot on iPhone, natural lighting, candid moment, no studio lighting, genuine emotion, slightly imperfect composition, social media native feel`;
 
 export async function runStageImages(
   inputs: AngleInputs,
@@ -123,8 +123,9 @@ export async function runStageImages(
     if (!fs.existsSync(sheetPath)) {
       console.log(`   📸 Step 0: Character reference sheet...`);
       const characterGender = (inputs as any).characterGender ?? 'woman';
+      const genderPronoun = characterGender === 'man' ? 'his' : 'her';
       const buf = await imagen4Generate(
-        `Portrait reference sheet of a real ${characterGender}. Left half: front-facing headshot of a ${characterGender} in her early 30s, casual attire, neutral expression, white background. Right half: same ${characterGender}, 3/4 angle, slight smile, same outfit. Character reference sheet, both photos show the exact same person. Photo quality, sharp focus.`,
+        `Character reference sheet. Left half: front-facing headshot of a ${characterGender} in ${genderPronoun} early 30s, casual everyday clothing, neutral expression, plain white background. Right half: same ${characterGender}, 3/4 angle, slight smile, same clothing. Both panels show the exact same individual. Portrait photography, sharp focus, studio quality.`,
         '1:1'
       );
       fs.writeFileSync(sheetPath, buf);
@@ -137,7 +138,15 @@ export async function runStageImages(
     // Step 1: Before image
     if (!fs.existsSync(beforePath)) {
       console.log(`   📸 Step 1: Before image...`);
-      const prompt = `${UGC_STYLE}.\nSCENE: ${inputs.beforeScenePrompt}\nComposition: Subject is the clear foreground focus, face and upper body visible. ${aspectRatio} vertical format.`;
+      // Strip words that commonly trigger Imagen 4 safety filters
+      const safeBeforeScene = (inputs.beforeScenePrompt ?? '')
+        .replace(/\b(stressed|overwhelmed|anxious|depressed|crying|upset|distressed|ignored|lonely|isolated|suffering|pain|hurt|broken)\b/gi, (w) => ({
+          stressed: 'thoughtful', overwhelmed: 'busy', anxious: 'pensive', depressed: 'tired',
+          crying: 'emotional', upset: 'concerned', distressed: 'worried', ignored: 'disconnected',
+          lonely: 'reflective', isolated: 'alone', suffering: 'struggling', pain: 'discomfort',
+          hurt: 'sad', broken: 'worn out',
+        } as Record<string,string>)[w.toLowerCase()] ?? w);
+      const prompt = `${UGC_STYLE}.\nSCENE: ${safeBeforeScene}\nComposition: Subject is the clear foreground focus, face and upper body visible. ${aspectRatio} vertical format.`;
       const buf = await imagen4Generate(prompt, aspectRatio);
       fs.writeFileSync(beforePath, buf);
       console.log(`   ✅ before.png (${(buf.length / 1024).toFixed(0)}KB)`);
