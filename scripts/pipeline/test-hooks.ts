@@ -34,27 +34,39 @@ for (const f of HOOK_PRIORITY_ORDER) {
   console.log(`  ${f.padEnd(20)} → "${buildHookLine(f, offer)}"`);
 }
 
-// Test 2 formulas with GPT to verify script quality
-const testFormulas: HookFormula[] = ['problem_solution', 'testimonial'];
+// Test combos: formula × stage to verify stage-specific structures
+const testCombos: Array<{ formula: HookFormula; stage: string; label: string }> = [
+  { formula: 'problem_solution', stage: 'unaware',       label: 'PAS' },
+  { formula: 'testimonial',      stage: 'solution-aware', label: 'AIDA' },
+  { formula: 'social_proof',     stage: 'product-aware',  label: 'Features→Outcome' },
+];
+
+// Stage-specific line labels
+const stageLabels: Record<string, string[]> = {
+  'unaware':        ['HOOK', 'MIRROR', 'MECHANISM', 'PROOF', 'CTA'],
+  'problem-aware':  ['HOOK', 'MIRROR', 'MECHANISM', 'PROOF', 'CTA'],
+  'solution-aware': ['HOOK', 'INTEREST', 'DESIRE', 'PROOF', 'CTA'],
+  'product-aware':  ['HOOK', 'FEAT 1', 'FEAT 2', 'OUTCOME', 'CTA'],
+};
 
 async function main() {
-  for (const formula of testFormulas) {
-    console.log(`\n${'─'.repeat(60)}`);
-    console.log(`  FORMULA: ${formula}`);
-    console.log(`${'─'.repeat(60)}`);
+  for (const { formula, stage, label } of testCombos) {
+    console.log(`\n${'\u2500'.repeat(60)}`);
+    console.log(`  FORMULA: ${formula}  |  STAGE: ${stage}  |  FRAMEWORK: ${label}`);
+    console.log(`${'\u2500'.repeat(60)}`);
     
     const result = await generateAngleInputs(
-      offer, framework, 'unaware', 'client', 'TEST_01', formula,
+      offer, framework, stage, 'client', 'TEST_01', formula,
     );
     
     console.log(`  Headline: ${result.inputs.headline}`);
     console.log(`  Subheadline: ${result.inputs.subheadline}`);
     console.log(`  Script:`);
     const lines = result.inputs.voiceScript.split('\n').filter(Boolean);
-    const labels = ['HOOK', 'PROBLEM', 'SHIFT', 'PROOF', 'CTA'];
+    const labels = stageLabels[stage] ?? ['HOOK', 'L2', 'L3', 'L4', 'CTA'];
     for (let i = 0; i < lines.length; i++) {
-      const label = labels[i] ?? `LINE ${i + 1}`;
-      console.log(`    [${label.padEnd(7)}] ${lines[i]}`);
+      const lbl = labels[i] ?? `LINE ${i + 1}`;
+      console.log(`    [${lbl.padEnd(8)}] ${lines[i]}`);
     }
     console.log(`  Tokens: ${result.totalTokens} (${result.promptTokens} in / ${result.completionTokens} out)`);
   }
