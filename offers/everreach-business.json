@@ -1,0 +1,65 @@
+{
+  "offer": {
+    "productName": "EverReach",
+    "tagline": "Never let a valuable business relationship go cold.",
+    "problemSolved": "Professionals lose deals, referrals, and career opportunities because they fail to stay in touch with clients, prospects, and network contacts consistently.",
+    "targetAudience": "Founders, sales professionals, consultants, and freelancers aged 28-45 who know their network is their net worth but have no system to maintain it.",
+    "keyFeatures": [
+      "Client relationship tracker — see exactly when you last touched base",
+      "Deal pipeline nudges — never let a warm prospect go cold",
+      "AI message starters — personalized openers for every contact",
+      "Top contacts list — prioritize your highest-value relationships",
+      "Warmth scores — relationship health at a glance"
+    ],
+    "socialProof": "Used by 50,000+ professionals to close more deals and grow their network.",
+    "cta": "Download EverReach — free trial, no credit card.",
+    "productUrl": "https://everreach.app",
+    "pricePoint": "Free to start, premium plan available"
+  },
+  "framework": {
+    "awarenessStages": [
+      {
+        "id": "unaware",
+        "description": "Founder or sales pro does not realize they are losing money by not following up. Hook with a painful observation about losing deals or referrals silently. Never mention the product."
+      },
+      {
+        "id": "problem-aware",
+        "description": "They know they are bad at follow-up but blame themselves or busyness. Validate the pain, reframe it as a systems problem not a character flaw. Must include: 'and here is where it gets interesting'. Never mention the product."
+      },
+      {
+        "id": "solution-aware",
+        "description": "They know a CRM or system could help but existing tools feel too heavy. Show the lightweight personal relationship OS approach. Never mention the product by name."
+      },
+      {
+        "id": "product-aware",
+        "description": "They know EverReach exists and need the final push. Show the specific features: client tracker, deal nudges, AI openers. End with: 'download everreach, and start your free trial'."
+      }
+    ],
+    "audienceCategories": [
+      "client",
+      "prospect",
+      "referral partner",
+      "investor",
+      "mentor"
+    ],
+    "scriptRules": [
+      "NEVER mention EverReach by name in unaware, problem-aware, or solution-aware scripts",
+      "Only mention EverReach in product-aware scripts",
+      "Use lowercase throughout — conversational, not formal",
+      "Add commas and periods for natural breathing pauses",
+      "Problem-aware scripts must include the exact phrase: 'and here is where it gets interesting'",
+      "End unaware scripts with 'link in bio'",
+      "End problem-aware scripts with a comment CTA like 'comment [keyword], and i will...'",
+      "End solution-aware scripts with a comment CTA like 'comment [keyword], for...'",
+      "End product-aware scripts with 'download everreach, and start your free trial'",
+      "Each line is a standalone caption thought — max 7 lines total",
+      "Speak directly to the viewer using 'you' — never 'people' or 'they'",
+      "Keep each line under 12 words for clean caption display",
+      "Frame pain in business/money terms: lost deals, missed referrals, cold prospects"
+    ],
+    "voiceTone": "Direct, confident, slightly urgent. Like a successful founder giving a peer a wake-up call. Not salesy. Not corporate. Conversational but sharp. Lowercase delivery.",
+    "visualStyle": "Photorealistic UGC — real professional (not a celebrity), authentic home office or coffee shop setting, laptop or phone in hand. Before scene: stressed founder staring at unanswered emails, looking overwhelmed at a CRM. After scene: same character, confident, relaxed, phone in hand with a smile — deal closed energy.",
+    "elevenLabsVoiceId": "IKne3meq5aSn9XLyUdCD",
+    "aspectRatio": "9:16"
+  }
+}

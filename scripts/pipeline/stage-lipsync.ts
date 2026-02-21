@@ -226,16 +226,22 @@ async function describeCharacterFromImage(imagePath: string, openAIKey: string):
     body: JSON.stringify({
       model: 'gpt-4o',
       max_tokens: 300,
-      messages: [{
-        role: 'user',
-        content: [
-          {
-            type: 'text',
-            text: `Describe the person in this image for use as a locked character description in an AI video generation prompt. Be extremely specific about: exact age range (e.g. "27-29"), gender, hair color and style, skin tone, eye color if visible, clothing (specific color and item), and one distinguishing feature. Format as a single dense description string, no bullet points, no labels. Example format: "Young woman, 27-29, dark brown shoulder-length hair, medium olive skin, brown eyes, wearing a light grey oversized hoodie, small gold hoop earrings, natural no-makeup look". Do not include background or setting details.`,
-          },
-          { type: 'image_url', image_url: { url: `data:image/${ext};base64,${b64}`, detail: 'low' } },
-        ],
-      }],
+      messages: [
+        {
+          role: 'system',
+          content: 'You are a creative director writing character descriptions for AI video generation prompts. Your task is to describe the visual appearance of a fictional character depicted in a reference image so that an AI video model can recreate a consistent character across multiple clips. Focus only on observable visual attributes: approximate age range, gender presentation, hair color and style, skin tone, clothing color and type, and one distinguishing feature. Output a single dense description string with no labels, no bullet points, no identifying information.',
+        },
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'text',
+              text: 'Describe the character\'s visual appearance for an AI video generation prompt. Format: single dense string. Example: "Late-20s man, short dark brown hair, medium skin tone, wearing a navy blue crewneck sweater, slight stubble, relaxed confident expression". Only visual attributes — no names, no background details.',
+            },
+            { type: 'image_url', image_url: { url: `data:image/${ext};base64,${b64}`, detail: 'low' } },
+          ],
+        },
+      ],
     }),
   });
 

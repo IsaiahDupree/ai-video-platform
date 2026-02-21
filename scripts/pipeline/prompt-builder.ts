@@ -51,10 +51,22 @@ export function buildHookLine(formula: HookFormula, offer: Offer): string {
   // Truncate pain to max 4 words to keep hook under 15 words total
   const painWords = pain.split(/[.,;]/)[0].trim().toLowerCase().split(/\s+/).slice(0, 4).join(' ');
 
+  // For pain_literally, we need a short personal pain NOUN (2-3 words max),
+  // not a full sentence fragment. Extract the core pain concept.
+  const painNoun = (() => {
+    const lower = pain.toLowerCase();
+    // If problemSolved starts with a subject ("People drift...", "Professionals lose...")
+    // skip to the core pain concept after the first verb
+    const afterVerb = lower.match(/(?:drift|lose|fail|struggle|miss|forget|neglect|ignore)[^,.]*?(?:because|due to|from|with)\s+(.{5,40}?)(?:[,.]|$)/i);
+    if (afterVerb) return afterVerb[1].trim().split(/\s+/).slice(0, 4).join(' ');
+    // Otherwise use first 3-4 words of the first clause
+    return lower.split(/[.,;]/)[0].trim().split(/\s+/).slice(0, 4).join(' ');
+  })();
+
   switch (formula) {
     case 'pain_literally':
       // "my X was bad. it literally saved me." — max 12 words
-      return `my ${painWords} was ruining my life. this literally saved me.`;
+      return `my ${painNoun} was ruining my life. this literally saved me.`;
 
     case 'never_tried':
       // "i've never tried this before. believe it or not." — 10 words
