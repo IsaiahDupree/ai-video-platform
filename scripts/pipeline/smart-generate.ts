@@ -47,6 +47,41 @@ const ANALYSIS_URL = 'http://localhost:5555/api/analysis/analyze-file';
 const MEDIAPOSTER_DIR = '/Users/isaiahdupree/Documents/Software/MediaPoster/Backend';
 const LEARNINGS_PATH = 'output/pipeline/learnings.json';
 
+// =============================================================================
+// Pricing (update when providers change rates)
+// =============================================================================
+
+const PRICING = {
+  // fal.ai Veo 3.1 — $0.40/s with audio, 8s clips
+  FAL_VEO_PER_SECOND:       0.40,
+  FAL_VEO_CLIP_SECONDS:     8,
+  // Imagen 4 via Gemini API — ~$0.04/image (character sheet + before + after = 3 images)
+  IMAGEN_PER_IMAGE:         0.04,
+  IMAGES_PER_ANGLE:         3,   // character_sheet + before + after
+  // GPT-4o — $2.50/1M input, $10.00/1M output
+  GPT4O_INPUT_PER_TOKEN:    2.50  / 1_000_000,
+  GPT4O_OUTPUT_PER_TOKEN:   10.00 / 1_000_000,
+  // GPT-4o vision gate — 5 frames × ~1000 tokens/frame + system prompt
+  GPT4O_GATE_INPUT_TOKENS:  6_000,
+  GPT4O_GATE_OUTPUT_TOKENS: 300,
+};
+
+function clipCost(clipCount: number): number {
+  return clipCount * PRICING.FAL_VEO_CLIP_SECONDS * PRICING.FAL_VEO_PER_SECOND;
+}
+function imageCost(): number {
+  return PRICING.IMAGES_PER_ANGLE * PRICING.IMAGEN_PER_IMAGE;
+}
+function gptInputCost(tokens: number): number {
+  return tokens * PRICING.GPT4O_INPUT_PER_TOKEN;
+}
+function gptOutputCost(tokens: number): number {
+  return tokens * PRICING.GPT4O_OUTPUT_PER_TOKEN;
+}
+function gateCost(): number {
+  return gptInputCost(PRICING.GPT4O_GATE_INPUT_TOKENS) + gptOutputCost(PRICING.GPT4O_GATE_OUTPUT_TOKENS);
+}
+
 const ANOMALY_THRESHOLD = 4;
 const AUTHENTIC_THRESHOLD = 6;
 const COHERENCE_THRESHOLD = 6;
@@ -108,6 +143,15 @@ interface ViralResult {
   viral_analysis?: string;
 }
 
+interface CostBreakdown {
+  gptInputUsd: number;    // GPT-4o input generation
+  gptGateUsd: number;     // GPT-4o vision gate (per attempt)
+  imageUsd: number;       // Imagen 4 before/after/character sheet
+  videoUsd: number;       // fal.ai Veo 3.1 clips
+  totalUsd: number;
+  clipCount: number;
+}
+
 interface AngleResult {
   angleId: string;
   outputDir: string;
@@ -119,8 +163,20 @@ interface AngleResult {
   gate?: GateResult;
   gatePassed: boolean;
   viral?: ViralResult;
+  cost?: CostBreakdown;
   error?: string;
   durationMs: number;
+}
+
+interface LearningsCost {
+  totalSpentUsd: number;
+  totalVideoUsd: number;
+  totalImageUsd: number;
+  totalGptUsd: number;
+  costPerPassingAd: number;
+  costPerAttempt: number;
+  avgClipsPerAngle: number;
+  sessionCosts: Array<{ date: string; angles: number; spentUsd: number; passed: number }>;
 }
 
 interface Learnings {
@@ -130,6 +186,7 @@ interface Learnings {
   totalFailed: number;
   passRate: number;
   avgViralScore: number;
+  costs: LearningsCost;
   hookFormulas: Partial<Record<HookFormula, { attempts: number; passed: number; passRate: number }>>;
   topPatterns: {
     headlines: string[];
@@ -205,6 +262,10 @@ function loadLearnings(): Learnings {
     lastUpdated: new Date().toISOString(),
     totalGenerated: 0, totalPassed: 0, totalFailed: 0,
     passRate: 0, avgViralScore: 0,
+    costs: {
+      totalSpentUsd: 0, totalVideoUsd: 0, totalImageUsd: 0, totalGptUsd: 0,
+      costPerPassingAd: 0, costPerAttempt: 0, avgClipsPerAngle: 0, sessionCosts: [],
+    },
     hookFormulas: {},
     topPatterns: { headlines: [], hooks: [], tones: [], scriptStyles: [] },
     failurePatterns: { commonAnomalies: [], lowCoherenceScripts: [] },
@@ -223,6 +284,36 @@ function updateLearnings(learnings: Learnings, results: AngleResult[]): Learning
     ? learnings.totalPassed / learnings.totalGenerated : 0;
 
   if (!learnings.hookFormulas) learnings.hookFormulas = {};
+  if (!learnings.costs) learnings.costs = {
+    totalSpentUsd: 0, totalVideoUsd: 0, totalImageUsd: 0, totalGptUsd: 0,
+    costPerPassingAd: 0, costPerAttempt: 0, avgClipsPerAngle: 0, sessionCosts: [],
+  };
+
+  // Accumulate costs from this session
+  const sessionSpend = results.reduce((s, r) => s + (r.cost?.totalUsd ?? 0), 0);
+  const sessionClips = results.reduce((s, r) => s + (r.cost?.clipCount ?? 0), 0);
+  learnings.costs.totalSpentUsd  += sessionSpend;
+  learnings.costs.totalVideoUsd  += results.reduce((s, r) => s + (r.cost?.videoUsd ?? 0), 0);
+  learnings.costs.totalImageUsd  += results.reduce((s, r) => s + (r.cost?.imageUsd ?? 0), 0);
+  learnings.costs.totalGptUsd    += results.reduce((s, r) => s + (r.cost?.gptInputUsd ?? 0) + (r.cost?.gptGateUsd ?? 0), 0);
+  learnings.costs.costPerPassingAd = learnings.totalPassed > 0
+    ? learnings.costs.totalSpentUsd / (learnings.totalPassed + passed.length) : 0;
+  learnings.costs.costPerAttempt = learnings.totalGenerated > 0
+    ? learnings.costs.totalSpentUsd / (learnings.totalGenerated + results.length) : 0;
+  const totalClips = (learnings.costs.avgClipsPerAngle * (learnings.totalGenerated)) + sessionClips;
+  learnings.costs.avgClipsPerAngle = learnings.totalGenerated + results.length > 0
+    ? totalClips / (learnings.totalGenerated + results.length) : 0;
+  if (sessionSpend > 0) {
+    if (!learnings.costs.sessionCosts) learnings.costs.sessionCosts = [];
+    learnings.costs.sessionCosts.push({
+      date: new Date().toISOString().slice(0, 10),
+      angles: results.length,
+      spentUsd: Math.round(sessionSpend * 100) / 100,
+      passed: passed.length,
+    });
+    learnings.costs.sessionCosts = learnings.costs.sessionCosts.slice(-20);
+  }
+
   for (const r of results) {
     if (r.hookFormula) {
       const s = learnings.hookFormulas[r.hookFormula] ?? { attempts: 0, passed: 0, passRate: 0 };
@@ -252,6 +343,10 @@ function updateLearnings(learnings: Learnings, results: AngleResult[]): Learning
         gateScores: { anomaly: r.gate.anomaly_score, authenticity: r.gate.authenticity_score, coherence: r.gate.coherence_score },
         videoPath: r.videoPath ?? '',
       });
+    }
+    // Recalculate costPerPassingAd after adding new passed videos
+    if (learnings.totalPassed > 0) {
+      learnings.costs.costPerPassingAd = learnings.costs.totalSpentUsd / learnings.totalPassed;
     }
   }
 
@@ -494,6 +589,14 @@ async function runAngle(
   const lipsyncPath = path.join(outputDir, `lipsync_${safeAspect}.mp4`);
   let attempt = 0;
 
+  // Cost accumulators (across all attempts for this angle)
+  let totalGptInputUsd = 0;
+  let totalGptGateUsd = 0;
+  let totalImageUsd = 0;
+  let totalVideoUsd = 0;
+  let totalClipCount = 0;
+  let imagesGenerated = false;
+
   while (attempt < maxRetries) {
     attempt++;
     const isRetry = attempt > 1;
@@ -515,6 +618,8 @@ async function runAngle(
         const result = await generateAngleInputs(offer, framework, combo.stage, combo.category,
           `${angleId}_a${attempt}`, hookFormula);
         inputs = result.inputs;
+        // Track GPT-4o input generation cost
+        totalGptInputUsd += gptInputCost(result.promptTokens) + gptOutputCost(result.completionTokens);
 
         // Inject learnings context into the voice script generation
         if (learnings.totalGenerated > 0 && isRetry) {
@@ -541,8 +646,10 @@ async function runAngle(
         console.log(`  ❌ Stage 1 (images) failed: ${imgResult.error}`);
         continue; // retry with new inputs
       }
+      if (!imagesGenerated) { totalImageUsd += imageCost(); imagesGenerated = true; }
     } else {
       console.log(`\n  ⏭️  Images exist`);
+      if (!imagesGenerated) { imagesGenerated = true; } // already paid in a prior session
     }
 
     // ── Stage 2b: Lipsync ──────────────────────────────────────────────────
@@ -560,14 +667,21 @@ async function runAngle(
     const lipsyncResult = await runStageLipsync(inputs, outputDir, aspectRatio, lipsyncForce);
     if (lipsyncResult.status === 'failed') {
       console.log(`  ❌ Stage 2b (lipsync) failed: ${lipsyncResult.error}`);
-      // 429 = quota exhausted — don't burn retries, abort this angle immediately
       if (lipsyncResult.error?.includes('429')) {
         console.log(`  ⏳ Veo API quota exhausted — aborting (retries won't help)`);
         console.log(`     Re-run later: npx tsx scripts/pipeline/smart-generate.ts --assess-only <session>`);
         return { angleId, outputDir, headline: inputs.headline, voiceScript: inputs.voiceScript,
           attempt, gatePassed: false, error: 'Veo 429 quota exhausted', durationMs: Date.now() - t0 };
       }
-      continue; // retry only for non-quota failures
+      continue;
+    }
+    // Count clips generated this attempt for cost tracking
+    const clipsDir = path.join(outputDir, 'lipsync_clips');
+    if (fs.existsSync(clipsDir)) {
+      const newClips = fs.readdirSync(clipsDir).filter((f) => f.endsWith('.mp4')).length;
+      totalClipCount += newClips;
+      totalVideoUsd += clipCost(newClips);
+      console.log(`  💰 Video cost this attempt: $${clipCost(newClips).toFixed(2)} (${newClips} clips × $${(PRICING.FAL_VEO_PER_SECOND * PRICING.FAL_VEO_CLIP_SECONDS).toFixed(2)})`);
     }
 
     if (!fs.existsSync(lipsyncPath)) {
@@ -579,6 +693,7 @@ async function runAngle(
     console.log(`\n  🔍 Authenticity Gate...`);
     const voiceScript = inputs.voiceScript ?? '';
     const gate = await runGate(lipsyncPath, voiceScript, inputs.headline, openAIKey);
+    totalGptGateUsd += gateCost();
 
     const gateIcon = gate.passed ? '✅' : '🛑';
     console.log(`  ${gateIcon} A:${gate.anomaly_score} U:${gate.authenticity_score} C:${gate.coherence_score} CC:${gate.character_coherence_score} LS:${gate.lip_sync_score}`);
@@ -592,8 +707,15 @@ async function runAngle(
         console.log(`  🔄 Retry with hook: ${nextFormula} (${maxRetries - attempt} left)...`);
         continue;
       }
+      const failCost: CostBreakdown = {
+        gptInputUsd: totalGptInputUsd, gptGateUsd: totalGptGateUsd,
+        imageUsd: totalImageUsd, videoUsd: totalVideoUsd,
+        totalUsd: totalGptInputUsd + totalGptGateUsd + totalImageUsd + totalVideoUsd,
+        clipCount: totalClipCount,
+      };
       return { angleId, outputDir, videoPath: lipsyncPath, headline: inputs.headline,
-        voiceScript, hookFormula: selectHookFormula(learnings, attempt - 1), attempt, gate, gatePassed: false, durationMs: Date.now() - t0 };
+        voiceScript, hookFormula: selectHookFormula(learnings, attempt - 1), attempt, gate,
+        gatePassed: false, cost: failCost, durationMs: Date.now() - t0 };
     }
 
     // ── Viral Analysis ─────────────────────────────────────────────────────
@@ -602,16 +724,31 @@ async function runAngle(
     const score = viral.pre_social_score != null ? `${viral.pre_social_score.toFixed(1)}/100` : 'N/A';
     console.log(`  Score: ${score}  Tone: ${viral.tone ?? 'N/A'}  Hook: "${viral.detected_hook?.slice(0, 60) ?? 'N/A'}"`);
 
+    const passCost: CostBreakdown = {
+      gptInputUsd: totalGptInputUsd, gptGateUsd: totalGptGateUsd,
+      imageUsd: totalImageUsd, videoUsd: totalVideoUsd,
+      totalUsd: totalGptInputUsd + totalGptGateUsd + totalImageUsd + totalVideoUsd,
+      clipCount: totalClipCount,
+    };
+    console.log(`  💰 Angle total: $${passCost.totalUsd.toFixed(2)} (video $${passCost.videoUsd.toFixed(2)} + images $${passCost.imageUsd.toFixed(2)} + GPT $${(passCost.gptInputUsd + passCost.gptGateUsd).toFixed(3)})`);
+
     // Auto-open video
     try { execSync(`open "${lipsyncPath}"`, { stdio: 'ignore' }); } catch { /* */ }
 
     return { angleId, outputDir, videoPath: lipsyncPath, headline: inputs.headline,
-      voiceScript, hookFormula: selectHookFormula(learnings, attempt - 1), attempt, gate, gatePassed: true, viral, durationMs: Date.now() - t0 };
+      voiceScript, hookFormula: selectHookFormula(learnings, attempt - 1), attempt, gate,
+      gatePassed: true, viral, cost: passCost, durationMs: Date.now() - t0 };
   }
 
   // All retries exhausted
+  const exhaustedCost: CostBreakdown = {
+    gptInputUsd: totalGptInputUsd, gptGateUsd: totalGptGateUsd,
+    imageUsd: totalImageUsd, videoUsd: totalVideoUsd,
+    totalUsd: totalGptInputUsd + totalGptGateUsd + totalImageUsd + totalVideoUsd,
+    clipCount: totalClipCount,
+  };
   return { angleId, outputDir, attempt, gatePassed: false,
-    error: `All ${maxRetries} attempts failed`, durationMs: Date.now() - t0 };
+    cost: exhaustedCost, error: `All ${maxRetries} attempts failed`, durationMs: Date.now() - t0 };
 }
 
 // =============================================================================
@@ -668,8 +805,13 @@ function printResults(results: AngleResult[], learnings: Learnings) {
 
   const blocked = results.filter((r) => !r.gatePassed);
   const passed = results.filter((r) => r.gatePassed);
+  const sessionSpend = results.reduce((s, r) => s + (r.cost?.totalUsd ?? 0), 0);
+  const sessionClips = results.reduce((s, r) => s + (r.cost?.clipCount ?? 0), 0);
   console.log(`  Generated: ${results.length}  |  ✅ Passed: ${passed.length}  |  🛑 Blocked: ${blocked.length}`);
   console.log(`  Lifetime pass rate: ${(learnings.passRate * 100).toFixed(0)}% (${learnings.totalPassed}/${learnings.totalGenerated})`);
+  if (sessionSpend > 0) {
+    console.log(`  Session spend: $${sessionSpend.toFixed(2)}  |  ${sessionClips} clips  |  $${passed.length > 0 ? (sessionSpend / passed.length).toFixed(2) : '—'}/passing ad`);
+  }
 
   if (blocked.length > 0) {
     console.log(`\n${'─'.repeat(70)}`);
@@ -678,6 +820,7 @@ function printResults(results: AngleResult[], learnings: Learnings) {
       console.log(`\n  ✗ ${r.angleId} (${r.attempt} attempt${r.attempt > 1 ? 's' : ''})`);
       if (r.headline) console.log(`    "${r.headline}"`);
       if (r.gate) console.log(`    A:${r.gate.anomaly_score} U:${r.gate.authenticity_score} C:${r.gate.coherence_score} — ${r.gate.verdict}`);
+      if (r.cost) console.log(`    Cost: $${r.cost.totalUsd.toFixed(2)} (${r.cost.clipCount} clips)`);
       if (r.error) console.log(`    Error: ${r.error}`);
     }
   }
@@ -695,6 +838,7 @@ function printResults(results: AngleResult[], learnings: Learnings) {
       console.log(`    "${r.headline}"`);
       if (r.gate) console.log(`    Gate:    A:${r.gate.anomaly_score} U:${r.gate.authenticity_score} C:${r.gate.coherence_score} CC:${r.gate.character_coherence_score} LS:${r.gate.lip_sync_score}`);
       if (r.hookFormula) console.log(`    Formula: ${r.hookFormula}`);
+      if (r.cost) console.log(`    Cost:    $${r.cost.totalUsd.toFixed(2)} (video $${r.cost.videoUsd.toFixed(2)} + img $${r.cost.imageUsd.toFixed(2)} + GPT $${(r.cost.gptInputUsd + r.cost.gptGateUsd).toFixed(3)}, ${r.cost.clipCount} clips)`);
       console.log(`    Score:   ${score}  Tone: ${r.viral?.tone ?? '?'}  Pacing: ${r.viral?.pacing ?? '?'}`);
       if (r.viral?.fate_scores) {
         const f = r.viral.fate_scores;
@@ -715,6 +859,27 @@ function printResults(results: AngleResult[], learnings: Learnings) {
   if (learnings.hookFormulas && Object.keys(learnings.hookFormulas).length > 0) {
     const hf = Object.entries(learnings.hookFormulas).sort(([,a],[,b]) => b.passRate - a.passRate);
     console.log(`  Hook formulas: ${hf.map(([f,s]) => `${f}=${(s.passRate*100).toFixed(0)}%(${s.attempts})`).join(', ')}`);
+  }
+
+  // Cost summary
+  console.log(`\n${'─'.repeat(70)}`);
+  console.log('  💰 COST TRACKING');
+  const c = learnings.costs;
+  if (c && c.totalSpentUsd > 0) {
+    console.log(`  Lifetime spend:    $${c.totalSpentUsd.toFixed(2)}`);
+    console.log(`    Video (fal.ai):  $${c.totalVideoUsd.toFixed(2)}  ($${PRICING.FAL_VEO_PER_SECOND}/s × ${PRICING.FAL_VEO_CLIP_SECONDS}s/clip)`);
+    console.log(`    Images (Imagen): $${c.totalImageUsd.toFixed(2)}  ($${PRICING.IMAGEN_PER_IMAGE}/image × ${PRICING.IMAGES_PER_ANGLE} per angle)`);
+    console.log(`    GPT-4o:          $${c.totalGptUsd.toFixed(3)}  (input gen + vision gate)`);
+    console.log(`  Cost/passing ad:   $${c.costPerPassingAd.toFixed(2)}`);
+    console.log(`  Cost/attempt:      $${c.costPerAttempt.toFixed(2)}`);
+    console.log(`  Avg clips/angle:   ${c.avgClipsPerAngle.toFixed(1)}`);
+    if (c.sessionCosts?.length > 1) {
+      console.log(`  Last sessions:     ${c.sessionCosts.slice(-3).map((s) => `${s.date} $${s.spentUsd} (${s.passed}/${s.angles} passed)`).join('  |  ')}`);
+    }
+  } else {
+    const perAd = (PRICING.FAL_VEO_PER_SECOND * PRICING.FAL_VEO_CLIP_SECONDS * 5) + imageCost() + gateCost();
+    console.log(`  No spend tracked yet. Estimated cost per 5-clip ad: ~$${perAd.toFixed(2)}`);
+    console.log(`  Pricing: fal.ai $${PRICING.FAL_VEO_PER_SECOND}/s | Imagen $${PRICING.IMAGEN_PER_IMAGE}/img | GPT-4o $${(PRICING.GPT4O_INPUT_PER_TOKEN * 1000).toFixed(4)}/1K tokens`);
   }
 
   console.log(`\n${'═'.repeat(70)}`);
