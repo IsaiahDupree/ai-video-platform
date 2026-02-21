@@ -400,7 +400,11 @@ async function pollFalClip(requestToken: string, falKey: string): Promise<Buffer
     await new Promise((r) => setTimeout(r, 8_000));
     let res: Response;
     try {
-      res = await fetch(`${statusUrl}?logs=0`, { headers: { 'Authorization': `Key ${falKey}` } });
+      res = await fetch(`${statusUrl}?logs=0`, {
+        method: 'POST',
+        headers: { 'Authorization': `Key ${falKey}`, 'Content-Type': 'application/json' },
+        body: '{}',
+      });
     } catch { process.stdout.write('~'); continue; }  // transient network error — retry
     if (!res.ok) { process.stdout.write('?'); continue; }
     const status = await res.json() as any;
@@ -426,7 +430,7 @@ async function pollFalClip(requestToken: string, falKey: string): Promise<Buffer
     if (!dlRes.ok) throw new Error(`fal.ai download failed: ${dlRes.status}`);
     return Buffer.from(await dlRes.arrayBuffer());
   }
-  throw new Error('fal.ai clip timed out after 10 minutes');
+  throw new Error('fal.ai clip timed out after 20 minutes');
 }
 
 // =============================================================================
