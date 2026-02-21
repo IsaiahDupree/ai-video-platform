@@ -1,0 +1,69 @@
+{
+  "offer": {
+    "productName": "EverReach",
+    "tagline": "Never lose touch with the people who matter.",
+    "problemSolved": "People drift from important relationships not because they stop caring, but because there is no system. Friendships, family bonds, professional networks, and mentorships all fade silently due to lack of rhythm.",
+    "targetAudience": "Ambitious 25-40 year olds who value deep relationships but struggle to maintain them consistently due to busy lives.",
+    "keyFeatures": [
+      "Top people list — prioritize who matters most",
+      "Last touch tracking — see exactly when you last reached out",
+      "Gentle reminders — nudges at the right time, not annoying",
+      "Message starters — AI-generated openers so it never feels awkward",
+      "Warmth scores — relationship health at a glance"
+    ],
+    "socialProof": "Used by 50,000+ people to reconnect with friends, family, mentors, and clients.",
+    "cta": "Download EverReach — free trial, no credit card.",
+    "productUrl": "https://everreach.app",
+    "pricePoint": "Free to start, premium plan available"
+  },
+  "framework": {
+    "awarenessStages": [
+      {
+        "id": "unaware",
+        "description": "Person does not know they have a relationship maintenance problem. Hook with a relatable observation about drift. Never mention the product."
+      },
+      {
+        "id": "problem-aware",
+        "description": "Person knows relationships are fading but does not know the solution. Validate the pain, reframe the cause, tease the solution. Must include: 'and here is where it gets interesting'. Never mention the product."
+      },
+      {
+        "id": "solution-aware",
+        "description": "Person knows a system helps but has not found the right one. Show the specific method or format. Never mention the product by name."
+      },
+      {
+        "id": "product-aware",
+        "description": "Person knows EverReach exists and needs final push to convert. Show the product features directly. End with the CTA: 'download everreach, and start your free trial'."
+      }
+    ],
+    "audienceCategories": [
+      "friend",
+      "old friend",
+      "family",
+      "mentor",
+      "coworker",
+      "client",
+      "crush"
+    ],
+    "scriptRules": [
+      "NEVER mention EverReach by name in unaware, problem-aware, or solution-aware scripts",
+      "Only mention EverReach in product-aware scripts",
+      "Use lowercase throughout — conversational, not formal",
+      "Add commas and periods for natural breathing pauses in TTS",
+      "Problem-aware scripts must include the exact phrase: 'and here is where it gets interesting'",
+      "End unaware scripts with 'link in bio'",
+      "End problem-aware scripts with a comment CTA like 'comment [keyword], and i will...'",
+      "End solution-aware scripts with a comment CTA like 'comment [keyword], for...'",
+      "End product-aware scripts with 'download everreach, and start your free trial'",
+      "Each line is a standalone caption thought — max 7 lines total",
+      "Speak directly to the viewer using 'you' — never 'people' or 'they'",
+      "Keep each line under 12 words for clean caption display"
+    ],
+    "voiceTone": "Casual, direct, empathetic. Like a smart friend giving advice. Not salesy. Not corporate. Conversational pace with natural pauses. Lowercase delivery.",
+    "visualStyle": "Photorealistic UGC — real woman (not a celebrity), authentic everyday setting, phone in hand. Before scene: stressed, overwhelmed, or disconnected emotional state. After scene: same character, confident, relieved, connected. Consistent character appearance across both images.",
+    "characterGender": "woman",
+    "voiceGender": "female",
+    "voiceAge": "late 20s",
+    "elevenLabsVoiceId": "IKne3meq5aSn9XLyUdCD",
+    "aspectRatio": "9:16"
+  }
+}

@@ -787,18 +787,20 @@ export async function runStageLipsync(
     ? extractSettingFromPrompt(inputs.beforeScenePrompt)
     : 'a cozy home environment, warm natural window light, phone or laptop visible nearby';
 
-  // Voice profile for accent/tone consistency across ALL clips
+  // Voice profile — read gender/age from offer if not overridden
+  const offerVoiceGender = (inputs as any).voiceGender ?? 'male';
+  const offerVoiceAge   = (inputs as any).voiceAge   ?? 'late 20s';
   const voiceProfileStr = buildVoiceProfile(voiceOverride ?? {
     accent: 'American, warm neutral',
     tone: 'confident, empathetic, not salesy',
     pace: 'conversational medium pace with natural pauses',
     quality: 'clear, warm, natural',
-    gender: 'male',
-    age: 'late 20s',
+    gender: offerVoiceGender,
+    age: offerVoiceAge,
   });
   console.log(`   🎙️  Voice: ${voiceProfileStr.slice(0, 80)}...`);
 
-  const pronoun = (characterOverride?.gender === 'female' || voiceOverride?.gender === 'female') ? 'She' : 'He';
+  const pronoun = (characterOverride?.gender === 'female' || voiceOverride?.gender === 'female' || offerVoiceGender === 'female') ? 'She' : 'He';
 
   // Always rebuild prompts with the locked character description.
   // Pre-generated lipsyncPrompts from ai-inputs.ts used a generic character description
