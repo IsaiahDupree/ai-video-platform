@@ -1785,6 +1785,1780 @@
         "UGC download retrieves actual assets",
         "No TODO.*Implement.*RapidAPI stubs remain in ugc.py"
       ]
+    },
+    {
+      "id": "VID-WC-001",
+      "name": "Unit tests for auth flows",
+      "description": "Unit tests for sign-in, sign-up, password reset",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Sign-in",
+        "Sign-up",
+        "Reset",
+        "Session"
+      ]
+    },
+    {
+      "id": "VID-WC-002",
+      "name": "Unit tests for API route handlers",
+      "description": "Unit tests for all API routes",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "All routes",
+        "Error cases",
+        "Auth middleware"
+      ]
+    },
+    {
+      "id": "VID-WC-003",
+      "name": "Unit tests for database queries",
+      "description": "Unit tests for CRUD helpers",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Create/read/update/delete",
+        "Pagination",
+        "Search"
+      ]
+    },
+    {
+      "id": "VID-WC-004",
+      "name": "Unit tests for form validation",
+      "description": "Unit tests for validation rules",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Required",
+        "Email",
+        "Password",
+        "Custom"
+      ]
+    },
+    {
+      "id": "VID-WC-005",
+      "name": "Unit tests for utility functions",
+      "description": "Unit tests for formatting and helpers",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Date",
+        "Currency",
+        "String",
+        "Edge cases"
+      ]
+    },
+    {
+      "id": "VID-WC-006",
+      "name": "Unit tests for state management",
+      "description": "Unit tests for stores/context",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Initial state",
+        "Actions",
+        "Selectors"
+      ]
+    },
+    {
+      "id": "VID-WC-007",
+      "name": "Integration tests for primary workflow",
+      "description": "Full workflow: sign-up through core action",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Account",
+        "Onboard",
+        "Action",
+        "Verify"
+      ]
+    },
+    {
+      "id": "VID-WC-008",
+      "name": "Integration tests for payment flow",
+      "description": "Stripe checkout and webhook test",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Checkout",
+        "Webhook",
+        "Subscription"
+      ]
+    },
+    {
+      "id": "VID-WC-009",
+      "name": "Integration tests for import/export",
+      "description": "CSV/JSON import and export",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Upload",
+        "Map",
+        "Import",
+        "Export"
+      ]
+    },
+    {
+      "id": "VID-WC-010",
+      "name": "Integration tests for search/filter",
+      "description": "Search, filter, and pagination",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Text search",
+        "Filters",
+        "Pagination"
+      ]
+    },
+    {
+      "id": "VID-WC-011",
+      "name": "E2E tests for auth with Playwright",
+      "description": "Playwright auth tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Login",
+        "Signup",
+        "Protected routes"
+      ]
+    },
+    {
+      "id": "VID-WC-012",
+      "name": "E2E tests for CRUD operations",
+      "description": "Playwright CRUD tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Create",
+        "View",
+        "Edit",
+        "Delete"
+      ]
+    },
+    {
+      "id": "VID-WC-013",
+      "name": "E2E tests for settings",
+      "description": "Playwright settings tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Profile",
+        "Preferences",
+        "Persistence"
+      ]
+    },
+    {
+      "id": "VID-WC-014",
+      "name": "E2E tests for responsive layouts",
+      "description": "Playwright breakpoint tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Mobile",
+        "Tablet",
+        "Desktop"
+      ]
+    },
+    {
+      "id": "VID-WC-015",
+      "name": "E2E tests for error states",
+      "description": "Playwright error/edge tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "404",
+        "Error boundary",
+        "Empty state"
+      ]
+    },
+    {
+      "id": "VID-WC-016",
+      "name": "Performance test: page load < 3s",
+      "description": "Page load optimization",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "LCP < 2.5s",
+        "FID < 100ms",
+        "CLS < 0.1"
+      ]
+    },
+    {
+      "id": "VID-WC-017",
+      "name": "Performance test: API < 500ms",
+      "description": "API response times",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "List < 500ms",
+        "Detail < 300ms",
+        "Search < 500ms"
+      ]
+    },
+    {
+      "id": "VID-WC-018",
+      "name": "Performance test: DB queries",
+      "description": "Query optimization",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No seq scans",
+        "Indexes",
+        "Plans checked"
+      ]
+    },
+    {
+      "id": "VID-WC-019",
+      "name": "Load test: concurrent users",
+      "description": "50+ concurrent user simulation",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No errors",
+        "Response < 2x",
+        "No leaks"
+      ]
+    },
+    {
+      "id": "VID-WC-020",
+      "name": "Accessibility audit with axe-core",
+      "description": "Automated a11y scan",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No critical",
+        "No serious",
+        "ARIA correct"
+      ]
+    },
+    {
+      "id": "VID-WC-021",
+      "name": "Visual regression tests",
+      "description": "Screenshot comparison",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dashboard",
+        "Lists",
+        "Forms",
+        "Settings"
+      ]
+    },
+    {
+      "id": "VID-WC-022",
+      "name": "API contract tests",
+      "description": "Response shape validation",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Shapes match",
+        "Errors typed",
+        "Pagination"
+      ]
+    },
+    {
+      "id": "VID-WC-023",
+      "name": "Security test: auth bypass",
+      "description": "Unauthenticated rejection",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "401 on API",
+        "Redirect pages",
+        "No leaks"
+      ]
+    },
+    {
+      "id": "VID-WC-024",
+      "name": "Security test: injection prevention",
+      "description": "XSS and SQL injection tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Script sanitized",
+        "SQL blocked"
+      ]
+    },
+    {
+      "id": "VID-WC-025",
+      "name": "Test coverage reports",
+      "description": "Coverage config and thresholds",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Config",
+        "HTML report",
+        "Thresholds"
+      ]
+    },
+    {
+      "id": "VID-WC-026",
+      "name": "Snapshot tests for components",
+      "description": "Snapshot critical components",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dashboard",
+        "Forms",
+        "Modals"
+      ]
+    },
+    {
+      "id": "VID-WC-027",
+      "name": "Test seed script",
+      "description": "Idempotent test data seeding",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Accounts",
+        "Entities",
+        "Relations"
+      ]
+    },
+    {
+      "id": "VID-WC-028",
+      "name": "Mock service layer",
+      "description": "Mock external services",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Auth",
+        "DB",
+        "Payment",
+        "Email"
+      ]
+    },
+    {
+      "id": "VID-WC-029",
+      "name": "CI test configuration",
+      "description": "Tests in CI pipeline",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Commands",
+        "Env vars",
+        "Parallel",
+        "Reports"
+      ]
+    },
+    {
+      "id": "VID-WC-030",
+      "name": "Regression test suite",
+      "description": "Tests for fixed bugs",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Per-bug tests",
+        "Edge cases",
+        "Prevent regressions"
+      ]
+    },
+    {
+      "id": "VID-WC-031",
+      "name": "CSRF protection on mutations",
+      "description": "CSRF tokens on POST/PUT/DELETE",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Token gen",
+        "Validation",
+        "Cookie"
+      ]
+    },
+    {
+      "id": "VID-WC-032",
+      "name": "Rate limiting on auth endpoints",
+      "description": "Rate limit sign-in/up/reset",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Per-IP",
+        "Per-account",
+        "429",
+        "Backoff"
+      ]
+    },
+    {
+      "id": "VID-WC-033",
+      "name": "Rate limiting on API endpoints",
+      "description": "Rate limit all APIs",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Per-user",
+        "Per-tier",
+        "Headers"
+      ]
+    },
+    {
+      "id": "VID-WC-034",
+      "name": "Input sanitization",
+      "description": "Sanitize all user inputs",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Strip HTML",
+        "Escape chars",
+        "Trim",
+        "Length"
+      ]
+    },
+    {
+      "id": "VID-WC-035",
+      "name": "SQL injection prevention audit",
+      "description": "Verify parameterized queries",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No concatenation",
+        "Parameterized"
+      ]
+    },
+    {
+      "id": "VID-WC-036",
+      "name": "Secure HTTP headers",
+      "description": "CSP, HSTS, X-Frame-Options",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "CSP",
+        "HSTS",
+        "X-Frame",
+        "X-Content-Type"
+      ]
+    },
+    {
+      "id": "VID-WC-037",
+      "name": "Environment variable security",
+      "description": "No secrets in client bundles",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No client secrets",
+        "No .env in git"
+      ]
+    },
+    {
+      "id": "VID-WC-038",
+      "name": "Auth token security",
+      "description": "Secure token storage/rotation",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "HttpOnly",
+        "Secure",
+        "SameSite",
+        "Rotation"
+      ]
+    },
+    {
+      "id": "VID-WC-039",
+      "name": "File upload security",
+      "description": "Validate uploads",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "MIME check",
+        "Size limit",
+        "Whitelist",
+        "Isolation"
+      ]
+    },
+    {
+      "id": "VID-WC-040",
+      "name": "API authorization checks",
+      "description": "Auth on every endpoint",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Own data only",
+        "Admin protected",
+        "Role checks"
+      ]
+    },
+    {
+      "id": "VID-WC-041",
+      "name": "Dependency vulnerability scanning",
+      "description": "Automated CVE scanning",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "npm audit",
+        "Dependabot",
+        "Alerts"
+      ]
+    },
+    {
+      "id": "VID-WC-042",
+      "name": "Sensitive data encryption",
+      "description": "Encrypt PII at rest",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "PII identified",
+        "Encrypted",
+        "Key mgmt"
+      ]
+    },
+    {
+      "id": "VID-WC-043",
+      "name": "Audit logging",
+      "description": "Log security-relevant actions",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Auth events",
+        "Data access",
+        "Admin actions"
+      ]
+    },
+    {
+      "id": "VID-WC-044",
+      "name": "Session hardening",
+      "description": "Secure sessions with timeouts",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Timeout",
+        "Limits",
+        "Revocation"
+      ]
+    },
+    {
+      "id": "VID-WC-045",
+      "name": "GDPR/privacy compliance",
+      "description": "Data export/deletion/consent",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Export",
+        "Deletion",
+        "Consent"
+      ]
+    },
+    {
+      "id": "VID-WC-046",
+      "name": "Server-side caching",
+      "description": "Cache expensive queries",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Headers",
+        "SWR",
+        "Invalidation"
+      ]
+    },
+    {
+      "id": "VID-WC-047",
+      "name": "Client-side data caching",
+      "description": "React Query/SWR config",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Stale time",
+        "Persistence",
+        "Optimistic"
+      ]
+    },
+    {
+      "id": "VID-WC-048",
+      "name": "Code splitting and lazy loading",
+      "description": "Split bundles per route",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dynamic imports",
+        "Suspense"
+      ]
+    },
+    {
+      "id": "VID-WC-049",
+      "name": "Image optimization",
+      "description": "next/image, WebP, responsive",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "next/image",
+        "WebP",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "VID-WC-050",
+      "name": "Database query optimization",
+      "description": "Indexes and pooling",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Indexes",
+        "Analysis",
+        "Pooling"
+      ]
+    },
+    {
+      "id": "VID-WC-051",
+      "name": "API response compression",
+      "description": "gzip/brotli",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Compression",
+        "Negotiation",
+        "Threshold"
+      ]
+    },
+    {
+      "id": "VID-WC-052",
+      "name": "Pagination on all lists",
+      "description": "Cursor/offset pagination",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Cursor",
+        "Size limits",
+        "Total count"
+      ]
+    },
+    {
+      "id": "VID-WC-053",
+      "name": "Request deduplication",
+      "description": "Prevent duplicate calls",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Debounce",
+        "Cancel",
+        "Dedup"
+      ]
+    },
+    {
+      "id": "VID-WC-054",
+      "name": "Static asset caching",
+      "description": "CDN with long-term cache",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Cache-Control",
+        "Hashing",
+        "CDN"
+      ]
+    },
+    {
+      "id": "VID-WC-055",
+      "name": "Connection pooling",
+      "description": "DB connection pool config",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Pool size",
+        "Timeout",
+        "Recycling"
+      ]
+    },
+    {
+      "id": "VID-WC-056",
+      "name": "Memory optimization",
+      "description": "Fix memory leaks",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "SSR leaks",
+        "Cleanup",
+        "Listeners"
+      ]
+    },
+    {
+      "id": "VID-WC-057",
+      "name": "Bundle size monitoring",
+      "description": "Track bundle regressions",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Analyzer",
+        "Budgets",
+        "CI check"
+      ]
+    },
+    {
+      "id": "VID-WC-058",
+      "name": "Navigation prefetching",
+      "description": "Prefetch routes/data",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Link prefetch",
+        "Data prefetch"
+      ]
+    },
+    {
+      "id": "VID-WC-059",
+      "name": "Web vitals monitoring",
+      "description": "Track Core Web Vitals",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "LCP",
+        "FID",
+        "CLS",
+        "Dashboard"
+      ]
+    },
+    {
+      "id": "VID-WC-060",
+      "name": "Streaming SSR",
+      "description": "React streaming for TTFB",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Suspense",
+        "Streaming",
+        "Progressive"
+      ]
+    },
+    {
+      "id": "VID-WC-061",
+      "name": "Dynamic meta tags",
+      "description": "Title/desc/OG on all pages",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Titles",
+        "Descriptions",
+        "OG",
+        "Twitter"
+      ]
+    },
+    {
+      "id": "VID-WC-062",
+      "name": "XML sitemap generation",
+      "description": "Auto-generate sitemap.xml",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "All routes",
+        "Priority",
+        "Auto-update"
+      ]
+    },
+    {
+      "id": "VID-WC-063",
+      "name": "robots.txt configuration",
+      "description": "Proper robots.txt",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Allow public",
+        "Disallow admin"
+      ]
+    },
+    {
+      "id": "VID-WC-064",
+      "name": "Structured data JSON-LD",
+      "description": "Schema.org rich results",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Organization",
+        "Product",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "id": "VID-WC-065",
+      "name": "Canonical URLs",
+      "description": "Prevent duplicate content",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Canonical tags",
+        "Query params"
+      ]
+    },
+    {
+      "id": "VID-WC-066",
+      "name": "OG image generation",
+      "description": "Dynamic social images",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dynamic text",
+        "Branded",
+        "Cached"
+      ]
+    },
+    {
+      "id": "VID-WC-067",
+      "name": "Error page SEO",
+      "description": "Proper status codes",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "404 status",
+        "Custom page",
+        "No-index"
+      ]
+    },
+    {
+      "id": "VID-WC-068",
+      "name": "Breadcrumb navigation",
+      "description": "Breadcrumbs with structured data",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Visual",
+        "JSON-LD"
+      ]
+    },
+    {
+      "id": "VID-WC-069",
+      "name": "PageSpeed > 90",
+      "description": "Google PageSpeed optimization",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Performance",
+        "A11y",
+        "Best practices"
+      ]
+    },
+    {
+      "id": "VID-WC-070",
+      "name": "Social share preview testing",
+      "description": "Verify share previews",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Facebook",
+        "Twitter",
+        "LinkedIn"
+      ]
+    },
+    {
+      "id": "VID-WC-071",
+      "name": "ARIA labels on interactives",
+      "description": "Proper ARIA attributes",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Buttons",
+        "Inputs",
+        "Icons",
+        "Roles"
+      ]
+    },
+    {
+      "id": "VID-WC-072",
+      "name": "Keyboard navigation",
+      "description": "All features via keyboard",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Tab order",
+        "Focus visible",
+        "Escape"
+      ]
+    },
+    {
+      "id": "VID-WC-073",
+      "name": "Focus management on routes",
+      "description": "Focus on route change",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Main content",
+        "Skip nav",
+        "Announce"
+      ]
+    },
+    {
+      "id": "VID-WC-074",
+      "name": "Color contrast WCAG AA",
+      "description": "Meet contrast ratios",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Normal 4.5:1",
+        "Large 3:1",
+        "Both themes"
+      ]
+    },
+    {
+      "id": "VID-WC-075",
+      "name": "Screen reader compatibility",
+      "description": "Readable by SR",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Alt text",
+        "Tables",
+        "Forms",
+        "Live regions"
+      ]
+    },
+    {
+      "id": "VID-WC-076",
+      "name": "Responsive text scaling",
+      "description": "Support 200% zoom",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No scroll",
+        "No overlap",
+        "No hidden"
+      ]
+    },
+    {
+      "id": "VID-WC-077",
+      "name": "Form error announcements",
+      "description": "Announce validation errors",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Summary",
+        "Inline",
+        "Focus to first"
+      ]
+    },
+    {
+      "id": "VID-WC-078",
+      "name": "Reduced motion support",
+      "description": "Respect prefers-reduced-motion",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Disable animations",
+        "Simplify"
+      ]
+    },
+    {
+      "id": "VID-WC-079",
+      "name": "High contrast mode",
+      "description": "Usable in high contrast",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Borders",
+        "Focus indicators"
+      ]
+    },
+    {
+      "id": "VID-WC-080",
+      "name": "Accessible data tables",
+      "description": "Proper table markup",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Headers",
+        "Scope",
+        "Caption"
+      ]
+    },
+    {
+      "id": "VID-WC-081",
+      "name": "Loading skeletons all pages",
+      "description": "Skeleton loading states",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dashboard",
+        "List",
+        "Detail",
+        "Form"
+      ]
+    },
+    {
+      "id": "VID-WC-082",
+      "name": "Empty states all lists",
+      "description": "Helpful empty states",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Component",
+        "Message",
+        "Action"
+      ]
+    },
+    {
+      "id": "VID-WC-083",
+      "name": "Error boundary with recovery",
+      "description": "Global error UI",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Catch",
+        "Message",
+        "Retry",
+        "Report"
+      ]
+    },
+    {
+      "id": "VID-WC-084",
+      "name": "Toast notification system",
+      "description": "Global toasts",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Variants",
+        "Auto-dismiss",
+        "Stack"
+      ]
+    },
+    {
+      "id": "VID-WC-085",
+      "name": "Confirmation dialogs",
+      "description": "Confirm destructive actions",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Delete",
+        "Cancel",
+        "Clear"
+      ]
+    },
+    {
+      "id": "VID-WC-086",
+      "name": "Responsive sidebar nav",
+      "description": "Collapsible sidebar",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Desktop",
+        "Mobile drawer",
+        "Toggle"
+      ]
+    },
+    {
+      "id": "VID-WC-087",
+      "name": "Dark mode with system pref",
+      "description": "Light/dark/system theme",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Toggle",
+        "System",
+        "Persist"
+      ]
+    },
+    {
+      "id": "VID-WC-088",
+      "name": "Form autosave with drafts",
+      "description": "Auto-save form progress",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Interval",
+        "Indicator",
+        "Restore"
+      ]
+    },
+    {
+      "id": "VID-WC-089",
+      "name": "Infinite scroll",
+      "description": "Auto-load on scroll",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Auto-load",
+        "Spinner",
+        "End indicator"
+      ]
+    },
+    {
+      "id": "VID-WC-090",
+      "name": "Keyboard shortcuts",
+      "description": "Power user shortcuts",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Cmd+/ help",
+        "Nav shortcuts",
+        "Actions"
+      ]
+    },
+    {
+      "id": "VID-WC-091",
+      "name": "Breadcrumb component",
+      "description": "Navigation breadcrumbs",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Auto-generate",
+        "Clickable",
+        "Current"
+      ]
+    },
+    {
+      "id": "VID-WC-092",
+      "name": "Responsive data tables",
+      "description": "Tables on mobile",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Desktop table",
+        "Mobile cards",
+        "Sort"
+      ]
+    },
+    {
+      "id": "VID-WC-093",
+      "name": "Drag-and-drop upload",
+      "description": "File drag-drop zone",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Overlay",
+        "Validation",
+        "Progress"
+      ]
+    },
+    {
+      "id": "VID-WC-094",
+      "name": "Command palette Cmd+K",
+      "description": "Quick search/nav",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Search",
+        "Navigate",
+        "Actions"
+      ]
+    },
+    {
+      "id": "VID-WC-095",
+      "name": "Multi-step form wizard",
+      "description": "Stepped form with progress",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Steps",
+        "Back/next",
+        "Validation"
+      ]
+    },
+    {
+      "id": "VID-WC-096",
+      "name": "Notification dropdown",
+      "description": "Bell with dropdown",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Badge",
+        "List",
+        "Mark read"
+      ]
+    },
+    {
+      "id": "VID-WC-097",
+      "name": "Avatar with upload",
+      "description": "Avatar display and upload",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Image",
+        "Initials",
+        "Upload",
+        "Remove"
+      ]
+    },
+    {
+      "id": "VID-WC-098",
+      "name": "Copy-to-clipboard",
+      "description": "Click-to-copy with feedback",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Copy button",
+        "Toast",
+        "Clipboard API"
+      ]
+    },
+    {
+      "id": "VID-WC-099",
+      "name": "Bulk action toolbar",
+      "description": "Multi-select with actions",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Checkbox",
+        "Select all",
+        "Bulk ops"
+      ]
+    },
+    {
+      "id": "VID-WC-100",
+      "name": "Print-friendly styles",
+      "description": "Print stylesheet",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Hide nav",
+        "Clean layout",
+        "Print button"
+      ]
+    },
+    {
+      "id": "VID-WC-101",
+      "name": "CI/CD pipeline",
+      "description": "GitHub Actions for test/deploy",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Test on PR",
+        "Lint",
+        "Build",
+        "Deploy"
+      ]
+    },
+    {
+      "id": "VID-WC-102",
+      "name": "Environment variable management",
+      "description": "Structured env with validation",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        ".env.example",
+        "Runtime check"
+      ]
+    },
+    {
+      "id": "VID-WC-103",
+      "name": "Error monitoring Sentry",
+      "description": "Production error tracking",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "SDK",
+        "Source maps",
+        "Alerts"
+      ]
+    },
+    {
+      "id": "VID-WC-104",
+      "name": "Database migrations workflow",
+      "description": "Migration system",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "CLI",
+        "Version tracking",
+        "Rollback"
+      ]
+    },
+    {
+      "id": "VID-WC-105",
+      "name": "Staging environment",
+      "description": "Staging matching prod",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Staging DB",
+        "Staging env",
+        "Preview URLs"
+      ]
+    },
+    {
+      "id": "VID-WC-106",
+      "name": "Automated backups",
+      "description": "DB backup with retention",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Daily",
+        "Retention",
+        "Restore tested"
+      ]
+    },
+    {
+      "id": "VID-WC-107",
+      "name": "Log aggregation",
+      "description": "Centralized structured logging",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "JSON logs",
+        "Request ID",
+        "Levels"
+      ]
+    },
+    {
+      "id": "VID-WC-108",
+      "name": "Health check endpoints",
+      "description": "Monitoring endpoints",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "/api/health",
+        "DB check",
+        "Dependencies"
+      ]
+    },
+    {
+      "id": "VID-WC-109",
+      "name": "Feature flags system",
+      "description": "Remote feature flags",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Management",
+        "Targeting",
+        "Rollout"
+      ]
+    },
+    {
+      "id": "VID-WC-110",
+      "name": "Automated dependency updates",
+      "description": "Dependabot/Renovate",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Config",
+        "Auto-merge patch"
+      ]
+    },
+    {
+      "id": "VID-WC-111",
+      "name": "Docker containerization",
+      "description": "Dockerfile and compose",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Multi-stage",
+        "Compose",
+        "Optimized"
+      ]
+    },
+    {
+      "id": "VID-WC-112",
+      "name": "API documentation generation",
+      "description": "Auto-gen API docs",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Endpoints",
+        "Schemas",
+        "Examples"
+      ]
+    },
+    {
+      "id": "VID-WC-113",
+      "name": "Schema documentation",
+      "description": "DB schema docs",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "ER diagram",
+        "Descriptions",
+        "Relations"
+      ]
+    },
+    {
+      "id": "VID-WC-114",
+      "name": "Uptime monitoring",
+      "description": "External uptime checks",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "HTTP checks",
+        "Alerts",
+        "Status page"
+      ]
+    },
+    {
+      "id": "VID-WC-115",
+      "name": "Secrets rotation",
+      "description": "Key rotation procedure",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Procedure",
+        "Zero-downtime",
+        "Audit"
+      ]
+    },
+    {
+      "id": "VID-WC-116",
+      "name": "Transactional email system",
+      "description": "Email via Resend/SendGrid",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Service",
+        "Templates",
+        "Retry"
+      ]
+    },
+    {
+      "id": "VID-WC-117",
+      "name": "Welcome email on sign-up",
+      "description": "Branded welcome email",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Triggered",
+        "Template",
+        "Links"
+      ]
+    },
+    {
+      "id": "VID-WC-118",
+      "name": "Password reset email",
+      "description": "Secure reset link",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Token",
+        "Expiry",
+        "Template"
+      ]
+    },
+    {
+      "id": "VID-WC-119",
+      "name": "Email verification flow",
+      "description": "Verify email address",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Token",
+        "Confirm",
+        "Resend"
+      ]
+    },
+    {
+      "id": "VID-WC-120",
+      "name": "Notification preferences",
+      "description": "User controls",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Per-type",
+        "Frequency",
+        "Persist"
+      ]
+    },
+    {
+      "id": "VID-WC-121",
+      "name": "In-app notification center",
+      "description": "Notification list UI",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Model",
+        "Read/unread",
+        "Real-time"
+      ]
+    },
+    {
+      "id": "VID-WC-122",
+      "name": "Email templates with branding",
+      "description": "Consistent branded emails",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Header",
+        "Footer",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "VID-WC-123",
+      "name": "Webhook notifications",
+      "description": "Webhooks for events",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Configurable",
+        "Selection",
+        "Retry"
+      ]
+    },
+    {
+      "id": "VID-WC-124",
+      "name": "Digest summary emails",
+      "description": "Periodic summaries",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Daily/weekly",
+        "Summary",
+        "Unsubscribe"
+      ]
+    },
+    {
+      "id": "VID-WC-125",
+      "name": "Bounce/complaint handling",
+      "description": "Handle bounced emails",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Bounce hook",
+        "Complaint hook",
+        "Suppress"
+      ]
+    },
+    {
+      "id": "VID-WC-126",
+      "name": "Analytics event tracking",
+      "description": "Track key events",
+      "category": "analytics",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Page views",
+        "Features",
+        "Conversions"
+      ]
     }
   ]
 }
