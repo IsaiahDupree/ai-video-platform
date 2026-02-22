@@ -257,7 +257,7 @@ Return a JSON object with EXACTLY these fields:
 Field guidance:
   headline         — 5–8 words, punchy, no product name unless product-aware stage
   subheadline      — 10–15 words, supporting context
-  beforeScenePrompt — Imagen 4 prompt: photorealistic UGC, real human (not celebrity), specific emotional state, phone in hand, authentic everyday setting, no text overlays, 3–4 sentences. ${(framework as any).preferredEthnicity ? `CRITICAL: The character MUST be described as "${(framework as any).preferredEthnicity}" — include this exact ethnicity in the prompt. Do NOT use generic "a woman" — use the specific ethnicity.` : ''}
+  beforeScenePrompt — Imagen 4 prompt: photorealistic UGC, realistic person, specific emotional state, phone in hand, authentic everyday setting, no text overlays, 3–4 sentences. ${(framework as any).preferredEthnicity ? `CRITICAL: The character MUST be described as "${(framework as any).preferredEthnicity}" — include this exact ethnicity in the prompt. Do NOT use generic "a woman" — use the specific ethnicity.` : ''}
   afterScenePrompt  — same character transformed: confident/relieved, using phone, warm lighting, 3–4 sentences. MUST be the same person as beforeScenePrompt. ${(framework as any).preferredEthnicity ? `Same ethnicity: ${(framework as any).preferredEthnicity}.` : ''}
   motionPrompt      — Veo 3.1: camera movement, character action, NO audio/sound descriptions (stripped by pipeline), 2–3 sentences. MUST end with: "No subtitles. No on-screen text. No captions."
   voiceScript       — 5 lines following the SCRIPT STRUCTURE above. Each line separated by newline. Follow ALL rules.

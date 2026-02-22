@@ -336,12 +336,14 @@ function updateLearnings(learnings: Learnings, results: AngleResult[]): Learning
   learnings.costs.totalImageUsd  += results.reduce((s, r) => s + (r.cost?.imageUsd ?? 0), 0);
   learnings.costs.totalGptUsd    += results.reduce((s, r) => s + (r.cost?.gptInputUsd ?? 0) + (r.cost?.gptGateUsd ?? 0), 0);
   learnings.costs.costPerPassingAd = learnings.totalPassed > 0
-    ? learnings.costs.totalSpentUsd / (learnings.totalPassed + passed.length) : 0;
+    ? learnings.costs.totalSpentUsd / learnings.totalPassed : 0;
   learnings.costs.costPerAttempt = learnings.totalGenerated > 0
-    ? learnings.costs.totalSpentUsd / (learnings.totalGenerated + results.length) : 0;
-  const totalClips = (learnings.costs.avgClipsPerAngle * (learnings.totalGenerated)) + sessionClips;
-  learnings.costs.avgClipsPerAngle = learnings.totalGenerated + results.length > 0
-    ? totalClips / (learnings.totalGenerated + results.length) : 0;
+    ? learnings.costs.totalSpentUsd / learnings.totalGenerated : 0;
+  // avgClipsPerAngle: weighted running average (totalGenerated already includes results.length)
+  const prevTotal = learnings.totalGenerated - results.length;
+  const prevClips = learnings.costs.avgClipsPerAngle * prevTotal;
+  learnings.costs.avgClipsPerAngle = learnings.totalGenerated > 0
+    ? (prevClips + sessionClips) / learnings.totalGenerated : 0;
   if (sessionSpend > 0) {
     if (!learnings.costs.sessionCosts) learnings.costs.sessionCosts = [];
     learnings.costs.sessionCosts.push({
@@ -732,19 +734,8 @@ async function runAngle(
       if (fs.existsSync(lipsyncPath)) fs.unlinkSync(lipsyncPath);
     }
 
-    // Inject framework gender/voice fields into inputs so stage-lipsync.ts can read them
-    // (AngleInputs doesn't have these fields typed, but stage-lipsync reads via (inputs as any))
-    const lipsyncInputs = {
-      ...inputs,
-      voiceGender:          (framework as any).voiceGender          ?? undefined,
-      voiceAge:             (framework as any).voiceAge             ?? undefined,
-      characterGender:      (framework as any).characterGender      ?? undefined,
-      preferredCharacterId: (framework as any).preferredCharacterId ?? undefined,
-      preferredEthnicity:   (framework as any).preferredEthnicity   ?? undefined,
-      audienceCategory:     (inputs as any).audienceCategory ?? '',
-      awarenessStage:       (inputs as any).awarenessStage   ?? '',
-    };
-    const lipsyncResult = await runStageLipsync(lipsyncInputs, outputDir, aspectRatio, lipsyncForce, undefined, undefined, validateMode);
+    // inputs already has framework fields injected at lines 701-708 above
+    const lipsyncResult = await runStageLipsync(inputs, outputDir, aspectRatio, lipsyncForce, undefined, undefined, validateMode);
     if (lipsyncResult.status === 'failed') {
       console.log(`  ❌ Stage 2b (lipsync) failed: ${lipsyncResult.error}`);
       if (lipsyncResult.error?.includes('429')) {

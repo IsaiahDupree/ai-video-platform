@@ -233,7 +233,7 @@ function extractSettingFromPrompt(scenePrompt: string): string {
 async function describeCharacterFromImage(imagePath: string, openAIKey: string): Promise<string> {
   if (!openAIKey || !fs.existsSync(imagePath)) return '';
 
-  const cacheFile = imagePath.replace(/\.png$/, '_char_desc.txt');
+  const cacheFile = imagePath.replace(/\.(png|jpg|jpeg)$/, '_char_desc.txt');
   if (fs.existsSync(cacheFile)) {
     const cached = fs.readFileSync(cacheFile, 'utf-8').trim();
     if (cached) return cached;
@@ -284,7 +284,7 @@ async function describeCharacterFromImage(imagePath: string, openAIKey: string):
 async function uploadToFalStorage(imagePath: string, falKey: string): Promise<string> {
   if (!fs.existsSync(imagePath)) return '';
 
-  const cacheFile = imagePath.replace(/\.png$/, '_fal_url.txt');
+  const cacheFile = imagePath.replace(/\.(png|jpg|jpeg)$/, '_fal_url.txt');
   if (fs.existsSync(cacheFile)) {
     const cached = fs.readFileSync(cacheFile, 'utf-8').trim();
     if (cached.startsWith('https://')) return cached;
@@ -1102,7 +1102,10 @@ export async function runStageLipsync(
                 const subClipPath = path.join(clipsDir, `clip_${subIdx}.mp4`);
                 const subOpFile = path.join(clipsDir, `clip_${subIdx}_op.json`);
                 const subPrompt = buildLipsyncPrompt(subLines[si], characterDesc, settingDesc, i + si, scriptLines.length + subLines.length,
-                  { voiceProfile: voiceProfileStr, pronoun });
+                  { voiceProfile: voiceProfileStr, pronoun,
+                    consistencyBlock: packConsistencyBlock || undefined,
+                    negativeBlock: packNegativeBlock || undefined,
+                    angleContext: packAngleContext || undefined });
 
                 console.log(`      🎬 Sub-clip ${si + 1}/${subLines.length}: "${subLines[si].slice(0, 40)}..."`);
                 try {
@@ -1110,6 +1113,13 @@ export async function runStageLipsync(
                   fs.writeFileSync(subOpFile, JSON.stringify({ operationToken: subOp, provider: 'fal.ai' }, null, 2));
                   const subBuf = await pollFalClip(subOp, falKey);
                   fs.writeFileSync(subClipPath, subBuf);
+                  // Post-process sub-clip (1.4x speed + ambient noise)
+                  try {
+                    const subHasSubs = detectBurnedSubtitles(subClipPath);
+                    const subAmbient = ((inputs as any).ambientNoiseType as AmbientNoiseType) ?? 'office';
+                    const subSpeed = ((inputs as any).speedFactor as number) ?? 1.4;
+                    await postProcessClip(subClipPath, { speedFactor: subSpeed, ambientNoise: subAmbient, ambientNoiseVolume: -28, cropSubtitleArea: subHasSubs });
+                  } catch { /* non-fatal */ }
                   const subDur = getClipDuration(subClipPath);
                   clipPaths.push(subClipPath);
                   clipDurations.push(subDur);
@@ -1195,7 +1205,7 @@ export async function runStageLipsync(
     console.log(`   ✅ lipsync_${safeAspect}.mp4 (${mb}MB, ${totalDur.toFixed(1)}s total, ${clipPaths.length} clips)`);
 
     return {
-      status: clipPaths.length < scriptLines.length ? 'done' : 'done',
+      status: 'done',
       outputs: [finalPath, assPath],
       durationMs: Date.now() - t0,
     };
