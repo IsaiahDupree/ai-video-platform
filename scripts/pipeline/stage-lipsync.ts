@@ -811,7 +811,8 @@ export async function runStageLipsync(
     const preferredGender = (inputs as any).characterGender === 'woman' ? 'female'
       : (inputs as any).characterGender === 'man' ? 'male'
       : (inputs as any).voiceGender ?? undefined;
-    const selectedChar = selectCharacter(pack, audienceCategory, awarenessStage, preferredGender);
+    const preferredCharacterId = (inputs as any).preferredCharacterId as string ?? undefined;
+    const selectedChar = selectCharacter(pack, audienceCategory, awarenessStage, preferredGender, preferredCharacterId);
     packCharacterId = selectedChar.id;
     console.log(`   🎭 Character pack: ${selectedChar.name} (${selectedChar.id}) — ${selectedChar.archetype}`);
 
@@ -830,25 +831,20 @@ export async function runStageLipsync(
   let characterDesc: string;
   let anchorUrls = { before: '', sheet: '', after: '' };
 
-  if (fs.existsSync(beforePath) && openAIKey) {
-    console.log(`   🖼️  Describing character from before.png...`);
-    const visionDesc = await describeCharacterFromImage(beforePath, openAIKey);
-    if (visionDesc) {
-      characterDesc = visionDesc;
-      console.log(`   ✅ Character locked (vision): ${characterDesc.slice(0, 80)}...`);
-    } else if (pack && packCharacterId) {
-      // Fallback to character pack identity_prompt_block (much better than generic)
-      const packChar = pack.characters.find(c => c.id === packCharacterId);
-      if (packChar) {
-        characterDesc = buildPackCharacterDescription(packChar);
-        console.log(`   ✅ Character locked (pack): ${characterDesc.slice(0, 80)}...`);
-      } else {
-        characterDesc = buildCharacterDescription(characterOverride ?? {
-          age: '28', hair: 'natural hair, casually styled',
-          clothing: 'a simple t-shirt or casual top',
-          mannerisms: 'genuine, relatable energy, authentic UGC creator vibe',
-        });
-      }
+  // Character description priority:
+  //   1. Character pack identity_prompt_block (if pack + character found) — MOST RELIABLE
+  //      This is the locked identity from AD_CHARACTER_PACK.json, ensuring the same
+  //      character across character_sheet, before.png, and all video clips.
+  //   2. GPT-4o vision description of before.png (fallback if no pack)
+  //   3. Generic description (last resort)
+  //
+  // Previously: vision was primary → caused character mismatch when before.png
+  // generated a different person than character_sheet.png.
+  if (pack && packCharacterId) {
+    const packChar = pack.characters.find(c => c.id === packCharacterId);
+    if (packChar) {
+      characterDesc = buildPackCharacterDescription(packChar);
+      console.log(`   ✅ Character locked (pack): ${characterDesc.slice(0, 80)}...`);
     } else {
       characterDesc = buildCharacterDescription(characterOverride ?? {
         age: '28', hair: 'natural hair, casually styled',
@@ -856,12 +852,13 @@ export async function runStageLipsync(
         mannerisms: 'genuine, relatable energy, authentic UGC creator vibe',
       });
     }
-  } else if (pack && packCharacterId) {
-    // No before.png but character pack available — use pack identity
-    const packChar = pack.characters.find(c => c.id === packCharacterId);
-    if (packChar) {
-      characterDesc = buildPackCharacterDescription(packChar);
-      console.log(`   ✅ Character locked (pack, no image): ${characterDesc.slice(0, 80)}...`);
+  } else if (fs.existsSync(beforePath) && openAIKey) {
+    // No character pack — fall back to describing what's actually in before.png
+    console.log(`   🖼️  Describing character from before.png (no pack)...`);
+    const visionDesc = await describeCharacterFromImage(beforePath, openAIKey);
+    if (visionDesc) {
+      characterDesc = visionDesc;
+      console.log(`   ✅ Character locked (vision): ${characterDesc.slice(0, 80)}...`);
     } else {
       characterDesc = buildCharacterDescription(characterOverride ?? {
         age: '28', hair: 'natural hair, casually styled',

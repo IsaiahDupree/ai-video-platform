@@ -132,7 +132,8 @@ export async function runStageImages(
       if (pack) {
         const preferredGender = characterGender === 'woman' ? 'female' : characterGender === 'man' ? 'male' : undefined;
         const audienceCategory = (inputs as any).audienceCategory as string ?? '';
-        const selectedChar = selectCharacter(pack, audienceCategory, '', preferredGender);
+        const preferredCharacterId = (inputs as any).preferredCharacterId as string ?? undefined;
+        const selectedChar = selectCharacter(pack, audienceCategory, '', preferredGender, preferredCharacterId);
         charIdentity = selectedChar.identity_prompt_block;
         console.log(`   🎭 Character pack: ${selectedChar.name} (${selectedChar.id})`);
       }
@@ -148,7 +149,7 @@ export async function runStageImages(
       console.log(`   ⏭️  character_sheet.png exists`);
     }
 
-    // Step 1: Before image
+    // Step 1: Before image — MUST match the character from the sheet
     if (!fs.existsSync(beforePath)) {
       console.log(`   📸 Step 1: Before image...`);
       // Strip words that commonly trigger Imagen 4 safety filters
@@ -159,7 +160,20 @@ export async function runStageImages(
           lonely: 'reflective', isolated: 'alone', suffering: 'struggling', pain: 'discomfort',
           hurt: 'sad', broken: 'worn out',
         } as Record<string,string>)[w.toLowerCase()] ?? w);
-      const prompt = `${UGC_STYLE}.\nSCENE: ${safeBeforeScene}\nComposition: Subject is the clear foreground focus, face and upper body visible. ${aspectRatio} vertical format.`;
+
+      // Inject character pack identity into before prompt so the person matches the sheet
+      const pack = loadCharacterPack();
+      let charIdentityPrefix = '';
+      if (pack) {
+        const characterGender2 = (inputs as any).characterGender ?? 'woman';
+        const preferredGender2 = characterGender2 === 'woman' ? 'female' : characterGender2 === 'man' ? 'male' : undefined;
+        const audienceCategory2 = (inputs as any).audienceCategory as string ?? '';
+        const preferredCharacterId2 = (inputs as any).preferredCharacterId as string ?? undefined;
+        const selectedChar2 = selectCharacter(pack, audienceCategory2, '', preferredGender2, preferredCharacterId2);
+        charIdentityPrefix = `CHARACTER: ${selectedChar2.identity_prompt_block}.\n`;
+      }
+
+      const prompt = `${charIdentityPrefix}${UGC_STYLE}.\nSCENE: ${safeBeforeScene}\nComposition: Subject is the clear foreground focus, face and upper body visible. ${aspectRatio} vertical format.`;
       const buf = await imagen4Generate(prompt, aspectRatio);
       fs.writeFileSync(beforePath, buf);
       console.log(`   ✅ before.png (${(buf.length / 1024).toFixed(0)}KB)`);

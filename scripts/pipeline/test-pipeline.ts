@@ -464,6 +464,26 @@ function testCharacterPack() {
   // Test unghosting context
   const ugCtx = getUnghostingContext(pack, 'old friend');
   ugCtx?.length > 5 ? P(`Unghosting (old friend): "${ugCtx.slice(0,60)}..."`) : W('No unghosting context for old friend');
+
+  // Test preferredCharacterId override — CRITICAL FIX
+  S('14b. Character Pack — preferredCharacterId Override');
+  const jules = selectCharacter(pack, 'friend', undefined, 'female', 'CHR_JULES_BENNETT');
+  jules.id === 'CHR_JULES_BENNETT' ? P(`preferredCharacterId → ${jules.name} (${jules.id}) ✓`) : F(`Expected Jules Bennett, got ${jules.name} (${jules.id})`);
+  jules.ethnicity?.includes('German') || jules.ethnicity?.includes('Nordic') || jules.ethnicity?.includes('Swiss')
+    ? P(`Ethnicity: ${jules.ethnicity} ✓`) : F(`Wrong ethnicity: ${jules.ethnicity}`);
+
+  const talia = selectCharacter(pack, 'friend', undefined, 'female', 'CHR_TALIA_REED');
+  talia.id === 'CHR_TALIA_REED' ? P(`preferredCharacterId → ${talia.name} (${talia.id}) ✓`) : F(`Expected Talia Reed, got ${talia.name} (${talia.id})`);
+
+  // Without preferredCharacterId, friend still maps to Maya (highest scoring)
+  const defaultChar = selectCharacter(pack, 'friend', undefined, 'female');
+  defaultChar.id === 'CHR_MAYA_BROOKS' || defaultChar.id === 'CHR_JULES_BENNETT'
+    ? P(`No override → ${defaultChar.name} (scoring-based) ✓`)
+    : F(`Unexpected default: ${defaultChar.name}`);
+
+  // Invalid preferredCharacterId falls back to scoring
+  const fallback = selectCharacter(pack, 'friend', undefined, 'female', 'CHR_NONEXISTENT');
+  fallback?.id ? P(`Invalid ID → fallback to ${fallback.name} ✓`) : F('Invalid ID caused crash');
 }
 
 // ── Test 15: Variant Generation Logic ───────────────────────────────────────

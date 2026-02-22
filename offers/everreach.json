@@ -61,6 +61,8 @@
     "voiceTone": "Casual, direct, empathetic. Like a smart friend giving advice. Not salesy. Not corporate. Conversational pace with natural pauses. Lowercase delivery.",
     "visualStyle": "Photorealistic UGC — real woman (not a celebrity), authentic everyday setting, phone in hand. Before scene: stressed, overwhelmed, or disconnected emotional state. After scene: same character, confident, relieved, connected. Consistent character appearance across both images.",
     "characterGender": "woman",
+    "preferredCharacterId": "CHR_JULES_BENNETT",
+    "preferredEthnicity": "white German or Nordic or Swiss",
     "voiceGender": "female",
     "voiceAge": "late 20s",
     "elevenLabsVoiceId": "IKne3meq5aSn9XLyUdCD",

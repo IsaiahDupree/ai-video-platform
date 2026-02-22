@@ -177,6 +177,7 @@ OFFER:
 
 VISUAL STYLE: ${framework.visualStyle}
 VOICE TONE: ${framework.voiceTone}
+${(framework as any).preferredEthnicity ? `CHARACTER IDENTITY: The character in ALL scene prompts MUST be: ${(framework as any).preferredEthnicity}. Do NOT use generic descriptions like "a woman" — always include the exact ethnicity and appearance.` : ''}
 
 == AWARENESS STAGE: ${awarenessStage.toUpperCase()} ==
 ${stageRules}
@@ -256,8 +257,8 @@ Return a JSON object with EXACTLY these fields:
 Field guidance:
   headline         — 5–8 words, punchy, no product name unless product-aware stage
   subheadline      — 10–15 words, supporting context
-  beforeScenePrompt — Imagen 4 prompt: photorealistic UGC, real human (not celebrity), specific emotional state, phone in hand, authentic everyday setting, no text overlays, 3–4 sentences
-  afterScenePrompt  — same character transformed: confident/relieved, using phone, warm lighting, 3–4 sentences. MUST be the same person as beforeScenePrompt.
+  beforeScenePrompt — Imagen 4 prompt: photorealistic UGC, real human (not celebrity), specific emotional state, phone in hand, authentic everyday setting, no text overlays, 3–4 sentences. ${(framework as any).preferredEthnicity ? `CRITICAL: The character MUST be described as "${(framework as any).preferredEthnicity}" — include this exact ethnicity in the prompt. Do NOT use generic "a woman" — use the specific ethnicity.` : ''}
+  afterScenePrompt  — same character transformed: confident/relieved, using phone, warm lighting, 3–4 sentences. MUST be the same person as beforeScenePrompt. ${(framework as any).preferredEthnicity ? `Same ethnicity: ${(framework as any).preferredEthnicity}.` : ''}
   motionPrompt      — Veo 3.1: camera movement, character action, NO audio/sound descriptions (stripped by pipeline), 2–3 sentences. MUST end with: "No subtitles. No on-screen text. No captions."
   voiceScript       — 5 lines following the SCRIPT STRUCTURE above. Each line separated by newline. Follow ALL rules.
   commentKeyword    — 1–2 words for comment CTA engagement`;
@@ -294,7 +295,8 @@ export async function generateAngleInputs(
   Hook Formula: ${selectedFormula}
   Required Hook Line: "${hookLine}"${angleContextBlock}
 
-The before scene should viscerally show the pain point for a ${audienceCategory} relationship.
+The before scene should viscerally show the pain point for a ${audienceCategory} relationship.${(framework as any).preferredEthnicity ? `
+CRITICAL CHARACTER IDENTITY: The character in both beforeScenePrompt and afterScenePrompt MUST be described as: ${(framework as any).preferredEthnicity}. Include this exact ethnicity description. Do NOT use generic "a woman" — always specify the ethnicity.` : ''}
 The after scene shows the same character transformed — same face, same setting, different emotional state.
 The voice script must feel like a real person talking, not an ad. First line MUST be the required hook line. Follow ALL script rules.`;
 

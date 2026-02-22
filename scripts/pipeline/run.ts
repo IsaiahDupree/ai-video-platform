@@ -214,6 +214,8 @@ async function main(): Promise<void> {
       // Inject audience context so downstream stages (character pack selection) can use it
       (inputs as any).audienceCategory = combo.category;
       (inputs as any).awarenessStage = combo.stage;
+      if ((framework as any).preferredCharacterId) (inputs as any).preferredCharacterId = (framework as any).preferredCharacterId;
+      if ((framework as any).preferredEthnicity) (inputs as any).preferredEthnicity = (framework as any).preferredEthnicity;
 
       // Save scene config for reference / re-runs
       fs.writeFileSync(path.join(outputDir, 'scene_config.json'), JSON.stringify(inputs, null, 2));

@@ -687,6 +687,7 @@ async function runAngle(
         awarenessStage: combo.stage,
         preferredGender: (framework as any).characterGender === 'woman' ? 'female'
           : (framework as any).characterGender === 'man' ? 'male' : undefined,
+        preferredCharacterId: (framework as any).preferredCharacterId ?? undefined,
         force: isRetry,
       });
       if (packResult.status === 'failed') {
@@ -725,11 +726,13 @@ async function runAngle(
     // (AngleInputs doesn't have these fields typed, but stage-lipsync reads via (inputs as any))
     const lipsyncInputs = {
       ...inputs,
-      voiceGender:     (framework as any).voiceGender     ?? undefined,
-      voiceAge:        (framework as any).voiceAge        ?? undefined,
-      characterGender: (framework as any).characterGender ?? undefined,
-      audienceCategory: (inputs as any).audienceCategory ?? '',
-      awarenessStage:   (inputs as any).awarenessStage   ?? '',
+      voiceGender:          (framework as any).voiceGender          ?? undefined,
+      voiceAge:             (framework as any).voiceAge             ?? undefined,
+      characterGender:      (framework as any).characterGender      ?? undefined,
+      preferredCharacterId: (framework as any).preferredCharacterId ?? undefined,
+      preferredEthnicity:   (framework as any).preferredEthnicity   ?? undefined,
+      audienceCategory:     (inputs as any).audienceCategory ?? '',
+      awarenessStage:       (inputs as any).awarenessStage   ?? '',
     };
     const lipsyncResult = await runStageLipsync(lipsyncInputs, outputDir, aspectRatio, lipsyncForce, undefined, undefined, validateMode);
     if (lipsyncResult.status === 'failed') {

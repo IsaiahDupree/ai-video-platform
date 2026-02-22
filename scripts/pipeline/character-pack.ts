@@ -126,14 +126,22 @@ function mapCategoryToAngleIds(category: string): string[] {
 
 /**
  * Select the best character for a given audience category and awareness stage.
- * Priority: primary_angles match > secondary_angles match > Maya (default hero).
+ * Priority: preferredCharacterId (exact match) > primary_angles match > secondary_angles match > Maya (default hero).
  */
 export function selectCharacter(
   pack: CharacterPack,
   category: string,
   awarenessStage?: string,
   preferredGender?: string,
+  preferredCharacterId?: string,
 ): PackCharacter {
+  // If a specific character ID is requested (from offer JSON), use it directly
+  if (preferredCharacterId) {
+    const exact = pack.characters.find(c => c.id === preferredCharacterId);
+    if (exact) return exact;
+    console.log(`   ⚠️  preferredCharacterId "${preferredCharacterId}" not found in pack — falling back to scoring`);
+  }
+
   const targetAngles = mapCategoryToAngleIds(category);
 
   // Filter by gender preference if specified

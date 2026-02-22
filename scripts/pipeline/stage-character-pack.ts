@@ -204,6 +204,7 @@ export async function runStageCharacterPack(
     audienceCategory?: string;
     awarenessStage?: string;
     preferredGender?: string;
+    preferredCharacterId?: string;
     force?: boolean;
   },
 ): Promise<StageResult & { manifest?: PackManifest }> {
@@ -240,6 +241,7 @@ export async function runStageCharacterPack(
     options?.audienceCategory ?? '',
     options?.awarenessStage,
     options?.preferredGender,
+    options?.preferredCharacterId,
   );
   console.log(`   🎭 Selected: ${selectedChar.name} (${selectedChar.id}) — ${selectedChar.archetype}`);
   console.log(`   📋 Identity: ${selectedChar.identity_prompt_block.slice(0, 80)}...`);
