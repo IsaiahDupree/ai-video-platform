@@ -195,7 +195,7 @@ async function main(): Promise<void> {
     let inputs: AngleInputs;
     try {
       const t0 = Date.now();
-      const result = await generateAngleInputs(offer, framework, combo.stage, combo.category, angleId, args.lipsync);
+      const result = await generateAngleInputs(offer, framework, combo.stage, combo.category, angleId);
       inputs = result.inputs;
 
       record.aiGeneration = {
@@ -211,11 +211,14 @@ async function main(): Promise<void> {
       console.log(`   📝 "${inputs.headline}"`);
       console.log(`   🎙️  "${inputs.voiceScript.split('\n')[0]}..."`);
 
-      // Inject audience context so downstream stages (character pack selection) can use it
+      // Inject audience context + framework fields so downstream stages can use them
       (inputs as any).audienceCategory = combo.category;
       (inputs as any).awarenessStage = combo.stage;
+      if ((framework as any).characterGender)      (inputs as any).characterGender      = (framework as any).characterGender;
       if ((framework as any).preferredCharacterId) (inputs as any).preferredCharacterId = (framework as any).preferredCharacterId;
-      if ((framework as any).preferredEthnicity) (inputs as any).preferredEthnicity = (framework as any).preferredEthnicity;
+      if ((framework as any).preferredEthnicity)   (inputs as any).preferredEthnicity   = (framework as any).preferredEthnicity;
+      if ((framework as any).voiceGender)          (inputs as any).voiceGender          = (framework as any).voiceGender;
+      if ((framework as any).voiceAge)             (inputs as any).voiceAge             = (framework as any).voiceAge;
 
       // Save scene config for reference / re-runs
       fs.writeFileSync(path.join(outputDir, 'scene_config.json'), JSON.stringify(inputs, null, 2));
@@ -253,7 +256,7 @@ async function main(): Promise<void> {
       if (args.lipsync) {
         // Lip-sync mode: Veo 3 generates native speech per line, no ElevenLabs needed
         // Stages 3 + 4 are replaced by a single stitch+caption step inside runStageLipsync
-        record.pipeline.stage2_video = await runStageLipsync(inputs, outputDir, aspectRatio, args.force);
+        record.pipeline.stage2_video = await runStageLipsync(inputs, outputDir, aspectRatio, args.force);  // inputs already has framework fields injected above
         if (record.pipeline.stage2_video.status === 'failed') {
           record.errors.push(`Stage 2b (lipsync): ${record.pipeline.stage2_video.error}`);
         }

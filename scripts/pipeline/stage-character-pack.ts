@@ -284,6 +284,9 @@ export async function runStageCharacterPack(
       if (falKey) {
         falUrl = await uploadToFalStorage(localPath, falKey);
         if (falUrl) {
+          // Cache the URL so re-runs don't need to re-upload
+          const cachePath = localPath.replace(/\.(png|jpg|jpeg)$/, '_fal_url.txt');
+          fs.writeFileSync(cachePath, falUrl);
           console.log(`   📤 Uploaded to fal.ai storage`);
         }
       }

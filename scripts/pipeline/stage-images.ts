@@ -119,24 +119,24 @@ export async function runStageImages(
 
   console.log(`\n🍌 Stage 1: Imagen 4 + Gemini Edit — Before/After Images`);
 
+  // Resolve character identity ONCE — used by both character_sheet and before.png
+  const characterGender = (inputs as any).characterGender ?? 'woman';
+  const genderPronoun = characterGender === 'man' ? 'his' : 'her';
+  const pack = loadCharacterPack();
+  let charIdentity = `a ${characterGender} in ${genderPronoun} early 30s, casual everyday clothing`;
+  if (pack) {
+    const preferredGender = characterGender === 'woman' ? 'female' : characterGender === 'man' ? 'male' : undefined;
+    const audienceCategory = (inputs as any).audienceCategory as string ?? '';
+    const preferredCharacterId = (inputs as any).preferredCharacterId as string ?? undefined;
+    const selectedChar = selectCharacter(pack, audienceCategory, '', preferredGender, preferredCharacterId);
+    charIdentity = selectedChar.identity_prompt_block;
+    console.log(`   🎭 Character pack: ${selectedChar.name} (${selectedChar.id})`);
+  }
+
   try {
     // Step 0: Character reference sheet
     if (!fs.existsSync(sheetPath)) {
       console.log(`   📸 Step 0: Character reference sheet...`);
-      const characterGender = (inputs as any).characterGender ?? 'woman';
-      const genderPronoun = characterGender === 'man' ? 'his' : 'her';
-
-      // Use character pack identity_prompt_block if available (much more specific than generic)
-      const pack = loadCharacterPack();
-      let charIdentity = `a ${characterGender} in ${genderPronoun} early 30s, casual everyday clothing`;
-      if (pack) {
-        const preferredGender = characterGender === 'woman' ? 'female' : characterGender === 'man' ? 'male' : undefined;
-        const audienceCategory = (inputs as any).audienceCategory as string ?? '';
-        const preferredCharacterId = (inputs as any).preferredCharacterId as string ?? undefined;
-        const selectedChar = selectCharacter(pack, audienceCategory, '', preferredGender, preferredCharacterId);
-        charIdentity = selectedChar.identity_prompt_block;
-        console.log(`   🎭 Character pack: ${selectedChar.name} (${selectedChar.id})`);
-      }
 
       const buf = await imagen4Generate(
         `Character reference sheet. Left half: front-facing headshot of ${charIdentity}, neutral expression, plain white background. Right half: same person, 3/4 angle, slight smile, same clothing. Both panels show the exact same individual. Portrait photography, sharp focus, studio quality.`,
@@ -161,17 +161,8 @@ export async function runStageImages(
           hurt: 'sad', broken: 'worn out',
         } as Record<string,string>)[w.toLowerCase()] ?? w);
 
-      // Inject character pack identity into before prompt so the person matches the sheet
-      const pack = loadCharacterPack();
-      let charIdentityPrefix = '';
-      if (pack) {
-        const characterGender2 = (inputs as any).characterGender ?? 'woman';
-        const preferredGender2 = characterGender2 === 'woman' ? 'female' : characterGender2 === 'man' ? 'male' : undefined;
-        const audienceCategory2 = (inputs as any).audienceCategory as string ?? '';
-        const preferredCharacterId2 = (inputs as any).preferredCharacterId as string ?? undefined;
-        const selectedChar2 = selectCharacter(pack, audienceCategory2, '', preferredGender2, preferredCharacterId2);
-        charIdentityPrefix = `CHARACTER: ${selectedChar2.identity_prompt_block}.\n`;
-      }
+      // Use the same character identity resolved above
+      const charIdentityPrefix = pack ? `CHARACTER: ${charIdentity}.\n` : '';
 
       const prompt = `${charIdentityPrefix}${UGC_STYLE}.\nSCENE: ${safeBeforeScene}\nComposition: Subject is the clear foreground focus, face and upper body visible. ${aspectRatio} vertical format.`;
       const buf = await imagen4Generate(prompt, aspectRatio);
