@@ -42,6 +42,7 @@ import { runStageImages } from './stage-images.js';
 import { runStageLipsync } from './stage-lipsync.js';
 import { type HookFormula, HOOK_PRIORITY_ORDER } from './prompt-builder.js';
 import { runStageCharacterPack, type PackManifest } from './stage-character-pack.js';
+import { runPreflightChecks } from './preflight-check.js';
 
 // =============================================================================
 // Constants
@@ -695,6 +696,15 @@ async function runAngle(
       }
     }
 
+    // ── Inject framework fields into inputs for downstream stages ────────
+    // These fields come from the offer JSON but GPT-4o output doesn't include them.
+    // Must be injected BEFORE stage-images so character_sheet + before.png use the right character.
+    if ((framework as any).characterGender)      (inputs as any).characterGender      = (framework as any).characterGender;
+    if ((framework as any).preferredCharacterId) (inputs as any).preferredCharacterId = (framework as any).preferredCharacterId;
+    if ((framework as any).preferredEthnicity)   (inputs as any).preferredEthnicity   = (framework as any).preferredEthnicity;
+    if ((framework as any).voiceGender)          (inputs as any).voiceGender          = (framework as any).voiceGender;
+    if ((framework as any).voiceAge)             (inputs as any).voiceAge             = (framework as any).voiceAge;
+
     // ── Stage 1: Images ────────────────────────────────────────────────────
     const beforeExists = fs.existsSync(path.join(outputDir, 'before.png'));
     if (!beforeExists || (isRetry && force)) {
@@ -1002,6 +1012,27 @@ async function main() {
 
     // Wire flags into framework so downstream stages can read them
     if (args.skipCharPack) (framework as any)._skipCharPack = true;
+
+    // ── Preflight Check — catch config errors before spending API credits ──
+    if (!args.validate) {
+      console.log(`\n  ✈️  Running preflight checks...`);
+      const preflight = await runPreflightChecks(args.offerPath, { skipApi: false });
+      if (preflight.blockers.length > 0) {
+        console.log(`  🛑 PREFLIGHT BLOCKED — ${preflight.blockers.length} blocker(s):`);
+        for (const b of preflight.blockers) {
+          console.log(`     🛑 ${b.message}`);
+          if (b.fix) console.log(`        💡 ${b.fix}`);
+        }
+        console.log(`\n  Run: npx tsx scripts/pipeline/preflight-check.ts --offer ${args.offerPath} --verbose`);
+        console.log(`  Fix blockers, then re-run.\n`);
+        process.exit(1);
+      }
+      if (preflight.warnings.length > 0) {
+        console.log(`  ⚠️  ${preflight.warnings.length} warning(s):`);
+        for (const w of preflight.warnings) console.log(`     ⚠️  ${w.message}`);
+      }
+      console.log(`  ✅ Preflight passed (${preflight.infos.length} checks OK)\n`);
+    }
 
     // ── Resume mode: reuse an existing session dir ──────────────────────────
     let sessionDir: string;
