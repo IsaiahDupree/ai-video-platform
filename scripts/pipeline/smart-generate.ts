@@ -27,6 +27,8 @@
  *   --assess-only=<dir>  Skip generation, only gate+assess existing session
  *   --force              Force re-run even if outputs exist
  *   --resume=<dir>       Resume a previous session dir — skip cleanup, continue from last good clip
+ *   --variants=<n>       Generate N variants per angle (default: 1, max: 3)
+ *   --skip-char-pack     Skip character pack generation stage
  */
 
 import * as fs from 'fs';
@@ -39,6 +41,7 @@ import { generateAngleInputs } from './ai-inputs.js';
 import { runStageImages } from './stage-images.js';
 import { runStageLipsync } from './stage-lipsync.js';
 import { type HookFormula, HOOK_PRIORITY_ORDER } from './prompt-builder.js';
+import { runStageCharacterPack, type PackManifest } from './stage-character-pack.js';
 
 // =============================================================================
 // Constants
@@ -262,6 +265,8 @@ function parseArgs() {
     force: argv.includes('--force'),
     validate: argv.includes('--validate'),  // use Kling 2.6 instead of Veo 3.1
     resume: get('resume'),                  // path to existing session dir to resume
+    variants: parseInt(get('variants') ?? '1', 10),  // 1-3 variants per angle
+    skipCharPack: argv.includes('--skip-char-pack'), // skip character pack generation
   };
 }
 
@@ -672,6 +677,23 @@ async function runAngle(
       console.log(`\n  ♻️  Using existing inputs: "${inputs.headline}"`);
     }
 
+    // ── Stage 0.5: Character Pack ────────────────────────────────────────
+    // Generate consistent character anchor stills before image/video stages.
+    // These provide reference images for Veo 3.1 first-frame anchoring.
+    const packManifestPath = path.join(outputDir, 'character_pack', 'pack_manifest.json');
+    if (!fs.existsSync(packManifestPath) && !(framework as any)._skipCharPack) {
+      const packResult = await runStageCharacterPack(outputDir, {
+        audienceCategory: combo.category,
+        awarenessStage: combo.stage,
+        preferredGender: (framework as any).characterGender === 'woman' ? 'female'
+          : (framework as any).characterGender === 'man' ? 'male' : undefined,
+        force: isRetry,
+      });
+      if (packResult.status === 'failed') {
+        console.log(`  ⚠️  Character pack failed — continuing without pack`);
+      }
+    }
+
     // ── Stage 1: Images ────────────────────────────────────────────────────
     const beforeExists = fs.existsSync(path.join(outputDir, 'before.png'));
     if (!beforeExists || (isRetry && force)) {
@@ -975,6 +997,9 @@ async function main() {
     if (!fs.existsSync(offerFile)) { console.error(`❌ Offer not found: ${offerFile}`); process.exit(1); }
     const { offer, framework } = JSON.parse(fs.readFileSync(offerFile, 'utf-8'));
 
+    // Wire flags into framework so downstream stages can read them
+    if (args.skipCharPack) (framework as any)._skipCharPack = true;
+
     // ── Resume mode: reuse an existing session dir ──────────────────────────
     let sessionDir: string;
     let resumeMode = false;
@@ -1015,17 +1040,24 @@ async function main() {
       const allCombos = buildAngleCombos(framework);
       const combos = allCombos.slice(args.start, args.start + args.count);
       const sessionId = path.basename(sessionDir);
-      angleEntries = combos.map((combo: { stage: string; category: string }, i: number) => {
-        const angleId = `${offer.productName.toUpperCase().replace(/\s+/g, '_').slice(0, 8)}_${sessionId.slice(0, 10)}_${String(args.start + i + 1).padStart(2, '0')}`;
-        const outputDir = path.join(sessionDir, angleId);
-        fs.mkdirSync(outputDir, { recursive: true });
-        return { combo, angleId, outputDir };
-      });
+      const variantCount = Math.max(1, Math.min(3, args.variants)); // clamp 1-3
+      angleEntries = [];
+      for (let i = 0; i < combos.length; i++) {
+        const combo = combos[i];
+        for (let v = 0; v < variantCount; v++) {
+          const variantSuffix = variantCount > 1 ? `_v${v + 1}` : '';
+          const angleId = `${offer.productName.toUpperCase().replace(/\s+/g, '_').slice(0, 8)}_${sessionId.slice(0, 10)}_${String(args.start + i + 1).padStart(2, '0')}${variantSuffix}`;
+          const outputDir = path.join(sessionDir, angleId);
+          fs.mkdirSync(outputDir, { recursive: true });
+          angleEntries.push({ combo, angleId, outputDir });
+        }
+      }
     }
 
     console.log(`\n  📦 Product: ${offer.productName}`);
     const totalCombos = resumeMode ? angleEntries.length : buildAngleCombos(framework).length;
-    console.log(`  🎯 Angles: ${angleEntries.length}${resumeMode ? ' (resume)' : ` of ${totalCombos} available (start: ${args.start})`}`);
+    const variantLabel = args.variants > 1 ? ` (${args.variants} variants each)` : '';
+    console.log(`  🎯 Angles: ${angleEntries.length}${resumeMode ? ' (resume)' : ` of ${totalCombos} available (start: ${args.start})${variantLabel}`}`);
     console.log(`  🔄 Max retries: ${args.maxRetries}`);
     if (args.validate) {
       console.log(`  🧪 VALIDATE MODE: Kling 2.6 Pro (~$0.07-0.14/s) — validate before Veo3.1 ($0.40/s)`);

@@ -419,6 +419,151 @@ function testAnchorStrategy() {
     : F('Validate mode: unexpected anchors');
 }
 
+// ── Test 14: Character Pack ─────────────────────────────────────────────────
+function testCharacterPack() {
+  S('14. Character Pack — Loading + Selection');
+  const { loadCharacterPack, selectCharacter, buildPackCharacterDescription, getConsistencyBlocks, getAnglePromptBlock, getUnghostingContext } = require('./character-pack.js');
+
+  const pack = loadCharacterPack();
+  if (!pack) { F('AD_CHARACTER_PACK.json not found'); return; }
+  P(`Loaded: ${pack.characters.length} characters, ${pack.libraries.angles.length} angles`);
+
+  // Test character selection by category
+  const testCases: Array<{ category: string; expectedGender?: string }> = [
+    { category: 'friend' },
+    { category: 'client' },
+    { category: 'mentor' },
+    { category: 'coworker' },
+    { category: 'family' },
+  ];
+  for (const tc of testCases) {
+    const char = selectCharacter(pack, tc.category, undefined, 'female');
+    if (char?.id && char?.name) {
+      P(`${tc.category} → ${char.name} (${char.id}) — ${char.archetype}`);
+    } else {
+      F(`${tc.category} → no character selected`);
+    }
+  }
+
+  // Test character description building
+  const maya = pack.characters.find((c: any) => c.id === 'CHR_MAYA_BROOKS') ?? pack.characters[0];
+  if (maya) {
+    const desc = buildPackCharacterDescription(maya);
+    desc.length > 20 ? P(`Pack description (${desc.length} chars): "${desc.slice(0,80)}..."`) : F('Pack description too short');
+  }
+
+  // Test consistency blocks
+  const blocks = getConsistencyBlocks(pack.globals);
+  blocks.consistencyBlock?.length > 10 ? P(`Consistency block: "${blocks.consistencyBlock.slice(0,60)}..."`) : F('Missing consistency block');
+  blocks.negativeBlock?.length > 10 ? P(`Negative block: "${blocks.negativeBlock.slice(0,60)}..."`) : F('Missing negative block');
+
+  // Test angle prompt blocks
+  const friendAngle = getAnglePromptBlock(pack, 'friend');
+  friendAngle?.length > 5 ? P(`Angle (friend): "${friendAngle.slice(0,60)}..."`) : W('No angle prompt for friend');
+
+  // Test unghosting context
+  const ugCtx = getUnghostingContext(pack, 'old friend');
+  ugCtx?.length > 5 ? P(`Unghosting (old friend): "${ugCtx.slice(0,60)}..."`) : W('No unghosting context for old friend');
+}
+
+// ── Test 15: Variant Generation Logic ───────────────────────────────────────
+function testVariantLogic() {
+  S('15. Variant Generation — Logic Validation');
+
+  // Simulate the variant expansion from smart-generate.ts
+  const combos = [
+    { stage: 'unaware', category: 'friend' },
+    { stage: 'problem-aware', category: 'client' },
+  ];
+
+  for (const variantCount of [1, 2, 3]) {
+    const entries: string[] = [];
+    for (let i = 0; i < combos.length; i++) {
+      for (let v = 0; v < variantCount; v++) {
+        const suffix = variantCount > 1 ? `_v${v + 1}` : '';
+        entries.push(`EVERREAC_2026-02-21_${String(i + 1).padStart(2, '0')}${suffix}`);
+      }
+    }
+    const expected = combos.length * variantCount;
+    entries.length === expected
+      ? P(`${variantCount} variant(s) × ${combos.length} combos = ${entries.length} entries ✓`)
+      : F(`Expected ${expected} entries, got ${entries.length}`);
+
+    // Verify unique IDs
+    const unique = new Set(entries);
+    unique.size === entries.length
+      ? P(`All ${entries.length} IDs unique ✓`)
+      : F(`Duplicate IDs found: ${entries.length - unique.size} duplicates`);
+  }
+}
+
+// ── Test 16: Stage Character Pack — Manifest Structure ──────────────────────
+function testCharacterPackManifest() {
+  S('16. Character Pack Manifest — Structure Validation');
+
+  // Check if any existing packs exist
+  const packDirs = ['output/pipeline/character-pack-test/character_pack/pack_manifest.json'];
+  const existing = packDirs.find(fs.existsSync);
+  if (!existing) { I('No existing character pack manifest — will be tested on first run'); return; }
+
+  try {
+    const manifest = JSON.parse(fs.readFileSync(existing, 'utf-8'));
+    manifest.characterId ? P(`Character: ${manifest.characterName} (${manifest.characterId})`) : F('Missing characterId');
+    manifest.poses?.length > 0 ? P(`Poses: ${manifest.poses.length}`) : F('No poses in manifest');
+    manifest.frontalUrl ? P(`Frontal URL: ${manifest.frontalUrl.slice(0,50)}...`) : W('No frontal URL — fal.ai upload may have failed');
+    manifest.referenceUrls?.length > 0 ? P(`Reference URLs: ${manifest.referenceUrls.length}`) : W('No reference URLs');
+  } catch (e: any) { F(`Invalid manifest: ${e.message}`); }
+}
+
+// ── Test 17: Clip Chaining Logic ────────────────────────────────────────────
+function testClipChaining() {
+  S('17. Clip Chaining — Hybrid Anchor Strategy');
+
+  // Simulate the NEW hybrid anchor strategy from stage-lipsync.ts
+  function getAnchorsChained(i: number, n: number, urls: { before: string; sheet: string; after: string }, chainedLastFrameUrl: string) {
+    const isFirst = i === 0;
+    const isLast  = i === n - 1;
+    const isSingle = n === 1;
+    let firstUrl: string | undefined;
+    let lastUrl:  string | undefined;
+    if (isSingle) {
+      firstUrl = urls.before || undefined;
+      lastUrl  = urls.after  || undefined;
+    } else if (isFirst) {
+      firstUrl = urls.before || urls.sheet || undefined;
+      lastUrl  = urls.sheet  || undefined;
+    } else if (isLast) {
+      firstUrl = chainedLastFrameUrl || urls.sheet || undefined;
+      lastUrl  = urls.after || urls.sheet || undefined;
+    } else {
+      firstUrl = chainedLastFrameUrl || urls.sheet || undefined;
+      lastUrl  = urls.sheet  || undefined;
+    }
+    return { firstUrl, lastUrl };
+  }
+
+  const URLS = { before: 'https://cdn.fal/before.png', sheet: 'https://cdn.fal/sheet.png', after: 'https://cdn.fal/after.png' };
+  const CHAIN = 'https://cdn.fal/clip_01_lastframe.png';
+
+  // Clip 1: should use before (no chaining for first clip)
+  const c1 = getAnchorsChained(0, 5, URLS, '');
+  c1.firstUrl === URLS.before ? P('Clip 1: first=before (no chain) ✓') : F(`Clip 1: expected before, got ${c1.firstUrl}`);
+
+  // Clip 2 with chain: should prefer chained frame over sheet
+  const c2 = getAnchorsChained(1, 5, URLS, CHAIN);
+  c2.firstUrl === CHAIN ? P('Clip 2: first=chainedLastFrame (chained!) ✓') : F(`Clip 2: expected chain, got ${c2.firstUrl}`);
+
+  // Clip 2 without chain: should fall back to sheet
+  const c2nc = getAnchorsChained(1, 5, URLS, '');
+  c2nc.firstUrl === URLS.sheet ? P('Clip 2 (no chain): first=sheet fallback ✓') : F(`Clip 2 (no chain): expected sheet, got ${c2nc.firstUrl}`);
+
+  // Last clip with chain: should prefer chained frame, last=after
+  const c5 = getAnchorsChained(4, 5, URLS, CHAIN);
+  c5.firstUrl === CHAIN && c5.lastUrl === URLS.after
+    ? P('Clip 5: first=chained, last=after ✓')
+    : F(`Clip 5: expected chain+after, got ${c5.firstUrl}+${c5.lastUrl}`);
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   loadEnv();
@@ -447,6 +592,10 @@ async function main() {
   testLearnings();
   testInventory();
   testAnchorStrategy();
+  testCharacterPack();
+  testVariantLogic();
+  testCharacterPackManifest();
+  testClipChaining();
 
   console.log(`\n${'═'.repeat(60)}`);
   console.log(`  🧪 RESULTS: ✅ ${pass} passed  ❌ ${fail} failed  ⚠️  ${warn} warnings`);
