@@ -27,6 +27,12 @@ import {
   QuestionAd,
   ObjectionKillerAd,
   everReachAdDefaultProps,
+  EverReachScreenshotAd,
+  everReachScreenshotAdDefaultProps,
+  EverReachReel,
+  everReachReelDefaultProps,
+  REEL_FPS,
+  getReelDurationFrames,
   META_AD_SIZES,
   PHASE_A_ANGLES,
 } from './compositions/everreach';
@@ -86,6 +92,10 @@ import {
   BeforeAfterReveal,
   beforeAfterRevealDefaultProps,
 } from './compositions/BeforeAfterReveal';
+import {
+  PipelineAdComposition,
+  pipelineAdDefaultProps,
+} from './compositions/PipelineAdComposition';
 import { ContentBrief } from './types';
 
 export interface BriefCompositionProps {
@@ -551,6 +561,156 @@ export const RemotionRoot: React.FC = () => {
         width={META_AD_SIZES.instagram_story.width}
         height={META_AD_SIZES.instagram_story.height}
         defaultProps={everReachAdDefaultProps}
+      />
+
+      {/* EverReach - Instagram Portrait 4:5 (1080×1350) — best feed real estate */}
+      <Still
+        id="EverReach-Instagram-Portrait"
+        component={EverReachAd}
+        width={1080}
+        height={1350}
+        defaultProps={everReachAdDefaultProps}
+      />
+      <Still
+        id="EverReach-PainPoint-Portrait"
+        component={PainPointAd}
+        width={1080}
+        height={1350}
+        defaultProps={everReachAdDefaultProps}
+      />
+      <Still
+        id="EverReach-Listicle-Portrait"
+        component={ListicleAd}
+        width={1080}
+        height={1350}
+        defaultProps={everReachAdDefaultProps}
+      />
+      <Still
+        id="EverReach-Comparison-Portrait"
+        component={ComparisonAd}
+        width={1080}
+        height={1350}
+        defaultProps={everReachAdDefaultProps}
+      />
+      <Still
+        id="EverReach-Stat-Portrait"
+        component={StatAd}
+        width={1080}
+        height={1350}
+        defaultProps={everReachAdDefaultProps}
+      />
+      <Still
+        id="EverReach-Question-Portrait"
+        component={QuestionAd}
+        width={1080}
+        height={1350}
+        defaultProps={everReachAdDefaultProps}
+      />
+      <Still
+        id="EverReach-Objections-Portrait"
+        component={ObjectionKillerAd}
+        width={1080}
+        height={1350}
+        defaultProps={everReachAdDefaultProps}
+      />
+
+      {/* ============================================================= */}
+      {/* EVERREACH SCREENSHOT ADS — Phone mockup + app screenshots     */}
+      {/* ============================================================= */}
+
+      {/* Screenshot Ad - Instagram Post (1080×1080) */}
+      <Still
+        id="EverReach-Screenshot-Post"
+        component={EverReachScreenshotAd}
+        width={1080}
+        height={1080}
+        defaultProps={everReachScreenshotAdDefaultProps}
+      />
+
+      {/* Screenshot Ad - Instagram Portrait 4:5 (1080×1350) */}
+      <Still
+        id="EverReach-Screenshot-Portrait"
+        component={EverReachScreenshotAd}
+        width={1080}
+        height={1350}
+        defaultProps={everReachScreenshotAdDefaultProps}
+      />
+
+      {/* Screenshot Ad - Instagram Story / Reels (1080×1920) */}
+      <Still
+        id="EverReach-Screenshot-Story"
+        component={EverReachScreenshotAd}
+        width={1080}
+        height={1920}
+        defaultProps={everReachScreenshotAdDefaultProps}
+      />
+
+      {/* Screenshot Ad - Facebook Post (1200×630) */}
+      <Still
+        id="EverReach-Screenshot-Facebook"
+        component={EverReachScreenshotAd}
+        width={1200}
+        height={630}
+        defaultProps={{...everReachScreenshotAdDefaultProps, headlineSize: 32, subheadlineSize: 14}}
+      />
+
+      {/* ============================================================= */}
+      {/* EVERREACH REELS — Beat-timed video ads (15-30s)               */}
+      {/* ============================================================= */}
+
+      {/* Reel - Story/Reels 9:16 (1080×1920) — 20s default */}
+      <Composition
+        id="EverReach-Reel-Story"
+        component={EverReachReel}
+        durationInFrames={getReelDurationFrames(20)}
+        fps={REEL_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={everReachReelDefaultProps}
+      />
+
+      {/* Reel - Story/Reels 9:16 — 15s (Unaware, short) */}
+      <Composition
+        id="EverReach-Reel-Story-15s"
+        component={EverReachReel}
+        durationInFrames={getReelDurationFrames(15)}
+        fps={REEL_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{...everReachReelDefaultProps, duration: 15}}
+      />
+
+      {/* Reel - Story/Reels 9:16 — 30s (Product Aware, full demo) */}
+      <Composition
+        id="EverReach-Reel-Story-30s"
+        component={EverReachReel}
+        durationInFrames={getReelDurationFrames(30)}
+        fps={REEL_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{...everReachReelDefaultProps, duration: 30}}
+      />
+
+      {/* Reel - Feed Post 1:1 (1080×1080) — 20s */}
+      <Composition
+        id="EverReach-Reel-Post"
+        component={EverReachReel}
+        durationInFrames={getReelDurationFrames(20)}
+        fps={REEL_FPS}
+        width={1080}
+        height={1080}
+        defaultProps={everReachReelDefaultProps}
+      />
+
+      {/* Reel - Feed Portrait 4:5 (1080×1350) — 20s */}
+      <Composition
+        id="EverReach-Reel-Portrait"
+        component={EverReachReel}
+        durationInFrames={getReelDurationFrames(20)}
+        fps={REEL_FPS}
+        width={1080}
+        height={1350}
+        defaultProps={everReachReelDefaultProps}
       />
 
       {/* ============================================================= */}
@@ -2532,6 +2692,43 @@ export const RemotionRoot: React.FC = () => {
         width={1200}
         height={628}
         defaultProps={ugcVideoAdWrapperDefaultProps}
+      />
+
+      {/* ============================================================= */}
+      {/* PIPELINE AD — AI-generated clips + Remotion overlays          */}
+      {/* ============================================================= */}
+
+      {/* Pipeline Ad - 9:16 Story/Reels (1080×1920) — ~32s */}
+      <Composition
+        id="PipelineAd-Story"
+        component={PipelineAdComposition}
+        durationInFrames={960}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={pipelineAdDefaultProps}
+      />
+
+      {/* Pipeline Ad - 4:5 Portrait (1080×1350) — ~32s */}
+      <Composition
+        id="PipelineAd-Portrait"
+        component={PipelineAdComposition}
+        durationInFrames={960}
+        fps={30}
+        width={1080}
+        height={1350}
+        defaultProps={pipelineAdDefaultProps}
+      />
+
+      {/* Pipeline Ad - 1:1 Square (1080×1080) — ~32s */}
+      <Composition
+        id="PipelineAd-Square"
+        component={PipelineAdComposition}
+        durationInFrames={960}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={pipelineAdDefaultProps}
       />
     </>
   );
