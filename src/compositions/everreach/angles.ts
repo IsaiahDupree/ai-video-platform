@@ -319,5 +319,66 @@ export function generateAngleMatrix(): Array<{
   return matrix;
 }
 
+// =============================================================================
+// Screenshot-to-Angle Mapping (for EverReachScreenshotAd)
+// =============================================================================
+
+// Screenshot visual content reference:
+//   01-contacts-list.png  → Dashboard home (Relationship Health: Hot/Warm/Cool/Cold counts)
+//   02-contact-detail.png → Contact profile (Rachel Green, HOT 86/100, channels)
+//   03-voice-note.png     → Voice note recorder screen
+//   04-search-tags.png    → People list with warmth scores (the contacts list)
+//   05-warmth-score.png   → Contact context detail (Nina Patel, HOT 69, tags, timeline)
+//   06-goal-compose.png   → Pick Goal / Generate Message screen
+//   07-subscription.png   → Paywall / features list + pricing
+//   subscription.png      → Same as 07
+
+export const ANGLE_SCREENSHOT_MAP: Record<string, {
+  screenshotSrc: string;
+  screenshotAlt: string;
+  layout: 'left' | 'right' | 'center' | 'bottom';
+  badge?: string;
+  theme: 'dark' | 'light' | 'warmGradient' | 'coolGradient';
+}> = {
+  // Unaware — dashboard home shows the "relationship health" concept emotionally
+  UA_TIMING_01: { screenshotSrc: 'everreach/screenshots/01-contacts-list.png', screenshotAlt: 'Relationship health dashboard', layout: 'right', theme: 'dark' },
+  UA_FADE_02:   { screenshotSrc: 'everreach/screenshots/04-search-tags.png',   screenshotAlt: 'Contacts with warmth scores', layout: 'right', theme: 'dark' },
+  UA_TAX_03:    { screenshotSrc: 'everreach/screenshots/01-contacts-list.png', screenshotAlt: 'Relationship health', layout: 'bottom', theme: 'warmGradient' },
+  UA_HABIT_04:  { screenshotSrc: 'everreach/screenshots/04-search-tags.png',   screenshotAlt: 'Contacts list', layout: 'right', theme: 'dark' },
+
+  // Problem Aware — show contacts going cold (people list with scores)
+  PA_SYSTEM_05: { screenshotSrc: 'everreach/screenshots/04-search-tags.png',   screenshotAlt: 'Contacts with warmth scores', layout: 'right', theme: 'dark' },
+  PA_DECAY_06:  { screenshotSrc: 'everreach/screenshots/01-contacts-list.png', screenshotAlt: 'Relationship health', layout: 'right', theme: 'warmGradient' },
+  PA_MEMORY_07: { screenshotSrc: 'everreach/screenshots/04-search-tags.png',   screenshotAlt: 'Contacts list', layout: 'bottom', theme: 'dark' },
+  PA_COST_08:   { screenshotSrc: 'everreach/screenshots/04-search-tags.png',   screenshotAlt: 'Contacts list', layout: 'right', theme: 'dark', badge: 'WAKE UP' },
+
+  // Solution Aware — show the mechanism (goal picker + message generator)
+  SA_WORDS_09:  { screenshotSrc: 'everreach/screenshots/06-goal-compose.png', screenshotAlt: 'AI message generator', layout: 'right', theme: 'dark' },
+  SA_CRM_10:    { screenshotSrc: 'everreach/screenshots/06-goal-compose.png', screenshotAlt: 'AI message generator', layout: 'right', theme: 'coolGradient' },
+  SA_DAILY_11:  { screenshotSrc: 'everreach/screenshots/01-contacts-list.png', screenshotAlt: 'Daily relationship dashboard', layout: 'right', theme: 'dark' },
+  SA_SIMPLE_12: { screenshotSrc: 'everreach/screenshots/06-goal-compose.png', screenshotAlt: 'AI message generator', layout: 'right', theme: 'dark' },
+
+  // Product Aware — show proof (contact detail, warmth context, compose)
+  PD_DEMO_13:    { screenshotSrc: 'everreach/screenshots/06-goal-compose.png', screenshotAlt: 'Generate message in seconds', layout: 'right', theme: 'dark', badge: '60 SECONDS' },
+  PD_NOENTRY_14: { screenshotSrc: 'everreach/screenshots/05-warmth-score.png', screenshotAlt: 'Contact context detail', layout: 'right', theme: 'dark' },
+  PD_WARMTH_15:  { screenshotSrc: 'everreach/screenshots/02-contact-detail.png', screenshotAlt: 'Contact with HOT warmth score', layout: 'right', theme: 'dark', badge: 'WARMTH SCORE' },
+  PD_APPROVE_16: { screenshotSrc: 'everreach/screenshots/06-goal-compose.png', screenshotAlt: 'Message composer', layout: 'right', theme: 'dark' },
+  PD_OBJECTIONS_17: { screenshotSrc: 'everreach/screenshots/07-subscription.png', screenshotAlt: 'Features + pricing', layout: 'right', theme: 'dark' },
+
+  // Most Aware — direct CTA + proof (paywall / subscription)
+  MA_START_18:   { screenshotSrc: 'everreach/screenshots/07-subscription.png', screenshotAlt: 'Start free trial', layout: 'right', theme: 'dark', badge: 'FREE TRIAL' },
+  MA_SILENCE_19: { screenshotSrc: 'everreach/screenshots/04-search-tags.png',  screenshotAlt: 'Contacts with warmth scores', layout: 'right', theme: 'warmGradient' },
+  MA_ENGINE_20:  { screenshotSrc: 'everreach/screenshots/06-goal-compose.png', screenshotAlt: 'AI message generator', layout: 'right', theme: 'dark', badge: 'START FREE' },
+};
+
+export function getAngleScreenshot(angleId: string) {
+  return ANGLE_SCREENSHOT_MAP[angleId] || {
+    screenshotSrc: 'everreach/screenshots/05-warmth-score.png',
+    screenshotAlt: 'Warmth score',
+    layout: 'right' as const,
+    theme: 'dark' as const,
+  };
+}
+
 // Export all angles as a flat array for batch rendering
 export const ALL_ANGLES = PHASE_A_ANGLES;

@@ -98,6 +98,204 @@
       "path": "public/assets/background/bg_particles_dark.png",
       "size": "1792x1024",
       "generated_at": "2025-12-28T14:47:44.306000"
+    },
+    "5a9e45c12b52": {
+      "type": "icon",
+      "prompt": "A stylized letter envelope transforming into a handwritten note with a heart seal, warm tones, pastel colors, app icon for a handwritten letter sending app called SteadyLetters",
+      "style": "minimal",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, minimalist, simple shapes, limited color palette, A stylized letter envelope transforming into a handwritten note with a heart seal, warm tones, pastel colors, app icon for a handwritten letter sending app called SteadyLetters",
+      "path": "public/assets/icon/app_icon_steadyletters_ios.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:01:29.925540"
+    },
+    "40ade79ac67a": {
+      "type": "icon",
+      "prompt": "A modern CRM dashboard icon with person silhouette and data nodes connected by lines, professional blue and purple gradient, app icon for a CRM app called EverReach",
+      "style": "gradient",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, smooth gradient colors, modern aesthetic, A modern CRM dashboard icon with person silhouette and data nodes connected by lines, professional blue and purple gradient, app icon for a CRM app called EverReach",
+      "path": "public/assets/icon/app_icon_everreach_crm.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:01:48.957291"
+    },
+    "041dfad2e8af": {
+      "type": "icon",
+      "prompt": "A cute kawaii-style coffee cup with steam forming a timer clock, pastel pink and brown tones, adorable face on the cup, app icon for a kawaii coffee timer",
+      "style": "playful",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, fun, colorful, cartoon style, friendly, A cute kawaii-style coffee cup with steam forming a timer clock, pastel pink and brown tones, adorable face on the cup, app icon for a kawaii coffee timer",
+      "path": "public/assets/icon/app_icon_kawaii_coffee.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:02:01.273085"
+    },
+    "10d25bfe08d0": {
+      "type": "icon",
+      "prompt": "A PDF document with a microphone and speech waveform overlay, modern blue and white, app icon for a voice chat PDF reader",
+      "style": "gradient",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, smooth gradient colors, modern aesthetic, A PDF document with a microphone and speech waveform overlay, modern blue and white, app icon for a voice chat PDF reader",
+      "path": "public/assets/icon/app_icon_voice_chat_pdf.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:02:16.339360"
+    },
+    "f2c0f8dc5f73": {
+      "type": "icon",
+      "prompt": "A YouTube play button merged with a quiz question mark symbol, red and white with gold accents, app icon for a YouTube quiz generator",
+      "style": "minimal",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, minimalist, simple shapes, limited color palette, A YouTube play button merged with a quiz question mark symbol, red and white with gold accents, app icon for a YouTube quiz generator",
+      "path": "public/assets/icon/app_icon_youtube_quiz.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:02:27.433714"
+    },
+    "5a01dc247bc4": {
+      "type": "icon",
+      "prompt": "An AI brain merged with a calculator keypad, futuristic neon blue and purple, app icon for an AI-powered calculator builder",
+      "style": "neon",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, neon glow effect, cyberpunk colors, dark background, An AI brain merged with a calculator keypad, futuristic neon blue and purple, app icon for an AI-powered calculator builder",
+      "path": "public/assets/icon/app_icon_ai_calculator.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:02:39.982200"
+    },
+    "ba83493dad17": {
+      "type": "icon",
+      "prompt": "A portal doorway with a client handshake silhouette inside, professional teal and navy, app icon for a client portal system",
+      "style": "corporate",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, professional, clean, modern corporate style, A portal doorway with a client handshake silhouette inside, professional teal and navy, app icon for a client portal system",
+      "path": "public/assets/icon/app_icon_client_portal.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:02:51.413467"
+    },
+    "2136ea5a35d9": {
+      "type": "icon",
+      "prompt": "Multiple AI nodes collaborating in a network pattern with a workspace desk, purple and teal gradient, app icon for a collaborative AI workspace",
+      "style": "gradient",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, smooth gradient colors, modern aesthetic, Multiple AI nodes collaborating in a network pattern with a workspace desk, purple and teal gradient, app icon for a collaborative AI workspace",
+      "path": "public/assets/icon/app_icon_collab_ai_workos.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:03:03.762505"
+    },
+    "0addbf9cb7ab": {
+      "type": "icon",
+      "prompt": "Two interlinked hearts with a habit checkmark streak, warm pink and coral gradient, app icon for a couples habit tracker",
+      "style": "playful",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, fun, colorful, cartoon style, friendly, Two interlinked hearts with a habit checkmark streak, warm pink and coral gradient, app icon for a couples habit tracker",
+      "path": "public/assets/icon/app_icon_couples_habits.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:03:18.490359"
+    },
+    "509e7dff70f7": {
+      "type": "icon",
+      "prompt": "Instagram camera lens merged with a magnifying glass and lead funnel, vibrant pink orange and purple, app icon for an IG research lead finder",
+      "style": "gradient",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, smooth gradient colors, modern aesthetic, Instagram camera lens merged with a magnifying glass and lead funnel, vibrant pink orange and purple, app icon for an IG research lead finder",
+      "path": "public/assets/icon/app_icon_ig_lead_finder.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:03:30.855165"
+    },
+    "2570147d4b2f": {
+      "type": "icon",
+      "prompt": "A graduation cap transforming into a briefcase with upward arrow, green and gold, app icon for a learning-to-gigs career app",
+      "style": "minimal",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, minimalist, simple shapes, limited color palette, A graduation cap transforming into a briefcase with upward arrow, green and gold, app icon for a learning-to-gigs career app",
+      "path": "public/assets/icon/app_icon_learning_gigs.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:03:47.355034"
+    },
+    "b1d76fe48491": {
+      "type": "icon",
+      "prompt": "A media film reel with AI circuit patterns and database schema nodes, deep blue and silver, app icon for a media AI schema app",
+      "style": "neon",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, neon glow effect, cyberpunk colors, dark background, A media film reel with AI circuit patterns and database schema nodes, deep blue and silver, app icon for a media AI schema app",
+      "path": "public/assets/icon/app_icon_media_ai_schema.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:04:00.769035"
+    },
+    "dfa2f38fc720": {
+      "type": "icon",
+      "prompt": "A growth chart arrow with social media icons orbiting it, Meta blue gradient, app icon for a Meta content growth hub",
+      "style": "gradient",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, smooth gradient colors, modern aesthetic, A growth chart arrow with social media icons orbiting it, Meta blue gradient, app icon for a Meta content growth hub",
+      "path": "public/assets/icon/app_icon_meta_growth_hub.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:04:12.213854"
+    },
+    "e3b6d91b6f2d": {
+      "type": "icon",
+      "prompt": "A floor plan blueprint with RF signal waves radiating from a router, technical blue and orange, app icon for an RF indoor mapper called ProMap",
+      "style": "corporate",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, professional, clean, modern corporate style, A floor plan blueprint with RF signal waves radiating from a router, technical blue and orange, app icon for an RF indoor mapper called ProMap",
+      "path": "public/assets/icon/app_icon_promap_rf.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:04:43.958676"
+    },
+    "c9a111908162": {
+      "type": "icon",
+      "prompt": "A pulse heartbeat line merging into a camera lens, vibrant red and dark background, app icon for a health and analytics app called PulseLense",
+      "style": "neon",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, neon glow effect, cyberpunk colors, dark background, A pulse heartbeat line merging into a camera lens, vibrant red and dark background, app icon for a health and analytics app called PulseLense",
+      "path": "public/assets/icon/app_icon_pulselense.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:04:58.391976"
+    },
+    "dea6f2be5ecd": {
+      "type": "icon",
+      "prompt": "A live streaming broadcast tower with multiple screen outputs, electric purple and cyan, app icon for a simulive multistream studio",
+      "style": "neon",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, neon glow effect, cyberpunk colors, dark background, A live streaming broadcast tower with multiple screen outputs, electric purple and cyan, app icon for a simulive multistream studio",
+      "path": "public/assets/icon/app_icon_simulive_studio.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:05:14.202897"
+    },
+    "0dfd33280dd0": {
+      "type": "icon",
+      "prompt": "A megaphone with social media platform icons and a calendar grid, vibrant orange and blue, app icon for a social media campaign manager",
+      "style": "playful",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, fun, colorful, cartoon style, friendly, A megaphone with social media platform icons and a calendar grid, vibrant orange and blue, app icon for a social media campaign manager",
+      "path": "public/assets/icon/app_icon_social_campaigns.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:05:26.608752"
+    },
+    "c311167bed4a": {
+      "type": "icon",
+      "prompt": "A magic eraser wand removing a watermark from a video frame, clean white and purple, app icon for a Sora watermark remover tool",
+      "style": "minimal",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, minimalist, simple shapes, limited color palette, A magic eraser wand removing a watermark from a video frame, clean white and purple, app icon for a Sora watermark remover tool",
+      "path": "public/assets/icon/app_icon_sora_watermark.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:05:37.780941"
+    },
+    "a49451c3d4a2": {
+      "type": "icon",
+      "prompt": "A strong face silhouette with facial exercise muscle lines, bold red and black, app icon for a facial exercise app called StrongFace",
+      "style": "minimal",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, minimalist, simple shapes, limited color palette, A strong face silhouette with facial exercise muscle lines, bold red and black, app icon for a facial exercise app called StrongFace",
+      "path": "public/assets/icon/app_icon_strongface.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:05:52.907356"
+    },
+    "cee8c475e978": {
+      "type": "icon",
+      "prompt": "A unified grid of photo video and music media tiles in a gallery layout, rainbow gradient borders, app icon for a unified media gallery",
+      "style": "gradient",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, smooth gradient colors, modern aesthetic, A unified grid of photo video and music media tiles in a gallery layout, rainbow gradient borders, app icon for a unified media gallery",
+      "path": "public/assets/icon/app_icon_unified_media.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:06:05.157317"
+    },
+    "fe8a187f5585": {
+      "type": "icon",
+      "prompt": "A film clapperboard with a planning checklist and camera, cinematic orange and teal, app icon for a vlog planning and filming app called VlogFlow",
+      "style": "minimal",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, minimalist, simple shapes, limited color palette, A film clapperboard with a planning checklist and camera, cinematic orange and teal, app icon for a vlog planning and filming app called VlogFlow",
+      "path": "public/assets/icon/app_icon_vlogflow.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:06:33.437652"
+    },
+    "824aa5dc8483": {
+      "type": "icon",
+      "prompt": "A microphone transforming into a handwritten love letter with floating hearts, romantic pink and red gradient, app icon for a voice-to-letter love notes app",
+      "style": "playful",
+      "full_prompt": "Minimalist flat icon, single object, transparent background style, fun, colorful, cartoon style, friendly, A microphone transforming into a handwritten love letter with floating hearts, romantic pink and red gradient, app icon for a voice-to-letter love notes app",
+      "path": "public/assets/icon/app_icon_voice_love_notes.png",
+      "size": "1024x1024",
+      "generated_at": "2026-02-17T21:06:44.674828"
     }
   }
 }

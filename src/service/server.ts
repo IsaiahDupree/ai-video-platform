@@ -699,8 +699,14 @@ queue.registerHandler('ugc-generate', async (input) => {
     dryRun: input.dryRun ?? false,
   };
 
-  const runOptions = input.resumeBatchDir ? { resumeBatchDir: input.resumeBatchDir } : undefined;
-  const batch = await runUGCPipeline(config, runOptions);
+  const runOptions: Record<string, any> = {};
+  if (input.resumeBatchDir) runOptions.resumeBatchDir = input.resumeBatchDir;
+  if (input.productId) runOptions.productId = input.productId;
+  if (input.campaignId) runOptions.campaignId = input.campaignId;
+  if (input.autoCopy) runOptions.autoCopy = true;
+  if (input.renderVideo) runOptions.renderVideo = true;
+
+  const batch = await runUGCPipeline(config, Object.keys(runOptions).length > 0 ? runOptions : undefined);
   return batch;
 });
 
@@ -1609,25 +1615,30 @@ gateway.registerRoute('POST', '/api/templates/before-after', async (req, res) =>
  * Generate UGC ad batch
  *
  * POST /api/v1/ugc/generate
- * Body: { product, brand, scenes, matrix, copyBank, dryRun, outputDir, webhookUrl }
+ * Body: { product, brand, scenes, matrix, copyBank, dryRun, outputDir, webhookUrl, productId, campaignId, autoCopy, renderVideo }
  */
 gateway.registerRoute('POST', '/api/v1/ugc/generate', async (req, res) => {
-  const { product, brand, scenes, matrix, copyBank, dryRun, outputDir, webhookUrl } = req.body;
+  const { product, brand, scenes, matrix, copyBank, dryRun, outputDir, webhookUrl, productId, campaignId, autoCopy, renderVideo } = req.body;
 
-  if (!product || !product.name) {
+  // If productId is set, allow product name to come from the registry
+  if (!productId && (!product || !product.name)) {
     res.status = 400;
-    res.body = { error: 'Missing required field: product.name' };
+    res.body = { error: 'Missing required field: product.name or productId' };
     return;
   }
 
   const jobId = queue.enqueue('ugc-generate', {
-    product,
+    product: product || { name: 'Product', description: '' },
     brand,
     scenes,
     matrix,
     copyBank,
     dryRun: dryRun ?? false,
     outputDir: outputDir || './output/ugc-ads',
+    productId,
+    campaignId,
+    autoCopy: autoCopy ?? false,
+    renderVideo: renderVideo ?? false,
   }, { webhookUrl, priority: 1 });
 
   res.status = 202;
@@ -2283,6 +2294,223 @@ gateway.registerRoute('GET', '/docs', async (req, res) => {
   res.status = 200;
   res.headers = { 'Content-Type': 'text/html' };
   res.body = swaggerHtml;
+});
+
+// =============================================================================
+// Product & Campaign Endpoints (Phase 3)
+// =============================================================================
+
+/**
+ * List all products
+ * GET /api/v1/products
+ */
+gateway.registerRoute('GET', '/api/v1/products', async (req, res) => {
+  const { listProducts } = await import('../pipeline/product-store');
+  res.status = 200;
+  res.body = { products: listProducts() };
+});
+
+/**
+ * Get a product by ID
+ * GET /api/v1/products/:id
+ */
+gateway.registerRoute('GET', '/api/v1/products/:id', async (req, res) => {
+  const { getProduct } = await import('../pipeline/product-store');
+  const id = req.path.split('/').pop()!;
+  const product = getProduct(id);
+  if (!product) {
+    res.status = 404;
+    res.body = { error: 'Product not found' };
+    return;
+  }
+  res.status = 200;
+  res.body = product;
+});
+
+/**
+ * Create a product
+ * POST /api/v1/products
+ */
+gateway.registerRoute('POST', '/api/v1/products', async (req, res) => {
+  const { createProduct } = await import('../pipeline/product-store');
+  const { name, description, brand, scenes, defaultMatrix, tags } = req.body;
+  if (!name || !description) {
+    res.status = 400;
+    res.body = { error: 'Missing required fields: name, description' };
+    return;
+  }
+  const product = createProduct({
+    name,
+    description,
+    brand: brand || { name, primaryColor: '#635bff', accentColor: '#00d4ff', fontFamily: 'Inter' },
+    scenes: scenes || { beforePrompt: '', afterPrompt: '', characterStyle: 'realistic' },
+    defaultMatrix: defaultMatrix || {},
+    tags: tags || [],
+  });
+  res.status = 201;
+  res.body = product;
+});
+
+/**
+ * Update a product
+ * PUT /api/v1/products/:id
+ */
+gateway.registerRoute('PUT', '/api/v1/products/:id', async (req, res) => {
+  const { updateProduct } = await import('../pipeline/product-store');
+  const id = req.path.split('/').pop()!;
+  const updated = updateProduct(id, req.body);
+  if (!updated) {
+    res.status = 404;
+    res.body = { error: 'Product not found' };
+    return;
+  }
+  res.status = 200;
+  res.body = updated;
+});
+
+/**
+ * Delete a product
+ * DELETE /api/v1/products/:id
+ */
+gateway.registerRoute('DELETE', '/api/v1/products/:id', async (req, res) => {
+  const { deleteProduct } = await import('../pipeline/product-store');
+  const id = req.path.split('/').pop()!;
+  const deleted = deleteProduct(id);
+  if (!deleted) {
+    res.status = 404;
+    res.body = { error: 'Product not found' };
+    return;
+  }
+  res.status = 200;
+  res.body = { success: true };
+});
+
+/**
+ * List campaigns (optionally filtered by productId)
+ * GET /api/v1/campaigns
+ * Query: ?productId=prod_xxx
+ */
+gateway.registerRoute('GET', '/api/v1/campaigns', async (req, res) => {
+  const { listCampaigns } = await import('../pipeline/product-store');
+  const url = new URL(req.path, 'http://localhost');
+  const productId = url.searchParams.get('productId') || undefined;
+  res.status = 200;
+  res.body = { campaigns: listCampaigns(productId) };
+});
+
+/**
+ * Get a campaign
+ * GET /api/v1/campaigns/:id
+ */
+gateway.registerRoute('GET', '/api/v1/campaigns/:id', async (req, res) => {
+  const { getCampaign } = await import('../pipeline/product-store');
+  const id = req.path.split('/').pop()!;
+  const campaign = getCampaign(id);
+  if (!campaign) {
+    res.status = 404;
+    res.body = { error: 'Campaign not found' };
+    return;
+  }
+  res.status = 200;
+  res.body = campaign;
+});
+
+/**
+ * Create a campaign
+ * POST /api/v1/campaigns
+ */
+gateway.registerRoute('POST', '/api/v1/campaigns', async (req, res) => {
+  const { createCampaign, getProduct } = await import('../pipeline/product-store');
+  const { name, productId, goal, budget, status } = req.body;
+  if (!name || !productId) {
+    res.status = 400;
+    res.body = { error: 'Missing required fields: name, productId' };
+    return;
+  }
+  const product = getProduct(productId);
+  if (!product) {
+    res.status = 404;
+    res.body = { error: `Product not found: ${productId}` };
+    return;
+  }
+  const campaign = createCampaign({
+    name,
+    productId,
+    batches: [],
+    goal: goal || 'ctr',
+    budget: budget || { daily: 50, total: 500 },
+    status: status || 'draft',
+  });
+  res.status = 201;
+  res.body = campaign;
+});
+
+/**
+ * Update a campaign
+ * PUT /api/v1/campaigns/:id
+ */
+gateway.registerRoute('PUT', '/api/v1/campaigns/:id', async (req, res) => {
+  const { updateCampaign } = await import('../pipeline/product-store');
+  const id = req.path.split('/').pop()!;
+  const updated = updateCampaign(id, req.body);
+  if (!updated) {
+    res.status = 404;
+    res.body = { error: 'Campaign not found' };
+    return;
+  }
+  res.status = 200;
+  res.body = updated;
+});
+
+/**
+ * Delete a campaign
+ * DELETE /api/v1/campaigns/:id
+ */
+gateway.registerRoute('DELETE', '/api/v1/campaigns/:id', async (req, res) => {
+  const { deleteCampaign } = await import('../pipeline/product-store');
+  const id = req.path.split('/').pop()!;
+  const deleted = deleteCampaign(id);
+  if (!deleted) {
+    res.status = 404;
+    res.body = { error: 'Campaign not found' };
+    return;
+  }
+  res.status = 200;
+  res.body = { success: true };
+});
+
+/**
+ * Add a batch to a campaign
+ * POST /api/v1/campaigns/:id/batches
+ */
+gateway.registerRoute('POST', '/api/v1/campaigns/:id/batches', async (req, res) => {
+  const { addBatchToCampaign } = await import('../pipeline/product-store');
+  const parts = req.path.split('/');
+  const campaignId = parts[parts.indexOf('campaigns') + 1];
+  const { batchId } = req.body;
+  if (!batchId) {
+    res.status = 400;
+    res.body = { error: 'Missing required field: batchId' };
+    return;
+  }
+  const updated = addBatchToCampaign(campaignId, batchId);
+  if (!updated) {
+    res.status = 404;
+    res.body = { error: 'Campaign not found' };
+    return;
+  }
+  res.status = 200;
+  res.body = updated;
+});
+
+/**
+ * Cross-product insights
+ * GET /api/v1/insights
+ */
+gateway.registerRoute('GET', '/api/v1/insights', async (req, res) => {
+  const { getCrossProductInsights } = await import('../pipeline/product-store');
+  res.status = 200;
+  res.body = getCrossProductInsights();
 });
 
 // =============================================================================

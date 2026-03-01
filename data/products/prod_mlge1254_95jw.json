@@ -1,0 +1,23 @@
+{
+  "name": "NoteFlow AI",
+  "description": "AI-powered writing assistant that turns rough notes into polished content",
+  "brand": {
+    "name": "NoteFlow",
+    "primaryColor": "#8b5cf6",
+    "accentColor": "#f59e0b"
+  },
+  "scenes": {
+    "beforePrompt": "",
+    "afterPrompt": "",
+    "characterStyle": "realistic"
+  },
+  "defaultMatrix": {},
+  "tags": [
+    "saas",
+    "writing",
+    "ai"
+  ],
+  "id": "prod_mlge1254_95jw",
+  "createdAt": "2026-02-10T09:17:42.032Z",
+  "updatedAt": "2026-02-10T09:17:42.032Z"
+}

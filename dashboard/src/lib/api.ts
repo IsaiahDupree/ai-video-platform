@@ -143,6 +143,82 @@ export async function checkHealth(): Promise<{ status: string }> {
   return apiFetch('/health');
 }
 
-// ── File-based batch loading (for when API server isn't running) ──
+// ── Products & Campaigns (Phase 3) ──
+
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  brand: { name: string; primaryColor: string; accentColor: string; fontFamily?: string; logoUrl?: string };
+  scenes: { beforePrompt: string; afterPrompt: string; characterStyle: string };
+  defaultMatrix: Record<string, unknown>;
+  tags: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Campaign {
+  id: string;
+  name: string;
+  productId: string;
+  batches: string[];
+  goal: 'ctr' | 'roas' | 'conversions';
+  budget: { daily: number; total: number };
+  status: 'draft' | 'active' | 'paused' | 'completed';
+  insights: Record<string, unknown>;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export async function listProducts(): Promise<Product[]> {
+  const data = await apiFetch<{ products: Product[] }>('/api/v1/products');
+  return data.products || [];
+}
+
+export async function getProduct(id: string): Promise<Product> {
+  return apiFetch<Product>(`/api/v1/products/${id}`);
+}
+
+export async function createProduct(input: Partial<Product>): Promise<Product> {
+  return apiFetch<Product>('/api/v1/products', { method: 'POST', body: JSON.stringify(input) });
+}
+
+export async function updateProduct(id: string, input: Partial<Product>): Promise<Product> {
+  return apiFetch<Product>(`/api/v1/products/${id}`, { method: 'PUT', body: JSON.stringify(input) });
+}
+
+export async function deleteProduct(id: string): Promise<void> {
+  await apiFetch(`/api/v1/products/${id}`, { method: 'DELETE' });
+}
+
+export async function listCampaigns(productId?: string): Promise<Campaign[]> {
+  const qs = productId ? `?productId=${productId}` : '';
+  const data = await apiFetch<{ campaigns: Campaign[] }>(`/api/v1/campaigns${qs}`);
+  return data.campaigns || [];
+}
+
+export async function getCampaign(id: string): Promise<Campaign> {
+  return apiFetch<Campaign>(`/api/v1/campaigns/${id}`);
+}
+
+export async function createCampaign(input: Partial<Campaign>): Promise<Campaign> {
+  return apiFetch<Campaign>('/api/v1/campaigns', { method: 'POST', body: JSON.stringify(input) });
+}
+
+export async function updateCampaign(id: string, input: Partial<Campaign>): Promise<Campaign> {
+  return apiFetch<Campaign>(`/api/v1/campaigns/${id}`, { method: 'PUT', body: JSON.stringify(input) });
+}
+
+export async function deleteCampaign(id: string): Promise<void> {
+  await apiFetch(`/api/v1/campaigns/${id}`, { method: 'DELETE' });
+}
+
+export async function addBatchToCampaign(campaignId: string, batchId: string): Promise<Campaign> {
+  return apiFetch<Campaign>(`/api/v1/campaigns/${campaignId}/batches`, { method: 'POST', body: JSON.stringify({ batchId }) });
+}
+
+export async function getCrossProductInsights(): Promise<Record<string, unknown>> {
+  return apiFetch('/api/v1/insights');
+}
 
 export { API_BASE };

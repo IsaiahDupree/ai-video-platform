@@ -1,0 +1,58 @@
+{
+  "_comment": "Copy this file, fill in your offer details, and run: npx tsx scripts/pipeline/run.ts --offer offers/your-product.json --count 5",
+  "offer": {
+    "productName": "Your Product Name",
+    "tagline": "One-line tagline for your product.",
+    "problemSolved": "Describe the core problem your product solves in 1-2 sentences.",
+    "targetAudience": "Who is this for? Age range, psychographic, situation.",
+    "keyFeatures": [
+      "Feature 1 — benefit description",
+      "Feature 2 — benefit description",
+      "Feature 3 — benefit description",
+      "Feature 4 — benefit description"
+    ],
+    "socialProof": "Optional: social proof line (e.g. '10,000+ users', 'As seen in...')",
+    "cta": "Your call to action text.",
+    "productUrl": "https://yourproduct.com",
+    "pricePoint": "Optional: price context (e.g. 'Free to start', '$9/month')"
+  },
+  "framework": {
+    "awarenessStages": [
+      {
+        "id": "unaware",
+        "description": "Person does not know they have this problem. Hook with a relatable observation. Never mention the product."
+      },
+      {
+        "id": "problem-aware",
+        "description": "Person knows the problem but not the solution. Validate pain, reframe cause, tease solution. Never mention the product."
+      },
+      {
+        "id": "solution-aware",
+        "description": "Person knows a solution exists but hasn't found yours. Show the specific method. Never mention the product by name."
+      },
+      {
+        "id": "product-aware",
+        "description": "Person knows your product exists. Show features directly. End with your CTA."
+      }
+    ],
+    "audienceCategories": [
+      "category 1",
+      "category 2",
+      "category 3"
+    ],
+    "scriptRules": [
+      "NEVER mention the product by name in unaware, problem-aware, or solution-aware scripts",
+      "Only mention the product in product-aware scripts",
+      "Use lowercase throughout — conversational, not formal",
+      "Add commas and periods for natural breathing pauses in TTS",
+      "Each line is a standalone caption thought — max 7 lines total",
+      "Speak directly to the viewer using 'you'",
+      "Keep each line under 12 words for clean caption display",
+      "End product-aware scripts with your CTA"
+    ],
+    "voiceTone": "Describe the voice tone: casual/formal, empathetic/authoritative, pace, style.",
+    "visualStyle": "Describe the visual style: realistic/stylized, setting, emotional arc, character type.",
+    "elevenLabsVoiceId": "IKne3meq5aSn9XLyUdCD",
+    "aspectRatio": "9:16"
+  }
+}

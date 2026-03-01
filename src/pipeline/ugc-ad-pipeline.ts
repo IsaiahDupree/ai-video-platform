@@ -15,6 +15,7 @@ import { runVeoAnimateStage, getMotionPrompt } from './veo-animate-stage';
 import { generateVariants } from './variant-generator';
 import { runRemotionComposeBatch, type ComposeOptions } from './remotion-compose-stage';
 import { runCopyGenerationStage, type GeneratedCopy, type TemplateSpecificCopy } from './copy-generation-stage';
+import { getProduct, addBatchToCampaign } from './product-store';
 import {
   createCheckpoint,
   loadCheckpoint,
@@ -42,10 +43,30 @@ export interface RunOptions {
   resumeBatchDir?: string;
   renderVideo?: boolean;
   autoCopy?: boolean; // Use Gemini to generate product-aware copy (replaces static copy bank)
+  productId?: string; // Auto-fill config from product registry
+  campaignId?: string; // Associate batch with campaign after completion
 }
 
 export async function runUGCPipeline(config: UGCPipelineConfig, options?: RunOptions): Promise<AdBatch> {
   const startTime = Date.now();
+
+  // ── Auto-fill from product registry ──
+  if (options?.productId) {
+    const product = getProduct(options.productId);
+    if (product) {
+      console.log(`📦 Loading product: ${product.name} (${product.id})`);
+      config.product = { ...config.product, name: product.name, description: product.description };
+      config.brand = { ...config.brand, ...product.brand };
+      if (product.scenes?.beforePrompt) config.scenes = { ...config.scenes, ...product.scenes };
+      if (product.defaultMatrix) {
+        const dm = product.defaultMatrix;
+        if (dm.templates && (dm.templates as string[]).length > 0) config.matrix.templates = dm.templates as any;
+        if (dm.strategy) config.matrix.strategy = dm.strategy as any;
+        if (dm.maxVariants) config.matrix.maxVariants = dm.maxVariants as number;
+      }
+    }
+  }
+
   const isResume = !!options?.resumeBatchDir;
   const batchDir = isResume ? options!.resumeBatchDir! : path.join(config.outputDir, `b${String(Date.now()).slice(-6)}`);
   const batchId = path.basename(batchDir);
@@ -405,6 +426,16 @@ export async function runUGCPipeline(config: UGCPipelineConfig, options?: RunOpt
   console.log(`    variants.json    - Variant parameter list`);
   console.log(`    utm_mapping.json - UTM tags for Meta upload`);
   console.log('═══════════════════════════════════════════════════════════════\n');
+
+  // ── Associate batch with campaign ──
+  if (options?.campaignId) {
+    try {
+      addBatchToCampaign(options.campaignId, batchId);
+      console.log(`📋 Batch ${batchId} added to campaign ${options.campaignId}\n`);
+    } catch (e: any) {
+      console.log(`⚠️  Could not associate batch with campaign: ${e.message}\n`);
+    }
+  }
 
   return batch;
 }

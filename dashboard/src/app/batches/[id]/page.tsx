@@ -14,6 +14,8 @@ import {
   CheckCircle2,
   BarChart3,
   Eye,
+  Columns2,
+  ArrowUpDown,
 } from "lucide-react";
 import { getBatch, type AdBatch, type AdVariant } from "@/lib/api";
 
@@ -232,6 +234,8 @@ export default function BatchDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [templateFilter, setTemplateFilter] = useState<string>("all");
+  const [hookFilter, setHookFilter] = useState<string>("all");
+  const [sortBy, setSortBy] = useState<string>("index");
   const [preview, setPreview] = useState<{
     variant: AdVariant;
     size: string;
@@ -274,10 +278,15 @@ export default function BatchDetailPage() {
   }
 
   const templates = [...new Set(batch.variants.map((v) => v.parameters.visual.template))];
-  const filtered =
-    templateFilter === "all"
-      ? batch.variants
-      : batch.variants.filter((v) => v.parameters.visual.template === templateFilter);
+  const hookTypes = [...new Set(batch.variants.map((v) => v.parameters.copy.hookType))];
+
+  let filtered = batch.variants;
+  if (templateFilter !== "all") filtered = filtered.filter((v) => v.parameters.visual.template === templateFilter);
+  if (hookFilter !== "all") filtered = filtered.filter((v) => v.parameters.copy.hookType === hookFilter);
+
+  if (sortBy === "ctr_desc") filtered = [...filtered].sort((a, b) => (b.performance?.ctr || 0) - (a.performance?.ctr || 0));
+  else if (sortBy === "roas_desc") filtered = [...filtered].sort((a, b) => (b.performance?.roas || 0) - (a.performance?.roas || 0));
+  else if (sortBy === "spend_desc") filtered = [...filtered].sort((a, b) => (b.performance?.spend || 0) - (a.performance?.spend || 0));
 
   const totalStills = batch.variants.reduce(
     (sum, v) => sum + Object.keys(v.assets.composedPaths || {}).length,
@@ -303,6 +312,18 @@ export default function BatchDetailPage() {
           </p>
         </div>
         <div className="flex gap-2">
+          <Link
+            href={`/preview?batch=${batch.id}`}
+            className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm hover:bg-muted transition-colors"
+          >
+            <Eye className="h-4 w-4" /> Preview
+          </Link>
+          <Link
+            href={`/compare?batch=${batch.id}`}
+            className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm hover:bg-muted transition-colors"
+          >
+            <Columns2 className="h-4 w-4" /> Compare
+          </Link>
           <Link
             href={`/optimize?batch=${batch.id}`}
             className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm hover:bg-muted transition-colors"
@@ -368,35 +389,71 @@ export default function BatchDetailPage() {
         </div>
       )}
 
-      {/* Template filter */}
-      <div className="flex items-center gap-2">
-        <Filter className="h-4 w-4 text-muted-foreground" />
-        <button
-          onClick={() => setTemplateFilter("all")}
-          className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-            templateFilter === "all"
-              ? "bg-accent text-white"
-              : "bg-card border border-border text-muted-foreground hover:text-foreground"
-          }`}
-        >
-          All ({batch.variants.length})
-        </button>
-        {templates.map((t) => {
-          const count = batch.variants.filter((v) => v.parameters.visual.template === t).length;
-          return (
-            <button
-              key={t}
-              onClick={() => setTemplateFilter(t)}
-              className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                templateFilter === t
-                  ? "bg-accent text-white"
-                  : "bg-card border border-border text-muted-foreground hover:text-foreground"
-              }`}
+      {/* Filters & Sort */}
+      <div className="space-y-2">
+        {/* Template filter */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <Filter className="h-4 w-4 text-muted-foreground" />
+          <button
+            onClick={() => setTemplateFilter("all")}
+            className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+              templateFilter === "all"
+                ? "bg-accent text-white"
+                : "bg-card border border-border text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            All ({batch.variants.length})
+          </button>
+          {templates.map((t) => {
+            const count = batch.variants.filter((v) => v.parameters.visual.template === t).length;
+            return (
+              <button
+                key={t}
+                onClick={() => setTemplateFilter(t)}
+                className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+                  templateFilter === t
+                    ? "bg-accent text-white"
+                    : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {TEMPLATE_LABELS[t] || t} ({count})
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Hook type filter + sort */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] text-muted-foreground uppercase tracking-wide">Hook:</span>
+            {["all", ...hookTypes].map((h) => (
+              <button
+                key={h}
+                onClick={() => setHookFilter(h)}
+                className={`rounded-lg px-2.5 py-1 text-[10px] font-medium transition-colors ${
+                  hookFilter === h
+                    ? "bg-accent/80 text-white"
+                    : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {h === "all" ? "All" : h.replace("_", " ")}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-1.5 ml-auto">
+            <ArrowUpDown className="h-3.5 w-3.5 text-muted-foreground" />
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="rounded-lg border border-border bg-card px-2 py-1 text-[10px] focus:outline-none focus:ring-2 focus:ring-accent/50"
             >
-              {TEMPLATE_LABELS[t] || t} ({count})
-            </button>
-          );
-        })}
+              <option value="index">Default order</option>
+              <option value="ctr_desc">CTR (high → low)</option>
+              <option value="roas_desc">ROAS (high → low)</option>
+              <option value="spend_desc">Spend (high → low)</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       {/* Variant Grid */}

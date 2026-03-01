@@ -10,12 +10,18 @@ import {
   BarChart3,
   Settings,
   Zap,
+  Package,
+  Target,
+  Columns2,
 } from "lucide-react";
 
 const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/products", label: "Products", icon: Package },
+  { href: "/campaigns", label: "Campaigns", icon: Target },
   { href: "/batches", label: "Batches", icon: Layers },
   { href: "/create", label: "Create", icon: PlusCircle },
+  { href: "/compare", label: "Compare", icon: Columns2 },
   { href: "/optimize", label: "Optimize", icon: BarChart3 },
   { href: "/settings", label: "Settings", icon: Settings },
 ];

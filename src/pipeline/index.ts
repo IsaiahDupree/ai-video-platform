@@ -44,4 +44,19 @@ export {
   quickFatigueCheck,
   parseMultiPeriodData,
 } from './fatigue-detector';
+export {
+  listProducts,
+  getProduct,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+  listCampaigns,
+  getCampaign,
+  createCampaign,
+  updateCampaign,
+  deleteCampaign,
+  addBatchToCampaign,
+  getCrossProductInsights,
+} from './product-store';
+export type { Product, Campaign, SceneConfig, CampaignInsights } from './product-store';
 export * from './types';

@@ -6,35 +6,43 @@
 // =============================================================================
 
 export const EVERREACH_COLORS = {
-  // Primary
-  primary: '#6366f1',      // Indigo
-  primaryDark: '#4f46e5',
-  primaryLight: '#818cf8',
+  // Primary (from BRAND_GUIDELINES.md)
+  primary: '#000000',      // Black — buttons, text, overlays
+  primaryDark: '#0a0a0a',
+  primaryLight: '#333333',
   
   // Secondary
-  secondary: '#8b5cf6',    // Purple
-  secondaryDark: '#7c3aed',
+  secondary: '#1a1a1a',
+  secondaryDark: '#111111',
   
-  // Accent
-  accent: '#f59e0b',       // Amber
-  accentLight: '#fbbf24',
+  // Accent — warmth colors from the app
+  accent: '#FF6B6B',       // Hot Red (warmth indicator)
+  accentLight: '#FF8A8A',
+  
+  // Warmth scale (core brand identity)
+  hot: '#FF6B6B',          // Hot warmth
+  warm: '#FFB366',         // Warm warmth
+  cool: '#4ECDC4',         // Cool warmth
+  cold: '#95A5A6',         // Cold warmth
   
   // Neutrals
-  dark: '#0a0a1a',
-  darkGray: '#1a1a2e',
+  dark: '#000000',
+  darkGray: '#1a1a1a',
   gray: '#64748b',
   lightGray: '#cbd5e1',
+  lightBg: '#F8F9FA',      // App background
   white: '#ffffff',
   
   // Semantic
-  success: '#10b981',
-  warning: '#f59e0b',
-  error: '#ef4444',
+  success: '#10B981',
+  warning: '#FFB366',
+  error: '#FF6B6B',
   
   // Gradients
-  gradientPrimary: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-  gradientDark: 'linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%)',
-  gradientWarm: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
+  gradientPrimary: 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
+  gradientDark: 'linear-gradient(135deg, #000000 0%, #111111 100%)',
+  gradientWarm: 'linear-gradient(135deg, #FF6B6B 0%, #FFB366 100%)',
+  gradientCool: 'linear-gradient(135deg, #4ECDC4 0%, #2DA89E 100%)',
 } as const;
 
 // =============================================================================

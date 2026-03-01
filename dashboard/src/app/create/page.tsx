@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   Rocket,
@@ -12,8 +12,16 @@ import {
   AlertCircle,
   CheckCircle2,
   Loader2,
+  Package,
+  Target,
 } from "lucide-react";
-import { triggerPipeline } from "@/lib/api";
+import {
+  triggerPipeline,
+  listProducts,
+  listCampaigns,
+  type Product,
+  type Campaign,
+} from "@/lib/api";
 
 const ALL_TEMPLATES = [
   { id: "before_after", label: "Before/After", desc: "Side-by-side comparison" },
@@ -37,6 +45,11 @@ export default function CreatePage() {
   const [errorMsg, setErrorMsg] = useState("");
   const [resultId, setResultId] = useState("");
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [campaigns, setCampaigns] = useState<Campaign[]>([]);
+  const [selectedProductId, setSelectedProductId] = useState("");
+  const [selectedCampaignId, setSelectedCampaignId] = useState("");
+
   const [product, setProduct] = useState("BlankLogo");
   const [description, setDescription] = useState("AI watermark removal tool for creators");
   const [brandName, setBrandName] = useState("BlankLogo");
@@ -48,6 +61,31 @@ export default function CreatePage() {
   const [autoCopy, setAutoCopy] = useState(true);
   const [renderVideo, setRenderVideo] = useState(false);
   const [dryRun, setDryRun] = useState(false);
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const [p, c] = await Promise.all([listProducts(), listCampaigns()]);
+        setProducts(p);
+        setCampaigns(c);
+      } catch { /* server not available */ }
+    }
+    load();
+  }, []);
+
+  function handleProductSelect(pid: string) {
+    setSelectedProductId(pid);
+    setSelectedCampaignId("");
+    if (!pid) return;
+    const p = products.find((x) => x.id === pid);
+    if (p) {
+      setProduct(p.name);
+      setDescription(p.description);
+      setBrandName(p.brand.name);
+      setPrimaryColor(p.brand.primaryColor);
+      setAccentColor(p.brand.accentColor);
+    }
+  }
 
   function toggleTemplate(id: string) {
     setTemplates((prev) =>
@@ -73,7 +111,9 @@ export default function CreatePage() {
         dryRun,
         autoCopy,
         renderVideo,
-      });
+        productId: selectedProductId || undefined,
+        campaignId: selectedCampaignId || undefined,
+      } as any);
       setResultId(result.batchId);
       setStatus("done");
     } catch (e: unknown) {
@@ -122,6 +162,52 @@ export default function CreatePage() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Product & Campaign Selector */}
+        {products.length > 0 && (
+          <section className="rounded-xl border border-accent/20 bg-accent/5 p-5 space-y-4">
+            <h2 className="text-sm font-semibold flex items-center gap-2">
+              <Package className="h-4 w-4 text-accent" /> From Product Registry
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs text-muted-foreground mb-1.5">Product</label>
+                <select
+                  value={selectedProductId}
+                  onChange={(e) => handleProductSelect(e.target.value)}
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/50"
+                >
+                  <option value="">Manual entry (no product)</option>
+                  {products.map((p) => (
+                    <option key={p.id} value={p.id}>{p.name}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs text-muted-foreground mb-1.5">
+                  <span className="flex items-center gap-1"><Target className="h-3 w-3" /> Campaign (optional)</span>
+                </label>
+                <select
+                  value={selectedCampaignId}
+                  onChange={(e) => setSelectedCampaignId(e.target.value)}
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/50"
+                >
+                  <option value="">No campaign</option>
+                  {campaigns
+                    .filter((c) => !selectedProductId || c.productId === selectedProductId)
+                    .map((c) => (
+                      <option key={c.id} value={c.id}>{c.name}</option>
+                    ))}
+                </select>
+              </div>
+            </div>
+            {selectedProductId && (
+              <p className="text-[10px] text-muted-foreground">
+                Product config will auto-fill the fields below. You can still override any value.
+              </p>
+            )}
+          </section>
+        )}
+
         {/* Product Info */}
         <section className="rounded-xl border border-border bg-card p-5 space-y-4">
           <h2 className="text-sm font-semibold flex items-center gap-2">

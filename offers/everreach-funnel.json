@@ -1,0 +1,98 @@
+{
+  "title": "EverReach Full-Funnel Ad — Drift is the Enemy",
+  "description": "45-60s UGC ad that transitions through the entire awareness funnel: Hook → Name Enemy → Mechanism → Proof → CTA",
+  "targetDuration": 55,
+
+  "character": {
+    "age": "28",
+    "gender": "male",
+    "hair": "short brown hair, slightly messy, natural",
+    "eyes": "brown",
+    "clothing": "a plain dark gray t-shirt",
+    "mannerisms": "genuine, direct, relatable energy — like a smart friend giving advice"
+  },
+
+  "voice": {
+    "accent": "American, warm neutral Midwestern",
+    "tone": "confident but empathetic, not salesy, real",
+    "pace": "conversational medium pace with natural pauses between thoughts",
+    "quality": "clear, warm, slightly intimate like talking to a close friend",
+    "gender": "male",
+    "age": "late 20s"
+  },
+
+  "setting": "a cozy apartment, warm natural window light, lived-in feel, bookshelf and laptop visible in background",
+
+  "frameworks": [
+    { "id": "hook-mirror", "label": "Hook & Mirror", "startSec": 0, "endSec": 12 },
+    { "id": "name-enemy", "label": "Name the Enemy", "startSec": 12, "endSec": 18 },
+    { "id": "mechanism", "label": "Mechanism", "startSec": 18, "endSec": 30 },
+    { "id": "proof", "label": "Proof (Live Demo)", "startSec": 30, "endSec": 42 },
+    { "id": "cta", "label": "CTA", "startSec": 42, "endSec": 60 }
+  ],
+
+  "segments": [
+    {
+      "id": "hook-1",
+      "framework": "hook-mirror",
+      "voiceover": "you are not bad at keeping up you are just running relationships on raw memory",
+      "shotDescription": "Selfie camera close-up, walking or sitting, relatable casual vibe",
+      "onScreenText": "relationships don't break — they drift",
+      "awareness": "unaware"
+    },
+    {
+      "id": "hook-2",
+      "framework": "hook-mirror",
+      "voiceover": "if you have ever thought I will reply later and then it has been three weeks that is not laziness that is drift",
+      "shotDescription": "Quick cut style, slightly different angle, leaning forward more intensely",
+      "onScreenText": "\"I'll reply later\" turns into weeks",
+      "awareness": "unaware"
+    },
+    {
+      "id": "enemy",
+      "framework": "name-enemy",
+      "voiceover": "drift is the enemy it quietly deletes friendships clients mentors and opportunities",
+      "shotDescription": "Hard cut to calm frame, looking directly into camera, serious expression",
+      "onScreenText": "drift is the enemy",
+      "awareness": "problem-aware"
+    },
+    {
+      "id": "mechanism-1",
+      "framework": "mechanism",
+      "voiceover": "EverReach is a personal CRM for real life it turns relationships into a system so you stop relying on vibes and guilt",
+      "shotDescription": "Slight smile, leaning back, confident posture, explaining naturally",
+      "onScreenText": "relationships are a system",
+      "awareness": "solution-aware"
+    },
+    {
+      "id": "mechanism-2",
+      "framework": "mechanism",
+      "voiceover": "you add the people that matter EverReach helps you track who you have not talked to what you last discussed and who is warming up or cooling down",
+      "shotDescription": "Gesturing with hands while explaining, engaged energy, slight lean toward camera",
+      "onScreenText": "track warmth — know who needs you",
+      "awareness": "product-aware"
+    },
+    {
+      "id": "action",
+      "framework": "proof",
+      "voiceover": "so when you open your phone you do not guess you take one small action send the check in send the follow up keep the relationship alive",
+      "shotDescription": "More animated, nodding, building momentum, counting on fingers",
+      "onScreenText": "stop guessing — take one action",
+      "awareness": "product-aware"
+    },
+    {
+      "id": "cta",
+      "framework": "cta",
+      "voiceover": "download EverReach add your top five people today and let the system do the remembering",
+      "shotDescription": "Confident smile, slight forward lean, warm direct eye contact, ends with knowing nod",
+      "onScreenText": "download EverReach — add your top 5 today",
+      "awareness": "product-aware"
+    }
+  ],
+
+  "ctaVariants": {
+    "unaware-soft": "follow for more on keeping your relationships alive link in bio",
+    "problem-aware-challenge": "add your top five people right now it takes thirty seconds try it",
+    "product-aware-direct": "download EverReach right now free trial no credit card link in bio"
+  }
+}

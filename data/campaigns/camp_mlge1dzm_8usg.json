@@ -1,0 +1,15 @@
+{
+  "name": "Q1 2026 Growth",
+  "productId": "prod_mlge1254_95jw",
+  "batches": [],
+  "goal": "ctr",
+  "budget": {
+    "daily": 50,
+    "total": 500
+  },
+  "status": "draft",
+  "id": "camp_mlge1dzm_8usg",
+  "insights": {},
+  "createdAt": "2026-02-10T09:17:57.394Z",
+  "updatedAt": "2026-02-10T09:17:57.394Z"
+}

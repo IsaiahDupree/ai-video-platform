@@ -128,7 +128,7 @@ This produces a testable matrix where every parameter's impact on performance (C
 
 ## 5. Roadmap
 
-### Phase 1: Dynamic Copy Generation ⬜ (Next)
+### Phase 1: Dynamic Copy Generation ✅
 
 **Goal:** Replace hardcoded copy with AI-generated, product-aware text.
 
@@ -155,7 +155,7 @@ This produces a testable matrix where every parameter's impact on performance (C
 
 ---
 
-### Phase 2: Frontend Dashboard ⬜
+### Phase 2: Frontend Dashboard ✅
 
 **Goal:** React web UI for managing the full creative testing lifecycle.
 
@@ -194,7 +194,7 @@ This produces a testable matrix where every parameter's impact on performance (C
 
 ---
 
-### Phase 3: Multi-Product Campaigns ⬜
+### Phase 3: Multi-Product Campaigns ✅
 
 **Goal:** Manage ad pipelines across multiple products with campaign-level tracking.
 
@@ -236,7 +236,7 @@ interface Campaign {
 
 ---
 
-### Phase 4: Enhanced Gallery & Preview ⬜
+### Phase 4: Enhanced Gallery & Preview ✅
 
 **Goal:** Interactive, shareable creative review experience.
 
