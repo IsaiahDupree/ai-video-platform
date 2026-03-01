@@ -1,14 +1,16 @@
 {
   "projectId": "ai-video-platform",
   "projectRoot": "/Users/isaiahdupree/Documents/Software/ai-video-platform",
-  "lastUpdated": "2026-02-08T13:39:37.984Z",
-  "sessionType": "CODING",
-  "status": "completed",
+  "lastUpdated": "2026-02-20T18:23:02.058Z",
+  "sessionType": "error",
+  "status": "max_errors",
   "stats": {
-    "total": 123,
+    "total": 300,
     "passing": 123,
-    "pending": 0,
-    "percentComplete": "100.0"
+    "pending": 177,
+    "percentComplete": "41.0"
   },
-  "pid": 92249
+  "pid": 99711,
+  "message": "Stopped after 2 consecutive errors",
+  "lastError": "rate_limit"
 }
