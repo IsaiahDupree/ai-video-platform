@@ -5,6 +5,22 @@ export { listicle_v1 } from './listicle_v1';
 export { comparison_v1 } from './comparison_v1';
 export { shorts_v1 } from './shorts_v1';
 export { devvlog_v1 } from './devvlog_v1';
+// YouTube
+export { youtube_explainer_v2 } from './youtube_explainer_v2';
+export { youtube_shorts_v1 } from './youtube_shorts_v1';
+// Instagram
+export { instagram_reel_v1 } from './instagram_reel_v1';
+export { instagram_feed_v1 } from './instagram_feed_v1';
+// TikTok
+export { tiktok_v1 } from './tiktok_v1';
+// Twitter/X
+export { twitter_v1 } from './twitter_v1';
+// LinkedIn
+export { linkedin_v1 } from './linkedin_v1';
+// Facebook
+export { facebook_v1 } from './facebook_v1';
+// Threads
+export { threads_v1 } from './threads_v1';
 
 import { VideoFormat } from './types';
 import { explainer_v1 } from './explainer_v1';
@@ -12,13 +28,39 @@ import { listicle_v1 } from './listicle_v1';
 import { comparison_v1 } from './comparison_v1';
 import { shorts_v1 } from './shorts_v1';
 import { devvlog_v1 } from './devvlog_v1';
+import { youtube_explainer_v2 } from './youtube_explainer_v2';
+import { youtube_shorts_v1 } from './youtube_shorts_v1';
+import { instagram_reel_v1 } from './instagram_reel_v1';
+import { instagram_feed_v1 } from './instagram_feed_v1';
+import { tiktok_v1 } from './tiktok_v1';
+import { twitter_v1 } from './twitter_v1';
+import { linkedin_v1 } from './linkedin_v1';
+import { facebook_v1 } from './facebook_v1';
+import { threads_v1 } from './threads_v1';
 
 export const FORMATS: Record<string, VideoFormat> = {
+  // Legacy
   explainer_v1,
   listicle_v1,
   comparison_v1,
   shorts_v1,
   devvlog_v1,
+  // YouTube
+  youtube_explainer_v2,
+  youtube_shorts_v1,
+  // Instagram
+  instagram_reel_v1,
+  instagram_feed_v1,
+  // TikTok
+  tiktok_v1,
+  // Twitter/X
+  twitter_v1,
+  // LinkedIn
+  linkedin_v1,
+  // Facebook
+  facebook_v1,
+  // Threads
+  threads_v1,
 };
 
 export function getFormat(id: string): VideoFormat {
@@ -35,4 +77,20 @@ export function listFormats(): VideoFormat[] {
 
 export function getFormatIds(): string[] {
   return Object.keys(FORMATS);
+}
+
+// Convenience: formats grouped by platform
+export const FORMAT_GROUPS = {
+  youtube:   ['youtube_explainer_v2', 'youtube_shorts_v1'],
+  instagram: ['instagram_reel_v1', 'instagram_feed_v1'],
+  tiktok:    ['tiktok_v1'],
+  twitter:   ['twitter_v1'],
+  linkedin:  ['linkedin_v1'],
+  facebook:  ['facebook_v1'],
+  threads:   ['threads_v1'],
+  legacy:    ['explainer_v1', 'listicle_v1', 'comparison_v1', 'shorts_v1', 'devvlog_v1'],
+} as const;
+
+export function getFormatsForPlatform(platform: keyof typeof FORMAT_GROUPS): VideoFormat[] {
+  return FORMAT_GROUPS[platform].map(id => FORMATS[id]);
 }
