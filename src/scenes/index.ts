@@ -18,6 +18,16 @@ export { EndScreenScene } from './EndScreenScene';
 export { CodeScene } from './CodeScene';
 export { QuoteCardScene } from './QuoteCardScene';
 export { PhoneFrameScene } from './PhoneFrameScene';
+// Research-backed scenes
+export { CountdownScene } from './CountdownScene';
+export { ChecklistScene } from './ChecklistScene';
+export { BarChartScene } from './BarChartScene';
+export { MythRealityScene } from './MythRealityScene';
+export { ProblemSolutionScene } from './ProblemSolutionScene';
+export { ThreadRevealScene } from './ThreadRevealScene';
+export { UGCStyleScene } from './UGCStyleScene';
+export { CuriosityGapScene } from './CuriosityGapScene';
+export { SocialProofScene } from './SocialProofScene';
 
 // Scene registry for dynamic loading
 import { IntroScene } from './IntroScene';
@@ -37,6 +47,15 @@ import { EndScreenScene } from './EndScreenScene';
 import { CodeScene } from './CodeScene';
 import { QuoteCardScene } from './QuoteCardScene';
 import { PhoneFrameScene } from './PhoneFrameScene';
+import { CountdownScene } from './CountdownScene';
+import { ChecklistScene } from './ChecklistScene';
+import { BarChartScene } from './BarChartScene';
+import { MythRealityScene } from './MythRealityScene';
+import { ProblemSolutionScene } from './ProblemSolutionScene';
+import { ThreadRevealScene } from './ThreadRevealScene';
+import { UGCStyleScene } from './UGCStyleScene';
+import { CuriosityGapScene } from './CuriosityGapScene';
+import { SocialProofScene } from './SocialProofScene';
 
 export const SceneRegistry: Record<string, React.ComponentType<any>> = {
   // Original
@@ -64,6 +83,16 @@ export const SceneRegistry: Record<string, React.ComponentType<any>> = {
   quote_card: QuoteCardScene,
   // Device mockup
   phone_frame: PhoneFrameScene,
+  // Research-backed patterns
+  countdown: CountdownScene,
+  checklist: ChecklistScene,
+  bar_chart: BarChartScene,
+  myth_reality: MythRealityScene,
+  problem_solution: ProblemSolutionScene,
+  thread_reveal: ThreadRevealScene,
+  ugc_style: UGCStyleScene,
+  curiosity_gap: CuriosityGapScene,
+  social_proof: SocialProofScene,
 };
 
 export function getSceneComponent(type: string): React.ComponentType<any> | undefined {

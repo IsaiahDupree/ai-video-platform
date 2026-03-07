@@ -2,13 +2,13 @@
 
 export type VideoFormat =
   | "explainer_v1" | "listicle_v1" | "comparison_v1" | "shorts_v1" | "devvlog_v1"
-  | "youtube_explainer_v2" | "youtube_shorts_v1"
-  | "instagram_reel_v1" | "instagram_feed_v1"
-  | "tiktok_v1"
-  | "twitter_v1"
-  | "linkedin_v1"
-  | "facebook_v1"
-  | "threads_v1";
+  | "youtube_explainer_v2" | "youtube_shorts_v1" | "youtube_tutorial_v1"
+  | "instagram_reel_v1" | "instagram_feed_v1" | "instagram_ugc_v1"
+  | "tiktok_v1" | "tiktok_countdown_v1" | "tiktok_problem_solution_v1" | "tiktok_myth_v1"
+  | "twitter_v1" | "twitter_thread_summary_v1" | "twitter_hot_take_v1"
+  | "linkedin_v1" | "linkedin_framework_v1" | "linkedin_myth_v1"
+  | "facebook_v1" | "facebook_reel_v1"
+  | "threads_v1" | "threads_opinion_v1" | "threads_curiosity_v1";
 
 export type AspectRatio = "9:16" | "16:9" | "1:1" | "4:5";
 export type ThemeType = "dark" | "light" | "neon" | "youtube" | "instagram" | "tiktok" | "twitter" | "linkedin" | "facebook" | "threads" | "custom";
@@ -19,7 +19,9 @@ export type SectionType =
   | "hook" | "content" | "cta"
   | "stat" | "testimonial" | "kinetic_caption"
   | "chapter_card" | "lower_third" | "end_screen"
-  | "code" | "quote_card" | "phone_frame" | "compare";
+  | "code" | "quote_card" | "phone_frame" | "compare"
+  | "countdown" | "checklist" | "bar_chart" | "myth_reality" | "problem_solution"
+  | "thread_reveal" | "ugc_style" | "curiosity_gap" | "social_proof";
 
 export interface ContentBrief {
   id: string;
@@ -84,7 +86,16 @@ export type SectionContent =
   | CodeContent
   | QuoteCardContent
   | PhoneFrameContent
-  | CompareContent;
+  | CompareContent
+  | CountdownContent
+  | ChecklistContent
+  | BarChartContent
+  | MythRealityContent
+  | ProblemSolutionContent
+  | ThreadRevealContent
+  | UGCStyleContent
+  | CuriosityGapContent
+  | SocialProofContent;
 
 // ── Existing types ────────────────────────────────────────────────────────────
 
@@ -242,4 +253,98 @@ export interface CompareContent {
   left_points: string[];
   right_points: string[];
   divider_style?: "line" | "wipe" | "arrow";
+}
+
+// ── Research-backed scene types ───────────────────────────────────────────────
+
+export interface CountdownContent {
+  type: "countdown";
+  from?: number;
+  label?: string;
+  pre_text?: string;
+  colors?: string[];
+}
+
+export interface ChecklistContent {
+  type: "checklist";
+  title?: string;
+  items: Array<{
+    text: string;
+    checked?: boolean;
+    emoji?: string;
+  }>;
+  reveal_mode?: "stagger" | "sequential";
+  frames_per_item?: number;
+}
+
+export interface BarChartContent {
+  type: "bar_chart";
+  title?: string;
+  bars: Array<{
+    label: string;
+    value: number;
+    color?: string;
+    highlighted?: boolean;
+  }>;
+  unit?: string;
+  max_value?: number;
+  orientation?: "vertical" | "horizontal";
+  show_values?: boolean;
+}
+
+export interface MythRealityContent {
+  type: "myth_reality";
+  myth: string;
+  reality: string;
+  myth_label?: string;
+  reality_label?: string;
+  myth_hold_percent?: number;
+}
+
+export interface ProblemSolutionContent {
+  type: "problem_solution";
+  problem: string;
+  solution: string;
+  problem_label?: string;
+  solution_label?: string;
+  layout?: "sequential" | "split";
+  problem_hold_percent?: number;
+}
+
+export interface ThreadRevealContent {
+  type: "thread_reveal";
+  posts: Array<{
+    text: string;
+    number?: number;
+  }>;
+  handle?: string;
+  avatar_initial?: string;
+  reveal_mode?: "sequential" | "stack";
+}
+
+export interface UGCStyleContent {
+  type: "ugc_style";
+  caption: string;
+  subtext?: string;
+  platform?: "tiktok" | "instagram" | "youtube";
+  overlay_style?: "raw" | "clean" | "branded";
+  emoji?: string;
+}
+
+export interface CuriosityGapContent {
+  type: "curiosity_gap";
+  setup: string;
+  reveal: string;
+  setup_label?: string;
+  reveal_label?: string;
+  hold_percent?: number;
+}
+
+export interface SocialProofContent {
+  type: "social_proof";
+  headline?: string;
+  metric?: { value: string; label: string };
+  logos?: Array<{ name: string; color?: string }>;
+  testimonials?: Array<{ quote: string; author: string }>;
+  style?: "logos" | "number" | "faces" | "combined";
 }
