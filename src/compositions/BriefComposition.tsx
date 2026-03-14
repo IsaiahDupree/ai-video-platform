@@ -68,13 +68,30 @@ export const BriefComposition: React.FC<BriefCompositionProps> = ({ brief: input
         height={4}
       />
 
-      {/* Voiceover audio */}
-      {brief.audio?.voiceover && (
-        <Audio
-          src={staticFile(brief.audio.voiceover)}
-          volume={brief.audio.volume_voice ?? 1.0}
-        />
-      )}
+      {/* Voiceover audio — supports both 'voiceover' and legacy 'voice_path' field names.
+          Absolute paths (from Modal TTS) are served via file:// prefix. */}
+      {(brief.audio?.voiceover || (brief.audio as any)?.voice_path) && (() => {
+        const rawPath: string = brief.audio!.voiceover || (brief.audio as any).voice_path;
+        const src = rawPath.startsWith('/') ? `file://${rawPath}` : staticFile(rawPath);
+        return (
+          <Audio
+            src={src}
+            volume={brief.audio!.volume_voice ?? 1.0}
+          />
+        );
+      })()}
+
+      {/* Background music — ducked under voiceover */}
+      {(brief.audio as any)?.music_path && (() => {
+        const mp: string = (brief.audio as any).music_path;
+        const src = mp.startsWith('/') ? `file://${mp}` : staticFile(mp);
+        return (
+          <Audio
+            src={src}
+            volume={brief.audio!.volume_music ?? 0.25}
+          />
+        );
+      })()}
     </AbsoluteFill>
   );
 };
