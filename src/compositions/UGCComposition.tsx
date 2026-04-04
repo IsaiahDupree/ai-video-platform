@@ -194,15 +194,18 @@ export const UGCComposition: React.FC<UGCCompositionProps> = ({
   const { width, height, fps, durationInFrames } = useVideoConfig();
   const frame = useCurrentFrame();
 
-  // Resolve video source - always use staticFile for public folder assets
-  const resolvedVideoSrc = videoSrc || 'media/TABL2182.MOV';
+  // Resolve video source — remote URLs used directly, local paths via staticFile
+  const rawSrc = videoSrc || 'media/TABL2182.MOV';
+  const resolvedVideoSrc = rawSrc.startsWith('http://') || rawSrc.startsWith('https://')
+    ? rawSrc
+    : staticFile(rawSrc);
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#000' }}>
       {/* Background video - scaled to fill 9:16 */}
       <AbsoluteFill>
         <Video
-          src={staticFile(resolvedVideoSrc)}
+          src={resolvedVideoSrc}
           style={{
             width: '100%',
             height: '100%',

@@ -1,0 +1,87 @@
+{
+  "id": "brief_1773542491659_bd5410",
+  "_job_id": "job_1773542491659_54194503",
+  "format": "shorts_v1",
+  "version": "1.0",
+  "created_at": "2026-03-15T02:41:31.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 25
+  },
+  "style": {
+    "theme": "tiktok",
+    "primary_color": "#ffffff",
+    "secondary_color": "#e5e5e5",
+    "accent_color": "#fe2c55",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #010101 0%, #1a0005 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.25,
+    "volume_voice": 1.0,
+    "music_path": "music/downloads/ig-702042042124440.mp3"
+  },
+  "sections": [
+    {
+      "id": "hook_001",
+      "type": "hook",
+      "duration_sec": 3,
+      "start_time_sec": 0,
+      "content": {
+        "type": "hook",
+        "text": "You lose 80% of your contacts within 6 months",
+        "subtext": "",
+        "style": "stat",
+        "emoji": "\ud83d\udcca"
+      }
+    },
+    {
+      "id": "content_001",
+      "type": "topic",
+      "duration_sec": 20,
+      "start_time_sec": 3,
+      "content": {
+        "type": "topic",
+        "heading": "No system = no follow-ups",
+        "bullet_points": [
+          "EverReach tracks every relationship",
+          "Get reminders at the right moment"
+        ],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "cta_001",
+      "type": "cta",
+      "duration_sec": 3,
+      "start_time_sec": 22,
+      "content": {
+        "type": "cta",
+        "title": "Personal CRM that actually works",
+        "action_text": "Download EverReach \u2014 link in bio.",
+        "platform": "tiktok",
+        "handle": "@isaiah_dupree"
+      }
+    },
+    {
+      "id": "kinetic_caption_overlay",
+      "type": "kinetic_caption",
+      "duration_sec": 25,
+      "start_time_sec": 0,
+      "content": {
+        "type": "kinetic_caption",
+        "text": "You lose 80% of your contacts within 6 months. No system = no follow-ups. EverReach tracks every relationship. Get reminders at the right moment. Download EverReach \u2014 link in bio.",
+        "caption_style": "tiktok",
+        "highlight_color": "#fe2c55",
+        "background_opacity": 0.0
+      }
+    }
+  ]
+}

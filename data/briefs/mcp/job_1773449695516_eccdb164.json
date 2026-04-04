@@ -1,0 +1,73 @@
+{
+  "id": "brief_1773449695516_20bb9b",
+  "_job_id": "job_1773449695516_eccdb164",
+  "format": "shorts_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T00:54:55.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 15
+  },
+  "style": {
+    "theme": "neon",
+    "primary_color": "#00ff88",
+    "secondary_color": "#00ccff",
+    "accent_color": "#ff00ff",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #0d0d1a 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "hook_001",
+      "type": "hook",
+      "duration_sec": 3,
+      "start_time_sec": 0,
+      "content": {
+        "type": "hook",
+        "text": "80% of your contacts will never hear from you again",
+        "subtext": "Not because you don't care. Because you have no system.",
+        "style": "stat",
+        "emoji": "\ud83d\udcc9"
+      }
+    },
+    {
+      "id": "content_001",
+      "type": "topic",
+      "duration_sec": 12,
+      "start_time_sec": 3,
+      "content": {
+        "type": "topic",
+        "heading": "MYTH: You'll remember to follow up",
+        "bullet_points": [
+          "REALITY: 3 weeks pass. You forgot.",
+          "FIX: EverReach pings you before you ghost"
+        ],
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "cta_001",
+      "type": "cta",
+      "duration_sec": 3,
+      "start_time_sec": 12,
+      "content": {
+        "type": "cta",
+        "title": "Personal CRM that actually works",
+        "action_text": "Stop losing people. Download EverReach \u2014 link in bio.",
+        "platform": "tiktok",
+        "handle": "@isaiah_dupree"
+      }
+    }
+  ]
+}

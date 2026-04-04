@@ -93,6 +93,70 @@ export const OutroScene: React.FC<OutroSceneProps> = ({ content, style }) => {
             </p>
           </div>
 
+          {/* App Store badge */}
+          <div
+            style={{
+              marginTop: 40,
+              opacity: fadeIn(frame, { durationInFrames: 20, delay: 40 }),
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 16,
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 14,
+                backgroundColor: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: 16,
+                padding: '14px 28px',
+              }}
+            >
+              <Img
+                src={staticFile('everreach/branding/appstore-icon-1024-flat.png')}
+                style={{ width: 48, height: 48, borderRadius: 10, objectFit: 'cover' }}
+              />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <span
+                  style={{
+                    fontFamily: 'Poppins, Inter, sans-serif',
+                    fontSize: 18,
+                    color: 'rgba(255,255,255,0.7)',
+                    fontWeight: 500,
+                  }}
+                >
+                  Available on the
+                </span>
+                <span
+                  style={{
+                    fontFamily: 'Poppins, Inter, sans-serif',
+                    fontSize: 28,
+                    fontWeight: 800,
+                    color: '#ffffff',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  App Store
+                </span>
+              </div>
+            </div>
+            {content.app_name && (
+              <span
+                style={{
+                  fontFamily: 'Poppins, Inter, sans-serif',
+                  fontSize: 20,
+                  color: 'rgba(255,255,255,0.45)',
+                  fontWeight: 400,
+                }}
+              >
+                {content.app_name} · Free to download
+              </span>
+            )}
+          </div>
+
           {content.social_handles && content.social_handles.length > 0 && (
             <div
               style={{

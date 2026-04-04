@@ -1,0 +1,193 @@
+{
+  "id": "37db729f-6bc4-4711-acbd-b3f0cd1d4f0c",
+  "format": "tiktok_v1",
+  "version": "1.0",
+  "created_at": "2026-03-18T23:33:46.531990+00:00",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 30,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#aaaaaa",
+    "accent_color": "#6366f1",
+    "font_heading": "Montserrat",
+    "font_body": "Inter",
+    "background_type": "video",
+    "background_value": "#000000"
+  },
+  "sections": [
+    {
+      "id": "pip-37db729f",
+      "type": "avatar_pip",
+      "start_time_sec": 0.0,
+      "duration_sec": 30.0,
+      "content": {
+        "type": "avatar_pip",
+        "source_video_url": "",
+        "avatar_video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/220f6cc2d24b4e6fa1becbf3a9f776a6/cc99cb80b544455a9a78ff9792194b3e.mp4?Expires=1774481625&Signature=orMlSVgNtZgvoyThF~0~yxwTw0aL9Y2QSPakq~2sANosM~xozuFSvAAl~004PfLDsPkp3pIpPJMRJ1alImiXO87gEZa2UyOowuT7EtHHUc4VrIc8QL8NsSL3sZd2PQO5Bu-RutOTmBIrLCUVGHUQHfNE6CXEPAwdMSSwUgZw8i~jFy8c~XUH3GttxnbYXI4mJukWq9pFmdUztE5RFu8y-DXrS-Ls389CW7WVbSMiOnz-LEtt~TNYm65813bCcfD-i~kaczsDXE1Gcp12mXko2-pcLvwsOhXWCnroAtdxyucyQisT~llempPWNHN9mghx3T-nDi51Y~H7PDmutLjDAw__&Key-Pair-Id=K38HBHX5LX3X2H",
+        "layout": "pip-br",
+        "pip_size": 0.35,
+        "hook_text": "Scale Fast",
+        "hook_subtext": "Now",
+        "captions": [],
+        "caption_style": "tiktok",
+        "show_vignette": true
+      }
+    },
+    {
+      "id": "ret-stat-3s",
+      "type": "stat",
+      "start_time_sec": 3.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "stat",
+        "value": 73,
+        "label": "of teams replaced this role",
+        "prefix": "",
+        "suffix": "%",
+        "context": "source: 2024 McKinsey AI report",
+        "supporting_text": "source: 2024 McKinsey AI report"
+      }
+    },
+    {
+      "id": "ret-myth_reality-6s",
+      "type": "myth_reality",
+      "start_time_sec": 6.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "myth_reality",
+        "myth": "You need 10 tools",
+        "reality": "You need 1 system"
+      }
+    },
+    {
+      "id": "ret-checklist-9s",
+      "type": "checklist",
+      "start_time_sec": 9.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "checklist",
+        "title": "What this replaces:",
+        "items": [
+          {
+            "text": "Manual research",
+            "emoji": "\ud83d\udd0d"
+          },
+          {
+            "text": "Content scheduling",
+            "emoji": "\ud83d\udcc5"
+          },
+          {
+            "text": "Analytics review",
+            "emoji": "\ud83d\udcca"
+          }
+        ],
+        "reveal_mode": "stagger",
+        "frames_per_item": 8
+      }
+    },
+    {
+      "id": "ret-curiosity_gap-12s",
+      "type": "curiosity_gap",
+      "start_time_sec": 12.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "curiosity_gap",
+        "setup": "Most founders try 5 tools first",
+        "reveal": "Then switch to this"
+      }
+    },
+    {
+      "id": "ret-problem_solution-15s",
+      "type": "problem_solution",
+      "start_time_sec": 15.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "problem_solution",
+        "problem": "Slow growth",
+        "solution": "AI-powered automation",
+        "layout": "sequential"
+      }
+    },
+    {
+      "id": "ret-stat-18s",
+      "type": "stat",
+      "start_time_sec": 18.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "stat",
+        "value": 90,
+        "label": "of businesses see results",
+        "prefix": "",
+        "suffix": "%",
+        "context": "source: 2024 SaaS report",
+        "supporting_text": "source: 2024 SaaS report"
+      }
+    },
+    {
+      "id": "ret-myth_reality-21s",
+      "type": "myth_reality",
+      "start_time_sec": 21.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "myth_reality",
+        "myth": "AI is complicated",
+        "reality": "AI is easy to use"
+      }
+    },
+    {
+      "id": "ret-checklist-24s",
+      "type": "checklist",
+      "start_time_sec": 24.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "checklist",
+        "title": "Benefits of AI automation:",
+        "items": [
+          {
+            "text": "Streamline workflow",
+            "emoji": "\ud83d\udcc8"
+          },
+          {
+            "text": "Optimize results",
+            "emoji": "\ud83d\udcca"
+          },
+          {
+            "text": "Accelerate growth",
+            "emoji": "\ud83d\ude80"
+          }
+        ],
+        "reveal_mode": "stagger",
+        "frames_per_item": 8
+      }
+    },
+    {
+      "id": "cta-37db729f",
+      "type": "cta",
+      "start_time_sec": 27.0,
+      "duration_sec": 3.0,
+      "content": {
+        "type": "cta",
+        "title": "Follow for more",
+        "action_text": "Link in bio to learn more",
+        "platform": "tiktok"
+      }
+    }
+  ],
+  "audio": {
+    "background_music": "music/downloads/yt-ZOOmTRUTWUU.mp3",
+    "voiceover": "",
+    "volume_music": 0.18,
+    "volume_voice": 1.0
+  },
+  "_spec": "The video should feel energetic and innovative, with a bold color mood and a talking head avatar placement that enhances the concept. Retention events should feel short, punchy, and visually scannable, with a mix of stats, myth-reality, and checklists that keep the viewer engaged.",
+  "_caption": "Scale your SaaS business fast with AI-powered marketing automation! #SaaSMarketing #AIAutomation #GrowthHacking",
+  "_music_id": "yt-ZOOmTRUTWUU"
+}

@@ -1,0 +1,53 @@
+{
+  "podcast_name": "What People Want from AI",
+  "episode_label": "MAR 13",
+  "speaker_name": "Isaiah Dupree",
+  "speaker_title": "AI Market Analyst",
+  "voiceover_path": "audio/market-report-2026-03-13-vo.wav",
+  "voiceover_segments": [
+    {
+      "startFrame": 0,
+      "endFrame": 690,
+      "text": "Welcome to What People Want from AI — today we analyzed 1,633 real AI job postings from Upwork. Let's get into what the market is telling us right now."
+    },
+    {
+      "startFrame": 690,
+      "endFrame": 1800,
+      "text": "68% of these jobs are integration work. Not building models — connecting Claude, GPT, and n8n to real business workflows. The opportunity is massive."
+    },
+    {
+      "startFrame": 1800,
+      "endFrame": 2910,
+      "text": "The sweet spot budget is between $500 and $2,500. Premium projects at $5,000 and above are emerging for full agentic system builds."
+    },
+    {
+      "startFrame": 2910,
+      "endFrame": 3960,
+      "text": "Number one: AI Automation and Workflow — 52% of the entire market. n8n pipelines, Make.com integrations, Claude API connections, and email triage."
+    },
+    {
+      "startFrame": 3960,
+      "endFrame": 5010,
+      "text": "Category two: Content and AI Creative Tools — 28% of the market. Category three: Business Intelligence and Consulting — the remaining 20%."
+    },
+    {
+      "startFrame": 5010,
+      "endFrame": 5700,
+      "text": "Real project: AI Automation for Real Estate using Claude plus Zapier plus n8n — budget $1,200. Whoever landed this is now embedded for monthly maintenance."
+    },
+    {
+      "startFrame": 5700,
+      "endFrame": 7080,
+      "text": "A full agentic AI developer role using the Claude API directly — budget $5,000. Claude integrations are commanding premium budgets and that gap is widening."
+    },
+    {
+      "startFrame": 7080,
+      "endFrame": 8640,
+      "text": "Three underserved opportunities: Real estate AI automation, recurring retainer work, and Claude API specialists. Subscribe for daily AI market reports."
+    }
+  ],
+  "cta_handle": "@isaiah_dupree",
+  "cta_display": "Subscribe for daily AI market reports →",
+  "accent": "#00ff88",
+  "totalFrames": 8708
+}

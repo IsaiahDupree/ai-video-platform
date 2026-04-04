@@ -1,0 +1,132 @@
+{
+  "id": "demo-voice-ai-agent",
+  "title": "Voice AI Agent — Full Product Demo",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "settings": {
+    "duration_sec": 113,
+    "fps": 30,
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#10B981",
+    "accent_color": "#6366F1",
+    "background_color": "#0F172A",
+    "font_family": "Inter",
+    "text_color": "#FFFFFF"
+  },
+  "voiceover": {
+    "provider": "elevenlabs",
+    "voice_id": "k0HDiJKO5QdXkGN6NSLI",
+    "model": "eleven_multilingual_v2",
+    "script": "What if your phone never stopped ringing — and every call was answered by an AI agent.",
+    "file": "/Users/isaiahdupree/Documents/Software/tech-demos/demo-briefs/voice-ai-agent-voiceover.mp3"
+  },
+  "sections": [
+    {
+      "id": "voi-000",
+      "type": "intro",
+      "start_time_sec": 0,
+      "duration_sec": 8,
+      "content": {
+        "type": "intro",
+        "hook_text": "Voice AI Agent",
+        "hook_subtext": "24/7 AI Phone Agent That Books Appointments",
+        "background_image": "demos/voice-ai-agent/demo-home.png"
+      }
+    },
+    {
+      "id": "voi-001",
+      "type": "topic",
+      "start_time_sec": 8,
+      "duration_sec": 25,
+      "content": {
+        "type": "topic",
+        "title": "Live Call Dashboard",
+        "body": "• 127 Calls Today\n• 34 Appointments Booked\n• 3m 42s Avg Duration\n• 4.8/5 Satisfaction",
+        "background_image": "demos/voice-ai-agent/demo-dashboard.png",
+        "bullet_points": [
+          "127 Calls Today",
+          "34 Appointments Booked",
+          "3m 42s Avg Duration",
+          "4.8/5 Satisfaction"
+        ]
+      }
+    },
+    {
+      "id": "voi-002",
+      "type": "topic",
+      "start_time_sec": 33,
+      "duration_sec": 30,
+      "content": {
+        "type": "topic",
+        "title": "Agent Personas",
+        "body": "• Sales Agent — Emily\n• Support Agent — James\n• Booking Agent — Sofia\n• Custom Voices & Instructions",
+        "background_image": "demos/voice-ai-agent/demo-personas.png",
+        "bullet_points": [
+          "Sales Agent — Emily",
+          "Support Agent — James",
+          "Booking Agent — Sofia",
+          "Custom Voices & Instructions"
+        ]
+      }
+    },
+    {
+      "id": "voi-003",
+      "type": "topic",
+      "start_time_sec": 63,
+      "duration_sec": 25,
+      "content": {
+        "type": "topic",
+        "title": "Automated Call Handling",
+        "body": "• Inbound Routing\n• Outbound Campaigns\n• Cal.com Scheduling\n• Twilio SMS Follow-ups",
+        "background_image": "demos/voice-ai-agent/demo-dashboard.png",
+        "bullet_points": [
+          "Inbound Routing",
+          "Outbound Campaigns",
+          "Cal.com Scheduling",
+          "Twilio SMS Follow-ups"
+        ]
+      }
+    },
+    {
+      "id": "voi-004",
+      "type": "topic",
+      "start_time_sec": 88,
+      "duration_sec": 25,
+      "content": {
+        "type": "topic",
+        "title": "Built for Production",
+        "body": "• Vapi.ai + ElevenLabs\n• Deepgram STT\n• 180+ API Endpoints\n• Compliance & PII Redaction",
+        "background_image": "demos/voice-ai-agent/demo-personas.png",
+        "bullet_points": [
+          "Vapi.ai + ElevenLabs",
+          "Deepgram STT",
+          "180+ API Endpoints",
+          "Compliance & PII Redaction"
+        ]
+      }
+    },
+    {
+      "id": "voi-005",
+      "type": "outro",
+      "start_time_sec": 113,
+      "duration_sec": 12,
+      "content": {
+        "type": "outro",
+        "hook_text": "Voice AI Agent",
+        "hook_subtext": "Your AI Sales Team Never Sleeps",
+        "cta_text": "Get Started at dupreeops.com"
+      }
+    }
+  ],
+  "audio": {
+    "voiceover_url": "demos/voice-ai-agent/voiceover.mp3",
+    "background_music": null
+  }
+}

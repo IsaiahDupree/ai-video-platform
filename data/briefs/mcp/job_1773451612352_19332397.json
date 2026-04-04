@@ -1,0 +1,127 @@
+{
+  "id": "brief_1773451612352_32c309",
+  "_job_id": "job_1773451612352_19332397",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T01:26:52.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 28
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 4,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "Planning your content strategy IS the reason you have no clients.",
+        "hook_text": "Planning your content strategy IS the reason you have no clients."
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 4,
+      "start_time_sec": 4,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "Planning feels productive. It isn't.",
+        "description": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 4,
+      "start_time_sec": 8,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "Your best leads already know you exist.",
+        "description": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 4,
+      "start_time_sec": 12,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "They just haven't heard from you in 3 mo",
+        "description": "They just haven't heard from you in 3 months.",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 4,
+      "start_time_sec": 16,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "EverReach tells you exactly who to reach",
+        "description": "EverReach tells you exactly who to reach out to.",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "item_005",
+      "type": "list_item",
+      "duration_sec": 4,
+      "start_time_sec": 20,
+      "content": {
+        "type": "list_item",
+        "number": 5,
+        "title": "No content calendar. No cold DMs. No gue",
+        "description": "No content calendar. No cold DMs. No guessing.",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 4,
+      "start_time_sec": 24,
+      "content": {
+        "type": "outro",
+        "title": "Start for free today",
+        "call_to_action": "Get EverReach free on iOS \u2014 link in bio. Takes 2 minutes to set up.",
+        "app_name": "EverReach",
+        "social_handles": [
+          {
+            "platform": "tiktok",
+            "handle": "@isaiah_dupree"
+          }
+        ]
+      }
+    }
+  ]
+}

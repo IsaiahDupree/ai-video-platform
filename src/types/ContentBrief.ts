@@ -21,7 +21,28 @@ export type SectionType =
   | "chapter_card" | "lower_third" | "end_screen"
   | "code" | "quote_card" | "phone_frame" | "compare"
   | "countdown" | "checklist" | "bar_chart" | "myth_reality" | "problem_solution"
-  | "thread_reveal" | "ugc_style" | "curiosity_gap" | "social_proof";
+  | "thread_reveal" | "ugc_style" | "curiosity_gap" | "social_proof"
+  | "avatar_pip";
+
+// ── Video source — where the background/avatar video comes from ───────────────
+
+export type VideoSourceType = "heygen" | "url" | "local" | "none";
+
+export interface VideoSource {
+  type: VideoSourceType;
+  /** heygen: generate avatar video on-the-fly before rendering */
+  heygen?: {
+    script: string;
+    avatar_id?: string;      // default: Isaiah d9af08b6f80349aaa56096443f91d19e
+    voice_id?: string;       // default: Isaiahdupree_v2 e40f41c567924222a60ed3e1d557fc77
+    engine?: "v3" | "v4";   // default: v3
+    test?: boolean;          // default: false
+  };
+  /** url: remote MP4 (Supabase Storage, CDN, etc.) */
+  url?: string;
+  /** local: path relative to Remotion/public/ (uses staticFile) */
+  local?: string;
+}
 
 export interface ContentBrief {
   id: string;
@@ -32,6 +53,8 @@ export interface ContentBrief {
   style: StyleConfig;
   sections: Section[];
   audio?: AudioConfig;
+  /** Optional background/avatar video source — resolved before render */
+  video_source?: VideoSource;
 }
 
 export interface VideoSettings {
@@ -192,6 +215,7 @@ export interface KineticCaptionContent {
   caption_style?: "tiktok" | "centered" | "full" | "lower_third";
   highlight_color?: string;
   background_opacity?: number;
+  word_timings?: Array<{word: string; start: number; end: number}>;
 }
 
 export interface ChapterCardContent {

@@ -1,0 +1,193 @@
+{
+  "id": "fa03954c-232a-4636-bcd6-b715581b4442",
+  "format": "tiktok_v1",
+  "version": "1.0",
+  "created_at": "2026-03-19T23:33:53.518605+00:00",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 30,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#aaaaaa",
+    "accent_color": "#6366f1",
+    "font_heading": "Montserrat",
+    "font_body": "Inter",
+    "background_type": "video",
+    "background_value": "#000000"
+  },
+  "sections": [
+    {
+      "id": "pip-fa03954c",
+      "type": "avatar_pip",
+      "start_time_sec": 0.0,
+      "duration_sec": 30.0,
+      "content": {
+        "type": "avatar_pip",
+        "source_video_url": "",
+        "avatar_video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/220f6cc2d24b4e6fa1becbf3a9f776a6/5c199ee2a7cc4ca4b3d521fe2c51ccae.mp4?Expires=1774568032&Signature=eHd7v2yDcjvEDL4zz0EMrhN9Pmb8qVGCLCavjwFSt7ymQcitQywq1tqHoueLYXCxI5If71rRNlfNvW6iuvRAEig5ehNEFFKUuq-2Z1AcODD-724OkfKkWEjzmxR0ZJOv6CGMY8xmnROGORSNqXkmKbod~exGyqZKnxwO2ukx1FUxcufzJXG7pz8nXbtwDMhKc-U3gyeJk6ntm6AdAyC9rgIDYOLVVyEhxe3RE-vptFGA6NAUS6tKmfPmEhHEhvwC50uquY7~Gibp6hY8tE9r99DR~iMLprAG8FQSZM133~l4cPxt5hQ9PZJJWfJluo3UJV1ac1O~w2sWGA~rJzt1mA__&Key-Pair-Id=K38HBHX5LX3X2H",
+        "layout": "pip-br",
+        "pip_size": 0.35,
+        "hook_text": "Tired of Manual Tasks?",
+        "hook_subtext": "Automate Now",
+        "captions": [],
+        "caption_style": "tiktok",
+        "show_vignette": true
+      }
+    },
+    {
+      "id": "ret-stat-3s",
+      "type": "stat",
+      "start_time_sec": 3.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "stat",
+        "value": 80,
+        "label": "of tasks can be automated",
+        "prefix": "",
+        "suffix": "%",
+        "context": "source: 2024 AI report",
+        "supporting_text": "source: 2024 AI report"
+      }
+    },
+    {
+      "id": "ret-myth_reality-6s",
+      "type": "myth_reality",
+      "start_time_sec": 6.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "myth_reality",
+        "myth": "Automation is expensive",
+        "reality": "Automation saves you money"
+      }
+    },
+    {
+      "id": "ret-checklist-9s",
+      "type": "checklist",
+      "start_time_sec": 9.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "checklist",
+        "title": "What you can automate:",
+        "items": [
+          {
+            "text": "Data entry",
+            "emoji": "\ud83d\udcca"
+          },
+          {
+            "text": "Bookkeeping",
+            "emoji": "\ud83d\udcc8"
+          },
+          {
+            "text": "Social media management",
+            "emoji": "\ud83d\udcf1"
+          }
+        ],
+        "reveal_mode": "stagger",
+        "frames_per_item": 8
+      }
+    },
+    {
+      "id": "ret-curiosity_gap-12s",
+      "type": "curiosity_gap",
+      "start_time_sec": 12.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "curiosity_gap",
+        "setup": "Most businesses use 5 tools",
+        "reveal": "But you only need 1"
+      }
+    },
+    {
+      "id": "ret-problem_solution-15s",
+      "type": "problem_solution",
+      "start_time_sec": 15.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "problem_solution",
+        "problem": "Manual tasks are time-consuming",
+        "solution": "Automate with AI-powered SaaS",
+        "layout": "sequential"
+      }
+    },
+    {
+      "id": "ret-stat-18s",
+      "type": "stat",
+      "start_time_sec": 18.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "stat",
+        "value": 73,
+        "label": "of teams replaced manual tasks",
+        "prefix": "",
+        "suffix": "%",
+        "context": "source: 2024 McKinsey AI report",
+        "supporting_text": "source: 2024 McKinsey AI report"
+      }
+    },
+    {
+      "id": "ret-myth_reality-21s",
+      "type": "myth_reality",
+      "start_time_sec": 21.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "myth_reality",
+        "myth": "AI is complicated",
+        "reality": "AI is easy to use"
+      }
+    },
+    {
+      "id": "ret-checklist-24s",
+      "type": "checklist",
+      "start_time_sec": 24.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "checklist",
+        "title": "Benefits of automation:",
+        "items": [
+          {
+            "text": "Increased productivity",
+            "emoji": "\ud83d\ude80"
+          },
+          {
+            "text": "Improved accuracy",
+            "emoji": "\ud83d\udcc8"
+          },
+          {
+            "text": "Enhanced customer experience",
+            "emoji": "\ud83d\udc65"
+          }
+        ],
+        "reveal_mode": "stagger",
+        "frames_per_item": 8
+      }
+    },
+    {
+      "id": "cta-fa03954c",
+      "type": "cta",
+      "start_time_sec": 27.0,
+      "duration_sec": 3.0,
+      "content": {
+        "type": "cta",
+        "title": "Follow for more",
+        "action_text": "Follow for more AI-powered SaaS solutions",
+        "platform": "tiktok"
+      }
+    }
+  ],
+  "audio": {
+    "background_music": "music/downloads/yt-ZOOmTRUTWUU.mp3",
+    "voiceover": "",
+    "volume_music": 0.18,
+    "volume_voice": 1.0
+  },
+  "_spec": "The video should feel modern and innovative, with a clean and minimalist design. The hook works visually by grabbing the viewer's attention with a bold statement. The PiP avatar placement enhances the concept by providing a personal touch and making the video more engaging. The retention events feel like bite-sized pieces of information that are easy to consume and understand.",
+  "_caption": "Boost your productivity with AI-powered SaaS solutions! #AI #SaaS #Automation #Innovation #Growth",
+  "_music_id": "yt-ZOOmTRUTWUU"
+}

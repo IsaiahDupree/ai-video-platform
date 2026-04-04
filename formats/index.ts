@@ -1,5 +1,6 @@
 // Format registry
 export * from './types';
+export { ugc_avatar_pip_v1 } from './ugc_avatar_pip_v1';
 export { explainer_v1 } from './explainer_v1';
 export { listicle_v1 } from './listicle_v1';
 export { comparison_v1 } from './comparison_v1';
@@ -52,6 +53,7 @@ import { youtube_tutorial_v1 } from './youtube_tutorial_v1';
 import { instagram_reel_v1 } from './instagram_reel_v1';
 import { instagram_feed_v1 } from './instagram_feed_v1';
 import { instagram_ugc_v1 } from './instagram_ugc_v1';
+import { ugc_avatar_pip_v1 } from './ugc_avatar_pip_v1';
 import { tiktok_v1 } from './tiktok_v1';
 import { tiktok_countdown_v1 } from './tiktok_countdown_v1';
 import { tiktok_problem_solution_v1 } from './tiktok_problem_solution_v1';
@@ -83,6 +85,8 @@ export const FORMATS: Record<string, VideoFormat> = {
   instagram_reel_v1,
   instagram_feed_v1,
   instagram_ugc_v1,
+  // Avatar PiP
+  ugc_avatar_pip_v1,
   // TikTok
   tiktok_v1,
   tiktok_countdown_v1,

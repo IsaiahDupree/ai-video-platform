@@ -1,0 +1,81 @@
+{
+  "id": "brief_1773626920424_08f8d4",
+  "format": "comparison_v1",
+  "version": "1.0",
+  "created_at": "2026-03-16T02:08:40.424Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 25,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#4ECDC4",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "Managing relationships without EverReach vs with it",
+        "hook_text": "Your network is your most valuable asset. Are you managing it?"
+      }
+    },
+    {
+      "id": "comparison_001",
+      "type": "comparison",
+      "duration_sec": 15,
+      "start_time_sec": 5,
+      "content": {
+        "type": "comparison",
+        "title": "Managing relationships without EverReach vs with it",
+        "left_item": {
+          "label": "Without EverReach",
+          "points": [
+            "Guessing who to reach out to",
+            "Friendships fade without warning",
+            "Generic \"hey, been a while\" messages",
+            "Losing deals to people who stayed close"
+          ]
+        },
+        "right_item": {
+          "label": "With EverReach",
+          "points": [
+            "Warmth Score ranks every contact automatically",
+            "Get notified before someone goes cold",
+            "AI writes from your full history — personal every time",
+            "Your network becomes your pipeline"
+          ]
+        }
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 20,
+      "content": {
+        "type": "outro",
+        "title": "Which do you prefer?",
+        "call_to_action": "EverReach — Free on iPhone"
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1
+  }
+}

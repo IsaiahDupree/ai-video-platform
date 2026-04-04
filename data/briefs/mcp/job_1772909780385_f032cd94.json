@@ -1,0 +1,107 @@
+{
+  "id": "brief_1772909726684_ebbc1d",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2026-03-07T18:55:26.685Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 42,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "Reach Out Without Feeling Cringe or Salesy",
+        "hook_text": "If you've ever deleted a message because it felt fake — this is for you."
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 5,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "Context-aware AI that sounds like you, not a template",
+        "description": ""
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 13,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "Every draft is editable — zero auto-sends, ever",
+        "description": ""
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 21,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "Reach out only when the timing actually makes sense",
+        "description": ""
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 29,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "98% of users say their messages feel completely genuine",
+        "description": ""
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 37,
+      "content": {
+        "type": "outro",
+        "title": "Found this helpful?",
+        "call_to_action": "Reach out authentically — try free",
+        "social_handles": [
+          {
+            "platform": "TikTok",
+            "handle": "@isaiahdupree"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1
+  }
+}

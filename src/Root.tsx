@@ -8,6 +8,24 @@ import { CaptionStylesBenchmark, captionStylesBenchmarkDefaultProps } from './co
 import { ThermodynamicsVideo, thermodynamicsDefaultProps } from './compositions/ThermodynamicsVideo';
 import { UGCComposition, ugcDefaultProps } from './compositions/UGCComposition';
 import { EverReachCompilation, everReachDefaultProps } from './compositions/EverReachCompilation';
+import { EverReachAppStoreMockup, everReachAppStoreMockupDefaultProps } from './compositions/everreach/EverReachAppStoreMockup';
+import {
+  AppStoreScreen1,
+  AppStoreScreen2,
+  AppStoreScreen3,
+  AppStoreScreen4,
+  AppStoreScreen5,
+  EverReachPreviewVideo,
+  everReachPreviewVideoDefaultProps,
+  EverReachOfferCard,
+} from './compositions/everreach/EverReachAppStoreScreens';
+import {
+  V2Screen1,
+  V2Screen2,
+  V2Screen3,
+  V2Screen4,
+  V2Screen5,
+} from './compositions/everreach/EverReachAppStoreScreensV2';
 import { AircraftWingsVideo, aircraftWingsDefaultProps } from './compositions/AircraftWingsVideo';
 import {
   StaticAd,
@@ -96,7 +114,107 @@ import {
   PipelineAdComposition,
   pipelineAdDefaultProps,
 } from './compositions/PipelineAdComposition';
+import {
+  SkillShowcase,
+  SkillShowcaseFull,
+  skillShowcaseDefaultProps,
+} from './compositions/SkillShowcase';
 import { ContentBrief } from './types';
+import {
+  DevVlogComposition,
+  getTotalDuration as getDevVlogDuration,
+} from './compositions/DevVlogComposition';
+import {
+  TrendVideoComposition,
+  getTrendVideoDuration,
+  trendVideoDefaultBrief,
+} from './compositions/TrendVideoComposition';
+import {
+  VoicedDevVlogComposition,
+  VOICED_VLOG_FRAMES,
+  VOICED_VLOG_FPS,
+} from './compositions/VoicedDevVlog';
+import {
+  PodcastClipComposition,
+  DEFAULT_PODCAST_BRIEF,
+  PODCAST_CLIP_FRAMES,
+  PODCAST_CLIP_FPS,
+} from './compositions/PodcastClip';
+import {
+  YouTubeThumbnailComposition,
+  DEFAULT_YT_THUMBNAIL_BRIEF,
+} from './compositions/YouTubeThumbnail';
+import {
+  PresetStoreLaunchComposition,
+  DEFAULT_PRESET_STORE_BRIEF,
+  PRESET_STORE_FRAMES,
+  PRESET_STORE_FPS,
+} from './compositions/PresetStoreLaunch';
+import {
+  IsaiahStyleReel,
+  isaiahStyleReelDefaultProps,
+} from './compositions/IsaiahStyleReel';
+import {
+  IsaiahReelV2,
+  isaiahReelV2DefaultProps,
+} from './compositions/IsaiahReelV2';
+import { IsaiahTalkingHeadV1 as IsaiahTalkingHeadV1Comp } from './compositions/IsaiahTalkingHeadV1';
+import { ISAIAH_HOUSE_STYLE } from './types/IsaiahReelSchema';
+import {
+  UGCStylesShowcase,
+  ugcStylesShowcaseDefaultProps,
+  UGC_SHOWCASE_FRAMES,
+  UGC_SHOWCASE_FPS,
+} from './compositions/UGCStylesShowcase';
+import {
+  UGCProductVideo,
+  PRODUCT_VARIANTS,
+  UGC_PRODUCT_FPS,
+  UGC_PRODUCT_FRAMES,
+} from './compositions/UGCProductVideo';
+import {
+  IPhoneUGCVideo,
+  IPHONE_UGC_FPS,
+  IPHONE_UGC_DEFAULT_FRAMES,
+} from './compositions/IPhoneUGCVideo';
+import {
+  SEODocumentary,
+  seoDocumentaryDefaultProps,
+  seoDocumentaryTotalFrames,
+} from './compositions/SEODocumentary';
+import {
+  SEODocumentaryV2,
+  seoDocumentaryV2DefaultProps,
+  seoDocumentaryV2TotalFrames,
+  getSEODocumentaryV2TotalFrames,
+} from './compositions/SEODocumentaryV2';
+
+const isaiahTalkingHeadV1DefaultProps = {
+  sourceVideoUrl: staticFile('placeholder.mp4'),
+  transcriptWords: [],
+  brandName: ISAIAH_HOUSE_STYLE.visualRules.topNameText,
+  summaryStrapText: 'Your footage is already enough',
+  contentBrief: { topic: '', objective: '', audience: '', hookType: 'contrarian_reframe' as const },
+  faceBoxes: [],
+  selectedSegments: [],
+  styleScores: { transcriptFidelity: 0, briefAlignment: 0, styleMatch: 0, sourceFit: 0 },
+  layoutRules: {
+    captionTextColor: ISAIAH_HOUSE_STYLE.visualRules.captionsTextColor,
+    captionBgColor: ISAIAH_HOUSE_STYLE.visualRules.captionsBgColor,
+    summaryTextColor: ISAIAH_HOUSE_STYLE.visualRules.summaryStrapTextColor,
+    summaryBgColor: ISAIAH_HOUSE_STYLE.visualRules.summaryStrapBgColor,
+    avoidFaceOverlap: true,
+    captionStylePreset: ISAIAH_HOUSE_STYLE.captionStyleLibrary.defaultPreset,
+    headlineFontPreset: ISAIAH_HOUSE_STYLE.fontSystem.defaultHeadlinePreset,
+    captionFontPreset: ISAIAH_HOUSE_STYLE.fontSystem.defaultCaptionPreset,
+  },
+  editPlan: {
+    cutPlan: { removeDeadAir: true, silenceThresholdMs: 180, targetCadenceSeconds: 1.25 },
+    zoomPlan: { enabled: true, triggerMoments: [] },
+    brollPlan: { enabled: false, insertionMoments: [] },
+    screenshotPlan: { enabled: false, insertionMoments: [] },
+  },
+};
 
 export interface BriefCompositionProps {
   brief?: ContentBrief;
@@ -153,8 +271,12 @@ const defaultBrief: ContentBrief = {
 
 export const RemotionRoot: React.FC = () => {
   // Get brief from input props (for rendering) or use default
-  const inputProps = getInputProps() as { brief?: ContentBrief };
-  const brief = inputProps.brief || defaultBrief;
+  // Guard: only treat as ContentBrief if it has the expected settings shape
+  const inputProps = getInputProps() as { brief?: unknown };
+  const rawBrief = inputProps.brief as ContentBrief | undefined;
+  const brief = (rawBrief && typeof rawBrief === 'object' && 'settings' in rawBrief)
+    ? rawBrief
+    : defaultBrief;
 
   const { fps, duration_sec, resolution } = brief.settings;
   const durationInFrames = Math.round(duration_sec * fps);
@@ -247,6 +369,49 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={captionStylesBenchmarkDefaultProps}
       />
 
+      {/* UGC Styles Showcase — 11 caption + title style combos (88s) */}
+      <Composition
+        id="UGCStylesShowcase"
+        component={UGCStylesShowcase}
+        durationInFrames={UGC_SHOWCASE_FRAMES}
+        fps={UGC_SHOWCASE_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={ugcStylesShowcaseDefaultProps}
+      />
+
+      {/* UGC Product Videos — 5 publishable 15s vertical video variants */}
+      {PRODUCT_VARIANTS.map((v) => (
+        <Composition
+          key={v.id}
+          id={`UGCProduct-${v.id}`}
+          component={UGCProductVideo}
+          durationInFrames={UGC_PRODUCT_FRAMES}
+          fps={UGC_PRODUCT_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={v.props}
+        />
+      ))}
+
+      {/* iPhone UGC — video background + clean-stroke captions + minimal title */}
+      <Composition
+        id="IPhoneUGCVideo"
+        component={IPhoneUGCVideo}
+        durationInFrames={IPHONE_UGC_DEFAULT_FRAMES}
+        fps={IPHONE_UGC_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          videoSrc: 'iphone/placeholder.mp4',
+          captionText: 'your content goes here',
+          titleText: 'Your Hook Here',
+          accentColor: '#38ef7d',
+          musicVolume: 0.015,
+          brandId: 'the_isaiah_dupree',
+        }}
+      />
+
       {/* Thermodynamics explainer video */}
       <Composition
         id="ThermodynamicsVideo"
@@ -278,6 +443,92 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={everReachDefaultProps}
+      />
+
+      {/* EverReach App Store — 5 Angles × 5 Screens (1320x2868 Apple spec) */}
+      {(['busy','revenue','authentic','friendship','founder'] as const).flatMap(angle =>
+        ([
+          { id: '1-Hero', comp: AppStoreScreen1 },
+          { id: '2-Who',  comp: AppStoreScreen2 },
+          { id: '3-What', comp: AppStoreScreen3 },
+          { id: '4-When', comp: AppStoreScreen4 },
+          { id: '5-Trust',comp: AppStoreScreen5 },
+        ] as const).map(({ id, comp: Comp }) => (
+          <Still
+            key={`EverReachAS-${angle}-${id}`}
+            id={`EverReachAS-${angle}-${id}`}
+            component={Comp}
+            width={1320}
+            height={2868}
+            defaultProps={{ angleKey: angle }}
+          />
+        ))
+      )}
+
+      {/* EverReach App Store V2 — Spec-driven, simplified */}
+      {(['busy', 'revenue', 'authentic', 'friendship', 'founder', 'drift', 'memory', 'unghost'] as const).flatMap(angle =>
+        ([
+          { id: '1-Hero',  comp: V2Screen1 },
+          { id: '2-Who',   comp: V2Screen2 },
+          { id: '3-What',  comp: V2Screen3 },
+          { id: '4-When',  comp: V2Screen4 },
+          { id: '5-Trust', comp: V2Screen5 },
+        ] as const).map(({ id, comp: Comp }) => (
+          <Still
+            key={`EverReachV2-${angle}-${id}`}
+            id={`EverReachV2-${angle}-${id}`}
+            component={Comp}
+            width={1320}
+            height={2868}
+            defaultProps={{ angleKey: angle }}
+          />
+        ))
+      )}
+
+      {/* EverReach — 15s Animated Preview Videos per angle (App Store + social) */}
+      {(['busy','revenue','authentic','friendship','founder'] as const).map(angle => (
+        <Composition
+          key={`EverReachPreview-${angle}`}
+          id={`EverReachPreview-${angle}`}
+          component={EverReachPreviewVideo}
+          durationInFrames={450}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{ angleKey: angle }}
+        />
+      ))}
+
+      {/* EverReach — Offer Card: AI Automation Audit+Build $2,500 */}
+      <Still id="EverReachOffer-Story"  component={EverReachOfferCard} width={1080} height={1920} defaultProps={{}} />
+      <Still id="EverReachOffer-Square" component={EverReachOfferCard} width={1080} height={1080} defaultProps={{}} />
+      <Still id="EverReachOffer-Hero"   component={EverReachOfferCard} width={1920} height={1080} defaultProps={{}} />
+
+      {/* EverReach App Store Mockup - Story (1080x1920) */}
+      <Still
+        id="EverReachAppStore-Story"
+        component={EverReachAppStoreMockup}
+        width={1080}
+        height={1920}
+        defaultProps={{ ...everReachAppStoreMockupDefaultProps, layout: 'story' }}
+      />
+
+      {/* EverReach App Store Mockup - Hero (1920x1080) */}
+      <Still
+        id="EverReachAppStore-Hero"
+        component={EverReachAppStoreMockup}
+        width={1920}
+        height={1080}
+        defaultProps={{ ...everReachAppStoreMockupDefaultProps, layout: 'hero' }}
+      />
+
+      {/* EverReach App Store Mockup - Square Post (1080x1080) */}
+      <Still
+        id="EverReachAppStore-Square"
+        component={EverReachAppStoreMockup}
+        width={1080}
+        height={1080}
+        defaultProps={{ ...everReachAppStoreMockupDefaultProps, layout: 'story' }}
       />
 
       {/* Aircraft Wings - Differential Flow Explainer (Beginner to Postgrad) */}
@@ -2729,6 +2980,276 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1080}
         defaultProps={pipelineAdDefaultProps}
+      />
+
+      {/* SkillShowcase — spring, interpolateColors, noise2D, Sequence, Series, Loop */}
+      <Still
+        id="SkillShowcase-Scene1"
+        component={SkillShowcase}
+        width={1080}
+        height={1920}
+        defaultProps={{ scene: 1 }}
+      />
+      <Still
+        id="SkillShowcase-Scene2"
+        component={SkillShowcase}
+        width={1080}
+        height={1920}
+        defaultProps={{ scene: 2 }}
+      />
+      <Still
+        id="SkillShowcase-Scene3"
+        component={SkillShowcase}
+        width={1080}
+        height={1920}
+        defaultProps={{ scene: 3 }}
+      />
+      <Composition
+        id="SkillShowcaseFull"
+        component={SkillShowcaseFull}
+        durationInFrames={270}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{}}
+      />
+
+      {/* ============================================================= */}
+      {/* TWITTER TREND VIDEOS — Brief-driven, multi-format              */}
+      {/* Render: npx remotion render TrendVideo-YouTube output.mp4 \   */}
+      {/*   --props='{"brief":{...}}'                                   */}
+      {/* ============================================================= */}
+
+      {/* YouTube (16:9) — primary format, 1920×1080 */}
+      <Composition
+        id="TrendVideo-YouTube"
+        component={TrendVideoComposition}
+        durationInFrames={getTrendVideoDuration(trendVideoDefaultBrief.tweets.length)}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{ brief: trendVideoDefaultBrief, format: 'youtube' }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: getTrendVideoDuration(props.brief?.tweets?.length ?? 1),
+        })}
+      />
+
+      {/* Shorts / TikTok / Reels (9:16) — 1080×1920 */}
+      <Composition
+        id="TrendVideo-Shorts"
+        component={TrendVideoComposition}
+        durationInFrames={getTrendVideoDuration(trendVideoDefaultBrief.tweets.length)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ brief: trendVideoDefaultBrief, format: 'shorts' }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: getTrendVideoDuration(props.brief?.tweets?.length ?? 1),
+        })}
+      />
+
+      {/* LinkedIn (1:1) — 1080×1080 */}
+      <Composition
+        id="TrendVideo-LinkedIn"
+        component={TrendVideoComposition}
+        durationInFrames={getTrendVideoDuration(trendVideoDefaultBrief.tweets.length)}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={{ brief: trendVideoDefaultBrief, format: 'linkedin' }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: getTrendVideoDuration(props.brief?.tweets?.length ?? 1),
+        })}
+      />
+
+      {/* ── Voiced Dev Vlog (voice cloning + sidechain + UTM) ── */}
+      <Composition
+        id="VoicedDevVlog-YouTube"
+        component={VoicedDevVlogComposition}
+        durationInFrames={VOICED_VLOG_FRAMES}
+        fps={VOICED_VLOG_FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{ brief: undefined }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: props.brief?.totalFrames ?? VOICED_VLOG_FRAMES,
+        })}
+      />
+      <Composition
+        id="VoicedDevVlog-Shorts"
+        component={VoicedDevVlogComposition}
+        durationInFrames={VOICED_VLOG_FRAMES}
+        fps={VOICED_VLOG_FPS}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: props.brief?.totalFrames ?? VOICED_VLOG_FRAMES,
+        })}
+        width={1080}
+        height={1920}
+        defaultProps={{ brief: undefined }}
+      />
+
+      {/* ── Preset Store Launch (4-scene product pitch) ── */}
+      <Composition
+        id="PresetStore-Shorts"
+        component={PresetStoreLaunchComposition}
+        durationInFrames={PRESET_STORE_FRAMES}
+        fps={PRESET_STORE_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{ brief: DEFAULT_PRESET_STORE_BRIEF }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: props.brief?.totalFrames ?? PRESET_STORE_FRAMES,
+        })}
+      />
+      <Composition
+        id="PresetStore-YouTube"
+        component={PresetStoreLaunchComposition}
+        durationInFrames={PRESET_STORE_FRAMES}
+        fps={PRESET_STORE_FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{ brief: DEFAULT_PRESET_STORE_BRIEF }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: props.brief?.totalFrames ?? PRESET_STORE_FRAMES,
+        })}
+      />
+
+      {/* ── Podcast Clip (audiogram: waveform + glow captions + sidechain) ── */}
+      <Composition
+        id="PodcastClip-Shorts"
+        component={PodcastClipComposition}
+        durationInFrames={PODCAST_CLIP_FRAMES}
+        fps={PODCAST_CLIP_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{ brief: DEFAULT_PODCAST_BRIEF }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: props.brief?.totalFrames ?? PODCAST_CLIP_FRAMES,
+        })}
+      />
+      <Composition
+        id="PodcastClip-YouTube"
+        component={PodcastClipComposition}
+        durationInFrames={PODCAST_CLIP_FRAMES}
+        fps={PODCAST_CLIP_FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{ brief: DEFAULT_PODCAST_BRIEF }}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: props.brief?.totalFrames ?? PODCAST_CLIP_FRAMES,
+        })}
+      />
+
+      {/* ── YouTube Thumbnail ── */}
+      <Still
+        id="YouTubeThumbnail"
+        component={YouTubeThumbnailComposition}
+        width={1280}
+        height={720}
+        defaultProps={{ brief: DEFAULT_YT_THUMBNAIL_BRIEF }}
+      />
+
+      {/* ── Dev Vlog ── */}
+      <Composition
+        id="DevVlog-YouTube"
+        component={DevVlogComposition}
+        durationInFrames={getDevVlogDuration()}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{ brief: undefined }}
+      />
+      <Composition
+        id="DevVlog-Shorts"
+        component={DevVlogComposition}
+        durationInFrames={getDevVlogDuration()}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ brief: undefined }}
+      />
+
+      {/* ─── Isaiah Reel V2 — Standard Baseline (handle + green badge + Whisper captions) ── */}
+      <Composition
+        id="IsaiahReelV2"
+        component={IsaiahReelV2}
+        durationInFrames={30 * 27}
+        fps={30}
+        width={720}
+        height={1280}
+        defaultProps={isaiahReelV2DefaultProps}
+      />
+
+      {/* ─── Isaiah Style Reel ──────────────────────────────────────────────── */}
+      {/* Reverse-engineered from @the_isaiah_dupree top-performing content     */}
+      {/* Usage: npx remotion render IsaiahStyleReel output/reel.mp4            */}
+      <Composition
+        id="IsaiahStyleReel"
+        component={IsaiahStyleReel}
+        durationInFrames={30 * 40}   // default 40s — sweet spot from analysis
+        fps={30}
+        width={720}
+        height={1280}
+        defaultProps={isaiahStyleReelDefaultProps}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: 30 * 40,  // override via input props if needed
+        })}
+      />
+
+      {/* ─── IsaiahTalkingHeadV1 — AI-driven pipeline composition ───────────── */}
+      {/* Props come from IsaiahReelDecisionEngine.orchestrateReelJob()          */}
+      {/* Usage: npx remotion render IsaiahTalkingHeadV1 output/reel.mp4        */}
+      <Composition
+        id="IsaiahTalkingHeadV1"
+        component={IsaiahTalkingHeadV1Comp as any}
+        durationInFrames={30 * 35}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={isaiahTalkingHeadV1DefaultProps}
+        calculateMetadata={async ({ props }) => {
+          const segments = (props as any).selectedSegments ?? [];
+          if (segments.length > 0) {
+            const totalMs = segments.reduce((acc: number, s: any) => acc + (s.endMs - s.startMs), 0);
+            return { durationInFrames: Math.round((totalMs / 1000) * 30) };
+          }
+          return { durationInFrames: 30 * 35 };
+        }}
+      />
+
+      {/* ─── SEO Documentary V2 — Scene-based, 2.5–5s variable scenes ──────── */}
+      {/* Render cmd: npx remotion render SEODocumentaryV2 output/seo_v2.mp4   */}
+      <Composition
+        id="SEODocumentaryV2"
+        component={SEODocumentaryV2 as any}
+        durationInFrames={seoDocumentaryV2TotalFrames}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={seoDocumentaryV2DefaultProps}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: getSEODocumentaryV2TotalFrames((props as any).chapters),
+        })}
+      />
+
+      {/* ─── SEO Documentary — Full 30-min YouTube documentary ─────────────── */}
+      {/* Audio: Isaiah's ElevenLabs voice (Isaiahdupree_v2)                    */}
+      {/* Copy audio to public/seo_audio/ before rendering                      */}
+      {/* Usage: npx remotion render SEODocumentary output/seo_documentary.mp4  */}
+      <Composition
+        id="SEODocumentary"
+        component={SEODocumentary as any}
+        durationInFrames={seoDocumentaryTotalFrames}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={seoDocumentaryDefaultProps}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: props.chapters.reduce(
+            (acc, ch) => acc + Math.round(ch.durationSecs * 30),
+            0
+          ),
+        })}
       />
     </>
   );

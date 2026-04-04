@@ -1,0 +1,128 @@
+{
+  "id": "brief_1773454856989_5221f0",
+  "_job_id": "job_1773454856989_ffca553f",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T02:20:56.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 40
+  },
+  "style": {
+    "theme": "light",
+    "primary_color": "#111111",
+    "secondary_color": "#555555",
+    "accent_color": "#000000",
+    "background_type": "solid",
+    "background_value": "#f5f5f5",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.25,
+    "volume_voice": 1.0,
+    "music_path": null
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 4,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "What if your DMs were already telling you exactly what to post?",
+        "hook_text": "What if your DMs were already telling you exactly what to post?"
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 4,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "1. Every client convo = a hidden content",
+        "description": "1. Every client convo = a hidden content brief",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 10,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "2. Repeated questions = your next viral ",
+        "description": "2. Repeated questions = your next viral hook",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 16,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "3. Objections you hear = posts that conv",
+        "description": "3. Objections you hear = posts that convert",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 22,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "4. EverReach logs it all so nothing gets",
+        "description": "4. EverReach logs it all so nothing gets lost",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "item_005",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 28,
+      "content": {
+        "type": "list_item",
+        "number": 5,
+        "title": "5. Your network tells you what to post \u2014",
+        "description": "5. Your network tells you what to post \u2014 listen",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 6,
+      "start_time_sec": 34,
+      "content": {
+        "type": "outro",
+        "title": "Start for free today",
+        "call_to_action": "Stop guessing. Download EverReach \u2014 link in bio.",
+        "app_name": "EverReach",
+        "social_handles": [
+          {
+            "platform": "tiktok",
+            "handle": "@isaiah_dupree"
+          }
+        ]
+      }
+    }
+  ]
+}

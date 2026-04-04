@@ -1,0 +1,114 @@
+{
+  "id": "brief_1773453879050_ee522a",
+  "_job_id": "job_1773453879050_803017a9",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T02:04:39.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 28
+  },
+  "style": {
+    "theme": "neon",
+    "primary_color": "#00ff88",
+    "secondary_color": "#00ccff",
+    "accent_color": "#ff00ff",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #0d0d1a 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 4,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "87% of creators ghost their audience for 2+ weeks every month",
+        "hook_text": "87% of creators ghost their audience for 2+ weeks every month"
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 4,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "1. You forget who you promised content t",
+        "description": "1. You forget who you promised content to",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 9,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "2. Your DMs die before a collab starts",
+        "description": "",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 14,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "3. Follow-ups fall through \u2014 every time",
+        "description": "",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 19,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "4. EverReach remembers so you don't have",
+        "description": "4. EverReach remembers so you don't have to",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 4,
+      "start_time_sec": 24,
+      "content": {
+        "type": "outro",
+        "title": "Start for free today",
+        "call_to_action": "Stop ghosting your growth \u2014 get EverReach free",
+        "app_name": "EverReach",
+        "social_handles": [
+          {
+            "platform": "tiktok",
+            "handle": "@isaiah_dupree"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "brief_1773627466524_1553fe",
+  "format": "shorts_v1",
+  "version": "1.0",
+  "created_at": "2026-03-16T02:17:46.525Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 15,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#FFB366",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "hook_001",
+      "type": "hook",
+      "duration_sec": 3,
+      "start_time_sec": 0,
+      "content": {
+        "type": "hook",
+        "text": "The anxiety of reaching out after too long is real. EverReach fixes that.",
+        "subtext": "Reach out before it gets awkward. EverReach tells you when."
+      }
+    },
+    {
+      "id": "content_001",
+      "type": "content",
+      "duration_sec": 9,
+      "start_time_sec": 3,
+      "content": {
+        "type": "topic",
+        "heading": "You're not using them. You just want to reconnect.",
+        "body_text": "",
+        "animation_style": "fade"
+      }
+    },
+    {
+      "id": "cta_001",
+      "type": "cta",
+      "duration_sec": 3,
+      "start_time_sec": 12,
+      "content": {
+        "type": "cta",
+        "title": "Free on iPhone →",
+        "action_text": "Follow",
+        "url": "@everreach.app"
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1
+  }
+}

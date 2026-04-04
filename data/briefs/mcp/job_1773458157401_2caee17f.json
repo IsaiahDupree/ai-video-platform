@@ -1,0 +1,116 @@
+{
+  "id": "brief_1773458157401_91c3a5",
+  "_job_id": "job_1773458157401_2caee17f",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T03:15:57.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 58
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 9,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "Your CRM isn't losing leads. YOU are.",
+        "hook_text": "Your CRM isn't losing leads. YOU are."
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 9,
+      "content": {
+        "type": "topic",
+        "heading": "MYTH: You'll remember to follow up later",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 17,
+      "content": {
+        "type": "topic",
+        "heading": "REALITY: Later never comes. Lead goes cold.",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 25,
+      "content": {
+        "type": "topic",
+        "heading": "MYTH: LinkedIn is enough to stay in touch",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 33,
+      "content": {
+        "type": "topic",
+        "heading": "REALITY: Algorithms bury your best contacts",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_005",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 41,
+      "content": {
+        "type": "topic",
+        "heading": "REALITY: EverReach is the habit, built in",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 9,
+      "start_time_sec": 49,
+      "content": {
+        "type": "outro",
+        "title": "Try EverReach free",
+        "call_to_action": "Get EverReach \u2014 your leads deserve better",
+        "app_name": "EverReach"
+      }
+    }
+  ]
+}

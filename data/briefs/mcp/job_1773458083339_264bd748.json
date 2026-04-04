@@ -1,0 +1,116 @@
+{
+  "id": "brief_1773458083339_f9d82f",
+  "_job_id": "job_1773458083339_264bd748",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T03:14:43.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 42
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 6,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "More leads won't fix your business. This will.",
+        "hook_text": "More leads won't fix your business. This will."
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 6,
+      "content": {
+        "type": "topic",
+        "heading": "Myth: You need more leads to grow",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 12,
+      "content": {
+        "type": "topic",
+        "heading": "Reality: You're losing 60% before follow-up #2",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 18,
+      "content": {
+        "type": "topic",
+        "heading": "Myth: A CRM is only for big sales teams",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 24,
+      "content": {
+        "type": "topic",
+        "heading": "Reality: EverReach takes 30 seconds per contact",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_005",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 30,
+      "content": {
+        "type": "topic",
+        "heading": "Result: Close more from the list you already have",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 6,
+      "start_time_sec": 36,
+      "content": {
+        "type": "outro",
+        "title": "Try EverReach free",
+        "call_to_action": "See how EverReach works \u2014 tap Learn More",
+        "app_name": "EverReach"
+      }
+    }
+  ]
+}

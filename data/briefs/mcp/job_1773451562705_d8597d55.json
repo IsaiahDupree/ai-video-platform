@@ -1,0 +1,116 @@
+{
+  "id": "brief_1773451562705_7d87c7",
+  "_job_id": "job_1773451562705_d8597d55",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T01:26:02.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 58
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 9,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "Your content isn't converting because you're posting blind.",
+        "hook_text": "Your content isn't converting because you're posting blind."
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 9,
+      "content": {
+        "type": "topic",
+        "heading": "PROBLEM: You brainstorm content from scratch every",
+        "body_text": "PROBLEM: You brainstorm content from scratch every week",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 17,
+      "content": {
+        "type": "topic",
+        "heading": "PROBLEM: You post and hope it lands with someone",
+        "body_text": "",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 25,
+      "content": {
+        "type": "topic",
+        "heading": "PROBLEM: No idea which followers could become clie",
+        "body_text": "PROBLEM: No idea which followers could become clients",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 33,
+      "content": {
+        "type": "topic",
+        "heading": "SOLUTION: EverReach tracks every relationship sign",
+        "body_text": "SOLUTION: EverReach tracks every relationship signal",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "topic_005",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 41,
+      "content": {
+        "type": "topic",
+        "heading": "SOLUTION: Surfaces exactly what your network needs",
+        "body_text": "SOLUTION: Surfaces exactly what your network needs to hear",
+        "animation_style": "glitch"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 9,
+      "start_time_sec": 49,
+      "content": {
+        "type": "outro",
+        "title": "Try EverReach free",
+        "call_to_action": "Build a content system from real client data \u2014 download EverReach now.",
+        "app_name": "EverReach"
+      }
+    }
+  ]
+}

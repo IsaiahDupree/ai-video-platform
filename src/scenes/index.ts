@@ -18,6 +18,8 @@ export { EndScreenScene } from './EndScreenScene';
 export { CodeScene } from './CodeScene';
 export { QuoteCardScene } from './QuoteCardScene';
 export { PhoneFrameScene } from './PhoneFrameScene';
+// Avatar PiP — HeyGen talking head composited over source video
+export { AvatarPIPScene } from './AvatarPIPScene';
 // Research-backed scenes
 export { CountdownScene } from './CountdownScene';
 export { ChecklistScene } from './ChecklistScene';
@@ -56,6 +58,7 @@ import { ThreadRevealScene } from './ThreadRevealScene';
 import { UGCStyleScene } from './UGCStyleScene';
 import { CuriosityGapScene } from './CuriosityGapScene';
 import { SocialProofScene } from './SocialProofScene';
+import { AvatarPIPScene } from './AvatarPIPScene';
 
 export const SceneRegistry: Record<string, React.ComponentType<any>> = {
   // Original
@@ -93,6 +96,8 @@ export const SceneRegistry: Record<string, React.ComponentType<any>> = {
   ugc_style: UGCStyleScene,
   curiosity_gap: CuriosityGapScene,
   social_proof: SocialProofScene,
+  // Avatar PiP — HeyGen over source video
+  avatar_pip: AvatarPIPScene,
 };
 
 export function getSceneComponent(type: string): React.ComponentType<any> | undefined {

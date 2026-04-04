@@ -1,0 +1,127 @@
+{
+  "id": "brief_1773458108301_aae845",
+  "_job_id": "job_1773458108301_ae37e6ef",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T03:15:08.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 40
+  },
+  "style": {
+    "theme": "neon",
+    "primary_color": "#00ff88",
+    "secondary_color": "#00ccff",
+    "accent_color": "#ff00ff",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #0d0d1a 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 4,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "87% of leads die in your DMs",
+        "hook_text": "87% of leads die in your DMs"
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 4,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "1. You can't follow up what you can't fi",
+        "description": "1. You can't follow up what you can't find",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 10,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "2. Spreadsheets don't remind you at 9am",
+        "description": "",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 16,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "3. EverReach pings you before leads go c",
+        "description": "3. EverReach pings you before leads go cold",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 22,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "4. One tap logs the convo, sets the remi",
+        "description": "4. One tap logs the convo, sets the reminder",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_005",
+      "type": "list_item",
+      "duration_sec": 6,
+      "start_time_sec": 28,
+      "content": {
+        "type": "list_item",
+        "number": 5,
+        "title": "5. Your network = your net worth. Track ",
+        "description": "5. Your network = your net worth. Track it.",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 6,
+      "start_time_sec": 34,
+      "content": {
+        "type": "outro",
+        "title": "Start for free today",
+        "call_to_action": "Stop losing leads \u2014 get EverReach free",
+        "app_name": "EverReach",
+        "social_handles": [
+          {
+            "platform": "tiktok",
+            "handle": "@isaiah_dupree"
+          }
+        ]
+      }
+    }
+  ]
+}

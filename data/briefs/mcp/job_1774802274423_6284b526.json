@@ -1,0 +1,132 @@
+{
+  "id": "demo-content-ai-pipeline",
+  "title": "Content AI Pipeline — Full Product Demo",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "settings": {
+    "duration_sec": 89,
+    "fps": 30,
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#6366F1",
+    "accent_color": "#C084FC",
+    "background_color": "#0F172A",
+    "font_family": "Inter",
+    "text_color": "#FFFFFF"
+  },
+  "voiceover": {
+    "provider": "elevenlabs",
+    "voice_id": "k0HDiJKO5QdXkGN6NSLI",
+    "model": "eleven_multilingual_v2",
+    "script": "From idea to published video in fifteen minutes.",
+    "file": "/Users/isaiahdupree/Documents/Software/tech-demos/demo-briefs/content-ai-pipeline-voiceover.mp3"
+  },
+  "sections": [
+    {
+      "id": "con-000",
+      "type": "intro",
+      "start_time_sec": 0,
+      "duration_sec": 8,
+      "content": {
+        "type": "intro",
+        "hook_text": "Content AI Pipeline",
+        "hook_subtext": "Idea → Published Video in 15 Minutes",
+        "background_image": "demos/content-ai-pipeline/demo-home.png"
+      }
+    },
+    {
+      "id": "con-001",
+      "type": "topic",
+      "start_time_sec": 8,
+      "duration_sec": 30,
+      "content": {
+        "type": "topic",
+        "title": "5-Stage Automated Pipeline",
+        "body": "• Research → Script → Voiceover → Render → Publish\n• Perplexity AI Research\n• Claude Script Generation\n• ElevenLabs Voiceover",
+        "background_image": "demos/content-ai-pipeline/demo-home.png",
+        "bullet_points": [
+          "Research → Script → Voiceover → Render → Publish",
+          "Perplexity AI Research",
+          "Claude Script Generation",
+          "ElevenLabs Voiceover"
+        ]
+      }
+    },
+    {
+      "id": "con-002",
+      "type": "topic",
+      "start_time_sec": 38,
+      "duration_sec": 30,
+      "content": {
+        "type": "topic",
+        "title": "Content Dashboard",
+        "body": "• 2,847 Videos Generated\n• 98.2% Success Rate\n• Real-time Pipeline Status\n• 7 Platforms",
+        "background_image": "demos/content-ai-pipeline/demo-dashboard.png",
+        "bullet_points": [
+          "2,847 Videos Generated",
+          "98.2% Success Rate",
+          "Real-time Pipeline Status",
+          "7 Platforms"
+        ]
+      }
+    },
+    {
+      "id": "con-003",
+      "type": "topic",
+      "start_time_sec": 68,
+      "duration_sec": 25,
+      "content": {
+        "type": "topic",
+        "title": "Multi-Platform Publishing",
+        "body": "• YouTube\n• TikTok + Instagram Reels\n• LinkedIn + Twitter\n• Facebook + Threads",
+        "background_image": "demos/content-ai-pipeline/demo-dashboard.png",
+        "bullet_points": [
+          "YouTube",
+          "TikTok + Instagram Reels",
+          "LinkedIn + Twitter",
+          "Facebook + Threads"
+        ]
+      }
+    },
+    {
+      "id": "con-004",
+      "type": "topic",
+      "start_time_sec": 93,
+      "duration_sec": 25,
+      "content": {
+        "type": "topic",
+        "title": "Production-Grade Architecture",
+        "body": "• Next.js + Remotion\n• Supabase + Vercel\n• Background Workers\n• Batch Processing",
+        "background_image": "demos/content-ai-pipeline/demo-dashboard.png",
+        "bullet_points": [
+          "Next.js + Remotion",
+          "Supabase + Vercel",
+          "Background Workers",
+          "Batch Processing"
+        ]
+      }
+    },
+    {
+      "id": "con-005",
+      "type": "outro",
+      "start_time_sec": 118,
+      "duration_sec": 12,
+      "content": {
+        "type": "outro",
+        "hook_text": "Content AI Pipeline",
+        "hook_subtext": "Your Content Team at Infinite Scale",
+        "cta_text": "Get Started at dupreeops.com"
+      }
+    }
+  ],
+  "audio": {
+    "voiceover_url": "demos/content-ai-pipeline/voiceover.mp3",
+    "background_music": null
+  }
+}

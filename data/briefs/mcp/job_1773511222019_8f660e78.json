@@ -1,0 +1,146 @@
+{
+  "id": "brief_1773511107366_4bdb77",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T17:58:27.373Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 80,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "The Architect of Autonomy",
+        "subtitle": "The guiding storyline of my life",
+        "hook_text": "Most people work harder. I decided to build systems that work for me."
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 14,
+      "start_time_sec": 5,
+      "content": {
+        "type": "topic",
+        "heading": "The Blueprint Phase",
+        "body_text": "I didn't start with answers \u2014 I started with obsession. Every video I made was me figuring it out in public, building a map no one had handed me.",
+        "bullet_points": [
+          "Learning through doing",
+          "Documenting the process",
+          "Building before the blueprint existed"
+        ],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 14,
+      "start_time_sec": 19,
+      "content": {
+        "type": "topic",
+        "heading": "Systems Over Hustle",
+        "body_text": "The most important shift wasn't a tactic \u2014 it was a philosophy. Discipline isn't grind culture. It's the architecture of a life you designed.",
+        "bullet_points": [
+          "AI systems that compound",
+          "Honesty over hype",
+          "Leverage through architecture"
+        ],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 14,
+      "start_time_sec": 33,
+      "content": {
+        "type": "topic",
+        "heading": "The Alignment Gap",
+        "body_text": "62% aligned with my own vision. That gap isn't failure \u2014 it's the fuel. The distance between who I am and who I'm becoming is where the work lives.",
+        "bullet_points": [
+          "Gap as direction, not deficit",
+          "Inspiration vs. execution",
+          "The proof-of-concept moment"
+        ],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 14,
+      "start_time_sec": 47,
+      "content": {
+        "type": "topic",
+        "heading": "Content Superpower",
+        "body_text": "I don't teach expertise. I perform the process of becoming one. That's what makes the work real \u2014 you're watching it happen, not hearing about it after.",
+        "bullet_points": [
+          "Performing the process publicly",
+          "Radical transparency",
+          "Building in real time"
+        ],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_005",
+      "type": "topic",
+      "duration_sec": 14,
+      "start_time_sec": 61,
+      "content": {
+        "type": "topic",
+        "heading": "The North Star",
+        "body_text": "One person. AI systems. Uncompromising discipline. A fully autonomous business \u2014 built in public, documented in detail, so others can see it's possible.",
+        "bullet_points": [
+          "Proof that one person is enough",
+          "AI as force multiplier",
+          "Autonomy as the ultimate goal"
+        ],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 75,
+      "content": {
+        "type": "outro",
+        "title": "Follow for More",
+        "call_to_action": "Follow the build",
+        "social_handles": [
+          {
+            "platform": "TikTok",
+            "handle": "@isaiahdupree"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1,
+    "voiceover": "audio/architect_vo.wav"
+  }
+}

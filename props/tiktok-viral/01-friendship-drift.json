@@ -1,0 +1,17 @@
+{
+  "hookText": "your best friend just became a stranger — and you didn't even notice",
+  "mirrorText": "you meant to text back. you meant to call. but three months just vanished.",
+  "enemyText": "your phone has 2,000 contacts and zero system for the ones that matter.",
+  "mechanismText": "EverReach watches your relationships for you. when someone starts drifting — it tells you before it's too late.",
+  "proofScreenshots": [
+    "everreach/screenshots/05-warmth-score.png",
+    "everreach/screenshots/01-contacts-list.png",
+    "everreach/screenshots/06-goal-compose.png"
+  ],
+  "ctaText": "Download free — link in bio",
+  "awareness": "problem_aware",
+  "belief": "too_busy",
+  "duration": 20,
+  "theme": "dark",
+  "showCaptions": true
+}

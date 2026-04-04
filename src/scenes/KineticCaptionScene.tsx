@@ -41,10 +41,7 @@ export const KineticCaptionScene: React.FC<KineticCaptionSceneProps> = ({
   const bgOpacity = content.background_opacity ?? 0.75;
 
   // Use provided timings or auto-distribute
-  const timings: WordTiming[] = wordTimings || buildTimingsFromText(
-    content.text,
-    durationInFrames / fps
-  );
+  const timings: WordTiming[] = wordTimings || (content.word_timings as WordTiming[] | undefined) || buildTimingsFromText(content.text, durationInFrames / fps);
 
   const currentIndex = timings.findIndex(
     (w) => currentTimeSec >= w.start && currentTimeSec < w.end

@@ -1,0 +1,80 @@
+{
+  "id": "brief_makevsclaude",
+  "format": "comparison_v1",
+  "version": "1.0",
+  "created_at": "2026-03-07T19:16:52.912Z",
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 25,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "neon",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#d4d4d8",
+    "accent_color": "#6366f1",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "I Replaced Make.com With 3 Claude API Calls",
+        "subtitle": "YouTube → Full Content Package Pipeline",
+        "hook_text": "Make.com charged me every time. Claude does it better for pennies."
+      }
+    },
+    {
+      "id": "comparison_001",
+      "type": "comparison",
+      "duration_sec": 15,
+      "start_time_sec": 5,
+      "content": {
+        "type": "compare",
+        "left_label": "Make.com Blueprint",
+        "right_label": "Native Claude Pipeline",
+        "left_points": [
+          "5+ GPT-4o API calls per video",
+          "Google Sheets as queue",
+          "RapidAPI transcript $0.01/req",
+          "No transcript caching",
+          "Breaks on format changes",
+          "~$0.80 per video"
+        ],
+        "right_points": [
+          "3 Claude calls total",
+          "Supabase queue (free tier)",
+          "yt-dlp + Whisper (own audio)",
+          "Transcript cached forever",
+          "Claude vision on keyframes",
+          "~$0.12 per video"
+        ],
+        "divider_style": "wipe"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 20,
+      "content": {
+        "type": "outro",
+        "title": "85% cheaper. Better output.",
+        "call_to_action": "Follow @isaiahdupree for more builds"
+      }
+    }
+  ],
+  "audio": {
+    "voice_path": "/Users/isaiahdupree/Documents/Software/Remotion/output/voiceovers/makevsclaude_vo.wav",
+    "volume_music": 0.15,
+    "volume_voice": 1
+  }
+}

@@ -102,7 +102,11 @@ export function validateBrief(brief: unknown): ValidationResult {
     }
 
     const validTypes: SectionType[] = [
-      'intro', 'topic', 'comparison', 'list_item', 'outro', 'transition', 'hook', 'content', 'cta'
+      'intro', 'topic', 'comparison', 'list_item', 'outro', 'transition', 'hook', 'content', 'cta',
+      'stat', 'testimonial', 'kinetic_caption', 'chapter_card', 'lower_third', 'end_screen',
+      'code', 'quote_card', 'phone_frame', 'compare', 'countdown', 'checklist', 'bar_chart',
+      'myth_reality', 'problem_solution', 'thread_reveal', 'ugc_style', 'curiosity_gap', 'social_proof',
+      'avatar_pip',
     ];
 
     (b.sections as unknown[]).forEach((section, index) => {

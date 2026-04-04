@@ -52,9 +52,34 @@ export const HookScene: React.FC<HookSceneProps> = ({ content, style }) => {
   const isQuestion = content.text.endsWith('?');
   const isStatStyle = hookStyle === 'stat';
 
+  const beatOffset = 4; // Default: slam lands 4 frames in (aligns to ~120BPM beat 1)
+
+  // Stamp-in shifted by beatOffset
+  const stampScaleBeat = interpolate(frame, [beatOffset, beatOffset + 10, beatOffset + 14], [1.5, 0.92, 1.0], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.back(2)),
+  });
+  const stampOpacityBeat = interpolate(frame, [beatOffset, beatOffset + 4], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+
   return (
     <AbsoluteFill>
       <BackgroundGradient colors={bgColors} animated={false}>
+        {/* Screen flash on hook slam */}
+        <AbsoluteFill
+          style={{
+            backgroundColor: '#ffffff',
+            opacity: interpolate(frame, [beatOffset, beatOffset + 8], [0.45, 0], {
+              extrapolateLeft: 'clamp',
+              extrapolateRight: 'clamp',
+              easing: Easing.out(Easing.quad),
+            }),
+            pointerEvents: 'none',
+            zIndex: 100,
+          }}
+        />
+
         {/* Accent bar — top */}
         <div
           style={{
@@ -84,8 +109,8 @@ export const HookScene: React.FC<HookSceneProps> = ({ content, style }) => {
               style={{
                 fontSize: isVertical ? 80 : 64,
                 marginBottom: 20,
-                opacity: stampOpacity,
-                transform: `scale(${stampScale})`,
+                opacity: stampOpacityBeat,
+                transform: `scale(${stampScaleBeat})`,
               }}
             >
               {content.emoji}
@@ -95,10 +120,10 @@ export const HookScene: React.FC<HookSceneProps> = ({ content, style }) => {
           {/* Main hook text */}
           <div
             style={{
-              opacity: stampOpacity,
+              opacity: stampOpacityBeat,
               transform: glitch
-                ? `scale(${stampScale}) ${glitch.transform}`
-                : `scale(${stampScale})`,
+                ? `scale(${stampScaleBeat}) ${glitch.transform}`
+                : `scale(${stampScaleBeat})`,
               textShadow: glitch ? glitch.textShadow : undefined,
             }}
           >

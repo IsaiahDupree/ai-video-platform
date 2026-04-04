@@ -1,0 +1,95 @@
+{
+  "id": "brief_1773626916334_8c2141",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2026-03-16T02:08:36.335Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 34,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#FF6B6B",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "3 people you're losing right now",
+        "hook_text": "Your network is fading — and you don't even know it"
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 5,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "The friend who texted first — 3 months ago",
+        "description": "They reached out. You meant to reply. Life moved on."
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 13,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "The mentor who opened a door — you never followed up",
+        "description": "One message would have changed everything. The window is still open."
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 21,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "The founder you should have stayed close with",
+        "description": "Your network is your pipeline. EverReach shows you who's going cold."
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 29,
+      "content": {
+        "type": "outro",
+        "title": "Found this helpful?",
+        "call_to_action": "EverReach — Free on iPhone",
+        "social_handles": [
+          {
+            "platform": "TikTok",
+            "handle": "@everreach.app"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1
+  }
+}

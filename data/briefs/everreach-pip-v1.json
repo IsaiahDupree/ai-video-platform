@@ -1,0 +1,50 @@
+{
+  "id": "tiktok-ai-outreach-automation-1773791791066",
+  "format": "ugc_avatar_pip_v1",
+  "version": "1.0",
+  "created_at": "2026-03-17T23:56:31.066Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 30,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#cccccc",
+    "accent_color": "#fe2c55",
+    "font_heading": "Montserrat",
+    "font_body": "Inter",
+    "background_type": "video",
+    "background_value": ""
+  },
+  "video_source": {
+    "type": "url",
+    "url": "https://ivhfuhxorppptyuofbgq.supabase.co/storage/v1/object/public/remotion-renders/heygen-everreach-ugc-v3.mp4"
+  },
+  "sections": [
+    {
+      "id": "main",
+      "type": "avatar_pip",
+      "duration_sec": 30,
+      "start_time_sec": 0,
+      "content": {
+        "type": "avatar_pip",
+        "source_video_url": "",
+        "avatar_video_url": "https://ivhfuhxorppptyuofbgq.supabase.co/storage/v1/object/public/remotion-renders/heygen-everreach-ugc-v3.mp4",
+        "layout": "pip-br",
+        "hook_text": "Stop doing AI outreach automation the hard way",
+        "hook_subtext": "EverReach",
+        "show_vignette": true
+      }
+    }
+  ],
+  "audio": {
+    "volume_voice": 1,
+    "volume_music": 0.12
+  }
+}

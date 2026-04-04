@@ -1,0 +1,17 @@
+{
+  "hookText": "if you don't have a system for your relationships, you don't actually value them",
+  "mirrorText": "harsh? maybe. but you set alarms for meetings and never once for the people you love.",
+  "enemyText": "your calendar runs your work life. nothing runs your personal life. that's why people disappear.",
+  "mechanismText": "EverReach is the system. warmth tracking. AI-suggested messages. one daily check-in. done.",
+  "proofScreenshots": [
+    "everreach/screenshots/05-warmth-score.png",
+    "everreach/screenshots/02-contact-detail.png",
+    "everreach/screenshots/06-goal-compose.png"
+  ],
+  "ctaText": "Download EverReach — it's free",
+  "awareness": "unaware",
+  "belief": "relationships_matter",
+  "duration": 20,
+  "theme": "dark",
+  "showCaptions": true
+}

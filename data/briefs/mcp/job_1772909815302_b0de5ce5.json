@@ -1,0 +1,106 @@
+{
+  "id": "brief_1772909793072_d3c469",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 42,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#3b82f6",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "Founders: Your Network Is Your Biggest Unfair Advantage",
+        "hook_text": "Every founder who raises fast, hires well, and closes deals has one thing in common."
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 5,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "Track investors, clients, and advisors — all ranked by relationship health",
+        "description": ""
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 13,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "AI drafts context-aware messages from email, calendar, and LinkedIn",
+        "description": ""
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 21,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "Get triggered on job changes, funding rounds, and news mentions",
+        "description": ""
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 29,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "Turn warm intros into closed deals 6x faster than cold outreach",
+        "description": ""
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 37,
+      "content": {
+        "type": "outro",
+        "title": "Found this helpful?",
+        "call_to_action": "Activate your network — DM \"founder\"",
+        "social_handles": [
+          {
+            "platform": "TikTok",
+            "handle": "@isaiahdupree"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1
+  }
+}

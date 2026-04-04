@@ -1,0 +1,104 @@
+{
+  "id": "brief_1773449710931_cd5611",
+  "_job_id": "job_1773449710931_367ce408",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T00:55:10.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 40
+  },
+  "style": {
+    "theme": "light",
+    "primary_color": "#111111",
+    "secondary_color": "#555555",
+    "accent_color": "#000000",
+    "background_type": "solid",
+    "background_value": "#f5f5f5",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 6,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "When did you last reach out to someone who matters to you?",
+        "hook_text": "When did you last reach out to someone who matters to you?"
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 7,
+      "start_time_sec": 6,
+      "content": {
+        "type": "topic",
+        "heading": "\u2705 Log a convo in 10 seconds",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 7,
+      "start_time_sec": 13,
+      "content": {
+        "type": "topic",
+        "heading": "\u2705 Set a 'reach back out' reminder",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 7,
+      "start_time_sec": 20,
+      "content": {
+        "type": "topic",
+        "heading": "\u2705 Never let a relationship go cold",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 7,
+      "start_time_sec": 27,
+      "content": {
+        "type": "topic",
+        "heading": "\u2705 Works for friends, clients, anyone",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 6,
+      "start_time_sec": 34,
+      "content": {
+        "type": "outro",
+        "title": "Try EverReach free",
+        "call_to_action": "Build your relationship system. Download EverReach \u2014 link in bio.",
+        "app_name": "EverReach"
+      }
+    }
+  ]
+}

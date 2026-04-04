@@ -13,9 +13,16 @@ output/
 *.MOV
 *.wav
 *.mp3
+*.aac
+*.srt
 public/blanklogo/
 public/media/
 public/everreach/audio/
+public/heygen/
+public/music/
+public/seo_characters/
+public/seo_scene_images/
+public/demos/
 public/assets/audio/
 public/assets/scenes/
 public/assets/stickers/
@@ -23,6 +30,8 @@ public/assets/stickers/
 # Environment
 .env
 .env.local
+.env.*
+!.env.service.example
 
 # Python
 __pycache__/

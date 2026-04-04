@@ -1,0 +1,148 @@
+{
+  "id": "demo-ai-automation-agent-16x9",
+  "title": "AI Automation Agent — Full Product Demo",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "settings": {
+    "duration_sec": 97,
+    "fps": 30,
+    "resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "aspect_ratio": "16:9"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#3B82F6",
+    "accent_color": "#6366F1",
+    "background_color": "#0F172A",
+    "font_family": "Inter",
+    "text_color": "#FFFFFF"
+  },
+  "voiceover": {
+    "provider": "elevenlabs",
+    "voice_id": "k0HDiJKO5QdXkGN6NSLI",
+    "model": "eleven_multilingual_v2",
+    "script": "What if you could build AI-powered automation workflows in minutes.",
+    "file": "/Users/isaiahdupree/Documents/Software/tech-demos/demo-briefs/ai-automation-agent-voiceover.mp3"
+  },
+  "sections": [
+    {
+      "id": "ai--000",
+      "type": "intro",
+      "start_time_sec": 0,
+      "duration_sec": 8,
+      "content": {
+        "type": "intro",
+        "hook_text": "AI Automation Agent",
+        "hook_subtext": "Build Intelligent Workflows in Minutes",
+        "background_image": "demos/ai-automation-agent/demo-login.png"
+      }
+    },
+    {
+      "id": "ai--001",
+      "type": "topic",
+      "start_time_sec": 8,
+      "duration_sec": 25,
+      "content": {
+        "type": "topic",
+        "title": "Dashboard Overview",
+        "body": "• 23 Active Workflows\n• 147 Executions Today\n• 98.6% Success Rate\n• Real-time Monitoring",
+        "background_image": "demos/ai-automation-agent/demo-dashboard.png",
+        "bullet_points": [
+          "23 Active Workflows",
+          "147 Executions Today",
+          "98.6% Success Rate",
+          "Real-time Monitoring"
+        ]
+      }
+    },
+    {
+      "id": "ai--002",
+      "type": "topic",
+      "start_time_sec": 33,
+      "duration_sec": 25,
+      "content": {
+        "type": "topic",
+        "title": "Workflow Templates",
+        "body": "• Lead Enrichment Pipeline\n• Email Classification\n• Contract Analyzer\n• 200+ Integrations",
+        "background_image": "demos/ai-automation-agent/demo-templates.png",
+        "bullet_points": [
+          "Lead Enrichment Pipeline",
+          "Email Classification",
+          "Contract Analyzer",
+          "200+ Integrations"
+        ]
+      }
+    },
+    {
+      "id": "ai--003",
+      "type": "topic",
+      "start_time_sec": 58,
+      "duration_sec": 20,
+      "content": {
+        "type": "topic",
+        "title": "Human-in-the-Loop Approvals",
+        "body": "• Priority Flagging\n• Review & Approve\n• Full Audit Trail",
+        "background_image": "demos/ai-automation-agent/approvals-desktop.png",
+        "bullet_points": [
+          "Priority Flagging",
+          "Review & Approve",
+          "Full Audit Trail"
+        ]
+      }
+    },
+    {
+      "id": "ai--004",
+      "type": "topic",
+      "start_time_sec": 78,
+      "duration_sec": 20,
+      "content": {
+        "type": "topic",
+        "title": "Secure Credential Vault",
+        "body": "• Encrypted Storage\n• Connection Testing\n• Key Rotation",
+        "background_image": "demos/ai-automation-agent/demo-settings.png",
+        "bullet_points": [
+          "Encrypted Storage",
+          "Connection Testing",
+          "Key Rotation"
+        ]
+      }
+    },
+    {
+      "id": "ai--005",
+      "type": "topic",
+      "start_time_sec": 98,
+      "duration_sec": 25,
+      "content": {
+        "type": "topic",
+        "title": "Production-Grade Stack",
+        "body": "• Next.js + TypeScript\n• Docker Compose\n• 100+ API Endpoints\n• Team Management",
+        "background_image": "demos/ai-automation-agent/settings-desktop.png",
+        "bullet_points": [
+          "Next.js + TypeScript",
+          "Docker Compose",
+          "100+ API Endpoints",
+          "Team Management"
+        ]
+      }
+    },
+    {
+      "id": "ai--006",
+      "type": "outro",
+      "start_time_sec": 123,
+      "duration_sec": 12,
+      "content": {
+        "type": "outro",
+        "hook_text": "AI Automation Agent",
+        "hook_subtext": "Deploy Intelligent Workflows Today",
+        "cta_text": "Get Started at dupreeops.com"
+      }
+    }
+  ],
+  "audio": {
+    "voiceover_url": "demos/ai-automation-agent/voiceover.mp3",
+    "background_music": null
+  }
+}

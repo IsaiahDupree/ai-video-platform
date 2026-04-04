@@ -1,0 +1,75 @@
+{
+  "id": "everreach-heygen-ugc-v1",
+  "format": "instagram_ugc_v1",
+  "version": "1.0",
+  "created_at": "2026-03-15T00:00:00Z",
+
+  "settings": {
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "duration_sec": 20,
+    "aspect_ratio": "9:16"
+  },
+
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#cccccc",
+    "accent_color": "#6366f1",
+    "font_heading": "Montserrat",
+    "font_body": "Inter",
+    "background_type": "video",
+    "background_value": ""
+  },
+
+  "video_source": {
+    "type": "url",
+    "url": "https://ivhfuhxorppptyuofbgq.supabase.co/storage/v1/object/public/remotion-renders/heygen-everreach-ugc-v3.mp4",
+    "_note": "HeyGen v3 Isaiah avatar — pre-uploaded (daily trial limit hit). Swap back to type:heygen tomorrow."
+  },
+
+  "sections": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration_sec": 4,
+      "start_time_sec": 0,
+      "content": {
+        "type": "hook",
+        "text": "Stop doing manual outreach",
+        "subtext": "There's a better way",
+        "style": "claim"
+      }
+    },
+    {
+      "id": "problem",
+      "type": "problem_solution",
+      "duration_sec": 8,
+      "start_time_sec": 4,
+      "content": {
+        "type": "problem_solution",
+        "problem": "3 hours/day on copy-paste DMs across 4 platforms",
+        "solution": "EverReach automates your whole outreach pipeline — set it, forget it",
+        "layout": "sequential"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "duration_sec": 8,
+      "start_time_sec": 12,
+      "content": {
+        "type": "cta",
+        "title": "Try EverReach free",
+        "action_text": "Link in bio",
+        "platform": "instagram",
+        "handle": "@everreach.ai"
+      }
+    }
+  ],
+
+  "audio": {
+    "volume_music": 0.12,
+    "volume_voice": 1.0
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id": "brief_1773451395564_d2e4f4",
+  "_job_id": "job_1773451395564_43e618c4",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T01:23:15.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 42
+  },
+  "style": {
+    "theme": "light",
+    "primary_color": "#111111",
+    "secondary_color": "#555555",
+    "accent_color": "#000000",
+    "background_type": "solid",
+    "background_value": "#f5f5f5",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 6,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "What if your next client already knows you \u2014 you just stopped showing up?",
+        "hook_text": "What if your next client already knows you \u2014 you just stopped showing up?"
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 6,
+      "content": {
+        "type": "topic",
+        "heading": "\u274c Hours planning content = 0 warm leads",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 12,
+      "content": {
+        "type": "topic",
+        "heading": "\u274c Posting to strangers, ignoring your network",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 18,
+      "content": {
+        "type": "topic",
+        "heading": "\u274c No system to follow up at the right time",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 24,
+      "content": {
+        "type": "topic",
+        "heading": "\u2705 EverReach auto-reminds you who to reconnect with",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "topic_005",
+      "type": "topic",
+      "duration_sec": 6,
+      "start_time_sec": 30,
+      "content": {
+        "type": "topic",
+        "heading": "\u2705 Opportunities come from people who trust you",
+        "body_text": "",
+        "animation_style": "typewriter"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 6,
+      "start_time_sec": 36,
+      "content": {
+        "type": "outro",
+        "title": "Try EverReach free",
+        "call_to_action": "Download EverReach \u2014 your next client is already in your contacts.",
+        "app_name": "EverReach"
+      }
+    }
+  ]
+}

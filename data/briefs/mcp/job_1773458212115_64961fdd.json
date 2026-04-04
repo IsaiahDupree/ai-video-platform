@@ -1,0 +1,114 @@
+{
+  "id": "brief_1773458212115_16cf32",
+  "_job_id": "job_1773458212115_64961fdd",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T03:16:52.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 28
+  },
+  "style": {
+    "theme": "neon",
+    "primary_color": "#00ff88",
+    "secondary_color": "#00ccff",
+    "accent_color": "#ff00ff",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #0d0d1a 100%)",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 4,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "EverReach",
+        "subtitle": "87% of creators ghost their audience for 2+ weeks",
+        "hook_text": "87% of creators ghost their audience for 2+ weeks"
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 4,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "\u2705 Post idea \u2192 disappears into Notes app",
+        "description": "",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 9,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "\u2705 Great convo \u2192 forgotten by Tuesday",
+        "description": "",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 14,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "\u2705 Hot streak \u2192 killed by one chaotic wee",
+        "description": "\u2705 Hot streak \u2192 killed by one chaotic week",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 5,
+      "start_time_sec": 19,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "\u2705 Followers cool off \u2192 algorithm punishe",
+        "description": "\u2705 Followers cool off \u2192 algorithm punishes you",
+        "animation_style": "kinetic"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 4,
+      "start_time_sec": 24,
+      "content": {
+        "type": "outro",
+        "title": "Start for free today",
+        "call_to_action": "Fix your follow-up. Get EverReach free \u2192",
+        "app_name": "EverReach",
+        "social_handles": [
+          {
+            "platform": "tiktok",
+            "handle": "@isaiah_dupree"
+          }
+        ]
+      }
+    }
+  ]
+}

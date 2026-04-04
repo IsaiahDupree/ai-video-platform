@@ -1,0 +1,73 @@
+{
+  "id": "brief_1773458071485_6dfd9a",
+  "_job_id": "job_1773458071485_a08b394b",
+  "format": "shorts_v1",
+  "version": "1.0",
+  "created_at": "2026-03-14T03:14:31.000Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "aspect_ratio": "9:16",
+    "duration_sec": 15
+  },
+  "style": {
+    "theme": "light",
+    "primary_color": "#111111",
+    "secondary_color": "#555555",
+    "accent_color": "#000000",
+    "background_type": "solid",
+    "background_value": "#f5f5f5",
+    "font_heading": "Inter",
+    "font_body": "Inter"
+  },
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1.0
+  },
+  "sections": [
+    {
+      "id": "hook_001",
+      "type": "hook",
+      "duration_sec": 3,
+      "start_time_sec": 0,
+      "content": {
+        "type": "hook",
+        "text": "Why do your best leads ghost you after the first meeting?",
+        "subtext": "It's not them. It's your follow-up system.",
+        "style": "question",
+        "emoji": "\ud83e\udd14"
+      }
+    },
+    {
+      "id": "content_001",
+      "type": "topic",
+      "duration_sec": 12,
+      "start_time_sec": 3,
+      "content": {
+        "type": "topic",
+        "heading": "Problem: You rely on memory to nurture leads",
+        "bullet_points": [
+          "Problem: Your notes live in 6 different apps",
+          "Fix: EverReach = one place, auto-reminders, zero drop-off"
+        ],
+        "animation_style": "spring"
+      }
+    },
+    {
+      "id": "cta_001",
+      "type": "cta",
+      "duration_sec": 3,
+      "start_time_sec": 12,
+      "content": {
+        "type": "cta",
+        "title": "Personal CRM that actually works",
+        "action_text": "Download EverReach \u2014 never ghost a lead again",
+        "platform": "tiktok",
+        "handle": "@isaiah_dupree"
+      }
+    }
+  ]
+}

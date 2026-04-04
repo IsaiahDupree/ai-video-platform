@@ -15,6 +15,7 @@ import fs from 'fs';
 import { ContentBrief } from '../src/types';
 import { getFormat } from '../formats';
 import { validateBrief } from './validate-brief';
+import { resolveVideoSource } from './resolve-video-source';
 
 interface RenderOptions {
   briefPath: string;
@@ -37,20 +38,36 @@ async function render(options: RenderOptions): Promise<string> {
   console.log('========================\n');
 
   // 1. Load and validate brief
-  console.log('1/5 Loading content brief...');
-  const brief = await loadBrief(options.briefPath);
+  console.log('1/6 Loading content brief...');
+  let brief = await loadBrief(options.briefPath);
   console.log(`    Brief ID: ${brief.id}`);
   console.log(`    Format: ${brief.format}`);
+  if (brief.video_source) {
+    console.log(`    Video source: ${brief.video_source.type}`);
+  }
 
-  console.log('\n2/5 Validating brief...');
+  console.log('\n2/6 Resolving video source...');
+  brief = await resolveVideoSource(brief);
+  if (brief.video_source?.url) {
+    console.log(`    ✓ Resolved → ${brief.video_source.url.slice(0, 80)}...`);
+  } else {
+    console.log('    ✓ No remote video source to resolve');
+  }
+
+  console.log('\n3/6 Validating brief...');
   const validation = validateBrief(brief);
   if (!validation.valid) {
     throw new Error(`Invalid brief:\n  - ${validation.errors.join('\n  - ')}`);
   }
   console.log('    ✓ Brief is valid');
 
+  // Normalize legacy voice_path → voiceover
+  if (brief.audio && (brief.audio as any).voice_path && !brief.audio.voiceover) {
+    brief.audio.voiceover = (brief.audio as any).voice_path;
+  }
+
   // 2. Get format configuration
-  console.log('\n3/5 Loading format configuration...');
+  console.log('\n4/6 Loading format configuration...');
   const format = getFormat(options.formatOverride || brief.format);
   console.log(`    Name: ${format.name}`);
   console.log(`    Resolution: ${format.resolution.width}x${format.resolution.height}`);
@@ -58,7 +75,7 @@ async function render(options: RenderOptions): Promise<string> {
   console.log(`    FPS: ${brief.settings.fps}`);
 
   // 3. Bundle the project
-  console.log('\n4/5 Bundling project...');
+  console.log('\n5/6 Bundling project...');
   const bundleLocation = await bundle({
     entryPoint: path.resolve(__dirname, '../src/index.ts'),
     onProgress: (progress) => {
@@ -70,7 +87,7 @@ async function render(options: RenderOptions): Promise<string> {
   console.log('    ✓ Bundle complete');
 
   // 4. Select composition and render
-  console.log('\n5/5 Rendering video...');
+  console.log('\n6/6 Rendering video...');
   const outputPath = options.outputPath || 
     `./output/${brief.id}_${Date.now()}.mp4`;
 

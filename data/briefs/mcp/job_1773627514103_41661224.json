@@ -1,0 +1,111 @@
+{
+  "id": "brief_1773627481746_4c057e",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-03-16T02:18:01.747Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 42,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#FF6B6B",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "How EverReach keeps your relationships warm",
+        "hook_text": "Staying close with people who matter shouldn't require a spreadsheet."
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 5,
+      "content": {
+        "type": "topic",
+        "heading": "It tracks warmth automatically",
+        "body_text": "EverReach scores every relationship. Green means close. Red means fading. You see it instantly.",
+        "bullet_points": [],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 13,
+      "content": {
+        "type": "topic",
+        "heading": "It tells you who needs a message today",
+        "body_text": "No more guessing. EverReach surfaces the right person at the right moment — before the gap gets awkward.",
+        "bullet_points": [],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 21,
+      "content": {
+        "type": "topic",
+        "heading": "It writes the message for you",
+        "body_text": "AI that knows your full history with that person. Not generic. Not cringe. Actually personal.",
+        "bullet_points": [],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_004",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 29,
+      "content": {
+        "type": "topic",
+        "heading": "You review. You send. That's it.",
+        "body_text": "Zero auto-sends. Zero spam. You stay in control. EverReach just removes the friction.",
+        "bullet_points": [],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 37,
+      "content": {
+        "type": "outro",
+        "title": "Follow for More",
+        "call_to_action": "EverReach — Free on iPhone",
+        "social_handles": [
+          {
+            "platform": "TikTok",
+            "handle": "@everreach.app"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1
+  }
+}

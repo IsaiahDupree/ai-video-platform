@@ -1,0 +1,119 @@
+{
+  "id": "brief_1773627475964_8c9bcb",
+  "format": "listicle_v1",
+  "version": "1.0",
+  "created_at": "2026-03-16T02:17:55.964Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 50,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#FF6B6B",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "5 signs your network is going cold",
+        "hook_text": "Most people don't lose their network all at once. It happens one unanswered text at a time."
+      }
+    },
+    {
+      "id": "item_001",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 5,
+      "content": {
+        "type": "list_item",
+        "number": 1,
+        "title": "You keep meaning to reply — but don't",
+        "description": "The gap grows. They stop trying."
+      }
+    },
+    {
+      "id": "item_002",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 13,
+      "content": {
+        "type": "list_item",
+        "number": 2,
+        "title": "You only reach out when you need something",
+        "description": "They feel it. Everyone does."
+      }
+    },
+    {
+      "id": "item_003",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 21,
+      "content": {
+        "type": "list_item",
+        "number": 3,
+        "title": "You forgot their last big win",
+        "description": "No congrats. No follow-up. Just silence."
+      }
+    },
+    {
+      "id": "item_004",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 29,
+      "content": {
+        "type": "list_item",
+        "number": 4,
+        "title": "It's been 3+ months and neither of you noticed",
+        "description": "That's not a friendship. That's a contact."
+      }
+    },
+    {
+      "id": "item_005",
+      "type": "list_item",
+      "duration_sec": 8,
+      "start_time_sec": 37,
+      "content": {
+        "type": "list_item",
+        "number": 5,
+        "title": "You'd feel awkward texting them right now",
+        "description": "EverReach prevents this. It tells you before the gap becomes permanent."
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 45,
+      "content": {
+        "type": "outro",
+        "title": "Found this helpful?",
+        "call_to_action": "EverReach — Free on iPhone",
+        "social_handles": [
+          {
+            "platform": "TikTok",
+            "handle": "@everreach.app"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1
+  }
+}

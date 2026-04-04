@@ -1,0 +1,98 @@
+{
+  "id": "brief_1773626991071_6a7858",
+  "format": "explainer_v1",
+  "version": "1.0",
+  "created_at": "2026-03-16T02:09:51.071Z",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 34,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "primary_color": "#ffffff",
+    "secondary_color": "#a1a1aa",
+    "accent_color": "#4ECDC4",
+    "background_type": "gradient",
+    "background_value": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)"
+  },
+  "sections": [
+    {
+      "id": "intro_001",
+      "type": "intro",
+      "duration_sec": 5,
+      "start_time_sec": 0,
+      "content": {
+        "type": "intro",
+        "title": "Your network is your pipeline",
+        "hook_text": "Most people lose their best connections — not on purpose. Just by forgetting."
+      }
+    },
+    {
+      "id": "topic_001",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 5,
+      "content": {
+        "type": "topic",
+        "heading": "Warmth Score",
+        "body_text": "Every contact ranked by how close — or how cold — the relationship is right now.",
+        "bullet_points": [],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_002",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 13,
+      "content": {
+        "type": "topic",
+        "heading": "Right message, right moment",
+        "body_text": "AI writes from your full history. Personal every time. 10 seconds.",
+        "bullet_points": [],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "topic_003",
+      "type": "topic",
+      "duration_sec": 8,
+      "start_time_sec": 21,
+      "content": {
+        "type": "topic",
+        "heading": "Zero auto-sends",
+        "body_text": "You review every message before it goes. Total control. No spam.",
+        "bullet_points": [],
+        "animation_style": "slide"
+      }
+    },
+    {
+      "id": "outro_001",
+      "type": "outro",
+      "duration_sec": 5,
+      "start_time_sec": 29,
+      "content": {
+        "type": "outro",
+        "title": "Follow for More",
+        "call_to_action": "EverReach — Free on iPhone",
+        "social_handles": [
+          {
+            "platform": "TikTok",
+            "handle": "@everreach.app"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "volume_music": 0.3,
+    "volume_voice": 1
+  }
+}

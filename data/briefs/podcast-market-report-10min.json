@@ -1,0 +1,63 @@
+{
+  "podcast_name": "What People Want from AI",
+  "episode_label": "MAR 13 • FULL REPORT",
+  "speaker_name": "Isaiah Dupree",
+  "speaker_title": "AI Market Analyst",
+  "voiceover_path": "audio/market-report-10min-combined.wav",
+  "voiceover_segments": [
+    {
+      "startFrame": 0,
+      "endFrame": 3200,
+      "text": "Welcome to What People Want from AI, where AI demand meets real world supply."
+    },
+    {
+      "startFrame": 3200,
+      "endFrame": 6500,
+      "text": "I analyzed 1,000 real Upwork AI job postings — total budget pool: $1.65 million."
+    },
+    {
+      "startFrame": 6500,
+      "endFrame": 9800,
+      "text": "68% of AI demand is integration work — not building new AI, but connecting it to real businesses."
+    },
+    {
+      "startFrame": 9800,
+      "endFrame": 13200,
+      "text": "Budget breakdown: 65% under $500 · 22% $500–$2K · 8% $2K–$5K · 3% over $5K. Average: $2,086."
+    },
+    {
+      "startFrame": 13200,
+      "endFrame": 16600,
+      "text": "Category 1: AI Automation & Workflow — 55% of all jobs. Avg value $1,200–$1,500 per project."
+    },
+    {
+      "startFrame": 16600,
+      "endFrame": 19800,
+      "text": "Category 2: Content & Marketing AI — 25% of demand. Avg $600–$800. Category 3: Data Intelligence — 20%, highest rates."
+    },
+    {
+      "startFrame": 19800,
+      "endFrame": 23100,
+      "text": "3 strategies that win: existing tools first · progressive milestones · lead with measurable ROI math."
+    },
+    {
+      "startFrame": 23100,
+      "endFrame": 26500,
+      "text": "Real estate AI integrator: $1,200 · 7 systems connected · pays back in 3 months. Agentic developer: $5,000 on Claude API."
+    },
+    {
+      "startFrame": 26500,
+      "endFrame": 29800,
+      "text": "3 underserved opportunities: Voice AI agents · OpenClaw + Claude Code · AI content factory pipelines."
+    },
+    {
+      "startFrame": 29800,
+      "endFrame": 32413,
+      "text": "5 action steps — then subscribe. Where AI demand meets real world supply. This has been What People Want from AI."
+    }
+  ],
+  "cta_handle": "@isaiah_dupree",
+  "cta_display": "Subscribe for daily AI market reports →",
+  "accent": "#00ff88",
+  "totalFrames": 32413
+}

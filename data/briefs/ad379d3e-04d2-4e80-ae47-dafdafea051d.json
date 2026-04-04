@@ -1,0 +1,193 @@
+{
+  "id": "ad379d3e-04d2-4e80-ae47-dafdafea051d",
+  "format": "tiktok_v1",
+  "version": "1.0",
+  "created_at": "2026-03-18T02:33:33.158846+00:00",
+  "settings": {
+    "resolution": {
+      "width": 1080,
+      "height": 1920
+    },
+    "fps": 30,
+    "duration_sec": 30,
+    "aspect_ratio": "9:16"
+  },
+  "style": {
+    "theme": "dark",
+    "primary_color": "#ffffff",
+    "secondary_color": "#aaaaaa",
+    "accent_color": "#6366f1",
+    "font_heading": "Montserrat",
+    "font_body": "Inter",
+    "background_type": "video",
+    "background_value": "#000000"
+  },
+  "sections": [
+    {
+      "id": "pip-ad379d3e",
+      "type": "avatar_pip",
+      "start_time_sec": 0.0,
+      "duration_sec": 30.0,
+      "content": {
+        "type": "avatar_pip",
+        "source_video_url": "",
+        "avatar_video_url": "",
+        "layout": "full-avatar",
+        "pip_size": 0.35,
+        "hook_text": "Disrupt Slow Growth",
+        "hook_subtext": "Save $3k",
+        "captions": [],
+        "caption_style": "tiktok",
+        "show_vignette": true
+      }
+    },
+    {
+      "id": "ret-stat-3s",
+      "type": "stat",
+      "start_time_sec": 3.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "stat",
+        "value": 73,
+        "label": "of teams replaced this role",
+        "prefix": "",
+        "suffix": "%",
+        "context": "source: 2024 McKinsey AI report",
+        "supporting_text": "source: 2024 McKinsey AI report"
+      }
+    },
+    {
+      "id": "ret-myth_reality-6s",
+      "type": "myth_reality",
+      "start_time_sec": 6.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "myth_reality",
+        "myth": "You need 10 tools",
+        "reality": "You need 1 system"
+      }
+    },
+    {
+      "id": "ret-checklist-9s",
+      "type": "checklist",
+      "start_time_sec": 9.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "checklist",
+        "title": "What this replaces:",
+        "items": [
+          {
+            "text": "Manual research",
+            "emoji": "\ud83d\udd0d"
+          },
+          {
+            "text": "Content scheduling",
+            "emoji": "\ud83d\udcc5"
+          },
+          {
+            "text": "Analytics review",
+            "emoji": "\ud83d\udcca"
+          }
+        ],
+        "reveal_mode": "stagger",
+        "frames_per_item": 8
+      }
+    },
+    {
+      "id": "ret-curiosity_gap-12s",
+      "type": "curiosity_gap",
+      "start_time_sec": 12.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "curiosity_gap",
+        "setup": "Most founders try 5 tools first",
+        "reveal": "Then switch to this"
+      }
+    },
+    {
+      "id": "ret-problem_solution-15s",
+      "type": "problem_solution",
+      "start_time_sec": 15.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "problem_solution",
+        "problem": "Slow growth",
+        "solution": "AI automation",
+        "layout": "sequential"
+      }
+    },
+    {
+      "id": "ret-stat-18s",
+      "type": "stat",
+      "start_time_sec": 18.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "stat",
+        "value": 3000,
+        "label": "dollars saved per month",
+        "prefix": "",
+        "suffix": "",
+        "context": "by using these 3 AI tools",
+        "supporting_text": "by using these 3 AI tools"
+      }
+    },
+    {
+      "id": "ret-myth_reality-21s",
+      "type": "myth_reality",
+      "start_time_sec": 21.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "myth_reality",
+        "myth": "AI is expensive",
+        "reality": "AI saves you money"
+      }
+    },
+    {
+      "id": "ret-checklist-24s",
+      "type": "checklist",
+      "start_time_sec": 24.0,
+      "duration_sec": 2.5,
+      "content": {
+        "type": "checklist",
+        "title": "Benefits of AI automation:",
+        "items": [
+          {
+            "text": "Increased efficiency",
+            "emoji": "\ud83d\ude80"
+          },
+          {
+            "text": "Improved accuracy",
+            "emoji": "\ud83d\udcc8"
+          },
+          {
+            "text": "Enhanced innovation",
+            "emoji": "\ud83d\udca1"
+          }
+        ],
+        "reveal_mode": "stagger",
+        "frames_per_item": 8
+      }
+    },
+    {
+      "id": "cta-ad379d3e",
+      "type": "cta",
+      "start_time_sec": 27.0,
+      "duration_sec": 3.0,
+      "content": {
+        "type": "cta",
+        "title": "Follow for more",
+        "action_text": "Follow for more AI automation tips",
+        "platform": "tiktok"
+      }
+    }
+  ],
+  "audio": {
+    "background_music": "music/downloads/yt-32FeS721yM0.mp3",
+    "voiceover": "",
+    "volume_music": 0.18,
+    "volume_voice": 1.0
+  },
+  "_spec": "The video should feel fast-paced and energetic, with a bright and bold color mood. The hook works visually by grabbing the viewer's attention with a bold statement. The PiP avatar placement enhances the concept by providing a personal touch. The retention events feel like bite-sized nuggets of information that keep the viewer engaged.",
+  "_caption": "Discover the 3 AI tools that replaced my VA and saved me $3k a month! #AIautomation #SaaSgrowth #Innovation",
+  "_music_id": "yt-32FeS721yM0"
+}
