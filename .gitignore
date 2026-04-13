@@ -37,6 +37,10 @@ public/assets/stickers/
 __pycache__/
 *.pyc
 
+# Test/pipeline output (contains absolute user paths)
+test_output/
+public/longform-assets/
+
 
 
 

@@ -15,3 +15,10 @@ export {
   getReelDurationFrames,
   type EverReachReelProps,
 } from './EverReachReel';
+export {
+  HandwrittenCarousel,
+  handwrittenCarouselDefaultProps,
+  type HandwrittenCarouselProps,
+  type HandwrittenSlideData,
+  type SlideAnnotation,
+} from './HandwrittenCarousel';

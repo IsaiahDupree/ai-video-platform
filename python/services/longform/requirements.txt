@@ -1,0 +1,24 @@
+# Core dependencies
+openai>=1.30.0
+anthropic>=0.32.0
+httpx>=0.27.0
+loguru>=0.7.0
+numpy>=1.24.0
+
+# Scene detection
+scenedetect[opencv]>=0.6.4
+opencv-python-headless>=4.8.0
+
+# Speaker diarization (optional — requires HuggingFace token)
+# pyannote.audio>=3.1.0
+# torch>=2.0.0
+
+# Speaker segmentation (optional — requires GPU)
+# Prefer SAM 3: pip install git+https://github.com/facebookresearch/sam3.git
+# Fallback SAM 2: pip install git+https://github.com/facebookresearch/sam2.git
+
+# Face detection (optional — for speaker bbox)
+# mediapipe>=0.10.0
+
+# Analytics (optional)
+# posthog>=3.5.0

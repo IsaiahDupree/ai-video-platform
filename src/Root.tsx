@@ -3,6 +3,8 @@ import { Composition, Still, getInputProps, staticFile } from 'remotion';
 import { BriefComposition } from './compositions/BriefComposition';
 import { AssetComposition } from './compositions/AssetComposition';
 import { BenchmarkTest, benchmarkDefaultProps } from './compositions/BenchmarkTest';
+import { LongformVideo, calculateLongformMetadata } from './compositions/longform/LongformVideo';
+import type { LongformVideoProps } from './types/LongformSchema';
 import { FullVideoDemo, fullVideoDemoDefaultProps } from './compositions/FullVideoDemo';
 import { CaptionStylesBenchmark, captionStylesBenchmarkDefaultProps } from './compositions/CaptionStylesBenchmark';
 import { ThermodynamicsVideo, thermodynamicsDefaultProps } from './compositions/ThermodynamicsVideo';
@@ -53,6 +55,8 @@ import {
   getReelDurationFrames,
   META_AD_SIZES,
   PHASE_A_ANGLES,
+  HandwrittenCarousel,
+  handwrittenCarouselDefaultProps,
 } from './compositions/everreach';
 import {
   AdTemplateStill,
@@ -962,6 +966,65 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1350}
         defaultProps={everReachReelDefaultProps}
+      />
+
+      {/* ============================================================= */}
+      {/* EVERREACH HANDWRITTEN CAROUSEL                                */}
+      {/* ============================================================= */}
+
+      {/* Handwritten Carousel - Still mode (Instagram Post 1:1) */}
+      <Still
+        id="HandwrittenCarousel"
+        component={HandwrittenCarousel}
+        width={1080}
+        height={1080}
+        defaultProps={handwrittenCarouselDefaultProps}
+      />
+
+      {/* Handwritten Carousel - Still mode (Portrait 4:5) */}
+      <Still
+        id="HandwrittenCarousel-Portrait"
+        component={HandwrittenCarousel}
+        width={1080}
+        height={1350}
+        defaultProps={handwrittenCarouselDefaultProps}
+      />
+
+      {/* Handwritten Carousel - Still mode (Story 9:16) */}
+      <Still
+        id="HandwrittenCarousel-Story"
+        component={HandwrittenCarousel}
+        width={1080}
+        height={1920}
+        defaultProps={handwrittenCarouselDefaultProps}
+      />
+
+      {/* Handwritten Carousel - Video mode (animated carousel reel) */}
+      <Composition
+        id="HandwrittenCarousel-Video"
+        component={HandwrittenCarousel}
+        durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1080}
+        defaultProps={{
+          ...handwrittenCarouselDefaultProps,
+          mode: 'carousel' as const,
+        }}
+      />
+
+      {/* Handwritten Carousel - Video Story (9:16 animated) */}
+      <Composition
+        id="HandwrittenCarousel-Video-Story"
+        component={HandwrittenCarousel}
+        durationInFrames={240}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          ...handwrittenCarouselDefaultProps,
+          mode: 'carousel' as const,
+        }}
       />
 
       {/* ============================================================= */}
@@ -3250,6 +3313,27 @@ export const RemotionRoot: React.FC = () => {
             0
           ),
         })}
+      />
+
+      {/* ─── Longform Video Pipeline ──────────────────────────────────── */}
+      <Composition<LongformVideoProps>
+        id="LongformVideo"
+        component={LongformVideo}
+        durationInFrames={900}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{
+          videoId: 'preview',
+          sourceVideo: '',
+          fps: 30,
+          totalDurationFrames: 900,
+          resolution: { width: 1920, height: 1080 },
+          edl: [],
+          musicBed: null,
+          globalStyle: { colorGrade: 'neutral_warm', letterbox: false, watermark: null },
+        }}
+        calculateMetadata={calculateLongformMetadata as any}
       />
     </>
   );

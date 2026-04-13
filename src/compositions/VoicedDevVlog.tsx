@@ -10,6 +10,7 @@ import {
   Sequence,
 } from 'remotion';
 import { noise2D } from '@remotion/noise';
+import { sidechain as sharedSidechain } from '../lib/sidechain';
 
 // ─── Data contract ────────────────────────────────────────────────────────────
 
@@ -58,42 +59,16 @@ const BORDER  = '#21262d';
 const MONO = '"JetBrains Mono", "Fira Code", monospace';
 const SANS = 'Inter, system-ui, sans-serif';
 
-// ─── Sidechaining ─────────────────────────────────────────────────────────────
+// ─── Sidechaining (using shared utility) ──────────────────────────────────────
 
-const DUCK_LEVEL = 0.10;   // music volume during voiceover
-const FULL_LEVEL = 0.55;   // music volume when no voiceover
-const ATTACK_FRAMES = 6;   // frames to fade down
-const RELEASE_FRAMES = 18; // frames to fade back up (slower = more musical)
+const DUCK_LEVEL = 0.10;
+const FULL_LEVEL = 0.55;
 
-/**
- * Compute music volume at a given frame, ducking around each VO segment.
- * Uses smooth interpolate curves for attack (duck-down) and release (swell-back).
- */
 function sidechain(frame: number, voSegments: VoiceSegmentTiming[]): number {
-  for (const seg of voSegments) {
-    const attackStart = seg.startFrame - ATTACK_FRAMES;
-    const releaseEnd  = seg.endFrame + RELEASE_FRAMES;
-
-    // Pre-duck attack (fading music down)
-    if (frame >= attackStart && frame < seg.startFrame) {
-      return interpolate(frame, [attackStart, seg.startFrame], [FULL_LEVEL, DUCK_LEVEL], {
-        extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-        easing: (t) => t * t,  // ease-in: fast at end
-      });
-    }
-    // During voiceover: ducked
-    if (frame >= seg.startFrame && frame <= seg.endFrame) {
-      return DUCK_LEVEL;
-    }
-    // Post-VO release (music swelling back up)
-    if (frame > seg.endFrame && frame <= releaseEnd) {
-      return interpolate(frame, [seg.endFrame, releaseEnd], [DUCK_LEVEL, FULL_LEVEL], {
-        extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-        easing: (t) => 1 - Math.pow(1 - t, 2),  // ease-out: fast start
-      });
-    }
-  }
-  return FULL_LEVEL;
+  return sharedSidechain(frame, voSegments, {
+    duckLevel: DUCK_LEVEL,
+    fullLevel: FULL_LEVEL,
+  });
 }
 
 // ─── Motion primitives ────────────────────────────────────────────────────────
