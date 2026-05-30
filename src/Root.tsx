@@ -188,6 +188,22 @@ import {
   seoDocumentaryV2TotalFrames,
   getSEODocumentaryV2TotalFrames,
 } from './compositions/SEODocumentaryV2';
+import {
+  LyricVideoV1,
+  lyricVideoV1DefaultProps,
+  lyricVideoV1TotalFrames,
+  getLyricVideoV1TotalFrames,
+} from './compositions/LyricVideoV1';
+import {
+  TradingDocumentary,
+  tradingDocumentaryDefaultProps,
+  tradingDocumentaryTotalFrames,
+  getTradingDocumentaryTotalFrames,
+} from './compositions/TradingDocumentary';
+import {
+  TradingDocumentaryReels,
+  REELS_TOTAL_FRAMES,
+} from './compositions/TradingDocumentaryReels';
 
 const isaiahTalkingHeadV1DefaultProps = {
   sourceVideoUrl: staticFile('placeholder.mp4'),
@@ -3232,6 +3248,22 @@ export const RemotionRoot: React.FC = () => {
         })}
       />
 
+      {/* ─── Lyric Video V1 — Venom Valentine music visualizer ─────────────── */}
+      {/* Forked from SEODocumentaryV2; plays the song + karaoke lyric captions */}
+      {/* Render cmd: npx remotion render LyricVideoV1 output/lyric.mp4 --props=lyric_props.json */}
+      <Composition
+        id="LyricVideoV1"
+        component={LyricVideoV1 as any}
+        durationInFrames={lyricVideoV1TotalFrames}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={lyricVideoV1DefaultProps}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: getLyricVideoV1TotalFrames(props as any),
+        })}
+      />
+
       {/* ─── SEO Documentary — Full 30-min YouTube documentary ─────────────── */}
       {/* Audio: Isaiah's ElevenLabs voice (Isaiahdupree_v2)                    */}
       {/* Copy audio to public/seo_audio/ before rendering                      */}
@@ -3250,6 +3282,30 @@ export const RemotionRoot: React.FC = () => {
             0
           ),
         })}
+      />
+
+      {/* Render cmd: npx remotion render TradingDocumentary output/trading_documentary.mp4 --props=props_trading.json */}
+      <Composition
+        id="TradingDocumentary"
+        component={TradingDocumentary as any}
+        durationInFrames={tradingDocumentaryTotalFrames}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={tradingDocumentaryDefaultProps}
+        calculateMetadata={({ props }) => ({
+          durationInFrames: getTradingDocumentaryTotalFrames((props as any).chapters),
+        })}
+      />
+      {/* Render cmd: npx remotion render TradingDocumentaryReels output/trading_reels.mp4 --props=props_trading.json */}
+      <Composition
+        id="TradingDocumentaryReels"
+        component={TradingDocumentaryReels as any}
+        durationInFrames={REELS_TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={tradingDocumentaryDefaultProps}
       />
     </>
   );
