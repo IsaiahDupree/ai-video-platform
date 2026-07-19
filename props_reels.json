@@ -1,0 +1,1177 @@
+{
+  "chapters": [
+    {
+      "id": "00_intro",
+      "title": "Money, Markets, and Mankind",
+      "era": "3000 BC \u2013 2030",
+      "color": "#00ff88",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/00_intro_scene.jpg",
+      "durationSecs": 7,
+      "description": "From clay tablets to quantum computers \u2014 the complete story of how humans learned to trade.",
+      "keyFact": "5,000 years of trading history",
+      "words": [
+        {
+          "word": "5000",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "years",
+          "start": 0.6,
+          "end": 1.02
+        },
+        {
+          "word": "of",
+          "start": 1.02,
+          "end": 1.3
+        },
+        {
+          "word": "trading",
+          "start": 1.3,
+          "end": 1.54
+        },
+        {
+          "word": "history",
+          "start": 1.54,
+          "end": 1.94
+        },
+        {
+          "word": "From",
+          "start": 2.72,
+          "end": 2.8
+        },
+        {
+          "word": "clay",
+          "start": 2.8,
+          "end": 3.04
+        },
+        {
+          "word": "tablets",
+          "start": 3.04,
+          "end": 3.46
+        },
+        {
+          "word": "to",
+          "start": 3.46,
+          "end": 3.96
+        },
+        {
+          "word": "quantum",
+          "start": 3.96,
+          "end": 4.18
+        },
+        {
+          "word": "computers",
+          "start": 4.18,
+          "end": 4.62
+        },
+        {
+          "word": "This",
+          "start": 5.32,
+          "end": 5.66
+        },
+        {
+          "word": "is",
+          "start": 5.66,
+          "end": 6.16
+        },
+        {
+          "word": "the",
+          "start": 6.16,
+          "end": 6.34
+        },
+        {
+          "word": "complete",
+          "start": 6.34,
+          "end": 6.7
+        },
+        {
+          "word": "story",
+          "start": 6.7,
+          "end": 7.08
+        },
+        {
+          "word": "Sumerians",
+          "start": 8.0,
+          "end": 8.32
+        }
+      ],
+      "script": "Five thousand years of trading history. From clay tablets to quantum computers. This is the complete story."
+    },
+    {
+      "id": "01_first_traders",
+      "title": "The First Traders",
+      "era": "3000 BC \u2013 1600s",
+      "color": "#ff6b35",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/01_first_traders_scene.jpg",
+      "durationSecs": 7,
+      "description": "Mesopotamia, Phoenicians, Rome, and medieval fairs \u2014 the ancient roots of commerce.",
+      "keyFact": "Sumerians invented cuneiform writing specifically to track trade contracts, 3000 BC",
+      "words": [
+        {
+          "word": "invented",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "writing",
+          "start": 0.46,
+          "end": 0.94
+        },
+        {
+          "word": "just",
+          "start": 0.94,
+          "end": 1.52
+        },
+        {
+          "word": "to",
+          "start": 1.52,
+          "end": 1.94
+        },
+        {
+          "word": "track",
+          "start": 1.94,
+          "end": 1.98
+        },
+        {
+          "word": "trade",
+          "start": 1.98,
+          "end": 2.28
+        },
+        {
+          "word": "contracts",
+          "start": 2.28,
+          "end": 2.82
+        },
+        {
+          "word": "in",
+          "start": 2.82,
+          "end": 3.44
+        },
+        {
+          "word": "3000",
+          "start": 3.44,
+          "end": 4.12
+        },
+        {
+          "word": "BC",
+          "start": 4.12,
+          "end": 4.62
+        },
+        {
+          "word": "Commerce",
+          "start": 5.72,
+          "end": 5.72
+        },
+        {
+          "word": "built",
+          "start": 5.72,
+          "end": 6.1
+        },
+        {
+          "word": "civilization",
+          "start": 6.1,
+          "end": 6.8
+        },
+        {
+          "word": "itself",
+          "start": 7.08,
+          "end": 7.88
+        },
+        {
+          "word": "Amsterdam",
+          "start": 8.58,
+          "end": 8.98
+        }
+      ],
+      "script": "Sumerians invented writing just to track trade contracts in 3000 BC. Commerce built civilization itself."
+    },
+    {
+      "id": "02_stock_market_birth",
+      "title": "The Birth of the Stock Market",
+      "era": "1602 \u2013 1850",
+      "color": "#4285f4",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/02_stock_market_birth_scene.jpg",
+      "durationSecs": 7,
+      "description": "The VOC, Amsterdam's Beurs, tulip mania, and the Buttonwood Agreement that founded the NYSE.",
+      "keyFact": "VOC 1602: the world's first publicly traded corporation, valued higher than most nation-states",
+      "words": [
+        {
+          "word": "1602",
+          "start": 0.0,
+          "end": 1.06
+        },
+        {
+          "word": "The",
+          "start": 1.7,
+          "end": 1.84
+        },
+        {
+          "word": "VOC",
+          "start": 1.84,
+          "end": 2.26
+        },
+        {
+          "word": "became",
+          "start": 2.26,
+          "end": 2.68
+        },
+        {
+          "word": "the",
+          "start": 2.68,
+          "end": 2.88
+        },
+        {
+          "word": "world's",
+          "start": 2.88,
+          "end": 3.26
+        },
+        {
+          "word": "first",
+          "start": 3.26,
+          "end": 4.04
+        },
+        {
+          "word": "publicly",
+          "start": 4.04,
+          "end": 4.64
+        },
+        {
+          "word": "traded",
+          "start": 4.64,
+          "end": 4.98
+        },
+        {
+          "word": "company",
+          "start": 4.98,
+          "end": 5.42
+        },
+        {
+          "word": "Worth",
+          "start": 8.04,
+          "end": 8.06
+        },
+        {
+          "word": "more",
+          "start": 8.06,
+          "end": 8.26
+        },
+        {
+          "word": "than",
+          "start": 8.26,
+          "end": 8.36
+        },
+        {
+          "word": "most",
+          "start": 8.36,
+          "end": 8.58
+        },
+        {
+          "word": "nations",
+          "start": 8.58,
+          "end": 8.86
+        },
+        {
+          "word": "The",
+          "start": 9.0,
+          "end": 9.14
+        },
+        {
+          "word": "telegraph",
+          "start": 9.14,
+          "end": 9.42
+        }
+      ],
+      "script": "Amsterdam 1602. The VOC became the world's first publicly traded company \u2014 worth more than most nations."
+    },
+    {
+      "id": "03_ticker_telegrams",
+      "title": "Ticker Tape and Telegrams",
+      "era": "1844 \u2013 1929",
+      "color": "#ea4335",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/03_ticker_telegrams_scene.jpg",
+      "durationSecs": 7,
+      "description": "The telegraph, the stock ticker, J.P. Morgan, and the first information arms race.",
+      "keyFact": "Edison sold his improved stock ticker for $40,000 in 1869 \u2014 seed money for Menlo Park",
+      "words": [
+        {
+          "word": "changed",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "everything",
+          "start": 0.3,
+          "end": 0.72
+        },
+        {
+          "word": "Real",
+          "start": 1.0,
+          "end": 1.12
+        },
+        {
+          "word": "time",
+          "start": 1.12,
+          "end": 1.26
+        },
+        {
+          "word": "prices",
+          "start": 1.26,
+          "end": 1.54
+        },
+        {
+          "word": "Information",
+          "start": 2.14,
+          "end": 2.14
+        },
+        {
+          "word": "became",
+          "start": 2.14,
+          "end": 2.4
+        },
+        {
+          "word": "the",
+          "start": 2.4,
+          "end": 2.58
+        },
+        {
+          "word": "ultimate",
+          "start": 2.58,
+          "end": 2.96
+        },
+        {
+          "word": "trading",
+          "start": 2.96,
+          "end": 3.24
+        },
+        {
+          "word": "edge",
+          "start": 3.24,
+          "end": 3.58
+        },
+        {
+          "word": "October",
+          "start": 4.46,
+          "end": 4.46
+        }
+      ],
+      "script": "The telegraph changed everything. Real-time prices. Information became the ultimate trading edge."
+    },
+    {
+      "id": "04_great_crash",
+      "title": "The Great Crash",
+      "era": "1929 \u2013 1970",
+      "color": "#fbbc04",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/04_great_crash_scene.jpg",
+      "durationSecs": 7,
+      "description": "Black Thursday 1929, the Great Depression, margin calls, and how the SEC and Glass-Steagall rebuilt the system.",
+      "keyFact": "$30 billion in market value wiped out in 48 hours \u2014 the Dow fell 89% from 1929 peak to 1932 trough",
+      "words": [
+        {
+          "word": "1929",
+          "start": 0.0,
+          "end": 0.84
+        },
+        {
+          "word": "The",
+          "start": 0.92,
+          "end": 1.24
+        },
+        {
+          "word": "Dow",
+          "start": 1.24,
+          "end": 1.24
+        },
+        {
+          "word": "fell",
+          "start": 1.24,
+          "end": 1.52
+        },
+        {
+          "word": "89",
+          "start": 1.52,
+          "end": 2.38
+        },
+        {
+          "word": "30",
+          "start": 2.38,
+          "end": 2.68
+        },
+        {
+          "word": "billion",
+          "start": 2.68,
+          "end": 2.98
+        },
+        {
+          "word": "dollars",
+          "start": 2.98,
+          "end": 3.38
+        },
+        {
+          "word": "wiped",
+          "start": 3.38,
+          "end": 3.48
+        },
+        {
+          "word": "out",
+          "start": 3.48,
+          "end": 3.7
+        },
+        {
+          "word": "in",
+          "start": 3.7,
+          "end": 3.86
+        },
+        {
+          "word": "48",
+          "start": 3.86,
+          "end": 4.18
+        },
+        {
+          "word": "hours",
+          "start": 4.18,
+          "end": 4.58
+        },
+        {
+          "word": "The",
+          "start": 5.7,
+          "end": 5.82
+        },
+        {
+          "word": "Great",
+          "start": 5.82,
+          "end": 6.04
+        },
+        {
+          "word": "Depression",
+          "start": 6.04,
+          "end": 6.42
+        },
+        {
+          "word": "begins",
+          "start": 6.42,
+          "end": 8.1
+        },
+        {
+          "word": "Black",
+          "start": 9.16,
+          "end": 9.28
+        }
+      ],
+      "script": "October 1929. The Dow fell 89%. Thirty billion dollars wiped out in 48 hours. The Great Depression begins."
+    },
+    {
+      "id": "05_electronic_revolution",
+      "title": "The Electronic Revolution",
+      "era": "1971 \u2013 1987",
+      "color": "#34a853",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/05_electronic_revolution_scene.jpg",
+      "durationSecs": 7,
+      "description": "NASDAQ 1971, the Bloomberg Terminal, the dot-com retail trading boom, and Black Monday's automated cascade.",
+      "keyFact": "Black Monday Oct 19, 1987: 22.6% single-day Dow drop \u2014 still the largest one-day percentage decline in history",
+      "words": [
+        {
+          "word": "Monday",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "1987",
+          "start": 0.16,
+          "end": 1.08
+        },
+        {
+          "word": "The",
+          "start": 1.8,
+          "end": 2.4
+        },
+        {
+          "word": "Dow",
+          "start": 2.4,
+          "end": 2.56
+        },
+        {
+          "word": "dropped",
+          "start": 2.56,
+          "end": 2.86
+        },
+        {
+          "word": "22",
+          "start": 2.86,
+          "end": 3.42
+        },
+        {
+          "word": "6",
+          "start": 3.42,
+          "end": 4.0
+        },
+        {
+          "word": "",
+          "start": 4.0,
+          "end": 4.1
+        },
+        {
+          "word": "in",
+          "start": 4.1,
+          "end": 4.46
+        },
+        {
+          "word": "a",
+          "start": 4.46,
+          "end": 4.62
+        },
+        {
+          "word": "single",
+          "start": 4.62,
+          "end": 4.76
+        },
+        {
+          "word": "day",
+          "start": 4.48,
+          "end": 5.12
+        },
+        {
+          "word": "Automated",
+          "start": 6.1,
+          "end": 6.26
+        },
+        {
+          "word": "selling",
+          "start": 6.26,
+          "end": 6.64
+        },
+        {
+          "word": "triggered",
+          "start": 6.64,
+          "end": 6.98
+        },
+        {
+          "word": "a",
+          "start": 6.98,
+          "end": 7.68
+        },
+        {
+          "word": "cascade",
+          "start": 7.68,
+          "end": 7.68
+        },
+        {
+          "word": "no",
+          "start": 7.68,
+          "end": 8.02
+        },
+        {
+          "word": "one",
+          "start": 8.02,
+          "end": 8.18
+        },
+        {
+          "word": "could",
+          "start": 8.18,
+          "end": 8.42
+        }
+      ],
+      "script": "Black Monday 1987. The Dow dropped 22.6% in a single day. Automated selling triggered a cascade no one could stop."
+    },
+    {
+      "id": "06_quant_invasion",
+      "title": "The Quant Invasion",
+      "era": "1988 \u2013 2005",
+      "color": "#9c27b0",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/06_quant_invasion_scene.jpg",
+      "durationSecs": 7,
+      "description": "Renaissance Technologies, D.E. Shaw, the dot-com bubble, and LTCM's $4.6 billion collapse.",
+      "keyFact": "Renaissance Medallion Fund: 66% average annual returns before fees since 1988 \u2014 no other fund comes close",
+      "words": [
+        {
+          "word": "stop",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "Jim",
+          "start": 1.08,
+          "end": 1.22
+        },
+        {
+          "word": "Simons",
+          "start": 1.22,
+          "end": 1.46
+        },
+        {
+          "word": "and",
+          "start": 1.46,
+          "end": 1.66
+        },
+        {
+          "word": "his",
+          "start": 1.66,
+          "end": 1.96
+        },
+        {
+          "word": "math",
+          "start": 1.96,
+          "end": 2.08
+        },
+        {
+          "word": "PhDs",
+          "start": 2.08,
+          "end": 2.62
+        },
+        {
+          "word": "cracked",
+          "start": 2.62,
+          "end": 2.96
+        },
+        {
+          "word": "the",
+          "start": 2.96,
+          "end": 3.14
+        },
+        {
+          "word": "market",
+          "start": 3.14,
+          "end": 3.46
+        },
+        {
+          "word": "The",
+          "start": 4.22,
+          "end": 4.36
+        },
+        {
+          "word": "Medallion",
+          "start": 4.36,
+          "end": 4.6
+        },
+        {
+          "word": "Fund",
+          "start": 4.6,
+          "end": 4.94
+        },
+        {
+          "word": "66",
+          "start": 5.7,
+          "end": 6.3
+        },
+        {
+          "word": "",
+          "start": 6.3,
+          "end": 6.82
+        },
+        {
+          "word": "annual",
+          "start": 6.82,
+          "end": 7.18
+        },
+        {
+          "word": "returns",
+          "start": 7.18,
+          "end": 7.56
+        },
+        {
+          "word": "for",
+          "start": 7.56,
+          "end": 8.16
+        },
+        {
+          "word": "30",
+          "start": 8.16,
+          "end": 8.5
+        }
+      ],
+      "script": "Jim Simons and his math PhDs cracked the market. The Medallion Fund: 66% annual returns for 30 years straight."
+    },
+    {
+      "id": "07_speed_wars",
+      "title": "The Speed Wars",
+      "era": "2005 \u2013 2012",
+      "color": "#00bcd4",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/07_speed_wars_scene.jpg",
+      "durationSecs": 7,
+      "description": "HFT, co-location, the Flash Crash of 2010, and dark pools \u2014 the hidden market.",
+      "keyFact": "Spread Networks spent $300M drilling through mountains for a 4-millisecond trading edge Chicago to New York",
+      "words": [
+        {
+          "word": "years",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "straight",
+          "start": 0.4,
+          "end": 1.06
+        },
+        {
+          "word": "Companies",
+          "start": 1.92,
+          "end": 1.92
+        },
+        {
+          "word": "spent",
+          "start": 1.92,
+          "end": 2.22
+        },
+        {
+          "word": "300",
+          "start": 2.22,
+          "end": 2.9
+        },
+        {
+          "word": "million",
+          "start": 2.9,
+          "end": 3.18
+        },
+        {
+          "word": "dollars",
+          "start": 3.18,
+          "end": 3.68
+        },
+        {
+          "word": "drilling",
+          "start": 3.68,
+          "end": 3.86
+        },
+        {
+          "word": "through",
+          "start": 3.86,
+          "end": 4.18
+        },
+        {
+          "word": "mountains",
+          "start": 4.18,
+          "end": 4.48
+        },
+        {
+          "word": "just",
+          "start": 4.48,
+          "end": 5.06
+        },
+        {
+          "word": "to",
+          "start": 5.06,
+          "end": 5.62
+        },
+        {
+          "word": "shave",
+          "start": 5.62,
+          "end": 5.62
+        },
+        {
+          "word": "four",
+          "start": 5.62,
+          "end": 6.24
+        },
+        {
+          "word": "milliseconds",
+          "start": 6.24,
+          "end": 6.76
+        },
+        {
+          "word": "off",
+          "start": 6.76,
+          "end": 7.16
+        }
+      ],
+      "script": "Companies spent 300 million dollars drilling through mountains just to shave 4 milliseconds off a trade."
+    },
+    {
+      "id": "08_reckoning_2008",
+      "title": "The 2008 Reckoning",
+      "era": "2007 \u2013 2010",
+      "color": "#ff4081",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/08_reckoning_2008_scene.jpg",
+      "durationSecs": 7,
+      "description": "CDOs, Lehman Brothers' $613B bankruptcy, AIG's $440B CDS exposure, and the $700B TARP bailout.",
+      "keyFact": "$22 trillion in lost economic output \u2014 the total cost of the 2008 financial crisis",
+      "words": [
+        {
+          "word": "a",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "trade",
+          "start": 0.5,
+          "end": 0.5
+        },
+        {
+          "word": "Lehman",
+          "start": 1.1,
+          "end": 1.1
+        },
+        {
+          "word": "Brothers",
+          "start": 1.1,
+          "end": 1.4
+        },
+        {
+          "word": "613",
+          "start": 2.36,
+          "end": 3.18
+        },
+        {
+          "word": "billion",
+          "start": 3.18,
+          "end": 3.88
+        },
+        {
+          "word": "in",
+          "start": 3.88,
+          "end": 4.68
+        },
+        {
+          "word": "debt",
+          "start": 4.68,
+          "end": 4.68
+        },
+        {
+          "word": "22",
+          "start": 5.32,
+          "end": 5.42
+        },
+        {
+          "word": "trillion",
+          "start": 5.42,
+          "end": 5.82
+        },
+        {
+          "word": "in",
+          "start": 5.82,
+          "end": 6.24
+        },
+        {
+          "word": "global",
+          "start": 6.24,
+          "end": 6.42
+        },
+        {
+          "word": "wealth",
+          "start": 6.42,
+          "end": 6.66
+        },
+        {
+          "word": "destroyed",
+          "start": 6.66,
+          "end": 7.12
+        },
+        {
+          "word": "The",
+          "start": 7.56,
+          "end": 7.8
+        },
+        {
+          "word": "worst",
+          "start": 7.8,
+          "end": 7.9
+        },
+        {
+          "word": "crash",
+          "start": 7.9,
+          "end": 8.24
+        }
+      ],
+      "script": "Lehman Brothers. 613 billion in debt. 22 trillion in global wealth destroyed. The worst crash since 1929."
+    },
+    {
+      "id": "09_bitcoin_blockchain",
+      "title": "Bitcoin and the Blockchain Revolution",
+      "era": "2009 \u2013 2023",
+      "color": "#ff9800",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/09_bitcoin_blockchain_scene.jpg",
+      "durationSecs": 7,
+      "description": "Satoshi Nakamoto's whitepaper, Bitcoin Pizza Day, Ethereum smart contracts, DeFi summer, and the FTX collapse.",
+      "keyFact": "10,000 BTC bought two pizzas in 2010 \u2014 at Bitcoin's 2021 peak, that was $690 million worth of pizza",
+      "words": [
+        {
+          "word": "since",
+          "start": 0.0,
+          "end": 0.41
+        },
+        {
+          "word": "10",
+          "start": 1.33,
+          "end": 1.67
+        },
+        {
+          "word": "000",
+          "start": 1.67,
+          "end": 2.27
+        },
+        {
+          "word": "Bitcoin",
+          "start": 3.03,
+          "end": 3.03
+        },
+        {
+          "word": "bought",
+          "start": 3.03,
+          "end": 3.69
+        },
+        {
+          "word": "two",
+          "start": 3.69,
+          "end": 4.05
+        },
+        {
+          "word": "pizzas",
+          "start": 4.05,
+          "end": 4.35
+        },
+        {
+          "word": "in",
+          "start": 4.35,
+          "end": 4.97
+        },
+        {
+          "word": "2010",
+          "start": 4.97,
+          "end": 5.73
+        },
+        {
+          "word": "At",
+          "start": 6.25,
+          "end": 6.33
+        },
+        {
+          "word": "peak",
+          "start": 6.33,
+          "end": 6.55
+        },
+        {
+          "word": "in",
+          "start": 6.55,
+          "end": 6.71
+        },
+        {
+          "word": "2021",
+          "start": 6.71,
+          "end": 7.33
+        },
+        {
+          "word": "that",
+          "start": 7.51,
+          "end": 7.89
+        },
+        {
+          "word": "pizza",
+          "start": 7.89,
+          "end": 8.09
+        },
+        {
+          "word": "cost",
+          "start": 8.09,
+          "end": 8.53
+        },
+        {
+          "word": "690",
+          "start": 8.53,
+          "end": 9.85
+        }
+      ],
+      "script": "10,000 Bitcoin bought two pizzas in 2010. At peak in 2021, that pizza cost 690 million dollars."
+    },
+    {
+      "id": "10_meme_revolution",
+      "title": "GameStop and the Meme Revolution",
+      "era": "2020 \u2013 2023",
+      "color": "#e91e63",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/10_meme_revolution_scene.jpg",
+      "durationSecs": 7,
+      "description": "Reddit's WallStreetBets, the GameStop short squeeze, Melvin Capital's $6.8B loss, and the democratization of market power.",
+      "keyFact": "GameStop rose 2,300% in 3 weeks \u2014 from $20 to $483 \u2014 driven by Reddit retail traders",
+      "words": [
+        {
+          "word": "million",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "dollars",
+          "start": 0.58,
+          "end": 1.24
+        },
+        {
+          "word": "Reddit",
+          "start": 1.84,
+          "end": 1.84
+        },
+        {
+          "word": "versus",
+          "start": 1.84,
+          "end": 2.42
+        },
+        {
+          "word": "Wall",
+          "start": 2.42,
+          "end": 2.7
+        },
+        {
+          "word": "Street",
+          "start": 2.7,
+          "end": 2.84
+        },
+        {
+          "word": "GameStop",
+          "start": 3.4,
+          "end": 3.74
+        },
+        {
+          "word": "surged",
+          "start": 3.74,
+          "end": 4.1
+        },
+        {
+          "word": "2",
+          "start": 4.1,
+          "end": 4.6
+        },
+        {
+          "word": "300",
+          "start": 4.6,
+          "end": 4.9
+        },
+        {
+          "word": "",
+          "start": 4.9,
+          "end": 5.14
+        },
+        {
+          "word": "in",
+          "start": 5.14,
+          "end": 5.46
+        },
+        {
+          "word": "three",
+          "start": 5.46,
+          "end": 5.74
+        },
+        {
+          "word": "weeks",
+          "start": 5.74,
+          "end": 5.96
+        },
+        {
+          "word": "Retail",
+          "start": 6.54,
+          "end": 6.62
+        },
+        {
+          "word": "traders",
+          "start": 6.62,
+          "end": 6.9
+        }
+      ],
+      "script": "Reddit vs Wall Street. GameStop surged 2,300% in three weeks. Retail traders broke the hedge funds."
+    },
+    {
+      "id": "11_trading_2030",
+      "title": "Trading in 2030",
+      "era": "2024 \u2013 2030",
+      "color": "#3f51b5",
+      "audioFile": "trading_audio/reels_voiceover.mp3",
+      "sceneImageFile": "trading_scene_images/11_trading_2030_scene.jpg",
+      "durationSecs": 7,
+      "description": "AI autonomous trading agents, quantum computing arms race, tokenized assets at $16T, CBDCs, and 24/7 markets.",
+      "keyFact": "McKinsey estimates tokenized asset markets reach $16 trillion by 2030",
+      "words": [
+        {
+          "word": "broke",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "the",
+          "start": 0.22,
+          "end": 0.46
+        },
+        {
+          "word": "hedge",
+          "start": 0.46,
+          "end": 0.52
+        },
+        {
+          "word": "funds",
+          "start": 0.52,
+          "end": 0.76
+        },
+        {
+          "word": "By",
+          "start": 1.16,
+          "end": 1.24
+        },
+        {
+          "word": "2030",
+          "start": 1.24,
+          "end": 1.82
+        },
+        {
+          "word": "AI",
+          "start": 2.08,
+          "end": 2.36
+        },
+        {
+          "word": "will",
+          "start": 2.36,
+          "end": 2.68
+        },
+        {
+          "word": "execute",
+          "start": 2.68,
+          "end": 3.02
+        },
+        {
+          "word": "90",
+          "start": 3.02,
+          "end": 3.46
+        },
+        {
+          "word": "",
+          "start": 3.46,
+          "end": 3.58
+        },
+        {
+          "word": "of",
+          "start": 3.58,
+          "end": 4.04
+        },
+        {
+          "word": "all",
+          "start": 4.04,
+          "end": 4.46
+        },
+        {
+          "word": "trades",
+          "start": 4.46,
+          "end": 4.72
+        },
+        {
+          "word": "The",
+          "start": 4.86,
+          "end": 5.3
+        },
+        {
+          "word": "next",
+          "start": 5.3,
+          "end": 5.48
+        },
+        {
+          "word": "5000",
+          "start": 5.48,
+          "end": 5.94
+        }
+      ],
+      "script": "By 2030, AI will execute 90% of all trades. The next 5,000 years of trading starts now."
+    }
+  ]
+}
