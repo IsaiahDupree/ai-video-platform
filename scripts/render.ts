@@ -91,10 +91,18 @@ async function render(options: RenderOptions): Promise<string> {
   const outputPath = options.outputPath || 
     `./output/${brief.id}_${Date.now()}.mp4`;
 
+  // Optional escape hatch: point at an already-installed system Chrome instead of
+  // Remotion's managed Chrome Headless Shell. Purely additive — unset (the default)
+  // preserves prior behavior exactly. Needed in sandboxed/offline environments where
+  // the one-time Chrome Headless Shell download (remotion.dev/chrome-headless-shell)
+  // can't reach the network.
+  const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || undefined;
+
   const composition = await selectComposition({
     serveUrl: bundleLocation,
     id: 'BriefComposition',
     inputProps: { brief },
+    browserExecutable,
   });
 
   const totalFrames = Math.round(brief.settings.duration_sec * brief.settings.fps);
@@ -111,6 +119,7 @@ async function render(options: RenderOptions): Promise<string> {
     codec: 'h264',
     outputLocation: outputPath,
     inputProps: { brief },
+    browserExecutable,
     onProgress: ({ progress }) => {
       const percent = Math.round(progress * 100);
       process.stdout.write(`\r    Rendering: ${percent}%`);

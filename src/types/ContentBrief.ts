@@ -372,3 +372,69 @@ export interface SocialProofContent {
   testimonials?: Array<{ quote: string; author: string }>;
   style?: "logos" | "number" | "faces" | "combined";
 }
+
+// ── Duration Constraint Solver — section-package model ─────────────────────────
+// The deterministic budget that turns a target runtime + ordered content points
+// into frame-exact per-section durations. Produced by src/lib/DurationSolver.ts,
+// consumed by the render pipeline (Section.duration_sec / start_time_sec) and by
+// the retention critic, which measures the rendered mp4 against these targets.
+
+/** One requested content point, before durations are solved. */
+export interface SectionSpec {
+  id: string;
+  sectionType: SectionType;
+  /** The beat/claim/narration text this section carries. */
+  content: string;
+  /** 1 = must-keep (never dropped, e.g. hook/cta); higher = more droppable. */
+  priority: number;
+  /** Optional per-section floor/cap (sec), overriding the type defaults. */
+  minSec?: number;
+  maxSec?: number;
+  /** When set, narration length drives the ideal duration (words / wpm). */
+  wordCount?: number;
+}
+
+/** The hard runtime target and the knobs the solver honors. */
+export interface DurationBudget {
+  totalSec: number;
+  fps: number;
+  /** Hook is guaranteed at least this many seconds (default 1.5). */
+  hookFloorSec?: number;
+  /** CTA is guaranteed at least this many seconds (default 1.5). */
+  ctaFloorSec?: number;
+  /** Words-per-minute for narration-driven sizing (default 165). */
+  wpm?: number;
+  /** Solved total must land within this % of totalSec (default 2, matching
+   *  VideoQAInspector.checkDuration). */
+  tolerancePct?: number;
+}
+
+/** A section after solving — carries both seconds and frames, plus provenance. */
+export interface SolvedSection {
+  id: string;
+  sectionType: SectionType;
+  content: string;
+  priority: number;
+  durationSec: number;
+  startTimeSec: number;
+  durationInFrames: number;
+  startFrame: number;
+  /** True if the ideal was clamped to the section's min/max. */
+  wasClamped: boolean;
+}
+
+/** The frame-exact solved plan. `totalFrames` always equals the sum of section
+ *  frames; when feasible & fillable it equals round(budget.totalSec * fps). */
+export interface SectionPackage {
+  budget: DurationBudget;
+  sections: SolvedSection[];
+  droppedSectionIds: string[];
+  totalFrames: number;
+  totalSec: number;
+  /** False only when the must-keep (priority 1) floors alone exceed the budget. */
+  feasible: boolean;
+  /** True when even every section at its max cannot fill the budget. */
+  underfilled: boolean;
+  /** Human-readable record of every clamp/drop/grow/shrink decision. */
+  notes: string[];
+}

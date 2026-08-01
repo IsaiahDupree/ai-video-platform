@@ -44,3 +44,8 @@ __pycache__/
 
 public/trading_characters/
 public/trading_scene_images/
+
+# retention-agent generated run artifacts (mp4/wav/logs, ~40MB — rebuilt per run)
+retention-agent/data/runs/
+# MCP brief job outputs (runtime)
+data/briefs/mcp/

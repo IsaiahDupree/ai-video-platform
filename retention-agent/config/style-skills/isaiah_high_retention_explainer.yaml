@@ -1,0 +1,121 @@
+# Style Skill: isaiah_high_retention_explainer
+#
+# Per docs/profit-os/research/youtube-video-agent-research.md's FireRed-OpenStoryline
+# finding: a channel's editing language becomes a stored, versioned config that is
+# READ by the pipeline, not a fresh prompt written by hand every run. This is the
+# Phase-1 profile for this ecosystem's default technical/AI-automation explainer voice
+# (16:9 YouTube long-form).
+#
+# Referenced by: retention-agent/src/style-skill.ts (loader), script-engine.ts
+# (section_shape + speech_rate_wpm), visual-plan.ts (pacing + prohibited list).
+
+id: isaiah_high_retention_explainer
+version: 1
+format: youtube_explainer_v2      # maps to formats/youtube_explainer_v2.ts (16:9, 1920x1080)
+description: >
+  High-retention technical explainer style for AI-automation / systems-building content.
+  Fast, concrete, proof-driven — no filler, no stock-footage padding.
+
+voice:
+  provider: elevenlabs
+  voice_id: 21m00Tcm4TlvDq8ikWAM   # "Rachel" — calm narrator; swap for a cloned voice profile later
+  model_id: eleven_multilingual_v2
+  stability: 0.5
+  similarity_boost: 0.75
+  # Starting-estimate speech rate (research doc: fast explainer delivery 155-180 wpm).
+  # This is ONLY the first-draft word-count target — actual section length is always
+  # taken from measured synthesized audio, never trusted from this number alone.
+  speech_rate_wpm: 165
+
+# Retention pacing rules (research doc "visual-change rules" section).
+pacing:
+  preferred_interval_seconds: [2.5, 6]
+  # Tightened from the research doc's raw 8s ceiling after a real render + the
+  # technical-quality gate's freeze detector showed this repo's current Scene
+  # components (TopicScene et al.) finish their entrance animation in ~1.3s and then
+  # hold pixel-static for the rest of the beat. An 8s cap meant ~6.7s of true static
+  # hold (well past the 2s freeze threshold); 5s still left ~3.7s of hold (still over).
+  # 3s keeps the post-animation hold under ~1.7s, under the freeze detector's own
+  # threshold — verified against a real 120s render (see retention-agent run reports).
+  # The scene library still has no continuous idle motion (a real, separate follow-up);
+  # this is the ceiling this ruleset controls without touching Scene components.
+  maximum_unchanged_talking_head_seconds: 3
+  maximum_static_image_seconds: 5
+  maximum_caption_only_seconds: 3
+  pattern_interrupts:
+    minimum_spacing_seconds: 12
+    maximum_spacing_seconds: 35
+    allowed:
+      - camera_punch_in
+      - diagram
+      - screenshot
+      - animated_keyword
+      - sound_accent
+      - question_card
+      - progress_marker
+      - before_after
+
+captions:
+  enabled: true
+  emphasize_keywords: true
+
+visual_language:
+  - screen_recording
+  - animated_diagrams
+  - proof_screenshots
+  - stat_callouts
+  - chapter_cards
+
+prohibited:
+  - irrelevant_stock_footage
+  - repeated_ai_images
+  - fake_ui
+  - long_logo_intro
+  - generic_ai_language   # enforced by qc/script-quality-gate.ts banned-phrase list
+
+# Duration-constraint solver's FIRST-DRAFT per-section time budget, as percentages of
+# target_duration_seconds (research doc's per-section time budget example). "flexible"
+# sections are the ones the compress/expand loop is allowed to resize first when the
+# measured total drifts outside tolerance; hook/cta stay fixed-ish since they carry the
+# highest retention load per second.
+section_shape:
+  - id: hook
+    purpose: hook
+    retention_device: cold_open_promise
+    percent: 7
+    flexible: false
+  - id: problem
+    purpose: problem
+    retention_device: stakes
+    percent: 11
+    flexible: true
+  - id: context
+    purpose: context
+    retention_device: curiosity_gap
+    percent: 11
+    flexible: true
+  - id: main_point_1
+    purpose: proof
+    retention_device: concrete_example
+    percent: 21
+    flexible: true
+  - id: main_point_2
+    purpose: proof
+    retention_device: proof_reveal
+    percent: 21
+    flexible: true
+  - id: case_study
+    purpose: "demonstrate proof"
+    retention_device: before_after
+    percent: 17
+    flexible: true
+  - id: conclusion
+    purpose: recap
+    retention_device: mini_payoff
+    percent: 8
+    flexible: true
+  - id: cta
+    purpose: cta
+    retention_device: open_loop_resolve
+    percent: 4
+    flexible: false

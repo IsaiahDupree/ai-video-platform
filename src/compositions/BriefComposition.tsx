@@ -41,7 +41,15 @@ export const BriefComposition: React.FC<BriefCompositionProps> = ({ brief: input
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: bgVideoSrc ? '#000000' : style.background_value,
+        // `background` (not `backgroundColor`) — background_value can be a solid hex OR
+        // a `linear-gradient(...)` string (see StyleConfig.background_type/THEMES in
+        // mcp-server.js and formats/*.default_style), and `backgroundColor` silently
+        // rejects gradient syntax, leaving the layer with no background at all. That
+        // silent failure was confirmed via a real render + a real black-frame QC gate
+        // (retention-agent/src/qc/technical-quality-gate.ts): every gradient-themed
+        // format was rendering as an unstyled near-black frame outside of foreground
+        // text/graphics, which blackdetect correctly flagged.
+        background: bgVideoSrc ? '#000000' : style.background_value,
       }}
     >
       {/* Background video layer */}
