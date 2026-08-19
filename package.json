@@ -25,6 +25,7 @@
     "upgrade": "remotion upgrade",
     "studio": "npx tsx scripts/preview.ts",
     "render:brief": "npx tsx scripts/render.ts",
+    "render:evidence-first": "npx tsx scripts/render-evidence-first-short.ts",
     "render:input": "npx tsx scripts/render-from-input.ts",
     "generate:brief": "npx tsx scripts/generate-brief.ts",
     "validate": "npx tsx scripts/validate-brief.ts",
@@ -85,11 +86,11 @@
     "retention-agent:run": "npx tsx retention-agent/run.ts"
   },
   "dependencies": {
-    "@remotion/bundler": "^4.0.0",
-    "@remotion/cli": "^4.0.0",
-    "@remotion/google-fonts": "^4.0.434",
-    "@remotion/noise": "^4.0.434",
-    "@remotion/renderer": "^4.0.0",
+    "@remotion/bundler": "4.0.434",
+    "@remotion/cli": "4.0.434",
+    "@remotion/google-fonts": "4.0.434",
+    "@remotion/noise": "4.0.434",
+    "@remotion/renderer": "4.0.434",
     "@supabase/supabase-js": "^2.100.1",
     "@types/js-yaml": "^4.0.9",
     "js-yaml": "^5.2.2",
@@ -97,9 +98,9 @@
     "openapi-types": "^12.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remotion": "^4.0.0",
+    "remotion": "4.0.434",
     "swagger-ui-express": "^5.0.1",
-    "zod": "^3.22.0"
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "@fal-ai/client": "^1.9.3",

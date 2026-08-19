@@ -159,6 +159,11 @@ import {
   isaiahReelV2DefaultProps,
 } from './compositions/IsaiahReelV2';
 import { IsaiahTalkingHeadV1 as IsaiahTalkingHeadV1Comp } from './compositions/IsaiahTalkingHeadV1';
+import {
+  EvidenceFirstShort,
+  type EvidenceFirstShortProps,
+  evidenceFirstShortDefaultProps,
+} from './compositions/EvidenceFirstShort';
 import { ISAIAH_HOUSE_STYLE } from './types/IsaiahReelSchema';
 import {
   UGCStylesShowcase,
@@ -308,6 +313,22 @@ export const RemotionRoot: React.FC = () => {
         width={resolution.width}
         height={resolution.height}
         defaultProps={{ brief }}
+      />
+
+      <Composition<any, EvidenceFirstShortProps>
+        id="EvidenceFirstShort"
+        component={EvidenceFirstShort}
+        durationInFrames={1290}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={evidenceFirstShortDefaultProps}
+        calculateMetadata={({props}) => ({
+          durationInFrames: Math.max(
+            1,
+            Math.round(Math.max(...props.timeline.map((item) => item.end)) * 30),
+          ),
+        })}
       />
 
       {/* Preset compositions for common formats */}
@@ -3310,4 +3331,3 @@ export const RemotionRoot: React.FC = () => {
     </>
   );
 };
-

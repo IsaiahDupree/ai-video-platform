@@ -49,3 +49,6 @@ public/trading_scene_images/
 retention-agent/data/runs/
 # MCP brief job outputs (runtime)
 data/briefs/mcp/
+
+# Evidence-first render handoffs, narration, QC frames, and receipts (runtime)
+work/evidence-first/
