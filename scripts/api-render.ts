@@ -18,10 +18,10 @@
 import http from 'http';
 import fs from 'fs';
 import path from 'path';
-import { execSync, spawn, ChildProcess } from 'child_process';
 import { generateBrief, GeneratorInput } from './generate-brief';
 import { validateBrief } from './validate-brief';
 import { ContentBrief } from '../src/types';
+import { renderBriefCloud } from '../src/api/cloud-render';
 
 interface RenderJob {
   id: string;
@@ -58,17 +58,10 @@ async function renderVideo(job: RenderJob): Promise<void> {
   job.outputPath = outputPath;
 
   try {
-    const propsJson = JSON.stringify({ brief: job.brief });
-    
-    execSync(
-      `npx remotion render BriefComposition "${outputPath}" --props='${propsJson}' --crf=18`,
-      {
-        cwd: path.resolve(__dirname, '..'),
-        stdio: 'pipe',
-      }
-    );
+    const result = await renderBriefCloud(job.brief as unknown as Record<string, unknown>, 'production', filename);
 
     job.status = 'complete';
+    job.outputPath = result.url;
     job.completedAt = new Date().toISOString();
     job.progress = 100;
 
@@ -162,6 +155,12 @@ async function handleRequest(req: http.IncomingMessage, res: http.ServerResponse
       
       if (!job || job.status !== 'complete' || !job.outputPath) {
         sendJson(res, 404, { error: 'Video not found or not ready' });
+        return;
+      }
+
+      if (/^https:\/\//.test(job.outputPath)) {
+        res.writeHead(302, { Location: job.outputPath });
+        res.end();
         return;
       }
 

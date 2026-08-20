@@ -4,12 +4,13 @@
  * Takes animated video + parametric ad variant data and renders
  * composed ads with text overlays, CTA, branding across all Meta ad sizes.
  *
- * Uses Remotion CLI to render compositions with --props.
+ * Local browser-backed rendering is disabled. Callers must use approved cloud
+ * composition endpoints instead.
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { execSync } from 'child_process';
+import { blockLocalBrowserRender } from '../api/cloud-render';
 import type { AdVariant, AdSize, BrandConfig, ComposedAd } from './types';
 import type { TemplateSpecificCopy } from './copy-generation-stage';
 
@@ -239,29 +240,16 @@ function renderWithRemotion(
   height: number,
   isStill: boolean = false
 ): void {
-  const propsJson = JSON.stringify(props);
-  const projectRoot = path.resolve(__dirname, '../..');
-
-  // Write props to temp file to avoid shell escaping issues
-  const propsFile = path.join(path.dirname(outputPath), `_props_${Date.now()}.json`);
-  fs.writeFileSync(propsFile, propsJson);
-
-  try {
-    const command = isStill
-      ? `npx remotion still "${compositionId}" "${outputPath}" --props="${propsFile}" --width=${width} --height=${height} --frame=70`
-      : `npx remotion render "${compositionId}" "${outputPath}" --props="${propsFile}" --width=${width} --height=${height} --crf=18`;
-
-    execSync(command, {
-      cwd: projectRoot,
-      stdio: 'pipe',
-      timeout: 120000, // 2 minutes per render
-    });
-  } finally {
-    // Cleanup temp props file
-    if (fs.existsSync(propsFile)) {
-      fs.unlinkSync(propsFile);
-    }
-  }
+  void compositionId;
+  void props;
+  void outputPath;
+  void width;
+  void height;
+  void isStill;
+  return blockLocalBrowserRender(
+    'UGC Remotion compose',
+    'Provision matching cloud still/video composition endpoints before retrying; no local browser fallback is permitted.'
+  );
 }
 
 // =============================================================================
@@ -393,6 +381,11 @@ export async function runRemotionComposeBatch(
   outputDir: string,
   options: ComposeOptions = {}
 ): Promise<ComposedAd[]> {
+  blockLocalBrowserRender(
+    'UGC Remotion compose batch',
+    'Provision matching cloud still/video composition endpoints before retrying; no local browser fallback is permitted.'
+  );
+
   const mode = options.renderVideo ? 'stills + video' : 'stills only';
   console.log(`\n🎨 Remotion Compose Batch: ${variants.length} variants × ${sizes.length} sizes (${mode})`);
 

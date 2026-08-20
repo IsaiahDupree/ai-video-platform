@@ -3,8 +3,8 @@
  * Tests for mcp-server.js
  *
  * Uses Node.js built-in test runner (`node --test`).
- * Covers: generateBrief, validateBrief, MCP protocol, render_still, send_telegram.
- * No live renders or live Telegram calls — subprocess and HTTP are mocked.
+ * Covers: generateBrief, validateBrief, MCP protocol, cloud-only render policy,
+ * and send_telegram error handling. No local browser-backed renders are run.
  */
 
 const { test, describe } = require('node:test');
@@ -22,9 +22,12 @@ const SERVER_PATH = path.resolve(__dirname, '..', 'mcp-server.js');
  * Send a single JSON-RPC request to the MCP server and return the parsed result.
  * Spawns the server process, sends the message, collects one response line, exits.
  */
-function mcpCall(method, params = {}) {
+function mcpCall(method, params = {}, extraEnv = {}) {
   return new Promise((resolve, reject) => {
-    const proc = spawn('node', [SERVER_PATH], { stdio: ['pipe', 'pipe', 'pipe'] });
+    const proc = spawn('node', [SERVER_PATH], {
+      stdio: ['pipe', 'pipe', 'pipe'],
+      env: { ...process.env, ...extraEnv },
+    });
 
     const initMsg = JSON.stringify({
       jsonrpc: '2.0', id: 0,
@@ -37,6 +40,7 @@ function mcpCall(method, params = {}) {
     proc.stdin.write(callMsg + '\n');
 
     let buf = '';
+    let timeoutId;
     proc.stdout.on('data', (chunk) => {
       buf += chunk.toString();
       const lines = buf.split('\n');
@@ -45,6 +49,7 @@ function mcpCall(method, params = {}) {
         try {
           const msg = JSON.parse(line);
           if (msg.id === 1) {
+            clearTimeout(timeoutId);
             proc.kill();
             if (msg.error) reject(new Error(msg.error.message));
             else resolve(msg.result);
@@ -54,8 +59,11 @@ function mcpCall(method, params = {}) {
       buf = lines[lines.length - 1];
     });
 
-    proc.on('error', reject);
-    setTimeout(() => { proc.kill(); reject(new Error('MCP call timed out')); }, 8000);
+    proc.on('error', (error) => {
+      clearTimeout(timeoutId);
+      reject(error);
+    });
+    timeoutId = setTimeout(() => { proc.kill(); reject(new Error('MCP call timed out')); }, 8000);
   });
 }
 
@@ -289,10 +297,10 @@ describe('remotion_list_formats', () => {
 // ── MCP protocol ─────────────────────────────────────────────────────────────
 
 describe('MCP protocol', () => {
-  test('tools/list returns all 10 tools', async () => {
+  test('tools/list returns all 12 tools', async () => {
     const result = await mcpCall('tools/list');
     assert.ok(Array.isArray(result.tools));
-    assert.equal(result.tools.length, 10);
+    assert.equal(result.tools.length, 12);
   });
 
   test('tools/list includes render_still and send_telegram', async () => {
@@ -325,6 +333,7 @@ describe('MCP protocol', () => {
       proc.stdin.write(msg + '\n');
 
       let buf = '';
+      let timeoutId;
       proc.stdout.on('data', (chunk) => {
         buf += chunk.toString();
         const lines = buf.split('\n');
@@ -332,12 +341,19 @@ describe('MCP protocol', () => {
           if (!line.trim()) continue;
           try {
             const msg = JSON.parse(line);
-            if (msg.id === 42) { proc.kill(); resolve(msg.result); }
+            if (msg.id === 42) {
+              clearTimeout(timeoutId);
+              proc.kill();
+              resolve(msg.result);
+            }
           } catch {}
         }
       });
-      proc.on('error', reject);
-      setTimeout(() => { proc.kill(); reject(new Error('timeout')); }, 5000);
+      proc.on('error', (error) => {
+        clearTimeout(timeoutId);
+        reject(error);
+      });
+      timeoutId = setTimeout(() => { proc.kill(); reject(new Error('timeout')); }, 5000);
     });
 
     assert.equal(serverInfo.serverInfo.name, 'video-studio-mcp');
@@ -346,10 +362,10 @@ describe('MCP protocol', () => {
   });
 });
 
-// ── remotion_render_still (job submission only — no actual render) ────────────
+// ── remotion_render_still (must fail closed; never starts a browser) ──────────
 
 describe('remotion_render_still', () => {
-  test('submits job and returns job_id', async () => {
+  test('rejects local still render with singleton-policy error', async () => {
     // Generate a valid brief first
     const genResult = await mcpCall('tools/call', {
       name: 'remotion_generate_brief',
@@ -363,44 +379,69 @@ describe('remotion_render_still', () => {
     });
 
     const data = JSON.parse(result.content[0].text);
-    assert.equal(data.success, true);
-    assert.ok(data.jobId, 'should return jobId');
-    assert.ok(data.outputPath.endsWith('.png'), 'output should be .png');
-    assert.ok(['queued', 'rendering'].includes(data.status));
+    assert.equal(result.isError, true);
+    assert.equal(data.code, 'BROWSER_SINGLETON_POLICY');
+    assert.equal(data.localBrowserStarted, false);
+    assert.match(data.error, /cloud still renderer|thumbnail_cloud/i);
   });
 
-  test('rejects invalid brief', async () => {
+  test('rejects even malformed requests before any renderer can launch', async () => {
     const result = await mcpCall('tools/call', {
       name: 'remotion_render_still',
       arguments: { brief: { id: 'bad' } },
     });
 
     const data = JSON.parse(result.content[0].text);
-    assert.ok(data.error || result.isError);
+    assert.equal(result.isError, true);
+    assert.equal(data.code, 'BROWSER_SINGLETON_POLICY');
+    assert.equal(data.localBrowserStarted, false);
   });
 
-  test('job appears in remotion_list_jobs after submission', async () => {
+  test('MCP server contains no local render subprocess entrypoint', () => {
+    const source = fs.readFileSync(SERVER_PATH, 'utf8');
+    assert.doesNotMatch(source, /child_process/);
+    assert.doesNotMatch(source, /scripts\/render(?:-brief-still)?\.ts/);
+  });
+});
+
+describe('remotion_render cloud enforcement', () => {
+  test('rejects a local Modal endpoint without any browser fallback', async () => {
     const genResult = await mcpCall('tools/call', {
       name: 'remotion_generate_brief',
-      arguments: { title: 'List jobs test card' },
+      arguments: { title: 'Cloud policy probe', format: 'shorts_v1' },
     });
     const { brief } = JSON.parse(genResult.content[0].text);
 
-    const renderResult = await mcpCall('tools/call', {
-      name: 'remotion_render_still',
-      arguments: { brief },
-    });
-    const { jobId } = JSON.parse(renderResult.content[0].text);
+    const result = await mcpCall(
+      'tools/call',
+      { name: 'remotion_render', arguments: { brief, quality: 'preview' } },
+      { MODAL_REMOTION_RENDER_URL: 'http://127.0.0.1:9' }
+    );
+    const data = JSON.parse(result.content[0].text);
 
-    // Check job appears in list
-    const listResult = await mcpCall('tools/call', {
-      name: 'remotion_list_jobs',
-      arguments: { limit: 50 },
-    });
-    const jobs = JSON.parse(listResult.content[0].text);
-    // Note: different server process, so in-memory won't have it, but jobs file may
-    // Just verify the list call works and returns an array
-    assert.ok(Array.isArray(jobs));
+    assert.equal(result.isError, true);
+    assert.equal(data.code, 'BROWSER_SINGLETON_POLICY');
+    assert.equal(data.localBrowserStarted, false);
+    assert.match(data.error, /HTTPS cloud endpoint|local Remotion/i);
+  });
+
+  test('ACTP-facing render paths contain no local Remotion command', () => {
+    const projectRoot = path.resolve(__dirname, '..');
+    const policySources = [
+      'mcp-server.js',
+      'scripts/api-render.ts',
+      'src/api/batch-api.ts',
+      'src/api/cloud-render.ts',
+      'src/pipeline/preview-generator.ts',
+      'src/pipeline/remotion-compose-stage.ts',
+      'src/service/server.ts',
+    ];
+
+    for (const relativePath of policySources) {
+      const source = fs.readFileSync(path.join(projectRoot, relativePath), 'utf8');
+      assert.doesNotMatch(source, /npx\s+remotion\s+(?:render|still)/i, relativePath);
+      assert.doesNotMatch(source, /scripts\/render(?:-brief-still)?\.ts/, relativePath);
+    }
   });
 });
 

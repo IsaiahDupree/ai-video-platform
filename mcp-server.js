@@ -9,7 +9,7 @@
  *   remotion_list_formats     — available formats + schemas
  *   remotion_generate_brief   — build ContentBrief from topic/title inputs
  *   remotion_validate_brief   — validate brief before submitting
- *   remotion_render           — submit async render job
+ *   remotion_render           — render through Modal cloud (never locally)
  *   remotion_job_status       — check job status by ID
  *   remotion_list_jobs        — list recent render jobs
  *   remotion_list_outputs     — list rendered MP4 files
@@ -18,7 +18,6 @@
 
 'use strict';
 
-const { spawn, execSync, spawnSync } = require('child_process');
 const fs = require('fs');
 const https = require('https');
 const http = require('http');
@@ -28,9 +27,10 @@ const readline = require('readline');
 
 const REMOTION_DIR = path.resolve(__dirname);
 const OUTPUT_DIR = path.join(REMOTION_DIR, 'output');
-const BRIEFS_DIR = path.join(REMOTION_DIR, 'data', 'briefs', 'mcp');
 const JOBS_FILE = path.join(OUTPUT_DIR, '.mcp-jobs.json');
-const STILLS_DIR = path.join(OUTPUT_DIR, 'stills');
+const DEFAULT_MODAL_REMOTION_RENDER_URL =
+  'https://isaiahdupree33--remotion-render-endpoint.modal.run';
+const BROWSER_SINGLETON_POLICY_CODE = 'BROWSER_SINGLETON_POLICY';
 
 // Telegram config from environment (load from actp-worker .env if not set)
 function _loadEnv() {
@@ -364,180 +364,121 @@ function validateBrief(brief) {
   return { valid: errors.length === 0, errors };
 }
 
-// ── Render ────────────────────────────────────────────────────────────────────
+// ── Cloud Render ─────────────────────────────────────────────────────────────
 
-/**
- * Submit a render job. Saves brief JSON to disk then spawns the render CLI.
- * @param {object} brief
- * @param {object} options
- * @returns {string} jobId
- */
-function submitRender(brief, options = {}) {
-  const { quality = 'production', outputPath } = options;
+function safeOutputFilename(value) {
+  if (!value) return undefined;
+  return path.basename(value).trim() || undefined;
+}
 
-  // Ensure directories
-  fs.mkdirSync(BRIEFS_DIR, { recursive: true });
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+function isForbiddenLocalHostname(hostname) {
+  const normalized = hostname.toLowerCase().replace(/^\[|\]$/g, '');
+  const private172 = normalized.match(/^172\.(\d{1,3})\./);
+  return normalized === 'localhost' ||
+    normalized.endsWith('.localhost') ||
+    normalized.endsWith('.local') ||
+    normalized === 'host.docker.internal' ||
+    normalized === '0.0.0.0' ||
+    normalized.startsWith('127.') ||
+    normalized.startsWith('10.') ||
+    normalized.startsWith('192.168.') ||
+    normalized.startsWith('169.254.') ||
+    (normalized.includes(':') && (
+      normalized === '::1' ||
+      normalized.startsWith('fc') ||
+      normalized.startsWith('fd') ||
+      normalized.startsWith('fe80:')
+    )) ||
+    (private172 !== null && Number(private172[1]) >= 16 && Number(private172[1]) <= 31);
+}
 
+function requireHttpsCloudUrl(value, label) {
+  let endpoint;
+  try {
+    endpoint = new URL(value);
+  } catch {
+    const err = new Error(`${label} must be a valid HTTPS cloud URL`);
+    err.code = BROWSER_SINGLETON_POLICY_CODE;
+    throw err;
+  }
+  if (endpoint.protocol !== 'https:' || isForbiddenLocalHostname(endpoint.hostname)) {
+    const err = new Error(
+      `${label} must be an HTTPS cloud URL and cannot target this Mac/private network. ` +
+      'Local Remotion/Chrome fallback is forbidden by the browser singleton policy.'
+    );
+    err.code = BROWSER_SINGLETON_POLICY_CODE;
+    throw err;
+  }
+  return endpoint;
+}
+
+async function requestModalRender({ composition, inputProps, quality, outputFilename }) {
+  const endpoint = requireHttpsCloudUrl(
+    process.env.MODAL_REMOTION_RENDER_URL || DEFAULT_MODAL_REMOTION_RENDER_URL,
+    'MODAL_REMOTION_RENDER_URL'
+  );
+
+  let response;
+  try {
+    response = await fetch(endpoint, {
+      method: 'POST',
+      redirect: 'error',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        composition,
+        input_props: inputProps || {},
+        quality: quality || 'production',
+        output_filename: safeOutputFilename(outputFilename),
+      }),
+      signal: AbortSignal.timeout(3_600_000),
+    });
+  } catch (err) {
+    throw new Error(`Modal Remotion request failed: ${err.message}`);
+  }
+
+  const raw = await response.text();
+  let result;
+  try {
+    result = raw ? JSON.parse(raw) : {};
+  } catch {
+    throw new Error(`Modal Remotion returned non-JSON HTTP ${response.status}`);
+  }
+
+  if (!response.ok || result.error) {
+    throw new Error(result.error || `Modal Remotion returned HTTP ${response.status}`);
+  }
+  if (typeof result.url !== 'string') {
+    throw new Error('Modal Remotion response is missing an HTTPS output URL');
+  }
+  requireHttpsCloudUrl(result.url, 'Modal render output URL');
+  return result;
+}
+
+function recordCompletedCloudJob(brief, quality, result) {
+  const now = new Date().toISOString();
   const jobId = makeJobId();
-  const briefPath = path.join(BRIEFS_DIR, `${jobId}.json`);
-  const outPath = outputPath || path.join(OUTPUT_DIR, `${jobId}.mp4`);
-
-  fs.writeFileSync(briefPath, JSON.stringify(brief, null, 2));
-
   const job = {
     id: jobId,
+    type: 'video',
+    backend: 'modal-cloud',
     briefId: brief.id,
-    briefPath,
-    outputPath: outPath,
-    status: 'queued',
-    progress: 0,
-    startedAt: new Date().toISOString(),
-    completedAt: null,
+    outputPath: result.url,
+    videoUrl: result.url,
+    status: 'complete',
+    progress: 100,
+    startedAt: now,
+    completedAt: now,
     error: null,
     quality,
     format: brief.format,
     title: brief.sections[0]?.content?.title || brief.id,
+    fileSizeBytes: typeof result.file_size_mb === 'number'
+      ? Math.round(result.file_size_mb * 1_000_000)
+      : undefined,
   };
-
   jobs.set(jobId, job);
   saveJobs();
-
-  // Spawn render process
-  const proc = spawn(
-    'npx',
-    ['tsx', 'scripts/render.ts', briefPath, outPath, '--quality', quality],
-    {
-      cwd: REMOTION_DIR,
-      stdio: ['ignore', 'pipe', 'pipe'],
-      detached: false,
-      env: { ...process.env, PATH: process.env.PATH || '/usr/local/bin:/usr/bin:/bin' },
-    }
-  );
-
-  job.status = 'rendering';
-  job.pid = proc.pid;
-  saveJobs();
-
-  let lastStdout = '';
-  let lastStderr = '';
-  proc.stdout.on('data', (chunk) => {
-    lastStdout += chunk.toString();
-    // Parse progress from output
-    const match = lastStdout.match(/Rendering:\s+(\d+)%/);
-    if (match) {
-      job.progress = parseInt(match[1], 10);
-      saveJobs();
-    }
-  });
-
-  proc.stderr.on('data', (chunk) => {
-    lastStderr += chunk.toString();
-  });
-
-  proc.on('close', (code) => {
-    job.completedAt = new Date().toISOString();
-    if (code === 0 && fs.existsSync(outPath)) {
-      job.status = 'complete';
-      job.progress = 100;
-      const stat = fs.statSync(outPath);
-      job.fileSizeBytes = stat.size;
-    } else {
-      const errDetail = lastStderr.slice(-1000) || lastStdout.slice(-500) || `exit code ${code}`;
-      job.status = 'failed';
-      job.error = `exit ${code}: ${errDetail}`;
-    }
-    delete job.pid;
-    saveJobs();
-  });
-
-  proc.on('error', (err) => {
-    job.status = 'failed';
-    job.error = err.message;
-    job.completedAt = new Date().toISOString();
-    saveJobs();
-  });
-
-  return jobId;
-}
-
-// ── Still Render ─────────────────────────────────────────────────────────────
-
-/**
- * Render a single frame from a ContentBrief as PNG.
- * Returns job object; rendering is async (check job status).
- * @param {object} brief
- * @param {object} opts
- * @returns {string} jobId
- */
-function submitStillRender(brief, opts = {}) {
-  const { frame = 0, format = 'png', outputPath } = opts;
-
-  fs.mkdirSync(BRIEFS_DIR, { recursive: true });
-  fs.mkdirSync(STILLS_DIR, { recursive: true });
-
-  const jobId = makeJobId();
-  const briefPath = path.join(BRIEFS_DIR, `${jobId}.json`);
-  const ext = format === 'jpeg' ? 'jpg' : format;
-  const outPath = outputPath || path.join(STILLS_DIR, `${jobId}.${ext}`);
-
-  fs.writeFileSync(briefPath, JSON.stringify(brief, null, 2));
-
-  const job = {
-    id: jobId,
-    type: 'still',
-    briefId: brief.id,
-    briefPath,
-    outputPath: outPath,
-    status: 'queued',
-    progress: 0,
-    frame,
-    format,
-    startedAt: new Date().toISOString(),
-    completedAt: null,
-    error: null,
-    title: brief.sections[0]?.content?.title || brief.id,
-  };
-
-  jobs.set(jobId, job);
-  saveJobs();
-
-  const proc = spawn(
-    'npx',
-    ['tsx', 'scripts/render-brief-still.ts', briefPath, outPath, String(frame)],
-    { cwd: REMOTION_DIR, stdio: ['ignore', 'pipe', 'pipe'], detached: false }
-  );
-
-  job.status = 'rendering';
-  job.pid = proc.pid;
-  saveJobs();
-
-  let lastOutput = '';
-  proc.stdout.on('data', (c) => { lastOutput += c.toString(); });
-  proc.stderr.on('data', () => {});
-
-  proc.on('close', (code) => {
-    job.completedAt = new Date().toISOString();
-    if (code === 0 && fs.existsSync(outPath)) {
-      job.status = 'complete';
-      job.progress = 100;
-      job.fileSizeBytes = fs.statSync(outPath).size;
-    } else {
-      job.status = 'failed';
-      job.error = lastOutput.slice(-500) || `exit code ${code}`;
-    }
-    delete job.pid;
-    saveJobs();
-  });
-
-  proc.on('error', (err) => {
-    job.status = 'failed';
-    job.error = err.message;
-    job.completedAt = new Date().toISOString();
-    saveJobs();
-  });
-
-  return jobId;
+  return job;
 }
 
 // ── Voice Clone (Modal) ───────────────────────────────────────────────────────
@@ -905,7 +846,7 @@ const TOOL_DEFS = [
   },
   {
     name: 'remotion_render',
-    description: 'Submit a video render job. Accepts a ContentBrief JSON. Returns job_id for status polling. Render runs in background (typically 2-5 min).',
+    description: 'Render a ContentBrief through the approved Modal cloud endpoint. Never starts a local browser. Returns a completed compatibility job plus the public HTTPS video URL.',
     inputSchema: {
       type: 'object',
       required: ['brief'],
@@ -916,7 +857,7 @@ const TOOL_DEFS = [
           enum: ['preview', 'production'],
           description: 'Render quality. preview is faster (lower CRF). Default: production',
         },
-        outputPath: { type: 'string', description: 'Optional absolute output path (default: output/<job_id>.mp4)' },
+        outputPath: { type: 'string', description: 'Optional legacy value; only its basename is used as the cloud output filename. No local file is written.' },
       },
     },
   },
@@ -951,7 +892,7 @@ const TOOL_DEFS = [
   },
   {
     name: 'remotion_render_still',
-    description: 'Render a single still frame (PNG/JPEG) from a ContentBrief. Much faster than full video render. Use for ad images, preview frames, or Telegram previews. Returns job_id — poll with remotion_job_status.',
+    description: 'Fail-closed compatibility tool. Generic local still rendering is disabled by the browser singleton policy. Use remotion_render_thumbnail_cloud only for a YouTubeThumbnailBrief; otherwise provision an approved cloud still renderer.',
     inputSchema: {
       type: 'object',
       required: ['brief'],
@@ -1062,34 +1003,24 @@ async function handleTool(name, args) {
         return { content: [{ type: 'text', text: JSON.stringify({ error: 'composition is required' }) }], isError: true };
       }
 
-      // Get Modal endpoint URL from env or derive from known pattern
-      const modalUrl = process.env.MODAL_REMOTION_RENDER_URL ||
-        'https://isaiahdupree33--remotion-render-endpoint.modal.run';
-
-      let response, result;
       try {
-        response = await fetch(modalUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ composition, input_props, quality, output_filename }),
-          signal: AbortSignal.timeout(3600_000), // 1 hour
+        const result = await requestModalRender({
+          composition,
+          inputProps: input_props,
+          quality,
+          outputFilename: output_filename,
         });
-        result = await response.json();
+        return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
       } catch (err) {
         return {
-          content: [{ type: 'text', text: JSON.stringify({ error: `Modal request failed: ${err.message}` }) }],
+          content: [{ type: 'text', text: JSON.stringify({
+            error: `Modal request failed: ${err.message}`,
+            code: err.code || 'CLOUD_RENDER_FAILED',
+            localBrowserStarted: false,
+          }) }],
           isError: true,
         };
       }
-
-      if (!response.ok || result.error) {
-        return {
-          content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
-          isError: true,
-        };
-      }
-
-      return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
     }
 
     case 'remotion_render_thumbnail_cloud': {
@@ -1098,24 +1029,69 @@ async function handleTool(name, args) {
         return { content: [{ type: 'text', text: JSON.stringify({ error: 'brief is required' }) }], isError: true };
       }
 
-      const thumbnailUrl = process.env.MODAL_REMOTION_THUMBNAIL_URL ||
-        'https://isaiahdupree33--remotion-thumbnail.modal.run';
+      let thumbnailUrl;
+      try {
+        thumbnailUrl = requireHttpsCloudUrl(
+          process.env.MODAL_REMOTION_THUMBNAIL_URL ||
+          'https://isaiahdupree33--remotion-thumbnail.modal.run',
+          'MODAL_REMOTION_THUMBNAIL_URL'
+        );
+      } catch (err) {
+        return {
+          content: [{ type: 'text', text: JSON.stringify({
+            error: err.message,
+            code: err.code || BROWSER_SINGLETON_POLICY_CODE,
+            localBrowserStarted: false,
+          }) }],
+          isError: true,
+        };
+      }
 
       let response, result;
       try {
         response = await fetch(thumbnailUrl, {
           method: 'POST',
+          redirect: 'error',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ brief, output_filename }),
           signal: AbortSignal.timeout(300_000),
         });
         result = await response.json();
       } catch (err) {
-        return { content: [{ type: 'text', text: JSON.stringify({ error: err.message }) }], isError: true };
+        return {
+          content: [{ type: 'text', text: JSON.stringify({
+            error: err.message,
+            code: 'CLOUD_RENDER_FAILED',
+            localBrowserStarted: false,
+          }) }],
+          isError: true,
+        };
       }
 
       if (!response.ok || result.error) {
         return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }], isError: true };
+      }
+      if (typeof result.url !== 'string') {
+        return {
+          content: [{ type: 'text', text: JSON.stringify({
+            error: 'Modal thumbnail response is missing an HTTPS output URL',
+            code: 'CLOUD_RENDER_FAILED',
+            localBrowserStarted: false,
+          }) }],
+          isError: true,
+        };
+      }
+      try {
+        requireHttpsCloudUrl(result.url, 'Modal thumbnail output URL');
+      } catch (err) {
+        return {
+          content: [{ type: 'text', text: JSON.stringify({
+            error: err.message,
+            code: err.code || BROWSER_SINGLETON_POLICY_CODE,
+            localBrowserStarted: false,
+          }) }],
+          isError: true,
+        };
       }
 
       return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
@@ -1140,23 +1116,36 @@ async function handleTool(name, args) {
         };
       }
       try {
-        const jobId = submitRender(brief, { quality, outputPath });
-        const job = jobs.get(jobId);
+        const renderQuality = quality || 'production';
+        const result = await requestModalRender({
+          composition: 'BriefComposition',
+          // The deployed endpoint accepts a full ContentBrief directly.
+          inputProps: brief,
+          quality: renderQuality,
+          outputFilename: outputPath,
+        });
+        const job = recordCompletedCloudJob(brief, renderQuality, result);
         return {
           content: [{
             type: 'text',
             text: JSON.stringify({
               success: true,
-              jobId,
+              jobId: job.id,
               status: job.status,
               outputPath: job.outputPath,
-              message: 'Render started. Use remotion_job_status to check progress.',
+              videoUrl: result.url,
+              backend: 'modal-cloud',
+              message: 'Cloud render completed. No local browser was started.',
             }, null, 2),
           }],
         };
       } catch (err) {
         return {
-          content: [{ type: 'text', text: JSON.stringify({ error: err.message }) }],
+          content: [{ type: 'text', text: JSON.stringify({
+            error: err.message,
+            code: err.code || 'CLOUD_RENDER_FAILED',
+            localBrowserStarted: false,
+          }) }],
           isError: true,
         };
       }
@@ -1180,6 +1169,8 @@ async function handleTool(name, args) {
             format: job.format,
             title: job.title,
             outputPath: job.outputPath,
+            videoUrl: job.videoUrl,
+            backend: job.backend,
             fileSizeBytes: job.fileSizeBytes,
             fileSizeMB: job.fileSizeBytes ? Math.round(job.fileSizeBytes / 1024 / 1024 * 10) / 10 : null,
             startedAt: job.startedAt,
@@ -1201,41 +1192,17 @@ async function handleTool(name, args) {
     }
 
     case 'remotion_render_still': {
-      const { brief, frame, format, outputPath } = args;
-      if (!brief) {
-        return {
-          content: [{ type: 'text', text: JSON.stringify({ error: 'brief is required' }) }],
-          isError: true,
-        };
-      }
-      const validation = validateBrief(brief);
-      if (!validation.valid) {
-        return {
-          content: [{ type: 'text', text: JSON.stringify({ error: 'Invalid brief', errors: validation.errors }) }],
-          isError: true,
-        };
-      }
-      try {
-        const jobId = submitStillRender(brief, { frame, format, outputPath });
-        const job = jobs.get(jobId);
-        return {
-          content: [{
-            type: 'text',
-            text: JSON.stringify({
-              success: true,
-              jobId,
-              status: job.status,
-              outputPath: job.outputPath,
-              message: 'Still render started. Use remotion_job_status to check progress, then remotion_send_telegram to preview.',
-            }, null, 2),
-          }],
-        };
-      } catch (err) {
-        return {
-          content: [{ type: 'text', text: JSON.stringify({ error: err.message }) }],
-          isError: true,
-        };
-      }
+      return {
+        content: [{
+          type: 'text',
+          text: JSON.stringify({
+            error: 'Generic still rendering is disabled on this Mac because Remotion would launch Chrome/Chromium or Chrome Headless Shell. Use remotion_render_thumbnail_cloud only for a YouTubeThumbnailBrief; otherwise provision an approved cloud still renderer. No local browser fallback is permitted.',
+            code: BROWSER_SINGLETON_POLICY_CODE,
+            localBrowserStarted: false,
+          }, null, 2),
+        }],
+        isError: true,
+      };
     }
 
     case 'remotion_generate_voiceover': {

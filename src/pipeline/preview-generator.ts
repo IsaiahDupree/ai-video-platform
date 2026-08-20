@@ -2,13 +2,13 @@
  * Preview Generator
  *
  * Generates thumbnail previews and an HTML gallery for browsing
- * ad variants before uploading to Meta. Uses Remotion's renderStill
- * for quick static previews of each variant × size combination.
+ * ad variants before uploading to Meta. Browser-backed local thumbnail
+ * rendering is disabled; callers must use an approved cloud still renderer.
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { execSync } from 'child_process';
+import { blockLocalBrowserRender } from '../api/cloud-render';
 import type { AdVariant, AdSize, BrandConfig, AdBatch } from './types';
 
 // =============================================================================
@@ -56,25 +56,15 @@ function renderThumbnail(
   width: number,
   height: number,
 ): boolean {
-  const projectRoot = path.resolve(__dirname, '../..');
-  const propsFile = path.join(path.dirname(outputPath), `_thumb_props_${Date.now()}.json`);
-  fs.writeFileSync(propsFile, JSON.stringify(props));
-
-  try {
-    // Render at half resolution for faster thumbnails
-    const thumbWidth = Math.round(width / 2);
-    const thumbHeight = Math.round(height / 2);
-
-    execSync(
-      `npx remotion still "${compositionId}" "${outputPath}" --props="${propsFile}" --width=${thumbWidth} --height=${thumbHeight} --quality=60`,
-      { cwd: projectRoot, stdio: 'pipe', timeout: 30000 }
-    );
-    return true;
-  } catch {
-    return false;
-  } finally {
-    if (fs.existsSync(propsFile)) fs.unlinkSync(propsFile);
-  }
+  void compositionId;
+  void props;
+  void outputPath;
+  void width;
+  void height;
+  return blockLocalBrowserRender(
+    'UGC preview thumbnail render',
+    'Provision a matching cloud still-render endpoint before retrying; no local browser fallback is permitted.'
+  );
 }
 
 /**

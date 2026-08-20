@@ -10,7 +10,7 @@
 import { JobQueue, Job, JobStatus } from './job-queue';
 import { generateBrief, GeneratorInput } from '../../scripts/generate-brief';
 import { ContentBrief } from '../types';
-import { execSync } from 'child_process';
+import { renderBriefCloud } from './cloud-render';
 import path from 'path';
 import fs from 'fs';
 
@@ -72,25 +72,18 @@ export class BatchAPIHandler {
       const { brief, outputPath, quality, title } = input;
 
       try {
-        const propsJson = JSON.stringify({ brief });
-        const crf = quality === 'preview' ? 28 : 18;
-
-        execSync(
-          `npx remotion render BriefComposition "${outputPath}" --props='${propsJson}' --crf=${crf}`,
-          {
-            cwd: path.resolve(__dirname, '../..'),
-            stdio: 'pipe',
-          }
-        );
-
-        const stats = fs.statSync(outputPath);
+        const result = await renderBriefCloud(brief, quality, outputPath);
 
         return {
           success: true,
-          videoPath: outputPath,
-          size: stats.size,
+          videoPath: result.url,
+          videoUrl: result.url,
+          size: typeof result.file_size_mb === 'number'
+            ? Math.round(result.file_size_mb * 1_000_000)
+            : undefined,
           duration: brief.settings.duration_sec,
           title,
+          renderBackend: 'modal-cloud',
         };
       } catch (error) {
         throw new Error(

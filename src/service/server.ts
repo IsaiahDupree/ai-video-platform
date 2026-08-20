@@ -14,6 +14,11 @@
 import { APIGateway } from '../api/gateway';
 import { JobQueue } from '../api/job-queue';
 import { BatchAPIHandler } from '../api/batch-api';
+import {
+  blockLocalBrowserRender,
+  BrowserSingletonPolicyError,
+  renderBriefCloud,
+} from '../api/cloud-render';
 import { execSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
@@ -146,26 +151,18 @@ queue.registerHandler('extract-template', async (input) => {
 queue.registerHandler('render-brief', async (input) => {
   const { brief, quality = 'production', outputFormat = 'mp4' } = input;
 
-  const outputPath = path.join(
-    process.env.OUTPUT_DIR || './output',
-    `${brief.id}.${outputFormat}`
-  );
-
-  const propsJson = JSON.stringify({ brief });
-  const crf = quality === 'preview' ? 28 : 18;
-
-  execSync(
-    `npx remotion render BriefComposition "${outputPath}" --props='${propsJson}' --crf=${crf}`,
-    { cwd: path.resolve(__dirname, '../..'), stdio: 'pipe' }
-  );
-
-  const stats = fs.statSync(outputPath);
+  const outputFilename = `${brief.id}.${outputFormat}`;
+  const result = await renderBriefCloud(brief, quality, outputFilename);
 
   return {
-    videoPath: outputPath,
+    videoPath: result.url,
+    videoUrl: result.url,
     duration: brief.settings?.duration_sec,
-    fileSize: stats.size,
+    fileSize: typeof result.file_size_mb === 'number'
+      ? Math.round(result.file_size_mb * 1_000_000)
+      : undefined,
     format: outputFormat,
+    renderBackend: 'modal-cloud',
   };
 });
 
@@ -173,28 +170,11 @@ queue.registerHandler('render-brief', async (input) => {
  * Render static ad
  */
 queue.registerHandler('render-static-ad', async (input) => {
-  const { template, bindings, size, format = 'png' } = input;
-
-  const outputPath = path.join(
-    process.env.OUTPUT_DIR || './output',
-    `ad-${Date.now()}.${format}`
+  void input;
+  return blockLocalBrowserRender(
+    'Static-ad render',
+    'The current thumbnail cloud endpoint only supports YouTubeThumbnailBrief. Provision an approved AdTemplateStill cloud endpoint before retrying; no local browser fallback is permitted.'
   );
-
-  const propsJson = JSON.stringify({ template, bindings, size });
-
-  execSync(
-    `npx remotion still AdTemplateStill "${outputPath}" --props='${propsJson}'`,
-    { cwd: path.resolve(__dirname, '../..'), stdio: 'pipe' }
-  );
-
-  const stats = fs.statSync(outputPath);
-
-  return {
-    imagePath: outputPath,
-    fileSize: stats.size,
-    format,
-    size,
-  };
 });
 
 /**
@@ -609,59 +589,11 @@ queue.registerHandler('nano-banana-generate', async (input) => {
  * Generate a before/after reveal video using Remotion composition
  */
 queue.registerHandler('render-before-after', async (input) => {
-  const {
-    beforeImageSrc,
-    afterImageSrc,
-    beforeVideoSrc,
-    afterVideoSrc,
-    headline,
-    subheadline,
-    ctaText,
-    brandName,
-    primaryColor,
-    accentColor,
-    transitionStyle = 'whip-pan',
-    enableCameraShake = true,
-    outputFormat = 'mp4',
-    quality = 'production',
-  } = input;
-
-  const outputPath = path.join(
-    process.env.OUTPUT_DIR || './output',
-    `before-after-reveal-${Date.now()}.${outputFormat}`
+  void input;
+  return blockLocalBrowserRender(
+    'Before/after Remotion render',
+    'Provision a verified BeforeAfterReveal cloud composition endpoint before retrying; no local browser fallback is permitted.'
   );
-
-  const propsJson = JSON.stringify({
-    beforeImageSrc,
-    afterImageSrc,
-    beforeVideoSrc,
-    afterVideoSrc,
-    headline,
-    subheadline,
-    ctaText,
-    brandName,
-    primaryColor,
-    accentColor,
-    transitionStyle,
-    enableCameraShake,
-  });
-
-  const crf = quality === 'preview' ? 28 : 18;
-
-  execSync(
-    `npx remotion render BeforeAfterReveal "${outputPath}" --props='${propsJson}' --crf=${crf}`,
-    { cwd: path.resolve(__dirname, '../..'), stdio: 'pipe' }
-  );
-
-  const stats = fs.statSync(outputPath);
-
-  return {
-    videoPath: outputPath,
-    fileSize: stats.size,
-    format: outputFormat,
-    duration: 8,
-    transitionStyle,
-  };
 });
 
 // =============================================================================
@@ -672,6 +604,12 @@ queue.registerHandler('render-before-after', async (input) => {
  * Generate UGC ad batch (full pipeline or dry-run)
  */
 queue.registerHandler('ugc-generate', async (input) => {
+  if (!(input.dryRun ?? false)) {
+    throw new BrowserSingletonPolicyError(
+      'UGC Remotion compose',
+      'Run with dryRun=true or provision cloud still/video composition endpoints. The local compose stage is forbidden.'
+    );
+  }
   const { runUGCPipeline } = await import('../pipeline/ugc-ad-pipeline');
   const { META_AD_SIZES } = await import('../pipeline/types');
 
