@@ -88,18 +88,34 @@ function requireHttpsCloudUrl(value: string, label: string): URL {
   return parsed;
 }
 
+function requireModalAuthToken(): string {
+  const token = (
+    process.env.MODAL_REMOTION_AUTH_TOKEN || process.env.WORKER_SECRET || ''
+  ).trim();
+  if (!token) {
+    throw new Error(
+      'MODAL_REMOTION_AUTH_TOKEN or WORKER_SECRET is required for cloud rendering'
+    );
+  }
+  return token;
+}
+
 export async function renderCompositionCloud(
   request: CloudRenderRequest
 ): Promise<CloudRenderResult> {
   const endpoint = process.env.MODAL_REMOTION_RENDER_URL || DEFAULT_MODAL_REMOTION_RENDER_URL;
   const parsedEndpoint = requireHttpsCloudUrl(endpoint, 'MODAL_REMOTION_RENDER_URL');
+  const authToken = requireModalAuthToken();
 
   let response: Response;
   try {
     response = await fetch(parsedEndpoint, {
       method: 'POST',
       redirect: 'error',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`,
+      },
       body: JSON.stringify({
         composition: request.composition,
         input_props: request.inputProps || {},

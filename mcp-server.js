@@ -371,6 +371,20 @@ function safeOutputFilename(value) {
   return path.basename(value).trim() || undefined;
 }
 
+function requireModalAuthToken() {
+  const token = (
+    process.env.MODAL_REMOTION_AUTH_TOKEN || process.env.WORKER_SECRET || ''
+  ).trim();
+  if (!token) {
+    const err = new Error(
+      'MODAL_REMOTION_AUTH_TOKEN or WORKER_SECRET is required for cloud rendering'
+    );
+    err.code = 'CLOUD_RENDER_AUTH_REQUIRED';
+    throw err;
+  }
+  return token;
+}
+
 function isForbiddenLocalHostname(hostname) {
   const normalized = hostname.toLowerCase().replace(/^\[|\]$/g, '');
   const private172 = normalized.match(/^172\.(\d{1,3})\./);
@@ -417,13 +431,17 @@ async function requestModalRender({ composition, inputProps, quality, outputFile
     process.env.MODAL_REMOTION_RENDER_URL || DEFAULT_MODAL_REMOTION_RENDER_URL,
     'MODAL_REMOTION_RENDER_URL'
   );
+  const authToken = requireModalAuthToken();
 
   let response;
   try {
     response = await fetch(endpoint, {
       method: 'POST',
       redirect: 'error',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`,
+      },
       body: JSON.stringify({
         composition,
         input_props: inputProps || {},
@@ -1049,10 +1067,14 @@ async function handleTool(name, args) {
 
       let response, result;
       try {
+        const authToken = requireModalAuthToken();
         response = await fetch(thumbnailUrl, {
           method: 'POST',
           redirect: 'error',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`,
+          },
           body: JSON.stringify({ brief, output_filename }),
           signal: AbortSignal.timeout(300_000),
         });

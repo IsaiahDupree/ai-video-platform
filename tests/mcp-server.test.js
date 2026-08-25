@@ -443,6 +443,20 @@ describe('remotion_render cloud enforcement', () => {
       assert.doesNotMatch(source, /scripts\/render(?:-brief-still)?\.ts/, relativePath);
     }
   });
+
+  test('cloud renders require bearer authentication', () => {
+    const serverSource = fs.readFileSync(SERVER_PATH, 'utf8');
+    const clientSource = fs.readFileSync(
+      path.resolve(__dirname, '..', 'src/api/cloud-render.ts'),
+      'utf8'
+    );
+
+    for (const source of [serverSource, clientSource]) {
+      assert.match(source, /MODAL_REMOTION_AUTH_TOKEN/);
+      assert.match(source, /Authorization/);
+      assert.match(source, /Bearer \$\{authToken\}/);
+    }
+  });
 });
 
 // ── remotion_send_telegram (no live network call — error path tests) ──────────
