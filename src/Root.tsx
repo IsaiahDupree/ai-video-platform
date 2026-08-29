@@ -3254,9 +3254,14 @@ export const RemotionRoot: React.FC = () => {
         width={720}
         height={1280}
         defaultProps={isaiahStyleReelDefaultProps}
-        calculateMetadata={({ props }) => ({
-          durationInFrames: 30 * 40,  // override via input props if needed
-        })}
+        calculateMetadata={({ props }) => {
+          const requestedFrames = (props as {durationInFrames?: number}).durationInFrames;
+          return {
+            durationInFrames: Number.isInteger(requestedFrames)
+              ? requestedFrames
+              : 30 * 40,
+          };
+        }}
       />
 
       {/* ─── IsaiahTalkingHeadV1 — AI-driven pipeline composition ───────────── */}
@@ -3338,4 +3343,3 @@ export const RemotionRoot: React.FC = () => {
     </>
   );
 };
-

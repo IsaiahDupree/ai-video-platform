@@ -27,6 +27,8 @@ import { AnimatedCaptions, WordTiming, generateTranscriptFromText } from '../com
 // ============================================================================
 
 export interface IsaiahStyleReelProps {
+  // Exact composition length selected from the immutable audio/caption timeline.
+  durationInFrames?: number;
   // Background video from iPhone (put in public/ or use staticFile path)
   backgroundVideoPath?: string;
   // Background color fallback (warm dark)
@@ -45,6 +47,8 @@ export interface IsaiahStyleReelProps {
   points?: string[];
   // CTA shown at end
   cta?: string;
+  // Exact first-word onset for the CTA in the decoded voice timeline.
+  ctaStartSeconds?: number;
   // Brand watermark text (e.g. "@the_isaiah_dupree")
   watermark?: string;
   // Color grade preset
@@ -381,9 +385,13 @@ const LeadHandoffVisuals: React.FC<{
   frame: number;
   fps: number;
   durationInFrames: number;
+  ctaStartFrame: number;
   points: string[];
-}> = ({frame, fps, durationInFrames, points}) => {
-  const time = frame / fps;
+}> = ({frame, fps, durationInFrames, ctaStartFrame, points}) => {
+  // The evidence story was art-directed on a 40-second reference timeline.
+  // Stretch that visual timeline to the exact audio-bound composition length
+  // without changing the real word timestamps used by the captions.
+  const storyTime = Math.min(35.5, (frame / Math.max(1, ctaStartFrame)) * 35.5);
   const pulse = 0.75 + 0.25 * Math.sin(frame / 5);
   const cardFont = '"SF Pro Display", "Inter", system-ui, sans-serif';
   const scorePoints = points.length >= 3 ? points.slice(0, 3) : ['Frequency', 'Waiting time', 'Proof'];
@@ -398,7 +406,7 @@ const LeadHandoffVisuals: React.FC<{
           left: 74,
           right: 74,
           top: 790,
-          opacity: sceneOpacity(time, 0, 3.45),
+          opacity: sceneOpacity(storyTime, 0, 3.45),
           transform: `translateY(${Math.sin(frame / 8) * 4}px)`,
           border: '1px solid rgba(255,255,255,0.18)',
           background: 'rgba(20,16,14,0.78)',
@@ -429,7 +437,7 @@ const LeadHandoffVisuals: React.FC<{
           left: 54,
           right: 54,
           top: 250,
-          opacity: sceneOpacity(time, 3.1, 8.1),
+          opacity: sceneOpacity(storyTime, 3.1, 8.1),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 18, color: '#CFC7C1', letterSpacing: '2px', fontWeight: 800, marginBottom: 18}}>
@@ -455,7 +463,7 @@ const LeadHandoffVisuals: React.FC<{
           left: 64,
           right: 64,
           top: 250,
-          opacity: sceneOpacity(time, 7.8, 13.7),
+          opacity: sceneOpacity(storyTime, 7.8, 13.7),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 51, color: '#FFFFFF', fontWeight: 850, lineHeight: 1.05, letterSpacing: '-1px'}}>
@@ -491,7 +499,7 @@ const LeadHandoffVisuals: React.FC<{
           left: 48,
           right: 48,
           top: 220,
-          opacity: sceneOpacity(time, 13.3, 22.6),
+          opacity: sceneOpacity(storyTime, 13.3, 22.6),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 18, color: '#FFE066', letterSpacing: '2px', fontWeight: 800}}>
@@ -504,7 +512,7 @@ const LeadHandoffVisuals: React.FC<{
             ['03', 'Routing decision', 'see where it goes'],
             ['04', 'Meeting booked', 'verify the output'],
           ].map(([number, title, detail], index) => {
-            const active = time >= 14.2 + index * 1.65;
+            const active = storyTime >= 14.2 + index * 1.65;
             return (
               <div
                 key={title}
@@ -539,7 +547,7 @@ const LeadHandoffVisuals: React.FC<{
           left: 52,
           right: 52,
           top: 235,
-          opacity: sceneOpacity(time, 22.2, 30.8),
+          opacity: sceneOpacity(storyTime, 22.2, 30.8),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 18, color: '#CFC7C1', letterSpacing: '2px', fontWeight: 800}}>
@@ -548,7 +556,7 @@ const LeadHandoffVisuals: React.FC<{
         <div style={{marginTop: 24, display: 'grid', gap: 15}}>
           {scorePoints.map((point, index) => {
             const labels = ['How often does it arrive?', 'How long does a person wait?', 'Can you verify the output?'];
-            const active = time >= 23.0 + index * 1.75;
+            const active = storyTime >= 23.0 + index * 1.75;
             return (
               <div
                 key={point}
@@ -578,7 +586,7 @@ const LeadHandoffVisuals: React.FC<{
           left: 54,
           right: 54,
           top: 255,
-          opacity: sceneOpacity(time, 30.3, 35.65),
+          opacity: sceneOpacity(storyTime, 30.3, 35.65),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 18, color: '#79F2B5', letterSpacing: '2px', fontWeight: 850}}>
@@ -615,6 +623,7 @@ export const IsaiahStyleReel: React.FC<IsaiahStyleReelProps> = ({
   captionText,
   points = [],
   cta,
+  ctaStartSeconds,
   watermark = '@the_isaiah_dupree',
   grade = 'warm',
   captionAnimation = 'pop',
@@ -634,7 +643,9 @@ export const IsaiahStyleReel: React.FC<IsaiahStyleReelProps> = ({
 
   // CTA timing: final 4.5 seconds. It becomes the sole text surface so the
   // spoken final instruction never collides with live captions.
-  const ctaStartFrame = durationInFrames - fps * 4.5;
+  const ctaStartFrame = ctaStartSeconds === undefined
+    ? durationInFrames - fps * 4.5
+    : Math.floor(ctaStartSeconds * fps);
 
   const colorFilter = GRADE_PRESETS[grade];
 
@@ -687,6 +698,7 @@ export const IsaiahStyleReel: React.FC<IsaiahStyleReelProps> = ({
           frame={frame}
           fps={fps}
           durationInFrames={durationInFrames}
+          ctaStartFrame={ctaStartFrame}
           points={points}
         />
       )}

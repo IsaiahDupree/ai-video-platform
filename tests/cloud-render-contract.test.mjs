@@ -8,9 +8,12 @@ import {
 const validProps = () => ({
   hook: 'Your lead waits. Automate that handoff.',
   audioPath: 'https://example.com/audio.wav',
+  audioSha256: 'a'.repeat(64),
+  durationInFrames: 40 * 30,
   visualMode: 'lead_handoff',
   safeCaptionBottom: 230,
   cta: 'Pick one repeated task today and score it on frequency, waiting time, and proof.',
+  ctaStartSeconds: 35.8,
   points: ['Frequency', 'Waiting time', 'Proof'],
   transcript: [
     {word: 'Your', start: 0, end: 0.4},
@@ -45,6 +48,16 @@ test('accepts the exact IsaiahStyleReel contract', () => {
   );
 });
 
+test('accepts an exact audio-bound duration below the Shorts ceiling', () => {
+  const inputProps = validProps();
+  inputProps.durationInFrames = 52 * 30;
+  inputProps.transcript[1] = {word: 'late', start: 51.2, end: 51.8};
+  assert.deepEqual(
+    validateRenderRequest({composition: 'IsaiahStyleReel', inputProps, quality: 'production'}),
+    inputProps,
+  );
+});
+
 test('rejects unregistered compositions and qualities', () => {
   assert.throws(
     () => validateRenderRequest({composition: 'BriefComposition', inputProps: validProps(), quality: 'production'}),
@@ -72,6 +85,13 @@ test('rejects insecure and local audio resources', () => {
     );
   }
   assert.equal(isPublicHttpsUrl('https://example.com/audio.wav'), true);
+
+  const wrongHash = validProps();
+  wrongHash.audioSha256 = 'not-a-sha';
+  assert.throws(
+    () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: wrongHash, quality: 'production'}),
+    /audioSha256/
+  );
 });
 
 test('rejects timeline overflow and overlap', () => {
@@ -80,6 +100,28 @@ test('rejects timeline overflow and overlap', () => {
   assert.throws(
     () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: overflow, quality: 'production'}),
     /outside/
+  );
+
+
+  const tooLong = validProps();
+  tooLong.durationInFrames = 59 * 30 + 1;
+  assert.throws(
+    () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: tooLong, quality: 'production'}),
+    /durationInFrames/
+  );
+
+  const missingDuration = validProps();
+  delete missingDuration.durationInFrames;
+  assert.throws(
+    () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: missingDuration, quality: 'production'}),
+    /durationInFrames/
+  );
+
+  const lateCta = validProps();
+  lateCta.ctaStartSeconds = 40;
+  assert.throws(
+    () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: lateCta, quality: 'production'}),
+    /ctaStartSeconds/
   );
 
   const overlap = validProps();

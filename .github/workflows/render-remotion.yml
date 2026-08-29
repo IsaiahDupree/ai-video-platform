@@ -99,6 +99,7 @@ jobs:
             -show_entries 'format=duration,size:stream=codec_type,codec_name,width,height,r_frame_rate,pix_fmt,color_range,color_space,color_transfer,color_primaries' \
             -of json "$video" > "$RUNNER_TEMP/remotion-output/ffprobe.json"
           duration="$(jq -r '.format.duration | tonumber' "$RUNNER_TEMP/remotion-output/ffprobe.json")"
+          expected_frames="$(jq -er '.durationInFrames | select(type == "number" and floor == .)' "$RUNNER_TEMP/input-props.json")"
           jq -e '
             ([.streams[] | select(
               .codec_type == "video" and
@@ -113,7 +114,10 @@ jobs:
               .color_primaries == "bt709"
             )] | length) == 1
           ' "$RUNNER_TEMP/remotion-output/ffprobe.json" >/dev/null
-          awk -v duration="$duration" 'BEGIN { exit !(duration >= 39.90 && duration <= 40.10) }'
+          awk -v duration="$duration" -v frames="$expected_frames" 'BEGIN {
+            expected = frames / 30.0
+            exit !(duration >= expected - 0.10 && duration <= expected + 0.10)
+          }'
           ffmpeg -hide_banner -nostdin -i "$video" \
             -vf 'freezedetect=n=0.0001:d=0.75' -an -f null - \
             2> "$RUNNER_TEMP/remotion-output/freeze-detect.log"

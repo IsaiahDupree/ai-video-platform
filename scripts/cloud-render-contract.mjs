@@ -2,8 +2,10 @@ import {isIP} from 'node:net';
 
 export const ALLOWED_COMPOSITIONS = new Set(['IsaiahStyleReel']);
 export const ALLOWED_QUALITIES = new Set(['preview', 'production']);
-export const MAX_DURATION_SECONDS = 40;
+export const MIN_DURATION_FRAMES = 10 * 30;
+export const MAX_DURATION_FRAMES = 59 * 30;
 export const MAX_PROPS_BYTES = 2_000_000;
+export const AUDIO_SHA256_PATTERN = /^[a-f0-9]{64}$/;
 
 const isPrivateIpv4 = (hostname) => {
   const octets = hostname.split('.').map(Number);
@@ -81,12 +83,28 @@ export const validateRenderRequest = ({composition, inputProps, quality}) => {
     throw new Error('IsaiahStyleReel audioPath must be a public HTTPS URL');
   }
   if (
+    typeof inputProps.audioSha256 !== 'string' ||
+    !AUDIO_SHA256_PATTERN.test(inputProps.audioSha256)
+  ) {
+    throw new Error('IsaiahStyleReel audioSha256 must be a lowercase SHA-256');
+  }
+  if (
     !Array.isArray(inputProps.transcript) ||
     inputProps.transcript.length < 1 ||
     inputProps.transcript.length > 500
   ) {
     throw new Error('IsaiahStyleReel transcript must contain 1 to 500 words');
   }
+
+  const durationInFrames = inputProps.durationInFrames;
+  if (
+    !Number.isInteger(durationInFrames) ||
+    durationInFrames < MIN_DURATION_FRAMES ||
+    durationInFrames > MAX_DURATION_FRAMES
+  ) {
+    throw new Error('IsaiahStyleReel durationInFrames must be an integer from 300 to 1770');
+  }
+  const durationSeconds = durationInFrames / 30;
 
   let previousEnd = 0;
   inputProps.transcript.forEach((item, index) => {
@@ -103,9 +121,9 @@ export const validateRenderRequest = ({composition, inputProps, quality}) => {
       !Number.isFinite(item.end) ||
       item.start < 0 ||
       item.end <= item.start ||
-      item.end > MAX_DURATION_SECONDS
+      item.end > durationSeconds
     ) {
-      throw new Error(`transcript[${index}] timestamps are outside the 40s timeline`);
+      throw new Error(`transcript[${index}] timestamps are outside the composition timeline`);
     }
     if (item.start < previousEnd) {
       throw new Error('transcript timestamps must be monotonic and non-overlapping');
@@ -135,6 +153,17 @@ export const validateRenderRequest = ({composition, inputProps, quality}) => {
     (typeof inputProps.cta !== 'string' || inputProps.cta.trim().length === 0 || inputProps.cta.length > 220)
   ) {
     throw new Error('IsaiahStyleReel CTA must be a non-empty string <= 220 chars');
+  }
+  if (
+    inputProps.ctaStartSeconds !== undefined &&
+    (
+      typeof inputProps.ctaStartSeconds !== 'number' ||
+      !Number.isFinite(inputProps.ctaStartSeconds) ||
+      inputProps.ctaStartSeconds < 3 ||
+      inputProps.ctaStartSeconds >= durationSeconds
+    )
+  ) {
+    throw new Error('IsaiahStyleReel ctaStartSeconds must be inside the composition timeline');
   }
   if (inputProps.points !== undefined) {
     if (
