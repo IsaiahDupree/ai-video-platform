@@ -113,5 +113,40 @@ export const validateRenderRequest = ({composition, inputProps, quality}) => {
     previousEnd = item.end;
   });
 
+  if (
+    inputProps.visualMode !== undefined &&
+    !new Set(['generic', 'lead_handoff']).has(inputProps.visualMode)
+  ) {
+    throw new Error('IsaiahStyleReel visualMode is invalid');
+  }
+  if (
+    inputProps.safeCaptionBottom !== undefined &&
+    (
+      typeof inputProps.safeCaptionBottom !== 'number' ||
+      !Number.isFinite(inputProps.safeCaptionBottom) ||
+      inputProps.safeCaptionBottom < 180 ||
+      inputProps.safeCaptionBottom > 360
+    )
+  ) {
+    throw new Error('IsaiahStyleReel safeCaptionBottom must be 180 to 360 pixels');
+  }
+  if (
+    inputProps.cta !== undefined &&
+    (typeof inputProps.cta !== 'string' || inputProps.cta.trim().length === 0 || inputProps.cta.length > 220)
+  ) {
+    throw new Error('IsaiahStyleReel CTA must be a non-empty string <= 220 chars');
+  }
+  if (inputProps.points !== undefined) {
+    if (
+      !Array.isArray(inputProps.points) ||
+      inputProps.points.length > 3 ||
+      inputProps.points.some(
+        (point) => typeof point !== 'string' || point.trim().length === 0 || point.length > 80,
+      )
+    ) {
+      throw new Error('IsaiahStyleReel points must contain at most 3 short labels');
+    }
+  }
+
   return inputProps;
 };

@@ -2,6 +2,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import {spawnSync} from 'node:child_process';
 import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
 import {validateRenderRequest} from './cloud-render-contract.mjs';
@@ -35,12 +36,15 @@ const selected = await selectComposition({
   browserExecutable,
 });
 
+const resolvedOutput = path.resolve(outputPath);
+const rawOutput = `${resolvedOutput}.raw.mp4`;
+
 await renderMedia({
   composition: selected,
   serveUrl,
   codec: 'h264',
   pixelFormat: 'yuv420p',
-  outputLocation: path.resolve(outputPath),
+  outputLocation: rawOutput,
   inputProps,
   browserExecutable,
   chromiumOptions: {enableMultiProcessOnLinux: true},
@@ -54,3 +58,41 @@ await renderMedia({
     }
   },
 });
+
+const normalized = spawnSync(
+  'ffmpeg',
+  [
+    '-hide_banner',
+    '-loglevel',
+    'error',
+    '-y',
+    '-i',
+    rawOutput,
+    '-vf',
+    'scale=in_range=full:out_range=tv:out_color_matrix=bt709,format=yuv420p',
+    '-c:v',
+    'libx264',
+    '-preset',
+    quality === 'preview' ? 'veryfast' : 'medium',
+    '-crf',
+    quality === 'preview' ? '24' : '18',
+    '-color_range',
+    'tv',
+    '-colorspace',
+    'bt709',
+    '-color_primaries',
+    'bt709',
+    '-color_trc',
+    'bt709',
+    '-c:a',
+    'copy',
+    '-movflags',
+    '+faststart',
+    resolvedOutput,
+  ],
+  {encoding: 'utf8'},
+);
+if (normalized.status !== 0) {
+  throw new Error(`ffmpeg BT.709 normalization failed: ${normalized.stderr || normalized.stdout}`);
+}
+fs.rmSync(rawOutput, {force: true});

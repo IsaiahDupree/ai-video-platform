@@ -8,10 +8,30 @@ import {
 const validProps = () => ({
   hook: 'Your lead waits. Automate that handoff.',
   audioPath: 'https://example.com/audio.wav',
+  visualMode: 'lead_handoff',
+  safeCaptionBottom: 230,
+  cta: 'Pick one repeated task today and score it on frequency, waiting time, and proof.',
+  points: ['Frequency', 'Waiting time', 'Proof'],
   transcript: [
     {word: 'Your', start: 0, end: 0.4},
     {word: 'lead', start: 0.4, end: 0.8},
   ],
+});
+
+test('rejects unsafe caption placement and unknown visual stories', () => {
+  const unsafe = validProps();
+  unsafe.safeCaptionBottom = 90;
+  assert.throws(
+    () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: unsafe, quality: 'production'}),
+    /180 to 360/
+  );
+
+  const unknown = validProps();
+  unknown.visualMode = 'invented_story';
+  assert.throws(
+    () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: unknown, quality: 'production'}),
+    /visualMode/
+  );
 });
 
 test('accepts the exact IsaiahStyleReel contract', () => {

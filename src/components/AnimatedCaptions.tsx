@@ -4,8 +4,8 @@ import {
   useVideoConfig,
   interpolate,
   spring,
-  Easing,
 } from 'remotion';
+import {resolveCaptionWindow} from './captionWindow';
 
 // =============================================================================
 // Animated Captions Component
@@ -26,12 +26,17 @@ export interface CaptionStyle {
   backgroundColor?: string;
   position?: 'bottom' | 'center' | 'top';
   animation?: 'highlight' | 'bounce' | 'typewriter' | 'pop' | 'karaoke';
+  safeBottom?: number;
+  safeTop?: number;
 }
 
 interface AnimatedCaptionsProps {
   transcript: WordTiming[];
   style?: CaptionStyle;
   maxWordsPerLine?: number;
+  maxCharactersPerLine?: number;
+  gapHoldSeconds?: number;
+  hidden?: boolean;
 }
 
 const defaultStyle: CaptionStyle = {
@@ -42,6 +47,8 @@ const defaultStyle: CaptionStyle = {
   backgroundColor: 'rgba(0,0,0,0.7)',
   position: 'bottom',
   animation: 'highlight',
+  safeBottom: 230,
+  safeTop: 110,
 };
 
 // Single word with animation
@@ -50,22 +57,23 @@ const AnimatedWord: React.FC<{
   isActive: boolean;
   isPast: boolean;
   style: CaptionStyle;
-  index: number;
   frame: number;
   fps: number;
   startFrame: number;
-}> = ({ word, isActive, isPast, style, index, frame, fps, startFrame }) => {
+}> = ({ word, isActive, isPast, style, frame, fps, startFrame }) => {
   const localFrame = frame - startFrame;
 
   let opacity = 1;
-  let scale = 1;
   let translateY = 0;
   let color = style.color || '#ffffff';
+  let textShadow = '0 2px 12px rgba(0,0,0,0.9)';
 
   switch (style.animation) {
     case 'highlight':
       color = isActive ? (style.highlightColor || '#ffff00') : (style.color || '#ffffff');
-      scale = isActive ? 1.1 : 1;
+      textShadow = isActive
+        ? `0 0 18px ${style.highlightColor || '#ffff00'}, 0 2px 12px rgba(0,0,0,0.9)`
+        : textShadow;
       break;
 
     case 'bounce':
@@ -76,19 +84,20 @@ const AnimatedWord: React.FC<{
           config: { damping: 8, stiffness: 200 },
         });
         translateY = interpolate(bounce, [0, 1], [-20, 0]);
-        scale = interpolate(bounce, [0, 0.5, 1], [0.8, 1.2, 1]);
       }
       color = isActive ? (style.highlightColor || '#ffff00') : (style.color || '#ffffff');
       break;
 
     case 'pop':
       if (isActive) {
-        scale = spring({
+        const pop = spring({
           frame: localFrame,
           fps,
           config: { damping: 10, stiffness: 150 },
         });
-        scale = interpolate(scale, [0, 1], [0.5, 1.15]);
+        opacity = interpolate(pop, [0, 1], [0.55, 1]);
+        translateY = interpolate(pop, [0, 1], [5, 0]);
+        textShadow = `0 0 18px ${style.highlightColor || '#ffff00'}, 0 2px 12px rgba(0,0,0,0.9)`;
       }
       color = isActive ? (style.highlightColor || '#ffff00') : (style.color || '#ffffff');
       break;
@@ -108,11 +117,11 @@ const AnimatedWord: React.FC<{
       style={{
         display: 'inline-block',
         color,
-        transform: `scale(${scale}) translateY(${translateY}px)`,
+        transform: `translateY(${translateY}px)`,
         opacity,
-        transition: style.animation === 'highlight' ? 'all 0.1s ease' : undefined,
-        marginRight: 12,
-        fontWeight: isActive ? 700 : 400,
+        textShadow,
+        fontWeight: 750,
+        whiteSpace: 'nowrap',
       }}
     >
       {word}
@@ -124,6 +133,9 @@ export const AnimatedCaptions: React.FC<AnimatedCaptionsProps> = ({
   transcript,
   style = {},
   maxWordsPerLine = 6,
+  maxCharactersPerLine = 26,
+  gapHoldSeconds = 0.12,
+  hidden = false,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -131,33 +143,27 @@ export const AnimatedCaptions: React.FC<AnimatedCaptionsProps> = ({
 
   const currentTime = frame / fps;
 
-  // Find current word index
-  const currentWordIndex = transcript.findIndex(
-    (w) => currentTime >= w.start && currentTime < w.end
+  const window = resolveCaptionWindow(
+    transcript,
+    currentTime,
+    maxWordsPerLine,
+    maxCharactersPerLine,
+    gapHoldSeconds,
   );
 
-  // Group words into lines
-  const lines: WordTiming[][] = [];
-  for (let i = 0; i < transcript.length; i += maxWordsPerLine) {
-    lines.push(transcript.slice(i, i + maxWordsPerLine));
-  }
-
-  // Find which line contains current word
-  const currentLineIndex = Math.floor(currentWordIndex / maxWordsPerLine);
+  if (hidden || window === null) return null;
 
   // Position mapping
   const positionStyle: React.CSSProperties = {
-    bottom: mergedStyle.position === 'bottom' ? 80 : undefined,
-    top: mergedStyle.position === 'top' ? 80 : undefined,
+    bottom: mergedStyle.position === 'bottom' ? mergedStyle.safeBottom : undefined,
+    top: mergedStyle.position === 'top' ? mergedStyle.safeTop : undefined,
     ...(mergedStyle.position === 'center' && {
       top: '50%',
       transform: 'translateY(-50%)',
     }),
   };
 
-  // Only show current line (or nearby lines for context)
-  const visibleLineIndex = Math.max(0, currentLineIndex);
-  const visibleLine = lines[visibleLineIndex] || [];
+  const visibleLine = window.line.words;
 
   return (
     <div
@@ -167,7 +173,8 @@ export const AnimatedCaptions: React.FC<AnimatedCaptionsProps> = ({
         right: 0,
         display: 'flex',
         justifyContent: 'center',
-        padding: '0 40px',
+        padding: '0 54px',
+        zIndex: 30,
         ...positionStyle,
       }}
     >
@@ -179,13 +186,21 @@ export const AnimatedCaptions: React.FC<AnimatedCaptionsProps> = ({
           fontSize: mergedStyle.fontSize,
           fontFamily: mergedStyle.fontFamily,
           textAlign: 'center',
-          maxWidth: '90%',
+          maxWidth: 612,
+          minHeight: 72,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          columnGap: 12,
+          rowGap: 6,
+          lineHeight: 1.08,
         }}
       >
         {visibleLine.map((wordTiming, i) => {
-          const globalIndex = visibleLineIndex * maxWordsPerLine + i;
-          const isActive = globalIndex === currentWordIndex;
-          const isPast = globalIndex < currentWordIndex;
+          const globalIndex = window.line.startIndex + i;
+          const isActive = globalIndex === window.activeWordIndex;
+          const isPast = globalIndex < window.activeWordIndex;
           const startFrame = Math.round(wordTiming.start * fps);
 
           return (
@@ -195,7 +210,6 @@ export const AnimatedCaptions: React.FC<AnimatedCaptionsProps> = ({
               isActive={isActive}
               isPast={isPast}
               style={mergedStyle}
-              index={globalIndex}
               frame={frame}
               fps={fps}
               startFrame={startFrame}
