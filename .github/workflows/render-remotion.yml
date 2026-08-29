@@ -1,0 +1,102 @@
+name: Authenticated Cloud Remotion Render
+
+on:
+  workflow_dispatch:
+    inputs:
+      props_b64:
+        description: Base64-encoded IsaiahStyleReel input props JSON
+        required: true
+        type: string
+      output_name:
+        description: Hash-bearing MP4 filename
+        required: true
+        type: string
+      quality:
+        description: Render quality
+        required: true
+        default: production
+        type: choice
+        options:
+          - production
+          - preview
+
+permissions:
+  contents: read
+
+concurrency:
+  group: remotion-render-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OUTPUT_NAME: ${{ inputs.output_name }}
+      PROPS_B64: ${{ inputs.props_b64 }}
+      RENDER_QUALITY: ${{ inputs.quality }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit
+
+      - name: Validate cloud render contract
+        run: node --test tests/cloud-render-contract.test.mjs
+
+      - name: Prepare hash-bound input
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "$OUTPUT_NAME" =~ ^[A-Za-z0-9][A-Za-z0-9._-]{0,159}\.mp4$ ]]; then
+            echo "Invalid output_name" >&2
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/remotion-output"
+          printf '%s' "$PROPS_B64" | base64 --decode > "$RUNNER_TEMP/input-props.json"
+          node -e 'const fs=require("node:fs"); JSON.parse(fs.readFileSync(process.argv[1],"utf8"));' "$RUNNER_TEMP/input-props.json"
+          chrome_path="$(command -v google-chrome || command -v chromium || true)"
+          if [[ -z "$chrome_path" ]]; then
+            echo "No approved remote browser executable is available" >&2
+            exit 1
+          fi
+          echo "REMOTION_BROWSER_EXECUTABLE=$chrome_path" >> "$GITHUB_ENV"
+
+      - name: Render on the GitHub-hosted runner
+        run: |
+          node scripts/render-cloud-composition.mjs \
+            IsaiahStyleReel \
+            "$RUNNER_TEMP/input-props.json" \
+            "$RUNNER_TEMP/remotion-output/$OUTPUT_NAME" \
+            "$RENDER_QUALITY"
+
+      - name: Verify output metadata and hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          video="$RUNNER_TEMP/remotion-output/$OUTPUT_NAME"
+          test -s "$video"
+          ffprobe -v error \
+            -show_entries 'format=duration,size:stream=codec_type,codec_name,width,height,r_frame_rate' \
+            -of json "$video" > "$RUNNER_TEMP/remotion-output/ffprobe.json"
+          duration="$(jq -r '.format.duration | tonumber' "$RUNNER_TEMP/remotion-output/ffprobe.json")"
+          jq -e '
+            ([.streams[] | select(.codec_type == "video" and .codec_name == "h264" and .width == 720 and .height == 1280 and .r_frame_rate == "30/1")] | length) == 1
+          ' "$RUNNER_TEMP/remotion-output/ffprobe.json" >/dev/null
+          awk -v duration="$duration" 'BEGIN { exit !(duration >= 39.90 && duration <= 40.10) }'
+          sha256sum "$video" > "$RUNNER_TEMP/remotion-output/sha256.txt"
+          cat "$RUNNER_TEMP/remotion-output/ffprobe.json"
+          cat "$RUNNER_TEMP/remotion-output/sha256.txt"
+
+      - name: Upload immutable render artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: remotion-render-${{ github.run_id }}
+          path: ${{ runner.temp }}/remotion-output/
+          if-no-files-found: error
+          retention-days: 3
