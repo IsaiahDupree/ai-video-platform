@@ -46,6 +46,12 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --legacy-peer-deps
 
+      - name: Install media verifier
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          ffprobe -version | head -n 1
+
       - name: Validate cloud render contract
         run: node --test tests/cloud-render-contract.test.mjs
 
