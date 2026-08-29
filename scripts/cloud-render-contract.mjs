@@ -165,6 +165,18 @@ export const validateRenderRequest = ({composition, inputProps, quality}) => {
   ) {
     throw new Error('IsaiahStyleReel ctaStartSeconds must be inside the composition timeline');
   }
+  const captionEndSeconds = inputProps.ctaStartSeconds ?? durationSeconds;
+  if (
+    inputProps.captionStartSeconds !== undefined &&
+    (
+      typeof inputProps.captionStartSeconds !== 'number' ||
+      !Number.isFinite(inputProps.captionStartSeconds) ||
+      inputProps.captionStartSeconds < 0.5 ||
+      inputProps.captionStartSeconds >= captionEndSeconds
+    )
+  ) {
+    throw new Error('IsaiahStyleReel captionStartSeconds must precede the CTA');
+  }
   if (inputProps.points !== undefined) {
     if (
       !Array.isArray(inputProps.points) ||

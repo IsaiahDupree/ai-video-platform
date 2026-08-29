@@ -10,6 +10,7 @@ const validProps = () => ({
   audioPath: 'https://example.com/audio.wav',
   audioSha256: 'a'.repeat(64),
   durationInFrames: 40 * 30,
+  captionStartSeconds: 2.78,
   visualMode: 'lead_handoff',
   safeCaptionBottom: 230,
   cta: 'Pick one repeated task today and score it on frequency, waiting time, and proof.',
@@ -122,6 +123,13 @@ test('rejects timeline overflow and overlap', () => {
   assert.throws(
     () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: lateCta, quality: 'production'}),
     /ctaStartSeconds/
+  );
+
+  const captionAfterCta = validProps();
+  captionAfterCta.captionStartSeconds = 36;
+  assert.throws(
+    () => validateRenderRequest({composition: 'IsaiahStyleReel', inputProps: captionAfterCta, quality: 'production'}),
+    /captionStartSeconds/
   );
 
   const overlap = validProps();

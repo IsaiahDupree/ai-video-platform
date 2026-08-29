@@ -121,7 +121,7 @@ jobs:
           ffmpeg -hide_banner -nostdin -i "$video" \
             -vf 'freezedetect=n=0.0001:d=0.75' -an -f null - \
             2> "$RUNNER_TEMP/remotion-output/freeze-detect.log"
-          if grep -q 'freeze_duration:' "$RUNNER_TEMP/remotion-output/freeze-detect.log"; then
+          if grep -Eq 'freeze_start:|freeze_duration:' "$RUNNER_TEMP/remotion-output/freeze-detect.log"; then
             cat "$RUNNER_TEMP/remotion-output/freeze-detect.log"
             echo 'Rendered asset contains a 750ms visual freeze' >&2
             exit 1

@@ -39,6 +39,8 @@ export interface IsaiahStyleReelProps {
   scriptLines?: string[];
   // Full voiceover audio
   audioPath?: string;
+  // Exact first body-word onset after the on-screen hook.
+  captionStartSeconds?: number;
   // Word-level transcript for animated captions (if available)
   transcript?: WordTiming[];
   // Fallback: plain text for auto-timing captions
@@ -70,15 +72,14 @@ const GRADE_PRESETS = {
 };
 
 // Hook text overlay — animated entrance
-const HookOverlay: React.FC<{ hook: string; frame: number; fps: number }> = ({
-  hook, frame, fps,
+const HookOverlay: React.FC<{ hook: string; frame: number; fps: number; endFrame: number }> = ({
+  hook, frame, fps, endFrame,
 }) => {
   const fadeIn = spring({ frame, fps, config: { damping: 14, stiffness: 120 } });
   const opacity = interpolate(fadeIn, [0, 1], [0, 1]);
   const translateY = interpolate(fadeIn, [0, 1], [30, 0]);
 
-  // Fade out after 3s
-  const fadeOut = interpolate(frame, [fps * 2.5, fps * 3.5], [1, 0], {
+  const fadeOut = interpolate(frame, [Math.max(0, endFrame - fps * 0.35), endFrame], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -187,13 +188,19 @@ const CTAOverlay: React.FC<{
   frame: number;
   fps: number;
   startFrame: number;
+  durationInFrames: number;
 }> = ({
-  text, points, frame, fps, startFrame,
+  text, points, frame, fps, startFrame, durationInFrames,
 }) => {
   const localFrame = frame - startFrame;
   const anim = spring({ frame: localFrame, fps, config: { damping: 14, stiffness: 100 } });
   const translateY = interpolate(anim, [0, 1], [34, 0]);
   const opacity = interpolate(anim, [0, 1], [0, 1]);
+  const progress = Math.min(
+    1,
+    Math.max(0, localFrame / Math.max(1, durationInFrames - startFrame - 1)),
+  );
+  const sweepX = -160 + progress * 1040;
 
   return (
     <div
@@ -205,26 +212,42 @@ const CTAOverlay: React.FC<{
         alignItems: 'center',
         justifyContent: 'center',
         padding: '140px 62px 210px',
-        opacity,
-        transform: `translateY(${translateY}px)`,
-        background: 'linear-gradient(180deg, rgba(12,9,8,0.35), rgba(12,9,8,0.96) 48%)',
+        overflow: 'hidden',
+        background: 'linear-gradient(180deg, rgba(12,9,8,1), rgba(12,9,8,0.985) 48%)',
         zIndex: 40,
       }}
     >
       <div
         style={{
+          position: 'absolute',
+          top: 0,
+          bottom: 0,
+          left: 0,
+          width: 160,
+          transform: `translateX(${sweepX}px) skewX(-12deg)`,
+          background: 'linear-gradient(90deg, transparent, rgba(255,224,102,0.14), transparent)',
+        }}
+      />
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 1,
           color: '#FFE066',
           fontSize: 19,
           fontWeight: 800,
           letterSpacing: '3px',
           marginBottom: 24,
           fontFamily: '"SF Pro Display", "Inter", system-ui, sans-serif',
+          opacity,
+          transform: `translateY(${translateY}px)`,
         }}
       >
         TRY THIS TODAY
       </div>
       <div
         style={{
+          position: 'relative',
+          zIndex: 1,
           fontSize: 50,
           fontFamily: '"SF Pro Display", "Inter", system-ui, sans-serif',
           fontWeight: 800,
@@ -234,12 +257,14 @@ const CTAOverlay: React.FC<{
           textAlign: 'center',
           maxWidth: 600,
           textShadow: '0 4px 30px rgba(0,0,0,0.9)',
+          opacity,
+          transform: `translateY(${translateY}px)`,
         }}
       >
         {text}
       </div>
       {points.length > 0 && (
-        <div style={{display: 'flex', gap: 10, marginTop: 34, flexWrap: 'wrap', justifyContent: 'center'}}>
+        <div style={{position: 'relative', zIndex: 1, display: 'flex', gap: 10, marginTop: 34, flexWrap: 'wrap', justifyContent: 'center', opacity, transform: `translateY(${translateY}px)`}}>
           {points.slice(0, 3).map((point) => (
             <div
               key={point}
@@ -619,6 +644,7 @@ export const IsaiahStyleReel: React.FC<IsaiahStyleReelProps> = ({
   hook,
   scriptLines = [],
   audioPath,
+  captionStartSeconds,
   transcript,
   captionText,
   points = [],
@@ -646,6 +672,7 @@ export const IsaiahStyleReel: React.FC<IsaiahStyleReelProps> = ({
   const ctaStartFrame = ctaStartSeconds === undefined
     ? durationInFrames - fps * 4.5
     : Math.floor(ctaStartSeconds * fps);
+  const captionStartFrame = Math.floor((captionStartSeconds ?? 3.05) * fps);
 
   const colorFilter = GRADE_PRESETS[grade];
 
@@ -703,13 +730,13 @@ export const IsaiahStyleReel: React.FC<IsaiahStyleReelProps> = ({
         />
       )}
 
-      {/* Hook text (first 3.5s) */}
-      {frame < fps * 3.45 && (
-        <HookOverlay hook={hook} frame={frame} fps={fps} />
+      {/* Hook text ends exactly as the first body caption begins. */}
+      {frame < captionStartFrame && (
+        <HookOverlay hook={hook} frame={frame} fps={fps} endFrame={captionStartFrame} />
       )}
 
       {/* Animated captions (synced to voiceover) */}
-      {resolvedTranscript.length > 0 && frame >= fps * 3.05 && frame < ctaStartFrame && (
+      {resolvedTranscript.length > 0 && frame >= captionStartFrame && frame < ctaStartFrame && (
         <AnimatedCaptions
           transcript={resolvedTranscript}
           style={{
@@ -764,6 +791,7 @@ export const IsaiahStyleReel: React.FC<IsaiahStyleReelProps> = ({
           frame={frame}
           fps={fps}
           startFrame={ctaStartFrame}
+          durationInFrames={durationInFrames}
         />
       )}
 
