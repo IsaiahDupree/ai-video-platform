@@ -55,11 +55,12 @@ jobs:
       - name: Validate cloud render contract
         run: |
           node --test tests/cloud-render-contract.test.mjs
-          npx tsx --test tests/caption-window.test.ts
+          npx tsx --test tests/caption-window.test.ts tests/scene-window.test.ts
           npx tsc --noEmit --jsx react-jsx --esModuleInterop \
             --moduleResolution node --target ES2022 --module commonjs \
             --skipLibCheck \
             src/components/captionWindow.ts \
+            src/components/sceneWindow.ts \
             src/components/AnimatedCaptions.tsx \
             src/compositions/IsaiahStyleReel.tsx
 
