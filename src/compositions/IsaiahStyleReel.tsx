@@ -10,6 +10,10 @@ import {
   staticFile,
 } from 'remotion';
 import { AnimatedCaptions, WordTiming, generateTranscriptFromText } from '../components/AnimatedCaptions';
+import {
+  LEAD_HANDOFF_SCENE_BOUNDARIES,
+  resolveExclusiveSceneOpacity,
+} from '../components/sceneWindow';
 
 // ============================================================================
 // IsaiahStyleReel
@@ -327,12 +331,6 @@ const GradientOverlay: React.FC = () => (
   />
 );
 
-const sceneOpacity = (time: number, start: number, end: number, fade = 0.28) =>
-  interpolate(time, [start, start + fade, end - fade, end], [0, 1, 1, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
-
 const AmbientBackground: React.FC<{frame: number}> = ({frame}) => {
   const driftX = Math.sin(frame / 42) * 34;
   const driftY = Math.cos(frame / 55) * 42;
@@ -431,7 +429,11 @@ const LeadHandoffVisuals: React.FC<{
           left: 74,
           right: 74,
           top: 790,
-          opacity: sceneOpacity(storyTime, 0, 3.45),
+          opacity: resolveExclusiveSceneOpacity(
+            storyTime,
+            LEAD_HANDOFF_SCENE_BOUNDARIES[0],
+            LEAD_HANDOFF_SCENE_BOUNDARIES[1],
+          ),
           transform: `translateY(${Math.sin(frame / 8) * 4}px)`,
           border: '1px solid rgba(255,255,255,0.18)',
           background: 'rgba(20,16,14,0.78)',
@@ -462,7 +464,11 @@ const LeadHandoffVisuals: React.FC<{
           left: 54,
           right: 54,
           top: 250,
-          opacity: sceneOpacity(storyTime, 3.1, 8.1),
+          opacity: resolveExclusiveSceneOpacity(
+            storyTime,
+            LEAD_HANDOFF_SCENE_BOUNDARIES[1],
+            LEAD_HANDOFF_SCENE_BOUNDARIES[2],
+          ),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 18, color: '#CFC7C1', letterSpacing: '2px', fontWeight: 800, marginBottom: 18}}>
@@ -488,7 +494,11 @@ const LeadHandoffVisuals: React.FC<{
           left: 64,
           right: 64,
           top: 250,
-          opacity: sceneOpacity(storyTime, 7.8, 13.7),
+          opacity: resolveExclusiveSceneOpacity(
+            storyTime,
+            LEAD_HANDOFF_SCENE_BOUNDARIES[2],
+            LEAD_HANDOFF_SCENE_BOUNDARIES[3],
+          ),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 51, color: '#FFFFFF', fontWeight: 850, lineHeight: 1.05, letterSpacing: '-1px'}}>
@@ -524,7 +534,11 @@ const LeadHandoffVisuals: React.FC<{
           left: 48,
           right: 48,
           top: 220,
-          opacity: sceneOpacity(storyTime, 13.3, 22.6),
+          opacity: resolveExclusiveSceneOpacity(
+            storyTime,
+            LEAD_HANDOFF_SCENE_BOUNDARIES[3],
+            LEAD_HANDOFF_SCENE_BOUNDARIES[4],
+          ),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 18, color: '#FFE066', letterSpacing: '2px', fontWeight: 800}}>
@@ -572,7 +586,11 @@ const LeadHandoffVisuals: React.FC<{
           left: 52,
           right: 52,
           top: 235,
-          opacity: sceneOpacity(storyTime, 22.2, 30.8),
+          opacity: resolveExclusiveSceneOpacity(
+            storyTime,
+            LEAD_HANDOFF_SCENE_BOUNDARIES[4],
+            LEAD_HANDOFF_SCENE_BOUNDARIES[5],
+          ),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 18, color: '#CFC7C1', letterSpacing: '2px', fontWeight: 800}}>
@@ -611,7 +629,11 @@ const LeadHandoffVisuals: React.FC<{
           left: 54,
           right: 54,
           top: 255,
-          opacity: sceneOpacity(storyTime, 30.3, 35.65),
+          opacity: resolveExclusiveSceneOpacity(
+            storyTime,
+            LEAD_HANDOFF_SCENE_BOUNDARIES[5],
+            LEAD_HANDOFF_SCENE_BOUNDARIES[6],
+          ),
         }}
       >
         <div style={{fontFamily: cardFont, fontSize: 18, color: '#79F2B5', letterSpacing: '2px', fontWeight: 850}}>
