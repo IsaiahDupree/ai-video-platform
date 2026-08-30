@@ -118,6 +118,9 @@ async def render_trial_reel(request: Request) -> dict:
         "visualFilter": str(body.get("visual_filter") or "none"),
         "overlayColor": str(body.get("overlay_color") or "#000000"),
         "overlayOpacity": float(body.get("overlay_opacity") or 0),
+        "cropScale": float(body.get("crop_scale") or 1),
+        "cropXPercent": float(body.get("crop_x_percent") or 0),
+        "cropYPercent": float(body.get("crop_y_percent") or 0),
         "brandId": str(body.get("brand_id") or "the_isaiah_dupree"),
     }
     if not props["onScreenText"]:

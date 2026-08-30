@@ -14,6 +14,9 @@ const defaults: TrialReelVariantProps = {
   visualFilter: 'none',
   overlayColor: '#000000',
   overlayOpacity: 0,
+  cropScale: 1,
+  cropXPercent: 0,
+  cropYPercent: 0,
   brandId: 'the_isaiah_dupree',
 };
 

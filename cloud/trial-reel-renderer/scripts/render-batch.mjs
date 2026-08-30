@@ -72,6 +72,9 @@ for (const raw of request.variants) {
     visualFilter: raw.visual_filter,
     overlayColor: raw.overlay_color,
     overlayOpacity: raw.overlay_opacity,
+    cropScale: raw.crop_scale,
+    cropXPercent: raw.crop_x_percent,
+    cropYPercent: raw.crop_y_percent,
     brandId: request.brand_id || 'the_isaiah_dupree',
   };
   const propsPath = path.join(outputDir, `${variantId}.props.json`);
@@ -107,6 +110,9 @@ for (const raw of request.variants) {
       visual_filter: raw.visual_filter,
       overlay_color: raw.overlay_color,
       overlay_opacity: raw.overlay_opacity,
+      crop_scale: raw.crop_scale,
+      crop_x_percent: raw.crop_x_percent,
+      crop_y_percent: raw.crop_y_percent,
       on_screen_text: raw.on_screen_text,
       on_screen_subtext: raw.on_screen_subtext || '',
       accent_color: raw.accent_color,

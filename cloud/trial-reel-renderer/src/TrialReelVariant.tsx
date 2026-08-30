@@ -18,6 +18,9 @@ export interface TrialReelVariantProps {
   visualFilter: string;
   overlayColor: string;
   overlayOpacity: number;
+  cropScale: number;
+  cropXPercent: number;
+  cropYPercent: number;
   brandId: string;
 }
 
@@ -29,6 +32,9 @@ export const TrialReelVariant: React.FC<TrialReelVariantProps> = ({
   visualFilter,
   overlayColor,
   overlayOpacity,
+  cropScale,
+  cropXPercent,
+  cropYPercent,
   brandId,
 }) => {
   const frame = useCurrentFrame();
@@ -52,6 +58,8 @@ export const TrialReelVariant: React.FC<TrialReelVariantProps> = ({
           height: '100%',
           objectFit: 'cover',
           filter: visualFilter,
+          transform: `translate(${cropXPercent}%, ${cropYPercent}%) scale(${cropScale})`,
+          transformOrigin: 'center center',
         }}
       />
 
