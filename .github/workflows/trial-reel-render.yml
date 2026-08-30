@@ -1,0 +1,65 @@
+name: Trial Reel Remotion Render
+
+on:
+  push:
+    branches:
+      - audit/scale-2026-05-30
+    paths:
+      - "cloud/trial-reel-renderer/**"
+      - ".github/workflows/trial-reel-render.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: cloud/trial-reel-renderer
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: cloud/trial-reel-renderer/package-lock.json
+      - name: Install renderer
+        run: npm ci --no-audit
+      - name: Verify renderer
+        run: npm run typecheck
+      - name: Install media probe
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Select changed render requests
+        id: requests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            find requests -maxdepth 1 -type f -name '*.json' -print | sort > /tmp/requests.txt
+          else
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- requests \
+              | sed -n '/\.json$/p' > /tmp/requests.txt
+          fi
+          if [[ ! -s /tmp/requests.txt ]]; then
+            echo "No render request changed" >&2
+            exit 1
+          fi
+          cat /tmp/requests.txt
+      - name: Render changed requests
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r request; do
+            stem="$(basename "$request" .json)"
+            npm run render-batch -- "$request" "artifacts/$stem"
+          done < /tmp/requests.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trial-reel-remotion-${{ github.run_id }}
+          path: cloud/trial-reel-renderer/artifacts
+          if-no-files-found: error
+          retention-days: 7

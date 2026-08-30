@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "contract_type": "trial_reel_remotion_render_request",
+  "request_id": "trial-render-fam-nobody-wants-agent-20260830-01-smoke",
+  "mode": "smoke",
+  "family_id": "fam-nobody-wants-agent-20260830-01",
+  "source_sha256": "eb2efdba05457bd0c93727f9dde669ccd5ffb1a0df83b94c5b95883d28989011",
+  "video_url": "https://gqjgxltroyysjoxswbmn.supabase.co/storage/v1/object/public/videos/ops-console/premiere-edits/owner-three-circle-main-manual-20260826/heygen_isaiah_agent_v3/hg-three-circle-test-20260827-01-annoying-work-disappears-v3-agent-5eb65b20d0a8-instagram-privacy-sanitized-v1.mp4",
+  "duration_sec": 3,
+  "brand_id": "the_isaiah_dupree",
+  "variants": [
+    {
+      "id": "trial-annoying-work-cool-20260830",
+      "code": "FILTER-COOL-HOOK-RELIEF",
+      "visual_filter": "contrast(1.12) saturate(0.85) brightness(0.98)",
+      "overlay_color": "#0A3D62",
+      "overlay_opacity": 0.16,
+      "on_screen_text": "NOBODY WANTS ANOTHER AI DASHBOARD",
+      "on_screen_subtext": "They want the annoying work gone.",
+      "accent_color": "#27D3FF",
+      "post_caption": "Nobody wants another AI dashboard. They want the annoying work gone.\n\nWhat five-minute task would you delete forever?\n\n#AI #Automation #FutureOfWork"
+    },
+    {
+      "id": "trial-annoying-work-warm-20260830",
+      "code": "FILTER-WARM-HOOK-BORING",
+      "visual_filter": "contrast(1.05) saturate(1.22) sepia(0.16) brightness(1.03)",
+      "overlay_color": "#8A3B12",
+      "overlay_opacity": 0.12,
+      "on_screen_text": "GOOD AUTOMATION SHOULD FEEL BORING",
+      "on_screen_subtext": "The task disappears. The result remains.",
+      "accent_color": "#FFB547",
+      "post_caption": "The best automation feels boring: the receipt lands, the follow-up happens, and nobody thinks about the plumbing.\n\nWhat should disappear from your workday?\n\n#BusinessSystems #Automation #Work"
+    },
+    {
+      "id": "trial-annoying-work-mono-20260830",
+      "code": "FILTER-MONO-HOOK-FAILED",
+      "visual_filter": "grayscale(0.88) contrast(1.18) brightness(1.02)",
+      "overlay_color": "#0B5D42",
+      "overlay_opacity": 0.08,
+      "on_screen_text": "IF AI CREATES MORE WORK, IT FAILED",
+      "on_screen_subtext": "Relief beats another clever demo.",
+      "accent_color": "#38EF7D",
+      "post_caption": "If your AI tool creates more prompts, more dashboards, and more mistakes to watch, it did not remove work. It renamed it.\n\nWhat would real relief look like?\n\n#AITools #Productivity #Automation"
+    }
+  ]
+}
