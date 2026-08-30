@@ -82,6 +82,16 @@ export const TrialReelVariant: React.FC<TrialReelVariantProps> = ({
       <div
         style={{
           position: 'absolute',
+          inset: '0 0 auto 0',
+          height: 118,
+          backgroundColor: '#080A0C',
+          opacity: titleOpacity,
+        }}
+      />
+
+      <div
+        style={{
+          position: 'absolute',
           top: 118,
           left: 56,
           right: 56,
@@ -95,7 +105,7 @@ export const TrialReelVariant: React.FC<TrialReelVariantProps> = ({
           style={{
             minWidth: 0,
             padding: '24px 28px 23px',
-            backgroundColor: 'rgba(8, 10, 12, 0.86)',
+            backgroundColor: '#080A0C',
             border: '1px solid rgba(255,255,255,0.16)',
           }}
         >
