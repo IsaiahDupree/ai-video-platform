@@ -21,6 +21,8 @@ jobs:
         working-directory: cloud/trial-reel-renderer
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -41,8 +43,9 @@ jobs:
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             find requests -maxdepth 1 -type f -name '*.json' -print | sort > /tmp/requests.txt
           else
-            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- requests \
-              | sed -n '/\.json$/p' > /tmp/requests.txt
+            git show --pretty='' --name-only "${{ github.sha }}" \
+              | sed -n 's#^cloud/trial-reel-renderer/\(requests/.*\.json\)$#\1#p' \
+              > /tmp/requests.txt
           fi
           if [[ ! -s /tmp/requests.txt ]]; then
             echo "No render request changed" >&2

@@ -2,6 +2,7 @@
   "schema_version": "1.0",
   "contract_type": "trial_reel_remotion_render_request",
   "request_id": "trial-render-fam-nobody-wants-agent-20260830-01-smoke",
+  "request_revision": 2,
   "mode": "smoke",
   "family_id": "fam-nobody-wants-agent-20260830-01",
   "source_sha256": "eb2efdba05457bd0c93727f9dde669ccd5ffb1a0df83b94c5b95883d28989011",
