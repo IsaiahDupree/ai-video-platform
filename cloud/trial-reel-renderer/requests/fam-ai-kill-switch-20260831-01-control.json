@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "contract_type": "trial_reel_remotion_render_request",
+  "request_id": "trial-render-fam-ai-kill-switch-20260831-01-control",
+  "request_revision": 1,
+  "mode": "full",
+  "family_id": "fam-ai-kill-switch-20260831-01",
+  "source_sha256": "946a7b66df6d81bec4b3c5c21afed6b5326128748a305c0034c653d7c40fa448",
+  "video_url": "https://gqjgxltroyysjoxswbmn.supabase.co/storage/v1/object/public/videos/ops-console/trial-reels/2026-08-31/sources/01-ai-kill-switch-heygen.mp4",
+  "duration_sec": 31.08,
+  "brand_id": "the_isaiah_dupree",
+  "variants": [
+    {
+      "id": "control-ai-kill-switch-mono-20260831",
+      "code": "CONTROL-TEXT",
+      "visual_filter": "grayscale(1) contrast(1.38) brightness(0.90)",
+      "overlay_color": "#0B5D42",
+      "overlay_opacity": 0.04,
+      "crop_scale": 1.14,
+      "crop_x_percent": 3,
+      "crop_y_percent": -1,
+      "on_screen_text": "CHOOSE AN AGENT YOU CAN STOP",
+      "on_screen_subtext": "Bound it. Log it. Stop it.",
+      "accent_color": "#38EF7D",
+      "post_caption": "Choose an AI agent you can inspect and stop. What workflow needs a clear boundary? #AIAgents #Automation"
+    }
+  ]
+}

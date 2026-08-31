@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "contract_type": "trial_reel_remotion_render_request",
+  "request_id": "trial-render-fam-creator-burnout-pressure-20260831-01-candidate",
+  "request_revision": 1,
+  "mode": "full",
+  "family_id": "fam-creator-burnout-pressure-20260831-01",
+  "source_sha256": "3326afb8dadf75817ea653f193df3bcbc4cc765832647f273a8732fde5090e6f",
+  "video_url": "https://gqjgxltroyysjoxswbmn.supabase.co/storage/v1/object/public/videos/ops-console/trial-reels/2026-08-31/sources/02-creator-burnout-heygen.mp4",
+  "duration_sec": 37.52,
+  "brand_id": "the_isaiah_dupree",
+  "variants": [
+    {
+      "id": "trial-creator-burnout-mono-20260831",
+      "code": "TEXT-01",
+      "visual_filter": "grayscale(1) contrast(1.38) brightness(0.90)",
+      "overlay_color": "#0B5D42",
+      "overlay_opacity": 0.04,
+      "crop_scale": 1.14,
+      "crop_x_percent": 3,
+      "crop_y_percent": -1,
+      "on_screen_text": "CONTENT SHOULD NOT FEEL LIKE A SECOND JOB",
+      "on_screen_subtext": "Remove pressure before demanding output.",
+      "accent_color": "#38EF7D",
+      "post_caption": "Creator burnout is not fixed by demanding another upload. Remove one heavy step today: shorten the script, reuse the setup, or schedule the edit. Make the next video easier to begin. Which part of your process feels heaviest right now? #CreatorBurnout #ContentSystems #CreatorEconomy"
+    }
+  ]
+}
