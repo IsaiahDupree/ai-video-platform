@@ -46,6 +46,7 @@ export interface WebhookConfig {
 }
 
 export interface GatewayConfig {
+  host?: string;
   port?: number;
   apiKey?: string;
   rateLimit?: RateLimitConfig;
@@ -251,6 +252,7 @@ export class APIGateway {
 
   constructor(config: GatewayConfig = {}) {
     this.config = {
+      host: config.host || '127.0.0.1',
       port: config.port || 3000,
       rateLimit: config.rateLimit || {
         requestsPerMinute: 60,
@@ -417,8 +419,8 @@ export class APIGateway {
         }
       });
 
-      this.server.listen(this.config.port, () => {
-        console.log(`API Gateway listening on port ${this.config.port}`);
+      this.server.listen(this.config.port, this.config.host, () => {
+        console.log(`API Gateway listening on ${this.config.host}:${this.config.port}`);
         resolve();
       });
 

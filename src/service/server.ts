@@ -47,18 +47,33 @@ if (fs.existsSync(envPath)) {
 // Configuration
 // =============================================================================
 
+function loadServiceApiKey(): string {
+  const configured = (
+    process.env.REMOTION_SERVICE_API_KEY || process.env.WORKER_SECRET || ''
+  ).trim();
+  if (configured) return configured;
+  const tokenFile = process.env.REMOTION_SERVICE_API_TOKEN_FILE ||
+    path.join(os.homedir(), '.remotion-service', 'api-token');
+  try {
+    return fs.readFileSync(tokenFile, 'utf-8').trim();
+  } catch {
+    return '';
+  }
+}
+
 const CONFIG = {
+  host: process.env.REMOTION_SERVICE_HOST || '127.0.0.1',
   port: parseInt(process.env.REMOTION_SERVICE_PORT || '3100'),
-  apiKey: process.env.REMOTION_SERVICE_API_KEY || 'dev-api-key',
+  apiKey: loadServiceApiKey(),
   rateLimit: {
     requestsPerMinute: parseInt(process.env.RATE_LIMIT_REQUESTS_PER_MINUTE || '60'),
     requestsPerHour: parseInt(process.env.RATE_LIMIT_REQUESTS_PER_HOUR || '1000'),
     burstSize: 10,
   },
   queue: {
-    maxConcurrent: parseInt(process.env.JOB_QUEUE_MAX_CONCURRENT || '10'),
+    maxConcurrent: parseInt(process.env.JOB_QUEUE_MAX_CONCURRENT || '2'),
     defaultMaxRetries: 3,
-    jobTimeout: 1800000, // 30 minutes
+    jobTimeout: parseInt(process.env.REMOTION_JOB_TIMEOUT_MS || '3900000'),
   },
   cors: {
     enabled: process.env.CORS_ENABLED !== 'false',
@@ -73,6 +88,7 @@ const CONFIG = {
 const queue = new JobQueue(CONFIG.queue);
 const batchHandler = new BatchAPIHandler(queue);
 const gateway = new APIGateway({
+  host: CONFIG.host,
   port: CONFIG.port,
   apiKey: CONFIG.apiKey,
   rateLimit: CONFIG.rateLimit,
@@ -2456,9 +2472,14 @@ gateway.registerRoute('GET', '/api/v1/insights', async (req, res) => {
 // =============================================================================
 
 async function start() {
+  if (!CONFIG.apiKey.trim()) {
+    throw new Error(
+      'REMOTION_SERVICE_API_KEY, WORKER_SECRET, or the owner-only token file is required'
+    );
+  }
   console.log('🚀 Starting Remotion Media Service...');
-  console.log(`📡 Port: ${CONFIG.port}`);
-  console.log(`🔑 API Key: ${CONFIG.apiKey.substring(0, 8)}...`);
+  console.log(`📡 Bind: ${CONFIG.host}:${CONFIG.port}`);
+  console.log('🔑 API authentication: bearer required');
   console.log(`⚙️  Max Concurrent Jobs: ${CONFIG.queue.maxConcurrent}`);
   console.log(`🌐 CORS Enabled: ${CONFIG.cors.enabled}`);
 

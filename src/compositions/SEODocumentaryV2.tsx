@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
+  OffthreadVideo,
   interpolate,
   spring,
   staticFile,
@@ -32,6 +33,7 @@ export interface Scene {
   accentColor?: string;
   characterFile?: string;
   imageFile?: string;    // path for image_reveal scenes
+  videoFile?: string;    // HTTPS stock/owned B-roll selected by the build API
   year?: string;
 }
 
@@ -66,6 +68,34 @@ const MONO    = '"JetBrains Mono", "Courier New", monospace';
 const SANS    = '"Inter", system-ui, sans-serif';
 const FPS     = 30;
 const sec     = (s: number) => Math.round(s * FPS);
+const mediaSrc = (value: string) => (
+  /^https:\/\//i.test(value) || /^data:image\//i.test(value)
+    ? value
+    : staticFile(value)
+);
+
+const SceneMedia: React.FC<{
+  scene: Scene;
+  fallbackImage?: string;
+  opacity: number;
+}> = ({ scene, fallbackImage, opacity }) => {
+  if (scene.videoFile) {
+    return (
+      <OffthreadVideo
+        src={mediaSrc(scene.videoFile)}
+        volume={0}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', opacity }}
+      />
+    );
+  }
+  const image = scene.imageFile ?? fallbackImage;
+  return image ? (
+    <img
+      src={mediaSrc(image)}
+      style={{ width: '100%', height: '100%', objectFit: 'cover', opacity }}
+    />
+  ) : null;
+};
 
 // ─── Enhancement constants ──────────────────────────────────────────────────
 const CROSSFADE_FRAMES = 8;  // frames of overlap for scene-to-scene crossfade
@@ -308,7 +338,7 @@ const FactRevealScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFram
 }) => {
   const { fps } = useVideoConfig();
   const color = scene.accentColor ?? chapter.color;
-  const hasImage = !!scene.imageFile;
+  const hasImage = !!(scene.imageFile || scene.videoFile);
 
   const countIn  = spring({ frame: localFrame - 5, fps, config: { damping: 15, stiffness: 60 } });
   const labelIn  = spring({ frame: localFrame - 20, fps, config: { damping: 20, stiffness: 70 } });
@@ -323,7 +353,7 @@ const FactRevealScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFram
             position: 'absolute', inset: 0, overflow: 'hidden',
             transform: `scale(${kb.scale}) translate(${kb.translateX}%, ${kb.translateY}%)`, transformOrigin: 'center',
           }}>
-            <img src={staticFile(scene.imageFile!)} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }} />
+            <SceneMedia scene={scene} opacity={0.3} />
           </div>
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,16,32,0.65)' }} />
         </>
@@ -379,7 +409,7 @@ const QuoteScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFrame: nu
 }) => {
   const { fps } = useVideoConfig();
   const color = scene.accentColor ?? chapter.color;
-  const hasImage = !!scene.imageFile;
+  const hasImage = !!(scene.imageFile || scene.videoFile);
 
   const quoteIn = spring({ frame: localFrame, fps, config: { damping: 22, stiffness: 60 } });
   const kb = dynamicKenBurns(localFrame, totalFrames, sceneIndex + 200);
@@ -393,7 +423,7 @@ const QuoteScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFrame: nu
             position: 'absolute', inset: 0, overflow: 'hidden',
             transform: `scale(${kb.scale}) translate(${kb.translateX}%, ${kb.translateY}%)`, transformOrigin: 'center',
           }}>
-            <img src={staticFile(scene.imageFile!)} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }} />
+            <SceneMedia scene={scene} opacity={0.35} />
           </div>
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(5,10,20,0.6)' }} />
         </>
@@ -444,8 +474,6 @@ const CharacterScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFrame
   const imgIn  = spring({ frame: localFrame, fps, config: { damping: 18, stiffness: 55 } });
   const textIn = spring({ frame: localFrame - 15, fps, config: { damping: 20, stiffness: 65 } });
 
-  const imgFile = scene.imageFile ?? scene.characterFile ?? chapter.characterImageFile;
-
   return (
     <AbsoluteFill style={{ background: BG, flexDirection: 'row' }}>
       {/* Character image — right half */}
@@ -454,9 +482,10 @@ const CharacterScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFrame
         opacity: imgIn,
         transform: `translateX(${interpolate(imgIn, [0, 1], [60, 0])}px)`,
       }}>
-        <img
-          src={staticFile(imgFile)}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        <SceneMedia
+          scene={scene}
+          fallbackImage={scene.characterFile ?? chapter.characterImageFile}
+          opacity={1}
         />
         {/* Fade left edge */}
         <div style={{
@@ -508,7 +537,7 @@ const TimelineScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFrame:
 }) => {
   const { fps } = useVideoConfig();
   const color = scene.accentColor ?? chapter.color;
-  const hasImage = !!scene.imageFile;
+  const hasImage = !!(scene.imageFile || scene.videoFile);
 
   const lineIn = interpolate(localFrame, [0, 40], [0, 1], {
     extrapolateRight: 'clamp',
@@ -527,7 +556,7 @@ const TimelineScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFrame:
             position: 'absolute', inset: 0, overflow: 'hidden',
             transform: `scale(${kb.scale}) translate(${kb.translateX}%, ${kb.translateY}%)`, transformOrigin: 'center',
           }}>
-            <img src={staticFile(scene.imageFile!)} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.25 }} />
+            <SceneMedia scene={scene} opacity={0.25} />
           </div>
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(5,10,20,0.7)' }} />
         </>
@@ -622,8 +651,6 @@ const ImageRevealScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFra
   // Dynamic Ken Burns — pan + zoom with direction variation per scene
   const kb = dynamicKenBurns(localFrame, totalFrames, sceneIndex);
 
-  const imgFile = scene.imageFile ?? chapter.characterImageFile;
-
   return (
     <AbsoluteFill style={{ background: '#000', overflow: 'hidden' }}>
       {/* Full-bleed image with dynamic Ken Burns */}
@@ -633,9 +660,10 @@ const ImageRevealScene: React.FC<{ scene: Scene; chapter: SEOChapterV2; localFra
         transformOrigin: 'center center',
         opacity: imgIn,
       }}>
-        <img
-          src={staticFile(imgFile)}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        <SceneMedia
+          scene={scene}
+          fallbackImage={chapter.characterImageFile}
+          opacity={1}
         />
       </div>
 
@@ -768,7 +796,7 @@ const ChapterRenderer: React.FC<{ chapter: SEOChapterV2 }> = ({ chapter }) => {
   return (
     <AbsoluteFill>
       {/* Audio for this chapter — full duration */}
-      <Audio src={staticFile(chapter.audioFile)} volume={1} />
+      <Audio src={mediaSrc(chapter.audioFile)} volume={1} />
 
       {/* Render tiled scenes */}
       {slots.map((slot, i) => (
