@@ -1,6 +1,7 @@
 import React from 'react';
 import { Composition, Still, getInputProps, staticFile } from 'remotion';
 import { BriefComposition } from './compositions/BriefComposition';
+import { PresenterOverBroll, presenterOverBrollDefaultProps, type PresenterOverBrollProps } from './compositions/PresenterOverBroll';
 import { AssetComposition } from './compositions/AssetComposition';
 import { BenchmarkTest, benchmarkDefaultProps } from './compositions/BenchmarkTest';
 import { FullVideoDemo, fullVideoDemoDefaultProps } from './compositions/FullVideoDemo';
@@ -313,6 +314,20 @@ export const RemotionRoot: React.FC = () => {
         width={resolution.width}
         height={resolution.height}
         defaultProps={{ brief }}
+      />
+
+      <Composition<any, PresenterOverBrollProps>
+        id="PresenterOverBroll"
+        component={PresenterOverBroll}
+        durationInFrames={125}
+        fps={25}
+        width={1080}
+        height={1920}
+        defaultProps={presenterOverBrollDefaultProps}
+        calculateMetadata={({props}) => ({
+          fps: props.fps,
+          durationInFrames: Math.max(1, Math.round(props.duration * props.fps)),
+        })}
       />
 
       <Composition<any, EvidenceFirstShortProps>
