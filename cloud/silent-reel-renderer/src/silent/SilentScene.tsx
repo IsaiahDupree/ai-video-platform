@@ -43,7 +43,7 @@ const THEMES: Record<SilentReelProps['style'], Theme> = {
 
 // ── geometry ─────────────────────────────────────────────────────────────────
 const W = 1080, H = 1920;
-const BOX = { x: 90, y: 470, w: 900, h: 640 }; // diagram area
+const BOX = { x: 90, y: 440, w: 900, h: 600 }; // diagram area (nodes stay clear of the metric slot at 1200)
 const px = (n: SceneNode) => ({ x: BOX.x + n.x * BOX.w, y: BOX.y + n.y * BOX.h });
 
 // ── icons (simple, readable at reel size) ────────────────────────────────────
@@ -107,7 +107,8 @@ const StateLayer: React.FC<{ state: SceneState; t: Theme; frame: number; opacity
   const toneColor = (tone?: Tone) => t.tone[tone ?? 'neutral'];
   return (
     <AbsoluteFill style={{ opacity, transform: `translateX(${slide}px)` }}>
-      <div style={{ position: 'absolute', left: 60, top: 300, fontFamily: t.font, fontSize: 30, letterSpacing: 2, color: toneColor(state.tone), fontWeight: 600, textTransform: 'uppercase' }}>{state.subtitle}</div>
+      {/* machine style prints the felt question at 300, so its subtitle sits below it */}
+      <div style={{ position: 'absolute', left: 60, top: t.caps ? 352 : 300, fontFamily: t.font, fontSize: 30, letterSpacing: 2, color: toneColor(state.tone), fontWeight: 600, textTransform: 'uppercase' }}>{state.subtitle}</div>
       <svg width={W} height={H} style={{ position: 'absolute', inset: 0 }}>
         {state.edges.map((e: SceneEdge, i) => {
           const a = nodePos.get(e.from), b = nodePos.get(e.to);
@@ -145,7 +146,7 @@ const StateLayer: React.FC<{ state: SceneState; t: Theme; frame: number; opacity
         );
       })}
       {state.metric && (
-        <div style={{ position: 'absolute', left: 0, right: 0, top: state.metric.big ? 1140 : 1160, textAlign: 'center', fontFamily: t.font, opacity: metricOpacity }}>
+        <div style={{ position: 'absolute', left: 0, right: 0, top: state.metric.big ? 1180 : 1200, textAlign: 'center', fontFamily: t.font, opacity: metricOpacity }}>
           <div style={{ fontSize: state.metric.big ? 120 : 92, fontWeight: 800, color: toneColor(state.metric.tone ?? 'good'), letterSpacing: -1, textShadow: t.glow ? `0 0 24px ${toneColor(state.metric.tone ?? 'good')}88` : undefined }}>{state.metric.value}</div>
           {state.metric.sub && <div style={{ fontSize: 28, color: t.muted, marginTop: 4 }}>{state.metric.sub}</div>}
         </div>
@@ -213,7 +214,7 @@ export const SilentScene: React.FC<SilentReelProps> = (props) => {
       <StateLayer state={cur} t={t} frame={frame} opacity={xf} slide={40 * (1 - xf)} nodePos={blended} metricOpacity={payoffOn ? Math.max(0, 1 - pop * 1.6) : 1} />
       {/* payoff */}
       {payoffOn && props.payoff && (
-        <div style={{ position: 'absolute', left: 0, right: 0, top: 1130, textAlign: 'center', transform: `scale(${0.6 + 0.4 * pop})`, opacity: pop }}>
+        <div style={{ position: 'absolute', left: 0, right: 0, top: 1170, textAlign: 'center', transform: `scale(${0.6 + 0.4 * pop})`, opacity: pop }}>
           <div style={{ fontSize: 132, fontWeight: 800, letterSpacing: 4, color: t.tone[props.payoff.tone ?? 'good'], textShadow: t.glow ? `0 0 30px ${t.tone[props.payoff.tone ?? 'good']}` : undefined }}>{props.payoff.word}</div>
           {props.payoff.sub && <div style={{ fontSize: 30, color: t.muted, marginTop: 2 }}>{props.payoff.sub}</div>}
         </div>
