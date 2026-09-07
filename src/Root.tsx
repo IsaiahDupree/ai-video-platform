@@ -1,6 +1,7 @@
 import React from 'react';
 import { Composition, Still, getInputProps, staticFile } from 'remotion';
 import { BriefComposition } from './compositions/BriefComposition';
+import { BlueprintExplainer, MachineMetaphor, silentReelDefaultProps, silentReelDurationInFrames, type SilentReelProps } from './compositions/silent';
 import { PresenterOverBroll, presenterOverBrollDefaultProps, type PresenterOverBrollProps } from './compositions/PresenterOverBroll';
 import { AssetComposition } from './compositions/AssetComposition';
 import { BenchmarkTest, benchmarkDefaultProps } from './compositions/BenchmarkTest';
@@ -306,6 +307,28 @@ export const RemotionRoot: React.FC = () => {
   return (
     <>
       {/* Main brief-driven composition */}
+      {/* Silent explainer reels (no voiceover; reverse-engineered from @codewithdeekeej / @krishnachaytanyaa) */}
+      <Composition<any, SilentReelProps>
+        id="BlueprintExplainer"
+        component={BlueprintExplainer}
+        durationInFrames={silentReelDurationInFrames(silentReelDefaultProps)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={silentReelDefaultProps}
+        calculateMetadata={({ props }) => ({ fps: props.fps ?? 30, durationInFrames: silentReelDurationInFrames(props) })}
+      />
+      <Composition<any, SilentReelProps>
+        id="MachineMetaphor"
+        component={MachineMetaphor}
+        durationInFrames={silentReelDurationInFrames(silentReelDefaultProps)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ ...silentReelDefaultProps, style: 'machine' }}
+        calculateMetadata={({ props }) => ({ fps: props.fps ?? 30, durationInFrames: silentReelDurationInFrames(props) })}
+      />
+
       <Composition
         id="BriefComposition"
         component={BriefComposition}

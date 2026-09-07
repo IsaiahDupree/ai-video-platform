@@ -1,0 +1,19 @@
+{
+  "name": "silent-reel-renderer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloud-only Remotion renderer for silent explainer reels (BlueprintExplainer, MachineMetaphor). Rendered on Modal; local Chrome is forbidden by the browser singleton policy.",
+  "scripts": { "typecheck": "tsc --noEmit" },
+  "dependencies": {
+    "@remotion/cli": "4.0.434",
+    "@remotion/google-fonts": "4.0.434",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.434"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.28",
+    "@types/react-dom": "18.3.7",
+    "typescript": "5.9.3"
+  }
+}

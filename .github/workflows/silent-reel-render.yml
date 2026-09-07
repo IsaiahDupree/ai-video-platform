@@ -1,0 +1,66 @@
+name: Silent Reel Render
+
+# Dispatch-only cloud render lane for silent explainer reels. Props arrive as
+# base64 JSON so no commit is needed per render; the MP4 comes back as a
+# workflow artifact that the silent-explainer CLI downloads with `gh`.
+# Exists because local Remotion (chrome-headless-shell) is forbidden on the
+# Mac by the browser singleton policy and Modal is spend-capped.
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition:
+        description: "BlueprintExplainer | MachineMetaphor"
+        required: true
+        default: "BlueprintExplainer"
+      props_b64:
+        description: "base64(JSON props for the composition)"
+        required: true
+      name:
+        description: "output stem (filesystem-safe)"
+        required: true
+        default: "reel"
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: cloud/silent-reel-renderer
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: cloud/silent-reel-renderer/package-lock.json
+      - name: Install renderer
+        run: npm ci --no-audit --no-fund
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Write props
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          echo "${{ github.event.inputs.props_b64 }}" | base64 -d > artifacts/props.json
+          node -e 'const p=require("./artifacts/props.json"); if(!Array.isArray(p.states)||!p.states.length) throw new Error("props.states required"); console.log("states:", p.states.length)'
+      - name: Render
+        shell: bash
+        run: |
+          set -euo pipefail
+          stem="$(echo "${{ github.event.inputs.name }}" | tr -cd 'A-Za-z0-9._-')"
+          [[ -n "$stem" ]] || stem=reel
+          npx remotion render src/index.tsx "${{ github.event.inputs.composition }}" "artifacts/${stem}.mp4" \
+            --props artifacts/props.json --codec=h264 --pixel-format=yuv420p --crf=18 --concurrency=2 --log=warn
+          ls -la artifacts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: silent-reel-${{ github.run_id }}
+          path: cloud/silent-reel-renderer/artifacts
+          if-no-files-found: error
+          retention-days: 7
