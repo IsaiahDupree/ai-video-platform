@@ -48,7 +48,7 @@ const px = (n: SceneNode) => ({ x: BOX.x + n.x * BOX.w, y: BOX.y + n.y * BOX.h }
 
 // ── icons (simple, readable at reel size) ────────────────────────────────────
 const Icon: React.FC<{ kind: SceneNode['kind']; color: string; t: Theme; frame: number; value?: number }> = ({ kind, color, t, frame, value }) => {
-  const s = 64;
+  const s = 104;
   const stroke = { stroke: color, strokeWidth: 3, fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
   const glow = t.glow ? { filter: `drop-shadow(0 0 6px ${color})` } : {};
   switch (kind) {
@@ -103,7 +103,7 @@ const edgePath = (a: { x: number; y: number }, b: { x: number; y: number }, bend
 };
 
 // ── one state, rendered with an opacity/offset ───────────────────────────────
-const StateLayer: React.FC<{ state: SceneState; t: Theme; frame: number; opacity: number; slide: number; nodePos: Map<string, { x: number; y: number }> }> = ({ state, t, frame, opacity, slide, nodePos }) => {
+const StateLayer: React.FC<{ state: SceneState; t: Theme; frame: number; opacity: number; slide: number; nodePos: Map<string, { x: number; y: number }>; metricOpacity?: number }> = ({ state, t, frame, opacity, slide, nodePos, metricOpacity = 1 }) => {
   const toneColor = (tone?: Tone) => t.tone[tone ?? 'neutral'];
   return (
     <AbsoluteFill style={{ opacity, transform: `translateX(${slide}px)` }}>
@@ -117,14 +117,14 @@ const StateLayer: React.FC<{ state: SceneState; t: Theme; frame: number; opacity
           const mode = e.mode ?? 'flow';
           return (
             <g key={i}>
-              <path d={d} stroke={color} strokeWidth={mode === 'off' ? 1.5 : 2.5} fill="none" opacity={mode === 'off' ? 0.25 : mode === 'static' ? 0.35 : 0.9}
-                strokeDasharray={mode === 'flow' ? '10 14' : undefined}
+              <path d={d} stroke={color} strokeWidth={mode === 'off' ? 2 : 3.5} fill="none" opacity={mode === 'off' ? 0.25 : mode === 'static' ? 0.35 : 0.9}
+                strokeDasharray={mode === 'flow' ? '14 18' : undefined}
                 strokeDashoffset={mode === 'flow' ? -frame * 3 : undefined}
                 style={t.glow && mode === 'flow' ? { filter: `drop-shadow(0 0 4px ${color})` } : undefined} />
               {e.label && (
                 <g>
-                  <rect x={mid.x - 6 - e.label.length * 6.2} y={mid.y - 16} width={12 + e.label.length * 12.4} height={30} rx={6} fill={t.bg} stroke={color} strokeWidth={1.5} />
-                  <text x={mid.x} y={mid.y + 5} textAnchor="middle" fontSize={18} fontWeight={700} fill={color} fontFamily={t.font} letterSpacing={1}>{e.label}</text>
+                  <rect x={mid.x - 8 - e.label.length * 7.2} y={mid.y - 19} width={16 + e.label.length * 14.4} height={36} rx={7} fill={t.bg} stroke={color} strokeWidth={1.5} />
+                  <text x={mid.x} y={mid.y + 7} textAnchor="middle" fontSize={21} fontWeight={700} fill={color} fontFamily={t.font} letterSpacing={1}>{e.label}</text>
                 </g>
               )}
             </g>
@@ -135,17 +135,17 @@ const StateLayer: React.FC<{ state: SceneState; t: Theme; frame: number; opacity
         const p = nodePos.get(n.id)!;
         const color = toneColor(n.tone ?? 'accent');
         return (
-          <div key={n.id} style={{ position: 'absolute', left: p.x - 90, top: p.y - 40, width: 180, textAlign: 'center', fontFamily: t.font }}>
+          <div key={n.id} style={{ position: 'absolute', left: p.x - 130, top: p.y - 62, width: 260, textAlign: 'center', fontFamily: t.font }}>
             <div style={{ display: 'flex', justifyContent: 'center' }}><Icon kind={n.kind} color={color} t={t} frame={frame} value={n.value} /></div>
-            <div style={{ color: t.ink, fontSize: 24, fontWeight: 700, letterSpacing: t.caps ? 2 : 1, marginTop: 4, textTransform: t.caps ? 'uppercase' : undefined }}>{n.label}</div>
-            {n.badge && <div style={{ display: 'inline-block', marginTop: 4, padding: '2px 10px', border: `1.5px solid ${color}`, color, borderRadius: 5, fontSize: 17, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase' }}>{n.badge}</div>}
-            {n.sub && <div style={{ color: t.muted, fontSize: 18, marginTop: 3 }}>{n.sub}</div>}
-            {n.readout && <div style={{ marginTop: 6, padding: '6px 10px', border: `2px solid ${color}`, borderRadius: 8, color, fontSize: 22, fontWeight: 700, background: t.bg, boxShadow: t.glow ? `0 0 14px ${color}66` : undefined }}>{n.readout}</div>}
+            <div style={{ color: t.ink, fontSize: 30, fontWeight: 700, letterSpacing: t.caps ? 2 : 1, marginTop: 4, textTransform: t.caps ? 'uppercase' : undefined }}>{n.label}</div>
+            {n.badge && <div style={{ display: 'inline-block', marginTop: 4, padding: '2px 10px', border: `1.5px solid ${color}`, color, borderRadius: 6, fontSize: 21, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase' }}>{n.badge}</div>}
+            {n.sub && <div style={{ color: t.muted, fontSize: 22, marginTop: 4 }}>{n.sub}</div>}
+            {n.readout && <div style={{ marginTop: 6, padding: '6px 10px', border: `2px solid ${color}`, borderRadius: 8, color, fontSize: 26, fontWeight: 700, background: t.bg, boxShadow: t.glow ? `0 0 14px ${color}66` : undefined }}>{n.readout}</div>}
           </div>
         );
       })}
       {state.metric && (
-        <div style={{ position: 'absolute', left: 0, right: 0, top: state.metric.big ? 1140 : 1160, textAlign: 'center', fontFamily: t.font }}>
+        <div style={{ position: 'absolute', left: 0, right: 0, top: state.metric.big ? 1140 : 1160, textAlign: 'center', fontFamily: t.font, opacity: metricOpacity }}>
           <div style={{ fontSize: state.metric.big ? 120 : 92, fontWeight: 800, color: toneColor(state.metric.tone ?? 'good'), letterSpacing: -1, textShadow: t.glow ? `0 0 24px ${toneColor(state.metric.tone ?? 'good')}88` : undefined }}>{state.metric.value}</div>
           {state.metric.sub && <div style={{ fontSize: 28, color: t.muted, marginTop: 4 }}>{state.metric.sub}</div>}
         </div>
@@ -209,7 +209,8 @@ export const SilentScene: React.FC<SilentReelProps> = (props) => {
       )}
       {/* states */}
       {prev && xf < 1 && <StateLayer state={prev} t={t} frame={frame} opacity={1 - xf} slide={-40 * xf} nodePos={prevPos!} />}
-      <StateLayer state={cur} t={t} frame={frame} opacity={xf} slide={40 * (1 - xf)} nodePos={blended} />
+      {/* the payoff word takes the metric's place — never both at once */}
+      <StateLayer state={cur} t={t} frame={frame} opacity={xf} slide={40 * (1 - xf)} nodePos={blended} metricOpacity={payoffOn ? Math.max(0, 1 - pop * 1.6) : 1} />
       {/* payoff */}
       {payoffOn && props.payoff && (
         <div style={{ position: 'absolute', left: 0, right: 0, top: 1130, textAlign: 'center', transform: `scale(${0.6 + 0.4 * pop})`, opacity: pop }}>
