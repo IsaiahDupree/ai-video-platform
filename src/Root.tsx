@@ -61,6 +61,7 @@ import {
   defaultAdTemplateStillProps,
   AD_CANVAS_PRESETS,
 } from './ad-templates';
+import { LinkedInCarouselSlide } from './compositions/LinkedInCarousel';
 import { StripePricing, stripePricingDefaultProps } from './compositions/StripePricing';
 import { StripeProductCard, STRIPE_PRODUCTS } from './compositions/StripeProductCard';
 import {
@@ -655,6 +656,15 @@ export const RemotionRoot: React.FC = () => {
         width={AD_SIZES.twitter_post.width}
         height={AD_SIZES.twitter_post.height}
         defaultProps={staticAdDefaultProps}
+      />
+
+      {/* LinkedIn document carousel slide (1080x1350) — render per index via --props */}
+      <Still
+        id="LinkedInCarousel"
+        component={LinkedInCarouselSlide}
+        width={1080}
+        height={1350}
+        defaultProps={{ index: 0 }}
       />
 
       {/* LinkedIn Post (1200x627) */}

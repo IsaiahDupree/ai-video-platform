@@ -372,55 +372,77 @@ JSON structure:
             raise
     
     async def _generate_voiceovers(self, brief: ContentBrief) -> None:
-        """Generate TTS voiceovers for all items with narration."""
+        """Generate TTS voiceovers for all items with narration.
+
+        Provider is resolved via voice_provider: FREE HuggingFace TTS by default,
+        ElevenLabs ONLY when VOICE_PROVIDER=elevenlabs (explicit opt-in). This never
+        consumes ElevenLabs characters unless the operator asks for it.
+        """
         import os
-        
-        elevenlabs_key = os.getenv("ELEVENLABS_API_KEY")
-        if not elevenlabs_key:
-            logger.warning("ElevenLabs API key not configured, skipping TTS")
-            return
-        
-        import httpx
-        
+        from ..video_generation.voice_provider import (
+            resolve_narration_provider,
+            elevenlabs_opted_in,
+        )
+
+        provider = resolve_narration_provider()
+
         voiceover_dir = self.output_dir / "voiceovers" / brief.id
         voiceover_dir.mkdir(parents=True, exist_ok=True)
-        
+
         for item in brief.items:
             if not item.narration or not item.narration.script:
                 continue
-            
+
             output_path = voiceover_dir / f"{item.id}.mp3"
-            
+
             # Skip if already generated
             if output_path.exists():
                 continue
-            
+
             try:
-                async with httpx.AsyncClient(timeout=60.0) as client:
-                    response = await client.post(
-                        "https://api.elevenlabs.io/v1/text-to-speech/21m00Tcm4TlvDq8ikWAM",
-                        headers={
-                            "xi-api-key": elevenlabs_key,
-                            "Content-Type": "application/json",
-                        },
-                        json={
-                            "text": item.narration.script,
-                            "model_id": "eleven_monolingual_v1",
-                            "voice_settings": {
-                                "stability": 0.5,
-                                "similarity_boost": 0.5,
-                            }
-                        }
-                    )
-                    
-                    if response.status_code == 200:
-                        output_path.write_bytes(response.content)
-                        logger.info(f"Generated voiceover: {item.id}")
-                    else:
-                        logger.warning(f"TTS failed for {item.id}: {response.status_code}")
-                        
+                if provider == "elevenlabs" and elevenlabs_opted_in():
+                    await self._tts_elevenlabs(item.narration.script, output_path)
+                else:
+                    # Default: free HuggingFace TTS — no ElevenLabs characters used.
+                    await self._tts_huggingface(item.narration.script, output_path)
+                logger.info(f"Generated voiceover ({provider}): {item.id}")
             except Exception as e:
                 logger.warning(f"TTS generation failed for {item.id}: {e}")
+
+    async def _tts_huggingface(self, text: str, output_path: Path) -> None:
+        """Free HuggingFace TTS (facebook/mms-tts-eng) — the default narration engine."""
+        from ..video_generation.hf_tts_provider import (
+            create_hf_tts_provider,
+            synthesize_with_provider,
+        )
+        provider = create_hf_tts_provider()  # default model: facebook/mms-tts-eng
+        await synthesize_with_provider(provider, text=text, out_path=str(output_path))
+
+    async def _tts_elevenlabs(self, text: str, output_path: Path) -> None:
+        """ElevenLabs TTS — reached only on explicit VOICE_PROVIDER=elevenlabs opt-in."""
+        import os
+        import httpx
+
+        elevenlabs_key = os.getenv("ELEVENLABS_API_KEY")
+        if not elevenlabs_key:
+            raise RuntimeError("VOICE_PROVIDER=elevenlabs but ELEVENLABS_API_KEY not set")
+
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            response = await client.post(
+                "https://api.elevenlabs.io/v1/text-to-speech/21m00Tcm4TlvDq8ikWAM",
+                headers={
+                    "xi-api-key": elevenlabs_key,
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "text": text,
+                    "model_id": "eleven_monolingual_v1",
+                    "voice_settings": {"stability": 0.5, "similarity_boost": 0.5},
+                },
+            )
+            if response.status_code != 200:
+                raise RuntimeError(f"ElevenLabs TTS failed: {response.status_code}")
+            output_path.write_bytes(response.content)
     
     async def _generate_scenes(
         self,

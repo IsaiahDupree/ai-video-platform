@@ -24,6 +24,7 @@ const http = require('http');
 const path = require('path');
 const crypto = require('crypto');
 const readline = require('readline');
+const voice = require('./voice-provider');
 
 const REMOTION_DIR = path.resolve(__dirname);
 const OUTPUT_DIR = path.join(REMOTION_DIR, 'output');
@@ -32,18 +33,27 @@ const DEFAULT_MODAL_REMOTION_RENDER_URL =
   'https://isaiahdupree33--remotion-render-endpoint.modal.run';
 const BROWSER_SINGLETON_POLICY_CODE = 'BROWSER_SINGLETON_POLICY';
 
-// Telegram config from environment (load from actp-worker .env if not set)
+// Env loading. process.env wins; then first file to set a key wins.
+//  1. Remotion/.env  — local pins (e.g. VOICE_PROVIDER=heygen for the series)
+//  2. ~/.env         — shared creds (HEYGEN_API_KEY, MODAL_* URLs, etc.)
+//  3. actp-worker/.env — legacy telegram config
 function _loadEnv() {
-  try {
-    const envFile = require('fs').readFileSync(
-      path.join(path.dirname(REMOTION_DIR), 'actp-worker', '.env'),
-      'utf8'
-    );
-    for (const line of envFile.split('\n')) {
-      const m = line.match(/^([A-Z0-9_]+)=(.+)$/);
-      if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-    }
-  } catch {}
+  const fs = require('fs');
+  const os = require('os');
+  const files = [
+    path.join(REMOTION_DIR, '.env'),
+    path.join(os.homedir(), '.env'),
+    path.join(path.dirname(REMOTION_DIR), 'actp-worker', '.env'),
+  ];
+  for (const f of files) {
+    try {
+      for (const line of fs.readFileSync(f, 'utf8').split('\n')) {
+        if (line.trim().startsWith('#')) continue;
+        const m = line.match(/^([A-Z0-9_]+)=(.+)$/);
+        if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
+      }
+    } catch {}
+  }
 }
 _loadEnv();
 
@@ -957,17 +967,22 @@ const TOOL_DEFS = [
   },
   {
     name: 'remotion_generate_voiceover',
-    description: 'Generate a voiceover audio file using the Modal voice clone API (not ElevenLabs). Clones Isaiah\'s voice by default. Requires MODAL_VOICE_CLONE_URL env var. Returns the path to the generated WAV file.',
+    description: 'Generate a voiceover for a script. Provider is chosen by VOICE_PROVIDER (default "huggingface" = FREE HuggingFace TTS, no ElevenLabs). Options: "huggingface" (free narration), "modal" (Modal voice-clone/XTTS/Kokoro), "heygen" (talking-avatar VIDEO, voice baked in), "elevenlabs" (OPT-IN ONLY). ElevenLabs is never the default. Returns the path/URL to the generated audio (or avatar video for heygen).',
     inputSchema: {
       type: 'object',
       required: ['text'],
       properties: {
         text: { type: 'string', description: 'Script text to synthesize into speech' },
-        referenceAudio: { type: 'string', description: 'Absolute path to reference WAV file (default: public/assets/voices/isaiah.wav)' },
-        speakerName: { type: 'string', description: 'Speaker ID for caching (default: isaiah)' },
-        outputPath: { type: 'string', description: 'Where to save the .wav (default: output/voiceovers/<timestamp>.wav)' },
+        provider: { type: 'string', enum: ['huggingface', 'modal', 'heygen', 'elevenlabs', 'openai'], description: 'Override VOICE_PROVIDER for this call. ElevenLabs requires VOICE_PROVIDER=elevenlabs too.' },
+        referenceAudio: { type: 'string', description: '[modal] Absolute path to reference WAV file (default: public/assets/voices/isaiah.wav)' },
+        speakerName: { type: 'string', description: '[modal] Speaker ID for caching (default: isaiah)' },
+        hfModel: { type: 'string', description: '[huggingface] HF TTS model id (default: facebook/mms-tts-eng)' },
+        avatarId: { type: 'string', description: '[heygen] HeyGen avatar id (default: Isaiah digital twin)' },
+        voiceId: { type: 'string', description: '[heygen] HeyGen voice id (default: Isaiah native)' },
+        test: { type: 'boolean', description: '[heygen] test/watermark mode — default true so credits are never spent by accident' },
+        outputPath: { type: 'string', description: 'Where to save the audio (default: output/voiceovers/<timestamp>.<ext>)' },
         speed: { type: 'number', description: 'Speech speed multiplier 0.5-2.0 (default: 1.0)' },
-        temperature: { type: 'number', description: 'Sampling temperature 0.1-1.0 (default: 0.7)' },
+        temperature: { type: 'number', description: '[modal] Sampling temperature 0.1-1.0 (default: 0.7)' },
       },
     },
   },
@@ -1228,36 +1243,81 @@ async function handleTool(name, args) {
     }
 
     case 'remotion_generate_voiceover': {
-      const { text: voText, referenceAudio, speakerName, outputPath: voOutPath, speed, temperature } = args;
+      const { text: voText, provider: voProviderArg, referenceAudio, speakerName, hfModel,
+              avatarId, voiceId, test: hgTest, outputPath: voOutPath, speed, temperature } = args;
       if (!voText) {
         return {
           content: [{ type: 'text', text: JSON.stringify({ error: 'text is required' }) }],
           isError: true,
         };
       }
-      const defaultOut = path.join(OUTPUT_DIR, 'voiceovers', `vo_${Date.now()}.wav`);
+      // Resolve provider — ElevenLabs is NEVER the silent default.
+      const provider = voice.resolveVoiceProvider(voProviderArg);
       try {
-        const savedPath = await generateVoiceover({
-          text: voText,
-          referenceAudio,
-          speakerName,
-          outputPath: voOutPath || defaultOut,
-          speed,
-          temperature,
-        });
+        if (provider === 'heygen') {
+          // Avatar-led beat: HeyGen produces a talking-avatar VIDEO (voice baked in).
+          const result = await voice.generateHeyGenAvatar({
+            script: voText,
+            avatarId,
+            voiceId,
+            test: hgTest !== false, // default true → no credits spent by accident
+          });
+          return {
+            content: [{
+              type: 'text',
+              text: JSON.stringify({
+                success: true,
+                provider: 'heygen',
+                videoUrl: result.videoUrl,
+                durationSec: result.durationSec,
+                test: result.test,
+                message: 'HeyGen avatar video generated (voice baked in). Use as brief video_source.url. NO ElevenLabs characters used.',
+              }, null, 2),
+            }],
+          };
+        }
+
+        // Narration (audio track). Pick an output extension per provider.
+        const ext = provider === 'huggingface' ? 'flac' : 'wav';
+        const defaultOut = path.join(OUTPUT_DIR, 'voiceovers', `vo_${Date.now()}.${ext}`);
+        const outputPath = voOutPath || defaultOut;
+        let savedPath;
+        let message;
+
+        if (provider === 'orion') {
+          savedPath = await voice.synthesizeOrion({ text: voText, outputPath });
+          message = 'Voiceover generated via the FREE Orion Voice Service (VoxCPM2, 48kHz Isaiah voice). NO ElevenLabs characters used.';
+        } else if (provider === 'huggingface') {
+          savedPath = await voice.synthesizeHuggingFace({ text: voText, outputPath, model: hfModel });
+          message = 'Voiceover generated via FREE HuggingFace TTS. NO ElevenLabs characters used.';
+        } else if (provider === 'modal') {
+          // Modal voice-clone path (existing helper): clones Isaiah by default.
+          savedPath = await generateVoiceover({
+            text: voText, referenceAudio, speakerName, outputPath, speed, temperature,
+          });
+          message = 'Voiceover generated via Modal voice clone API. NO ElevenLabs characters used.';
+        } else if (provider === 'openai') {
+          throw new Error('VOICE_PROVIDER=openai is opt-in and unavailable here (OpenAI key is a blocked placeholder). Use huggingface/modal/heygen.');
+        } else if (provider === 'elevenlabs') {
+          throw new Error('ElevenLabs is disabled by default (monthly char cap). It is opt-in — and even then routed via the free HF path here to protect the cap.');
+        } else {
+          throw new Error(`Unknown voice provider: ${provider}`);
+        }
+
         return {
           content: [{
             type: 'text',
             text: JSON.stringify({
               success: true,
+              provider,
               outputPath: savedPath,
-              message: 'Voiceover generated via Modal voice clone API. Add the path to your brief audio.voiceover_path field.',
+              message: `${message} Add the path to your brief audio.voiceover_path field.`,
             }, null, 2),
           }],
         };
       } catch (err) {
         return {
-          content: [{ type: 'text', text: JSON.stringify({ error: err.message }) }],
+          content: [{ type: 'text', text: JSON.stringify({ provider, error: err.message }) }],
           isError: true,
         };
       }

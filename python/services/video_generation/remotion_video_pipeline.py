@@ -72,7 +72,9 @@ class RemotionVideoPipeline:
     ):
         self.openai = OpenAI(api_key=openai_api_key or os.getenv("OPENAI_API_KEY"))
         self.google_api_key = google_api_key or os.getenv("GOOGLE_API_KEY")
-        self.elevenlabs_api_key = elevenlabs_api_key or os.getenv("ELEVENLABS_API_KEY") or "sk_2252654c95162d4e0e644a1e2a540892d3faa828a36cace5"
+        # ElevenLabs key is read from env ONLY — never hardcoded. ElevenLabs is
+        # opt-in (VOICE_PROVIDER=elevenlabs); see voice_provider.py.
+        self.elevenlabs_api_key = elevenlabs_api_key or os.getenv("ELEVENLABS_API_KEY")
         self.elevenlabs_voice_id = elevenlabs_voice_id
         self.gemini_endpoint = "https://generativelanguage.googleapis.com/v1beta"
     
@@ -81,24 +83,33 @@ class RemotionVideoPipeline:
         transcript: str,
         title: str,
         output_dir: str,
-        use_elevenlabs: bool = True,
+        use_elevenlabs: Optional[bool] = None,
         style_prompt: str = "modern tech illustration, clean design, professional"
     ) -> VideoProject:
         """
         Create a complete video from transcript.
+
+        Voice provider defaults to NON-ElevenLabs. ElevenLabs is used only when the
+        operator explicitly opts in (VOICE_PROVIDER=elevenlabs) or passes
+        use_elevenlabs=True. See voice_provider.py.
         """
         os.makedirs(output_dir, exist_ok=True)
-        
+
+        # Resolve the ElevenLabs decision: never a silent default.
+        if use_elevenlabs is None:
+            from .voice_provider import elevenlabs_opted_in
+            use_elevenlabs = elevenlabs_opted_in()
+
         project = VideoProject(
             title=title,
             transcript=transcript,
             output_dir=output_dir
         )
-        
+
         logger.info(f"Starting Remotion video generation: {title}")
-        
+
         # Step 1: Generate voice audio
-        if use_elevenlabs:
+        if use_elevenlabs and self.elevenlabs_api_key:
             project.audio_path = await self._generate_elevenlabs_audio(
                 transcript, output_dir
             )
@@ -637,7 +648,7 @@ async def main():
         transcript=HANDOFF_TRANSCRIPT,
         title="AI Video Platform Overview",
         output_dir=output_dir,
-        use_elevenlabs=True,
+        # use_elevenlabs left unset → respects VOICE_PROVIDER (default: non-ElevenLabs).
         style_prompt="modern tech illustration, dark theme, purple and blue gradients, clean UI mockups, professional software documentation style"
     )
     

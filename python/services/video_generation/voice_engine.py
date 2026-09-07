@@ -17,9 +17,13 @@ Perspective = Literal["first_person", "second_person", "third_person"]
 
 
 class NarratorConfig(BaseModel):
-    """Configuration for external TTS narrator."""
-    provider: Literal["openai", "elevenlabs", "huggingface"] = "openai"
-    model_id: str = Field(default="tts-1", alias="modelId")
+    """Configuration for external TTS narrator.
+
+    Default provider is the FREE HuggingFace TTS (facebook/mms-tts-eng). ElevenLabs
+    and OpenAI are opt-in only — see voice_provider.py for the routing policy.
+    """
+    provider: Literal["openai", "elevenlabs", "huggingface"] = "huggingface"
+    model_id: str = Field(default="facebook/mms-tts-eng", alias="modelId")
     voice: str = "alloy"
     perspective: Perspective = "third_person"
     speed: float = 1.0
@@ -345,42 +349,123 @@ async def generate_tts_audio(
     output_path: str,
 ) -> str:
     """
-    Generate TTS audio using configured provider.
-    
+    Generate TTS audio using the configured provider.
+
+    Provider is resolved through voice_provider.resolve_narration_provider so
+    ElevenLabs is never a silent default — it runs only when VOICE_PROVIDER=elevenlabs.
+    Default is the FREE HuggingFace TTS (facebook/mms-tts-eng). Modal-hosted TTS is
+    supported when MODAL_XTTS_URL / MODAL_KOKORO_URL / MODAL_VOICE_CLONE_URL is set.
+
     Args:
         text: Text to speak
         config: Narrator configuration
         output_path: Path to save audio file
-        
+
     Returns:
         Path to generated audio file
     """
-    import openai
-    
-    if config.provider == "openai":
+    from .voice_provider import (
+        resolve_narration_provider,
+        hf_model_for,
+        modal_tts_url,
+        assert_not_elevenlabs,
+    )
+
+    provider = resolve_narration_provider(config.provider)
+
+    if provider == "orion":
+        # FREE default — Orion Voice Service (VoxCPM2 on the Orion GPU, 48kHz) via the hub.
+        import aiohttp, os as _os, shutil as _shutil
+        from pathlib import Path as _Path
+
+        base = _os.getenv("INTEL_NODE_BASE_URL", "http://localhost:5580")
+        headers = {"content-type": "application/json"}
+        if _os.getenv("INTEL_NODE_TOKEN"):
+            headers["Authorization"] = f"Bearer {_os.getenv('INTEL_NODE_TOKEN')}"
+        out_name = _Path(output_path).stem or "vo_orion"
+        async with aiohttp.ClientSession() as session:
+            async with session.post(f"{base}/api/voice/generate",
+                                    json={"text": text, "out_name": out_name}, headers=headers) as resp:
+                data = await resp.json()
+                if resp.status != 200 or not data.get("ok"):
+                    raise RuntimeError(f"Orion voice failed ({resp.status}): {str(data)[:200]}")
+        src = data.get("path")
+        if src and src != output_path:
+            _Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+            _shutil.copyfile(src, output_path)
+            logger.info(f"Generated Orion (VoxCPM2) TTS audio: {output_path}")
+            return output_path
+        logger.info(f"Generated Orion (VoxCPM2) TTS audio: {src}")
+        return src or output_path
+
+    if provider == "huggingface":
+        # FREE path — HuggingFace Inference API (no ElevenLabs characters used).
+        from .hf_tts_provider import create_hf_tts_provider, synthesize_with_provider
+
+        hf = create_hf_tts_provider(model_id=hf_model_for(config.model_id))
+        await synthesize_with_provider(hf, text=text, out_path=output_path)
+        logger.info(f"Generated HuggingFace TTS audio: {output_path}")
+        return output_path
+
+    if provider == "modal":
+        # FREE/cheap path — Modal-hosted TTS (XTTS/Kokoro/voice-clone).
+        url = modal_tts_url()
+        if not url:
+            raise RuntimeError(
+                "VOICE_PROVIDER=modal but no Modal TTS URL set "
+                "(MODAL_XTTS_URL / MODAL_KOKORO_URL / MODAL_VOICE_CLONE_URL)."
+            )
+        import aiohttp
+        from pathlib import Path as _Path
+        import base64 as _b64
+
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url, json={"text": text, "speed": config.speed}) as resp:
+                if resp.status != 200:
+                    body = await resp.text()
+                    raise RuntimeError(f"Modal TTS failed ({resp.status}): {body[:200]}")
+                ctype = resp.headers.get("Content-Type", "")
+                _Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+                if "application/json" in ctype:
+                    data = await resp.json()
+                    audio_b64 = data.get("audio") or data.get("audio_base64")
+                    if not audio_b64:
+                        raise RuntimeError("Modal TTS returned no audio field")
+                    with open(output_path, "wb") as f:
+                        f.write(_b64.b64decode(audio_b64))
+                else:
+                    with open(output_path, "wb") as f:
+                        f.write(await resp.read())
+        logger.info(f"Generated Modal TTS audio: {output_path}")
+        return output_path
+
+    if provider == "openai":
+        # Opt-in only (key is a blocked placeholder in this environment).
+        import openai
+
         client = openai.AsyncOpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-        
         response = await client.audio.speech.create(
-            model=config.model_id,
+            model=config.model_id if config.model_id.startswith("tts") else "tts-1",
             voice=config.voice,
             input=text,
             speed=config.speed,
         )
-        
         response.stream_to_file(output_path)
-        logger.info(f"Generated TTS audio: {output_path}")
+        logger.info(f"Generated OpenAI TTS audio: {output_path}")
         return output_path
-    
-    elif config.provider == "elevenlabs":
-        # Placeholder for ElevenLabs integration
-        raise NotImplementedError("ElevenLabs TTS not yet implemented")
-    
-    elif config.provider == "huggingface":
-        # Placeholder for HuggingFace integration
-        raise NotImplementedError("HuggingFace TTS not yet implemented")
-    
-    else:
-        raise ValueError(f"Unknown TTS provider: {config.provider}")
+
+    if provider == "elevenlabs":
+        # Reached only when VOICE_PROVIDER=elevenlabs (explicit opt-in). The guard
+        # raises otherwise, so ElevenLabs can never be hit by accident.
+        assert_not_elevenlabs(provider)
+        from .hf_tts_provider import ElevenLabsTTSProvider, synthesize_with_provider
+
+        el = ElevenLabsTTSProvider()
+        await synthesize_with_provider(el, text=text, out_path=output_path)
+        logger.info(f"Generated ElevenLabs TTS audio (explicit opt-in): {output_path}")
+        return output_path
+
+    raise ValueError(f"Unknown TTS provider: {provider}")
 
 
 async def build_narration_audio(

@@ -44,7 +44,7 @@ Options for 'generate':
   --languages <codes>     Comma-separated language codes (en,es,fr)
   --source <lang>         Source language for translation (default: en)
   --subtitles             Generate subtitle files
-  --tts-provider <p>      TTS provider: openai | elevenlabs (default: elevenlabs)
+  --tts-provider <p>      TTS provider: openai | elevenlabs (default: non-ElevenLabs; ElevenLabs is opt-in via VOICE_PROVIDER=elevenlabs)
   --output <dir>          Output directory (default: ./output/multi-language)
 
 Options for 'language-info':
@@ -195,8 +195,9 @@ async function generateMultiLanguage(
     console.log(`[${lang.toUpperCase()}] ${langConfig.name}`);
 
     try {
-      // Generate speech
-      const provider = options.ttsProvider || 'elevenlabs';
+      // Generate speech — never default to ElevenLabs (monthly char cap reached).
+      const provider = options.ttsProvider
+        || (process.env.VOICE_PROVIDER === 'elevenlabs' ? 'elevenlabs' : 'openai');
       const audioPath = await handler.generateSpeech(text, lang, provider);
       console.log(`   ✓ Audio generated`);
       results[lang] = {
@@ -301,7 +302,8 @@ async function main(): Promise<void> {
       const languages = args[langIdx + 1].split(',').map(l => l.trim());
       const sourceLanguage = args[sourceIdx + 1] || 'en';
       const hasSubtitles = subtitlesIdx !== -1;
-      const ttsProvider = (args[ttsIdx + 1] || 'elevenlabs') as 'openai' | 'elevenlabs';
+      const ttsProvider = (args[ttsIdx + 1]
+        || (process.env.VOICE_PROVIDER === 'elevenlabs' ? 'elevenlabs' : 'openai')) as 'openai' | 'elevenlabs';
       const outputDir = args[outputIdx + 1];
 
       await generateMultiLanguage(text, languages, {

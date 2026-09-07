@@ -332,13 +332,52 @@ comment mentor, for templates.`,
 };
 
 // =============================================================================
-// Stage 3: Voiceover — ElevenLabs TTS
-// Uses the render service's preferred TTS path (ElevenLabs) directly.
-// Voice: 'charlie' (IKne3meq5aSn9XLyUdCD) — casual male, conversational,
-// perfect for UGC-style social content.
+// Stage 3: Voiceover
+// Default: FREE HuggingFace TTS (facebook/mms-tts-eng) — no ElevenLabs characters.
+// ElevenLabs (voice 'charlie') is OPT-IN only via VOICE_PROVIDER=elevenlabs.
 // =============================================================================
 
 const ELEVENLABS_VOICE_ID = 'IKne3meq5aSn9XLyUdCD'; // charlie — casual male
+
+// FREE HuggingFace narration — writes audio bytes (ffmpeg mux reads by content).
+async function generateVoiceoverHF(script: string, outputPath: string): Promise<string> {
+  const token = process.env.HF_TOKEN || process.env.HUGGINGFACE_TOKEN || process.env.HF_API_TOKEN;
+  if (!token) throw new Error('HF_TOKEN not set — required for free HuggingFace TTS');
+  console.log(`   🎙️  Generating voiceover (FREE HuggingFace facebook/mms-tts-eng)...`);
+  const body = JSON.stringify({ inputs: script });
+  return new Promise((resolve, reject) => {
+    const req = https.request(
+      {
+        hostname: 'api-inference.huggingface.co',
+        path: '/models/facebook/mms-tts-eng',
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+          Accept: 'audio/flac',
+          'Content-Length': Buffer.byteLength(body),
+        },
+      },
+      (res) => {
+        const chunks: Buffer[] = [];
+        res.on('data', (c) => chunks.push(c as Buffer));
+        res.on('end', () => {
+          if (res.statusCode !== 200) {
+            return reject(new Error(`HuggingFace ${res.statusCode}: ${Buffer.concat(chunks).toString().substring(0, 200)}`));
+          }
+          fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+          fs.writeFileSync(outputPath, Buffer.concat(chunks));
+          const kb = (fs.statSync(outputPath).size / 1024).toFixed(0);
+          console.log(`   ✅ voiceover (${kb}KB, free HF)`);
+          resolve(outputPath);
+        });
+      }
+    );
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
+}
 
 async function generateVoiceover(script: string, outputPath: string): Promise<string> {
   if (fs.existsSync(outputPath)) {
@@ -346,10 +385,16 @@ async function generateVoiceover(script: string, outputPath: string): Promise<st
     return outputPath;
   }
 
+  // Provider switch — ElevenLabs is NEVER the default (monthly char cap reached).
+  const provider = (process.env.VOICE_PROVIDER || 'huggingface').trim().toLowerCase();
+  if (provider !== 'elevenlabs') {
+    return generateVoiceoverHF(script, outputPath);
+  }
+
   const key = process.env.ELEVENLABS_API_KEY;
   if (!key) throw new Error('ELEVENLABS_API_KEY not set in .env.local');
 
-  console.log(`   🎙️  Generating voiceover (ElevenLabs charlie)...`);
+  console.log(`   🎙️  Generating voiceover (ElevenLabs charlie — explicit opt-in)...`);
 
   const body = JSON.stringify({
     text: script,

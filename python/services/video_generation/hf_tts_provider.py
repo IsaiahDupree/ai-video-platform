@@ -218,6 +218,10 @@ def create_tts_provider(
     elif provider_name == "openai":
         return OpenAITTSProvider()
     elif provider_name == "elevenlabs":
+        # Defense in depth: ElevenLabs is off by default (monthly char cap reached).
+        # It runs only when the operator explicitly opts in via VOICE_PROVIDER=elevenlabs.
+        from .voice_provider import assert_not_elevenlabs
+        assert_not_elevenlabs("elevenlabs")
         return ElevenLabsTTSProvider()
     else:
         raise ValueError(f"Unknown TTS provider: {provider_name}")

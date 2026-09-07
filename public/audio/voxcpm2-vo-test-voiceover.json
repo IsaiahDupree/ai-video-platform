@@ -1,0 +1,66 @@
+{
+  "voiceover_path": "audio/voxcpm2-vo-test-combined.wav",
+  "voiceover_segments": [
+    {
+      "startFrame": 0,
+      "endFrame": 211,
+      "text": "Welcome to What People Want from AI, where AI demand meets real-world supply."
+    },
+    {
+      "startFrame": 211,
+      "endFrame": 413,
+      "text": "I analyzed 1,000 real Upwork AI job postings, a total budget pool of $1.65 million."
+    },
+    {
+      "startFrame": 413,
+      "endFrame": 629,
+      "text": "68% of AI demand is integration work: not building new AI, but connecting it to real businesses."
+    }
+  ],
+  "totalFrames": 629,
+  "_meta": {
+    "out_name": "voxcpm2-vo-test",
+    "fps": 30,
+    "combined_wav_abs": "/Users/isaiahdupree/Documents/Software/Remotion/public/audio/voxcpm2-vo-test-combined.wav",
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_sec": 20.96,
+    "sum_segment_sec": 20.96,
+    "mean_volume_db": -16.8,
+    "orion_generation_seconds": 425,
+    "also_copy": "/Volumes/My Passport/renders/voxcpm2-vo-test-combined.wav",
+    "segments": [
+      {
+        "index": 0,
+        "job_name": "vo-voxcpm2-vo-test-seg0",
+        "display_text": "Welcome to What People Want from AI, where AI demand meets real-world supply.",
+        "spoken_text": "Welcome to What People Want from AI, where AI demand meets real-world supply.",
+        "wav": "/Users/isaiahdupree/Documents/Software/Remotion/public/audio/voxcpm2-vo-test-seg0.wav",
+        "sample_rate": 48000,
+        "duration": 7.04,
+        "orion_seconds": 153
+      },
+      {
+        "index": 1,
+        "job_name": "vo-voxcpm2-vo-test-seg1",
+        "display_text": "I analyzed 1,000 real Upwork AI job postings, a total budget pool of $1.65 million.",
+        "spoken_text": "I analyzed one thousand real Upwork AI job postings, a total budget pool of one point six five million dollars.",
+        "wav": "/Users/isaiahdupree/Documents/Software/Remotion/public/audio/voxcpm2-vo-test-seg1.wav",
+        "sample_rate": 48000,
+        "duration": 6.72,
+        "orion_seconds": 141
+      },
+      {
+        "index": 2,
+        "job_name": "vo-voxcpm2-vo-test-seg2",
+        "display_text": "68% of AI demand is integration work: not building new AI, but connecting it to real businesses.",
+        "spoken_text": "Sixty-eight percent of AI demand is integration work: not building new AI, but connecting it to real businesses.",
+        "wav": "/Users/isaiahdupree/Documents/Software/Remotion/public/audio/voxcpm2-vo-test-seg2.wav",
+        "sample_rate": 48000,
+        "duration": 7.2,
+        "orion_seconds": 131
+      }
+    ],
+    "reference_audio": "/mnt/c/orion/foundry/jobs/clean-seed-voice-001/reference_seed.wav"
+  }
+}
