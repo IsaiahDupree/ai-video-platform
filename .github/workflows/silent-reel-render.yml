@@ -3,8 +3,7 @@ name: Silent Reel Render
 # Dispatch-only cloud render lane for silent explainer reels. Props arrive as
 # base64 JSON so no commit is needed per render; the MP4 comes back as a
 # workflow artifact that the silent-explainer CLI downloads with `gh`.
-# Exists because local Remotion (chrome-headless-shell) is forbidden on the
-# Mac by the browser singleton policy and Modal is spend-capped.
+# Optional GitHub render lane alongside local, Orion, and Modal rendering.
 
 on:
   workflow_dispatch:

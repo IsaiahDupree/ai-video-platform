@@ -3,8 +3,8 @@
 
 Renders `cloud/silent-reel-renderer` compositions (BlueprintExplainer,
 MachineMetaphor) on Modal and uploads the MP4 to Supabase Storage. This is
-the ONLY render lane: local Remotion needs chrome-headless-shell, which the
-browser singleton policy forbids and the browser enforcer kills.
+one available remote render lane. Local Remotion, Orion, GitHub, and this Modal
+endpoint may all be used according to task needs.
 
 Deploy (secrets are read from the deploying shell's environment):
     set -a; source .env; set +a   # MODAL_SILENT_RENDER_AUTH_TOKEN

@@ -1,13 +1,13 @@
 #!/usr/bin/env npx tsx
 /**
  * API-Ready Render Endpoint
- * 
+ *
  * HTTP server that accepts JSON briefs and renders videos.
  * Designed for backend integration via HTTP or subprocess.
- * 
+ *
  * Usage:
  *   npx tsx scripts/api-render.ts --port 3001
- *   
+ *
  * API Endpoints:
  *   POST /render       - Render video from brief JSON
  *   POST /generate     - Generate brief from input variables
@@ -18,10 +18,10 @@
 import http from 'http';
 import fs from 'fs';
 import path from 'path';
+import { execSync, spawn, ChildProcess } from 'child_process';
 import { generateBrief, GeneratorInput } from './generate-brief';
 import { validateBrief } from './validate-brief';
 import { ContentBrief } from '../src/types';
-import { renderBriefCloud } from '../src/api/cloud-render';
 
 interface RenderJob {
   id: string;
@@ -53,15 +53,22 @@ async function renderVideo(job: RenderJob): Promise<void> {
 
   const filename = `${job.id}.mp4`;
   const outputPath = path.join(outputDir, filename);
-  
+
   job.status = 'rendering';
   job.outputPath = outputPath;
 
   try {
-    const result = await renderBriefCloud(job.brief as unknown as Record<string, unknown>, 'production', filename);
+    const propsJson = JSON.stringify({ brief: job.brief });
+
+    execSync(
+      `npx remotion render BriefComposition "${outputPath}" --props='${propsJson}' --crf=18`,
+      {
+        cwd: path.resolve(__dirname, '..'),
+        stdio: 'pipe',
+      }
+    );
 
     job.status = 'complete';
-    job.outputPath = result.url;
     job.completedAt = new Date().toISOString();
     job.progress = 100;
 
@@ -130,7 +137,7 @@ async function handleRequest(req: http.IncomingMessage, res: http.ServerResponse
     if (url.pathname.startsWith('/status/') && method === 'GET') {
       const jobId = url.pathname.split('/')[2];
       const job = jobs.get(jobId);
-      
+
       if (!job) {
         sendJson(res, 404, { error: 'Job not found' });
         return;
@@ -152,15 +159,9 @@ async function handleRequest(req: http.IncomingMessage, res: http.ServerResponse
     if (url.pathname.startsWith('/download/') && method === 'GET') {
       const jobId = url.pathname.split('/')[2];
       const job = jobs.get(jobId);
-      
+
       if (!job || job.status !== 'complete' || !job.outputPath) {
         sendJson(res, 404, { error: 'Video not found or not ready' });
-        return;
-      }
-
-      if (/^https:\/\//.test(job.outputPath)) {
-        res.writeHead(302, { Location: job.outputPath });
-        res.end();
         return;
       }
 
@@ -183,7 +184,7 @@ async function handleRequest(req: http.IncomingMessage, res: http.ServerResponse
     // Generate brief from input
     if (url.pathname === '/generate' && method === 'POST') {
       const input = await parseBody(req) as GeneratorInput;
-      
+
       if (!input.title) {
         sendJson(res, 400, { error: 'Missing required field: title' });
         return;
@@ -199,7 +200,7 @@ async function handleRequest(req: http.IncomingMessage, res: http.ServerResponse
     // Render video from brief
     if (url.pathname === '/render' && method === 'POST') {
       const body = await parseBody(req);
-      
+
       let brief: ContentBrief;
 
       // Accept either a full brief or input variables
@@ -250,7 +251,7 @@ async function handleRequest(req: http.IncomingMessage, res: http.ServerResponse
     // Render and wait (synchronous)
     if (url.pathname === '/render-sync' && method === 'POST') {
       const body = await parseBody(req);
-      
+
       let brief: ContentBrief;
 
       if (body.brief) {

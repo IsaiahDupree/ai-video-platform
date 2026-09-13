@@ -2,7 +2,7 @@
   "name": "silent-reel-renderer",
   "version": "1.0.0",
   "private": true,
-  "description": "Cloud-only Remotion renderer for silent explainer reels (BlueprintExplainer, MachineMetaphor). Rendered on Modal; local Chrome is forbidden by the browser singleton policy.",
+  "description": "Remotion renderer for silent explainer reels (BlueprintExplainer, MachineMetaphor), usable locally or on Modal.",
   "scripts": { "typecheck": "tsc --noEmit" },
   "dependencies": {
     "@remotion/cli": "4.0.434",
