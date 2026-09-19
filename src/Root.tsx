@@ -207,6 +207,10 @@ import {
   ISAIAH_DUBSTEP_MONTAGE_FRAMES,
 } from './compositions/IsaiahDubstepMontage';
 import {
+  IsaiahDubstepMontageV2,
+  ISAIAH_DUBSTEP_MONTAGE_V2_FRAMES,
+} from './compositions/IsaiahDubstepMontageV2';
+import {
   TradingDocumentary,
   tradingDocumentaryDefaultProps,
   tradingDocumentaryTotalFrames,
@@ -3384,6 +3388,14 @@ export const RemotionRoot: React.FC = () => {
         id="IsaiahDubstepMontage"
         component={IsaiahDubstepMontage}
         durationInFrames={ISAIAH_DUBSTEP_MONTAGE_FRAMES}
+        fps={30}
+        width={720}
+        height={1280}
+      />
+      <Composition
+        id="IsaiahDubstepMontageV2"
+        component={IsaiahDubstepMontageV2}
+        durationInFrames={ISAIAH_DUBSTEP_MONTAGE_V2_FRAMES}
         fps={30}
         width={720}
         height={1280}
