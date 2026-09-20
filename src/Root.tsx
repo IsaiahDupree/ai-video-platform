@@ -169,6 +169,13 @@ import {
   type EvidenceFirstShortProps,
   evidenceFirstShortDefaultProps,
 } from './compositions/EvidenceFirstShort';
+import {
+  PcbAutopilotVideo,
+  PCB_AUTOPILOT_FRAMES,
+  PCB_AUTOPILOT_FPS,
+  pcbAutopilotLandscapeProps,
+  pcbAutopilotPortraitProps,
+} from './compositions/PcbAutopilotVideo';
 import { ISAIAH_HOUSE_STYLE } from './types/IsaiahReelSchema';
 import {
   UGCStylesShowcase,
@@ -392,6 +399,26 @@ export const RemotionRoot: React.FC = () => {
             Math.round(Math.max(...props.timeline.map((item) => item.end)) * 30),
           ),
         })}
+      />
+
+      <Composition
+        id="PcbAutopilot-Vertical"
+        component={PcbAutopilotVideo}
+        durationInFrames={PCB_AUTOPILOT_FRAMES}
+        fps={PCB_AUTOPILOT_FPS}
+        width={1080}
+        height={1920}
+        defaultProps={pcbAutopilotPortraitProps}
+      />
+
+      <Composition
+        id="PcbAutopilot-Landscape"
+        component={PcbAutopilotVideo}
+        durationInFrames={PCB_AUTOPILOT_FRAMES}
+        fps={PCB_AUTOPILOT_FPS}
+        width={1920}
+        height={1080}
+        defaultProps={pcbAutopilotLandscapeProps}
       />
 
       {/* Preset compositions for common formats */}
