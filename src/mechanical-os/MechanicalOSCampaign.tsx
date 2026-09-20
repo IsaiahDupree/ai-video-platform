@@ -17,6 +17,13 @@ export interface MechanicalOSCampaignProps {
   variant: MechanicalOSVariant;
 }
 
+interface CaptionCue {
+  from: number;
+  to: number;
+  text: string;
+  accent?: string;
+}
+
 const COLORS = {
   bg: '#071015',
   panel: '#0C1A20',
@@ -452,7 +459,7 @@ const HeroVertical: React.FC = () => (
         <Gate />
       </Scene>
     </Sequence>
-    <Sequence from={810} durationInFrames={90}>
+    <Sequence from={810} durationInFrames={210}>
       <Scene accent={COLORS.lime}>
         <CTA />
       </Scene>
@@ -535,7 +542,7 @@ const ExplainerLandscape: React.FC = () => (
         <Gate landscape />
       </Scene>
     </Sequence>
-    <Sequence from={780} durationInFrames={120}>
+    <Sequence from={780} durationInFrames={330}>
       <Scene accent={COLORS.lime}>
         <CTA landscape />
       </Scene>
@@ -543,13 +550,92 @@ const ExplainerLandscape: React.FC = () => (
   </>
 );
 
+const CAPTIONS: Record<MechanicalOSVariant, CaptionCue[]> = {
+  hero: [
+    {from: 0, to: 118, text: 'I stopped calling this AI-generated CAD.', accent: COLORS.red},
+    {from: 118, to: 225, text: 'That gives the model way too much authority.'},
+    {from: 225, to: 315, text: 'Mechanical OS works more like a compiler.', accent: COLORS.cyan},
+    {from: 315, to: 415, text: 'An agent chooses a bounded engineering operation.'},
+    {from: 415, to: 575, text: 'Deterministic tools generate geometry, check CAD, run ANSYS, and record evidence.'},
+    {from: 575, to: 725, text: '230 catalog entries · 10 contract modules · 599 evidence records', accent: COLORS.lime},
+    {from: 725, to: 890, text: '189,519 nodes: screening evidence — not physical qualification.', accent: COLORS.amber},
+    {from: 890, to: 1010, text: 'DM CONTROL if you want the architecture.', accent: COLORS.lime},
+  ],
+  proof: [
+    {from: 0, to: 88, text: 'The model never got to say “strong enough.”', accent: COLORS.red},
+    {from: 88, to: 205, text: 'Geometry generated. CAD checked it. ANSYS ran.'},
+    {from: 205, to: 305, text: 'The evidence gate stopped at simulation screened.', accent: COLORS.amber},
+    {from: 305, to: 382, text: 'AI can propose the next operation.'},
+    {from: 382, to: 450, text: 'It cannot promote its own claim.', accent: COLORS.lime},
+  ],
+  explainer: [
+    {from: 0, to: 160, text: 'A mechanical engineering compiler — not a chatbot that exports CAD.', accent: COLORS.red},
+    {from: 160, to: 300, text: 'Requirements become structured intent.'},
+    {from: 300, to: 455, text: 'Agents select modules and bounded operations.', accent: COLORS.cyan},
+    {from: 455, to: 635, text: 'Deterministic services generate geometry, verify CAD, run simulation, and attach provenance.'},
+    {from: 635, to: 770, text: '230 catalog entries · 10 contracts · 599 evidence records', accent: COLORS.lime},
+    {from: 770, to: 925, text: 'ANSYS can screen a design.'},
+    {from: 925, to: 1090, text: 'Only evidence rules can advance qualification.', accent: COLORS.amber},
+  ],
+};
+
+const CaptionOverlay: React.FC<{variant: MechanicalOSVariant}> = ({variant}) => {
+  const frame = useCurrentFrame();
+  const {width} = useVideoConfig();
+  const cue = CAPTIONS[variant].find(({from, to}) => frame >= from && frame < to);
+  if (!cue) return null;
+
+  const progress = interpolate(frame, [cue.from, cue.from + 8], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  const landscape = width > 1200;
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        zIndex: 50,
+        left: landscape ? 250 : 72,
+        right: landscape ? 250 : 72,
+        bottom: landscape ? 56 : 88,
+        display: 'flex',
+        justifyContent: 'center',
+        opacity: progress,
+        transform: `translateY(${(1 - progress) * 16}px)`,
+      }}
+    >
+      <div
+        style={{
+          maxWidth: landscape ? 1300 : 920,
+          border: `2px solid ${cue.accent ?? COLORS.line}`,
+          borderRadius: 18,
+          background: 'rgba(3, 10, 13, 0.90)',
+          boxShadow: '0 18px 55px rgba(0, 0, 0, 0.42)',
+          padding: landscape ? '18px 30px' : '22px 28px',
+          color: COLORS.white,
+          fontFamily: FONT,
+          fontSize: landscape ? 38 : 42,
+          fontWeight: 800,
+          letterSpacing: -0.8,
+          lineHeight: 1.15,
+          textAlign: 'center',
+        }}
+      >
+        {cue.text}
+      </div>
+    </div>
+  );
+};
+
 export const MechanicalOSCampaign: React.FC<MechanicalOSCampaignProps> = ({variant}) => (
   <AbsoluteFill style={{background: COLORS.bg, overflow: 'hidden'}}>
     <Background />
-    <Audio src={staticFile('mechanical-os-signal-bed.wav')} volume={0.5} />
+    <Audio src={staticFile(`mechanical-os-ugc/${variant}-mix.wav`)} />
     <BrandChrome />
     {variant === 'hero' ? <HeroVertical /> : null}
     {variant === 'proof' ? <ProofVertical /> : null}
     {variant === 'explainer' ? <ExplainerLandscape /> : null}
+    <CaptionOverlay variant={variant} />
   </AbsoluteFill>
 );

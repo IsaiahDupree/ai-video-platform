@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "provider": "elevenlabs",
+  "created_at": "2026-09-20T17:43:58.980340+00:00",
+  "status": "completed",
+  "paid_provider": true,
+  "api_key_source": "ELEVENLABS_API_KEY",
+  "voice_id_source": "request",
+  "voice_id_present": true,
+  "model_id": "eleven_multilingual_v2",
+  "output_format": "mp3_44100_128",
+  "voice_settings": {
+    "stability": 0.48,
+    "similarity_boost": 0.86,
+    "style": 0.18,
+    "use_speaker_boost": true
+  },
+  "text_sha256": "d6ec3ef4e1349c769d48a2c7864109092091fd93fae2334fe3269cc60de7b763",
+  "output_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/mechanical-os-ugc/hero-elevenlabs.mp3",
+  "output_sha256": "3e31f8d95c21bd99bf14ca23bf9df1df838ea43ee8d00d05937e327625621580",
+  "bytes": 514551,
+  "latency_seconds": 5.925,
+  "character_cost": "244",
+  "request_id": "ZqwI1f8ZJoHAoZEO9Znv",
+  "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+}

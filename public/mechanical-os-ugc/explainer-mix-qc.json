@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-09-20T18:12:51.741650+00:00",
+  "artifact_role": "rendered_video_audio",
+  "audio_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/mechanical-os-ugc/explainer-mix.wav",
+  "audio_sha256": "ade98c9c577fad3c320221302296a0852eb8c0509d6bad93988541f7ff6663f2",
+  "expected_text": "We are building Mechanical OS like a mechanical engineering compiler, not a chatbot that happens to export CAD. Requirements become structured intent. Agents select modules and bounded operations. Deterministic services generate geometry, check motion and interference, run simulation, and attach every result to provenance. The current stack has 230 catalog entries, 10 contracts, and 599 evidence records. ANSYS can screen a design, but only evidence rules can advance qualification. That is the trust layer.",
+  "recognized_text": "We are building mechanical OS like a mechanical engineering compiler, not a chatbot that happens to export CAD. Requirements become structured intent. Agents select modules and bounded operations. Deterministic services generate geometry, check motion and interference, run simulation, and attach every result to provenance. The current stack has 230 catalog entries, 10 contracts, and 599 evidence records. AntsWest can screen a design, but only evidence rules can advance qualification. That is the trust layer.",
+  "asr": {
+    "provider": "local_whisper",
+    "model": "base.en",
+    "transcript": "We are building mechanical OS like a mechanical engineering compiler, not a chatbot that happens to export CAD. Requirements become structured intent. Agents select modules and bounded operations. Deterministic services generate geometry, check motion and interference, run simulation, and attach every result to provenance. The current stack has 230 catalog entries, 10 contracts, and 599 evidence records. AntsWest can screen a design, but only evidence rules can advance qualification. That is the trust layer.",
+    "word_error_rate": 0.013514
+  },
+  "asr_results": [
+    {
+      "provider": "local_whisper",
+      "model": "base.en",
+      "status": "completed",
+      "transcript": "We are building mechanical OS like a mechanical engineering compiler, not a chatbot that happens to export CAD. Requirements become structured intent. Agents select modules and bounded operations. Deterministic services generate geometry, check motion and interference, run simulation, and attach every result to provenance. The current stack has 230 catalog entries, 10 contracts, and 599 evidence records. AntsWest can screen a design, but only evidence rules can advance qualification. That is the trust layer.",
+      "artifact_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/mechanical-os-ugc/explainer-mix-asr/explainer-mix.json",
+      "word_error_rate": 0.013514,
+      "recognized_word_count": 74,
+      "coverage": 1.0,
+      "intelligibility_score": 99.189,
+      "quality_status": "qualified"
+    }
+  ],
+  "ai_analysis": {
+    "recognized_text": "We are building mechanical OS like a mechanical engineering compiler, not a chatbot that happens to export CAD. Requirements become structured intent. Agents select modules and bounded operations. Deterministic services generate geometry, check motion and interference, run simulation, and attach every result to provenance. The current stack has 230 catalog entries, 10 contracts, and 599 evidence records. AntsWest can screen a design, but only evidence rules can advance qualification. That is the trust layer.",
+    "asr_votes": [
+      {
+        "provider": "local_whisper",
+        "model": "base.en",
+        "status": "completed",
+        "word_error_rate": 0.013514,
+        "transcript": "We are building mechanical OS like a mechanical engineering compiler, not a chatbot that happens to export CAD. Requirements become structured intent. Agents select modules and bounded operations. Deterministic services generate geometry, check motion and interference, run simulation, and attach every result to provenance. The current stack has 230 catalog entries, 10 contracts, and 599 evidence records. AntsWest can screen a design, but only evidence rules can advance qualification. That is the trust layer."
+      }
+    ],
+    "unable_to_reliably_depict_expected_text": false,
+    "provider_mode": "local_whisper"
+  },
+  "audio": {
+    "integrated_lufs": -14.3,
+    "true_peak_dbfs": -1.5,
+    "loudness_range_lu": 4.3
+  },
+  "transcript_quality": {
+    "word_error_rate": 0.013514,
+    "reference_word_count": 74,
+    "recognized_word_count": 74,
+    "coverage": 1.0,
+    "intelligibility_score": 99.189,
+    "status": "qualified"
+  },
+  "audio_quality": {
+    "loudness_score": 81.111,
+    "loudness_passed": true,
+    "true_peak_passed": true
+  },
+  "quality": {
+    "score": 95.935,
+    "status": "qualified",
+    "intelligibility_score": 99.189,
+    "audio_mix_score": 81.111
+  },
+  "gates": {
+    "word_error_rate_passed": true,
+    "loudness_passed": true,
+    "true_peak_passed": true
+  },
+  "speaker_similarity": {
+    "status": "unavailable",
+    "reason": "commercial-safe calibrated speaker verifier not installed",
+    "passed": null
+  },
+  "technical_passed": true,
+  "promotion_status": "qualified",
+  "production_blockers": [
+    "speaker_similarity_not_calibrated"
+  ],
+  "production_eligible": false
+}

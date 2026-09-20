@@ -7,7 +7,7 @@ const MechanicalOSRoot: React.FC = () => (
     <Composition<any, {variant: 'hero'}>
       id="MechanicalOSHeroVertical"
       component={MechanicalOSCampaign}
-      durationInFrames={900}
+      durationInFrames={1020}
       fps={30}
       width={1080}
       height={1920}
@@ -25,7 +25,7 @@ const MechanicalOSRoot: React.FC = () => (
     <Composition<any, {variant: 'explainer'}>
       id="MechanicalOSExplainerLandscape"
       component={MechanicalOSCampaign}
-      durationInFrames={900}
+      durationInFrames={1110}
       fps={30}
       width={1920}
       height={1080}
