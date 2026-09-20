@@ -1,5 +1,6 @@
 import React from 'react';
 import { Composition, Still, getInputProps, staticFile } from 'remotion';
+import { MemeVaultUGC, MEME_VAULT_CUTDOWN_FRAMES, MEME_VAULT_FULL_FRAMES } from './compositions/MemeVaultUGC';
 import { BriefComposition } from './compositions/BriefComposition';
 import { BlueprintExplainer, MachineMetaphor, silentReelDefaultProps, silentReelDurationInFrames, type SilentReelProps } from './compositions/silent';
 import { PresenterOverBroll, presenterOverBrollDefaultProps, type PresenterOverBrollProps } from './compositions/PresenterOverBroll';
@@ -3441,6 +3442,24 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={720}
         height={1280}
+      />
+      <Composition
+        id="MemeVaultTextingUGC"
+        component={MemeVaultUGC}
+        durationInFrames={MEME_VAULT_FULL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ cut: 'full' as const }}
+      />
+      <Composition
+        id="MemeVaultTextingUGCCutdown"
+        component={MemeVaultUGC}
+        durationInFrames={MEME_VAULT_CUTDOWN_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ cut: 'cutdown' as const }}
       />
     </>
   );
