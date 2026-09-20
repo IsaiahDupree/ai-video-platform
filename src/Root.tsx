@@ -1,6 +1,7 @@
 import React from 'react';
 import { Composition, Still, getInputProps, staticFile } from 'remotion';
 import { MemeVaultUGC, MEME_VAULT_CUTDOWN_FRAMES, MEME_VAULT_FULL_FRAMES } from './compositions/MemeVaultUGC';
+import { MemeVaultVisualUGC, MEME_VAULT_VISUAL_UGC_FRAMES } from './compositions/MemeVaultVisualUGC';
 import { BriefComposition } from './compositions/BriefComposition';
 import { BlueprintExplainer, MachineMetaphor, silentReelDefaultProps, silentReelDurationInFrames, type SilentReelProps } from './compositions/silent';
 import { PresenterOverBroll, presenterOverBrollDefaultProps, type PresenterOverBrollProps } from './compositions/PresenterOverBroll';
@@ -3472,6 +3473,14 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{ cut: 'cutdown' as const }}
+      />
+      <Composition
+        id="MemeVaultVisualUGC"
+        component={MemeVaultVisualUGC}
+        durationInFrames={MEME_VAULT_VISUAL_UGC_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
       />
     </>
   );
