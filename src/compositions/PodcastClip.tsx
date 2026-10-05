@@ -30,6 +30,7 @@ export interface PodcastClipBrief {
   speaker_title: string;         // "AI Automation Engineer"
   // Audio
   voiceover_path: string;        // 'audio/podcast-vo-combined.wav'
+  voiceover_volume?: number;     // Linear gain, 0–4; defaults to unchanged audio.
   voiceover_segments: VoiceSegmentTiming[];
   music_path?: string;           // Background lo-fi (optional)
   // CTA
@@ -423,7 +424,10 @@ export const PodcastClipComposition: React.FC<{ brief?: PodcastClipBrief }> = ({
 
       {/* ── Audio ── */}
       {b.voiceover_path && (
-        <Audio src={staticFile(b.voiceover_path)} />
+        <Audio
+          src={staticFile(b.voiceover_path)}
+          volume={Number.isFinite(b.voiceover_volume) ? Math.min(4, Math.max(0, b.voiceover_volume!)) : 1}
+        />
       )}
       {b.music_path && (
         <Audio

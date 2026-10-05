@@ -1,4 +1,5 @@
 import React from 'react';
+import { captionWindow } from './caption-window';
 import {
   useCurrentFrame,
   useVideoConfig,
@@ -320,14 +321,9 @@ export const TikTokCaptions: React.FC<TikTokCaptionsProps> = ({
   const { fps } = useVideoConfig();
   const currentTime = frame / fps;
 
-  // Find current word
-  const currentWordIndex = transcript.findIndex(
-    (w) => currentTime >= w.start && currentTime < w.end
-  );
-
-  // Get visible words (current and nearby)
-  const startIdx = Math.max(0, currentWordIndex - Math.floor(maxWordsVisible / 2));
-  const endIdx = Math.min(transcript.length, startIdx + maxWordsVisible);
+  const window = captionWindow(transcript, currentTime, maxWordsVisible);
+  if (!window) return null;
+  const { currentWordIndex, startIdx, endIdx } = window;
   const visibleWords = transcript.slice(startIdx, endIdx);
 
   // Position styling
