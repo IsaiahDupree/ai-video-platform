@@ -27,6 +27,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import { loadFont as loadMontserrat } from '@remotion/google-fonts/Montserrat';
+import {presenterPictureWindows, type PresenterVisibilityWindow} from '../lib/PresenterVisibility';
 
 const montserrat = loadMontserrat('normal', { weights: ['800'], subsets: ['latin'] });
 
@@ -69,6 +70,8 @@ export type PresenterOverBrollProps = {
     placement: Box;
     hold_frame: boolean;
     windows: [number, number][];
+    /** Explicit picture windows override legacy holds; master audio stays full-length. */
+    visibility_windows?: PresenterVisibilityWindow[];
   };
   plate: { src: string };
   background: PobBackground[];
@@ -295,9 +298,7 @@ export const PresenterOverBroll: React.FC<PresenterOverBrollProps> = (props) => 
   const { fps } = useVideoConfig();
   const f = (s: number) => Math.round(s * fps);
   const { presenter, plate, background, captions } = props;
-  const windows: [number, number][] = presenter.hold_frame
-    ? presenter.windows
-    : [[0, props.duration]];
+  const windows = presenterPictureWindows(presenter, props.duration, fps);
   return (
     <AbsoluteFill style={{ backgroundColor: '#0b1220' }}>
       {plate.src ? (
