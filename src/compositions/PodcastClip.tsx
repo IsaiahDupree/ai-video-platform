@@ -506,6 +506,7 @@ export const PodcastClipComposition: React.FC<{ brief?: PodcastClipBrief }> = ({
 
           {/* Captions — glow style, word-by-word */}
           <div style={{
+            position: 'relative',
             width: '100%',
             minHeight: isShorts ? unit * 20 : unit * 16,
             display: 'flex',
