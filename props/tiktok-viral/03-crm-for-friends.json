@@ -1,0 +1,17 @@
+{
+  "hookText": "I use a CRM for my friendships and I'm not sorry about it",
+  "mirrorText": "I used to forget birthdays. miss life updates. wonder why people stopped reaching out.",
+  "enemyText": "the truth? being a good friend in 2026 requires a system. pretending otherwise is how you end up alone.",
+  "mechanismText": "EverReach tracks warmth, suggests messages, and reminds you before someone becomes a stranger.",
+  "proofScreenshots": [
+    "everreach/screenshots/01-contacts-list.png",
+    "everreach/screenshots/05-warmth-score.png",
+    "everreach/screenshots/03-voice-note.png"
+  ],
+  "ctaText": "Link in bio — start free",
+  "awareness": "solution_aware",
+  "belief": "relationships_matter",
+  "duration": 20,
+  "theme": "dark",
+  "showCaptions": true
+}

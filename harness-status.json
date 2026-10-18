@@ -1,0 +1,16 @@
+{
+  "projectId": "remotion-integration",
+  "projectRoot": "/Users/isaiahdupree/Documents/Software/Remotion",
+  "lastUpdated": "2026-02-20T18:57:12.601Z",
+  "sessionType": "error",
+  "status": "max_errors",
+  "stats": {
+    "total": 300,
+    "passing": 174,
+    "pending": 126,
+    "percentComplete": "58.0"
+  },
+  "pid": 4105,
+  "message": "Stopped after 3 consecutive errors",
+  "lastError": "rate_limit"
+}

@@ -1,0 +1,3455 @@
+{
+  "videoId": "video_767e51d2",
+  "sourceVideo": "longform-assets/source.mp4",
+  "fps": 30,
+  "totalDurationFrames": 4492,
+  "resolution": {
+    "width": 1280,
+    "height": 720
+  },
+  "edl": [
+    {
+      "windowId": "w_0001",
+      "startFrame": 0,
+      "endFrame": 107,
+      "startTime": 0.0,
+      "endTime": 3.566666666666667,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "hook",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 0.0,
+        "endTrim": 3.559999942779541
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "look",
+          "workflows",
+          "business"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Look",
+            "start": 0.0,
+            "end": 0.6200000047683716,
+            "highlight": true
+          },
+          {
+            "word": "most",
+            "start": 0.6200000047683716,
+            "end": 1.1200000047683716,
+            "highlight": false
+          },
+          {
+            "word": "workflows",
+            "start": 1.1200000047683716,
+            "end": 2.119999885559082,
+            "highlight": true
+          },
+          {
+            "word": "if",
+            "start": 2.119999885559082,
+            "end": 2.8399999141693115,
+            "highlight": false
+          },
+          {
+            "word": "any",
+            "start": 2.8399999141693115,
+            "end": 3.1600000858306885,
+            "highlight": false
+          },
+          {
+            "word": "business",
+            "start": 3.1600000858306885,
+            "end": 3.559999942779541,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0002",
+      "startFrame": 107,
+      "endFrame": 338,
+      "startTime": 3.566666666666667,
+      "endTime": 11.266666666666667,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "hook",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 4.480000019073486,
+        "endTrim": 12.180000305175781
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "interfaces",
+          "deals"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "deals",
+            "start": 4.480000019073486,
+            "end": 5.199999809265137,
+            "highlight": true
+          },
+          {
+            "word": "with",
+            "start": 5.199999809265137,
+            "end": 5.880000114440918,
+            "highlight": false
+          },
+          {
+            "word": "user",
+            "start": 5.880000114440918,
+            "end": 6.320000171661377,
+            "highlight": false
+          },
+          {
+            "word": "interfaces",
+            "start": 6.320000171661377,
+            "end": 6.860000133514404,
+            "highlight": true
+          },
+          {
+            "word": "Right",
+            "start": 8.020000457763672,
+            "end": 8.739999771118164,
+            "highlight": false
+          },
+          {
+            "word": "if",
+            "start": 8.739999771118164,
+            "end": 9.300000190734863,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 9.300000190734863,
+            "end": 9.460000038146973,
+            "highlight": false
+          },
+          {
+            "word": "can",
+            "start": 9.460000038146973,
+            "end": 9.739999771118164,
+            "highlight": false
+          },
+          {
+            "word": "route",
+            "start": 9.739999771118164,
+            "end": 10.34000015258789,
+            "highlight": false
+          },
+          {
+            "word": "all",
+            "start": 10.34000015258789,
+            "end": 11.039999961853027,
+            "highlight": false
+          },
+          {
+            "word": "those",
+            "start": 11.039999961853027,
+            "end": 11.239999771118164,
+            "highlight": false
+          },
+          {
+            "word": "user",
+            "start": 11.239999771118164,
+            "end": 11.579999923706055,
+            "highlight": false
+          },
+          {
+            "word": "interfaces",
+            "start": 11.579999923706055,
+            "end": 12.180000305175781,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0003",
+      "startFrame": 338,
+      "endFrame": 546,
+      "startTime": 11.266666666666667,
+      "endTime": 18.2,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 12.84000015258789,
+        "endTrim": 19.780000686645508
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "around",
+          "website",
+          "basically"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Around",
+            "start": 12.84000015258789,
+            "end": 13.5600004196167,
+            "highlight": true
+          },
+          {
+            "word": "an",
+            "start": 13.5600004196167,
+            "end": 13.920000076293945,
+            "highlight": false
+          },
+          {
+            "word": "API",
+            "start": 13.920000076293945,
+            "end": 14.319999694824219,
+            "highlight": false
+          },
+          {
+            "word": "basically",
+            "start": 14.880000114440918,
+            "end": 15.460000038146973,
+            "highlight": true
+          },
+          {
+            "word": "a",
+            "start": 15.460000038146973,
+            "end": 15.979999542236328,
+            "highlight": false
+          },
+          {
+            "word": "website",
+            "start": 15.979999542236328,
+            "end": 16.260000228881836,
+            "highlight": true
+          },
+          {
+            "word": "gets",
+            "start": 16.260000228881836,
+            "end": 16.6200008392334,
+            "highlight": false
+          },
+          {
+            "word": "an",
+            "start": 16.6200008392334,
+            "end": 16.979999542236328,
+            "highlight": false
+          },
+          {
+            "word": "API",
+            "start": 16.979999542236328,
+            "end": 17.139999389648438,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 17.139999389648438,
+            "end": 18.1200008392334,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 18.1200008392334,
+            "end": 18.280000686645508,
+            "highlight": false
+          },
+          {
+            "word": "all",
+            "start": 18.280000686645508,
+            "end": 18.520000457763672,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 18.520000457763672,
+            "end": 18.579999923706055,
+            "highlight": false
+          },
+          {
+            "word": "stuff",
+            "start": 18.579999923706055,
+            "end": 18.899999618530273,
+            "highlight": false
+          },
+          {
+            "word": "via",
+            "start": 18.899999618530273,
+            "end": 19.280000686645508,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 19.280000686645508,
+            "end": 19.440000534057617,
+            "highlight": false
+          },
+          {
+            "word": "website",
+            "start": 19.440000534057617,
+            "end": 19.780000686645508,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0004",
+      "startFrame": 546,
+      "endFrame": 640,
+      "startTime": 18.2,
+      "endTime": 21.333333333333332,
+      "editMode": "broll_cover",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 20.100000381469727,
+        "endTrim": 23.239999771118164
+      },
+      "broll": {
+        "assetId": "pexels_8675554_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_8675554_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 3.1399993896484375,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "if",
+          "already",
+          "doesn't"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "If",
+            "start": 20.100000381469727,
+            "end": 20.81999969482422,
+            "highlight": true
+          },
+          {
+            "word": "it",
+            "start": 20.81999969482422,
+            "end": 21.0,
+            "highlight": false
+          },
+          {
+            "word": "doesn't",
+            "start": 21.0,
+            "end": 21.15999984741211,
+            "highlight": true
+          },
+          {
+            "word": "have",
+            "start": 21.15999984741211,
+            "end": 21.31999969482422,
+            "highlight": false
+          },
+          {
+            "word": "an",
+            "start": 21.31999969482422,
+            "end": 21.559999465942383,
+            "highlight": false
+          },
+          {
+            "word": "API",
+            "start": 21.559999465942383,
+            "end": 21.65999984741211,
+            "highlight": false
+          },
+          {
+            "word": "already",
+            "start": 21.65999984741211,
+            "end": 22.18000030517578,
+            "highlight": true
+          },
+          {
+            "word": "right",
+            "start": 22.520000457763672,
+            "end": 23.239999771118164,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0005",
+      "startFrame": 640,
+      "endFrame": 811,
+      "startTime": 21.333333333333332,
+      "endTime": 27.033333333333335,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 23.719999313354492,
+        "endTrim": 29.440000534057617
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "then",
+          "basically"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "then",
+            "start": 23.719999313354492,
+            "end": 24.440000534057617,
+            "highlight": true
+          },
+          {
+            "word": "you",
+            "start": 24.440000534057617,
+            "end": 24.639999389648438,
+            "highlight": false
+          },
+          {
+            "word": "can",
+            "start": 24.639999389648438,
+            "end": 24.899999618530273,
+            "highlight": false
+          },
+          {
+            "word": "Basically",
+            "start": 26.299999237060547,
+            "end": 27.020000457763672,
+            "highlight": true
+          },
+          {
+            "word": "give",
+            "start": 27.020000457763672,
+            "end": 27.299999237060547,
+            "highlight": false
+          },
+          {
+            "word": "that",
+            "start": 27.299999237060547,
+            "end": 27.459999084472656,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 27.459999084472656,
+            "end": 27.639999389648438,
+            "highlight": false
+          },
+          {
+            "word": "your",
+            "start": 27.639999389648438,
+            "end": 27.739999771118164,
+            "highlight": false
+          },
+          {
+            "word": "AI",
+            "start": 27.739999771118164,
+            "end": 28.020000457763672,
+            "highlight": false
+          },
+          {
+            "word": "agent",
+            "start": 28.020000457763672,
+            "end": 28.420000076293945,
+            "highlight": false
+          },
+          {
+            "word": "right",
+            "start": 28.459999084472656,
+            "end": 29.440000534057617,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0006",
+      "startFrame": 811,
+      "endFrame": 942,
+      "startTime": 27.033333333333335,
+      "endTime": 31.4,
+      "editMode": "broll_cover",
+      "retentionRole": "story",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 30.0,
+        "endTrim": 34.36000061035156
+      },
+      "broll": {
+        "assetId": "pexels_31391075_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_31391075_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 4.3600006103515625,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "things",
+          "literally",
+          "your"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Your",
+            "start": 30.0,
+            "end": 30.559999465942383,
+            "highlight": true
+          },
+          {
+            "word": "AI",
+            "start": 30.559999465942383,
+            "end": 30.899999618530273,
+            "highlight": false
+          },
+          {
+            "word": "agent",
+            "start": 30.899999618530273,
+            "end": 31.15999984741211,
+            "highlight": false
+          },
+          {
+            "word": "can",
+            "start": 31.15999984741211,
+            "end": 31.420000076293945,
+            "highlight": false
+          },
+          {
+            "word": "go",
+            "start": 31.420000076293945,
+            "end": 31.579999923706055,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 31.579999923706055,
+            "end": 32.15999984741211,
+            "highlight": false
+          },
+          {
+            "word": "literally",
+            "start": 32.15999984741211,
+            "end": 32.560001373291016,
+            "highlight": true
+          },
+          {
+            "word": "all",
+            "start": 32.560001373291016,
+            "end": 32.84000015258789,
+            "highlight": false
+          },
+          {
+            "word": "of",
+            "start": 32.84000015258789,
+            "end": 32.97999954223633,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 32.97999954223633,
+            "end": 33.08000183105469,
+            "highlight": false
+          },
+          {
+            "word": "things",
+            "start": 33.08000183105469,
+            "end": 33.52000045776367,
+            "highlight": true
+          },
+          {
+            "word": "all",
+            "start": 33.52000045776367,
+            "end": 33.84000015258789,
+            "highlight": false
+          },
+          {
+            "word": "of",
+            "start": 33.84000015258789,
+            "end": 34.0,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 34.0,
+            "end": 34.060001373291016,
+            "highlight": false
+          },
+          {
+            "word": "things",
+            "start": 34.060001373291016,
+            "end": 34.36000061035156,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "dissolve_fast",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0007",
+      "startFrame": 942,
+      "endFrame": 1146,
+      "startTime": 31.4,
+      "endTime": 38.2,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 35.540000915527344,
+        "endTrim": 42.31999969482422
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "across",
+          "authentication",
+          "tricky",
+          "website"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "across",
+            "start": 35.540000915527344,
+            "end": 36.060001373291016,
+            "highlight": true
+          },
+          {
+            "word": "that",
+            "start": 36.060001373291016,
+            "end": 36.540000915527344,
+            "highlight": false
+          },
+          {
+            "word": "website",
+            "start": 36.540000915527344,
+            "end": 37.20000076293945,
+            "highlight": true
+          },
+          {
+            "word": "All",
+            "start": 37.7400016784668,
+            "end": 38.34000015258789,
+            "highlight": false
+          },
+          {
+            "word": "right",
+            "start": 38.34000015258789,
+            "end": 38.41999816894531,
+            "highlight": false
+          },
+          {
+            "word": "where",
+            "start": 38.439998626708984,
+            "end": 38.720001220703125,
+            "highlight": false
+          },
+          {
+            "word": "it",
+            "start": 38.720001220703125,
+            "end": 38.79999923706055,
+            "highlight": false
+          },
+          {
+            "word": "gets",
+            "start": 38.79999923706055,
+            "end": 38.939998626708984,
+            "highlight": false
+          },
+          {
+            "word": "tricky",
+            "start": 38.939998626708984,
+            "end": 39.20000076293945,
+            "highlight": true
+          },
+          {
+            "word": "is",
+            "start": 39.20000076293945,
+            "end": 39.65999984741211,
+            "highlight": false
+          },
+          {
+            "word": "with",
+            "start": 39.65999984741211,
+            "end": 39.97999954223633,
+            "highlight": false
+          },
+          {
+            "word": "authentication",
+            "start": 39.97999954223633,
+            "end": 40.619998931884766,
+            "highlight": true
+          },
+          {
+            "word": "all",
+            "start": 40.619998931884766,
+            "end": 40.91999816894531,
+            "highlight": false
+          },
+          {
+            "word": "this",
+            "start": 40.91999816894531,
+            "end": 41.02000045776367,
+            "highlight": false
+          },
+          {
+            "word": "extra",
+            "start": 41.02000045776367,
+            "end": 41.41999816894531,
+            "highlight": false
+          },
+          {
+            "word": "stuff",
+            "start": 41.41999816894531,
+            "end": 41.7400016784668,
+            "highlight": false
+          },
+          {
+            "word": "right",
+            "start": 41.7400016784668,
+            "end": 42.31999969482422,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0008",
+      "startFrame": 1146,
+      "endFrame": 1228,
+      "startTime": 38.2,
+      "endTime": 40.93333333333333,
+      "editMode": "broll_cover",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 42.619998931884766,
+        "endTrim": 45.36000061035156
+      },
+      "broll": {
+        "assetId": "pexels_34934562_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_34934562_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 2.740001678466797,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "hopefully",
+          "which"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Which",
+            "start": 42.619998931884766,
+            "end": 42.619998931884766,
+            "highlight": true
+          },
+          {
+            "word": "sucks",
+            "start": 42.619998931884766,
+            "end": 43.02000045776367,
+            "highlight": false
+          },
+          {
+            "word": "but",
+            "start": 43.02000045776367,
+            "end": 43.880001068115234,
+            "highlight": false
+          },
+          {
+            "word": "hopefully",
+            "start": 43.880001068115234,
+            "end": 44.2400016784668,
+            "highlight": true
+          },
+          {
+            "word": "those",
+            "start": 44.2400016784668,
+            "end": 45.099998474121094,
+            "highlight": false
+          },
+          {
+            "word": "sites",
+            "start": 45.099998474121094,
+            "end": 45.36000061035156,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0009",
+      "startFrame": 1228,
+      "endFrame": 1419,
+      "startTime": 40.93333333333333,
+      "endTime": 47.3,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 45.36000061035156,
+        "endTrim": 51.7400016784668
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "authentication",
+          "access",
+          "secure",
+          "that"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "that",
+            "start": 45.36000061035156,
+            "end": 45.58000183105469,
+            "highlight": true
+          },
+          {
+            "word": "have",
+            "start": 45.58000183105469,
+            "end": 45.720001220703125,
+            "highlight": false
+          },
+          {
+            "word": "authentication",
+            "start": 45.720001220703125,
+            "end": 46.560001373291016,
+            "highlight": true
+          },
+          {
+            "word": "you",
+            "start": 46.58000183105469,
+            "end": 47.2599983215332,
+            "highlight": false
+          },
+          {
+            "word": "know",
+            "start": 47.2599983215332,
+            "end": 47.459999084472656,
+            "highlight": false
+          },
+          {
+            "word": "It's",
+            "start": 47.459999084472656,
+            "end": 47.5,
+            "highlight": false
+          },
+          {
+            "word": "a",
+            "start": 47.5,
+            "end": 47.68000030517578,
+            "highlight": false
+          },
+          {
+            "word": "very",
+            "start": 47.68000030517578,
+            "end": 47.939998626708984,
+            "highlight": false
+          },
+          {
+            "word": "secure",
+            "start": 47.939998626708984,
+            "end": 48.220001220703125,
+            "highlight": true
+          },
+          {
+            "word": "authentication",
+            "start": 48.220001220703125,
+            "end": 48.7400016784668,
+            "highlight": true
+          },
+          {
+            "word": "have",
+            "start": 48.7400016784668,
+            "end": 49.70000076293945,
+            "highlight": false
+          },
+          {
+            "word": "API",
+            "start": 49.70000076293945,
+            "end": 50.220001220703125,
+            "highlight": false
+          },
+          {
+            "word": "access",
+            "start": 50.220001220703125,
+            "end": 50.81999969482422,
+            "highlight": true
+          },
+          {
+            "word": "right",
+            "start": 50.81999969482422,
+            "end": 51.7400016784668,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0010",
+      "startFrame": 1419,
+      "endFrame": 1622,
+      "startTime": 47.3,
+      "endTime": 54.06666666666667,
+      "editMode": "broll_cover",
+      "retentionRole": "story",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 53.08000183105469,
+        "endTrim": 59.84000015258789
+      },
+      "broll": {
+        "assetId": "pexels_35625576_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_35625576_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 6.759998321533203,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "things",
+          "but"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "But",
+            "start": 53.08000183105469,
+            "end": 53.68000030517578,
+            "highlight": true
+          },
+          {
+            "word": "the",
+            "start": 53.68000030517578,
+            "end": 53.84000015258789,
+            "highlight": false
+          },
+          {
+            "word": "thing",
+            "start": 53.84000015258789,
+            "end": 54.08000183105469,
+            "highlight": false
+          },
+          {
+            "word": "is",
+            "start": 54.08000183105469,
+            "end": 54.380001068115234,
+            "highlight": false
+          },
+          {
+            "word": "there",
+            "start": 54.380001068115234,
+            "end": 54.619998931884766,
+            "highlight": false
+          },
+          {
+            "word": "are",
+            "start": 54.619998931884766,
+            "end": 54.84000015258789,
+            "highlight": false
+          },
+          {
+            "word": "some",
+            "start": 54.84000015258789,
+            "end": 55.220001220703125,
+            "highlight": false
+          },
+          {
+            "word": "things",
+            "start": 55.220001220703125,
+            "end": 55.540000915527344,
+            "highlight": true
+          },
+          {
+            "word": "that",
+            "start": 55.540000915527344,
+            "end": 55.81999969482422,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 55.81999969482422,
+            "end": 56.060001373291016,
+            "highlight": false
+          },
+          {
+            "word": "can",
+            "start": 56.060001373291016,
+            "end": 56.34000015258789,
+            "highlight": false
+          },
+          {
+            "word": "and",
+            "start": 56.34000015258789,
+            "end": 56.599998474121094,
+            "highlight": false
+          },
+          {
+            "word": "can't",
+            "start": 56.599998474121094,
+            "end": 56.86000061035156,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 56.86000061035156,
+            "end": 57.13999938964844,
+            "highlight": false
+          },
+          {
+            "word": "on",
+            "start": 57.13999938964844,
+            "end": 57.439998626708984,
+            "highlight": false
+          },
+          {
+            "word": "these",
+            "start": 57.439998626708984,
+            "end": 57.68000030517578,
+            "highlight": false
+          },
+          {
+            "word": "sites",
+            "start": 57.68000030517578,
+            "end": 58.099998474121094,
+            "highlight": false
+          },
+          {
+            "word": "that",
+            "start": 58.099998474121094,
+            "end": 58.65999984741211,
+            "highlight": false
+          },
+          {
+            "word": "Have",
+            "start": 58.65999984741211,
+            "end": 59.84000015258789,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "dissolve_fast",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0011",
+      "startFrame": 1622,
+      "endFrame": 1724,
+      "startTime": 54.06666666666667,
+      "endTime": 57.46666666666667,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 60.86000061035156,
+        "endTrim": 64.26000213623047
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "access",
+          "authentication",
+          "api"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "API",
+            "start": 60.86000061035156,
+            "end": 61.599998474121094,
+            "highlight": true
+          },
+          {
+            "word": "access",
+            "start": 61.599998474121094,
+            "end": 62.29999923706055,
+            "highlight": true
+          },
+          {
+            "word": "and",
+            "start": 62.29999923706055,
+            "end": 63.08000183105469,
+            "highlight": false
+          },
+          {
+            "word": "Authentication",
+            "start": 63.52000045776367,
+            "end": 64.26000213623047,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0012",
+      "startFrame": 1724,
+      "endFrame": 1802,
+      "startTime": 57.46666666666667,
+      "endTime": 60.06666666666667,
+      "editMode": "broll_cover",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 64.26000213623047,
+        "endTrim": 66.86000061035156
+      },
+      "broll": {
+        "assetId": "pexels_34247633_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_34247633_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 2.5999984741210938,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "capability",
+          "they"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "they",
+            "start": 64.26000213623047,
+            "end": 64.77999877929688,
+            "highlight": true
+          },
+          {
+            "word": "limit",
+            "start": 64.77999877929688,
+            "end": 65.22000122070312,
+            "highlight": false
+          },
+          {
+            "word": "some",
+            "start": 65.22000122070312,
+            "end": 65.63999938964844,
+            "highlight": false
+          },
+          {
+            "word": "of",
+            "start": 65.63999938964844,
+            "end": 65.86000061035156,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 65.86000061035156,
+            "end": 66.0199966430664,
+            "highlight": false
+          },
+          {
+            "word": "API",
+            "start": 66.0199966430664,
+            "end": 66.26000213623047,
+            "highlight": false
+          },
+          {
+            "word": "capability",
+            "start": 66.26000213623047,
+            "end": 66.86000061035156,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0013",
+      "startFrame": 1802,
+      "endFrame": 1878,
+      "startTime": 60.06666666666667,
+      "endTime": 62.6,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 66.86000061035156,
+        "endTrim": 69.4000015258789
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "for",
+          "everything",
+          "because",
+          "website"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "for",
+            "start": 66.86000061035156,
+            "end": 67.5999984741211,
+            "highlight": true
+          },
+          {
+            "word": "that",
+            "start": 67.5999984741211,
+            "end": 67.77999877929688,
+            "highlight": false
+          },
+          {
+            "word": "website",
+            "start": 67.77999877929688,
+            "end": 68.13999938964844,
+            "highlight": true
+          },
+          {
+            "word": "to",
+            "start": 68.13999938964844,
+            "end": 68.37999725341797,
+            "highlight": false
+          },
+          {
+            "word": "be",
+            "start": 68.37999725341797,
+            "end": 68.55999755859375,
+            "highlight": false
+          },
+          {
+            "word": "able",
+            "start": 68.55999755859375,
+            "end": 68.63999938964844,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 68.63999938964844,
+            "end": 68.72000122070312,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 68.72000122070312,
+            "end": 68.9800033569336,
+            "highlight": false
+          },
+          {
+            "word": "everything",
+            "start": 68.9800033569336,
+            "end": 69.22000122070312,
+            "highlight": true
+          },
+          {
+            "word": "because",
+            "start": 69.22000122070312,
+            "end": 69.4000015258789,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0014",
+      "startFrame": 1878,
+      "endFrame": 2097,
+      "startTime": 62.6,
+      "endTime": 69.9,
+      "editMode": "broll_cover",
+      "retentionRole": "story",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 69.4000015258789,
+        "endTrim": 76.69999694824219
+      },
+      "broll": {
+        "assetId": "pexels_4057947_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_4057947_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 5,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "everything",
+          "they",
+          "whenever",
+          "because",
+          "somebody's"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "they",
+            "start": 69.4000015258789,
+            "end": 69.5199966430664,
+            "highlight": true
+          },
+          {
+            "word": "don't",
+            "start": 69.5199966430664,
+            "end": 69.66000366210938,
+            "highlight": false
+          },
+          {
+            "word": "want",
+            "start": 69.66000366210938,
+            "end": 69.83999633789062,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 69.83999633789062,
+            "end": 69.91999816894531,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 69.91999816894531,
+            "end": 70.0199966430664,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 70.0199966430664,
+            "end": 70.16000366210938,
+            "highlight": false
+          },
+          {
+            "word": "everything",
+            "start": 70.16000366210938,
+            "end": 70.5199966430664,
+            "highlight": true
+          },
+          {
+            "word": "Because",
+            "start": 70.5199966430664,
+            "end": 71.05999755859375,
+            "highlight": true
+          },
+          {
+            "word": "they",
+            "start": 71.05999755859375,
+            "end": 71.63999938964844,
+            "highlight": true
+          },
+          {
+            "word": "want",
+            "start": 71.63999938964844,
+            "end": 71.86000061035156,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 71.86000061035156,
+            "end": 72.0199966430664,
+            "highlight": false
+          },
+          {
+            "word": "have",
+            "start": 72.0199966430664,
+            "end": 72.19999694824219,
+            "highlight": false
+          },
+          {
+            "word": "that",
+            "start": 72.19999694824219,
+            "end": 72.41999816894531,
+            "highlight": false
+          },
+          {
+            "word": "value",
+            "start": 72.41999816894531,
+            "end": 72.73999786376953,
+            "highlight": false
+          },
+          {
+            "word": "be",
+            "start": 72.73999786376953,
+            "end": 73.0199966430664,
+            "highlight": false
+          },
+          {
+            "word": "created",
+            "start": 73.0199966430664,
+            "end": 73.45999908447266,
+            "highlight": false
+          },
+          {
+            "word": "whenever",
+            "start": 73.45999908447266,
+            "end": 73.87999725341797,
+            "highlight": true
+          },
+          {
+            "word": "somebody's",
+            "start": 73.87999725341797,
+            "end": 74.55999755859375,
+            "highlight": true
+          },
+          {
+            "word": "manually",
+            "start": 74.55999755859375,
+            "end": 74.94000244140625,
+            "highlight": false
+          },
+          {
+            "word": "on",
+            "start": 74.94000244140625,
+            "end": 75.19999694824219,
+            "highlight": false
+          },
+          {
+            "word": "that",
+            "start": 75.19999694824219,
+            "end": 75.45999908447266,
+            "highlight": false
+          },
+          {
+            "word": "platform",
+            "start": 75.45999908447266,
+            "end": 75.94000244140625,
+            "highlight": false
+          },
+          {
+            "word": "or",
+            "start": 75.94000244140625,
+            "end": 76.27999877929688,
+            "highlight": false
+          },
+          {
+            "word": "website",
+            "start": 76.27999877929688,
+            "end": 76.69999694824219,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "dissolve_fast",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0015",
+      "startFrame": 2097,
+      "endFrame": 2332,
+      "startTime": 69.9,
+      "endTime": 77.73333333333333,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 77.22000122070312,
+        "endTrim": 85.06999969482422
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "you're",
+          "capture",
+          "sucks"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "sucks",
+            "start": 77.22000122070312,
+            "end": 77.95999908447266,
+            "highlight": true
+          },
+          {
+            "word": "right",
+            "start": 77.95999908447266,
+            "end": 78.68000030517578,
+            "highlight": false
+          },
+          {
+            "word": "but",
+            "start": 79.41999816894531,
+            "end": 80.16000366210938,
+            "highlight": false
+          },
+          {
+            "word": "still",
+            "start": 80.16000366210938,
+            "end": 80.69999694824219,
+            "highlight": false
+          },
+          {
+            "word": "that",
+            "start": 80.69999694824219,
+            "end": 81.36000061035156,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 81.36000061035156,
+            "end": 81.54000091552734,
+            "highlight": false
+          },
+          {
+            "word": "know",
+            "start": 81.54000091552734,
+            "end": 81.77999877929688,
+            "highlight": false
+          },
+          {
+            "word": "if",
+            "start": 81.77999877929688,
+            "end": 82.26000213623047,
+            "highlight": false
+          },
+          {
+            "word": "you're",
+            "start": 82.26000213623047,
+            "end": 82.63999938964844,
+            "highlight": true
+          },
+          {
+            "word": "able",
+            "start": 82.63999938964844,
+            "end": 82.63999938964844,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 82.63999938964844,
+            "end": 83.22000122070312,
+            "highlight": false
+          },
+          {
+            "word": "capture",
+            "start": 83.22000122070312,
+            "end": 83.5999984741211,
+            "highlight": true
+          },
+          {
+            "word": "that",
+            "start": 83.5999984741211,
+            "end": 84.16000366210938,
+            "highlight": false
+          },
+          {
+            "word": "into",
+            "start": 84.16000366210938,
+            "end": 84.69999694824219,
+            "highlight": false
+          },
+          {
+            "word": "a",
+            "start": 84.69999694824219,
+            "end": 85.06999969482422,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0016",
+      "startFrame": 2332,
+      "endFrame": 2454,
+      "startTime": 77.73333333333333,
+      "endTime": 81.8,
+      "editMode": "broll_cover",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 86.20999908447266,
+        "endTrim": 90.25
+      },
+      "broll": {
+        "assetId": "pexels_35625576_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_35625576_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 4.040000915527344,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "api",
+          "regardless"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "API",
+            "start": 86.20999908447266,
+            "end": 86.80999755859375,
+            "highlight": true
+          },
+          {
+            "word": "regardless",
+            "start": 86.80999755859375,
+            "end": 87.41000366210938,
+            "highlight": true
+          },
+          {
+            "word": "of",
+            "start": 87.41000366210938,
+            "end": 87.88999938964844,
+            "highlight": false
+          },
+          {
+            "word": "if",
+            "start": 87.88999938964844,
+            "end": 88.1500015258789,
+            "highlight": false
+          },
+          {
+            "word": "they",
+            "start": 88.1500015258789,
+            "end": 88.33000183105469,
+            "highlight": false
+          },
+          {
+            "word": "serve",
+            "start": 88.33000183105469,
+            "end": 88.6500015258789,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 88.6500015258789,
+            "end": 89.30999755859375,
+            "highlight": false
+          },
+          {
+            "word": "API",
+            "start": 89.30999755859375,
+            "end": 89.6500015258789,
+            "highlight": true
+          },
+          {
+            "word": "or",
+            "start": 89.6500015258789,
+            "end": 89.94999694824219,
+            "highlight": false
+          },
+          {
+            "word": "not",
+            "start": 89.94999694824219,
+            "end": 90.25,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0017",
+      "startFrame": 2454,
+      "endFrame": 2665,
+      "startTime": 81.8,
+      "endTime": 88.83333333333333,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 91.02999877929688,
+        "endTrim": 98.05000305175781
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "right",
+          "entire",
+          "website",
+          "behalf",
+          "things"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Right",
+            "start": 91.02999877929688,
+            "end": 91.62999725341797,
+            "highlight": true
+          },
+          {
+            "word": "then",
+            "start": 91.79000091552734,
+            "end": 91.93000030517578,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 91.93000030517578,
+            "end": 92.02999877929688,
+            "highlight": false
+          },
+          {
+            "word": "could",
+            "start": 92.02999877929688,
+            "end": 92.38999938964844,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 92.38999938964844,
+            "end": 92.55000305175781,
+            "highlight": false
+          },
+          {
+            "word": "know",
+            "start": 92.55000305175781,
+            "end": 92.6500015258789,
+            "highlight": false
+          },
+          {
+            "word": "Basically",
+            "start": 92.6500015258789,
+            "end": 92.88999938964844,
+            "highlight": false
+          },
+          {
+            "word": "hand",
+            "start": 92.88999938964844,
+            "end": 93.12999725341797,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 93.12999725341797,
+            "end": 93.25,
+            "highlight": false
+          },
+          {
+            "word": "whole",
+            "start": 93.25,
+            "end": 93.38999938964844,
+            "highlight": false
+          },
+          {
+            "word": "entire",
+            "start": 93.38999938964844,
+            "end": 93.55000305175781,
+            "highlight": true
+          },
+          {
+            "word": "website",
+            "start": 93.55000305175781,
+            "end": 93.79000091552734,
+            "highlight": true
+          },
+          {
+            "word": "to",
+            "start": 93.79000091552734,
+            "end": 94.06999969482422,
+            "highlight": false
+          },
+          {
+            "word": "your",
+            "start": 94.06999969482422,
+            "end": 94.29000091552734,
+            "highlight": false
+          },
+          {
+            "word": "AI",
+            "start": 94.29000091552734,
+            "end": 94.58999633789062,
+            "highlight": false
+          },
+          {
+            "word": "agent",
+            "start": 94.58999633789062,
+            "end": 94.88999938964844,
+            "highlight": false
+          },
+          {
+            "word": "and",
+            "start": 94.88999938964844,
+            "end": 95.06999969482422,
+            "highlight": false
+          },
+          {
+            "word": "have",
+            "start": 95.06999969482422,
+            "end": 95.29000091552734,
+            "highlight": false
+          },
+          {
+            "word": "it",
+            "start": 95.29000091552734,
+            "end": 95.43000030517578,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 95.43000030517578,
+            "end": 95.58999633789062,
+            "highlight": false
+          },
+          {
+            "word": "things",
+            "start": 95.58999633789062,
+            "end": 95.75,
+            "highlight": true
+          },
+          {
+            "word": "all",
+            "start": 95.75,
+            "end": 95.98999786376953,
+            "highlight": false
+          },
+          {
+            "word": "for",
+            "start": 95.98999786376953,
+            "end": 96.2699966430664,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 96.2699966430664,
+            "end": 96.56999969482422,
+            "highlight": false
+          },
+          {
+            "word": "on",
+            "start": 96.56999969482422,
+            "end": 96.7699966430664,
+            "highlight": false
+          },
+          {
+            "word": "behalf",
+            "start": 96.7699966430664,
+            "end": 97.33000183105469,
+            "highlight": true
+          },
+          {
+            "word": "of",
+            "start": 97.33000183105469,
+            "end": 97.51000213623047,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 97.51000213623047,
+            "end": 97.75,
+            "highlight": false
+          },
+          {
+            "word": "right",
+            "start": 97.75,
+            "end": 98.05000305175781,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0018",
+      "startFrame": 2665,
+      "endFrame": 2761,
+      "startTime": 88.83333333333333,
+      "endTime": 92.03333333333333,
+      "editMode": "broll_cover",
+      "retentionRole": "story",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 99.3499984741211,
+        "endTrim": 102.52999877929688
+      },
+      "broll": {
+        "assetId": "pexels_35129239_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_35129239_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 3.1800003051757812,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "businesses",
+          "which"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Which",
+            "start": 99.3499984741211,
+            "end": 99.94999694824219,
+            "highlight": true
+          },
+          {
+            "word": "most",
+            "start": 100.55000305175781,
+            "end": 100.7699966430664,
+            "highlight": false
+          },
+          {
+            "word": "businesses",
+            "start": 100.7699966430664,
+            "end": 101.47000122070312,
+            "highlight": true
+          },
+          {
+            "word": "you",
+            "start": 101.47000122070312,
+            "end": 101.93000030517578,
+            "highlight": false
+          },
+          {
+            "word": "know",
+            "start": 101.93000030517578,
+            "end": 102.2300033569336,
+            "highlight": false
+          },
+          {
+            "word": "need",
+            "start": 102.2300033569336,
+            "end": 102.52999877929688,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "dissolve_fast",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0019",
+      "startFrame": 2761,
+      "endFrame": 2892,
+      "startTime": 92.03333333333333,
+      "endTime": 96.4,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 105.93000030517578,
+        "endTrim": 110.30999755859375
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "now",
+          "everything"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Now",
+            "start": 105.93000030517578,
+            "end": 106.52999877929688,
+            "highlight": true
+          },
+          {
+            "word": "if",
+            "start": 106.52999877929688,
+            "end": 106.94999694824219,
+            "highlight": false
+          },
+          {
+            "word": "everything",
+            "start": 106.94999694824219,
+            "end": 107.61000061035156,
+            "highlight": true
+          },
+          {
+            "word": "were",
+            "start": 107.61000061035156,
+            "end": 107.91000366210938,
+            "highlight": false
+          },
+          {
+            "word": "an",
+            "start": 107.91000366210938,
+            "end": 108.25,
+            "highlight": false
+          },
+          {
+            "word": "API",
+            "start": 108.25,
+            "end": 108.38999938964844,
+            "highlight": false
+          },
+          {
+            "word": "which",
+            "start": 108.38999938964844,
+            "end": 109.19000244140625,
+            "highlight": false
+          },
+          {
+            "word": "they",
+            "start": 109.19000244140625,
+            "end": 109.48999786376953,
+            "highlight": false
+          },
+          {
+            "word": "will",
+            "start": 109.48999786376953,
+            "end": 109.69000244140625,
+            "highlight": false
+          },
+          {
+            "word": "be",
+            "start": 109.69000244140625,
+            "end": 109.98999786376953,
+            "highlight": false
+          },
+          {
+            "word": "soon",
+            "start": 109.98999786376953,
+            "end": 110.30999755859375,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0020",
+      "startFrame": 2892,
+      "endFrame": 2986,
+      "startTime": 96.4,
+      "endTime": 99.53333333333333,
+      "editMode": "broll_cover",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 114.02999877929688,
+        "endTrim": 117.16999816894531
+      },
+      "broll": {
+        "assetId": "pexels_29167798_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_29167798_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 3.1399993896484375,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "what",
+          "business"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "What",
+            "start": 114.02999877929688,
+            "end": 114.62999725341797,
+            "highlight": true
+          },
+          {
+            "word": "Could",
+            "start": 115.33000183105469,
+            "end": 115.93000030517578,
+            "highlight": false
+          },
+          {
+            "word": "your",
+            "start": 115.93000030517578,
+            "end": 116.33000183105469,
+            "highlight": false
+          },
+          {
+            "word": "business",
+            "start": 116.33000183105469,
+            "end": 116.69000244140625,
+            "highlight": true
+          },
+          {
+            "word": "do",
+            "start": 116.69000244140625,
+            "end": 117.16999816894531,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0021",
+      "startFrame": 2986,
+      "endFrame": 3069,
+      "startTime": 99.53333333333333,
+      "endTime": 102.3,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 117.51000213623047,
+        "endTrim": 120.25
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "it"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "It",
+            "start": 117.51000213623047,
+            "end": 118.11000061035156,
+            "highlight": true
+          },
+          {
+            "word": "could",
+            "start": 118.11000061035156,
+            "end": 118.2300033569336,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 118.2300033569336,
+            "end": 118.3499984741211,
+            "highlight": false
+          },
+          {
+            "word": "a",
+            "start": 118.3499984741211,
+            "end": 118.80999755859375,
+            "highlight": false
+          },
+          {
+            "word": "lot",
+            "start": 118.80999755859375,
+            "end": 118.80999755859375,
+            "highlight": false
+          },
+          {
+            "word": "if",
+            "start": 118.80999755859375,
+            "end": 119.58999633789062,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 119.58999633789062,
+            "end": 119.98999786376953,
+            "highlight": false
+          },
+          {
+            "word": "gave",
+            "start": 119.98999786376953,
+            "end": 120.25,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0022",
+      "startFrame": 3069,
+      "endFrame": 3233,
+      "startTime": 102.3,
+      "endTime": 107.76666666666667,
+      "editMode": "broll_cover",
+      "retentionRole": "story",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 120.25,
+        "endTrim": 125.75
+      },
+      "broll": {
+        "assetId": "pexels_34934562_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_34934562_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 5.5,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "secure",
+          "all",
+          "business"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "all",
+            "start": 120.25,
+            "end": 120.56999969482422,
+            "highlight": true
+          },
+          {
+            "word": "your",
+            "start": 120.56999969482422,
+            "end": 120.70999908447266,
+            "highlight": false
+          },
+          {
+            "word": "API",
+            "start": 120.70999908447266,
+            "end": 121.02999877929688,
+            "highlight": false
+          },
+          {
+            "word": "keys",
+            "start": 121.02999877929688,
+            "end": 121.37000274658203,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 121.37000274658203,
+            "end": 121.6500015258789,
+            "highlight": false
+          },
+          {
+            "word": "a",
+            "start": 121.6500015258789,
+            "end": 121.93000030517578,
+            "highlight": false
+          },
+          {
+            "word": "business",
+            "start": 121.93000030517578,
+            "end": 122.20999908447266,
+            "highlight": true
+          },
+          {
+            "word": "and",
+            "start": 122.20999908447266,
+            "end": 122.44999694824219,
+            "highlight": false
+          },
+          {
+            "word": "and",
+            "start": 122.80999755859375,
+            "end": 123.16999816894531,
+            "highlight": false
+          },
+          {
+            "word": "your",
+            "start": 123.16999816894531,
+            "end": 123.29000091552734,
+            "highlight": false
+          },
+          {
+            "word": "AI",
+            "start": 123.29000091552734,
+            "end": 123.55000305175781,
+            "highlight": false
+          },
+          {
+            "word": "agent",
+            "start": 123.55000305175781,
+            "end": 123.7699966430664,
+            "highlight": false
+          },
+          {
+            "word": "It",
+            "start": 123.7699966430664,
+            "end": 123.94999694824219,
+            "highlight": false
+          },
+          {
+            "word": "was",
+            "start": 123.94999694824219,
+            "end": 124.05000305175781,
+            "highlight": false
+          },
+          {
+            "word": "very",
+            "start": 124.05000305175781,
+            "end": 124.30999755859375,
+            "highlight": false
+          },
+          {
+            "word": "secure",
+            "start": 124.30999755859375,
+            "end": 124.61000061035156,
+            "highlight": true
+          },
+          {
+            "word": "in",
+            "start": 124.61000061035156,
+            "end": 124.87000274658203,
+            "highlight": false
+          },
+          {
+            "word": "doing",
+            "start": 124.87000274658203,
+            "end": 125.11000061035156,
+            "highlight": false
+          },
+          {
+            "word": "so",
+            "start": 125.11000061035156,
+            "end": 125.75,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "dissolve_fast",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0023",
+      "startFrame": 3233,
+      "endFrame": 3350,
+      "startTime": 107.76666666666667,
+      "endTime": 111.66666666666667,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 126.3499984741211,
+        "endTrim": 130.22999572753906
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "right",
+          "business",
+          "couldn't"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "right",
+            "start": 126.3499984741211,
+            "end": 126.94999694824219,
+            "highlight": true
+          },
+          {
+            "word": "What",
+            "start": 127.44999694824219,
+            "end": 128.0500030517578,
+            "highlight": false
+          },
+          {
+            "word": "couldn't",
+            "start": 128.0500030517578,
+            "end": 128.3300018310547,
+            "highlight": true
+          },
+          {
+            "word": "your",
+            "start": 128.3300018310547,
+            "end": 128.69000244140625,
+            "highlight": false
+          },
+          {
+            "word": "business",
+            "start": 128.69000244140625,
+            "end": 129.00999450683594,
+            "highlight": true
+          },
+          {
+            "word": "do",
+            "start": 129.00999450683594,
+            "end": 130.22999572753906,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0024",
+      "startFrame": 3350,
+      "endFrame": 3493,
+      "startTime": 111.66666666666667,
+      "endTime": 116.43333333333334,
+      "editMode": "broll_cover",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 131.49000549316406,
+        "endTrim": 136.25
+      },
+      "broll": {
+        "assetId": "pexels_36318189_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_36318189_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 4.7599945068359375,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "that",
+          "online",
+          "related"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "That",
+            "start": 131.49000549316406,
+            "end": 131.88999938964844,
+            "highlight": true
+          },
+          {
+            "word": "was",
+            "start": 131.88999938964844,
+            "end": 132.14999389648438,
+            "highlight": false
+          },
+          {
+            "word": "online",
+            "start": 132.14999389648438,
+            "end": 132.5500030517578,
+            "highlight": true
+          },
+          {
+            "word": "related",
+            "start": 132.5500030517578,
+            "end": 133.3699951171875,
+            "highlight": true
+          },
+          {
+            "word": "I",
+            "start": 135.64999389648438,
+            "end": 136.25,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0025",
+      "startFrame": 3493,
+      "endFrame": 3614,
+      "startTime": 116.43333333333334,
+      "endTime": 120.46666666666667,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 136.25,
+        "endTrim": 140.2899932861328
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "wonder",
+          "question",
+          "really",
+          "yourself"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "really",
+            "start": 136.25,
+            "end": 136.6300048828125,
+            "highlight": true
+          },
+          {
+            "word": "wonder",
+            "start": 136.6300048828125,
+            "end": 136.8699951171875,
+            "highlight": true
+          },
+          {
+            "word": "that",
+            "start": 136.8699951171875,
+            "end": 137.08999633789062,
+            "highlight": false
+          },
+          {
+            "word": "question",
+            "start": 137.08999633789062,
+            "end": 137.42999267578125,
+            "highlight": true
+          },
+          {
+            "word": "is",
+            "start": 137.42999267578125,
+            "end": 138.57000732421875,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 138.57000732421875,
+            "end": 138.69000244140625,
+            "highlight": false
+          },
+          {
+            "word": "question",
+            "start": 138.69000244140625,
+            "end": 138.8699951171875,
+            "highlight": true
+          },
+          {
+            "word": "that",
+            "start": 138.8699951171875,
+            "end": 139.11000061035156,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 139.11000061035156,
+            "end": 139.38999938964844,
+            "highlight": false
+          },
+          {
+            "word": "need",
+            "start": 139.38999938964844,
+            "end": 139.52999877929688,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 139.52999877929688,
+            "end": 139.75,
+            "highlight": false
+          },
+          {
+            "word": "ask",
+            "start": 139.75,
+            "end": 140.02999877929688,
+            "highlight": false
+          },
+          {
+            "word": "yourself",
+            "start": 140.02999877929688,
+            "end": 140.2899932861328,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0026",
+      "startFrame": 3614,
+      "endFrame": 3721,
+      "startTime": 120.46666666666667,
+      "endTime": 124.03333333333333,
+      "editMode": "broll_cover",
+      "retentionRole": "story",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 141.1300048828125,
+        "endTrim": 144.7100067138672
+      },
+      "broll": {
+        "assetId": "pexels_34129037_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_34129037_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 3.5800018310546875,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "why",
+          "because"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Why",
+            "start": 141.1300048828125,
+            "end": 141.72999572753906,
+            "highlight": true
+          },
+          {
+            "word": "because",
+            "start": 141.72999572753906,
+            "end": 142.3300018310547,
+            "highlight": true
+          },
+          {
+            "word": "Like",
+            "start": 144.11000061035156,
+            "end": 144.7100067138672,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "dissolve_fast",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0027",
+      "startFrame": 3721,
+      "endFrame": 3849,
+      "startTime": 124.03333333333333,
+      "endTime": 128.3,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 147.1300048828125,
+        "endTrim": 151.41000366210938
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "experiencing",
+          "things",
+          "people",
+          "this"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "This",
+            "start": 147.1300048828125,
+            "end": 147.72999572753906,
+            "highlight": true
+          },
+          {
+            "word": "is",
+            "start": 147.72999572753906,
+            "end": 147.8699951171875,
+            "highlight": false
+          },
+          {
+            "word": "what",
+            "start": 147.8699951171875,
+            "end": 147.99000549316406,
+            "highlight": false
+          },
+          {
+            "word": "people",
+            "start": 147.99000549316406,
+            "end": 148.19000244140625,
+            "highlight": true
+          },
+          {
+            "word": "are",
+            "start": 148.19000244140625,
+            "end": 148.3699951171875,
+            "highlight": false
+          },
+          {
+            "word": "experiencing",
+            "start": 148.3699951171875,
+            "end": 148.77000427246094,
+            "highlight": true
+          },
+          {
+            "word": "once",
+            "start": 148.77000427246094,
+            "end": 149.08999633789062,
+            "highlight": false
+          },
+          {
+            "word": "they",
+            "start": 149.08999633789062,
+            "end": 149.22999572753906,
+            "highlight": false
+          },
+          {
+            "word": "once",
+            "start": 149.22999572753906,
+            "end": 149.47000122070312,
+            "highlight": false
+          },
+          {
+            "word": "they",
+            "start": 149.47000122070312,
+            "end": 149.6699981689453,
+            "highlight": false
+          },
+          {
+            "word": "set",
+            "start": 149.6699981689453,
+            "end": 149.91000366210938,
+            "highlight": false
+          },
+          {
+            "word": "up",
+            "start": 149.91000366210938,
+            "end": 150.19000244140625,
+            "highlight": false
+          },
+          {
+            "word": "things",
+            "start": 150.19000244140625,
+            "end": 151.02999877929688,
+            "highlight": true
+          },
+          {
+            "word": "like",
+            "start": 151.02999877929688,
+            "end": 151.41000366210938,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0028",
+      "startFrame": 3849,
+      "endFrame": 3930,
+      "startTime": 128.3,
+      "endTime": 131.0,
+      "editMode": "broll_cover",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 155.1699981689453,
+        "endTrim": 157.85000610351562
+      },
+      "broll": {
+        "assetId": "pexels_10432074_contextual",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_10432074_contextual.mp4",
+        "startTrim": 0.0,
+        "endTrim": 2.6800079345703125,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "literally",
+          "that's",
+          "basically"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "That's",
+            "start": 155.1699981689453,
+            "end": 155.77000427246094,
+            "highlight": true
+          },
+          {
+            "word": "literally",
+            "start": 155.77000427246094,
+            "end": 156.07000732421875,
+            "highlight": true
+          },
+          {
+            "word": "what",
+            "start": 156.07000732421875,
+            "end": 156.49000549316406,
+            "highlight": false
+          },
+          {
+            "word": "open",
+            "start": 156.49000549316406,
+            "end": 156.91000366210938,
+            "highlight": false
+          },
+          {
+            "word": "claw",
+            "start": 156.91000366210938,
+            "end": 157.2899932861328,
+            "highlight": false
+          },
+          {
+            "word": "basically",
+            "start": 157.2899932861328,
+            "end": 157.85000610351562,
+            "highlight": true
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0029",
+      "startFrame": 3930,
+      "endFrame": 4006,
+      "startTime": 131.0,
+      "endTime": 133.53333333333333,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 157.85000610351562,
+        "endTrim": 160.41000366210938
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "promises",
+          "agents"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "promises",
+            "start": 157.85000610351562,
+            "end": 158.49000549316406,
+            "highlight": true
+          },
+          {
+            "word": "all",
+            "start": 158.49000549316406,
+            "end": 159.19000244140625,
+            "highlight": false
+          },
+          {
+            "word": "these",
+            "start": 159.19000244140625,
+            "end": 159.3699951171875,
+            "highlight": false
+          },
+          {
+            "word": "AI",
+            "start": 159.3699951171875,
+            "end": 159.6699981689453,
+            "highlight": false
+          },
+          {
+            "word": "agents",
+            "start": 159.6699981689453,
+            "end": 159.99000549316406,
+            "highlight": true
+          },
+          {
+            "word": "and",
+            "start": 159.99000549316406,
+            "end": 160.1699981689453,
+            "highlight": false
+          },
+          {
+            "word": "stuff",
+            "start": 160.1699981689453,
+            "end": 160.27000427246094,
+            "highlight": false
+          },
+          {
+            "word": "like",
+            "start": 160.27000427246094,
+            "end": 160.41000366210938,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0030",
+      "startFrame": 4006,
+      "endFrame": 4226,
+      "startTime": 133.53333333333333,
+      "endTime": 140.86666666666667,
+      "editMode": "broll_cover",
+      "retentionRole": "story",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 160.41000366210938,
+        "endTrim": 167.75
+      },
+      "broll": {
+        "assetId": "pexels_8928265_metaphor",
+        "source": "pexels",
+        "localPath": "longform-assets/pexels_8928265_metaphor.mp4",
+        "startTrim": 0.0,
+        "endTrim": 7.339996337890625,
+        "opacity": 1.0,
+        "fit": "cover"
+      },
+      "speakerMask": null,
+      "zoom": null,
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "you're",
+          "that",
+          "promise",
+          "basically"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "that",
+            "start": 160.41000366210938,
+            "end": 160.91000366210938,
+            "highlight": true
+          },
+          {
+            "word": "They",
+            "start": 160.91000366210938,
+            "end": 161.1300048828125,
+            "highlight": false
+          },
+          {
+            "word": "basically",
+            "start": 161.1300048828125,
+            "end": 161.52999877929688,
+            "highlight": true
+          },
+          {
+            "word": "promise",
+            "start": 161.52999877929688,
+            "end": 162.11000061035156,
+            "highlight": true
+          },
+          {
+            "word": "that",
+            "start": 162.11000061035156,
+            "end": 162.7899932861328,
+            "highlight": true
+          },
+          {
+            "word": "you're",
+            "start": 162.7899932861328,
+            "end": 163.25,
+            "highlight": true
+          },
+          {
+            "word": "this",
+            "start": 163.69000244140625,
+            "end": 164.35000610351562,
+            "highlight": false
+          },
+          {
+            "word": "AI",
+            "start": 164.35000610351562,
+            "end": 164.6300048828125,
+            "highlight": false
+          },
+          {
+            "word": "agent",
+            "start": 164.6300048828125,
+            "end": 164.92999267578125,
+            "highlight": false
+          },
+          {
+            "word": "will",
+            "start": 164.92999267578125,
+            "end": 165.1300048828125,
+            "highlight": false
+          },
+          {
+            "word": "be",
+            "start": 165.1300048828125,
+            "end": 165.35000610351562,
+            "highlight": false
+          },
+          {
+            "word": "able",
+            "start": 165.35000610351562,
+            "end": 165.58999633789062,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 165.58999633789062,
+            "end": 165.8300018310547,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 165.8300018310547,
+            "end": 166.49000549316406,
+            "highlight": false
+          },
+          {
+            "word": "will",
+            "start": 166.49000549316406,
+            "end": 166.77000427246094,
+            "highlight": false
+          },
+          {
+            "word": "be",
+            "start": 166.77000427246094,
+            "end": 166.97000122070312,
+            "highlight": false
+          },
+          {
+            "word": "able",
+            "start": 166.97000122070312,
+            "end": 167.1699981689453,
+            "highlight": false
+          },
+          {
+            "word": "to",
+            "start": 167.1699981689453,
+            "end": 167.42999267578125,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 167.42999267578125,
+            "end": 167.75,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "dissolve_fast",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0031",
+      "startFrame": 4226,
+      "endFrame": 4341,
+      "startTime": 140.86666666666667,
+      "endTime": 144.7,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "explanation",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 169.6699981689453,
+        "endTrim": 173.49000549316406
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "internet",
+          "everything"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "Everything",
+            "start": 169.6699981689453,
+            "end": 170.27000427246094,
+            "highlight": true
+          },
+          {
+            "word": "on",
+            "start": 170.27000427246094,
+            "end": 170.58999633789062,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 170.58999633789062,
+            "end": 170.91000366210938,
+            "highlight": false
+          },
+          {
+            "word": "internet",
+            "start": 170.91000366210938,
+            "end": 171.08999633789062,
+            "highlight": true
+          },
+          {
+            "word": "so",
+            "start": 171.1699981689453,
+            "end": 171.97000122070312,
+            "highlight": false
+          },
+          {
+            "word": "if",
+            "start": 171.97000122070312,
+            "end": 172.14999389648438,
+            "highlight": false
+          },
+          {
+            "word": "you",
+            "start": 172.14999389648438,
+            "end": 172.2899932861328,
+            "highlight": false
+          },
+          {
+            "word": "can",
+            "start": 172.2899932861328,
+            "end": 172.52999877929688,
+            "highlight": false
+          },
+          {
+            "word": "think",
+            "start": 172.52999877929688,
+            "end": 172.7899932861328,
+            "highlight": false
+          },
+          {
+            "word": "about",
+            "start": 172.7899932861328,
+            "end": 173.08999633789062,
+            "highlight": false
+          },
+          {
+            "word": "it",
+            "start": 173.08999633789062,
+            "end": 173.49000549316406,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0032",
+      "startFrame": 4341,
+      "endFrame": 4421,
+      "startTime": 144.7,
+      "endTime": 147.36666666666667,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "payoff",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 174.91000366210938,
+        "endTrim": 177.5500030517578
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "and",
+          "business"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "And",
+            "start": 174.91000366210938,
+            "end": 175.50999450683594,
+            "highlight": true
+          },
+          {
+            "word": "you",
+            "start": 175.50999450683594,
+            "end": 175.7899932861328,
+            "highlight": false
+          },
+          {
+            "word": "have",
+            "start": 175.7899932861328,
+            "end": 176.11000061035156,
+            "highlight": false
+          },
+          {
+            "word": "business",
+            "start": 176.11000061035156,
+            "end": 176.6300048828125,
+            "highlight": true
+          },
+          {
+            "word": "use",
+            "start": 176.6300048828125,
+            "end": 176.99000549316406,
+            "highlight": false
+          },
+          {
+            "word": "cases",
+            "start": 176.99000549316406,
+            "end": 177.30999755859375,
+            "highlight": false
+          },
+          {
+            "word": "where",
+            "start": 177.30999755859375,
+            "end": 177.5500030517578,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "dissolve_slow",
+      "transitionOut": "cut"
+    },
+    {
+      "windowId": "w_0033",
+      "startFrame": 4421,
+      "endFrame": 4492,
+      "startTime": 147.36666666666667,
+      "endTime": 149.73333333333332,
+      "editMode": "speaker_plus_text",
+      "retentionRole": "hook",
+      "sourceClip": {
+        "type": "original",
+        "startTrim": 177.5500030517578,
+        "endTrim": 179.92999267578125
+      },
+      "broll": null,
+      "speakerMask": null,
+      "zoom": {
+        "type": "slow_push_in",
+        "startScale": 1.0,
+        "endScale": 1.08
+      },
+      "captions": {
+        "style": "highlight_key_words",
+        "highlightWords": [
+          "you",
+          "internet",
+          "interact"
+        ],
+        "position": "bottom_center",
+        "fontSize": 48,
+        "words": [
+          {
+            "word": "you",
+            "start": 177.5500030517578,
+            "end": 177.8300018310547,
+            "highlight": true
+          },
+          {
+            "word": "interact",
+            "start": 177.8300018310547,
+            "end": 178.27000427246094,
+            "highlight": true
+          },
+          {
+            "word": "with",
+            "start": 178.27000427246094,
+            "end": 178.6300048828125,
+            "highlight": false
+          },
+          {
+            "word": "the",
+            "start": 178.6300048828125,
+            "end": 179.19000244140625,
+            "highlight": false
+          },
+          {
+            "word": "internet",
+            "start": 179.19000244140625,
+            "end": 179.19000244140625,
+            "highlight": true
+          },
+          {
+            "word": "it",
+            "start": 179.19000244140625,
+            "end": 179.47000122070312,
+            "highlight": false
+          },
+          {
+            "word": "could",
+            "start": 179.47000122070312,
+            "end": 179.6300048828125,
+            "highlight": false
+          },
+          {
+            "word": "do",
+            "start": 179.6300048828125,
+            "end": 179.80999755859375,
+            "highlight": false
+          },
+          {
+            "word": "it",
+            "start": 179.80999755859375,
+            "end": 179.92999267578125,
+            "highlight": false
+          }
+        ]
+      },
+      "transitionIn": "cut",
+      "transitionOut": "cut"
+    }
+  ],
+  "musicBed": {
+    "trackUrl": "longform-assets/background_music.mp3",
+    "volume": 0.15,
+    "duckDuringSpeech": true,
+    "duckVolume": 0.04
+  },
+  "globalStyle": {
+    "colorGrade": "neutral_warm",
+    "letterbox": false,
+    "watermark": null
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "items": [
+    {
+      "id": "sub_bass",
+      "file": "sub_bass.mp3",
+      "description": "Sub bass hook impact (synth)",
+      "tags": [
+        "bass",
+        "impact",
+        "hook"
+      ]
+    },
+    {
+      "id": "pop",
+      "file": "pop.mp3",
+      "description": "Soft UI pop (caption highlight)",
+      "tags": [
+        "pop",
+        "ui",
+        "caption"
+      ]
+    },
+    {
+      "id": "whoosh",
+      "file": "whoosh.mp3",
+      "description": "Whoosh transition between cuts",
+      "tags": [
+        "whoosh",
+        "transition"
+      ]
+    },
+    {
+      "id": "ding",
+      "file": "ding.mp3",
+      "description": "Reveal ding (payoff)",
+      "tags": [
+        "ding",
+        "reveal",
+        "payoff"
+      ]
+    },
+    {
+      "id": "riser",
+      "file": "riser.mp3",
+      "description": "Build-up riser (before payoff)",
+      "tags": [
+        "riser",
+        "tension",
+        "buildup"
+      ]
+    }
+  ]
+}

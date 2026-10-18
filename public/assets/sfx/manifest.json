@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "items": [
+    {
+      "id": "meme_sfx_pack_iconic",
+      "file": "ui/meme_sfx_pack_iconic.wav",
+      "tags": ["meme", "viral", "compilation", "ui", "pop", "ding", "notification", "funny", "bruh", "vine", "airhorn"],
+      "description": "Iconic meme sound effects pack - compilation of viral sounds for editing (bruh, vine boom, airhorn, etc)",
+      "intensity": 5,
+      "category": "ui",
+      "license": {
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=4PMRfOs8Kf0",
+        "requiresAttribution": false,
+        "notes": "No Copyright SFX for Editing"
+      }
+    },
+    {
+      "id": "meme_sfx_pack_100_popular",
+      "file": "ui/meme_sfx_pack_100_popular.wav",
+      "tags": ["meme", "viral", "compilation", "popular", "funny", "editing", "tiktok", "trending", "reaction", "comedy"],
+      "description": "100 popular meme sounds for funny video editing - no copyright compilation",
+      "intensity": 5,
+      "category": "ui",
+      "license": {
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=omV5m5ZXkLg",
+        "requiresAttribution": false,
+        "notes": "FREE DOWNLOAD | NO COPYRIGHT"
+      }
+    },
+    {
+      "id": "fahhh_tiktok",
+      "file": "impacts/fahhh_tiktok.wav",
+      "tags": ["fahhh", "tiktok", "viral", "meme", "impact", "reaction", "funny", "dramatic", "surprise"],
+      "description": "FAHHH viral TikTok sound effect - dramatic reaction/impact for surprise moments",
+      "intensity": 7,
+      "category": "impact",
+      "license": {
+        "source": "youtube",
+        "url": "https://www.youtube.com/watch?v=q_i8WmC29tQ",
+        "requiresAttribution": false,
+        "notes": "TikTok viral sound"
+      }
+    },
+    {
+      "id": "whoosh_cinematic",
+      "file": "transitions/whoosh_cinematic.mp3",
+      "tags": ["whoosh", "transition", "cinematic", "swoosh", "fast", "zoom"],
+      "description": "Cinematic whoosh for slide/zoom transitions",
+      "intensity": 6,
+      "category": "transition",
+      "license": {
+        "source": "elevenlabs",
+        "requiresAttribution": false,
+        "notes": "AI-generated sound effect"
+      }
+    }
+  ]
+}

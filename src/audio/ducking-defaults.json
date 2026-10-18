@@ -1,0 +1,8 @@
+{
+  "$schema": "Canonical ducking defaults — single source of truth for TS and Python.",
+  "duckLevel": 0.08,
+  "fullLevel": 0.45,
+  "attackFrames": 8,
+  "releaseFrames": 15,
+  "enabled": true
+}

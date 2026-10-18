@@ -1,0 +1,2799 @@
+{
+  "segments": [
+    {
+      "speaker": "speaker_0",
+      "start": 0.0,
+      "end": 6.860000133514404,
+      "text": "Look most workflows if any business deals with user interfaces",
+      "words": [
+        {
+          "word": "Look",
+          "start": 0.0,
+          "end": 0.6200000047683716,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "most",
+          "start": 0.6200000047683716,
+          "end": 1.1200000047683716,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "workflows",
+          "start": 1.1200000047683716,
+          "end": 2.119999885559082,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "if",
+          "start": 2.119999885559082,
+          "end": 2.8399999141693115,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "any",
+          "start": 2.8399999141693115,
+          "end": 3.1600000858306885,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "business",
+          "start": 3.1600000858306885,
+          "end": 3.559999942779541,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "deals",
+          "start": 4.480000019073486,
+          "end": 5.199999809265137,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "with",
+          "start": 5.199999809265137,
+          "end": 5.880000114440918,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "user",
+          "start": 5.880000114440918,
+          "end": 6.320000171661377,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "interfaces",
+          "start": 6.320000171661377,
+          "end": 6.860000133514404,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 8.020000457763672,
+      "end": 24.899999618530273,
+      "text": "Right if you can route all those user interfaces Around an API So basically a website gets an API you do all the stuff via the website If it doesn't have an API already right then you can",
+      "words": [
+        {
+          "word": "Right",
+          "start": 8.020000457763672,
+          "end": 8.739999771118164,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "if",
+          "start": 8.739999771118164,
+          "end": 9.300000190734863,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 9.300000190734863,
+          "end": 9.460000038146973,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "can",
+          "start": 9.460000038146973,
+          "end": 9.739999771118164,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "route",
+          "start": 9.739999771118164,
+          "end": 10.34000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "all",
+          "start": 10.34000015258789,
+          "end": 11.039999961853027,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "those",
+          "start": 11.039999961853027,
+          "end": 11.239999771118164,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "user",
+          "start": 11.239999771118164,
+          "end": 11.579999923706055,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "interfaces",
+          "start": 11.579999923706055,
+          "end": 12.180000305175781,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Around",
+          "start": 12.84000015258789,
+          "end": 13.5600004196167,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "an",
+          "start": 13.5600004196167,
+          "end": 13.920000076293945,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "API",
+          "start": 13.920000076293945,
+          "end": 14.319999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "So",
+          "start": 14.779999732971191,
+          "end": 14.880000114440918,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "basically",
+          "start": 14.880000114440918,
+          "end": 15.460000038146973,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "a",
+          "start": 15.460000038146973,
+          "end": 15.979999542236328,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "website",
+          "start": 15.979999542236328,
+          "end": 16.260000228881836,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "gets",
+          "start": 16.260000228881836,
+          "end": 16.6200008392334,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "an",
+          "start": 16.6200008392334,
+          "end": 16.979999542236328,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "API",
+          "start": 16.979999542236328,
+          "end": 17.139999389648438,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 17.139999389648438,
+          "end": 18.1200008392334,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 18.1200008392334,
+          "end": 18.280000686645508,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "all",
+          "start": 18.280000686645508,
+          "end": 18.520000457763672,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 18.520000457763672,
+          "end": 18.579999923706055,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "stuff",
+          "start": 18.579999923706055,
+          "end": 18.899999618530273,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "via",
+          "start": 18.899999618530273,
+          "end": 19.280000686645508,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 19.280000686645508,
+          "end": 19.440000534057617,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "website",
+          "start": 19.440000534057617,
+          "end": 19.780000686645508,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "If",
+          "start": 20.100000381469727,
+          "end": 20.81999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "it",
+          "start": 20.81999969482422,
+          "end": 21.0,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "doesn't",
+          "start": 21.0,
+          "end": 21.15999984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "have",
+          "start": 21.15999984741211,
+          "end": 21.31999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "an",
+          "start": 21.31999969482422,
+          "end": 21.559999465942383,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "API",
+          "start": 21.559999465942383,
+          "end": 21.65999984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "already",
+          "start": 21.65999984741211,
+          "end": 22.18000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "right",
+          "start": 22.520000457763672,
+          "end": 23.239999771118164,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "then",
+          "start": 23.719999313354492,
+          "end": 24.440000534057617,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 24.440000534057617,
+          "end": 24.639999389648438,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "can",
+          "start": 24.639999389648438,
+          "end": 24.899999618530273,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 26.299999237060547,
+      "end": 34.36000061035156,
+      "text": "Basically give that to your AI agent right Your AI agent can go do literally all of the things all of the things",
+      "words": [
+        {
+          "word": "Basically",
+          "start": 26.299999237060547,
+          "end": 27.020000457763672,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "give",
+          "start": 27.020000457763672,
+          "end": 27.299999237060547,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 27.299999237060547,
+          "end": 27.459999084472656,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 27.459999084472656,
+          "end": 27.639999389648438,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "your",
+          "start": 27.639999389648438,
+          "end": 27.739999771118164,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "AI",
+          "start": 27.739999771118164,
+          "end": 28.020000457763672,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "agent",
+          "start": 28.020000457763672,
+          "end": 28.420000076293945,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "right",
+          "start": 28.459999084472656,
+          "end": 29.440000534057617,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Your",
+          "start": 30.0,
+          "end": 30.559999465942383,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "AI",
+          "start": 30.559999465942383,
+          "end": 30.899999618530273,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "agent",
+          "start": 30.899999618530273,
+          "end": 31.15999984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "can",
+          "start": 31.15999984741211,
+          "end": 31.420000076293945,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "go",
+          "start": 31.420000076293945,
+          "end": 31.579999923706055,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 31.579999923706055,
+          "end": 32.15999984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "literally",
+          "start": 32.15999984741211,
+          "end": 32.560001373291016,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "all",
+          "start": 32.560001373291016,
+          "end": 32.84000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "of",
+          "start": 32.84000015258789,
+          "end": 32.97999954223633,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 32.97999954223633,
+          "end": 33.08000183105469,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "things",
+          "start": 33.08000183105469,
+          "end": 33.52000045776367,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "all",
+          "start": 33.52000045776367,
+          "end": 33.84000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "of",
+          "start": 33.84000015258789,
+          "end": 34.0,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 34.0,
+          "end": 34.060001373291016,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "things",
+          "start": 34.060001373291016,
+          "end": 34.36000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 35.540000915527344,
+      "end": 51.7400016784668,
+      "text": "across that website All right where it gets tricky is with authentication all this extra stuff right Which sucks but hopefully those sites that have authentication you know It's a very secure authentication have API access right",
+      "words": [
+        {
+          "word": "across",
+          "start": 35.540000915527344,
+          "end": 36.060001373291016,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 36.060001373291016,
+          "end": 36.540000915527344,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "website",
+          "start": 36.540000915527344,
+          "end": 37.20000076293945,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "All",
+          "start": 37.7400016784668,
+          "end": 38.34000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "right",
+          "start": 38.34000015258789,
+          "end": 38.41999816894531,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "where",
+          "start": 38.439998626708984,
+          "end": 38.720001220703125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "it",
+          "start": 38.720001220703125,
+          "end": 38.79999923706055,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "gets",
+          "start": 38.79999923706055,
+          "end": 38.939998626708984,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "tricky",
+          "start": 38.939998626708984,
+          "end": 39.20000076293945,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "is",
+          "start": 39.20000076293945,
+          "end": 39.65999984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "with",
+          "start": 39.65999984741211,
+          "end": 39.97999954223633,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "authentication",
+          "start": 39.97999954223633,
+          "end": 40.619998931884766,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "all",
+          "start": 40.619998931884766,
+          "end": 40.91999816894531,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "this",
+          "start": 40.91999816894531,
+          "end": 41.02000045776367,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "extra",
+          "start": 41.02000045776367,
+          "end": 41.41999816894531,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "stuff",
+          "start": 41.41999816894531,
+          "end": 41.7400016784668,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "right",
+          "start": 41.7400016784668,
+          "end": 42.31999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Which",
+          "start": 42.619998931884766,
+          "end": 42.619998931884766,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "sucks",
+          "start": 42.619998931884766,
+          "end": 43.02000045776367,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "but",
+          "start": 43.02000045776367,
+          "end": 43.880001068115234,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "hopefully",
+          "start": 43.880001068115234,
+          "end": 44.2400016784668,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "those",
+          "start": 44.2400016784668,
+          "end": 45.099998474121094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "sites",
+          "start": 45.099998474121094,
+          "end": 45.36000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 45.36000061035156,
+          "end": 45.58000183105469,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "have",
+          "start": 45.58000183105469,
+          "end": 45.720001220703125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "authentication",
+          "start": 45.720001220703125,
+          "end": 46.560001373291016,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 46.58000183105469,
+          "end": 47.2599983215332,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "know",
+          "start": 47.2599983215332,
+          "end": 47.459999084472656,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "It's",
+          "start": 47.459999084472656,
+          "end": 47.5,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "a",
+          "start": 47.5,
+          "end": 47.68000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "very",
+          "start": 47.68000030517578,
+          "end": 47.939998626708984,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "secure",
+          "start": 47.939998626708984,
+          "end": 48.220001220703125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "authentication",
+          "start": 48.220001220703125,
+          "end": 48.7400016784668,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "have",
+          "start": 48.7400016784668,
+          "end": 49.70000076293945,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "API",
+          "start": 49.70000076293945,
+          "end": 50.220001220703125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "access",
+          "start": 50.220001220703125,
+          "end": 50.81999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "right",
+          "start": 50.81999969482422,
+          "end": 51.7400016784668,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 53.08000183105469,
+      "end": 59.84000015258789,
+      "text": "But the thing is there are some things that you can and can't do on these sites that Have",
+      "words": [
+        {
+          "word": "But",
+          "start": 53.08000183105469,
+          "end": 53.68000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 53.68000030517578,
+          "end": 53.84000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "thing",
+          "start": 53.84000015258789,
+          "end": 54.08000183105469,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "is",
+          "start": 54.08000183105469,
+          "end": 54.380001068115234,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "there",
+          "start": 54.380001068115234,
+          "end": 54.619998931884766,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "are",
+          "start": 54.619998931884766,
+          "end": 54.84000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "some",
+          "start": 54.84000015258789,
+          "end": 55.220001220703125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "things",
+          "start": 55.220001220703125,
+          "end": 55.540000915527344,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 55.540000915527344,
+          "end": 55.81999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 55.81999969482422,
+          "end": 56.060001373291016,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "can",
+          "start": 56.060001373291016,
+          "end": 56.34000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "and",
+          "start": 56.34000015258789,
+          "end": 56.599998474121094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "can't",
+          "start": 56.599998474121094,
+          "end": 56.86000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 56.86000061035156,
+          "end": 57.13999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "on",
+          "start": 57.13999938964844,
+          "end": 57.439998626708984,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "these",
+          "start": 57.439998626708984,
+          "end": 57.68000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "sites",
+          "start": 57.68000030517578,
+          "end": 58.099998474121094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 58.099998474121094,
+          "end": 58.65999984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Have",
+          "start": 58.65999984741211,
+          "end": 59.84000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 60.86000061035156,
+      "end": 85.06999969482422,
+      "text": "API access and Authentication they limit some of the API capability for that website to be able to do everything because they don't want you to do everything Because they want to have that value be created whenever somebody's manually on that platform or website sucks right but still that you know if you're able to capture that into a",
+      "words": [
+        {
+          "word": "API",
+          "start": 60.86000061035156,
+          "end": 61.599998474121094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "access",
+          "start": 61.599998474121094,
+          "end": 62.29999923706055,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "and",
+          "start": 62.29999923706055,
+          "end": 63.08000183105469,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Authentication",
+          "start": 63.52000045776367,
+          "end": 64.26000213623047,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "they",
+          "start": 64.26000213623047,
+          "end": 64.77999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "limit",
+          "start": 64.77999877929688,
+          "end": 65.22000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "some",
+          "start": 65.22000122070312,
+          "end": 65.63999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "of",
+          "start": 65.63999938964844,
+          "end": 65.86000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 65.86000061035156,
+          "end": 66.0199966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "API",
+          "start": 66.0199966430664,
+          "end": 66.26000213623047,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "capability",
+          "start": 66.26000213623047,
+          "end": 66.86000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "for",
+          "start": 66.86000061035156,
+          "end": 67.5999984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 67.5999984741211,
+          "end": 67.77999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "website",
+          "start": 67.77999877929688,
+          "end": 68.13999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 68.13999938964844,
+          "end": 68.37999725341797,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "be",
+          "start": 68.37999725341797,
+          "end": 68.55999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "able",
+          "start": 68.55999755859375,
+          "end": 68.63999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 68.63999938964844,
+          "end": 68.72000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 68.72000122070312,
+          "end": 68.9800033569336,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "everything",
+          "start": 68.9800033569336,
+          "end": 69.22000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "because",
+          "start": 69.22000122070312,
+          "end": 69.4000015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "they",
+          "start": 69.4000015258789,
+          "end": 69.5199966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "don't",
+          "start": 69.5199966430664,
+          "end": 69.66000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "want",
+          "start": 69.66000366210938,
+          "end": 69.83999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 69.83999633789062,
+          "end": 69.91999816894531,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 69.91999816894531,
+          "end": 70.0199966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 70.0199966430664,
+          "end": 70.16000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "everything",
+          "start": 70.16000366210938,
+          "end": 70.5199966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Because",
+          "start": 70.5199966430664,
+          "end": 71.05999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "they",
+          "start": 71.05999755859375,
+          "end": 71.63999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "want",
+          "start": 71.63999938964844,
+          "end": 71.86000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 71.86000061035156,
+          "end": 72.0199966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "have",
+          "start": 72.0199966430664,
+          "end": 72.19999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 72.19999694824219,
+          "end": 72.41999816894531,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "value",
+          "start": 72.41999816894531,
+          "end": 72.73999786376953,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "be",
+          "start": 72.73999786376953,
+          "end": 73.0199966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "created",
+          "start": 73.0199966430664,
+          "end": 73.45999908447266,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "whenever",
+          "start": 73.45999908447266,
+          "end": 73.87999725341797,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "somebody's",
+          "start": 73.87999725341797,
+          "end": 74.55999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "manually",
+          "start": 74.55999755859375,
+          "end": 74.94000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "on",
+          "start": 74.94000244140625,
+          "end": 75.19999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 75.19999694824219,
+          "end": 75.45999908447266,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "platform",
+          "start": 75.45999908447266,
+          "end": 75.94000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "or",
+          "start": 75.94000244140625,
+          "end": 76.27999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "website",
+          "start": 76.27999877929688,
+          "end": 76.69999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "sucks",
+          "start": 77.22000122070312,
+          "end": 77.95999908447266,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "right",
+          "start": 77.95999908447266,
+          "end": 78.68000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "but",
+          "start": 79.41999816894531,
+          "end": 80.16000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "still",
+          "start": 80.16000366210938,
+          "end": 80.69999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 80.69999694824219,
+          "end": 81.36000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 81.36000061035156,
+          "end": 81.54000091552734,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "know",
+          "start": 81.54000091552734,
+          "end": 81.77999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "if",
+          "start": 81.77999877929688,
+          "end": 82.26000213623047,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you're",
+          "start": 82.26000213623047,
+          "end": 82.63999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "able",
+          "start": 82.63999938964844,
+          "end": 82.63999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 82.63999938964844,
+          "end": 83.22000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "capture",
+          "start": 83.22000122070312,
+          "end": 83.5999984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 83.5999984741211,
+          "end": 84.16000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "into",
+          "start": 84.16000366210938,
+          "end": 84.69999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "a",
+          "start": 84.69999694824219,
+          "end": 85.06999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 86.20999908447266,
+      "end": 98.05000305175781,
+      "text": "API regardless of if they serve the API or not Right then you could you know Basically hand the whole entire website to your AI agent and have it do things all for you on behalf of you right",
+      "words": [
+        {
+          "word": "API",
+          "start": 86.20999908447266,
+          "end": 86.80999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "regardless",
+          "start": 86.80999755859375,
+          "end": 87.41000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "of",
+          "start": 87.41000366210938,
+          "end": 87.88999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "if",
+          "start": 87.88999938964844,
+          "end": 88.1500015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "they",
+          "start": 88.1500015258789,
+          "end": 88.33000183105469,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "serve",
+          "start": 88.33000183105469,
+          "end": 88.6500015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 88.6500015258789,
+          "end": 89.30999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "API",
+          "start": 89.30999755859375,
+          "end": 89.6500015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "or",
+          "start": 89.6500015258789,
+          "end": 89.94999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "not",
+          "start": 89.94999694824219,
+          "end": 90.25,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Right",
+          "start": 91.02999877929688,
+          "end": 91.62999725341797,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "then",
+          "start": 91.79000091552734,
+          "end": 91.93000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 91.93000030517578,
+          "end": 92.02999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "could",
+          "start": 92.02999877929688,
+          "end": 92.38999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 92.38999938964844,
+          "end": 92.55000305175781,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "know",
+          "start": 92.55000305175781,
+          "end": 92.6500015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Basically",
+          "start": 92.6500015258789,
+          "end": 92.88999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "hand",
+          "start": 92.88999938964844,
+          "end": 93.12999725341797,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 93.12999725341797,
+          "end": 93.25,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "whole",
+          "start": 93.25,
+          "end": 93.38999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "entire",
+          "start": 93.38999938964844,
+          "end": 93.55000305175781,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "website",
+          "start": 93.55000305175781,
+          "end": 93.79000091552734,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 93.79000091552734,
+          "end": 94.06999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "your",
+          "start": 94.06999969482422,
+          "end": 94.29000091552734,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "AI",
+          "start": 94.29000091552734,
+          "end": 94.58999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "agent",
+          "start": 94.58999633789062,
+          "end": 94.88999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "and",
+          "start": 94.88999938964844,
+          "end": 95.06999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "have",
+          "start": 95.06999969482422,
+          "end": 95.29000091552734,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "it",
+          "start": 95.29000091552734,
+          "end": 95.43000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 95.43000030517578,
+          "end": 95.58999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "things",
+          "start": 95.58999633789062,
+          "end": 95.75,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "all",
+          "start": 95.75,
+          "end": 95.98999786376953,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "for",
+          "start": 95.98999786376953,
+          "end": 96.2699966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 96.2699966430664,
+          "end": 96.56999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "on",
+          "start": 96.56999969482422,
+          "end": 96.7699966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "behalf",
+          "start": 96.7699966430664,
+          "end": 97.33000183105469,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "of",
+          "start": 97.33000183105469,
+          "end": 97.51000213623047,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 97.51000213623047,
+          "end": 97.75,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "right",
+          "start": 97.75,
+          "end": 98.05000305175781,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 99.3499984741211,
+      "end": 102.52999877929688,
+      "text": "Which um most businesses you know need",
+      "words": [
+        {
+          "word": "Which",
+          "start": 99.3499984741211,
+          "end": 99.94999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "um",
+          "start": 99.94999694824219,
+          "end": 100.55000305175781,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "most",
+          "start": 100.55000305175781,
+          "end": 100.7699966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "businesses",
+          "start": 100.7699966430664,
+          "end": 101.47000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 101.47000122070312,
+          "end": 101.93000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "know",
+          "start": 101.93000030517578,
+          "end": 102.2300033569336,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "need",
+          "start": 102.2300033569336,
+          "end": 102.52999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 105.93000030517578,
+      "end": 110.30999755859375,
+      "text": "Now if everything were an API which they will be soon",
+      "words": [
+        {
+          "word": "Now",
+          "start": 105.93000030517578,
+          "end": 106.52999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "if",
+          "start": 106.52999877929688,
+          "end": 106.94999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "everything",
+          "start": 106.94999694824219,
+          "end": 107.61000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "were",
+          "start": 107.61000061035156,
+          "end": 107.91000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "an",
+          "start": 107.91000366210938,
+          "end": 108.25,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "API",
+          "start": 108.25,
+          "end": 108.38999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "which",
+          "start": 108.38999938964844,
+          "end": 109.19000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "they",
+          "start": 109.19000244140625,
+          "end": 109.48999786376953,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "will",
+          "start": 109.48999786376953,
+          "end": 109.69000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "be",
+          "start": 109.69000244140625,
+          "end": 109.98999786376953,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "soon",
+          "start": 109.98999786376953,
+          "end": 110.30999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 114.02999877929688,
+      "end": 130.22999572753906,
+      "text": "What Could your business do It could do a lot if you gave all your API keys to a business and like and your AI agent It was very secure in doing so right What couldn't your business do",
+      "words": [
+        {
+          "word": "What",
+          "start": 114.02999877929688,
+          "end": 114.62999725341797,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Could",
+          "start": 115.33000183105469,
+          "end": 115.93000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "your",
+          "start": 115.93000030517578,
+          "end": 116.33000183105469,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "business",
+          "start": 116.33000183105469,
+          "end": 116.69000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 116.69000244140625,
+          "end": 117.16999816894531,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "It",
+          "start": 117.51000213623047,
+          "end": 118.11000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "could",
+          "start": 118.11000061035156,
+          "end": 118.2300033569336,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 118.2300033569336,
+          "end": 118.3499984741211,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "a",
+          "start": 118.3499984741211,
+          "end": 118.80999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "lot",
+          "start": 118.80999755859375,
+          "end": 118.80999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "if",
+          "start": 118.80999755859375,
+          "end": 119.58999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 119.58999633789062,
+          "end": 119.98999786376953,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "gave",
+          "start": 119.98999786376953,
+          "end": 120.25,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "all",
+          "start": 120.25,
+          "end": 120.56999969482422,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "your",
+          "start": 120.56999969482422,
+          "end": 120.70999908447266,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "API",
+          "start": 120.70999908447266,
+          "end": 121.02999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "keys",
+          "start": 121.02999877929688,
+          "end": 121.37000274658203,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 121.37000274658203,
+          "end": 121.6500015258789,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "a",
+          "start": 121.6500015258789,
+          "end": 121.93000030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "business",
+          "start": 121.93000030517578,
+          "end": 122.20999908447266,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "and",
+          "start": 122.20999908447266,
+          "end": 122.44999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "like",
+          "start": 122.44999694824219,
+          "end": 122.80999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "and",
+          "start": 122.80999755859375,
+          "end": 123.16999816894531,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "your",
+          "start": 123.16999816894531,
+          "end": 123.29000091552734,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "AI",
+          "start": 123.29000091552734,
+          "end": 123.55000305175781,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "agent",
+          "start": 123.55000305175781,
+          "end": 123.7699966430664,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "It",
+          "start": 123.7699966430664,
+          "end": 123.94999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "was",
+          "start": 123.94999694824219,
+          "end": 124.05000305175781,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "very",
+          "start": 124.05000305175781,
+          "end": 124.30999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "secure",
+          "start": 124.30999755859375,
+          "end": 124.61000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "in",
+          "start": 124.61000061035156,
+          "end": 124.87000274658203,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "doing",
+          "start": 124.87000274658203,
+          "end": 125.11000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "so",
+          "start": 125.11000061035156,
+          "end": 125.75,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "right",
+          "start": 126.3499984741211,
+          "end": 126.94999694824219,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "What",
+          "start": 127.44999694824219,
+          "end": 128.0500030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "couldn't",
+          "start": 128.0500030517578,
+          "end": 128.3300018310547,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "your",
+          "start": 128.3300018310547,
+          "end": 128.69000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "business",
+          "start": 128.69000244140625,
+          "end": 129.00999450683594,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 129.00999450683594,
+          "end": 130.22999572753906,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 131.49000549316406,
+      "end": 133.3699951171875,
+      "text": "That was online related",
+      "words": [
+        {
+          "word": "That",
+          "start": 131.49000549316406,
+          "end": 131.88999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "was",
+          "start": 131.88999938964844,
+          "end": 132.14999389648438,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "online",
+          "start": 132.14999389648438,
+          "end": 132.5500030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "related",
+          "start": 132.5500030517578,
+          "end": 133.3699951171875,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 135.64999389648438,
+      "end": 142.3300018310547,
+      "text": "I really wonder that question is the question that you need to ask yourself Why because",
+      "words": [
+        {
+          "word": "I",
+          "start": 135.64999389648438,
+          "end": 136.25,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "really",
+          "start": 136.25,
+          "end": 136.6300048828125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "wonder",
+          "start": 136.6300048828125,
+          "end": 136.8699951171875,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 136.8699951171875,
+          "end": 137.08999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "question",
+          "start": 137.08999633789062,
+          "end": 137.42999267578125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "is",
+          "start": 137.42999267578125,
+          "end": 138.57000732421875,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 138.57000732421875,
+          "end": 138.69000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "question",
+          "start": 138.69000244140625,
+          "end": 138.8699951171875,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 138.8699951171875,
+          "end": 139.11000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 139.11000061035156,
+          "end": 139.38999938964844,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "need",
+          "start": 139.38999938964844,
+          "end": 139.52999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 139.52999877929688,
+          "end": 139.75,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "ask",
+          "start": 139.75,
+          "end": 140.02999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "yourself",
+          "start": 140.02999877929688,
+          "end": 140.2899932861328,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "Why",
+          "start": 141.1300048828125,
+          "end": 141.72999572753906,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "because",
+          "start": 141.72999572753906,
+          "end": 142.3300018310547,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 144.11000061035156,
+      "end": 144.7100067138672,
+      "text": "Like",
+      "words": [
+        {
+          "word": "Like",
+          "start": 144.11000061035156,
+          "end": 144.7100067138672,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 147.1300048828125,
+      "end": 151.41000366210938,
+      "text": "This is what people are experiencing once they once they set up things like",
+      "words": [
+        {
+          "word": "This",
+          "start": 147.1300048828125,
+          "end": 147.72999572753906,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "is",
+          "start": 147.72999572753906,
+          "end": 147.8699951171875,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "what",
+          "start": 147.8699951171875,
+          "end": 147.99000549316406,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "people",
+          "start": 147.99000549316406,
+          "end": 148.19000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "are",
+          "start": 148.19000244140625,
+          "end": 148.3699951171875,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "experiencing",
+          "start": 148.3699951171875,
+          "end": 148.77000427246094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "once",
+          "start": 148.77000427246094,
+          "end": 149.08999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "they",
+          "start": 149.08999633789062,
+          "end": 149.22999572753906,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "once",
+          "start": 149.22999572753906,
+          "end": 149.47000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "they",
+          "start": 149.47000122070312,
+          "end": 149.6699981689453,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "set",
+          "start": 149.6699981689453,
+          "end": 149.91000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "up",
+          "start": 149.91000366210938,
+          "end": 150.19000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "things",
+          "start": 150.19000244140625,
+          "end": 151.02999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "like",
+          "start": 151.02999877929688,
+          "end": 151.41000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 155.1699981689453,
+      "end": 167.75,
+      "text": "That's literally what open claw basically promises all these AI agents and stuff like that They basically promise that you're like this AI agent will be able to do will be able to do",
+      "words": [
+        {
+          "word": "That's",
+          "start": 155.1699981689453,
+          "end": 155.77000427246094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "literally",
+          "start": 155.77000427246094,
+          "end": 156.07000732421875,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "what",
+          "start": 156.07000732421875,
+          "end": 156.49000549316406,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "open",
+          "start": 156.49000549316406,
+          "end": 156.91000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "claw",
+          "start": 156.91000366210938,
+          "end": 157.2899932861328,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "basically",
+          "start": 157.2899932861328,
+          "end": 157.85000610351562,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "promises",
+          "start": 157.85000610351562,
+          "end": 158.49000549316406,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "all",
+          "start": 158.49000549316406,
+          "end": 159.19000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "these",
+          "start": 159.19000244140625,
+          "end": 159.3699951171875,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "AI",
+          "start": 159.3699951171875,
+          "end": 159.6699981689453,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "agents",
+          "start": 159.6699981689453,
+          "end": 159.99000549316406,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "and",
+          "start": 159.99000549316406,
+          "end": 160.1699981689453,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "stuff",
+          "start": 160.1699981689453,
+          "end": 160.27000427246094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "like",
+          "start": 160.27000427246094,
+          "end": 160.41000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 160.41000366210938,
+          "end": 160.91000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "They",
+          "start": 160.91000366210938,
+          "end": 161.1300048828125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "basically",
+          "start": 161.1300048828125,
+          "end": 161.52999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "promise",
+          "start": 161.52999877929688,
+          "end": 162.11000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "that",
+          "start": 162.11000061035156,
+          "end": 162.7899932861328,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you're",
+          "start": 162.7899932861328,
+          "end": 163.25,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "like",
+          "start": 163.25,
+          "end": 163.69000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "this",
+          "start": 163.69000244140625,
+          "end": 164.35000610351562,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "AI",
+          "start": 164.35000610351562,
+          "end": 164.6300048828125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "agent",
+          "start": 164.6300048828125,
+          "end": 164.92999267578125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "will",
+          "start": 164.92999267578125,
+          "end": 165.1300048828125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "be",
+          "start": 165.1300048828125,
+          "end": 165.35000610351562,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "able",
+          "start": 165.35000610351562,
+          "end": 165.58999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 165.58999633789062,
+          "end": 165.8300018310547,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 165.8300018310547,
+          "end": 166.49000549316406,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "will",
+          "start": 166.49000549316406,
+          "end": 166.77000427246094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "be",
+          "start": 166.77000427246094,
+          "end": 166.97000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "able",
+          "start": 166.97000122070312,
+          "end": 167.1699981689453,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "to",
+          "start": 167.1699981689453,
+          "end": 167.42999267578125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 167.42999267578125,
+          "end": 167.75,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 169.6699981689453,
+      "end": 173.49000549316406,
+      "text": "Everything on the internet so if you can think about it",
+      "words": [
+        {
+          "word": "Everything",
+          "start": 169.6699981689453,
+          "end": 170.27000427246094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "on",
+          "start": 170.27000427246094,
+          "end": 170.58999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 170.58999633789062,
+          "end": 170.91000366210938,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "internet",
+          "start": 170.91000366210938,
+          "end": 171.08999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "so",
+          "start": 171.1699981689453,
+          "end": 171.97000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "if",
+          "start": 171.97000122070312,
+          "end": 172.14999389648438,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 172.14999389648438,
+          "end": 172.2899932861328,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "can",
+          "start": 172.2899932861328,
+          "end": 172.52999877929688,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "think",
+          "start": 172.52999877929688,
+          "end": 172.7899932861328,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "about",
+          "start": 172.7899932861328,
+          "end": 173.08999633789062,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "it",
+          "start": 173.08999633789062,
+          "end": 173.49000549316406,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    },
+    {
+      "speaker": "speaker_0",
+      "start": 174.91000366210938,
+      "end": 179.92999267578125,
+      "text": "And you have business use cases where you interact with the internet it could do it",
+      "words": [
+        {
+          "word": "And",
+          "start": 174.91000366210938,
+          "end": 175.50999450683594,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 175.50999450683594,
+          "end": 175.7899932861328,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "have",
+          "start": 175.7899932861328,
+          "end": 176.11000061035156,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "business",
+          "start": 176.11000061035156,
+          "end": 176.6300048828125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "use",
+          "start": 176.6300048828125,
+          "end": 176.99000549316406,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "cases",
+          "start": 176.99000549316406,
+          "end": 177.30999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "where",
+          "start": 177.30999755859375,
+          "end": 177.5500030517578,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "you",
+          "start": 177.5500030517578,
+          "end": 177.8300018310547,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "interact",
+          "start": 177.8300018310547,
+          "end": 178.27000427246094,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "with",
+          "start": 178.27000427246094,
+          "end": 178.6300048828125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "the",
+          "start": 178.6300048828125,
+          "end": 179.19000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "internet",
+          "start": 179.19000244140625,
+          "end": 179.19000244140625,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "it",
+          "start": 179.19000244140625,
+          "end": 179.47000122070312,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "could",
+          "start": 179.47000122070312,
+          "end": 179.6300048828125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "do",
+          "start": 179.6300048828125,
+          "end": 179.80999755859375,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        },
+        {
+          "word": "it",
+          "start": 179.80999755859375,
+          "end": 179.92999267578125,
+          "confidence": 1.0,
+          "speaker_id": "speaker_0"
+        }
+      ]
+    }
+  ],
+  "speakers": [
+    "speaker_0"
+  ],
+  "language": "english",
+  "confidence": 1.0,
+  "duration_seconds": 180.033333
+}

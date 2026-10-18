@@ -1,0 +1,17 @@
+{
+  "hookText": "I texted every person my app said I was losing — here's what happened",
+  "mirrorText": "12 people. all close friends. all slowly fading. most didn't even realize.",
+  "enemyText": "the scariest part? none of them were mad. they just thought I didn't care anymore.",
+  "mechanismText": "now I check my warmth scores every morning. 60 seconds. no one drifts.",
+  "proofScreenshots": [
+    "everreach/screenshots/05-warmth-score.png",
+    "everreach/screenshots/06-goal-compose.png",
+    "everreach/screenshots/01-contacts-list.png"
+  ],
+  "ctaText": "Free in the App Store",
+  "awareness": "problem_aware",
+  "belief": "too_busy",
+  "duration": 25,
+  "theme": "dark",
+  "showCaptions": true
+}

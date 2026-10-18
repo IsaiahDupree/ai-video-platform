@@ -1,0 +1,48 @@
+node_modules
+.DS_Store
+*.log
+dist
+out
+.remotion
+.venv
+
+# Large media files
+output/
+*.mp4
+*.mov
+*.MOV
+*.wav
+*.mp3
+*.aac
+*.srt
+public/blanklogo/
+public/media/
+public/everreach/audio/
+public/heygen/
+public/music/
+public/seo_characters/
+public/seo_scene_images/
+public/demos/
+public/assets/audio/
+public/assets/scenes/
+public/assets/stickers/
+
+# Environment
+.env
+.env.local
+.env.*
+!.env.service.example
+
+# Python
+__pycache__/
+*.pyc
+
+# Test/pipeline output (contains absolute user paths)
+test_output/
+public/longform-assets/
+
+
+
+
+
+

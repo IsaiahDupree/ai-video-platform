@@ -1,0 +1,106 @@
+{
+  "product": {
+    "name": "BlankLogo",
+    "description": "AI-powered watermark removal tool for video creators. Upload, remove, download — no ads, no installs.",
+    "websiteUrl": "https://blanklogo.app"
+  },
+  "brand": {
+    "name": "BlankLogo",
+    "primaryColor": "#635bff",
+    "accentColor": "#00d4ff",
+    "fontFamily": "Inter, system-ui, sans-serif"
+  },
+  "scenes": {
+    "beforePrompt": "A frustrated content creator looking at their phone screen showing a video with an ugly semi-transparent watermark across the center, dimly lit room, realistic style",
+    "afterPrompt": "The same content creator smiling and showing their phone screen with a perfectly clean video without any watermark, bright room, realistic style",
+    "characterStyle": "realistic",
+    "characterGender": "female"
+  },
+  "matrix": {
+    "templates": ["before_after", "testimonial", "product_demo"],
+    "hookTypes": ["question", "social_proof", "urgency", "curiosity"],
+    "awarenessLevels": ["problem_aware", "solution_aware"],
+    "ctaTypes": ["action", "benefit"],
+    "sizes": [
+      { "name": "feed_square", "width": 1080, "height": 1080, "platform": "instagram" },
+      { "name": "story", "width": 1080, "height": 1920, "platform": "instagram" },
+      { "name": "fb_feed", "width": 1200, "height": 628, "platform": "facebook" }
+    ],
+    "strategy": "latin_square",
+    "maxVariants": 24
+  },
+  "copyBank": {
+    "headlines": {
+      "question": [
+        "Still posting with watermarks?",
+        "Tired of blurry AI removals?",
+        "Why settle for smeared exports?"
+      ],
+      "statement": [
+        "Watermarks kill your engagement",
+        "Your content deserves better",
+        "Clean exports in minutes"
+      ],
+      "shock": [
+        "87% of creators lose followers over this",
+        "This one thing ruins every post",
+        "Most tools actually make it worse"
+      ],
+      "curiosity": [
+        "The tool 50K creators won't share",
+        "What if removal was instant?",
+        "One upload. Zero watermarks."
+      ],
+      "social_proof": [
+        "Join 50,000+ creators",
+        "Rated 4.9/5 by professionals",
+        "50K creators trust this tool"
+      ],
+      "urgency": [
+        "10 free credits — today only",
+        "Limited: Free watermark removal",
+        "Free tier closing soon"
+      ]
+    },
+    "subheadlines": {
+      "problem_aware": [
+        "That watermark is killing the clip. Upload → clean it → download.",
+        "Don't redo the whole edit. Clean the watermark and ship the video.",
+        "When you need a clean clip today."
+      ],
+      "solution_aware": [
+        "If the usual sites keep ruining your video, try a premium tool.",
+        "No bait-and-switch. No blurry exports. Just clean video.",
+        "Ad-free experience designed for creators."
+      ],
+      "unaware": [
+        "Upload your video and get a clean version back.",
+        "Premium watermark removal in a simple flow."
+      ],
+      "product_aware": [
+        "The one you bookmark. Because it works.",
+        "Built like a real tool, not a sketchy site."
+      ],
+      "most_aware": [
+        "Get 10 free credits. No card needed.",
+        "Your next clean export is one click away."
+      ]
+    },
+    "ctas": {
+      "action": ["Remove Watermark Now", "Try It Free", "Upload Video"],
+      "benefit": ["Get Clean Exports", "Get 10 Free Credits", "Unlock HD Quality"],
+      "urgency": ["Claim Free Credits Now", "Start Before Offer Ends"],
+      "curiosity": ["See the Difference", "Watch It Work"]
+    },
+    "beforeLabels": ["BEFORE", "WITH WATERMARK", "ORIGINAL"],
+    "afterLabels": ["AFTER", "CLEAN", "REMOVED"],
+    "trustLines": [
+      "Quality preserved • No popups",
+      "Ad-free • Fast • Clean output",
+      "10 free credits • No card needed",
+      ""
+    ],
+    "badges": ["AD-FREE", "HQ OUTPUT", "PREMIUM", "FAST", "NO INSTALL", ""]
+  },
+  "outputDir": "./output/ugc-ads"
+}
