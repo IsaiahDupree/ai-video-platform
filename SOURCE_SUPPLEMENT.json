@@ -1,0 +1,28 @@
+{
+  "supplements_snapshot": "ddc39d9aa4aeea45-r2",
+  "source_roots": [
+    "C:/Users/Isaia/Documents/Coding/Remotion/ai-video-platform"
+  ],
+  "files": {
+    "src/data/__tests__/segment-engine.test.ts": {
+      "source": "C:\\Users\\Isaia\\Documents\\Coding\\Remotion\\ai-video-platform\\src\\data\\__tests__\\segment-engine.test.ts",
+      "reason": "portable authored code absent from staged source selection"
+    },
+    "src/data/example.ts": {
+      "source": "C:\\Users\\Isaia\\Documents\\Coding\\Remotion\\ai-video-platform\\src\\data\\example.ts",
+      "reason": "portable authored code absent from staged source selection"
+    },
+    "src/data/growth-data-plane.ts": {
+      "source": "C:\\Users\\Isaia\\Documents\\Coding\\Remotion\\ai-video-platform\\src\\data\\growth-data-plane.ts",
+      "reason": "portable authored code absent from staged source selection"
+    },
+    "src/data/segment-engine.ts": {
+      "source": "C:\\Users\\Isaia\\Documents\\Coding\\Remotion\\ai-video-platform\\src\\data\\segment-engine.ts",
+      "reason": "portable authored code absent from staged source selection"
+    },
+    "src/data/segment-integration.ts": {
+      "source": "C:\\Users\\Isaia\\Documents\\Coding\\Remotion\\ai-video-platform\\src\\data\\segment-integration.ts",
+      "reason": "portable authored code absent from staged source selection"
+    }
+  }
+}
