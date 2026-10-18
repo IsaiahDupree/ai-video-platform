@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "provider": "elevenlabs",
+  "created_at": "2026-09-20T17:44:13.640200+00:00",
+  "status": "completed",
+  "paid_provider": true,
+  "api_key_source": "ELEVENLABS_API_KEY",
+  "voice_id_source": "request",
+  "voice_id_present": true,
+  "model_id": "eleven_multilingual_v2",
+  "output_format": "mp3_44100_128",
+  "voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.86,
+    "style": 0.16,
+    "use_speaker_boost": true
+  },
+  "text_sha256": "83222996261addd4dbdc6bea23e2aa9aab0feaece43a101a4c4ff65876728a35",
+  "output_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/mechanical-os-ugc/proof-elevenlabs.mp3",
+  "output_sha256": "b0d5f14a0bba126e2d7767c65aa85e1f25861a2dfeba72588d80e54430edce52",
+  "bytes": 217382,
+  "latency_seconds": 2.606,
+  "character_cost": "116",
+  "request_id": "T1dvqCr2MLrBvSbNF3sW",
+  "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+}

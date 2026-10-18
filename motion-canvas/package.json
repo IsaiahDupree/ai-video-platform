@@ -1,0 +1,31 @@
+{
+  "name": "video-studio-mc",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "vite",
+    "serve": "vite",
+    "build": "tsc && vite build",
+    "render": "vite build && node scripts/render.mjs",
+    "render:all": "vite build && node scripts/render-all.mjs",
+    "mc:render": "npx tsx scripts/mc-cli-render.ts",
+    "mc:render:nobrowser": "npx tsx scripts/mc-cli-render.ts --no-browser",
+    "mc:render:playwright": "npx tsx scripts/mc-render.ts",
+    "mc:two-pass": "npx tsx scripts/mc-two-pass.ts",
+    "mc:server": "npx tsx scripts/mc-server.ts"
+  },
+  "dependencies": {
+    "@motion-canvas/core": "^3.17.2",
+    "@motion-canvas/2d": "^3.17.2",
+    "@motion-canvas/ffmpeg": "^1.1.0"
+  },
+  "devDependencies": {
+    "@motion-canvas/ui": "^3.17.2",
+    "@motion-canvas/vite-plugin": "^3.17.2",
+    "@types/node": "^20.0.0",
+    "playwright": "^1.40.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.0.0"
+  }
+}

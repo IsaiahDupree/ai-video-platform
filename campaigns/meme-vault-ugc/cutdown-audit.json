@@ -1,0 +1,623 @@
+{
+  "audit_id": "refaudit_1928a13f1a80fad9a89d11d9",
+  "contract": "content_creation_audit_v1",
+  "copy_gate": {
+    "contract": "substantive_copy_provenance_gate_v1",
+    "failure_codes": [],
+    "passed": true,
+    "policy": {
+      "copied_expression_allowed": false,
+      "copied_sequence_allowed": false,
+      "copied_structure_allowed": false,
+      "creator_identity_likeness_voice_or_source_clips_allowed": false,
+      "facts_or_general_ideas_require_independent_verification": true,
+      "fixed_matching_word_limit_applied": false
+    },
+    "provenance_gate": {
+      "candidate_sha256": "36076dd2f9ccca81bcc56c396f9c06202c7dbadcc0f56bd05727d79ddbd95d27",
+      "failure_codes": [],
+      "independent_verification_receipt_ids": [],
+      "passed": true,
+      "provenance_sha256": "e09c763ed6ff10861e30eb78a2a3862cdfcde2576fb7f9143aa8e6740d00ad06",
+      "source_material_usage": "abstract_patterns_only"
+    },
+    "substantive_copy": {
+      "copied_expression": false,
+      "copied_sequence": false,
+      "copied_structure": false,
+      "creator_identity_references": [],
+      "maximum_expression_similarity": 0.0,
+      "source_findings": []
+    }
+  },
+  "corpus_coverage": 100.0,
+  "corpus_id": "instagram-personalbrandlaunch-reference-v1",
+  "corpus_item_count": 150,
+  "created_at": "2026-09-20T02:08:33.344321+00:00",
+  "evidence": [
+    {
+      "caption_excerpt": "Weekly Diary - Episode #28",
+      "comments": 8,
+      "direct_use_allowed": false,
+      "item_id": "refitem_5ba071795719e854ba1fe06d",
+      "likes": 209,
+      "match_score": 32.249,
+      "matched_terms": [
+        "back",
+        "but",
+        "found",
+        "next",
+        "our",
+        "people",
+        "share",
+        "show",
+        "through",
+        "try"
+      ],
+      "published_at": "2026-08-23T19:00:02+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 2",
+          "high frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text",
+          "active framing"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "Hey guys, the great chickens are percive on their little thing",
+          "They're all big",
+          "I'm finishing up our landscaping",
+          "We did like a dark on dark and I'm loving it",
+          "I think it looks super cool",
+          "And I'm also super into pines",
+          "So we, we pined it up",
+          "Yeah, our house looks on the rock"
+        ],
+        "on_screen_hook": "Weekly Diary - Episode #28",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Weekly Diary - Episode #28",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "hey guys the great chickens are percive on their little thing they're all big i'm finishing up our landscaping we did like a dark",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DcZMDDooF3L/",
+      "transcript_opening": "Hey guys, the great chickens are percive on their little thing. They're all big. I'm finishing up our landscaping. We did like a dark on dark and I'm loving it. I think it looks super cool. And I'm also super into pines. So we, we pined it ",
+      "views": 20512
+    },
+    {
+      "caption_excerpt": "Weekly Diary - Episode #18",
+      "comments": 10,
+      "direct_use_allowed": false,
+      "item_id": "refitem_165d64c465a4174361b822cc",
+      "likes": 446,
+      "match_score": 28.492,
+      "matched_terms": [
+        "but",
+        "found",
+        "our",
+        "people",
+        "share",
+        "show",
+        "through",
+        "who"
+      ],
+      "published_at": "2026-06-15T12:08:06+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 2",
+          "high frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text",
+          "active framing"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "Good morning guys",
+          "It is Saturday",
+          "Time to grind",
+          "Update four hours later, got so much work done",
+          "Also look what Ben just found in our backyard",
+          "I live in Wisconsin",
+          "Sometimes you have like little garden snakes, but this is probably like the biggest snake I've seen in Wisconsin",
+          "Like out in the wild, not at the zoo"
+        ],
+        "on_screen_hook": "Weekly Diary - Episode #18",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Weekly Diary - Episode #18",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "good morning guys it is saturday time to grind update four hours later got so much work done also look what ben just found",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DZmxJl3OwQh/",
+      "transcript_opening": "Good morning guys. It is Saturday. Time to grind. Update four hours later, got so much work done. Also look what Ben just found in our backyard. I live in Wisconsin. Sometimes you have like little garden snakes, but this is probably like th",
+      "views": 42167
+    },
+    {
+      "caption_excerpt": "This is My Story :)\n\nFollow Along For the Ride.",
+      "comments": 470,
+      "direct_use_allowed": false,
+      "item_id": "refitem_28e23002a572ceb34083b36a",
+      "likes": 17639,
+      "match_score": 26.816,
+      "matched_terms": [
+        "but",
+        "friend",
+        "next",
+        "old",
+        "our",
+        "who"
+      ],
+      "published_at": "2025-02-24T14:13:27+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "Follow along for the ride",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 5",
+          "high frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "frequent visual resets",
+          "on-screen text",
+          "active framing"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "Hi, my name is Ava",
+          "You may know me as a 19-year-old who built a $7 million company, or the psychopath who gets up at 2 a",
+          "m",
+          "every day, or the girl who got engaged at 16 and married at 19",
+          "But regardless, I wanted to reintroduce myself",
+          "I grew up right outside of Milwaukee in Wisconsin",
+          "As a child, I was an abomination",
+          "No"
+        ],
+        "on_screen_hook": "This is My Story :)\n\nFollow Along For the Ride.",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "This is My Story :)",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [
+          "contrast",
+          "rapid cuts"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it.",
+          "Use a clear before-and-after or weak-and-strong contrast.",
+          "End with one explicit next step."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "hi my name is ava you may know me as a 19-year-old who built a 7 million company or the psychopath who gets up",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DGdV2i6NRtS/",
+      "transcript_opening": "Hi, my name is Ava. You may know me as a 19-year-old who built a $7 million company, or the psychopath who gets up at 2 a.m. every day, or the girl who got engaged at 16 and married at 19. But regardless, I wanted to reintroduce myself. I g",
+      "views": 701408
+    },
+    {
+      "caption_excerpt": "Weekly Diary - Episode #21",
+      "comments": 19,
+      "direct_use_allowed": false,
+      "item_id": "refitem_b67ebcb94b076ca8a957f97c",
+      "likes": 847,
+      "match_score": 26.757,
+      "matched_terms": [
+        "but",
+        "friend",
+        "our",
+        "people",
+        "sent",
+        "show",
+        "stuck"
+      ],
+      "published_at": "2026-07-07T12:02:58+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 2",
+          "high frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "frequent visual resets",
+          "on-screen text",
+          "active framing"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "Guys, I got chickens",
+          "Yes, we are",
+          "I can't really see them right now, but there's five of them",
+          "I'm so excited",
+          "Yeah",
+          "Update",
+          "We're setting up their heat lamp and all this stuff",
+          "But we're kind of confused they are"
+        ],
+        "on_screen_hook": "Weekly Diary - Episode #21",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Weekly Diary - Episode #21",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [
+          "questions",
+          "rapid cuts"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "guys i got chickens yes we are i can't really see them right now but there's five of them i'm so excited yeah update",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DafZmQ8BNi6/",
+      "transcript_opening": "Guys, I got chickens. Yes, we are. I can't really see them right now, but there's five of them. I'm so excited. Yeah. Update. We're setting up their heat lamp and all this stuff. But we're kind of confused they are. So update, we got the la",
+      "views": 69792
+    },
+    {
+      "caption_excerpt": "Two Hooks, Same Topic What Performed Better. \n\nFollow for more social media marketing education.",
+      "comments": 560,
+      "direct_use_allowed": false,
+      "item_id": "refitem_ae0c11dd38bcac282b3504f8",
+      "likes": 1050,
+      "match_score": 26.319,
+      "matched_terms": [
+        "but",
+        "friend",
+        "list",
+        "next",
+        "people",
+        "share",
+        "show"
+      ],
+      "published_at": "2026-08-19T19:36:25+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "If you want a list of incredible comparison videos that you can study and use the viral hook frameworks of, the structures, just comment, compare, and I will send those over because I'd love to help a friend out",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 5",
+          "low frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "Two hooks, same topic, but one massively outperformed the other",
+          "Can you guess",
+          "How is your nose shaped, connected to your bite",
+          "The only difference between a supermodel and a normal person is tongue posture",
+          "It was this one, and it was because of one thing, contrast",
+          "It's one of the best ways to take a hook from this to this",
+          "Let me show you",
+          "Normal hook"
+        ],
+        "on_screen_hook": "Two Hooks, Same Topic What Performed Better. \n\nFollow for more social media marketing education.",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Two Hooks, Same Topic What Performed Better.",
+        "proof_and_b_roll": [],
+        "retention_devices": [
+          "questions",
+          "contrast"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it.",
+          "Use a clear before-and-after or weak-and-strong contrast.",
+          "End with one explicit next step."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "two hooks same topic but one massively outperformed the other can you guess how is your nose shaped connected to your bite the only",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DcO8tdqOUyz/",
+      "transcript_opening": "Two hooks, same topic, but one massively outperformed the other. Can you guess? How is your nose shaped, connected to your bite? The only difference between a supermodel and a normal person is tongue posture. It was this one, and it was bec",
+      "views": 44926
+    },
+    {
+      "caption_excerpt": "Founder Video Ideas\n\nFollow for more social media marketing education!",
+      "comments": 16,
+      "direct_use_allowed": false,
+      "item_id": "refitem_84307587b1067714a873af6b",
+      "likes": 735,
+      "match_score": 26.311,
+      "matched_terms": [
+        "but",
+        "found",
+        "list",
+        "next",
+        "old",
+        "people",
+        "share"
+      ],
+      "published_at": "2026-07-25T12:00:06+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "Follow for social media marketing education",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 10",
+          "high frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text",
+          "active framing"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "Here's some personal video ideas for founders, because I don't know about other business owners, but I can post educational videos like all day long, but when it comes to talking about myself or anything personal, I do struggle",
+          "So here's some ideas for the business owners",
+          "Number one, the age slash fact real",
+          "Here's an example",
+          "I'm doing 22 this week, so if you're trying to do things about myself, I'm 5'2\", I'm a bi-c's, I'm the eldest daughter",
+          "Here's the structure",
+          "To share every field business idea before your big win",
+          "Here's an example"
+        ],
+        "on_screen_hook": "Founder Video Ideas\n\nFollow for more social media marketing education!",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Founder Video Ideas",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [
+          "contrast"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it.",
+          "Use a clear before-and-after or weak-and-strong contrast.",
+          "End with one explicit next step."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "here's some personal video ideas for founders because i don't know about other business owners but i can post educational videos like all day",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DbNxB4tBrTh/",
+      "transcript_opening": "Here's some personal video ideas for founders, because I don't know about other business owners, but I can post educational videos like all day long, but when it comes to talking about myself or anything personal, I do struggle. So here's s",
+      "views": 44600
+    }
+  ],
+  "notes": [
+    "State a concrete tension, result, or question in the opening line."
+  ],
+  "objective": "Show the Meme Vault prototype solving the problem of finding and sharing an old meme",
+  "overall_score": 83.664,
+  "quality_judgments": {
+    "algorithm_version": "owner_calibrated_script_quality_v2",
+    "calibration": {
+      "authority": "owner_review_2026_08_24",
+      "outcomes_measured": false,
+      "reference_identity_or_voice_used": false
+    },
+    "contract": "owner_calibrated_script_quality_v1",
+    "decision": "PASS",
+    "failure_codes": [],
+    "judgments": {
+      "repeated_phrasing": {
+        "formula_phrase_hits": [],
+        "generic_quality_bridge_hits": [],
+        "opening_prefix": "a friend asked for a three-month-old",
+        "passed": true,
+        "prior_opening_matches": 0,
+        "repeated_four_word_phrases": [],
+        "score": 100.0
+      },
+      "specificity": {
+        "concrete_action_hits": [
+          "asked",
+          "save"
+        ],
+        "concrete_noun_hits": [],
+        "numeric_anchors": [],
+        "passed": true,
+        "score": 86.0,
+        "topic_anchor_hits": [
+          "added",
+          "asked",
+          "digging",
+          "found",
+          "friend",
+          "group",
+          "original",
+          "screenshots",
+          "three-month-old",
+          "vault"
+        ]
+      },
+      "spoken_naturalness": {
+        "average_sentence_words": 12.333,
+        "first_or_second_person_tokens": [
+          "i",
+          "our",
+          "your"
+        ],
+        "formal_phrase_hits": [],
+        "long_sentence_fraction": 0.0,
+        "maximum_sentence_words": 17,
+        "passed": true,
+        "perspective_authorization_evaluated": false,
+        "perspective_authorization_required_elsewhere": true,
+        "score": 100.0
+      },
+      "technical_language_leakage": {
+        "corpus_count_narration_hits": [],
+        "hard_internal_phrase_hits": [],
+        "passed": true,
+        "protected_source_phrases_excluded": 0,
+        "score": 100.0,
+        "technical_term_hits": []
+      },
+      "tension_payoff": {
+        "contrast_terms": [
+          "but"
+        ],
+        "final_literal_audience_question": "",
+        "ordered_lexical_turn": true,
+        "ordered_question_turn": false,
+        "ordered_role_turn": false,
+        "ordered_semantic_turn": true,
+        "passed": true,
+        "payoff_terms": [
+          "save",
+          "sent",
+          "try"
+        ],
+        "role_topic_anchors": [],
+        "role_turn_supported": false,
+        "score": 80.0,
+        "semantic_turn_supported": true,
+        "semantic_turn_topic_anchors": [
+          "added",
+          "asked",
+          "digging",
+          "found",
+          "friend",
+          "group",
+          "original",
+          "screenshots",
+          "three-month-old",
+          "vault"
+        ],
+        "tension_terms": [
+          "stuck"
+        ],
+        "timeline_binding": {
+          "contract": "exact_script_timeline_binding_v1",
+          "exact_ordered_projection": false,
+          "failure_codes": [
+            "timeline_missing"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "score": 92.6,
+    "threshold": 80.0
+  },
+  "request_sha256": "21d70ecfdc6a695d66e50524c30bc697ba86dac7c0b312c4341cfdd6071e65f0",
+  "result_sha256": "8dee7fbdbaaa0e461b74950c600640b6e63ed956076241e04c942117053fdecb",
+  "rights": {
+    "direct_use_allowed": false,
+    "identity_imitation_allowed": false,
+    "likeness_imitation_allowed": false,
+    "source_clip_use_allowed": false,
+    "state": "public_reference_analysis_only",
+    "voice_imitation_allowed": false
+  },
+  "scores": {
+    "call_to_action": 81.0,
+    "duration_fit": 94.286,
+    "hook_clarity": 46.5,
+    "narrative_flow": 74.0,
+    "originality": 100.0,
+    "phrase_originality": 100.0,
+    "source_evidence": 95.0,
+    "specificity": 86.0,
+    "spoken_naturalness": 100.0,
+    "technical_language": 100.0,
+    "tension_payoff": 80.0
+  },
+  "status": "pass",
+  "target_seconds": 15,
+  "target_viewer": "People who save and share memes in group chats",
+  "title": "Meme Vault UGC Texting Demo — Cutdown",
+  "word_count": 37
+}

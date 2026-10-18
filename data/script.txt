@@ -1,0 +1,7 @@
+HOOK: I tried to automate SFX in Motion Canvas...
+PROBLEM: But the timing kept drifting.
+ERROR: Build failed: audio drift error.
+REVEAL: The fix is simple - use one audio bus.
+EXPLAIN: Mix voice, music, and SFX into one file so timing never drifts.
+SUCCESS: Now everything stays in sync.
+CTA: Subscribe for more dev tips!

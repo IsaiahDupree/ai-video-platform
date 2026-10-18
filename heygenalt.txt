@@ -1,0 +1,101 @@
+Skip to content
+Chat history
+
+
+
+
+
+You said:
+Latest hugging face heygen alternative tutorial that can be deployed on modal 
+ChatGPT said:
+Could you please clarify what you mean by a 'Hugging Face Heygen alternative'? Are you looking for an open-source text-to-video model similar to Heygen that can be deployed on Modal, or are you looking for a tutorial to deploy a specific model hosted on Hugging Face that replicates Heygen's functionality (e.g., avatar video generation from text)? Also, do you have any specific requirements such as language support, video quality, or integration features?
+
+You said:
+“open-source text-to-video model similar to Heygen that can be deployed on Modal” 
+ChatGPT said:
+Thanks! I’ll look for the most recent open-source text-to-video models that are similar to Heygen and provide tutorials or guides for deploying them on Modal. I’ll prioritize options hosted on Hugging Face where possible and ensure the deployment instructions are up to date and practical.
+
+Research completed in 8m · 28 sources · 41 searches
+Open-Source Text-to-Video Models (Hugging Face & Modal Deployment)
+Latest Text-to-Video Models Similar to HeyGen
+Several recent open-source models can generate video from text prompts, akin to HeyGen’s avatar video generation. These models are available on Hugging Face Hub (often with Diffusers integration) and are actively maintained. Below are some notable examples:
+Tencent HunyuanVideo (Dec 2024) – A 13B-parameter text-to-video diffusion model by Tencent, aiming for high realism. HunyuanVideo was one of the first large-scale open models to rival closed-source quality
+. It features Hugging Face Diffusers integration for easy pipeline usage
+, supports FP8 quantized weights to save memory, and even provides prompt-rewriting utilities
+. Note: HunyuanVideo demands powerful GPUs (datacenter-class); even short clips can exceed consumer GPU memory
+. Its license is a custom Tencent community license (free for research use).
+Genmo Mochi (Oct 2024) – A 10B-parameter diffusion model released under Apache-2.0 license
+. Mochi is one of the first fully open text-to-video models with training code available
+. It’s optimized for photorealistic video synthesis and supports LoRA fine-tuning for personalization
+. Mochi integrates with Hugging Face Diffusers (via a specialized MochiPipeline) and ComfyUI, though at release it required bleeding-edge Diffusers versions. Like Hunyuan, it’s resource-intensive (e.g. ~$0.33 per short clip on an H100 GPU in the cloud)
+, so running it locally is impractical for most users.
+Alibaba Wan2.2 (July 2025) – The latest model in Alibaba’s Wan series, building on the earlier Wan2.1
+. Wan2.2 introduced a Mixture-of-Experts (MoE) architecture with ~14B parameters (two expert diffusion models for different noise levels)
+. It provides a “Hybrid” text+image-to-video 5B variant (TI2V-5B) that can generate 720p 24FPS videos and is optimized to run on high-end consumer GPUs (like an RTX 4090)
+. Wan2.2 is Apache-2.0 licensed and has broad toolkit support: it’s integrated into Hugging Face Diffusers and ComfyUI, and even offers a ModelScope and Gradio demo
+. This model excels at stylized outputs and even handles visual text (rendering English/Chinese words in videos)
+. The 5B TI2V variant makes Wan2.2 one of the most accessible high-resolution text-to-video models for developers
+.
+Lightricks LTX-Video (2025) – A fast, high-resolution video generator from Lightricks. LTX-Video is the first DiT-based (Transformer) diffusion video model, capable of real-time generation – e.g. ~30 FPS at 1216×704 resolution, faster than playback speed
+. It was trained on a large diverse video dataset to produce realistic content. Multiple model versions are provided (from a 2B distilled model up to a 13B model for higher quality) along with FP8-quantized variants for efficiency
+. LTX-Video is hosted on Hugging Face (with a custom license) and includes an “LTXPipeline” for integration. In practice it can be extremely speedy – generating a 20-second 480p clip in as little as 2 seconds on a warm GPU container
+ – making it well suited for real-time applications. Official integrations include a Hugging Face demo and Modal examples (see below).
+Meituan LongCat-Video-Avatar (Dec 2025) – A state-of-the-art open avatar video model. LongCat-Video-Avatar focuses on audio-driven talking-head video generation. It’s a unified model that supports Audio+Text-to-Video (AT2V), Audio+Text+Image-to-Video (talking avatar with a reference image), and even video continuation for long clips
+. In other words, you can provide a speech audio clip (e.g. generated from text via TTS), an optional reference image of a person (to define the avatar’s appearance), and a text prompt (to guide style or background), and LongCat will produce a lip-synced video of a character speaking with natural expressions and motion
+. This model achieves highly realistic face and body animation and mitigates common issues like lip-sync errors or repetitive movements through novel techniques (e.g. reference skip attention, cross-chunk latent stitching)
+. LongCat-Video-Avatar is released under MIT license and available on Hugging Face with Diffusers/ONNX support
+. (Earlier in 2025, Alibaba/ZJU released a similar audio-driven avatar model OmniAvatar (14B) which builds on Wan2.1 + Wav2Vec for speech – it requires providing [prompt]@@[image]@@[audio] inputs and uses LoRA weights for the avatar animation
+. LongCat is a more recent end-to-end approach in this domain.)
+Deploying Text-to-Video Models on Modal.com
+Modal is a serverless cloud platform that can host GPU-heavy applications. It provides official examples for deploying these text-to-video models. Key steps and considerations for deploying on Modal include:
+Container Setup (Dependencies) – Define a Modal Image with all required libraries. For example, the LTX-Video tutorial uses a Debian Slim base and installs PyTorch, Hugging Face Diffusers, Accelerate, Transformers, and video I/O libraries (like imageio-ffmpeg) via pip
+. You may also need system packages (e.g. ffmpeg or OpenCV) if the model code requires them – these can be added with apt_install
+. Ensuring the correct versions (sometimes cutting-edge versions for new models) is important. (In the Mochi example, they installed transformers and diffusers directly from GitHub source to get a pre-release pipeline that supports Mochi
+.)
+Model Weight Download and Caching – Downloading large model weights from Hugging Face can be time-consuming, so Modal suggests caching them in a persistent volume. In your Modal app, you can create a modal.Volume and set the Hugging Face cache directory to that volume (e.g. via HF_HOME or HF_HUB_CACHE env var)
+. This way, the weights are saved between runs. For instance, the Mochi tutorial downloads the genmo/mochi-1-preview weights to a volume to avoid re-download on each container start (this one-time download takes ~5+ minutes)
+. Similarly, the LTX-Video example uses a volume "ltx-model" for model weights and notes the initial download is ~2 minutes
+.
+Resource Allocation (GPU & Timeouts) – When defining the Modal function or class that will run inference, specify the GPU and runtime limits. Text-to-video models are heavy, so at minimum an A10G/A100-class GPU is needed; many examples use an H100 for best performance
+. For instance, Modal’s examples attach gpu="H100" to the inference class, and set a generous timeout (several minutes, depending on clip length)
+. This ensures the container has enough time and horsepower to generate the video. (Hunyuan and Mochi in particular require large memory – Hunyuan’s 13B model is “firmly in datacenter-class hardware” territory
+.) Modal also allows configuring a scaledown_window (idle time before the GPU shuts down) to keep containers “warm” for a bit, which helps when making multiple requests in succession
+.
+Pipeline Initialization – Load the Hugging Face model within the Modal container (typically in a setup method decorated with @modal.enter). Using Diffusers, you can call DiffusionPipeline.from_pretrained(...) with the model’s repo ID. For example, the LTX deployment does: DiffusionPipeline.from_pretrained("Lightricks/LTX-Video", torch_dtype=torch.bfloat16) and then moves it to CUDA
+. In the Mochi example, they use MochiPipeline.from_pretrained("genmo/mochi-1-preview", torch_dtype=torch.bfloat16, revision=<commit>) to load the weights from the hub cache
+. This step will pull the model from the volume (if cached) or from Hugging Face Hub on first run. It’s a good practice to enable any model-specific optimizations at this point – e.g. the Mochi pipeline enables model CPU-offload and VAE tiling to reduce memory usage
+.
+Inference Function – Implement the logic to generate videos from prompts. In Modal, you might write a @modal.method that accepts parameters (the text prompt, and any other inputs like a reference image or negative prompt) and runs the pipeline. The pipeline’s output is a list of frames (images) representing the video
+. These frames can be converted to an MP4 clip using utilities like Diffusers’ export_to_video or imageio. For example, the LTX Modal code runs frames = pipe(...).frames[0] then calls export_to_video(frames, "/outputs/<filename>.mp4") to save the video
+. The output path is on a Volume (e.g. /outputs), which allows the file to persist and be accessible outside the container. After writing, they often call volume.commit() to flush the file to storage
+. (If generating an avatar video with audio, you would also need to ensure the audio is applied – e.g. by lip-syncing frames to the audio or combining audio track with the video file – which might require additional processing libraries.)
+Modal App Endpoints – Finally, decide how to invoke the generation. Modal examples demonstrate two common approaches:
+CLI/Job Invocation: Define a @app.local_entrypoint or use modal run to trigger the generation. For instance, after deploying the Mochi app, one can run modal run --detach mochi --prompt "<text>" to generate a video asynchronously
+. The code then saves the video to the volume and (optionally) downloads it to the local machine for the user
+. You can parameterize things like --num-inference-steps or --guidance_scale via CLI flags
+.
+Web API Endpoint: Use a FastAPI integration to serve requests. In the LTX-Video example, the Modal app defines @modal.fastapi_endpoint that receives an HTTP POST with a prompt (and image bytes) and returns the MP4 file as a response
+. This effectively turns the model into a web service. The demo runs an API where the first request may be slow (cold start), but subsequent calls on the warm container take only a couple seconds for a 20s video
+. Modal’s platform handles scaling and will spin down the GPU after a period of inactivity to save cost.
+Deployment Dependencies & Tips: All the above models rely on diffusers and thus require similar dependency setup. Ensure you have torch with CUDA support and enough VRAM for the model weight and video frames. Video generation may also require imageio/ffmpeg (as used in diffusers) or OpenCV for certain utilities
+. When using models with special licenses or large files, you might need a Hugging Face authentication token – if so, you can add it via Modal Secrets or by logging in on the build machine. Finally, test the pipeline locally if possible (for example, using a smaller version of the model or a CPU-only run for a few frames) to verify that the prompt format and outputs are as expected before deploying. References:
+Hugging Face model cards and Modal blog:
+HunyuanVideo features and requirements
+Genmo Mochi open release
+Wan2.2 model overview
+LTX-Video real-time generation claim
+LongCat-Video-Avatar tasks and features
+Modal official examples for deployment:
+Deploying Mochi on Modal (text-to-video pipeline with caching)
+LTX-Video on Modal (fast video generation with Diffusers)
+Modal guidelines on caching Hugging Face models
+Modal video generation inference code (saving outputs, endpoints)
+
+
+
+Sources
+
+
+
+No file chosenNo file chosen
+ChatGPT can make mistakes. Check important info.

@@ -1,0 +1,83 @@
+{
+  "fps": 30,
+  "timing": {
+    "hook": 66,
+    "beat": 90,
+    "cta": 96
+  },
+  "music": {
+    "src": "bg-music-lifestyle-01.mp3",
+    "volume": 0.16
+  },
+  "hook": {
+    "eyebrow": "3D Print Library",
+    "titleNumber": "6",
+    "titleRest": "new free",
+    "titleLine2": "CAD releases",
+    "note": "STL downloads · coming to Printables"
+  },
+  "releases": [
+    {
+      "id": "fit-gauge-v5",
+      "image": "images/01-fit-gauge-v5.png",
+      "kind": "Original",
+      "title": "Vehicle Firewall-Slot Tapered Fit Gauge V5",
+      "benefit": "Measure the slot before you print the enclosure.",
+      "note": "Temporary, nonstructural fit gauge",
+      "noteKind": "status"
+    },
+    {
+      "id": "ac-evolution",
+      "image": "images/02-ac-evolution.png",
+      "kind": "Original",
+      "title": "Vehicle A/C Diagnostic Enclosure",
+      "subtitle": "Design Evolution V1–V4",
+      "benefit": "Four historical prototypes, with notes on what changed.",
+      "note": "Superseded designs, not a recommended build",
+      "noteKind": "status"
+    },
+    {
+      "id": "wled-esp32",
+      "image": "images/03-wled-esp32.png",
+      "kind": "Original",
+      "title": "WLED ESP32 Controller Enclosure",
+      "benefit": "Vented tower with a slide-in board plate.",
+      "note": "Measure your board and connectors first",
+      "noteKind": "status"
+    },
+    {
+      "id": "twin-flame",
+      "image": "images/04-twin-flame.png",
+      "kind": "Remix",
+      "title": "Twin Flame Desk Sign",
+      "benefit": "Layered flame frame and insert on a round base.",
+      "note": "Remix of Just Fire by ozan + Flame wall art by Moriel",
+      "noteKind": "credit"
+    },
+    {
+      "id": "scrunchie-tree",
+      "image": "images/05-scrunchie-tree.png",
+      "kind": "Remix",
+      "title": "Scrunchie Tree",
+      "benefit": "Tall four-peg organizer for scrunchies and hair ties.",
+      "note": "Remix of Scrunchie holder by MattMo3D",
+      "noteKind": "credit"
+    },
+    {
+      "id": "nanosaur-track",
+      "image": "images/06-nanosaur-track.png",
+      "kind": "Mod",
+      "title": "Nanosaur Track Ring Mod",
+      "benefit": "Larger-diameter track ring for the nanosaur robot.",
+      "note": "Modified from nanosaur by Raffaello Bonghi",
+      "noteKind": "credit"
+    }
+  ],
+  "cta": {
+    "line1": "Free STL files",
+    "line2": "STEP sources for 5 of 6",
+    "url": "github.com/IsaiahDupree/3d-print-library",
+    "note": "Coming to Printables",
+    "brand": "Isaiah Dupree · 3D Print Library"
+  }
+}

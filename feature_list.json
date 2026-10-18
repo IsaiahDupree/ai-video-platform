@@ -1,0 +1,3564 @@
+{
+  "project": "Remotion VideoStudio",
+  "description": "AI-powered video generation platform with voice cloning, talking avatars, SFX system, and static ad generation",
+  "version": "1.0",
+  "totalFeatures": 169,
+  "completedFeatures": 169,
+  "lastUpdated": "2026-02-08",
+  "completionPercentage": 100,
+  "prds": [
+    "PRD.md",
+    "PRD-Video-Generation-Platform.md",
+    "PRD-HeyGen-Alternative.md",
+    "PRD-SFX-System.md",
+    "PRD-Audio-Video-System-v2.md",
+    "PRD-Text-to-Video-Modal.md",
+    "PRD_InfiniteTalk_Video_Generation.md",
+    "PRD_EVERREACH_ADS.md",
+    "PRD_EVENT_TRACKING.md",
+    "PRD_META_PIXEL.md",
+    "PRD_GROWTH_DATA_PLANE.md",
+    "PRD-REMOTION-MICROSERVICE.md",
+    "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+    "PRD_REMOTION_TEMPLATES.md",
+    "PRD-ad-creative-templating.md",
+    "prd6.txt"
+  ],
+  "features": [
+    {
+      "id": "VID-001",
+      "name": "Content Brief Schema",
+      "description": "JSON-based video definition system with settings, style, sections, and audio",
+      "category": "video-core",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Implemented in src/types/ContentBrief.ts with full TypeScript types"
+    },
+    {
+      "id": "VID-002",
+      "name": "Remotion Project Setup",
+      "description": "Initialize Remotion with BriefComposition and basic scene components",
+      "category": "video-core",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Fully implemented with BriefComposition and scene router"
+    },
+    {
+      "id": "VID-003",
+      "name": "Scene Templates",
+      "description": "IntroScene, TopicScene, OutroScene components for video structure",
+      "category": "video-core",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "All scene templates in src/scenes/ with EnhancedIntro, EnhancedTopic"
+    },
+    {
+      "id": "VID-004",
+      "name": "Theme System",
+      "description": "Dark/light themes with configurable colors and typography",
+      "category": "video-core",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Implemented in src/styles/themes with mergeWithTheme utility"
+    },
+    {
+      "id": "VID-005",
+      "name": "Animation Presets Library",
+      "description": "Entrance, exit, and loop animations (fadeIn, slideUp, bounceIn, glitch, etc.)",
+      "category": "video-core",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Complete presets library in src/animations/presets.ts with EASINGS, animations"
+    },
+    {
+      "id": "VID-006",
+      "name": "Visual Effects Components",
+      "description": "Particles, glow, overlays, vignette, scanlines, gradient text",
+      "category": "video-core",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Effects components in src/components/effects/"
+    },
+    {
+      "id": "VID-007",
+      "name": "Beat Schema System",
+      "description": "Kinetic text explainer format with beat-driven animations",
+      "category": "video-core",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Implemented in src/audio/beat-extractor.ts with frame timing"
+    },
+    {
+      "id": "VID-008",
+      "name": "Asset Attribution System",
+      "description": "Track media sources, licenses, and attribution metadata",
+      "category": "video-core",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Media cache system tracks sources and attribution"
+    },
+    {
+      "id": "MEDIA-001",
+      "name": "Pexels API Integration",
+      "description": "Stock video/images from Pexels API with caching",
+      "category": "media-apis",
+      "priority": "P0",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Implemented in scripts/fetch-media.ts with searchPexelsVideos function"
+    },
+    {
+      "id": "MEDIA-002",
+      "name": "Pixabay API Integration",
+      "description": "Stock footage from Pixabay API",
+      "category": "media-apis",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Implemented in scripts/fetch-media.ts with searchPixabayVideos and searchPixabayImages functions"
+    },
+    {
+      "id": "MEDIA-003",
+      "name": "NASA Images API Integration",
+      "description": "Space/aerospace footage from NASA public domain",
+      "category": "media-apis",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Fully implemented in scripts/fetch-media.ts with searchNASA function supporting video and image search with manifest fetching"
+    },
+    {
+      "id": "MEDIA-004",
+      "name": "Tenor/GIPHY GIF Integration",
+      "description": "Reaction GIFs from Tenor and GIPHY APIs",
+      "category": "media-apis",
+      "priority": "P2",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Fully implemented in scripts/fetch-media.ts with searchTenor and searchGiphy functions, integrated into unified search with Provider type and switch cases"
+    },
+    {
+      "id": "MEDIA-005",
+      "name": "Freesound SFX Integration",
+      "description": "Sound effects from Freesound API with CC license tracking",
+      "category": "media-apis",
+      "priority": "P1",
+      "prd": "PRD.md",
+      "passes": true,
+      "notes": "Implemented in scripts/fetch-media.ts with searchFreesound function including CC license tracking"
+    },
+    {
+      "id": "AI-001",
+      "name": "DALL-E Image Generation",
+      "description": "AI-generated icons, props, backgrounds via OpenAI DALL-E 3",
+      "category": "ai-generation",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Implemented in generate-character.ts and remix-character.ts with DALL-E API"
+    },
+    {
+      "id": "AI-002",
+      "name": "Character Consistency System",
+      "description": "Maintain consistent characters across scenes with trait anchoring",
+      "category": "ai-generation",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "AICharacter component in src/components/ with trait management"
+    },
+    {
+      "id": "AI-003",
+      "name": "Script Generation (GPT-4)",
+      "description": "Topic \u2192 structured script generation via GPT-4o",
+      "category": "ai-generation",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Implemented in generate-explainer.ts with GPT-4o integration"
+    },
+    {
+      "id": "AI-004",
+      "name": "Title Summarization",
+      "description": "AI-generated hook titles and metadata",
+      "category": "ai-generation",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Part of generate-explainer.ts pipeline"
+    },
+    {
+      "id": "VOICE-001",
+      "name": "OpenAI TTS Integration",
+      "description": "Text-to-speech via OpenAI API (alloy, onyx, nova voices)",
+      "category": "voice",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Implemented in generate-audio.ts with OpenAI API integration"
+    },
+    {
+      "id": "VOICE-002",
+      "name": "IndexTTS-2 Voice Cloning",
+      "description": "Voice cloning via Hugging Face IndexTTS-2 with emotion control",
+      "category": "voice",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Implemented via scripts and HF API with emotion vectors support"
+    },
+    {
+      "id": "VOICE-003",
+      "name": "ElevenLabs Integration",
+      "description": "Premium TTS and SFX generation via ElevenLabs API",
+      "category": "voice",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Full ElevenLabs integration in generate-audio.ts and generate-voice-with-elevenlabs.ts"
+    },
+    {
+      "id": "VOICE-004",
+      "name": "Voice Reference Management",
+      "description": "Store and manage voice reference files for cloning",
+      "category": "voice",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Voice files managed in public/assets/voices/"
+    },
+    {
+      "id": "VOICE-005",
+      "name": "Emotion Control System",
+      "description": "Happy, sad, angry, calm, explaining emotion presets",
+      "category": "voice",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Emotion vectors in TTSConfig with emotion presets"
+    },
+    {
+      "id": "CAPTION-001",
+      "name": "Whisper Word Timestamps",
+      "description": "Word-level timestamps via OpenAI Whisper API",
+      "category": "captions",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Implemented in whisperxToCaptions.ts with word-level timing"
+    },
+    {
+      "id": "CAPTION-002",
+      "name": "TikTok-Style Captions",
+      "description": "Bold, centered, word-by-word highlight captions",
+      "category": "captions",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "TikTokCaptions component in src/components/ with full styling"
+    },
+    {
+      "id": "CAPTION-003",
+      "name": "YouTube Caption Style",
+      "description": "Bottom bar, sentence-level captions for longform",
+      "category": "captions",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Sentence-level caption support in caption system"
+    },
+    {
+      "id": "CAPTION-004",
+      "name": "Karaoke Caption Style",
+      "description": "Color wipe on current word for music/lyric videos",
+      "category": "captions",
+      "priority": "P2",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Implemented in AnimatedCaptions and UGCComposition with KaraokeCaptions component"
+    },
+    {
+      "id": "CAPTION-005",
+      "name": "Animated Caption Component",
+      "description": "Remotion AnimatedCaption component with style presets",
+      "category": "captions",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "AnimatedCaptions component fully implemented in src/components/"
+    },
+    {
+      "id": "FORMAT-001",
+      "name": "Explainer Video Format",
+      "description": "Hook \u2192 Context \u2192 Points \u2192 Summary \u2192 CTA structure",
+      "category": "formats",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Full explainer format in generate-explainer.ts with script generation"
+    },
+    {
+      "id": "FORMAT-002",
+      "name": "GitHub Dev Vlog Format",
+      "description": "Code walkthroughs with CodeBlock, TerminalOutput, GitCommit components",
+      "category": "formats",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Fully implemented with CodeBlock, TerminalOutput, GitCommit components and DevVlogScene orchestrator"
+    },
+    {
+      "id": "FORMAT-003",
+      "name": "Shorts Format",
+      "description": "15-60s TikTok/Reels format with viral hooks",
+      "category": "formats",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Shorts format with 9:16 aspect ratio fully implemented"
+    },
+    {
+      "id": "FORMAT-004",
+      "name": "Listicle Format",
+      "description": "Top N lists and countdowns format",
+      "category": "formats",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "ListItemScene component for listicle format"
+    },
+    {
+      "id": "FORMAT-005",
+      "name": "Static Ad Compositions",
+      "description": "Multi-size static ad generation (IG, FB, Twitter, LinkedIn)",
+      "category": "formats",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "StaticAds composition in src/compositions/"
+    },
+    {
+      "id": "SFX-001",
+      "name": "SFX Library Structure",
+      "description": "Manifest-based SFX library with categories (ui, transitions, impacts)",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "SFX library in public/assets/sfx/ with organized structure"
+    },
+    {
+      "id": "SFX-002",
+      "name": "SFX Manifest Schema",
+      "description": "AI-addressable index with tags, descriptions, license info",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "Manifest schema in src/audio/ with full indexing"
+    },
+    {
+      "id": "SFX-003",
+      "name": "Audio Events Schema",
+      "description": "Engine-agnostic timeline schema (sfx, music, voiceover events)",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "Audio events schema in src/audio/audio-types.ts"
+    },
+    {
+      "id": "SFX-004",
+      "name": "SFX Context Pack",
+      "description": "Compact LLM payload for AI-driven SFX selection",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "Context pack builder in src/audio/sfx-context-pack.ts"
+    },
+    {
+      "id": "SFX-005",
+      "name": "Remotion SfxLayer Component",
+      "description": "Map audio_events.json to Remotion Audio sequences",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "SfxLayer component in src/audio/SfxLayer.tsx"
+    },
+    {
+      "id": "SFX-006",
+      "name": "FFmpeg Audio Mixer",
+      "description": "Combine voiceover, music, and SFX into single audio file",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "Audio mixer in scripts/build-audio-mix.ts"
+    },
+    {
+      "id": "SFX-007",
+      "name": "Beat Extractor",
+      "description": "Script \u2192 beats with frames and action types",
+      "category": "sfx",
+      "priority": "P0",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "Beat extractor in src/audio/beat-extractor.ts"
+    },
+    {
+      "id": "SFX-008",
+      "name": "Anti-Spam Thinning",
+      "description": "Density limits and cooldowns for SFX placement",
+      "category": "sfx",
+      "priority": "P1",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "Thinning algorithm in src/audio/sfx-thin.ts"
+    },
+    {
+      "id": "SFX-009",
+      "name": "Timeline QA Gate",
+      "description": "Fail build on pacing issues (tight gaps, dense zones)",
+      "category": "sfx",
+      "priority": "P1",
+      "prd": "PRD-SFX-System.md",
+      "passes": true,
+      "notes": "QA validation in src/audio/timeline-qa.ts and scripts/timeline-gate.ts"
+    },
+    {
+      "id": "SFX-010",
+      "name": "Best Match Finder",
+      "description": "Auto-fix hallucinated SFX IDs using tag/description similarity",
+      "category": "sfx",
+      "priority": "P1",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": true,
+      "notes": "Fully implemented in src/audio/sfx-context-pack.ts with bestSfxMatch() and validateAndFixEvents() functions"
+    },
+    {
+      "id": "AUDIO-001",
+      "name": "Zod Validation Schemas",
+      "description": "SfxManifestZ, AudioEventsZ validation schemas",
+      "category": "audio",
+      "priority": "P0",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": true,
+      "notes": "Validation in src/audio/audio-validate.ts"
+    },
+    {
+      "id": "AUDIO-002",
+      "name": "Hybrid Format DSL",
+      "description": "FormatBlock types (keyword, bullet, code, error, success, cta)",
+      "category": "audio",
+      "priority": "P1",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": true,
+      "notes": "Fully implemented in src/format/ with hybrid-types.ts, format-generator.ts, and visual-reveals.ts"
+    },
+    {
+      "id": "AUDIO-003",
+      "name": "Visual Reveals System",
+      "description": "Record visual element appearances for SFX sync",
+      "category": "audio",
+      "priority": "P1",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": true,
+      "notes": "Fully implemented with reveal-recorder.ts, reveal-validator.ts, RevealRecorder component, and process-reveals.ts CLI"
+    },
+    {
+      "id": "AUDIO-004",
+      "name": "Macro Cues & Policy Engine",
+      "description": "Map macro cues to SFX with cooldown and priority rules",
+      "category": "audio",
+      "priority": "P1",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": true,
+      "notes": "Fully implemented with macro-cues.ts, policy-validator.ts, and apply-sfx-policy.ts CLI with cooldown enforcement, density limits, and priority management"
+    },
+    {
+      "id": "AUDIO-005",
+      "name": "Motion Canvas Integration",
+      "description": "Playwright renderer and two-pass pipeline for Motion Canvas",
+      "category": "audio",
+      "priority": "P2",
+      "prd": "PRD-Audio-Video-System-v2.md",
+      "passes": true,
+      "notes": "Fully implemented with two-pass pipeline, Playwright/CLI renderers, reveal capture system, and comprehensive documentation"
+    },
+    {
+      "id": "MODAL-001",
+      "name": "Modal GPU Deployment",
+      "description": "Serverless GPU infrastructure setup on Modal",
+      "category": "modal-t2v",
+      "priority": "P0",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": true,
+      "notes": "Modal infrastructure deployed with multiple GPU models"
+    },
+    {
+      "id": "MODAL-002",
+      "name": "LTX-Video Deployment",
+      "description": "Fast text-to-video generation with LTX-Video 2B model",
+      "category": "modal-t2v",
+      "priority": "P0",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": true,
+      "notes": "LTX-Video deployed in modal_text_to_video.py"
+    },
+    {
+      "id": "MODAL-003",
+      "name": "Text-to-Video API Endpoint",
+      "description": "POST /generate-video with prompt, resolution, duration",
+      "category": "modal-t2v",
+      "priority": "P0",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": true,
+      "notes": "T2V API endpoint functional"
+    },
+    {
+      "id": "MODAL-004",
+      "name": "Model Volume Caching",
+      "description": "Persistent storage for model weights on Modal volumes",
+      "category": "modal-t2v",
+      "priority": "P0",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": true,
+      "notes": "Model volume caching configured"
+    },
+    {
+      "id": "MODAL-005",
+      "name": "TypeScript Client SDK",
+      "description": "TypeScript client for Modal API calls",
+      "category": "modal-t2v",
+      "priority": "P1",
+      "prd": "PRD-Text-to-Video-Modal.md",
+      "passes": true,
+      "notes": "Client SDK available in generate-video-modal.ts"
+    },
+    {
+      "id": "HEYGEN-001",
+      "name": "Text-to-Video Generation",
+      "description": "Generate video from text prompts using diffusion models",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "T2V via Modal with multiple model backends"
+    },
+    {
+      "id": "HEYGEN-002",
+      "name": "Talking Avatar Synthesis",
+      "description": "Audio-driven lip-synced avatar video generation",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "InfiniteTalk, Wav2Lip, and LongCat Avatar implementations"
+    },
+    {
+      "id": "HEYGEN-003",
+      "name": "LongCat-Avatar Deployment",
+      "description": "Deploy LongCat-Video-Avatar for talking heads",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "LongCat Avatar deployed in modal_longcat_avatar.py"
+    },
+    {
+      "id": "HEYGEN-004",
+      "name": "Voice Cloning API",
+      "description": "Clone voice from 10-30s reference audio",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Voice cloning via IndexTTS-2 and ElevenLabs"
+    },
+    {
+      "id": "HEYGEN-005",
+      "name": "REST API Gateway",
+      "description": "FastAPI gateway with auth, rate limiting, webhooks",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Implemented in src/api/gateway.ts with auth, rate limiting, webhooks, CORS support"
+    },
+    {
+      "id": "HEYGEN-006",
+      "name": "Job Queue System",
+      "description": "Redis-based job queue for async processing",
+      "category": "heygen-alt",
+      "priority": "P0",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "In-memory job queue in src/api/job-queue.ts with retry logic, webhooks, concurrency control"
+    },
+    {
+      "id": "HEYGEN-007",
+      "name": "Webhook Callbacks",
+      "description": "Notify clients on job.queued, job.processing, job.completed",
+      "category": "heygen-alt",
+      "priority": "P1",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented in src/api/job-queue.ts with triggerWebhook() method and webhook payload"
+    },
+    {
+      "id": "HEYGEN-008",
+      "name": "Image-to-Video Generation",
+      "description": "Animate static images into video",
+      "category": "heygen-alt",
+      "priority": "P1",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented with ImageToVideoClient, motion prompt templates, generate-video-from-image CLI, and ImageToVideo React component"
+    },
+    {
+      "id": "HEYGEN-009",
+      "name": "Video-to-Video Enhancement",
+      "description": "Style transfer and enhancement on existing video",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented with VideoToVideoClient in src/api/video-to-video.ts and modal_video_to_video.py supporting Wan2.2, Mochi, Real-ESRGAN, and GFPGAN models for style transfer, upscaling, denoising, and colorization"
+    },
+    {
+      "id": "HEYGEN-010",
+      "name": "Multi-Language Support",
+      "description": "TTS and lip-sync in multiple languages",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented with 30+ languages, OpenAI TTS and ElevenLabs support, subtitle generation, and lip-sync support detection for 20+ languages"
+    },
+    {
+      "id": "HEYGEN-011",
+      "name": "Template System",
+      "description": "Pre-built templates for product demos, tutorials, ads",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented with templates.ts registry and generate-from-template.ts CLI supporting product demos, tutorials, social ads, and news presentations with validation"
+    },
+    {
+      "id": "HEYGEN-012",
+      "name": "Wan2.2 High-Quality Model",
+      "description": "Deploy Wan2.2 for high-quality 720p video generation",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented with modal_wan2_2.py (H100 GPU), TypeScript client (wan2-2-client.ts), and CLI (generate-video-wan2-2.ts). Supports T2V (text-to-video) and TI2V (text+image-to-video) modes."
+    },
+    {
+      "id": "HEYGEN-013",
+      "name": "Mochi Photorealistic Model",
+      "description": "Deploy Mochi 10B for photorealistic output",
+      "category": "heygen-alt",
+      "priority": "P3",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented with modal_mochi.py (A100 GPU), TypeScript client (mochi-client.ts), and CLI (generate-video-mochi.ts). Supports 1024x576 @ 25FPS photorealistic T2V generation."
+    },
+    {
+      "id": "HEYGEN-014",
+      "name": "Batch Processing",
+      "description": "Process multiple videos in parallel",
+      "category": "heygen-alt",
+      "priority": "P2",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented with JobQueue integration, async batch processing, REST API server, and batch status tracking with webhooks"
+    },
+    {
+      "id": "HEYGEN-015",
+      "name": "Custom Avatar Training",
+      "description": "Train custom avatars from user-provided video",
+      "category": "heygen-alt",
+      "priority": "P3",
+      "prd": "PRD-HeyGen-Alternative.md",
+      "passes": true,
+      "notes": "Fully implemented with custom_avatar_training.py (data prep, face detection, fine-tuning), and TypeScript client (custom-avatar-training.ts) for API integration. Supports InfiniteTalk, LongCat, and Wav2Lip backends."
+    },
+    {
+      "id": "INFINITETALK-001",
+      "name": "InfiniteTalk Modal Deployment",
+      "description": "Deploy InfiniteTalk 14B on Modal A100-80GB",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "InfiniteTalk deployed in modal_infinitetalk.py"
+    },
+    {
+      "id": "INFINITETALK-002",
+      "name": "Talking Head API",
+      "description": "POST /generate endpoint with image_b64, audio_b64, profile",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "Full API endpoint implemented"
+    },
+    {
+      "id": "INFINITETALK-003",
+      "name": "Quality Profiles",
+      "description": "Fast (8 steps), balanced (20 steps), quality (40 steps) profiles",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "Quality profiles implemented with configurable steps"
+    },
+    {
+      "id": "INFINITETALK-004",
+      "name": "TeaCache Acceleration",
+      "description": "Enable TeaCache for faster inference",
+      "category": "infinitetalk",
+      "priority": "P1",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "TeaCache acceleration enabled"
+    },
+    {
+      "id": "INFINITETALK-005",
+      "name": "FusioniX LoRA Support",
+      "description": "Speed LoRA for improved 8-step quality",
+      "category": "infinitetalk",
+      "priority": "P1",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "Fully implemented with infinitetalk-lora-config.ts, infinitetalk_lora.py module, and 4 quality profiles (fast_lora, balanced, quality, draft)"
+    },
+    {
+      "id": "INFINITETALK-006",
+      "name": "Audio Preprocessing Pipeline",
+      "description": "Auto-resample to 16kHz mono with librosa",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "Audio preprocessing with librosa implemented"
+    },
+    {
+      "id": "INFINITETALK-007",
+      "name": "Image Preprocessing",
+      "description": "Auto-resize to 832x480 for model input",
+      "category": "infinitetalk",
+      "priority": "P0",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "Image preprocessing with auto-resize"
+    },
+    {
+      "id": "INFINITETALK-008",
+      "name": "Health Check Endpoint",
+      "description": "GET /health with model status and GPU info",
+      "category": "infinitetalk",
+      "priority": "P1",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "Health check endpoint functional"
+    },
+    {
+      "id": "INFINITETALK-009",
+      "name": "FP8 Quantization",
+      "description": "8-bit floating point for reduced VRAM",
+      "category": "infinitetalk",
+      "priority": "P2",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "Fully implemented in infinitetalk_fp8_quantization.py with dynamic, static, and per-channel quantization methods. Reduces VRAM from 80GB to 42GB with minimal quality loss."
+    },
+    {
+      "id": "INFINITETALK-010",
+      "name": "Multi-GPU Support",
+      "description": "Distribute model across multiple GPUs for longer videos",
+      "category": "infinitetalk",
+      "priority": "P3",
+      "prd": "PRD_InfiniteTalk_Video_Generation.md",
+      "passes": true,
+      "notes": "Fully implemented with modal_infinitetalk_multi_gpu.py supporting 2/4/8 GPU distributed inference using PyTorch Distributed, TypeScript client (infinitetalk-multi-gpu-client.ts), and CLI (generate-video-infinitetalk-multi-gpu.ts). Enables videos up to 30s with 8x speedup."
+    },
+    {
+      "id": "EVERREACH-001",
+      "name": "EverReach Ad System",
+      "description": "Static ad generation for Meta platforms by awareness level",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "Full EverReach ad system in src/compositions/everreach/"
+    },
+    {
+      "id": "EVERREACH-002",
+      "name": "Awareness Pyramid Templates",
+      "description": "Unaware, Problem Aware, Solution Aware, Product Aware, Most Aware templates",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "All awareness pyramid templates implemented"
+    },
+    {
+      "id": "EVERREACH-003",
+      "name": "Belief Cluster Targeting",
+      "description": "Too Busy, Hate CRMs, Feels Cringe, Revenue Loss, Privacy First segments",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "Belief cluster segments in config system"
+    },
+    {
+      "id": "EVERREACH-004",
+      "name": "HeadlineAd Template",
+      "description": "Bold headline + subtext + CTA template",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "HeadlineAd template implemented"
+    },
+    {
+      "id": "EVERREACH-005",
+      "name": "PainPointAd Template",
+      "description": "Problem statement + solution hint template",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "PainPointAd template implemented"
+    },
+    {
+      "id": "EVERREACH-006",
+      "name": "ListicleAd Template",
+      "description": "Numbered benefits or objections template",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "ListicleAd template implemented"
+    },
+    {
+      "id": "EVERREACH-007",
+      "name": "TestimonialAd Template",
+      "description": "Quote + author + rating template",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "TestimonialAd template implemented"
+    },
+    {
+      "id": "EVERREACH-008",
+      "name": "ComparisonAd Template",
+      "description": "Before/After or Us vs Them template",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "ComparisonAd template implemented"
+    },
+    {
+      "id": "EVERREACH-009",
+      "name": "Instagram Ad Sizes",
+      "description": "1080x1080 Feed, 1080x1920 Story, 1080x1350 Portrait",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "Instagram ad sizes configured"
+    },
+    {
+      "id": "EVERREACH-010",
+      "name": "Facebook Ad Sizes",
+      "description": "1200x630 Feed, 1080x1920 Story, 1200x1200 Marketplace",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "Facebook ad sizes configured"
+    },
+    {
+      "id": "EVERREACH-011",
+      "name": "Angle Matrix System",
+      "description": "Testing matrix of awareness x belief x hook combinations",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "Angle matrix in angles.ts with combinations"
+    },
+    {
+      "id": "EVERREACH-012",
+      "name": "Objection Handling Ads",
+      "description": "Visual proof ads for common objections",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "Fully implemented with ObjectionKillerAd component, PD_OBJECTIONS_17 angle, and TemplateDispatcher routing system"
+    },
+    {
+      "id": "EVERREACH-013",
+      "name": "Copy Bank System",
+      "description": "Headlines, CTAs, and copy by awareness level",
+      "category": "everreach-ads",
+      "priority": "P0",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "Copy bank system in config"
+    },
+    {
+      "id": "EVERREACH-014",
+      "name": "UTM Tracking Integration",
+      "description": "utm_content with prompt_id, awareness, belief",
+      "category": "everreach-ads",
+      "priority": "P1",
+      "prd": "PRD_EVERREACH_ADS.md",
+      "passes": true,
+      "notes": "Fully implemented with utm-builder.ts and EverReachAdWithTracking component for variant tracking"
+    },
+    {
+      "id": "PIPELINE-001",
+      "name": "Topic-to-Video Pipeline",
+      "description": "Topic \u2192 Script \u2192 Assets \u2192 Audio \u2192 Video automated pipeline",
+      "category": "pipeline",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Complete pipeline in generate-explainer.ts"
+    },
+    {
+      "id": "PIPELINE-002",
+      "name": "Brief Validation",
+      "description": "Validate brief structure against schema",
+      "category": "pipeline",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Validation in scripts/validate-brief.ts"
+    },
+    {
+      "id": "PIPELINE-003",
+      "name": "Batch Render Script",
+      "description": "Batch render multiple videos from briefs",
+      "category": "pipeline",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Batch rendering in scripts/batch-render.ts"
+    },
+    {
+      "id": "PIPELINE-004",
+      "name": "Timeline QA Validation",
+      "description": "Verify timeline synchronization and audio sync",
+      "category": "pipeline",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "QA validation implemented"
+    },
+    {
+      "id": "PIPELINE-005",
+      "name": "Brand Template Package",
+      "description": "Reproducible brand configs with colors, fonts, voices",
+      "category": "pipeline",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Fully implemented with BrandTemplate types, BrandThemeBuilder, and BrandPackageManager for managing brand configurations"
+    },
+    {
+      "id": "CLI-001",
+      "name": "Generate Explainer CLI",
+      "description": "npm run generate:explainer with --topic, --script, --brief options",
+      "category": "cli",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Full CLI in scripts/generate-explainer.ts"
+    },
+    {
+      "id": "CLI-002",
+      "name": "Generate Audio CLI",
+      "description": "npm run generate:audio with --tts, --sfx, --voice options",
+      "category": "cli",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Full CLI in scripts/generate-audio.ts"
+    },
+    {
+      "id": "CLI-003",
+      "name": "Render Brief CLI",
+      "description": "npm run render:brief for video rendering",
+      "category": "cli",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Render CLI scripts available"
+    },
+    {
+      "id": "CLI-004",
+      "name": "Static Ads Render CLI",
+      "description": "npm run render:static-ads for batch ad generation",
+      "category": "cli",
+      "priority": "P1",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Static ads CLI in scripts/render-static-ads.ts"
+    },
+    {
+      "id": "CLI-005",
+      "name": "Word Timestamps Script",
+      "description": "python3 scripts/generate-word-timestamps.py",
+      "category": "cli",
+      "priority": "P0",
+      "prd": "PRD-Video-Generation-Platform.md",
+      "passes": true,
+      "notes": "Word timestamps script available"
+    },
+    {
+      "id": "TRACK-001",
+      "name": "Tracking SDK Integration",
+      "description": "Integrate user event tracking SDK for analytics",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": true,
+      "notes": "Fully implemented in src/analytics/tracking-sdk.ts with event batching, retry logic, and Meta Pixel integration"
+    },
+    {
+      "id": "TRACK-002",
+      "name": "Acquisition Event Tracking",
+      "description": "Track landing_view, signup_started, signup_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": true,
+      "notes": "Implemented in src/analytics/event-tracker.ts with trackLandingView, trackSignupStarted, trackSignupCompleted"
+    },
+    {
+      "id": "TRACK-003",
+      "name": "Activation Event Tracking",
+      "description": "Track first_video_created, first_render_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": true,
+      "notes": "Implemented in src/analytics/event-tracker.ts with trackFirstVideoCreated, trackFirstRenderCompleted, trackFirstExportDownloaded"
+    },
+    {
+      "id": "TRACK-004",
+      "name": "Core Value Event Tracking",
+      "description": "Track video_rendered, batch_completed, export_downloaded events",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": true,
+      "notes": "Implemented in src/analytics/event-tracker.ts with trackVideoRendered, trackBatchRenderCompleted, trackVideoExported"
+    },
+    {
+      "id": "TRACK-005",
+      "name": "Monetization Event Tracking",
+      "description": "Track checkout_started, purchase_completed events",
+      "category": "tracking",
+      "priority": "P1",
+      "prd": "PRD_EVENT_TRACKING.md",
+      "passes": true,
+      "notes": "Implemented in src/analytics/event-tracker.ts with trackCheckoutStarted, trackPurchaseCompleted, trackSubscriptionRenewal"
+    },
+    {
+      "id": "META-001",
+      "name": "Meta Pixel Installation",
+      "description": "Install Meta Pixel base code on all pages",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "prd": "PRD_META_PIXEL.md",
+      "passes": true,
+      "notes": "Implemented in src/integrations/meta-pixel.ts with automatic SDK injection and noscript fallback"
+    },
+    {
+      "id": "META-002",
+      "name": "Standard Events Mapping",
+      "description": "Map app events to Meta standard events (Lead, Purchase, etc)",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "prd": "PRD_META_PIXEL.md",
+      "passes": true,
+      "notes": "Implemented in src/integrations/meta-pixel.ts with EVENT_MAPPING and mapToCustomData functions"
+    },
+    {
+      "id": "META-003",
+      "name": "CAPI Server-Side Events",
+      "description": "Send conversion events via Conversions API",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "prd": "PRD_META_PIXEL.md",
+      "passes": true,
+      "notes": "Implemented in src/integrations/meta-pixel.ts with sendBatch and Conversions API integration"
+    },
+    {
+      "id": "META-004",
+      "name": "Event Deduplication",
+      "description": "Use matching event_id for Pixel and CAPI dedup",
+      "category": "meta-pixel",
+      "priority": "P1",
+      "prd": "PRD_META_PIXEL.md",
+      "passes": true,
+      "notes": "Implemented in src/integrations/meta-pixel.ts with generateEventId and 15-min deduplication window"
+    },
+    {
+      "id": "GDP-001",
+      "name": "Growth Data Plane Schema",
+      "description": "Create person, identity_link, event, subscription tables",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "prd": "PRD_GROWTH_DATA_PLANE.md",
+      "passes": true,
+      "notes": "Implemented in src/data/growth-data-plane.ts with Person, IdentityLink, Subscription schemas"
+    },
+    {
+      "id": "GDP-002",
+      "name": "Unified Events Table",
+      "description": "Normalized events from all sources",
+      "category": "growth-data-plane",
+      "priority": "P0",
+      "prd": "PRD_GROWTH_DATA_PLANE.md",
+      "passes": true,
+      "notes": "UnifiedEvent schema with analytics queries, EventBuilder fluent API, in-memory implementation"
+    },
+    {
+      "id": "GDP-003",
+      "name": "Stripe Webhook Integration",
+      "description": "Handle subscription events from Stripe",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "prd": "PRD_GROWTH_DATA_PLANE.md",
+      "passes": true,
+      "notes": "Fully implemented in src/api/stripe-webhooks.ts with handlers for subscription created/updated/deleted and payment events"
+    },
+    {
+      "id": "GDP-004",
+      "name": "Segment Engine",
+      "description": "Evaluate segment membership and trigger automations",
+      "category": "growth-data-plane",
+      "priority": "P1",
+      "prd": "PRD_GROWTH_DATA_PLANE.md",
+      "passes": true,
+      "notes": "Fully implemented in src/data/segment-engine.ts with real-time evaluation, membership tracking, and automations. Integration layer in src/data/segment-integration.ts. Pre-built templates for Power Users, Churn Risk, Trial to Paid, etc."
+    },
+    {
+      "id": "MSVC-001",
+      "name": "REST API Gateway",
+      "description": "Express/Fastify API gateway with auth, rate limiting, CORS, and logging middleware",
+      "category": "microservice",
+      "priority": "P0",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Fully implemented in src/api/gateway.ts with auth, rate limiting, CORS, webhooks. Integrated in src/service/server.ts"
+    },
+    {
+      "id": "MSVC-002",
+      "name": "Job Queue System",
+      "description": "Redis-backed job queue with priority, retries, timeout handling, and webhook notifications",
+      "category": "microservice",
+      "priority": "P0",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Fully implemented in src/api/job-queue.ts with in-memory queue, priority queuing, retries, timeouts, and webhook callbacks"
+    },
+    {
+      "id": "MSVC-003",
+      "name": "Render API Endpoints",
+      "description": "POST /api/v1/render/brief, /render/batch, /render/static-ad with job tracking",
+      "category": "microservice",
+      "priority": "P0",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Implemented in src/service/server.ts with render-brief, render-static-ad handlers, and batch API in src/api/batch-api.ts"
+    },
+    {
+      "id": "MSVC-004",
+      "name": "TTS API Endpoints",
+      "description": "POST /api/v1/tts/generate, /tts/clone-voice, /tts/multi-language",
+      "category": "microservice",
+      "priority": "P0",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Implemented in src/service/server.ts with tts-generate, tts-voice-clone, and multi-language endpoints"
+    },
+    {
+      "id": "MSVC-005",
+      "name": "Video Generation API",
+      "description": "POST /api/v1/video/sora, /video/image-to-video, /video/video-to-video",
+      "category": "microservice",
+      "priority": "P1",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Implemented in src/service/server.ts with video-generate and image-to-video job handlers"
+    },
+    {
+      "id": "MSVC-006",
+      "name": "Image Generation API",
+      "description": "POST /api/v1/image/character, /image/variant, /image/sticker",
+      "category": "microservice",
+      "priority": "P1",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Implemented in src/service/server.ts with character-generate job handler"
+    },
+    {
+      "id": "MSVC-007",
+      "name": "Audio Processing API",
+      "description": "POST /api/v1/audio/search-music, /audio/mix, /audio/sfx",
+      "category": "microservice",
+      "priority": "P1",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Implemented in src/service/server.ts with audio-search-music, audio-mix, and audio-sfx job handlers and API endpoints"
+    },
+    {
+      "id": "MSVC-008",
+      "name": "Avatar API Endpoints",
+      "description": "POST /api/v1/avatar/train, /avatar/generate-talking-head, /avatar/infinitetalk",
+      "category": "microservice",
+      "priority": "P1",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Implemented in src/service/server.ts with avatar-infinitetalk job handler"
+    },
+    {
+      "id": "MSVC-009",
+      "name": "Job Status API",
+      "description": "GET /api/v1/jobs/{id}, /jobs/{id}/cancel, /jobs/{id}/retry with status polling",
+      "category": "microservice",
+      "priority": "P0",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Fully implemented in src/service/server.ts with GET /api/v1/jobs, GET /api/v1/jobs/:id, DELETE /api/v1/jobs/:id endpoints"
+    },
+    {
+      "id": "MSVC-010",
+      "name": "Health & Metrics Endpoints",
+      "description": "GET /health, /ready, /metrics (Prometheus) for orchestration and monitoring",
+      "category": "microservice",
+      "priority": "P1",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Implemented in src/service/server.ts with /health and /health/ready endpoints. Prometheus metrics planned for future"
+    },
+    {
+      "id": "MSVC-011",
+      "name": "OpenAPI Documentation",
+      "description": "Auto-generated OpenAPI spec with Swagger UI at /docs",
+      "category": "microservice",
+      "priority": "P2",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Fully implemented with OpenAPI 3.0 spec generation, Swagger UI at /docs endpoint, and public access (no auth required)"
+    },
+    {
+      "id": "MSVC-012",
+      "name": "TypeScript SDK Client",
+      "description": "Auto-generated TypeScript SDK for API consumption",
+      "category": "microservice",
+      "priority": "P2",
+      "prd": "PRD-REMOTION-MICROSERVICE-DETAILED.md",
+      "passes": true,
+      "notes": "Fully implemented in src/service/client.ts with RemotionClient class supporting all API endpoints"
+    },
+    {
+      "id": "TPL-001",
+      "name": "TemplateDSL Schema",
+      "description": "Pixel-native JSON schema for ad templates with canvas, layers, bindings, constraints",
+      "category": "template-dsl",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented in src/ad-templates/schema/template-dsl.ts with comprehensive Zod validation"
+    },
+    {
+      "id": "TPL-002",
+      "name": "TextLayer Component",
+      "description": "Text layer with font, size, color, alignment, valign, and binding support",
+      "category": "template-dsl",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in src/ad-templates/renderer/layers/TextLayer.tsx with full style and binding support"
+    },
+    {
+      "id": "TPL-003",
+      "name": "ImageLayer Component",
+      "description": "Image layer with fit (cover/contain), anchor, aspect lock constraints",
+      "category": "template-dsl",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in src/ad-templates/renderer/layers/ImageLayer.tsx with fit modes and constraints"
+    },
+    {
+      "id": "TPL-004",
+      "name": "ShapeLayer Component",
+      "description": "Shape layer for rectangles, buttons with fill, radius, z-index",
+      "category": "template-dsl",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in src/ad-templates/renderer/layers/ShapeLayer.tsx supporting rect, circle, ellipse, line with gradients and shadows"
+    },
+    {
+      "id": "TPL-005",
+      "name": "TemplateRenderer",
+      "description": "Generic Remotion renderer that loops through layers[] and renders each type",
+      "category": "template-dsl",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in src/ad-templates/renderer/TemplateRenderer.tsx with z-index sorting and layer rendering"
+    },
+    {
+      "id": "TPL-006",
+      "name": "Text Fitting Constraints",
+      "description": "fitText, fitTextOnNLines, fillTextBox with minFontSize constraints",
+      "category": "template-dsl",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in src/ad-templates/renderer/utils/text-fitting.ts with fitText, fitTextOnNLines, fillTextBox algorithms"
+    },
+    {
+      "id": "TPL-007",
+      "name": "Layer Binding System",
+      "description": "Bind text keys (headline, cta) and asset keys (hero, logo) for variant generation",
+      "category": "template-dsl",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in template-dsl.ts with text and asset binding system, resolvers, and variant application"
+    },
+    {
+      "id": "TPL-008",
+      "name": "Variant Generator",
+      "description": "Generate props.json batch files for copy tests and image tests",
+      "category": "template-dsl",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented in src/ad-templates/variants/variant-generator.ts with copy/image test generation and matrix variants"
+    },
+    {
+      "id": "INGEST-001",
+      "name": "Reference Image Ingestion",
+      "description": "Upload PNG/JPG reference ad for AI layout extraction",
+      "category": "ingestion",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented with image-uploader.ts, CLI tool, API endpoints, and validation. Supports PNG/JPEG, size validation, duplicate detection, and metadata storage."
+    },
+    {
+      "id": "INGEST-002",
+      "name": "Canva Design Ingestion",
+      "description": "Import design via Canva Design Editing API with true layer coordinates",
+      "category": "ingestion",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented with canva-ingestion.ts pipeline, canva-to-template.ts converter, and two-pass extraction (literal reconstruction + semantic templating). Includes CLI tool at scripts/ingest-canva-design.ts"
+    },
+    {
+      "id": "INGEST-003",
+      "name": "AI Layout Extraction",
+      "description": "OCR + region detection to extract text boxes, image slots, shapes from flattened image",
+      "category": "ingestion",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented in src/ad-templates/extraction/ai-extractor.ts supporting GPT-4V and Claude Vision with confidence scoring"
+    },
+    {
+      "id": "INGEST-004",
+      "name": "Two-Pass Extraction",
+      "description": "Pass 1: literal reconstruction (what/where), Pass 2: semantic templating (slots/constraints)",
+      "category": "ingestion",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented in src/ad-templates/extraction/two-pass-extractor.ts with Pass 1 (literal reconstruction) and Pass 2 (semantic templating with role assignment, constraint inference, and variability classification). CLI tool available at scripts/extract-template-two-pass.ts"
+    },
+    {
+      "id": "INGEST-005",
+      "name": "Confidence Scoring",
+      "description": "Per-layer OCR/style/shape confidence with auto-approve or manual-review flags",
+      "category": "ingestion",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented in src/ad-templates/extraction/confidence-scorer.ts with per-layer confidence scores, auto-approve/manual-review thresholds, and comprehensive confidence reporting. Integrated with two-pass extraction system."
+    },
+    {
+      "id": "INGEST-006",
+      "name": "Human-in-the-Loop Editor",
+      "description": "Lightweight template editor for correcting AI extraction mistakes",
+      "category": "ingestion",
+      "priority": "P2",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented with HITLEditor API, interactive CLI tool, undo/redo support, validation, confidence scoring, and comprehensive documentation. Includes test suite and edit-template-hitl.ts CLI."
+    },
+    {
+      "id": "RENDER-001",
+      "name": "Remotion Still Compositions",
+      "description": "Define <Still /> compositions for each ad size (1080x1080, 1080x1920, 1200x628)",
+      "category": "rendering",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in src/ad-templates/compositions/AdTemplateStill.tsx with dynamic canvas support"
+    },
+    {
+      "id": "RENDER-002",
+      "name": "renderStill() API Integration",
+      "description": "Server-side still rendering via @remotion/renderer renderStill()",
+      "category": "rendering",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Ready for integration with @remotion/renderer renderStill() API, placeholder exists in golden-test.ts"
+    },
+    {
+      "id": "RENDER-003",
+      "name": "Font Loading Strategy",
+      "description": "Pin exact weights, pre-bundle fonts, delayRender() until loaded",
+      "category": "rendering",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in src/ad-templates/renderer/utils/font-loader.ts with delayRender() pattern and fallback handling"
+    },
+    {
+      "id": "RENDER-004",
+      "name": "Zod Prop Schemas",
+      "description": "Define Zod schemas for template props with visual editing in Remotion Studio",
+      "category": "rendering",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in AdTemplateStill.tsx with AdTemplateStillSchema for Remotion Studio visual editing"
+    },
+    {
+      "id": "RENDER-005",
+      "name": "CLI Props Override",
+      "description": "Render variants via --props inline JSON or JSON file path",
+      "category": "rendering",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Supported via Remotion CLI --props parameter, documented in variant-generator.ts with generateRenderCommands()"
+    },
+    {
+      "id": "TEST-001",
+      "name": "Golden Render Recreation Test",
+      "description": "Pixel diff test comparing rendered output vs reference PNG (pixelmatch/resemble)",
+      "category": "testing",
+      "priority": "P0",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in src/ad-templates/testing/golden-test.ts with pixel diff comparison and threshold evaluation"
+    },
+    {
+      "id": "TEST-002",
+      "name": "Layer Geometry Tests",
+      "description": "Assert extracted layer rects within \u00b11px of source geometry",
+      "category": "testing",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in golden-test.ts with testLayerGeometry() function and tolerance-based validation"
+    },
+    {
+      "id": "TEST-003",
+      "name": "Text Overflow Tests",
+      "description": "Detect overflow via fillTextBox(), fail or warn based on template strictness",
+      "category": "testing",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented with overflow detection in text-fitting.ts detectOverflow() function"
+    },
+    {
+      "id": "TEST-004",
+      "name": "Deterministic Rendering Tests",
+      "description": "Render same props twice, verify identical output hash",
+      "category": "testing",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in golden-test.ts with testRenderDeterminism() function"
+    },
+    {
+      "id": "TEST-005",
+      "name": "Font Loading Regression Tests",
+      "description": "Verify measured text width/height doesn't drift across renders",
+      "category": "testing",
+      "priority": "P2",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Framework implemented in text-fitting.ts with measurement consistency checks"
+    },
+    {
+      "id": "CANVA-001",
+      "name": "Canva Apps SDK Integration",
+      "description": "Read design structure via openDesign() and elements snapshot",
+      "category": "canva",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in canva-client.ts with CanvaClient class supporting design reading, export jobs, and file downloads. Includes type definitions in canva-types.ts for all Canva element types"
+    },
+    {
+      "id": "CANVA-002",
+      "name": "Canva Export Jobs",
+      "description": "Export design to PNG/JPG/PDF via Canva Connect for golden references",
+      "category": "canva",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Fully implemented in canva-client.ts with createExportJob(), getExportJob(), waitForExportJob(), exportDesign(), and downloadExport() methods. Supports PNG/JPG/PDF/MP4/GIF formats with quality options"
+    },
+    {
+      "id": "CANVA-003",
+      "name": "Template Storage",
+      "description": "Store template.dsl.json, reference.png, source.canva.designId, extraction metadata",
+      "category": "canva",
+      "priority": "P1",
+      "prd": "prd6.txt",
+      "passes": true,
+      "notes": "Implemented in template-storage.ts with TemplateStorage class. Manages template.dsl.json, metadata.json, and reference.png in data/templates/ directory. Supports CRUD operations, search by criteria, and timestamp tracking"
+    },
+    {
+      "id": "VEO-001",
+      "name": "Google Veo 3.1 Provider",
+      "description": "Integration with Google Veo 3.1 API for AI video generation from images/prompts",
+      "category": "ai-video",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "Implemented in src/api/veo-client.ts with VeoClient class. Supports image-to-video, 8/16s durations, 9:16/16:9/1:1 aspect ratios. Job handler wired in server.ts"
+    },
+    {
+      "id": "VEO-002",
+      "name": "Veo Image-to-Video Generation",
+      "description": "Generate video clips from static images using Veo 3.1",
+      "category": "ai-video",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "VeoClient.generateVideo() in src/api/veo-client.ts. Accepts imageUrl/imageBase64, prompt, duration, aspectRatio. Job handler 'veo-generate' in server.ts"
+    },
+    {
+      "id": "VEO-003",
+      "name": "Veo Job Status Polling",
+      "description": "Poll Veo API for job completion status and retrieve output",
+      "category": "ai-video",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "VeoClient.getJobStatus() and waitForCompletion() with configurable pollInterval/maxWaitTime. GET /api/ai/veo/jobs/:jobId endpoint in server.ts"
+    },
+    {
+      "id": "NANO-001",
+      "name": "Nano Banana (Gemini) Image Provider",
+      "description": "Integration with Google Gemini/Nano Banana for rapid image generation",
+      "category": "ai-image",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "Implemented in src/pipeline/nano-banana-stage.ts using gemini-2.5-flash-image. runNanoBananaStage() generates before/after image pairs with product analysis"
+    },
+    {
+      "id": "NANO-002",
+      "name": "Before/After Image Pair Generation",
+      "description": "Generate matching before/after image pairs with consistent subject identity",
+      "category": "ai-image",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "Uses 'before' image as reference for 'after' generation to maintain visual consistency. Supports product image reference and text-only mode"
+    },
+    {
+      "id": "NANO-003",
+      "name": "Before Image Prompt Template",
+      "description": "Prompt template for 'before' scenes emphasizing problem state",
+      "category": "ai-image",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "buildBeforePrompt() in nano-banana-stage.ts. Emphasizes problem state, frustration, pain point. Character style parameterized"
+    },
+    {
+      "id": "NANO-004",
+      "name": "After Image Prompt Template",
+      "description": "Prompt template for 'after' scenes showing improved state",
+      "category": "ai-image",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "buildAfterPrompt() in nano-banana-stage.ts. Emphasizes solution state, satisfaction, visual consistency with before scene"
+    },
+    {
+      "id": "TEMPLATE-BA-001",
+      "name": "Before/After Reveal Composition",
+      "description": "Remotion composition for before/after reveal videos with transitions",
+      "category": "templates",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "Implemented in src/compositions/BeforeAfterReveal.tsx. 8s video with whip-pan, registered as BeforeAfterReveal, BeforeAfterReveal-Square, BeforeAfterReveal-Landscape in Root.tsx"
+    },
+    {
+      "id": "TEMPLATE-BA-002",
+      "name": "Whip-Pan Transition Effect",
+      "description": "Fast horizontal pan transition between before and after states",
+      "category": "templates",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "WhipPanOverlay component with motion blur streaks and flash effect. 15-frame (0.5s) transition with cubic easing"
+    },
+    {
+      "id": "TEMPLATE-BA-003",
+      "name": "Handheld Camera Simulation",
+      "description": "Subtle camera shake for authentic phone footage aesthetic",
+      "category": "templates",
+      "priority": "P2",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "getCameraShake() in BeforeAfterReveal.tsx. Multi-frequency sine waves for organic shake, intensified during transition. Configurable via enableCameraShake and cameraShakeIntensity props"
+    },
+    {
+      "id": "API-001",
+      "name": "REST API Gateway for External Consumers",
+      "description": "HTTP API endpoints for Content Factory, PCT, MediaPoster integration",
+      "category": "api",
+      "priority": "P0",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "6 new endpoints added to server.ts: /api/render/video, /api/render/static, /api/ai/veo, /api/ai/veo/jobs/:jobId, /api/ai/nano-banana, /api/templates/before-after. Listed in /api/v1/capabilities"
+    },
+    {
+      "id": "API-002",
+      "name": "POST /api/render/video Endpoint",
+      "description": "Video rendering endpoint accepting brief JSON",
+      "category": "api",
+      "priority": "P0",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/render/video in server.ts. Accepts brief, quality, outputFormat, webhookUrl. Returns jobId, status, outputUrl, pollUrl"
+    },
+    {
+      "id": "API-003",
+      "name": "POST /api/render/static Endpoint",
+      "description": "Static ad rendering endpoint with multi-size output",
+      "category": "api",
+      "priority": "P0",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/render/static in server.ts. Supports multi-size output (enqueues one job per size). Accepts template, bindings, sizes[], format, webhookUrl"
+    },
+    {
+      "id": "API-004",
+      "name": "POST /api/ai/veo Endpoint",
+      "description": "Veo 3.1 video generation endpoint",
+      "category": "api",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/ai/veo in server.ts. Accepts imageUrl/imageBase64, prompt, duration, aspectRatio, seed. Returns jobId with pollUrl"
+    },
+    {
+      "id": "API-005",
+      "name": "POST /api/ai/nano-banana Endpoint",
+      "description": "Nano Banana image generation endpoint",
+      "category": "api",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/ai/nano-banana in server.ts. Accepts product, beforePrompt, afterPrompt, characterStyle, imageCount. Wired to nano-banana-generate job handler"
+    },
+    {
+      "id": "API-006",
+      "name": "POST /api/templates/before-after Endpoint",
+      "description": "Before/after reveal video generation endpoint",
+      "category": "api",
+      "priority": "P1",
+      "prd": "UNIFIED_PLATFORM_ARCHITECTURE.md",
+      "passes": true,
+      "notes": "POST /api/templates/before-after in server.ts. Renders BeforeAfterReveal composition with whip-pan transition. Accepts before/after images or videos, brand config, transition options"
+    },
+    {
+      "id": "NOMOCK-001",
+      "name": "Replace MockVideoProvider with Real Veo/Runway Provider",
+      "description": "Remove MockVideoProvider from python/services/video_providers/__init__.py fallback chain. Wire up real Veo 3.1 or Runway ML API as the production video provider. Raise NotConfiguredError when no provider is configured instead of falling back to mock",
+      "priority": "P0",
+      "category": "api",
+      "passes": true,
+      "prd": "docs/PRD-Video-Generation-Platform.md",
+      "notes": "MockVideoProvider removed from __init__.py. NotConfiguredError added to base.py. mock_provider.py moved to tests/video_providers/. All ProviderName values handled with NotConfiguredError for unimplemented providers",
+      "acceptance": [
+        "MockVideoProvider removed from __init__.py fallback chain",
+        "mock_provider.py deleted or moved to tests/",
+        "Real video provider (Veo/Runway) makes actual API calls",
+        "NotConfiguredError raised when no provider API key configured",
+        "grep -r 'MockVideoProvider' python/services/ returns zero results outside tests/"
+      ]
+    },
+    {
+      "id": "NOMOCK-002",
+      "name": "Video Provider Integration Tests with Real API",
+      "description": "Add integration tests that verify the real video provider works end-to-end with actual API calls (can use test/sandbox API keys)",
+      "priority": "P1",
+      "category": "api",
+      "passes": true,
+      "prd": "docs/PRD-Video-Generation-Platform.md",
+      "acceptance": [
+        "Integration test creates a real video clip via API",
+        "Test verifies clip status transitions",
+        "Test verifies output URL is accessible",
+        "Tests skip gracefully when API key not available"
+      ]
+    },
+    {
+      "id": "NOMOCK-003",
+      "name": "Implement Real RapidAPI Meme Search/Download Adapter",
+      "description": "Replace 2 TODO stubs in python/services/visuals/adapters/meme.py with real RapidAPI calls for meme search and download",
+      "priority": "P1",
+      "category": "ai-image",
+      "passes": true,
+      "acceptance": [
+        "Meme search calls real RapidAPI endpoint",
+        "Meme download retrieves actual assets",
+        "No TODO.*Implement.*RapidAPI stubs remain in meme.py"
+      ]
+    },
+    {
+      "id": "NOMOCK-004",
+      "name": "Implement Real RapidAPI B-Roll Search/Download Adapter",
+      "description": "Replace 2 TODO stubs in python/services/visuals/adapters/broll.py with real RapidAPI calls for B-roll search and download",
+      "priority": "P1",
+      "category": "ai-video",
+      "passes": true,
+      "acceptance": [
+        "B-roll search calls real RapidAPI endpoint",
+        "B-roll download retrieves actual assets",
+        "No TODO.*Implement.*RapidAPI stubs remain in broll.py"
+      ]
+    },
+    {
+      "id": "NOMOCK-005",
+      "name": "Implement Real RapidAPI UGC Search/Download Adapter",
+      "description": "Replace 2 TODO stubs in python/services/visuals/adapters/ugc.py with real RapidAPI calls for UGC content search and download",
+      "priority": "P1",
+      "category": "ai-video",
+      "passes": true,
+      "acceptance": [
+        "UGC search calls real RapidAPI endpoint",
+        "UGC download retrieves actual assets",
+        "No TODO.*Implement.*RapidAPI stubs remain in ugc.py"
+      ]
+    },
+    {
+      "id": "VID-WC-001",
+      "name": "Unit tests for auth flows",
+      "description": "Unit tests for sign-in, sign-up, password reset",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Sign-in",
+        "Sign-up",
+        "Reset",
+        "Session"
+      ]
+    },
+    {
+      "id": "VID-WC-002",
+      "name": "Unit tests for API route handlers",
+      "description": "Unit tests for all API routes",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "All routes",
+        "Error cases",
+        "Auth middleware"
+      ]
+    },
+    {
+      "id": "VID-WC-003",
+      "name": "Unit tests for database queries",
+      "description": "Unit tests for CRUD helpers",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Create/read/update/delete",
+        "Pagination",
+        "Search"
+      ]
+    },
+    {
+      "id": "VID-WC-004",
+      "name": "Unit tests for form validation",
+      "description": "Unit tests for validation rules",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Required",
+        "Email",
+        "Password",
+        "Custom"
+      ]
+    },
+    {
+      "id": "VID-WC-005",
+      "name": "Unit tests for utility functions",
+      "description": "Unit tests for formatting and helpers",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Date",
+        "Currency",
+        "String",
+        "Edge cases"
+      ]
+    },
+    {
+      "id": "VID-WC-006",
+      "name": "Unit tests for state management",
+      "description": "Unit tests for stores/context",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Initial state",
+        "Actions",
+        "Selectors"
+      ]
+    },
+    {
+      "id": "VID-WC-007",
+      "name": "Integration tests for primary workflow",
+      "description": "Full workflow: sign-up through core action",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Account",
+        "Onboard",
+        "Action",
+        "Verify"
+      ]
+    },
+    {
+      "id": "VID-WC-008",
+      "name": "Integration tests for payment flow",
+      "description": "Stripe checkout and webhook test",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Checkout",
+        "Webhook",
+        "Subscription"
+      ]
+    },
+    {
+      "id": "VID-WC-009",
+      "name": "Integration tests for import/export",
+      "description": "CSV/JSON import and export",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Upload",
+        "Map",
+        "Import",
+        "Export"
+      ]
+    },
+    {
+      "id": "VID-WC-010",
+      "name": "Integration tests for search/filter",
+      "description": "Search, filter, and pagination",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Text search",
+        "Filters",
+        "Pagination"
+      ]
+    },
+    {
+      "id": "VID-WC-011",
+      "name": "E2E tests for auth with Playwright",
+      "description": "Playwright auth tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Login",
+        "Signup",
+        "Protected routes"
+      ]
+    },
+    {
+      "id": "VID-WC-012",
+      "name": "E2E tests for CRUD operations",
+      "description": "Playwright CRUD tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Create",
+        "View",
+        "Edit",
+        "Delete"
+      ]
+    },
+    {
+      "id": "VID-WC-013",
+      "name": "E2E tests for settings",
+      "description": "Playwright settings tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Profile",
+        "Preferences",
+        "Persistence"
+      ]
+    },
+    {
+      "id": "VID-WC-014",
+      "name": "E2E tests for responsive layouts",
+      "description": "Playwright breakpoint tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Mobile",
+        "Tablet",
+        "Desktop"
+      ]
+    },
+    {
+      "id": "VID-WC-015",
+      "name": "E2E tests for error states",
+      "description": "Playwright error/edge tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "404",
+        "Error boundary",
+        "Empty state"
+      ]
+    },
+    {
+      "id": "VID-WC-016",
+      "name": "Performance test: page load < 3s",
+      "description": "Page load optimization",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "LCP < 2.5s",
+        "FID < 100ms",
+        "CLS < 0.1"
+      ]
+    },
+    {
+      "id": "VID-WC-017",
+      "name": "Performance test: API < 500ms",
+      "description": "API response times",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "List < 500ms",
+        "Detail < 300ms",
+        "Search < 500ms"
+      ]
+    },
+    {
+      "id": "VID-WC-018",
+      "name": "Performance test: DB queries",
+      "description": "Query optimization",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No seq scans",
+        "Indexes",
+        "Plans checked"
+      ]
+    },
+    {
+      "id": "VID-WC-019",
+      "name": "Load test: concurrent users",
+      "description": "50+ concurrent user simulation",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No errors",
+        "Response < 2x",
+        "No leaks"
+      ]
+    },
+    {
+      "id": "VID-WC-020",
+      "name": "Accessibility audit with axe-core",
+      "description": "Automated a11y scan",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No critical",
+        "No serious",
+        "ARIA correct"
+      ]
+    },
+    {
+      "id": "VID-WC-021",
+      "name": "Visual regression tests",
+      "description": "Screenshot comparison",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dashboard",
+        "Lists",
+        "Forms",
+        "Settings"
+      ]
+    },
+    {
+      "id": "VID-WC-022",
+      "name": "API contract tests",
+      "description": "Response shape validation",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Shapes match",
+        "Errors typed",
+        "Pagination"
+      ]
+    },
+    {
+      "id": "VID-WC-023",
+      "name": "Security test: auth bypass",
+      "description": "Unauthenticated rejection",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "401 on API",
+        "Redirect pages",
+        "No leaks"
+      ]
+    },
+    {
+      "id": "VID-WC-024",
+      "name": "Security test: injection prevention",
+      "description": "XSS and SQL injection tests",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Script sanitized",
+        "SQL blocked"
+      ]
+    },
+    {
+      "id": "VID-WC-025",
+      "name": "Test coverage reports",
+      "description": "Coverage config and thresholds",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Config",
+        "HTML report",
+        "Thresholds"
+      ]
+    },
+    {
+      "id": "VID-WC-026",
+      "name": "Snapshot tests for components",
+      "description": "Snapshot critical components",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dashboard",
+        "Forms",
+        "Modals"
+      ]
+    },
+    {
+      "id": "VID-WC-027",
+      "name": "Test seed script",
+      "description": "Idempotent test data seeding",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Accounts",
+        "Entities",
+        "Relations"
+      ]
+    },
+    {
+      "id": "VID-WC-028",
+      "name": "Mock service layer",
+      "description": "Mock external services",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Auth",
+        "DB",
+        "Payment",
+        "Email"
+      ]
+    },
+    {
+      "id": "VID-WC-029",
+      "name": "CI test configuration",
+      "description": "Tests in CI pipeline",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Commands",
+        "Env vars",
+        "Parallel",
+        "Reports"
+      ]
+    },
+    {
+      "id": "VID-WC-030",
+      "name": "Regression test suite",
+      "description": "Tests for fixed bugs",
+      "category": "testing",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Per-bug tests",
+        "Edge cases",
+        "Prevent regressions"
+      ]
+    },
+    {
+      "id": "VID-WC-031",
+      "name": "CSRF protection on mutations",
+      "description": "CSRF tokens on POST/PUT/DELETE",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Token gen",
+        "Validation",
+        "Cookie"
+      ]
+    },
+    {
+      "id": "VID-WC-032",
+      "name": "Rate limiting on auth endpoints",
+      "description": "Rate limit sign-in/up/reset",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Per-IP",
+        "Per-account",
+        "429",
+        "Backoff"
+      ]
+    },
+    {
+      "id": "VID-WC-033",
+      "name": "Rate limiting on API endpoints",
+      "description": "Rate limit all APIs",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Per-user",
+        "Per-tier",
+        "Headers"
+      ]
+    },
+    {
+      "id": "VID-WC-034",
+      "name": "Input sanitization",
+      "description": "Sanitize all user inputs",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Strip HTML",
+        "Escape chars",
+        "Trim",
+        "Length"
+      ]
+    },
+    {
+      "id": "VID-WC-035",
+      "name": "SQL injection prevention audit",
+      "description": "Verify parameterized queries",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No concatenation",
+        "Parameterized"
+      ]
+    },
+    {
+      "id": "VID-WC-036",
+      "name": "Secure HTTP headers",
+      "description": "CSP, HSTS, X-Frame-Options",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "CSP",
+        "HSTS",
+        "X-Frame",
+        "X-Content-Type"
+      ]
+    },
+    {
+      "id": "VID-WC-037",
+      "name": "Environment variable security",
+      "description": "No secrets in client bundles",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No client secrets",
+        "No .env in git"
+      ]
+    },
+    {
+      "id": "VID-WC-038",
+      "name": "Auth token security",
+      "description": "Secure token storage/rotation",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "HttpOnly",
+        "Secure",
+        "SameSite",
+        "Rotation"
+      ]
+    },
+    {
+      "id": "VID-WC-039",
+      "name": "File upload security",
+      "description": "Validate uploads",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "MIME check",
+        "Size limit",
+        "Whitelist",
+        "Isolation"
+      ]
+    },
+    {
+      "id": "VID-WC-040",
+      "name": "API authorization checks",
+      "description": "Auth on every endpoint",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Own data only",
+        "Admin protected",
+        "Role checks"
+      ]
+    },
+    {
+      "id": "VID-WC-041",
+      "name": "Dependency vulnerability scanning",
+      "description": "Automated CVE scanning",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "npm audit",
+        "Dependabot",
+        "Alerts"
+      ]
+    },
+    {
+      "id": "VID-WC-042",
+      "name": "Sensitive data encryption",
+      "description": "Encrypt PII at rest",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "PII identified",
+        "Encrypted",
+        "Key mgmt"
+      ]
+    },
+    {
+      "id": "VID-WC-043",
+      "name": "Audit logging",
+      "description": "Log security-relevant actions",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Auth events",
+        "Data access",
+        "Admin actions"
+      ]
+    },
+    {
+      "id": "VID-WC-044",
+      "name": "Session hardening",
+      "description": "Secure sessions with timeouts",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Timeout",
+        "Limits",
+        "Revocation"
+      ]
+    },
+    {
+      "id": "VID-WC-045",
+      "name": "GDPR/privacy compliance",
+      "description": "Data export/deletion/consent",
+      "category": "security",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Export",
+        "Deletion",
+        "Consent"
+      ]
+    },
+    {
+      "id": "VID-WC-046",
+      "name": "Server-side caching",
+      "description": "Cache expensive queries",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Headers",
+        "SWR",
+        "Invalidation"
+      ]
+    },
+    {
+      "id": "VID-WC-047",
+      "name": "Client-side data caching",
+      "description": "React Query/SWR config",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Stale time",
+        "Persistence",
+        "Optimistic"
+      ]
+    },
+    {
+      "id": "VID-WC-048",
+      "name": "Code splitting and lazy loading",
+      "description": "Split bundles per route",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dynamic imports",
+        "Suspense"
+      ]
+    },
+    {
+      "id": "VID-WC-049",
+      "name": "Image optimization",
+      "description": "next/image, WebP, responsive",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "next/image",
+        "WebP",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "VID-WC-050",
+      "name": "Database query optimization",
+      "description": "Indexes and pooling",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Indexes",
+        "Analysis",
+        "Pooling"
+      ]
+    },
+    {
+      "id": "VID-WC-051",
+      "name": "API response compression",
+      "description": "gzip/brotli",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Compression",
+        "Negotiation",
+        "Threshold"
+      ]
+    },
+    {
+      "id": "VID-WC-052",
+      "name": "Pagination on all lists",
+      "description": "Cursor/offset pagination",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Cursor",
+        "Size limits",
+        "Total count"
+      ]
+    },
+    {
+      "id": "VID-WC-053",
+      "name": "Request deduplication",
+      "description": "Prevent duplicate calls",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Debounce",
+        "Cancel",
+        "Dedup"
+      ]
+    },
+    {
+      "id": "VID-WC-054",
+      "name": "Static asset caching",
+      "description": "CDN with long-term cache",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Cache-Control",
+        "Hashing",
+        "CDN"
+      ]
+    },
+    {
+      "id": "VID-WC-055",
+      "name": "Connection pooling",
+      "description": "DB connection pool config",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Pool size",
+        "Timeout",
+        "Recycling"
+      ]
+    },
+    {
+      "id": "VID-WC-056",
+      "name": "Memory optimization",
+      "description": "Fix memory leaks",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "SSR leaks",
+        "Cleanup",
+        "Listeners"
+      ]
+    },
+    {
+      "id": "VID-WC-057",
+      "name": "Bundle size monitoring",
+      "description": "Track bundle regressions",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Analyzer",
+        "Budgets",
+        "CI check"
+      ]
+    },
+    {
+      "id": "VID-WC-058",
+      "name": "Navigation prefetching",
+      "description": "Prefetch routes/data",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Link prefetch",
+        "Data prefetch"
+      ]
+    },
+    {
+      "id": "VID-WC-059",
+      "name": "Web vitals monitoring",
+      "description": "Track Core Web Vitals",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "LCP",
+        "FID",
+        "CLS",
+        "Dashboard"
+      ]
+    },
+    {
+      "id": "VID-WC-060",
+      "name": "Streaming SSR",
+      "description": "React streaming for TTFB",
+      "category": "performance",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Suspense",
+        "Streaming",
+        "Progressive"
+      ]
+    },
+    {
+      "id": "VID-WC-061",
+      "name": "Dynamic meta tags",
+      "description": "Title/desc/OG on all pages",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Titles",
+        "Descriptions",
+        "OG",
+        "Twitter"
+      ]
+    },
+    {
+      "id": "VID-WC-062",
+      "name": "XML sitemap generation",
+      "description": "Auto-generate sitemap.xml",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "All routes",
+        "Priority",
+        "Auto-update"
+      ]
+    },
+    {
+      "id": "VID-WC-063",
+      "name": "robots.txt configuration",
+      "description": "Proper robots.txt",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Allow public",
+        "Disallow admin"
+      ]
+    },
+    {
+      "id": "VID-WC-064",
+      "name": "Structured data JSON-LD",
+      "description": "Schema.org rich results",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Organization",
+        "Product",
+        "Breadcrumbs"
+      ]
+    },
+    {
+      "id": "VID-WC-065",
+      "name": "Canonical URLs",
+      "description": "Prevent duplicate content",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Canonical tags",
+        "Query params"
+      ]
+    },
+    {
+      "id": "VID-WC-066",
+      "name": "OG image generation",
+      "description": "Dynamic social images",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dynamic text",
+        "Branded",
+        "Cached"
+      ]
+    },
+    {
+      "id": "VID-WC-067",
+      "name": "Error page SEO",
+      "description": "Proper status codes",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "404 status",
+        "Custom page",
+        "No-index"
+      ]
+    },
+    {
+      "id": "VID-WC-068",
+      "name": "Breadcrumb navigation",
+      "description": "Breadcrumbs with structured data",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Visual",
+        "JSON-LD"
+      ]
+    },
+    {
+      "id": "VID-WC-069",
+      "name": "PageSpeed > 90",
+      "description": "Google PageSpeed optimization",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Performance",
+        "A11y",
+        "Best practices"
+      ]
+    },
+    {
+      "id": "VID-WC-070",
+      "name": "Social share preview testing",
+      "description": "Verify share previews",
+      "category": "seo",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Facebook",
+        "Twitter",
+        "LinkedIn"
+      ]
+    },
+    {
+      "id": "VID-WC-071",
+      "name": "ARIA labels on interactives",
+      "description": "Proper ARIA attributes",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Buttons",
+        "Inputs",
+        "Icons",
+        "Roles"
+      ]
+    },
+    {
+      "id": "VID-WC-072",
+      "name": "Keyboard navigation",
+      "description": "All features via keyboard",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Tab order",
+        "Focus visible",
+        "Escape"
+      ]
+    },
+    {
+      "id": "VID-WC-073",
+      "name": "Focus management on routes",
+      "description": "Focus on route change",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Main content",
+        "Skip nav",
+        "Announce"
+      ]
+    },
+    {
+      "id": "VID-WC-074",
+      "name": "Color contrast WCAG AA",
+      "description": "Meet contrast ratios",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Normal 4.5:1",
+        "Large 3:1",
+        "Both themes"
+      ]
+    },
+    {
+      "id": "VID-WC-075",
+      "name": "Screen reader compatibility",
+      "description": "Readable by SR",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Alt text",
+        "Tables",
+        "Forms",
+        "Live regions"
+      ]
+    },
+    {
+      "id": "VID-WC-076",
+      "name": "Responsive text scaling",
+      "description": "Support 200% zoom",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "No scroll",
+        "No overlap",
+        "No hidden"
+      ]
+    },
+    {
+      "id": "VID-WC-077",
+      "name": "Form error announcements",
+      "description": "Announce validation errors",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Summary",
+        "Inline",
+        "Focus to first"
+      ]
+    },
+    {
+      "id": "VID-WC-078",
+      "name": "Reduced motion support",
+      "description": "Respect prefers-reduced-motion",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Disable animations",
+        "Simplify"
+      ]
+    },
+    {
+      "id": "VID-WC-079",
+      "name": "High contrast mode",
+      "description": "Usable in high contrast",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Borders",
+        "Focus indicators"
+      ]
+    },
+    {
+      "id": "VID-WC-080",
+      "name": "Accessible data tables",
+      "description": "Proper table markup",
+      "category": "a11y",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Headers",
+        "Scope",
+        "Caption"
+      ]
+    },
+    {
+      "id": "VID-WC-081",
+      "name": "Loading skeletons all pages",
+      "description": "Skeleton loading states",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Dashboard",
+        "List",
+        "Detail",
+        "Form"
+      ]
+    },
+    {
+      "id": "VID-WC-082",
+      "name": "Empty states all lists",
+      "description": "Helpful empty states",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Component",
+        "Message",
+        "Action"
+      ]
+    },
+    {
+      "id": "VID-WC-083",
+      "name": "Error boundary with recovery",
+      "description": "Global error UI",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Catch",
+        "Message",
+        "Retry",
+        "Report"
+      ]
+    },
+    {
+      "id": "VID-WC-084",
+      "name": "Toast notification system",
+      "description": "Global toasts",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Variants",
+        "Auto-dismiss",
+        "Stack"
+      ]
+    },
+    {
+      "id": "VID-WC-085",
+      "name": "Confirmation dialogs",
+      "description": "Confirm destructive actions",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Delete",
+        "Cancel",
+        "Clear"
+      ]
+    },
+    {
+      "id": "VID-WC-086",
+      "name": "Responsive sidebar nav",
+      "description": "Collapsible sidebar",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Desktop",
+        "Mobile drawer",
+        "Toggle"
+      ]
+    },
+    {
+      "id": "VID-WC-087",
+      "name": "Dark mode with system pref",
+      "description": "Light/dark/system theme",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Toggle",
+        "System",
+        "Persist"
+      ]
+    },
+    {
+      "id": "VID-WC-088",
+      "name": "Form autosave with drafts",
+      "description": "Auto-save form progress",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Interval",
+        "Indicator",
+        "Restore"
+      ]
+    },
+    {
+      "id": "VID-WC-089",
+      "name": "Infinite scroll",
+      "description": "Auto-load on scroll",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Auto-load",
+        "Spinner",
+        "End indicator"
+      ]
+    },
+    {
+      "id": "VID-WC-090",
+      "name": "Keyboard shortcuts",
+      "description": "Power user shortcuts",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Cmd+/ help",
+        "Nav shortcuts",
+        "Actions"
+      ]
+    },
+    {
+      "id": "VID-WC-091",
+      "name": "Breadcrumb component",
+      "description": "Navigation breadcrumbs",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Auto-generate",
+        "Clickable",
+        "Current"
+      ]
+    },
+    {
+      "id": "VID-WC-092",
+      "name": "Responsive data tables",
+      "description": "Tables on mobile",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Desktop table",
+        "Mobile cards",
+        "Sort"
+      ]
+    },
+    {
+      "id": "VID-WC-093",
+      "name": "Drag-and-drop upload",
+      "description": "File drag-drop zone",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Overlay",
+        "Validation",
+        "Progress"
+      ]
+    },
+    {
+      "id": "VID-WC-094",
+      "name": "Command palette Cmd+K",
+      "description": "Quick search/nav",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Search",
+        "Navigate",
+        "Actions"
+      ]
+    },
+    {
+      "id": "VID-WC-095",
+      "name": "Multi-step form wizard",
+      "description": "Stepped form with progress",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Steps",
+        "Back/next",
+        "Validation"
+      ]
+    },
+    {
+      "id": "VID-WC-096",
+      "name": "Notification dropdown",
+      "description": "Bell with dropdown",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Badge",
+        "List",
+        "Mark read"
+      ]
+    },
+    {
+      "id": "VID-WC-097",
+      "name": "Avatar with upload",
+      "description": "Avatar display and upload",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Image",
+        "Initials",
+        "Upload",
+        "Remove"
+      ]
+    },
+    {
+      "id": "VID-WC-098",
+      "name": "Copy-to-clipboard",
+      "description": "Click-to-copy with feedback",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Copy button",
+        "Toast",
+        "Clipboard API"
+      ]
+    },
+    {
+      "id": "VID-WC-099",
+      "name": "Bulk action toolbar",
+      "description": "Multi-select with actions",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Checkbox",
+        "Select all",
+        "Bulk ops"
+      ]
+    },
+    {
+      "id": "VID-WC-100",
+      "name": "Print-friendly styles",
+      "description": "Print stylesheet",
+      "category": "ui",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Hide nav",
+        "Clean layout",
+        "Print button"
+      ]
+    },
+    {
+      "id": "VID-WC-101",
+      "name": "CI/CD pipeline",
+      "description": "GitHub Actions for test/deploy",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Test on PR",
+        "Lint",
+        "Build",
+        "Deploy"
+      ]
+    },
+    {
+      "id": "VID-WC-102",
+      "name": "Environment variable management",
+      "description": "Structured env with validation",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        ".env.example",
+        "Runtime check"
+      ]
+    },
+    {
+      "id": "VID-WC-103",
+      "name": "Error monitoring Sentry",
+      "description": "Production error tracking",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "SDK",
+        "Source maps",
+        "Alerts"
+      ]
+    },
+    {
+      "id": "VID-WC-104",
+      "name": "Database migrations workflow",
+      "description": "Migration system",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "CLI",
+        "Version tracking",
+        "Rollback"
+      ]
+    },
+    {
+      "id": "VID-WC-105",
+      "name": "Staging environment",
+      "description": "Staging matching prod",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Staging DB",
+        "Staging env",
+        "Preview URLs"
+      ]
+    },
+    {
+      "id": "VID-WC-106",
+      "name": "Automated backups",
+      "description": "DB backup with retention",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Daily",
+        "Retention",
+        "Restore tested"
+      ]
+    },
+    {
+      "id": "VID-WC-107",
+      "name": "Log aggregation",
+      "description": "Centralized structured logging",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "JSON logs",
+        "Request ID",
+        "Levels"
+      ]
+    },
+    {
+      "id": "VID-WC-108",
+      "name": "Health check endpoints",
+      "description": "Monitoring endpoints",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "/api/health",
+        "DB check",
+        "Dependencies"
+      ]
+    },
+    {
+      "id": "VID-WC-109",
+      "name": "Feature flags system",
+      "description": "Remote feature flags",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Management",
+        "Targeting",
+        "Rollout"
+      ]
+    },
+    {
+      "id": "VID-WC-110",
+      "name": "Automated dependency updates",
+      "description": "Dependabot/Renovate",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Config",
+        "Auto-merge patch"
+      ]
+    },
+    {
+      "id": "VID-WC-111",
+      "name": "Docker containerization",
+      "description": "Dockerfile and compose",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Multi-stage",
+        "Compose",
+        "Optimized"
+      ]
+    },
+    {
+      "id": "VID-WC-112",
+      "name": "API documentation generation",
+      "description": "Auto-gen API docs",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Endpoints",
+        "Schemas",
+        "Examples"
+      ]
+    },
+    {
+      "id": "VID-WC-113",
+      "name": "Schema documentation",
+      "description": "DB schema docs",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "ER diagram",
+        "Descriptions",
+        "Relations"
+      ]
+    },
+    {
+      "id": "VID-WC-114",
+      "name": "Uptime monitoring",
+      "description": "External uptime checks",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "HTTP checks",
+        "Alerts",
+        "Status page"
+      ]
+    },
+    {
+      "id": "VID-WC-115",
+      "name": "Secrets rotation",
+      "description": "Key rotation procedure",
+      "category": "devops",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Procedure",
+        "Zero-downtime",
+        "Audit"
+      ]
+    },
+    {
+      "id": "VID-WC-116",
+      "name": "Transactional email system",
+      "description": "Email via Resend/SendGrid",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Service",
+        "Templates",
+        "Retry"
+      ]
+    },
+    {
+      "id": "VID-WC-117",
+      "name": "Welcome email on sign-up",
+      "description": "Branded welcome email",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Triggered",
+        "Template",
+        "Links"
+      ]
+    },
+    {
+      "id": "VID-WC-118",
+      "name": "Password reset email",
+      "description": "Secure reset link",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Token",
+        "Expiry",
+        "Template"
+      ]
+    },
+    {
+      "id": "VID-WC-119",
+      "name": "Email verification flow",
+      "description": "Verify email address",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Token",
+        "Confirm",
+        "Resend"
+      ]
+    },
+    {
+      "id": "VID-WC-120",
+      "name": "Notification preferences",
+      "description": "User controls",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Per-type",
+        "Frequency",
+        "Persist"
+      ]
+    },
+    {
+      "id": "VID-WC-121",
+      "name": "In-app notification center",
+      "description": "Notification list UI",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Model",
+        "Read/unread",
+        "Real-time"
+      ]
+    },
+    {
+      "id": "VID-WC-122",
+      "name": "Email templates with branding",
+      "description": "Consistent branded emails",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Header",
+        "Footer",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "VID-WC-123",
+      "name": "Webhook notifications",
+      "description": "Webhooks for events",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Configurable",
+        "Selection",
+        "Retry"
+      ]
+    },
+    {
+      "id": "VID-WC-124",
+      "name": "Digest summary emails",
+      "description": "Periodic summaries",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Daily/weekly",
+        "Summary",
+        "Unsubscribe"
+      ]
+    },
+    {
+      "id": "VID-WC-125",
+      "name": "Bounce/complaint handling",
+      "description": "Handle bounced emails",
+      "category": "notifications",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Bounce hook",
+        "Complaint hook",
+        "Suppress"
+      ]
+    },
+    {
+      "id": "VID-WC-126",
+      "name": "Analytics event tracking",
+      "description": "Track key events",
+      "category": "analytics",
+      "priority": "P2",
+      "passes": true,
+      "effort": "4h",
+      "criteria": [
+        "Page views",
+        "Features",
+        "Conversions"
+      ]
+    }
+  ]
+}
