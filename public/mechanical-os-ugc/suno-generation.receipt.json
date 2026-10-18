@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-09-20T17:54:00-04:00",
+  "provider": "suno",
+  "title": "Mechanical OS Control Plane UGC Bed",
+  "instrumental": true,
+  "published": false,
+  "distributed": false,
+  "credits_consumed": 10,
+  "prompt": "instrumental only, 102 BPM, minimal future garage, precision-tech underscore, clean muted percussion, warm analog pulse, sparse synth plucks, restrained low end, no vocals, no cinematic trailer hits",
+  "variants": [
+    {
+      "song_id": "fc47f44b-52bc-47bc-ba4d-025d046aab29",
+      "file": "mechanical-os-suno-bed-v1.m4a",
+      "sha256": "0183944efb249194fa2c44310aeb91c796c1784a28eba30a94040152e6dddc1b",
+      "duration_seconds": 193.12
+    },
+    {
+      "song_id": "f1f9fbd1-b4ca-4876-b7a0-ca4cffd2b53b",
+      "file": "mechanical-os-suno-bed-v2.m4a",
+      "sha256": "a39cbc6834dae2cd6b43ae3ba0f7b44e4c61806dcd017f924cc4a23223266084",
+      "duration_seconds": 191.92
+    }
+  ]
+}

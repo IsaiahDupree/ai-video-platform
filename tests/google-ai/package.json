@@ -1,0 +1,21 @@
+{
+  "name": "vellopad-google-ai-tests",
+  "version": "1.0.0",
+  "description": "Google AI (Imagen & Veo) testing scripts for VelloPad",
+  "private": true,
+  "scripts": {
+    "test:imagen4": "ts-node test-imagen4.ts",
+    "test:veo3": "ts-node test-veo3.ts",
+    "test:gemini": "ts-node test-gemini-vision.ts",
+    "test:all": "npm run test:imagen4"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "rangeops-onboarding-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated RangeOps tutorial composition; render only through Orion typed workers.",
+  "dependencies": {
+    "@remotion/cli": "4.0.434",
+    "remotion": "4.0.434",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {"typescript": "5.9.3", "@types/react": "18.3.27"}
+}

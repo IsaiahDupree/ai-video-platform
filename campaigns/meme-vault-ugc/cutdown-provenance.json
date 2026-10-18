@@ -1,0 +1,19 @@
+{
+  "contract": "content_copy_provenance_v1",
+  "candidate_sha256": "36076dd2f9ccca81bcc56c396f9c06202c7dbadcc0f56bd05727d79ddbd95d27",
+  "source_material_usage": "abstract_patterns_only",
+  "reference_item_ids": [
+    "refitem_7dd4aa17878963844756d0f0",
+    "refitem_d6a26c60839b1236210d5d16"
+  ],
+  "creator_identity_used": false,
+  "creator_likeness_used": false,
+  "creator_voice_used": false,
+  "source_clips_used": false,
+  "creator_identity_input_ids": [],
+  "creator_likeness_input_ids": [],
+  "creator_voice_input_ids": [],
+  "source_clip_ids": [],
+  "independent_verification_receipts": [],
+  "provenance_sha256": "e09c763ed6ff10861e30eb78a2a3862cdfcde2576fb7f9143aa8e6740d00ad06"
+}

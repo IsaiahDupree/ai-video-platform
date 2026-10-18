@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "contract_type": "trial_reel_remotion_render_request",
+  "request_id": "trial-render-fam-automate-wait-20260831-01-candidate",
+  "request_revision": 1,
+  "mode": "full",
+  "family_id": "fam-automate-wait-20260831-01",
+  "source_sha256": "46f8ea2cf8a1f549a22174d16e7c93f660cf24b606b91434a3b057739498e346",
+  "video_url": "https://gqjgxltroyysjoxswbmn.supabase.co/storage/v1/object/public/videos/ops-console/trial-reels/2026-08-31/sources/03-automate-wait-heygen-storage.mp4",
+  "duration_sec": 46.762,
+  "brand_id": "the_isaiah_dupree",
+  "variants": [
+    {
+      "id": "trial-automate-wait-mono-20260831",
+      "code": "TEXT-01",
+      "visual_filter": "grayscale(1) contrast(1.38) brightness(0.90)",
+      "overlay_color": "#0B5D42",
+      "overlay_opacity": 0.04,
+      "crop_scale": 1.14,
+      "crop_x_percent": 3,
+      "crop_y_percent": -1,
+      "on_screen_text": "AUTOMATE THE WAIT, NOT THE DEMO",
+      "on_screen_subtext": "Measure frequency, waiting time, and proof.",
+      "accent_color": "#38EF7D",
+      "post_caption": "The flashy demo is not the ROI. The recurring wait is. Score the workflow by frequency, waiting time, and whether the result lands in a record. What handoff delays your customer every week? #Automation #SaaS #Operations"
+    }
+  ]
+}

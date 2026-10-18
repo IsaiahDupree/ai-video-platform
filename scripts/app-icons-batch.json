@@ -1,0 +1,134 @@
+[
+  {
+    "type": "icon",
+    "prompt": "A stylized letter envelope transforming into a handwritten note with a heart seal, warm tones, pastel colors, app icon for a handwritten letter sending app called SteadyLetters",
+    "name": "app_icon_steadyletters_ios",
+    "style": "minimal"
+  },
+  {
+    "type": "icon",
+    "prompt": "A modern CRM dashboard icon with person silhouette and data nodes connected by lines, professional blue and purple gradient, app icon for a CRM app called EverReach",
+    "name": "app_icon_everreach_crm",
+    "style": "gradient"
+  },
+  {
+    "type": "icon",
+    "prompt": "A cute kawaii-style coffee cup with steam forming a timer clock, pastel pink and brown tones, adorable face on the cup, app icon for a kawaii coffee timer",
+    "name": "app_icon_kawaii_coffee",
+    "style": "playful"
+  },
+  {
+    "type": "icon",
+    "prompt": "A PDF document with a microphone and speech waveform overlay, modern blue and white, app icon for a voice chat PDF reader",
+    "name": "app_icon_voice_chat_pdf",
+    "style": "gradient"
+  },
+  {
+    "type": "icon",
+    "prompt": "A YouTube play button merged with a quiz question mark symbol, red and white with gold accents, app icon for a YouTube quiz generator",
+    "name": "app_icon_youtube_quiz",
+    "style": "minimal"
+  },
+  {
+    "type": "icon",
+    "prompt": "An AI brain merged with a calculator keypad, futuristic neon blue and purple, app icon for an AI-powered calculator builder",
+    "name": "app_icon_ai_calculator",
+    "style": "neon"
+  },
+  {
+    "type": "icon",
+    "prompt": "A portal doorway with a client handshake silhouette inside, professional teal and navy, app icon for a client portal system",
+    "name": "app_icon_client_portal",
+    "style": "corporate"
+  },
+  {
+    "type": "icon",
+    "prompt": "Multiple AI nodes collaborating in a network pattern with a workspace desk, purple and teal gradient, app icon for a collaborative AI workspace",
+    "name": "app_icon_collab_ai_workos",
+    "style": "gradient"
+  },
+  {
+    "type": "icon",
+    "prompt": "Two interlinked hearts with a habit checkmark streak, warm pink and coral gradient, app icon for a couples habit tracker",
+    "name": "app_icon_couples_habits",
+    "style": "playful"
+  },
+  {
+    "type": "icon",
+    "prompt": "Instagram camera lens merged with a magnifying glass and lead funnel, vibrant pink orange and purple, app icon for an IG research lead finder",
+    "name": "app_icon_ig_lead_finder",
+    "style": "gradient"
+  },
+  {
+    "type": "icon",
+    "prompt": "A graduation cap transforming into a briefcase with upward arrow, green and gold, app icon for a learning-to-gigs career app",
+    "name": "app_icon_learning_gigs",
+    "style": "minimal"
+  },
+  {
+    "type": "icon",
+    "prompt": "A media film reel with AI circuit patterns and database schema nodes, deep blue and silver, app icon for a media AI schema app",
+    "name": "app_icon_media_ai_schema",
+    "style": "neon"
+  },
+  {
+    "type": "icon",
+    "prompt": "A growth chart arrow with social media icons orbiting it, Meta blue gradient, app icon for a Meta content growth hub",
+    "name": "app_icon_meta_growth_hub",
+    "style": "gradient"
+  },
+  {
+    "type": "icon",
+    "prompt": "A floor plan blueprint with RF signal waves radiating from a router, technical blue and orange, app icon for an RF indoor mapper called ProMap",
+    "name": "app_icon_promap_rf",
+    "style": "corporate"
+  },
+  {
+    "type": "icon",
+    "prompt": "A pulse heartbeat line merging into a camera lens, vibrant red and dark background, app icon for a health and analytics app called PulseLense",
+    "name": "app_icon_pulselense",
+    "style": "neon"
+  },
+  {
+    "type": "icon",
+    "prompt": "A live streaming broadcast tower with multiple screen outputs, electric purple and cyan, app icon for a simulive multistream studio",
+    "name": "app_icon_simulive_studio",
+    "style": "neon"
+  },
+  {
+    "type": "icon",
+    "prompt": "A megaphone with social media platform icons and a calendar grid, vibrant orange and blue, app icon for a social media campaign manager",
+    "name": "app_icon_social_campaigns",
+    "style": "playful"
+  },
+  {
+    "type": "icon",
+    "prompt": "A magic eraser wand removing a watermark from a video frame, clean white and purple, app icon for a Sora watermark remover tool",
+    "name": "app_icon_sora_watermark",
+    "style": "minimal"
+  },
+  {
+    "type": "icon",
+    "prompt": "A strong face silhouette with facial exercise muscle lines, bold red and black, app icon for a facial exercise app called StrongFace",
+    "name": "app_icon_strongface",
+    "style": "minimal"
+  },
+  {
+    "type": "icon",
+    "prompt": "A unified grid of photo video and music media tiles in a gallery layout, rainbow gradient borders, app icon for a unified media gallery",
+    "name": "app_icon_unified_media",
+    "style": "gradient"
+  },
+  {
+    "type": "icon",
+    "prompt": "A film clapperboard with a planning checklist and camera, cinematic orange and teal, app icon for a vlog planning and filming app called VlogFlow",
+    "name": "app_icon_vlogflow",
+    "style": "minimal"
+  },
+  {
+    "type": "icon",
+    "prompt": "A microphone transforming into a handwritten love letter with floating hearts, romantic pink and red gradient, app icon for a voice-to-letter love notes app",
+    "name": "app_icon_voice_love_notes",
+    "style": "playful"
+  }
+]

@@ -1,0 +1,2278 @@
+{
+  "scenes": [
+    {
+      "id": "scene-01",
+      "start": 0,
+      "end": 6.118,
+      "kind": "hero",
+      "chapter": "THE AI DEMAND REPORT",
+      "title": "What people\nwant from AI",
+      "subtitle": "From an answer to something you can actually use.",
+      "source": "OCTOBER 4, 2026 EDITION · AI-narrated by Isaiah Dupree",
+      "items": [
+        "Two research windows",
+        "One practical question"
+      ],
+      "image": "usable-artifacts",
+      "note": "Original editorial illustrations"
+    },
+    {
+      "id": "scene-02",
+      "start": 6.118,
+      "end": 22.581,
+      "kind": "artifacts",
+      "chapter": "01 / CONVERSATION OUTPUTS",
+      "title": "Useful things\nto take away",
+      "subtitle": "What appeared most often in Anthropic’s conversation sample.",
+      "source": "SOURCE: Anthropic Economic Index · June 26, 2026 · Conversation outputs",
+      "items": [
+        "Explanations",
+        "Documents & reports",
+        "Guidance"
+      ],
+      "image": "usable-artifacts",
+      "note": "This sample does not describe everyone."
+    },
+    {
+      "id": "scene-03",
+      "start": 22.581,
+      "end": 34.923,
+      "kind": "search",
+      "chapter": "02 / BUYER SEARCHES",
+      "title": "Skills that\nconnect AI",
+      "subtitle": "“AI automation” remained the most-searched AI term.",
+      "source": "SOURCE: Upwork · August 2026 data · Published September 15, 2026",
+      "items": [
+        "Second consecutive month"
+      ],
+      "image": "connected-workflow",
+      "note": "Search interest is not completed hiring."
+    },
+    {
+      "id": "scene-04",
+      "start": 34.923,
+      "end": 45.325,
+      "kind": "growth",
+      "chapter": "03 / SEARCH GROWTH",
+      "title": "Three of the\ntop four",
+      "subtitle": "These terms held three of four fastest-growing AI searches.",
+      "source": "SOURCE: Upwork · August 2026 data · Published September 15, 2026",
+      "items": [
+        "AI automation expert",
+        "AI workflow automation",
+        "AI automation engineer"
+      ],
+      "image": null,
+      "note": "Year-over-year search growth"
+    },
+    {
+      "id": "scene-05",
+      "start": 45.325,
+      "end": 57.307,
+      "kind": "compare",
+      "chapter": "04 / READ THE SAMPLES",
+      "title": "Two different\nsignals",
+      "subtitle": "Related clues about usable output and the skills around it.",
+      "source": "SOURCES: Anthropic + Upwork · Different samples; interpretation shown",
+      "items": [
+        "Conversation outputs: usable artifacts",
+        "Buyer searches: workflow skills"
+      ],
+      "image": null,
+      "note": "These measures are not interchangeable."
+    },
+    {
+      "id": "scene-06",
+      "start": 57.307,
+      "end": 71.355,
+      "kind": "creative",
+      "chapter": "05 / CREATIVE WORK",
+      "title": "Creative output\nmatters too",
+      "subtitle": "AI Video Generation led growth in both comparisons.",
+      "source": "SOURCE: Upwork · August 2026 data · Published September 15, 2026",
+      "items": [
+        "Year over year",
+        "Month over month"
+      ],
+      "image": "creative-output",
+      "note": "Interpretation: useful creative deliverables"
+    },
+    {
+      "id": "scene-07",
+      "start": 71.355,
+      "end": 83.163,
+      "kind": "issues",
+      "chapter": "06 / THE LAST MILE",
+      "title": "Beyond a\nsmart answer",
+      "subtitle": "An output can sound right and still need repair.",
+      "source": "INTERPRETATION · A practical framework, not a measured outcome",
+      "items": [
+        "Wrong fields or missing labels",
+        "Extra edits or a bad export",
+        "No review step"
+      ],
+      "image": "usable-artifacts",
+      "note": "Check the form as well as the content."
+    },
+    {
+      "id": "scene-08",
+      "start": 83.163,
+      "end": 96.584,
+      "kind": "flow",
+      "chapter": "07 / A WORKFLOW AROUND THE MODEL",
+      "title": "Make the output ready to use",
+      "subtitle": "A practical pattern for turning a draft into a checked deliverable.",
+      "source": "INTERPRETATION · A practical framework, not a measured outcome",
+      "items": [
+        "Template",
+        "Check",
+        "Route",
+        "Review",
+        "Export"
+      ],
+      "image": null,
+      "note": "Define the expected form before automating the handoff."
+    },
+    {
+      "id": "scene-09",
+      "start": 96.584,
+      "end": 104.63,
+      "kind": "checkpoint",
+      "chapter": "08 / CATCH ERRORS",
+      "title": "Build a clear\ncheckpoint",
+      "subtitle": "Search growth does not establish demand for unattended systems.",
+      "source": "INTERPRETATION · A practical framework, not a measured outcome",
+      "items": [
+        "Required inputs present?",
+        "Output matches the agreed format?",
+        "Ready for a person to review?"
+      ],
+      "image": null,
+      "note": "Illustrative acceptance checks"
+    },
+    {
+      "id": "scene-10",
+      "start": 104.63,
+      "end": 113.8,
+      "kind": "report",
+      "chapter": "09 / EXAMPLE: THE FRIDAY UPDATE",
+      "title": "The same task,\nevery Friday",
+      "subtitle": "A summary still needs the sections and structure the team uses.",
+      "source": "ILLUSTRATIVE EXAMPLE · AI-generated editorial artwork · Isaiah Dupree",
+      "items": [
+        "Completed work",
+        "Risks & dependencies",
+        "Next steps"
+      ],
+      "image": "weekly-report",
+      "note": "Illustrative report sections"
+    },
+    {
+      "id": "scene-11",
+      "start": 113.8,
+      "end": 126.886,
+      "kind": "report",
+      "chapter": "10 / EXAMPLE: THE FRIDAY UPDATE",
+      "title": "Same model.\nBetter handoff.",
+      "subtitle": "Consistent inputs, a standard report, and visible missing information.",
+      "source": "ILLUSTRATIVE EXAMPLE · AI-generated editorial artwork · Isaiah Dupree",
+      "items": [
+        "Fill the required sections",
+        "Flag blanks",
+        "Send for review"
+      ],
+      "image": "weekly-report",
+      "note": "The workflow organizes the output."
+    },
+    {
+      "id": "scene-12",
+      "start": 126.886,
+      "end": 136.383,
+      "kind": "meal",
+      "chapter": "11 / EXAMPLE: MEAL PLANNING",
+      "title": "An idea becomes\na usable plan",
+      "subtitle": "Dinner ideas → grouped groceries → a cooking schedule.",
+      "source": "ILLUSTRATIVE EXAMPLE · AI-generated editorial artwork · Isaiah Dupree",
+      "items": [
+        "Group the shopping list",
+        "Sequence the preparation"
+      ],
+      "image": "meal-plan",
+      "note": "Illustrative example"
+    },
+    {
+      "id": "scene-13",
+      "start": 136.383,
+      "end": 154.2,
+      "kind": "takeaway",
+      "chapter": "12 / THE PRACTICAL TEST",
+      "title": "Measure the\nwhole task",
+      "subtitle": "Which part becomes shorter: prompting, or cleanup after the answer?",
+      "source": "INTERPRETATION · A practical framework, not a measured outcome",
+      "items": [
+        "Prompting effort",
+        "Checking effort",
+        "Cleanup effort"
+      ],
+      "image": null,
+      "note": "Compare total effort for the same task."
+    }
+  ],
+  "words": [
+    {
+      "text": "What",
+      "start": 0.43,
+      "end": 0.592
+    },
+    {
+      "text": "do",
+      "start": 0.615,
+      "end": 0.673
+    },
+    {
+      "text": "people",
+      "start": 0.72,
+      "end": 0.964
+    },
+    {
+      "text": "want",
+      "start": 1.01,
+      "end": 1.347
+    },
+    {
+      "text": "from",
+      "start": 1.66,
+      "end": 1.869
+    },
+    {
+      "text": "AI?",
+      "start": 1.939,
+      "end": 2.45
+    },
+    {
+      "text": "Welcome",
+      "start": 2.879,
+      "end": 3.228
+    },
+    {
+      "text": "to",
+      "start": 3.251,
+      "end": 3.297
+    },
+    {
+      "text": "the",
+      "start": 3.332,
+      "end": 3.402
+    },
+    {
+      "text": "October",
+      "start": 3.46,
+      "end": 3.843
+    },
+    {
+      "text": "4,",
+      "start": 3.959,
+      "end": 4.435
+    },
+    {
+      "text": "2026",
+      "start": 4.574,
+      "end": 5.352
+    },
+    {
+      "text": "edition.",
+      "start": 5.41,
+      "end": 5.886
+    },
+    {
+      "text": "Anthropic's",
+      "start": 6.118,
+      "end": 6.641
+    },
+    {
+      "text": "June",
+      "start": 6.699,
+      "end": 6.885
+    },
+    {
+      "text": "26,",
+      "start": 6.92,
+      "end": 7.407
+    },
+    {
+      "text": "2026",
+      "start": 7.465,
+      "end": 8.185
+    },
+    {
+      "text": "report",
+      "start": 8.255,
+      "end": 8.615
+    },
+    {
+      "text": "says",
+      "start": 8.661,
+      "end": 8.882
+    },
+    {
+      "text": "explanations,",
+      "start": 8.963,
+      "end": 9.973
+    },
+    {
+      "text": "documents",
+      "start": 10.24,
+      "end": 10.809
+    },
+    {
+      "text": "and",
+      "start": 10.855,
+      "end": 10.937
+    },
+    {
+      "text": "reports,",
+      "start": 11.006,
+      "end": 11.691
+    },
+    {
+      "text": "and",
+      "start": 11.854,
+      "end": 12.04
+    },
+    {
+      "text": "guidance",
+      "start": 12.121,
+      "end": 12.562
+    },
+    {
+      "text": "were",
+      "start": 12.597,
+      "end": 12.736
+    },
+    {
+      "text": "its",
+      "start": 12.759,
+      "end": 12.864
+    },
+    {
+      "text": "most",
+      "start": 12.91,
+      "end": 13.096
+    },
+    {
+      "text": "common",
+      "start": 13.142,
+      "end": 13.468
+    },
+    {
+      "text": "artifacts.",
+      "start": 13.514,
+      "end": 14.199
+    },
+    {
+      "text": "That",
+      "start": 14.466,
+      "end": 14.652
+    },
+    {
+      "text": "finding",
+      "start": 14.71,
+      "end": 15.023
+    },
+    {
+      "text": "describes",
+      "start": 15.07,
+      "end": 15.639
+    },
+    {
+      "text": "conversation",
+      "start": 15.72,
+      "end": 16.335
+    },
+    {
+      "text": "outputs",
+      "start": 16.381,
+      "end": 16.822
+    },
+    {
+      "text": "in",
+      "start": 16.904,
+      "end": 17.055
+    },
+    {
+      "text": "Anthropic's",
+      "start": 17.136,
+      "end": 17.635
+    },
+    {
+      "text": "report.",
+      "start": 17.67,
+      "end": 18.088
+    },
+    {
+      "text": "It",
+      "start": 18.518,
+      "end": 18.622
+    },
+    {
+      "text": "gives",
+      "start": 18.657,
+      "end": 18.831
+    },
+    {
+      "text": "us",
+      "start": 18.866,
+      "end": 18.959
+    },
+    {
+      "text": "one",
+      "start": 19.04,
+      "end": 19.272
+    },
+    {
+      "text": "window",
+      "start": 19.307,
+      "end": 19.737
+    },
+    {
+      "text": "into",
+      "start": 20.108,
+      "end": 20.375
+    },
+    {
+      "text": "AI",
+      "start": 20.445,
+      "end": 20.735
+    },
+    {
+      "text": "use,",
+      "start": 20.793,
+      "end": 21.072
+    },
+    {
+      "text": "rather",
+      "start": 21.118,
+      "end": 21.327
+    },
+    {
+      "text": "than",
+      "start": 21.362,
+      "end": 21.466
+    },
+    {
+      "text": "a",
+      "start": 21.501,
+      "end": 21.536
+    },
+    {
+      "text": "picture",
+      "start": 21.583,
+      "end": 21.838
+    },
+    {
+      "text": "of",
+      "start": 21.873,
+      "end": 21.919
+    },
+    {
+      "text": "everyone.",
+      "start": 21.977,
+      "end": 22.418
+    },
+    {
+      "text": "A",
+      "start": 22.581,
+      "end": 22.651
+    },
+    {
+      "text": "separate",
+      "start": 22.732,
+      "end": 23.011
+    },
+    {
+      "text": "window",
+      "start": 23.034,
+      "end": 23.266
+    },
+    {
+      "text": "comes",
+      "start": 23.359,
+      "end": 23.696
+    },
+    {
+      "text": "from",
+      "start": 23.754,
+      "end": 23.916
+    },
+    {
+      "text": "Upwork's",
+      "start": 23.997,
+      "end": 24.357
+    },
+    {
+      "text": "August",
+      "start": 24.427,
+      "end": 24.799
+    },
+    {
+      "text": "2026",
+      "start": 24.857,
+      "end": 25.669
+    },
+    {
+      "text": "marketplace",
+      "start": 25.762,
+      "end": 26.25
+    },
+    {
+      "text": "data,",
+      "start": 26.285,
+      "end": 26.714
+    },
+    {
+      "text": "published",
+      "start": 26.912,
+      "end": 27.248
+    },
+    {
+      "text": "September",
+      "start": 27.271,
+      "end": 27.62
+    },
+    {
+      "text": "15,",
+      "start": 27.678,
+      "end": 28.073
+    },
+    {
+      "text": "2026.",
+      "start": 28.119,
+      "end": 29.036
+    },
+    {
+      "text": "Upwork",
+      "start": 29.303,
+      "end": 29.675
+    },
+    {
+      "text": "says",
+      "start": 29.744,
+      "end": 30.069
+    },
+    {
+      "text": "\"AI",
+      "start": 30.267,
+      "end": 30.72
+    },
+    {
+      "text": "automation\"",
+      "start": 30.778,
+      "end": 31.347
+    },
+    {
+      "text": "remained",
+      "start": 31.393,
+      "end": 31.788
+    },
+    {
+      "text": "its",
+      "start": 31.858,
+      "end": 31.997
+    },
+    {
+      "text": "most-searched",
+      "start": 32.078,
+      "end": 32.659
+    },
+    {
+      "text": "AI",
+      "start": 32.717,
+      "end": 32.972
+    },
+    {
+      "text": "term",
+      "start": 33.03,
+      "end": 33.251
+    },
+    {
+      "text": "for",
+      "start": 33.309,
+      "end": 33.414
+    },
+    {
+      "text": "a",
+      "start": 33.448,
+      "end": 33.472
+    },
+    {
+      "text": "second",
+      "start": 33.53,
+      "end": 33.808
+    },
+    {
+      "text": "consecutive",
+      "start": 33.855,
+      "end": 34.366
+    },
+    {
+      "text": "month.",
+      "start": 34.389,
+      "end": 34.656
+    },
+    {
+      "text": "Upwork",
+      "start": 34.923,
+      "end": 35.213
+    },
+    {
+      "text": "also",
+      "start": 35.271,
+      "end": 35.515
+    },
+    {
+      "text": "says",
+      "start": 35.573,
+      "end": 35.794
+    },
+    {
+      "text": "AI",
+      "start": 35.886,
+      "end": 36.119
+    },
+    {
+      "text": "automation",
+      "start": 36.177,
+      "end": 36.618
+    },
+    {
+      "text": "expert,",
+      "start": 36.688,
+      "end": 37.129
+    },
+    {
+      "text": "AI",
+      "start": 37.164,
+      "end": 37.442
+    },
+    {
+      "text": "workflow",
+      "start": 37.512,
+      "end": 37.953
+    },
+    {
+      "text": "automation,",
+      "start": 38.011,
+      "end": 38.754
+    },
+    {
+      "text": "and",
+      "start": 38.952,
+      "end": 39.102
+    },
+    {
+      "text": "AI",
+      "start": 39.172,
+      "end": 39.416
+    },
+    {
+      "text": "automation",
+      "start": 39.462,
+      "end": 39.915
+    },
+    {
+      "text": "engineer",
+      "start": 39.985,
+      "end": 40.345
+    },
+    {
+      "text": "held",
+      "start": 40.414,
+      "end": 40.6
+    },
+    {
+      "text": "three",
+      "start": 40.658,
+      "end": 40.972
+    },
+    {
+      "text": "of",
+      "start": 41.03,
+      "end": 41.099
+    },
+    {
+      "text": "the",
+      "start": 41.146,
+      "end": 41.215
+    },
+    {
+      "text": "four",
+      "start": 41.285,
+      "end": 41.552
+    },
+    {
+      "text": "fastest-growing",
+      "start": 41.633,
+      "end": 42.4
+    },
+    {
+      "text": "AI",
+      "start": 42.481,
+      "end": 42.725
+    },
+    {
+      "text": "searches",
+      "start": 42.806,
+      "end": 43.294
+    },
+    {
+      "text": "compared",
+      "start": 43.561,
+      "end": 44.002
+    },
+    {
+      "text": "with",
+      "start": 44.037,
+      "end": 44.153
+    },
+    {
+      "text": "the",
+      "start": 44.176,
+      "end": 44.245
+    },
+    {
+      "text": "previous",
+      "start": 44.28,
+      "end": 44.652
+    },
+    {
+      "text": "year.",
+      "start": 44.698,
+      "end": 45.012
+    },
+    {
+      "text": "Put",
+      "start": 45.325,
+      "end": 45.488
+    },
+    {
+      "text": "together,",
+      "start": 45.523,
+      "end": 45.882
+    },
+    {
+      "text": "those",
+      "start": 45.906,
+      "end": 46.08
+    },
+    {
+      "text": "two",
+      "start": 46.103,
+      "end": 46.231
+    },
+    {
+      "text": "samples",
+      "start": 46.289,
+      "end": 46.649
+    },
+    {
+      "text": "point",
+      "start": 46.707,
+      "end": 46.904
+    },
+    {
+      "text": "to",
+      "start": 46.939,
+      "end": 46.985
+    },
+    {
+      "text": "the",
+      "start": 47.032,
+      "end": 47.101
+    },
+    {
+      "text": "same",
+      "start": 47.136,
+      "end": 47.345
+    },
+    {
+      "text": "shape",
+      "start": 47.38,
+      "end": 47.624
+    },
+    {
+      "text": "from",
+      "start": 47.647,
+      "end": 47.763
+    },
+    {
+      "text": "different",
+      "start": 47.81,
+      "end": 48.054
+    },
+    {
+      "text": "sides.",
+      "start": 48.088,
+      "end": 48.541
+    },
+    {
+      "text": "One",
+      "start": 48.855,
+      "end": 49.087
+    },
+    {
+      "text": "sample",
+      "start": 49.122,
+      "end": 49.505
+    },
+    {
+      "text": "shows",
+      "start": 49.551,
+      "end": 49.818
+    },
+    {
+      "text": "people",
+      "start": 49.876,
+      "end": 50.167
+    },
+    {
+      "text": "asking",
+      "start": 50.225,
+      "end": 50.747
+    },
+    {
+      "text": "AI",
+      "start": 50.979,
+      "end": 51.351
+    },
+    {
+      "text": "for",
+      "start": 51.42,
+      "end": 51.525
+    },
+    {
+      "text": "usable",
+      "start": 51.595,
+      "end": 51.873
+    },
+    {
+      "text": "artifacts.",
+      "start": 51.908,
+      "end": 52.605
+    },
+    {
+      "text": "The",
+      "start": 52.837,
+      "end": 52.941
+    },
+    {
+      "text": "other",
+      "start": 52.999,
+      "end": 53.162
+    },
+    {
+      "text": "shows",
+      "start": 53.208,
+      "end": 53.499
+    },
+    {
+      "text": "buyers",
+      "start": 53.58,
+      "end": 53.963
+    },
+    {
+      "text": "looking",
+      "start": 54.009,
+      "end": 54.242
+    },
+    {
+      "text": "for",
+      "start": 54.276,
+      "end": 54.369
+    },
+    {
+      "text": "people",
+      "start": 54.416,
+      "end": 54.66
+    },
+    {
+      "text": "who",
+      "start": 54.683,
+      "end": 54.787
+    },
+    {
+      "text": "can",
+      "start": 54.834,
+      "end": 54.95
+    },
+    {
+      "text": "wire",
+      "start": 55.019,
+      "end": 55.356
+    },
+    {
+      "text": "AI",
+      "start": 55.414,
+      "end": 55.844
+    },
+    {
+      "text": "into",
+      "start": 55.96,
+      "end": 56.227
+    },
+    {
+      "text": "workflows.",
+      "start": 56.308,
+      "end": 56.993
+    },
+    {
+      "text": "Upwork",
+      "start": 57.307,
+      "end": 57.678
+    },
+    {
+      "text": "adds",
+      "start": 57.736,
+      "end": 57.98
+    },
+    {
+      "text": "a",
+      "start": 58.038,
+      "end": 58.085
+    },
+    {
+      "text": "creative",
+      "start": 58.166,
+      "end": 58.526
+    },
+    {
+      "text": "clue",
+      "start": 58.561,
+      "end": 58.77
+    },
+    {
+      "text": "too.",
+      "start": 58.804,
+      "end": 59.013
+    },
+    {
+      "text": "It",
+      "start": 59.048,
+      "end": 59.118
+    },
+    {
+      "text": "says",
+      "start": 59.164,
+      "end": 59.385
+    },
+    {
+      "text": "AI",
+      "start": 59.478,
+      "end": 59.826
+    },
+    {
+      "text": "Video",
+      "start": 59.942,
+      "end": 60.209
+    },
+    {
+      "text": "Generation",
+      "start": 60.267,
+      "end": 60.883
+    },
+    {
+      "text": "ranked",
+      "start": 60.999,
+      "end": 61.254
+    },
+    {
+      "text": "first",
+      "start": 61.301,
+      "end": 61.556
+    },
+    {
+      "text": "among",
+      "start": 61.602,
+      "end": 61.811
+    },
+    {
+      "text": "skills",
+      "start": 61.881,
+      "end": 62.206
+    },
+    {
+      "text": "growing",
+      "start": 62.264,
+      "end": 62.612
+    },
+    {
+      "text": "both",
+      "start": 62.88,
+      "end": 63.158
+    },
+    {
+      "text": "year",
+      "start": 63.274,
+      "end": 63.495
+    },
+    {
+      "text": "over",
+      "start": 63.565,
+      "end": 63.75
+    },
+    {
+      "text": "year",
+      "start": 63.832,
+      "end": 64.029
+    },
+    {
+      "text": "and",
+      "start": 64.099,
+      "end": 64.203
+    },
+    {
+      "text": "month",
+      "start": 64.284,
+      "end": 64.563
+    },
+    {
+      "text": "over",
+      "start": 64.644,
+      "end": 64.83
+    },
+    {
+      "text": "month.",
+      "start": 64.9,
+      "end": 65.213
+    },
+    {
+      "text": "My",
+      "start": 65.445,
+      "end": 65.561
+    },
+    {
+      "text": "interpretation",
+      "start": 65.608,
+      "end": 66.258
+    },
+    {
+      "text": "is",
+      "start": 66.328,
+      "end": 66.421
+    },
+    {
+      "text": "that",
+      "start": 66.467,
+      "end": 66.583
+    },
+    {
+      "text": "buyers",
+      "start": 66.653,
+      "end": 67.048
+    },
+    {
+      "text": "are",
+      "start": 67.094,
+      "end": 67.222
+    },
+    {
+      "text": "interested",
+      "start": 67.28,
+      "end": 67.721
+    },
+    {
+      "text": "in",
+      "start": 67.779,
+      "end": 67.86
+    },
+    {
+      "text": "useful",
+      "start": 67.941,
+      "end": 68.278
+    },
+    {
+      "text": "creative",
+      "start": 68.348,
+      "end": 68.731
+    },
+    {
+      "text": "output,",
+      "start": 68.777,
+      "end": 69.358
+    },
+    {
+      "text": "alongside",
+      "start": 69.52,
+      "end": 70.078
+    },
+    {
+      "text": "the",
+      "start": 70.101,
+      "end": 70.171
+    },
+    {
+      "text": "tools",
+      "start": 70.206,
+      "end": 70.496
+    },
+    {
+      "text": "themselves.",
+      "start": 70.531,
+      "end": 71.123
+    },
+    {
+      "text": "Here",
+      "start": 71.355,
+      "end": 71.553
+    },
+    {
+      "text": "is",
+      "start": 71.587,
+      "end": 71.657
+    },
+    {
+      "text": "the",
+      "start": 71.704,
+      "end": 71.773
+    },
+    {
+      "text": "technology",
+      "start": 71.82,
+      "end": 72.272
+    },
+    {
+      "text": "point",
+      "start": 72.33,
+      "end": 72.528
+    },
+    {
+      "text": "behind",
+      "start": 72.563,
+      "end": 72.876
+    },
+    {
+      "text": "all",
+      "start": 72.969,
+      "end": 73.178
+    },
+    {
+      "text": "three",
+      "start": 73.236,
+      "end": 73.445
+    },
+    {
+      "text": "findings.",
+      "start": 73.48,
+      "end": 73.863
+    },
+    {
+      "text": "A",
+      "start": 73.886,
+      "end": 73.921
+    },
+    {
+      "text": "model",
+      "start": 73.991,
+      "end": 74.234
+    },
+    {
+      "text": "can",
+      "start": 74.281,
+      "end": 74.374
+    },
+    {
+      "text": "sound",
+      "start": 74.42,
+      "end": 74.618
+    },
+    {
+      "text": "smart",
+      "start": 74.676,
+      "end": 75.047
+    },
+    {
+      "text": "and",
+      "start": 75.245,
+      "end": 75.465
+    },
+    {
+      "text": "still",
+      "start": 75.512,
+      "end": 75.709
+    },
+    {
+      "text": "miss",
+      "start": 75.767,
+      "end": 75.953
+    },
+    {
+      "text": "the",
+      "start": 75.999,
+      "end": 76.069
+    },
+    {
+      "text": "final",
+      "start": 76.127,
+      "end": 76.429
+    },
+    {
+      "text": "form",
+      "start": 76.498,
+      "end": 76.789
+    },
+    {
+      "text": "a",
+      "start": 76.858,
+      "end": 76.893
+    },
+    {
+      "text": "person",
+      "start": 76.974,
+      "end": 77.276
+    },
+    {
+      "text": "or",
+      "start": 77.323,
+      "end": 77.392
+    },
+    {
+      "text": "system",
+      "start": 77.45,
+      "end": 77.776
+    },
+    {
+      "text": "needs.",
+      "start": 77.822,
+      "end": 78.263
+    },
+    {
+      "text": "Wrong",
+      "start": 78.426,
+      "end": 78.704
+    },
+    {
+      "text": "fields,",
+      "start": 78.786,
+      "end": 79.192
+    },
+    {
+      "text": "missing",
+      "start": 79.238,
+      "end": 79.529
+    },
+    {
+      "text": "labels,",
+      "start": 79.598,
+      "end": 79.981
+    },
+    {
+      "text": "extra",
+      "start": 80.028,
+      "end": 80.318
+    },
+    {
+      "text": "edits,",
+      "start": 80.376,
+      "end": 80.701
+    },
+    {
+      "text": "bad",
+      "start": 80.748,
+      "end": 80.968
+    },
+    {
+      "text": "export,",
+      "start": 81.038,
+      "end": 81.653
+    },
+    {
+      "text": "no",
+      "start": 81.885,
+      "end": 82.036
+    },
+    {
+      "text": "approval",
+      "start": 82.094,
+      "end": 82.478
+    },
+    {
+      "text": "step.",
+      "start": 82.536,
+      "end": 82.896
+    },
+    {
+      "text": "My",
+      "start": 83.163,
+      "end": 83.314
+    },
+    {
+      "text": "reading",
+      "start": 83.395,
+      "end": 83.709
+    },
+    {
+      "text": "is",
+      "start": 83.79,
+      "end": 83.918
+    },
+    {
+      "text": "that",
+      "start": 83.976,
+      "end": 84.173
+    },
+    {
+      "text": "more",
+      "start": 84.266,
+      "end": 84.498
+    },
+    {
+      "text": "of",
+      "start": 84.533,
+      "end": 84.579
+    },
+    {
+      "text": "the",
+      "start": 84.603,
+      "end": 84.672
+    },
+    {
+      "text": "practical",
+      "start": 84.707,
+      "end": 85.044
+    },
+    {
+      "text": "challenge",
+      "start": 85.09,
+      "end": 85.497
+    },
+    {
+      "text": "sits",
+      "start": 85.543,
+      "end": 85.891
+    },
+    {
+      "text": "after",
+      "start": 85.949,
+      "end": 86.24
+    },
+    {
+      "text": "generation:",
+      "start": 86.298,
+      "end": 86.959
+    },
+    {
+      "text": "turning",
+      "start": 87.227,
+      "end": 87.552
+    },
+    {
+      "text": "a",
+      "start": 87.598,
+      "end": 87.621
+    },
+    {
+      "text": "draft",
+      "start": 87.668,
+      "end": 88.028
+    },
+    {
+      "text": "into",
+      "start": 88.086,
+      "end": 88.26
+    },
+    {
+      "text": "something",
+      "start": 88.318,
+      "end": 88.631
+    },
+    {
+      "text": "checked,",
+      "start": 88.701,
+      "end": 89.096
+    },
+    {
+      "text": "formatted,",
+      "start": 89.177,
+      "end": 89.874
+    },
+    {
+      "text": "and",
+      "start": 89.897,
+      "end": 90.001
+    },
+    {
+      "text": "ready",
+      "start": 90.059,
+      "end": 90.257
+    },
+    {
+      "text": "to",
+      "start": 90.303,
+      "end": 90.35
+    },
+    {
+      "text": "use.",
+      "start": 90.431,
+      "end": 90.837
+    },
+    {
+      "text": "A",
+      "start": 91.267,
+      "end": 91.348
+    },
+    {
+      "text": "workflow",
+      "start": 91.464,
+      "end": 91.987
+    },
+    {
+      "text": "can",
+      "start": 92.056,
+      "end": 92.184
+    },
+    {
+      "text": "add",
+      "start": 92.242,
+      "end": 92.416
+    },
+    {
+      "text": "templates,",
+      "start": 92.463,
+      "end": 92.997
+    },
+    {
+      "text": "checks,",
+      "start": 93.055,
+      "end": 93.484
+    },
+    {
+      "text": "routing,",
+      "start": 93.542,
+      "end": 93.914
+    },
+    {
+      "text": "review,",
+      "start": 93.949,
+      "end": 94.541
+    },
+    {
+      "text": "and",
+      "start": 94.68,
+      "end": 94.831
+    },
+    {
+      "text": "export",
+      "start": 94.912,
+      "end": 95.435
+    },
+    {
+      "text": "around",
+      "start": 95.493,
+      "end": 95.76
+    },
+    {
+      "text": "the",
+      "start": 95.795,
+      "end": 95.864
+    },
+    {
+      "text": "model.",
+      "start": 95.899,
+      "end": 96.317
+    },
+    {
+      "text": "The",
+      "start": 96.584,
+      "end": 96.7
+    },
+    {
+      "text": "search",
+      "start": 96.758,
+      "end": 96.99
+    },
+    {
+      "text": "figures",
+      "start": 97.037,
+      "end": 97.374
+    },
+    {
+      "text": "do",
+      "start": 97.432,
+      "end": 97.513
+    },
+    {
+      "text": "not",
+      "start": 97.582,
+      "end": 97.71
+    },
+    {
+      "text": "establish",
+      "start": 97.757,
+      "end": 98.128
+    },
+    {
+      "text": "demand",
+      "start": 98.186,
+      "end": 98.453
+    },
+    {
+      "text": "for",
+      "start": 98.511,
+      "end": 98.616
+    },
+    {
+      "text": "completely",
+      "start": 98.662,
+      "end": 99.243
+    },
+    {
+      "text": "unattended",
+      "start": 99.324,
+      "end": 99.777
+    },
+    {
+      "text": "systems.",
+      "start": 99.812,
+      "end": 100.311
+    },
+    {
+      "text": "For",
+      "start": 100.508,
+      "end": 100.648
+    },
+    {
+      "text": "an",
+      "start": 100.671,
+      "end": 100.729
+    },
+    {
+      "text": "important",
+      "start": 100.752,
+      "end": 101.182
+    },
+    {
+      "text": "output,",
+      "start": 101.228,
+      "end": 101.716
+    },
+    {
+      "text": "I",
+      "start": 101.762,
+      "end": 101.797
+    },
+    {
+      "text": "would",
+      "start": 101.867,
+      "end": 102.017
+    },
+    {
+      "text": "still",
+      "start": 102.052,
+      "end": 102.261
+    },
+    {
+      "text": "define",
+      "start": 102.319,
+      "end": 102.97
+    },
+    {
+      "text": "how",
+      "start": 103.167,
+      "end": 103.353
+    },
+    {
+      "text": "errors",
+      "start": 103.434,
+      "end": 103.782
+    },
+    {
+      "text": "are",
+      "start": 103.84,
+      "end": 103.956
+    },
+    {
+      "text": "caught.",
+      "start": 103.991,
+      "end": 104.432
+    },
+    {
+      "text": "Imagine",
+      "start": 104.63,
+      "end": 105.106
+    },
+    {
+      "text": "a",
+      "start": 105.141,
+      "end": 105.164
+    },
+    {
+      "text": "small",
+      "start": 105.21,
+      "end": 105.477
+    },
+    {
+      "text": "team",
+      "start": 105.535,
+      "end": 105.779
+    },
+    {
+      "text": "building",
+      "start": 105.849,
+      "end": 106.162
+    },
+    {
+      "text": "a",
+      "start": 106.22,
+      "end": 106.255
+    },
+    {
+      "text": "weekly",
+      "start": 106.313,
+      "end": 106.58
+    },
+    {
+      "text": "client",
+      "start": 106.627,
+      "end": 106.905
+    },
+    {
+      "text": "update.",
+      "start": 106.952,
+      "end": 107.416
+    },
+    {
+      "text": "Plain",
+      "start": 107.683,
+      "end": 107.962
+    },
+    {
+      "text": "chat",
+      "start": 108.02,
+      "end": 108.275
+    },
+    {
+      "text": "can",
+      "start": 108.333,
+      "end": 108.438
+    },
+    {
+      "text": "produce",
+      "start": 108.484,
+      "end": 108.786
+    },
+    {
+      "text": "a",
+      "start": 108.821,
+      "end": 108.844
+    },
+    {
+      "text": "decent",
+      "start": 108.902,
+      "end": 109.181
+    },
+    {
+      "text": "summary,",
+      "start": 109.227,
+      "end": 109.761
+    },
+    {
+      "text": "but",
+      "start": 109.901,
+      "end": 110.051
+    },
+    {
+      "text": "not",
+      "start": 110.098,
+      "end": 110.249
+    },
+    {
+      "text": "the",
+      "start": 110.284,
+      "end": 110.353
+    },
+    {
+      "text": "exact",
+      "start": 110.388,
+      "end": 110.678
+    },
+    {
+      "text": "sections,",
+      "start": 110.736,
+      "end": 111.294
+    },
+    {
+      "text": "labels,",
+      "start": 111.41,
+      "end": 111.863
+    },
+    {
+      "text": "and",
+      "start": 111.897,
+      "end": 112.025
+    },
+    {
+      "text": "file",
+      "start": 112.095,
+      "end": 112.362
+    },
+    {
+      "text": "structure",
+      "start": 112.385,
+      "end": 112.733
+    },
+    {
+      "text": "used",
+      "start": 112.78,
+      "end": 112.966
+    },
+    {
+      "text": "every",
+      "start": 113.035,
+      "end": 113.244
+    },
+    {
+      "text": "Friday.",
+      "start": 113.291,
+      "end": 113.743
+    },
+    {
+      "text": "A",
+      "start": 114.057,
+      "end": 114.138
+    },
+    {
+      "text": "packaged",
+      "start": 114.231,
+      "end": 114.695
+    },
+    {
+      "text": "workflow",
+      "start": 114.754,
+      "end": 115.23
+    },
+    {
+      "text": "asks",
+      "start": 115.346,
+      "end": 115.682
+    },
+    {
+      "text": "for",
+      "start": 115.74,
+      "end": 115.868
+    },
+    {
+      "text": "the",
+      "start": 115.926,
+      "end": 115.996
+    },
+    {
+      "text": "same",
+      "start": 116.042,
+      "end": 116.274
+    },
+    {
+      "text": "facts,",
+      "start": 116.332,
+      "end": 116.808
+    },
+    {
+      "text": "fills",
+      "start": 117.041,
+      "end": 117.296
+    },
+    {
+      "text": "the",
+      "start": 117.331,
+      "end": 117.401
+    },
+    {
+      "text": "standard",
+      "start": 117.447,
+      "end": 117.772
+    },
+    {
+      "text": "report,",
+      "start": 117.807,
+      "end": 118.306
+    },
+    {
+      "text": "flags",
+      "start": 118.469,
+      "end": 118.829
+    },
+    {
+      "text": "blanks,",
+      "start": 118.875,
+      "end": 119.339
+    },
+    {
+      "text": "and",
+      "start": 119.502,
+      "end": 119.653
+    },
+    {
+      "text": "sends",
+      "start": 119.711,
+      "end": 119.908
+    },
+    {
+      "text": "it",
+      "start": 119.943,
+      "end": 120.001
+    },
+    {
+      "text": "for",
+      "start": 120.036,
+      "end": 120.141
+    },
+    {
+      "text": "review.",
+      "start": 120.222,
+      "end": 120.698
+    },
+    {
+      "text": "The",
+      "start": 121.011,
+      "end": 121.127
+    },
+    {
+      "text": "model",
+      "start": 121.197,
+      "end": 121.487
+    },
+    {
+      "text": "might",
+      "start": 121.545,
+      "end": 121.708
+    },
+    {
+      "text": "be",
+      "start": 121.743,
+      "end": 121.824
+    },
+    {
+      "text": "identical",
+      "start": 121.871,
+      "end": 122.3
+    },
+    {
+      "text": "in",
+      "start": 122.358,
+      "end": 122.428
+    },
+    {
+      "text": "both",
+      "start": 122.498,
+      "end": 122.73
+    },
+    {
+      "text": "cases.",
+      "start": 122.788,
+      "end": 123.322
+    },
+    {
+      "text": "What",
+      "start": 123.554,
+      "end": 123.752
+    },
+    {
+      "text": "changed",
+      "start": 123.81,
+      "end": 124.181
+    },
+    {
+      "text": "is",
+      "start": 124.228,
+      "end": 124.309
+    },
+    {
+      "text": "the",
+      "start": 124.355,
+      "end": 124.425
+    },
+    {
+      "text": "layer",
+      "start": 124.472,
+      "end": 124.669
+    },
+    {
+      "text": "that",
+      "start": 124.715,
+      "end": 124.843
+    },
+    {
+      "text": "turns",
+      "start": 124.866,
+      "end": 125.133
+    },
+    {
+      "text": "a",
+      "start": 125.168,
+      "end": 125.203
+    },
+    {
+      "text": "draft",
+      "start": 125.238,
+      "end": 125.516
+    },
+    {
+      "text": "into",
+      "start": 125.551,
+      "end": 125.691
+    },
+    {
+      "text": "a",
+      "start": 125.76,
+      "end": 125.795
+    },
+    {
+      "text": "usable",
+      "start": 125.865,
+      "end": 126.167
+    },
+    {
+      "text": "object.",
+      "start": 126.213,
+      "end": 126.654
+    },
+    {
+      "text": "Or",
+      "start": 126.886,
+      "end": 127.072
+    },
+    {
+      "text": "imagine",
+      "start": 127.119,
+      "end": 127.548
+    },
+    {
+      "text": "planning",
+      "start": 127.595,
+      "end": 127.955
+    },
+    {
+      "text": "meals.",
+      "start": 128.001,
+      "end": 128.407
+    },
+    {
+      "text": "Dinner",
+      "start": 128.721,
+      "end": 129.034
+    },
+    {
+      "text": "ideas",
+      "start": 129.092,
+      "end": 129.522
+    },
+    {
+      "text": "are",
+      "start": 129.58,
+      "end": 129.731
+    },
+    {
+      "text": "one",
+      "start": 129.789,
+      "end": 129.94
+    },
+    {
+      "text": "output.",
+      "start": 129.975,
+      "end": 130.439
+    },
+    {
+      "text": "A",
+      "start": 130.671,
+      "end": 130.753
+    },
+    {
+      "text": "shopping",
+      "start": 130.834,
+      "end": 131.205
+    },
+    {
+      "text": "list",
+      "start": 131.263,
+      "end": 131.449
+    },
+    {
+      "text": "grouped",
+      "start": 131.496,
+      "end": 131.751
+    },
+    {
+      "text": "by",
+      "start": 131.774,
+      "end": 131.89
+    },
+    {
+      "text": "aisle,",
+      "start": 131.972,
+      "end": 132.343
+    },
+    {
+      "text": "with",
+      "start": 132.366,
+      "end": 132.494
+    },
+    {
+      "text": "a",
+      "start": 132.529,
+      "end": 132.552
+    },
+    {
+      "text": "cooking",
+      "start": 132.598,
+      "end": 132.877
+    },
+    {
+      "text": "schedule,",
+      "start": 132.924,
+      "end": 133.458
+    },
+    {
+      "text": "asks",
+      "start": 133.69,
+      "end": 134.015
+    },
+    {
+      "text": "the",
+      "start": 134.061,
+      "end": 134.131
+    },
+    {
+      "text": "workflow",
+      "start": 134.189,
+      "end": 134.723
+    },
+    {
+      "text": "to",
+      "start": 134.781,
+      "end": 134.851
+    },
+    {
+      "text": "organize",
+      "start": 134.932,
+      "end": 135.396
+    },
+    {
+      "text": "those",
+      "start": 135.431,
+      "end": 135.617
+    },
+    {
+      "text": "ideas.",
+      "start": 135.664,
+      "end": 136.151
+    },
+    {
+      "text": "These",
+      "start": 136.383,
+      "end": 136.581
+    },
+    {
+      "text": "reports",
+      "start": 136.627,
+      "end": 136.964
+    },
+    {
+      "text": "make",
+      "start": 137.034,
+      "end": 137.196
+    },
+    {
+      "text": "me",
+      "start": 137.231,
+      "end": 137.324
+    },
+    {
+      "text": "interested",
+      "start": 137.393,
+      "end": 137.881
+    },
+    {
+      "text": "in",
+      "start": 137.997,
+      "end": 138.16
+    },
+    {
+      "text": "workflows",
+      "start": 138.276,
+      "end": 138.787
+    },
+    {
+      "text": "that",
+      "start": 138.81,
+      "end": 138.903
+    },
+    {
+      "text": "produce",
+      "start": 138.938,
+      "end": 139.297
+    },
+    {
+      "text": "usable",
+      "start": 139.414,
+      "end": 139.82
+    },
+    {
+      "text": "deliverables.",
+      "start": 139.855,
+      "end": 140.644
+    },
+    {
+      "text": "They",
+      "start": 140.807,
+      "end": 140.934
+    },
+    {
+      "text": "do",
+      "start": 140.969,
+      "end": 141.039
+    },
+    {
+      "text": "not",
+      "start": 141.12,
+      "end": 141.26
+    },
+    {
+      "text": "prove",
+      "start": 141.318,
+      "end": 141.619
+    },
+    {
+      "text": "that",
+      "start": 141.666,
+      "end": 141.875
+    },
+    {
+      "text": "every",
+      "start": 141.956,
+      "end": 142.223
+    },
+    {
+      "text": "user",
+      "start": 142.304,
+      "end": 142.548
+    },
+    {
+      "text": "prefers",
+      "start": 142.606,
+      "end": 142.989
+    },
+    {
+      "text": "them",
+      "start": 143.036,
+      "end": 143.175
+    },
+    {
+      "text": "to",
+      "start": 143.233,
+      "end": 143.315
+    },
+    {
+      "text": "conversation.",
+      "start": 143.384,
+      "end": 144.162
+    },
+    {
+      "text": "So",
+      "start": 144.359,
+      "end": 144.487
+    },
+    {
+      "text": "when",
+      "start": 144.522,
+      "end": 144.626
+    },
+    {
+      "text": "you",
+      "start": 144.661,
+      "end": 144.731
+    },
+    {
+      "text": "compare",
+      "start": 144.777,
+      "end": 145.056
+    },
+    {
+      "text": "an",
+      "start": 145.079,
+      "end": 145.126
+    },
+    {
+      "text": "AI",
+      "start": 145.195,
+      "end": 145.451
+    },
+    {
+      "text": "tool,",
+      "start": 145.509,
+      "end": 145.962
+    },
+    {
+      "text": "ask",
+      "start": 146.124,
+      "end": 146.414
+    },
+    {
+      "text": "which",
+      "start": 146.472,
+      "end": 146.658
+    },
+    {
+      "text": "part",
+      "start": 146.716,
+      "end": 146.937
+    },
+    {
+      "text": "is",
+      "start": 146.995,
+      "end": 147.076
+    },
+    {
+      "text": "shorter",
+      "start": 147.134,
+      "end": 147.471
+    },
+    {
+      "text": "now:",
+      "start": 147.541,
+      "end": 147.854
+    },
+    {
+      "text": "prompting,",
+      "start": 148.017,
+      "end": 148.609
+    },
+    {
+      "text": "or",
+      "start": 148.655,
+      "end": 148.818
+    },
+    {
+      "text": "cleanup",
+      "start": 148.887,
+      "end": 149.294
+    },
+    {
+      "text": "after",
+      "start": 149.363,
+      "end": 149.63
+    },
+    {
+      "text": "the",
+      "start": 149.665,
+      "end": 149.735
+    },
+    {
+      "text": "answer?",
+      "start": 149.793,
+      "end": 150.199
+    }
+  ],
+  "duration": 154.2,
+  "audio": "audio/narration.mp3",
+  "title": "WHAT PEOPLE WANT FROM AI",
+  "edition": "OCT 4, 2026 · VISUAL EDITION",
+  "voiceVolume": 2.2
+}

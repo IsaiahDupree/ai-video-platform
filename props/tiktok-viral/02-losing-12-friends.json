@@ -1,0 +1,17 @@
+{
+  "hookText": "I built an app that tracks my friendships — it says I'm losing 12 people",
+  "mirrorText": "these aren't strangers. these are people I love. I just got busy.",
+  "enemyText": "we have reminders for dentist appointments but not for the people who actually matter.",
+  "mechanismText": "one warmth score per person. when it drops, you get a nudge. 60 seconds to reconnect.",
+  "proofScreenshots": [
+    "everreach/screenshots/05-warmth-score.png",
+    "everreach/screenshots/02-contact-detail.png",
+    "everreach/screenshots/06-goal-compose.png"
+  ],
+  "ctaText": "Try EverReach free",
+  "awareness": "unaware",
+  "belief": "too_busy",
+  "duration": 20,
+  "theme": "dark",
+  "showCaptions": true
+}

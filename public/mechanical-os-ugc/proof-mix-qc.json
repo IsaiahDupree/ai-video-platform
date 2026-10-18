@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-09-20T18:12:45.777412+00:00",
+  "artifact_role": "rendered_video_audio",
+  "audio_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/mechanical-os-ugc/proof-mix.wav",
+  "audio_sha256": "17d7febb85856ace8e5fe3d9fdb3c446c12754ca5990ed2d2e71e64ecf8061a2",
+  "expected_text": "The model never got to say, strong enough. It generated geometry, CAD checked it, ANSYS ran, and the evidence gate stopped at simulation screened. That is the point. AI can propose the next operation. It cannot promote its own claim.",
+  "recognized_text": "The model never got to say strong enough. It generated geometry, CAD checked it, and saw us ran, and the evidence gate stopped at simulations screened. That is the point. AI can propose the next operation. It cannot promote its own claim.",
+  "asr": {
+    "provider": "local_whisper",
+    "model": "base.en",
+    "transcript": "The model never got to say strong enough. It generated geometry, CAD checked it, and saw us ran, and the evidence gate stopped at simulations screened. That is the point. AI can propose the next operation. It cannot promote its own claim.",
+    "word_error_rate": 0.1
+  },
+  "asr_results": [
+    {
+      "provider": "local_whisper",
+      "model": "base.en",
+      "status": "completed",
+      "transcript": "The model never got to say strong enough. It generated geometry, CAD checked it, and saw us ran, and the evidence gate stopped at simulations screened. That is the point. AI can propose the next operation. It cannot promote its own claim.",
+      "artifact_path": "/Users/isaiahdupree/Documents/Software/Remotion/public/mechanical-os-ugc/proof-mix-asr/proof-mix.json",
+      "word_error_rate": 0.1,
+      "recognized_word_count": 42,
+      "coverage": 1.0,
+      "intelligibility_score": 94.0,
+      "quality_status": "qualified"
+    }
+  ],
+  "ai_analysis": {
+    "recognized_text": "The model never got to say strong enough. It generated geometry, CAD checked it, and saw us ran, and the evidence gate stopped at simulations screened. That is the point. AI can propose the next operation. It cannot promote its own claim.",
+    "asr_votes": [
+      {
+        "provider": "local_whisper",
+        "model": "base.en",
+        "status": "completed",
+        "word_error_rate": 0.1,
+        "transcript": "The model never got to say strong enough. It generated geometry, CAD checked it, and saw us ran, and the evidence gate stopped at simulations screened. That is the point. AI can propose the next operation. It cannot promote its own claim."
+      }
+    ],
+    "unable_to_reliably_depict_expected_text": false,
+    "provider_mode": "local_whisper"
+  },
+  "audio": {
+    "integrated_lufs": -14.81,
+    "true_peak_dbfs": -1.5,
+    "loudness_range_lu": 2.8
+  },
+  "transcript_quality": {
+    "word_error_rate": 0.1,
+    "reference_word_count": 40,
+    "recognized_word_count": 42,
+    "coverage": 1.0,
+    "intelligibility_score": 94.0,
+    "status": "qualified"
+  },
+  "audio_quality": {
+    "loudness_score": 86.778,
+    "loudness_passed": true,
+    "true_peak_passed": true
+  },
+  "quality": {
+    "score": 92.7,
+    "status": "qualified",
+    "intelligibility_score": 94.0,
+    "audio_mix_score": 86.778
+  },
+  "gates": {
+    "word_error_rate_passed": true,
+    "loudness_passed": true,
+    "true_peak_passed": true
+  },
+  "speaker_similarity": {
+    "status": "unavailable",
+    "reason": "commercial-safe calibrated speaker verifier not installed",
+    "passed": null
+  },
+  "technical_passed": true,
+  "promotion_status": "qualified",
+  "production_blockers": [
+    "speaker_similarity_not_calibrated"
+  ],
+  "production_eligible": false
+}

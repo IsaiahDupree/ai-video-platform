@@ -1,0 +1,718 @@
+{
+  "audit_id": "refaudit_a4f5df5cb7ed0f25e1990825",
+  "contract": "content_creation_audit_v1",
+  "copy_gate": {
+    "contract": "substantive_copy_provenance_gate_v1",
+    "failure_codes": [],
+    "passed": true,
+    "policy": {
+      "copied_expression_allowed": false,
+      "copied_sequence_allowed": false,
+      "copied_structure_allowed": false,
+      "creator_identity_likeness_voice_or_source_clips_allowed": false,
+      "facts_or_general_ideas_require_independent_verification": true,
+      "fixed_matching_word_limit_applied": false
+    },
+    "provenance_gate": {
+      "candidate_sha256": "05ba98de71fa44cec6cb7c5f0a3ddd35264cec38125e6719dc3e36244dae1544",
+      "failure_codes": [],
+      "independent_verification_receipt_ids": [],
+      "passed": true,
+      "provenance_sha256": "cf9b748f38bf5ccbb3a3a5fa026b764f741366ad6c2a083c0889a560c65077bb",
+      "source_material_usage": "abstract_patterns_only"
+    },
+    "substantive_copy": {
+      "copied_expression": false,
+      "copied_sequence": false,
+      "copied_structure": false,
+      "creator_identity_references": [],
+      "maximum_expression_similarity": 0.0,
+      "source_findings": []
+    }
+  },
+  "corpus_coverage": 100.0,
+  "corpus_id": "instagram-personalbrandlaunch-reference-v1",
+  "corpus_item_count": 150,
+  "created_at": "2026-09-20T02:08:32.999810+00:00",
+  "evidence": [
+    {
+      "caption_excerpt": "Business owners looking to grow and sell on social media, and want done for you monthly research, ideation, scripting, editing, and uploading, comment SMM for more information.",
+      "comments": 221,
+      "direct_use_allowed": false,
+      "item_id": "refitem_1d9f34349c148bfac7e8238b",
+      "likes": 1126,
+      "match_score": 38.881,
+      "matched_terms": [
+        "add",
+        "again",
+        "camera",
+        "can",
+        "easy",
+        "every",
+        "find",
+        "good",
+        "link",
+        "list",
+        "next",
+        "now",
+        "one",
+        "ones",
+        "our",
+        "right",
+        "roll",
+        "saving",
+        "scrolling",
+        "search",
+        "show",
+        "three"
+      ],
+      "published_at": "2026-07-23T12:25:24+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "And if you want me and my team to just do this for you, comment SMM for more information",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 9",
+          "low frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "If I wanted to grow my Instagram from zero to 10,000 followers, this is how I'd do it",
+          "Sub number one, determine account niche and subtopics",
+          "Number one, your niche, your overall broad industry, and number two, your subtopics",
+          "So small sub niches, you create content around within your niche",
+          "And third, just write out your occupation name slash title because with all of these, we're actually gonna create a list of keywords you can search for a future step",
+          "Sub number two, optimize your profile",
+          "I'm gonna show you the wrong versus right version, link in bio, username, tagline, profile picture, and bio",
+          "Sub number three, determine your posting amount and schedule"
+        ],
+        "on_screen_hook": "Business owners looking to grow and sell on social media, and want done for you monthly research, ideation, scripting, editing, and uploading, comment SMM for more information.",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Business owners looking to grow and sell on social media, and want done for you monthly research, ideation, scripting, editing, and uploading, comment SMM for more information.",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [
+          "questions",
+          "contrast"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it.",
+          "Use a clear before-and-after or weak-and-strong contrast.",
+          "End with one explicit next step."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "if i wanted to grow my instagram from zero to 10 000 followers this is how i'd do it sub number one determine account",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DbIo3i_vwp1/",
+      "transcript_opening": "If I wanted to grow my Instagram from zero to 10,000 followers, this is how I'd do it. Sub number one, determine account niche and subtopics. Number one, your niche, your overall broad industry, and number two, your subtopics. So small sub ",
+      "views": 61357
+    },
+    {
+      "caption_excerpt": "Creative Reels That Inspired Me This Week. \n\nFollow for more social media marketing education!",
+      "comments": 9,
+      "direct_use_allowed": false,
+      "item_id": "refitem_205f7f7b3d9e5e839a98783c",
+      "likes": 426,
+      "match_score": 35.728,
+      "matched_terms": [
+        "add",
+        "again",
+        "ago",
+        "but",
+        "camera",
+        "can",
+        "everything",
+        "good",
+        "into",
+        "makes",
+        "months",
+        "needs",
+        "now",
+        "one",
+        "people",
+        "roll",
+        "three",
+        "try",
+        "when",
+        "who"
+      ],
+      "published_at": "2026-07-30T12:00:04+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 4",
+          "low frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "Here are some creative rules that were Lanes Power Game this week",
+          "Okay, number one, we got the series Recap video",
+          "Remember Lewis, my eight year's best mate",
+          "Three months ago, we finished the 12-week alpha course together",
+          "If you've ever done a series, it's been really good for you",
+          "But it's basically just a recap of that series, where you're at now, what's changed from the start, a recap of the results, and so on",
+          "Number two, we got the person highlight videos",
+          "Imagine starting your life over at 62, and that's pretty much what my mom just did"
+        ],
+        "on_screen_hook": "Creative Reels That Inspired Me This Week. \n\nFollow for more social media marketing education!",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Creative Reels That Inspired Me This Week.",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [
+          "questions",
+          "contrast"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it.",
+          "Use a clear before-and-after or weak-and-strong contrast."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "here are some creative rules that were lanes power game this week okay number one we got the series recap video remember lewis my",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DbapAqahjWZ/",
+      "transcript_opening": "Here are some creative rules that were Lanes Power Game this week. Okay, number one, we got the series Recap video. Remember Lewis, my eight year's best mate. Three months ago, we finished the 12-week alpha course together. If you've ever d",
+      "views": 33042
+    },
+    {
+      "caption_excerpt": "I Cracked Facebook Ads.\n\nFollow for more social media marketing education.",
+      "comments": 102,
+      "direct_use_allowed": false,
+      "item_id": "refitem_67792487f51082fd5116ebec",
+      "likes": 4676,
+      "match_score": 34.656,
+      "matched_terms": [
+        "add",
+        "but",
+        "camera",
+        "every",
+        "everything",
+        "find",
+        "good",
+        "next",
+        "now",
+        "one",
+        "ones",
+        "original",
+        "our",
+        "right",
+        "roll",
+        "three",
+        "through",
+        "when"
+      ],
+      "published_at": "2026-06-11T12:02:12+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "But I hope this helped and follow from our social media marketing education",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 4",
+          "high frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text",
+          "active framing"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "So I've like never successfully run Facebook ads before in my life",
+          "Yeah, I've failed every single time until now",
+          "You see, you're girls in organic growing",
+          "I've only forgotten my leads from organic social media",
+          "Until I got this advice from Hermosey on probably the best way to run ads",
+          "Here's exactly how",
+          "Step number one, you need to find posts",
+          "Go on your account and find your best performing posts, preferably the ones you get the most saves or leads on"
+        ],
+        "on_screen_hook": "I Cracked Facebook Ads.\n\nFollow for more social media marketing education.",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "I Cracked Facebook Ads.",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [
+          "contrast"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it.",
+          "Use a clear before-and-after or weak-and-strong contrast.",
+          "End with one explicit next step."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "so i've like never successfully run facebook ads before in my life yeah i've failed every single time until now you see you're girls",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DZcdwj4hvg2/",
+      "transcript_opening": "So I've like never successfully run Facebook ads before in my life. Yeah, I've failed every single time until now. You see, you're girls in organic growing. I've only forgotten my leads from organic social media. Until I got this advice fro",
+      "views": 144000
+    },
+    {
+      "caption_excerpt": "Weekly Diary - Episode #25",
+      "comments": 16,
+      "direct_use_allowed": false,
+      "item_id": "refitem_21f47d81e33e160c042b51ef",
+      "likes": 397,
+      "match_score": 33.361,
+      "matched_terms": [
+        "back",
+        "but",
+        "camera",
+        "can",
+        "find",
+        "good",
+        "into",
+        "months",
+        "next",
+        "now",
+        "one",
+        "our",
+        "people",
+        "problem",
+        "right",
+        "roll",
+        "three",
+        "when"
+      ],
+      "published_at": "2026-07-26T19:00:05+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 2",
+          "high frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text",
+          "active framing"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "It's the 4th of July",
+          "Just finished work for the day",
+          "Let's get festive",
+          "Boom",
+          "Not super festive",
+          "This is all I got though",
+          "And I'm gonna go film a video real quick for social",
+          "And then I'm gonna get some stuff ready for the four"
+        ],
+        "on_screen_hook": "Weekly Diary - Episode #25",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Weekly Diary - Episode #25",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [
+          "contrast"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it.",
+          "Use a clear before-and-after or weak-and-strong contrast."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "it's the 4th of july just finished work for the day let's get festive boom not super festive this is all i got though",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DbRF4aih0Jj/",
+      "transcript_opening": "It's the 4th of July. Just finished work for the day. Let's get festive. Boom. Not super festive. This is all I got though. And I'm gonna go film a video real quick for social. And then I'm gonna get some stuff ready for the four. Good. Thi",
+      "views": 39211
+    },
+    {
+      "caption_excerpt": "What Your Follower Count Says About You. \n\nBusiness owners looking to grow and sell on social media, if you want to get to the next level up, comment “SMM”.",
+      "comments": 187,
+      "direct_use_allowed": false,
+      "item_id": "refitem_39f678179f959ce47eff163e",
+      "likes": 2491,
+      "match_score": 33.011,
+      "matched_terms": [
+        "back",
+        "but",
+        "camera",
+        "every",
+        "everything",
+        "find",
+        "good",
+        "months",
+        "next",
+        "now",
+        "one",
+        "our",
+        "people",
+        "right",
+        "roll",
+        "three",
+        "try"
+      ],
+      "published_at": "2026-06-10T12:02:14+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 7",
+          "low frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "You just started a new account and you've been posting for maybe a few weeks or maybe a few months",
+          "Either way, I know every post you make probably gets incredibly low views and it is so discouraging and you are about to give up",
+          "But keep pushing because one day out of nowhere you will get a video that works and it will build your momentum so whatever you do do not give up",
+          "Fun fact, on this account I posted for three months in that incredibly low views till one day, one video about 1 million views and I never looked back but those three months of incredibly low views were humbling but almost necessary on a new account",
+          "You've probably been posting for a few months and just got out of the hard phase of growing an account",
+          "Congrats, your videos are probably getting a couple hundred to a couple thousand views",
+          "Stay consistent on the topic you're posting about and try not to jump all over the place",
+          "Also, research viral hooks and topics in your niche and iterate off of those because they're properly proven and they have a good shot of working for you"
+        ],
+        "on_screen_hook": "What Your Follower Count Says About You. \n\nBusiness owners looking to grow and sell on social media, if you want to get to the next level up, comment “SMM”.",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "What Your Follower Count Says About You.",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [
+          "questions"
+        ],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "you just started a new account and you've been posting for maybe a few weeks or maybe a few months either way i know",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DZZ5HdSBwqt/",
+      "transcript_opening": "You just started a new account and you've been posting for maybe a few weeks or maybe a few months. Either way, I know every post you make probably gets incredibly low views and it is so discouraging and you are about to give up. But keep p",
+      "views": 98665
+    },
+    {
+      "caption_excerpt": "Weekly Diary - Episode #28",
+      "comments": 8,
+      "direct_use_allowed": false,
+      "item_id": "refitem_5ba071795719e854ba1fe06d",
+      "likes": 209,
+      "match_score": 32.716,
+      "matched_terms": [
+        "back",
+        "but",
+        "camera",
+        "can",
+        "everything",
+        "full",
+        "good",
+        "into",
+        "next",
+        "now",
+        "one",
+        "our",
+        "people",
+        "roll",
+        "share",
+        "show",
+        "through",
+        "try"
+      ],
+      "published_at": "2026-08-23T19:00:02+00:00",
+      "rights_state": "public_reference_analysis_only",
+      "semantic": {
+        "analysis_source": "local_semantic_v1",
+        "call_to_action": "",
+        "camera_and_framing": [
+          "720:1280",
+          "peak sampled face count 2",
+          "high frame movement"
+        ],
+        "caption_style": "text visible in sampled frames",
+        "claims_needing_verification": [],
+        "confidence": 0.64,
+        "content_format": "contrast-led skit",
+        "do_not_copy": [
+          "verbatim hook or script",
+          "presenter identity, likeness, or voice",
+          "source footage or branded art"
+        ],
+        "editing_devices": [
+          "on-screen text",
+          "active framing"
+        ],
+        "emotional_progression": [],
+        "narrative_beats": [
+          "Hey guys, the great chickens are percive on their little thing",
+          "They're all big",
+          "I'm finishing up our landscaping",
+          "We did like a dark on dark and I'm loving it",
+          "I think it looks super cool",
+          "And I'm also super into pines",
+          "So we, we pined it up",
+          "Yeah, our house looks on the rock"
+        ],
+        "on_screen_hook": "Weekly Diary - Episode #28",
+        "opening_visual": "face-led vertical frame with text",
+        "presenter_delivery": "fast",
+        "primary_topic": "Weekly Diary - Episode #28",
+        "proof_and_b_roll": [
+          "visual changes detected"
+        ],
+        "retention_devices": [],
+        "reusable_principles": [
+          "Make the opening promise observable before teaching the steps.",
+          "Keep each claim distinct from the evidence used to support it."
+        ],
+        "setting": "observable only from the saved contact sheet",
+        "spoken_hook": "hey guys the great chickens are percive on their little thing they're all big i'm finishing up our landscaping we did like a dark",
+        "target_viewer": "viewer interested in the stated topic"
+      },
+      "source_url": "https://www.instagram.com/reel/DcZMDDooF3L/",
+      "transcript_opening": "Hey guys, the great chickens are percive on their little thing. They're all big. I'm finishing up our landscaping. We did like a dark on dark and I'm loving it. I think it looks super cool. And I'm also super into pines. So we, we pined it ",
+      "views": 20512
+    }
+  ],
+  "notes": [
+    "State a concrete tension, result, or question in the opening line.",
+    "End with one clear action tied to the stated objective.",
+    "Aim for about 70 spoken words for 30 seconds."
+  ],
+  "objective": "Show the Meme Vault prototype solving the problem of finding and sharing an old meme",
+  "overall_score": 77.911,
+  "quality_judgments": {
+    "algorithm_version": "owner_calibrated_script_quality_v2",
+    "calibration": {
+      "authority": "owner_review_2026_08_24",
+      "outcomes_measured": false,
+      "reference_identity_or_voice_used": false
+    },
+    "contract": "owner_calibrated_script_quality_v1",
+    "decision": "PASS",
+    "failure_codes": [],
+    "judgments": {
+      "repeated_phrasing": {
+        "formula_phrase_hits": [],
+        "generic_quality_bridge_hits": [],
+        "opening_prefix": "my friend asked for a meme",
+        "passed": true,
+        "prior_opening_matches": 0,
+        "repeated_four_word_phrases": [],
+        "score": 100.0
+      },
+      "specificity": {
+        "concrete_action_hits": [
+          "asked",
+          "find",
+          "save",
+          "saving",
+          "send"
+        ],
+        "concrete_noun_hits": [],
+        "numeric_anchors": [],
+        "passed": true,
+        "score": 91.0,
+        "topic_anchor_hits": [
+          "asked",
+          "camera",
+          "drowning",
+          "everything",
+          "friend",
+          "group",
+          "lists",
+          "memes",
+          "months",
+          "organize",
+          "original",
+          "painfully",
+          "right",
+          "saving",
+          "screenshots",
+          "scrolling",
+          "search",
+          "specific",
+          "three",
+          "vault"
+        ]
+      },
+      "spoken_naturalness": {
+        "average_sentence_words": 18.0,
+        "first_or_second_person_tokens": [
+          "i",
+          "me",
+          "my",
+          "our",
+          "your"
+        ],
+        "formal_phrase_hits": [],
+        "long_sentence_fraction": 0.2,
+        "maximum_sentence_words": 25,
+        "passed": true,
+        "perspective_authorization_evaluated": false,
+        "perspective_authorization_required_elsewhere": true,
+        "score": 81.0
+      },
+      "technical_language_leakage": {
+        "corpus_count_narration_hits": [],
+        "hard_internal_phrase_hits": [],
+        "passed": true,
+        "protected_source_phrases_excluded": 0,
+        "score": 100.0,
+        "technical_term_hits": []
+      },
+      "tension_payoff": {
+        "contrast_terms": [
+          "but"
+        ],
+        "final_literal_audience_question": "",
+        "ordered_lexical_turn": true,
+        "ordered_question_turn": false,
+        "ordered_role_turn": false,
+        "ordered_semantic_turn": true,
+        "passed": true,
+        "payoff_terms": [
+          "save",
+          "saving",
+          "send",
+          "try"
+        ],
+        "role_topic_anchors": [],
+        "role_turn_supported": false,
+        "score": 80.0,
+        "semantic_turn_supported": true,
+        "semantic_turn_topic_anchors": [
+          "asked",
+          "camera",
+          "drowning",
+          "everything",
+          "friend",
+          "group",
+          "lists",
+          "memes",
+          "months",
+          "organize",
+          "original",
+          "painfully",
+          "right",
+          "saving",
+          "screenshots",
+          "scrolling",
+          "search",
+          "specific",
+          "three",
+          "vault"
+        ],
+        "tension_terms": [
+          "stuck"
+        ],
+        "timeline_binding": {
+          "contract": "exact_script_timeline_binding_v1",
+          "exact_ordered_projection": false,
+          "failure_codes": [
+            "timeline_missing"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "score": 89.42,
+    "threshold": 80.0
+  },
+  "request_sha256": "b1a5c5a80d75d936cc968ddc755fe5b0edebfdd8500cde00c02186d5629e0959",
+  "result_sha256": "552fd71879a37c8d5d95353e489efc36cf75741bf208c5e14d28791bea4d2567",
+  "rights": {
+    "direct_use_allowed": false,
+    "identity_imitation_allowed": false,
+    "likeness_imitation_allowed": false,
+    "source_clip_use_allowed": false,
+    "state": "public_reference_analysis_only",
+    "voice_imitation_allowed": false
+  },
+  "scores": {
+    "call_to_action": 53.0,
+    "duration_fit": 71.429,
+    "hook_clarity": 47.75,
+    "narrative_flow": 79.25,
+    "originality": 100.0,
+    "phrase_originality": 100.0,
+    "source_evidence": 95.0,
+    "specificity": 91.0,
+    "spoken_naturalness": 81.0,
+    "technical_language": 100.0,
+    "tension_payoff": 80.0
+  },
+  "status": "pass",
+  "target_seconds": 30,
+  "target_viewer": "People who save and share memes in group chats",
+  "title": "Meme Vault UGC Texting Demo — Full",
+  "word_count": 90
+}
