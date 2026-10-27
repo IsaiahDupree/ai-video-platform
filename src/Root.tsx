@@ -14,6 +14,11 @@ import { UGCComposition, ugcDefaultProps } from './compositions/UGCComposition';
 import { EverReachCompilation, everReachDefaultProps } from './compositions/EverReachCompilation';
 import { EverReachAppStoreMockup, everReachAppStoreMockupDefaultProps } from './compositions/everreach/EverReachAppStoreMockup';
 import {
+  EverReachResearchCarouselCard,
+  EverReachResearchCarouselSchema,
+  everReachResearchCarouselDefaultProps,
+} from './compositions/everreach/EverReachResearchCarousel';
+import {
   AppStoreScreen1,
   AppStoreScreen2,
   AppStoreScreen3,
@@ -1098,6 +1103,18 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1350}
         defaultProps={everReachReelDefaultProps}
+      />
+
+      {/* EverReach research carousel — one 4:5 animated MP4 card per render. */}
+      <Composition
+        id="EverReach-Research-Carousel-Card"
+        component={EverReachResearchCarouselCard}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1350}
+        defaultProps={everReachResearchCarouselDefaultProps}
+        schema={EverReachResearchCarouselSchema}
       />
 
       {/* ============================================================= */}

@@ -15,3 +15,10 @@ export {
   getReelDurationFrames,
   type EverReachReelProps,
 } from './EverReachReel';
+export {
+  EverReachResearchCarouselCard,
+  EverReachResearchCarouselSchema,
+  everReachResearchCarouselDefaultProps,
+  EVERREACH_RESEARCH_CAROUSEL_CARDS,
+  type EverReachResearchCarouselProps,
+} from './EverReachResearchCarousel';
