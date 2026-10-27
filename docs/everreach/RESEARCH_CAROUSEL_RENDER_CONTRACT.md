@@ -14,6 +14,11 @@ market-research classification. The default values are the approved Day 1
 research input only; they are a source specimen, not a scheduling or publication
 authorization.
 
+For an evidence card, use the literal product wording recorded in its declared
+primary-source receipt rather than a paraphrase. A Content Quality visual-copy
+audit must bind the complete five-card visible wording before an Orion render
+request.
+
 The source makes no customer-outcome, performance, prevalence, market-size, or
 trend assertion. It uses original geometry and text only: no creator media,
 likeness, voice, stock footage, product screenshots, external fonts, or network

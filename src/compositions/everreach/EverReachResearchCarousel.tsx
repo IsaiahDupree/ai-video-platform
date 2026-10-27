@@ -56,22 +56,22 @@ export const everReachResearchCarouselDefaultProps: EverReachResearchCarouselPro
   brand: 'EVERREACH',
   series_label: 'RELATIONSHIP SYSTEMS',
   cover_title: 'You do not need a full CRM to remember people well.',
-  cover_support: 'Opinion: the lightest useful record is just three fields.',
+  cover_support: 'Opinion: three notes can make a relationship easier to re-enter.',
   problem_label: 'THE FRICTION',
-  problem_title: 'The lightest useful record is just three fields.',
-  problem_body: 'Together, those three fields keep context, recency, and momentum visible.',
+  problem_title: 'Names alone do not preserve the thread of a relationship.',
+  problem_body: 'The missing context is usually what happened last and what could happen next.',
   framework_label: 'THE 3-FIELD RECORD',
-  framework_title: 'Keep context, recency, and momentum visible.',
+  framework_title: 'Use a three-field record to make the next conversation legible.',
   step_one: 'Context: why this person matters in your world.',
   step_two: 'Last touch: the latest conversation, intro, or promise.',
-  step_three: 'Next step: the follow-up date, question, or action.',
+  step_three: 'Next step: a future date, question, or action.',
   evidence_label: 'WHAT EVERREACH SAYS',
   evidence_statement:
-    'EverReach says it shows who you know, what you discussed, and when to reach out next.',
+    'EverReach gives you one clean place to see who you know, what you talked about, and when to reach out next.',
   evidence_source: 'EverReach App Store listing',
   takeaway_label: 'THE TAKEAWAY',
-  takeaway: 'Context. Last touch. Next step.',
-  closing_line: 'Make the next conversation easier to re-enter.',
+  takeaway: 'Keep the thread, not just the name.',
+  closing_line: 'Try this before you close the contact: save one detail that makes re-entry easier.',
   accent: '#F15A4A',
 };
 
@@ -226,7 +226,7 @@ const cardCopy = (props: EverReachResearchCarouselProps) => {
       return {
         label: props.evidence_label,
         headline: props.evidence_statement,
-        body: props.evidence_source,
+        body: '',
       };
     case 'takeaway':
       return {
@@ -282,6 +282,7 @@ export const EverReachResearchCarouselCard: React.FC<EverReachResearchCarouselPr
   const isEvidence = props.card === 'evidence';
   const isCover = props.card === 'cover';
   const isTakeaway = props.card === 'takeaway';
+  const evidenceTitleFontSize = props.evidence_statement.length > 96 ? 56 : 66;
 
   return (
     <AbsoluteFill
@@ -394,7 +395,7 @@ export const EverReachResearchCarouselCard: React.FC<EverReachResearchCarouselPr
             <div
               style={{
                 color: '#FFFFFF',
-                fontSize: isEvidence ? 66 : isFramework ? 74 : isCover ? 88 : isTakeaway ? 82 : 78,
+                fontSize: isEvidence ? evidenceTitleFontSize : isFramework ? 74 : isCover ? 88 : isTakeaway ? 82 : 78,
                 fontWeight: 850,
                 letterSpacing: '-0.055em',
                 lineHeight: 1.06,
@@ -415,23 +416,25 @@ export const EverReachResearchCarouselCard: React.FC<EverReachResearchCarouselPr
               </div>
             ) : (
               <>
-                <div
-                  style={{
-                    color: isEvidence ? '#D7DFEF' : 'rgba(248,250,252,0.88)',
-                    fontSize: isEvidence ? 32 : 38,
-                    fontWeight: 560,
-                    letterSpacing: '-0.022em',
-                    lineHeight: 1.28,
-                    marginTop: 28,
-                    opacity: copyOpacity,
-                  }}
-                >
-                  {content.body}
-                </div>
+                {content.body && (
+                  <div
+                    style={{
+                      color: isEvidence ? '#D7DFEF' : 'rgba(248,250,252,0.88)',
+                      fontSize: isEvidence ? 32 : 38,
+                      fontWeight: 560,
+                      letterSpacing: '-0.022em',
+                      lineHeight: 1.28,
+                      marginTop: 28,
+                      opacity: copyOpacity,
+                    }}
+                  >
+                    {content.body}
+                  </div>
+                )}
                 {isEvidence && (
                   <div
                     style={{
-                      marginTop: 30,
+                      marginTop: content.body ? 30 : 24,
                       color: props.accent,
                       fontSize: 24,
                       fontWeight: 800,
